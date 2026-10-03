@@ -588,11 +588,19 @@
             autoFetchPdf: true
           })
         });
+        const contentType = response.headers.get("content-type") || "";
+        if (!response.ok || !contentType.includes("application/json")) {
+          const text = await response.text();
+          if (response.status === 404 || text.includes("Cannot POST /api/scholar/analyze-tab")) {
+            throw new Error(`M\xE1y ch\u1EE7 Backend (${this.backendUrl}) ch\u01B0a nh\u1EADn di\u1EC7n endpoint /api/scholar/analyze-tab (M\xE3 l\u1ED7i 404). Vui l\xF2ng kh\u1EDFi \u0111\u1ED9ng l\u1EA1i (Restart) terminal backend: Nh\u1EA5n Ctrl+C r\u1ED3i ch\u1EA1y l\u1EA1i 'npm start'.`);
+          }
+          throw new Error(`M\xE1y ch\u1EE7 tr\u1EA3 v\u1EC1 l\u1ED7i HTTP ${response.status}: ${text.slice(0, 120)}`);
+        }
         const resData = await response.json();
         if (!resData.success) {
           throw new Error(resData.error || "L\u1ED7i khi ph\xE2n t\xEDch d\u1EEF li\u1EC7u tab");
         }
-        const analysisResult = resData.data;
+        const analysisResult = resData.data || resData.analysis;
         this.pendingAnalysisResult = analysisResult;
         this.pendingRecordId = record.id;
         this.showPreviewModal(analysisResult, record);

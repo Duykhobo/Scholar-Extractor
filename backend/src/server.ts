@@ -271,8 +271,10 @@ app.post('/api/scholar/analyze-tab', async (req: Request, res: Response) => {
     const analysis = analyzeTabAgainstRecord(record, tabData);
     res.json({
       success: true,
+      data: analysis,
       analysis
     });
+
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

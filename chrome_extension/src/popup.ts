@@ -711,14 +711,24 @@ class ScholarExtensionApp {
         })
       });
 
+      const contentType = response.headers.get('content-type') || '';
+      if (!response.ok || !contentType.includes('application/json')) {
+        const text = await response.text();
+        if (response.status === 404 || text.includes('Cannot POST /api/scholar/analyze-tab')) {
+          throw new Error(`Máy chủ Backend (${this.backendUrl}) chưa nhận diện endpoint /api/scholar/analyze-tab (Mã lỗi 404). Vui lòng khởi động lại (Restart) terminal backend: Nhấn Ctrl+C rồi chạy lại 'npm start'.`);
+        }
+        throw new Error(`Máy chủ trả về lỗi HTTP ${response.status}: ${text.slice(0, 120)}`);
+      }
+
       const resData = await response.json();
       if (!resData.success) {
         throw new Error(resData.error || 'Lỗi khi phân tích dữ liệu tab');
       }
 
-      const analysisResult: TabAnalysisResult = resData.data;
+      const analysisResult: TabAnalysisResult = resData.data || resData.analysis;
       this.pendingAnalysisResult = analysisResult;
       this.pendingRecordId = record.id;
+
 
       this.showPreviewModal(analysisResult, record);
       this.setStatus('✓ Đã phân tích xong! Hãy xem trước và xác nhận cập nhật.', 'success');
