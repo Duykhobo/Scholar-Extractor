@@ -5,7 +5,8 @@
   "description": "Thu thập metadata Google Scholar qua SerpApi Backend phục vụ SLR môn SWT302",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "scripting"
   ],
   "host_permissions": [
     "http://localhost:3001/*"

@@ -80,6 +80,7 @@
         <option value="Exclude">Chỉ Exclude</option>
         <option value="Unsure">Chỉ Unsure</option>
       </select>
+      <button id="extractActiveTabBtn" class="btn-secondary" style="display: none; background: #e0e7ff; color: #3730a3; border-color: #c7d2fe; white-space: nowrap; font-size: 11px;">📑 Lấy từ Tab Đang Mở</button>
     </div>
 
     <div id="resultsContainer">
@@ -91,6 +92,23 @@
       <button id="exportScreeningBtn" class="btn-primary" style="display: none;">📊 Tải 02_screening_decisions.csv (Đầy đủ Quyết định & Ghi chú)</button>
       <button id="saveLogBtn" class="btn-secondary" style="display: none;">💾 Ghi vào search-log.md (Nguồn bổ trợ)</button>
       <button id="exportSessionBtn" class="btn-secondary" style="display: none;">📦 Tải Backup Toàn Phiên (Session JSON)</button>
+    </div>
+  </div>
+
+  <!-- Modal: Xem truoc va Xac nhan trich xuat du lieu tu Tab dang mo -->
+  <div id="tabExtractModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📑 Xem trước & Xác nhận Trích xuất từ Tab Đang Mở</h3>
+        <button id="closeModalBtn" class="btn-close">&times;</button>
+      </div>
+      <div id="modalBody" class="modal-body">
+        <!-- Content will be dynamically populated -->
+      </div>
+      <div class="modal-footer">
+        <button id="confirmTabExtractBtn" class="btn-success">✓ Xác nhận Cập nhật (Ghi nhận Provenance)</button>
+        <button id="cancelTabExtractBtn" class="btn-secondary">✕ Hủy bỏ (Giữ nguyên dữ liệu cũ)</button>
+      </div>
     </div>
   </div>
 

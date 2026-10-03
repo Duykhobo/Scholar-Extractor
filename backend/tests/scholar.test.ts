@@ -20,6 +20,15 @@ import {
 import { appendSearchLog } from "../src/searchLogger";
 import { getSafeOutputPath } from "../src/server";
 import { PaperRecord } from "../src/types";
+import { extractMetadataFromHtml } from "../src/tabExtractor";
+import {
+  computeTitleSimilarity,
+  detectSection,
+  extractEvidenceFromPages,
+  analyzeTabAgainstRecord,
+  calculateFieldChanges
+} from "../src/evidenceAnalyzer";
+import { parsePdfBuffer } from "../src/pdfService";
 
 describe("1. Parameter Validation & Security Gate", () => {
   test("validateSearchParams accepts valid parameters with defaults", () => {
@@ -815,4 +824,295 @@ describe("8. Regression Tests: 4 Ca Biên Đã Sửa (screening.ts)", () => {
     });
   });
 });
+
+describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (7 Tình huống)", () => {
+  // Scenario 1: Đủ metadata vs thiếu trường (được gán rỗng/unknown, không copy bừa snippet)
+  test("Scenario 1: Trang có đủ metadata vs trang thiếu trường (không lấy snippet làm abstract)", () => {
+    const fullHtml = `
+      <html>
+        <head>
+          <meta name="citation_title" content="Automated REST API Testing with Boundary Value Analysis">
+          <meta name="citation_author" content="Nguyen Van A">
+          <meta name="citation_author" content="Tran Van B">
+          <meta name="citation_publication_date" content="2024/05/20">
+          <meta name="citation_journal_title" content="IEEE Transactions on Software Engineering">
+          <meta name="citation_doi" content="10.1109/TSE.2024.1234567">
+          <meta name="citation_abstract" content="This paper presents an automated boundary value analysis approach for REST APIs.">
+          <meta name="citation_pdf_url" content="https://example.com/paper.pdf">
+        </head>
+        <body>Some text snippet</body>
+      </html>
+    `;
+    const fullData = extractMetadataFromHtml(fullHtml, "https://example.com/paper");
+    assert.equal(fullData.title, "Automated REST API Testing with Boundary Value Analysis");
+    assert.equal(fullData.authors, "Nguyen Van A; Tran Van B");
+    assert.equal(fullData.year, "2024");
+    assert.equal(fullData.venue, "IEEE Transactions on Software Engineering");
+    assert.equal(fullData.doi, "10.1109/tse.2024.1234567");
+    assert.equal(fullData.abstract, "This paper presents an automated boundary value analysis approach for REST APIs.");
+    assert.equal(fullData.pdfUrl, "https://example.com/paper.pdf");
+
+    // Trang thiếu trường:
+    const partialHtml = `
+      <html>
+        <head>
+          <meta name="citation_title" content="A Study on Web Services">
+        </head>
+        <body>This is an arbitrary page snippet that should not be used as abstract.</body>
+      </html>
+    `;
+    const partialData = extractMetadataFromHtml(partialHtml, "https://example.com/partial");
+    assert.equal(partialData.title, "A Study on Web Services");
+    assert.equal(partialData.authors, "");
+    assert.equal(partialData.year, "");
+    assert.equal(partialData.venue, "");
+    assert.equal(partialData.doi, "");
+    // Tuyệt đối không copy body snippet vào abstract
+    assert.equal(partialData.abstract, "");
+  });
+
+  // Scenario 2: Tiêu đề tab lệch tiêu đề bài báo đã chọn (cảnh báo không khớp)
+  test("Scenario 2: Tiêu đề tab lệch tiêu đề bài báo đã chọn -> Cảnh báo không khớp (confidence < 0.55)", () => {
+    const record: PaperRecord = {
+      id: "paper_1",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "Automated REST API Testing via Boundary Value Analysis",
+      authors: "A. Author",
+      year: "2024",
+      venue: "ICSE",
+      doi: "10.1145/123456",
+      snippet: "snippet",
+      abstract: "",
+      url: "https://example.com/rec",
+      query: "REST API testing",
+      retrieval_date: "2026-10-01",
+      search_id: "s1",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: true,
+      screeningStage: "V1",
+      matchedCriteria: ["IC-P"],
+      suggestedDecision: "Unsure",
+      screeningReason: "reason",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    // Tab đang mở là bài báo hoàn toàn khác
+    const tabDataDiff = {
+      sourceUrl: "https://example.com/other",
+      method: "HighWire citation_* Meta",
+      title: "Deep Learning Approaches for Medical Image Segmentation"
+    };
+
+    const simDiff = computeTitleSimilarity(tabDataDiff.title, record.title);
+    assert.ok(simDiff < 0.55, `Độ tương đồng phải < 0.55 (thực tế: ${simDiff})`);
+
+    const resultDiff = analyzeTabAgainstRecord(record, tabDataDiff);
+    assert.equal(resultDiff.isTitleMatch, false);
+    assert.ok(resultDiff.titleMismatchWarning?.includes("CẢNH BÁO"));
+
+    // Tab đang mở khớp tiêu đề (cho phép sai khác nhỏ về case và dấu chấm câu)
+    const tabDataMatch = {
+      sourceUrl: "https://example.com/same",
+      method: "HighWire citation_* Meta",
+      title: "Automated REST API testing via boundary-value analysis."
+    };
+    const simMatch = computeTitleSimilarity(tabDataMatch.title, record.title);
+    assert.ok(simMatch >= 0.8, `Độ tương đồng phải >= 0.8 (thực tế: ${simMatch})`);
+    const resultMatch = analyzeTabAgainstRecord(record, tabDataMatch);
+    assert.equal(resultMatch.isTitleMatch, true);
+    assert.equal(resultMatch.titleMismatchWarning, undefined);
+  });
+
+  // Scenario 3: PDF có text vs PDF scan chỉ có ảnh
+  test("Scenario 3: PDF có text vs PDF scan chỉ có ảnh (phát hiện isImagePdf, KHÔNG suy diễn EC-N)", async () => {
+    // Sử dụng parsePdfBuffer trên buffer không hợp lệ trả về success: false
+    const resFail = await parsePdfBuffer(Buffer.from("invalid pdf binary"));
+    assert.equal(resFail.success, false);
+
+    // Kiểm tra logic cảnh báo PDF scan / hình ảnh
+    const tabDataImagePdf = {
+      sourceUrl: "https://example.com/scanned.pdf",
+      method: "PDF Text Extraction (PDF.js)",
+      title: "Scanned Paper",
+      isImagePdf: true,
+      pageCount: 8,
+      pages: [{ pageNum: 1, text: "Scan image only" }]
+    };
+
+    const record: PaperRecord = {
+      id: "paper_img",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "Scanned Paper",
+      authors: "A. Scan",
+      year: "2023",
+      venue: "Journal",
+      doi: "",
+      snippet: "",
+      abstract: "",
+      url: "",
+      query: "",
+      retrieval_date: "",
+      search_id: "",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: true,
+      screeningStage: "V1",
+      matchedCriteria: [],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    const analysis = analyzeTabAgainstRecord(record, tabDataImagePdf);
+    assert.ok(analysis.warnings.some(w => w.includes("bản scan") || w.includes("EC-N")), "Cảnh báo không suy diễn EC-N khi PDF scan");
+    // Quyết định gợi ý không được là Exclude theo EC-N
+    if (analysis.suggestedScreeningUpdate) {
+      assert.notEqual(analysis.suggestedScreeningUpdate.suggestedDecision, "Exclude");
+      assert.ok(!analysis.suggestedScreeningUpdate.matchedCriteria.includes("EC-N"));
+    }
+  });
+
+  // Scenario 4: Từ khóa "boundary" chỉ xuất hiện ở mục Related Work / References
+  test("Scenario 4: Từ khóa boundary chỉ xuất hiện ở Related Work / References -> isValidEvidence: false, không đạt IC-I", () => {
+    const textRelatedWorkOnly = `
+      Section 1. Introduction
+      We explore REST API web services and their reliability.
+
+      Section 2. Related Work
+      Previous work by Smith et al. applied boundary-value analysis and equivalence partitioning to desktop applications.
+      Another boundary testing tool was proposed in 2018 for SOAP services.
+
+      Section 3. References
+      [1] Smith et al. Boundary testing techniques.
+    `;
+
+    const sectionDetected = detectSection(textRelatedWorkOnly, textRelatedWorkOnly.indexOf("boundary-value analysis"));
+    assert.equal(sectionDetected, "Related Work");
+
+    const { evidence, warnings } = extractEvidenceFromPages([
+      { pageNum: 2, text: textRelatedWorkOnly }
+    ]);
+
+    const iciEvidences = evidence.filter(e => e.type === "IC-I");
+    assert.ok(iciEvidences.length > 0, "Tìm thấy đoạn chứa từ khóa");
+    assert.ok(iciEvidences.every(e => e.isValidEvidence === false), "Tất cả bằng chứng trong Related Work phải isValidEvidence: false");
+    assert.ok(warnings.some(w => w.includes("Related Work")), "Có cảnh báo từ khóa chỉ nằm trong Related Work");
+  });
+
+  // Scenario 5: Phương pháp áp dụng thực sự EP/BVA cho tham số REST API
+  test("Scenario 5: Phương pháp áp dụng thực sự EP/BVA cho tham số REST API -> isValidEvidence: true, đạt IC-I", () => {
+    const textMethodology = `
+      Section 3. Proposed Methodology
+      In our approach, we automatically parse the OpenAPI schema of the target REST API.
+      For each HTTP request parameter, we apply equivalence partitioning to divide the input domain into valid and invalid sub-domains.
+      Furthermore, we conduct boundary-value analysis on numerical query parameters to generate boundary edge cases.
+
+      Section 4. Experimental Evaluation
+      Table 1 reports 85% branch coverage and 14 bugs found across 6 REST API benchmarks.
+    `;
+
+    const epPos = textMethodology.indexOf("equivalence partitioning");
+    const bvaPos = textMethodology.indexOf("boundary-value analysis");
+
+    assert.equal(detectSection(textMethodology, epPos), "Methodology");
+    assert.equal(detectSection(textMethodology, bvaPos), "Methodology");
+
+    const { evidence } = extractEvidenceFromPages([
+      { pageNum: 5, text: textMethodology }
+    ]);
+
+    const validIci = evidence.filter(e => e.type === "IC-I" && e.isValidEvidence === true);
+    assert.ok(validIci.length >= 2, "Cả EP và BVA trong Methodology đều được công nhận là bằng chứng hợp lệ");
+
+    const validIce = evidence.filter(e => e.type === "IC-E" && e.isValidEvidence === true);
+    assert.ok(validIce.length >= 1, "Table 1 với số liệu định lượng được công nhận là bằng chứng IC-E");
+  });
+
+  // Scenario 6: Abstract nhắc mutation score nhưng không có Table/Figure kết quả số liệu
+  test("Scenario 6: Abstract nhắc mutation score/coverage nhưng không có Table/Figure kết quả định lượng -> Cảnh báo IC-E chưa đạt", () => {
+    const textWithoutTable = `
+      Section 1. Introduction
+      We evaluate mutation score and branch coverage on REST APIs.
+
+      Section 3. Methodology
+      We apply boundary testing on REST API parameters.
+
+      Section 4. Evaluation Discussion
+      We observed that mutation score is higher than random testing, and coverage is improved.
+    `;
+
+    const { evidence, warnings } = extractEvidenceFromPages([
+      { pageNum: 3, text: textWithoutTable }
+    ]);
+
+    const hasIce = evidence.some(e => e.type === "IC-E" && e.isValidEvidence === true);
+    assert.equal(hasIce, false, "Không có Table hoặc Figure với số liệu định lượng");
+    assert.ok(warnings.some(w => w.includes("chưa tìm thấy Table hoặc Figure")), "Cảnh báo chỉ nhắc metric mà thiếu kết quả định lượng");
+  });
+
+  // Scenario 7: Người dùng bấm hủy -> Dữ liệu cũ được giữ nguyên, không mất query/retrieval_date/finalDecision
+  test("Scenario 7: Người dùng hủy trích xuất -> Giữ nguyên toàn bộ dữ liệu ban đầu (query, retrieval_date, finalDecision)", () => {
+    const originalRecord: PaperRecord = {
+      id: "paper_preserve",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "Original Title From Scholar",
+      authors: "Scholar Author",
+      year: "2022",
+      venue: "Original Venue",
+      doi: "10.1234/orig",
+      snippet: "Original snippet",
+      abstract: "Original abstract",
+      url: "https://scholar.google.com/orig",
+      query: '("REST API testing") AND ("boundary testing")',
+      retrieval_date: "2026-09-30",
+      search_id: "scholar_test_123",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: false,
+      screeningStage: "V1",
+      matchedCriteria: ["IC-P", "IC-I"],
+      suggestedDecision: "Include",
+      screeningReason: "Screening v1 reason",
+      finalDecision: "Include",
+      userNotes: "Verified by reviewer on 2026-10-01"
+    };
+
+    // Deep clone trước khi phân tích
+    const clonedRecord = JSON.parse(JSON.stringify(originalRecord));
+
+    const diff = calculateFieldChanges(clonedRecord, {
+      sourceUrl: "https://example.com/new",
+      method: "HighWire",
+      title: "Overwritten New Title",
+      doi: "10.9999/new",
+      abstract: "New extracted abstract"
+    });
+
+    assert.ok(diff.length > 0, "Tính toán được các trường có thay đổi");
+
+    // Giả lập hành vi khi người dùng chọn Hủy (Cancel):
+    // Record không được gán bất kỳ trường nào mới
+    assert.deepEqual(clonedRecord, originalRecord);
+    assert.equal(clonedRecord.query, '("REST API testing") AND ("boundary testing")');
+    assert.equal(clonedRecord.retrieval_date, "2026-09-30");
+    assert.equal(clonedRecord.finalDecision, "Include");
+    assert.equal(clonedRecord.userNotes, "Verified by reviewer on 2026-10-01");
+  });
+});
+
 

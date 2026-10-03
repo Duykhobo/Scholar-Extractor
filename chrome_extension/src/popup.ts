@@ -1,4 +1,4 @@
-import { PaperRecord, DedupStats, SearchExecutionSummary, ScreeningDecision } from './types';
+import { PaperRecord, DedupStats, SearchExecutionSummary, ScreeningDecision, TabAnalysisResult } from './types';
 
 const DEFAULT_BACKEND_URL = 'http://localhost:3001';
 const STORAGE_KEY = 'scholar_slr_session_v2';
@@ -57,6 +57,17 @@ class ScholarExtensionApp {
   private filterInput!: HTMLInputElement;
   private filterDecisionSelect!: HTMLSelectElement;
 
+  private extractActiveTabBtn!: HTMLButtonElement;
+  private tabExtractModal!: HTMLElement;
+  private modalBody!: HTMLElement;
+  private confirmTabExtractBtn!: HTMLButtonElement;
+  private cancelTabExtractBtn!: HTMLButtonElement;
+  private closeModalBtn!: HTMLButtonElement;
+
+  private selectedRecordId: string | null = null;
+  private pendingAnalysisResult: TabAnalysisResult | null = null;
+  private pendingRecordId: string | null = null;
+
   async init() {
     this.bindDOMElements();
     this.attachEventListeners();
@@ -93,6 +104,13 @@ class ScholarExtensionApp {
     this.resultsContainer = document.getElementById('resultsContainer') as HTMLElement;
     this.filterInput = document.getElementById('filterInput') as HTMLInputElement;
     this.filterDecisionSelect = document.getElementById('filterDecisionSelect') as HTMLSelectElement;
+
+    this.extractActiveTabBtn = document.getElementById('extractActiveTabBtn') as HTMLButtonElement;
+    this.tabExtractModal = document.getElementById('tabExtractModal') as HTMLElement;
+    this.modalBody = document.getElementById('modalBody') as HTMLElement;
+    this.confirmTabExtractBtn = document.getElementById('confirmTabExtractBtn') as HTMLButtonElement;
+    this.cancelTabExtractBtn = document.getElementById('cancelTabExtractBtn') as HTMLButtonElement;
+    this.closeModalBtn = document.getElementById('closeModalBtn') as HTMLButtonElement;
   }
 
   private attachEventListeners() {
@@ -106,6 +124,19 @@ class ScholarExtensionApp {
     this.exportScreeningBtn.addEventListener('click', () => this.handleExportScreeningCsv());
     this.exportSessionBtn.addEventListener('click', () => this.handleExportSessionJson());
     this.saveLogBtn.addEventListener('click', () => this.handleSaveLog());
+
+    if (this.extractActiveTabBtn) {
+      this.extractActiveTabBtn.addEventListener('click', () => this.handleExtractFromActiveTab());
+    }
+    if (this.confirmTabExtractBtn) {
+      this.confirmTabExtractBtn.addEventListener('click', () => this.handleConfirmTabExtract());
+    }
+    if (this.cancelTabExtractBtn) {
+      this.cancelTabExtractBtn.addEventListener('click', () => this.handleCancelTabExtract());
+    }
+    if (this.closeModalBtn) {
+      this.closeModalBtn.addEventListener('click', () => this.handleCancelTabExtract());
+    }
 
     // Gan chuoi mau tu protocol nhom (review-protocol.md)
     const loadStringABtn = document.getElementById('loadStringABtn');
@@ -448,6 +479,10 @@ class ScholarExtensionApp {
   }
 
   private renderRecordsList() {
+    if (this.extractActiveTabBtn) {
+      this.extractActiveTabBtn.style.display = this.uniqueRecords.length > 0 ? 'inline-block' : 'none';
+    }
+
     const keyword = this.filterInput.value.toLowerCase().trim();
     const decisionFilter = this.filterDecisionSelect.value;
 
@@ -475,6 +510,7 @@ class ScholarExtensionApp {
       const isInclude = (r.finalDecision || r.suggestedDecision) === 'Include';
       const isExclude = (r.finalDecision || r.suggestedDecision) === 'Exclude';
       const isUnsure = (r.finalDecision || r.suggestedDecision) === 'Unsure';
+      const isSelected = r.id === this.selectedRecordId;
 
       const dupWarning = r.potentialDuplicate
         ? `<div class="dup-badge">⚠️ ĐỀ XUẤT TRÙNG LẶP: ${this.escapeHtml(r.duplicateReason || '')}</div>`
@@ -486,12 +522,32 @@ class ScholarExtensionApp {
         ? `<div style="font-size: 11px; color: #b45309; margin-top: 3px;">⚠️ <b>Thiếu bằng chứng:</b> ${this.escapeHtml(r.missingEvidence.join(', '))}</div>`
         : '';
 
+      const verifiedBadge = r.user_verified
+        ? `<span class="badge badge-green" title="Đã trích xuất & xác minh từ tab">✓ Đã xác minh (${this.escapeHtml(r.extraction_method || 'Tab')})</span>`
+        : '';
+      const sourceUrlBadge = r.extracted_url
+        ? `<div style="font-size: 10px; color: #475569; margin-top: 2px;">🌐 <b>Nguồn Tab:</b> <a href="${r.extracted_url}" target="_blank">${this.escapeHtml(r.extracted_url.slice(0, 48))}...</a></div>`
+        : '';
+      const pdfBadge = r.pdfUrl
+        ? `<span style="font-size: 10px; color: #047857; margin-left: 6px;">📄 <b>PDF:</b> <a href="${r.pdfUrl}" target="_blank">Mở PDF (${r.page_count ? r.page_count + ' trang' : 'sẵn sàng'})</a></span>`
+        : '';
+      const abstractBox = r.abstract
+        ? `<div class="paper-snippet" style="border-left-color: #2563eb; background: #eff6ff; margin-top: 4px;"><b>Abstract [Đã trích xuất]:</b><br><i>"${this.escapeHtml(r.abstract.slice(0, 260))}${r.abstract.length > 260 ? '...' : ''}"</i></div>`
+        : '';
+      const evidenceSummary = (r.evidence_snippets && r.evidence_snippets.length > 0)
+        ? `<div style="font-size: 10px; color: #1e40af; margin-top: 3px;">🔍 <b>Bằng chứng trích xuất (${r.evidence_snippets.length}):</b> ${(r.evidence_snippets || []).map(e => `<span class="badge ${e.isValidEvidence ? 'badge-blue' : 'badge-yellow'}">${e.type} (${e.section}${e.page ? ', tr.' + e.page : ''})</span>`).join(' ')}</div>`
+        : '';
+
       return `
-        <div class="paper-card ${r.potentialDuplicate ? 'paper-dup' : ''}" id="paper_${r.id}">
+        <div class="paper-card ${r.potentialDuplicate ? 'paper-dup' : ''} ${isSelected ? 'is-selected' : ''}" id="paper_${r.id}" data-id="${r.id}">
           ${dupWarning}
-          <div class="paper-header">
-            <span class="paper-index">#${idx + 1}</span>
-            <a href="${r.url || '#'}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
+          <div class="paper-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+            <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
+              <span class="paper-index">#${idx + 1}</span>
+              <a href="${r.url || '#'}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
+              ${verifiedBadge}
+            </div>
+            <button class="btn-extract-card" data-id="${r.id}" title="Lấy dữ liệu & PDF từ tab trình duyệt đang mở vào bài báo này">📑 Lấy từ Tab</button>
           </div>
 
           <div class="paper-meta">
@@ -499,12 +555,18 @@ class ScholarExtensionApp {
             <span>📅 <b>Năm:</b> ${r.year || 'N/A'} ${r.uncertain_year ? '<span class="tag-warn">Chưa chắc chắn</span>' : ''}</span>
             <span>🏛️ <b>Venue:</b> ${this.escapeHtml(r.venue || 'N/A')} ${r.uncertain_venue ? '<span class="tag-warn">Cần xác minh</span>' : ''}</span>
             <span>🔗 <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Trống (Cần xác minh)</span>'}</span>
+            ${pdfBadge}
           </div>
+
+          ${sourceUrlBadge}
+          ${abstractBox}
 
           <div class="paper-snippet">
             <b>Đoạn trích (Snippet) [Không phải Abstract]:</b><br>
             <i>"${this.escapeHtml(r.snippet || 'Không có đoạn trích.')}"</i>
           </div>
+
+          ${evidenceSummary}
 
           <div class="screening-panel">
             <div class="screening-header">
@@ -529,6 +591,33 @@ class ScholarExtensionApp {
       `;
     }).join('');
 
+    // Chon bai bao khi click vao the (tru khi click button, input, link)
+    this.resultsContainer.querySelectorAll('.paper-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('button') || target.closest('input') || target.closest('select') || target.closest('a')) {
+          return;
+        }
+        const id = card.getAttribute('data-id');
+        if (id && id !== this.selectedRecordId) {
+          this.selectedRecordId = id;
+          this.renderRecordsList();
+        }
+      });
+    });
+
+    // Gan su kien cho nut doc tab tren tung the
+    this.resultsContainer.querySelectorAll('.btn-extract-card').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = e.currentTarget as HTMLButtonElement;
+        const paperId = target.getAttribute('data-id');
+        if (paperId) {
+          this.handleExtractFromActiveTab(paperId);
+        }
+      });
+    });
+
     // Gan su kien cho cac nut decision va note
     this.resultsContainer.querySelectorAll('.btn-dec').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -548,6 +637,297 @@ class ScholarExtensionApp {
       });
     });
   }
+
+  // Trich xuat du lieu tu Tab dang mo
+  private async handleExtractFromActiveTab(paperId?: string) {
+    const targetId = paperId || this.selectedRecordId;
+    if (!targetId) {
+      this.setStatus('Vui lòng chọn 1 bài báo từ danh sách kết quả trước khi lấy dữ liệu từ tab.', 'warning');
+      return;
+    }
+
+    const record = this.uniqueRecords.find(r => r.id === targetId);
+    if (!record) {
+      this.setStatus('Không tìm thấy bản ghi được chọn.', 'error');
+      return;
+    }
+
+    this.selectedRecordId = targetId;
+    this.renderRecordsList();
+
+    this.setStatus('Đang kết nối tới Tab đang mở trên trình duyệt...', 'info');
+
+    try {
+      const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (!tabs || tabs.length === 0 || !tabs[0].id) {
+        this.setStatus('Không tìm thấy tab trình duyệt đang kích hoạt.', 'error');
+        return;
+      }
+      const activeTab = tabs[0];
+      const activeUrl = activeTab.url || '';
+
+      let tabData: any = null;
+
+      // Kiem tra neu tab la file PDF truc tiep
+      if (activeUrl.toLowerCase().endsWith('.pdf') || activeUrl.toLowerCase().includes('.pdf?')) {
+        tabData = {
+          sourceUrl: activeUrl,
+          method: 'Active Tab PDF URL',
+          title: activeTab.title || '',
+          pdfUrl: activeUrl
+        };
+      } else {
+        // Thu executeScript tren trang web (HTML)
+        try {
+          const results = await chrome.scripting.executeScript({
+            target: { tabId: activeTab.id },
+            files: ['content-script.js']
+          });
+          if (results && results[0] && results[0].result) {
+            tabData = results[0].result;
+          }
+        } catch (scriptErr: any) {
+          console.warn('executeScript failed, fallback to direct tab info:', scriptErr);
+        }
+
+        if (!tabData) {
+          tabData = {
+            sourceUrl: activeUrl,
+            method: 'Browser Tab Fallback',
+            title: activeTab.title || ''
+          };
+        }
+      }
+
+      this.setStatus('Đang gửi dữ liệu trang tới backend để phân tích theo tiêu chí SLR...', 'info');
+
+      const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          record,
+          tabData,
+          autoFetchPdf: true
+        })
+      });
+
+      const resData = await response.json();
+      if (!resData.success) {
+        throw new Error(resData.error || 'Lỗi khi phân tích dữ liệu tab');
+      }
+
+      const analysisResult: TabAnalysisResult = resData.data;
+      this.pendingAnalysisResult = analysisResult;
+      this.pendingRecordId = record.id;
+
+      this.showPreviewModal(analysisResult, record);
+      this.setStatus('✓ Đã phân tích xong! Hãy xem trước và xác nhận cập nhật.', 'success');
+    } catch (err: any) {
+      this.setStatus(`Lỗi lấy dữ liệu từ tab: ${err.message}`, 'error');
+    }
+  }
+
+  private showPreviewModal(result: TabAnalysisResult, record: PaperRecord) {
+    if (!this.tabExtractModal || !this.modalBody) return;
+
+    let warningHtml = '';
+    if (!result.isTitleMatch) {
+      warningHtml += `
+        <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; border-left-color: #dc2626;">
+          ⚠️ <b>CẢNH BÁO TIÊU ĐỀ KHÔNG KHỚP:</b><br>
+          ${this.escapeHtml(result.titleMismatchWarning || `Độ tương đồng tiêu đề chỉ đạt ${(result.titleMatchConfidence * 100).toFixed(0)}%. Hãy kiểm tra kỹ xem tab đang mở có đúng là bài báo này không!`)}
+        </div>
+      `;
+    }
+
+    if (result.warnings && result.warnings.length > 0) {
+      warningHtml += result.warnings.map(w => `
+        <div class="warning-banner">⚠️ ${this.escapeHtml(w)}</div>
+      `).join('');
+    }
+
+    // Bang Diff old vs new
+    const diffRows = result.changes.map(ch => {
+      const cls = ch.willChange ? 'diff-changed' : 'diff-unchanged';
+      const statusIcon = ch.willChange ? '🔄 Sẽ cập nhật' : '➖ Giữ nguyên';
+      return `
+        <tr>
+          <td><b>${this.escapeHtml(ch.field)}</b></td>
+          <td>${this.escapeHtml(ch.oldValue || '(trống)')}</td>
+          <td class="${cls}">${this.escapeHtml(ch.newValue || '(trống)')}</td>
+          <td style="text-align: center;">${statusIcon}</td>
+        </tr>
+      `;
+    }).join('');
+
+    // Evidence snippets
+    let evidenceHtml = '';
+    if (result.evidence && result.evidence.length > 0) {
+      const items = result.evidence.map(ev => {
+        const itemClass = ev.isValidEvidence ? 'evidence-item' : 'evidence-item invalid';
+        const statusBadge = ev.isValidEvidence
+          ? '<span class="badge badge-blue">✓ Bằng chứng hợp lệ</span>'
+          : '<span class="badge badge-red">✗ Bị loại (Không tính đạt IC)</span>';
+        const sectionBadge = `<span class="badge badge-yellow">Mục: ${this.escapeHtml(ev.section)}</span>`;
+        const pageBadge = ev.page ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : '';
+        return `
+          <div class="${itemClass}">
+            <div style="display: flex; gap: 6px; margin-bottom: 3px; align-items: center; flex-wrap: wrap;">
+              <b>[${ev.type}]</b>
+              ${statusBadge}
+              ${sectionBadge}
+              ${pageBadge}
+              <code style="font-size: 10px;">${this.escapeHtml(ev.term)}</code>
+            </div>
+            <div style="font-size: 11px; color: #1e293b; background: #f8fafc; padding: 4px; border-radius: 3px;">
+              "${this.escapeHtml(ev.context)}"
+            </div>
+            ${ev.reason ? `<div style="font-size: 10px; color: #b45309; margin-top: 2px;">ℹ️ ${this.escapeHtml(ev.reason)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+      evidenceHtml = `
+        <div class="evidence-box">
+          <b>🔍 Bằng chứng trích xuất được (${result.evidence.length}):</b>
+          <div style="margin-top: 6px;">${items}</div>
+        </div>
+      `;
+    } else {
+      evidenceHtml = `
+        <div class="evidence-box" style="color: #64748b;">
+          <i>Không tìm thấy bằng chứng IC-I/IC-E trực tiếp từ trang/PDF này.</i>
+        </div>
+      `;
+    }
+
+    // Screening update suggestion
+    let screeningSuggestionHtml = '';
+    if (result.suggestedScreeningUpdate) {
+      const s = result.suggestedScreeningUpdate;
+      const decBadge = this.getDecisionBadge(s.suggestedDecision);
+      screeningSuggestionHtml = `
+        <div class="notice-callout" style="margin-top: 8px;">
+          <b>Gợi ý thẩm định (${s.stage}):</b> ${decBadge} — ${this.escapeHtml(s.screeningReason)}<br>
+          <small style="color: #6b7280;">(Lưu ý: Quyết định cuối cùng <code>finalDecision</code> do bạn quyết định, hệ thống không tự ý thay đổi)</small>
+        </div>
+      `;
+    }
+
+    this.modalBody.innerHTML = `
+      ${warningHtml}
+      <div style="margin-bottom: 8px; font-size: 11px; color: #475569;">
+        <span>🌐 <b>Nguồn:</b> <a href="${this.escapeHtml(result.extracted.sourceUrl)}" target="_blank">${this.escapeHtml(result.extracted.sourceUrl)}</a></span><br>
+        <span>⚙️ <b>Phương thức trích xuất:</b> ${this.escapeHtml(result.extracted.method)}</span>
+        ${result.extracted.pageCount ? ` | <span>📄 <b>Tổng số trang:</b> ${result.extracted.pageCount}</span>` : ''}
+      </div>
+
+      <div style="margin-top: 6px;">
+        <b>So sánh các trường dữ liệu (Diff):</b>
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th style="width: 15%;">Trường</th>
+              <th style="width: 35%;">Giá trị hiện tại</th>
+              <th style="width: 35%;">Giá trị mới trích xuất</th>
+              <th style="width: 15%;">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${diffRows}
+          </tbody>
+        </table>
+      </div>
+
+      ${evidenceHtml}
+      ${screeningSuggestionHtml}
+    `;
+
+    this.tabExtractModal.style.display = 'flex';
+  }
+
+  private async handleConfirmTabExtract() {
+    if (!this.pendingAnalysisResult || !this.pendingRecordId) {
+      this.closeModal();
+      return;
+    }
+
+    const record = this.uniqueRecords.find(r => r.id === this.pendingRecordId);
+    const allRecord = this.allRecords.find(r => r.id === this.pendingRecordId);
+    if (!record) {
+      this.closeModal();
+      return;
+    }
+
+    const { extracted, suggestedScreeningUpdate, evidence } = this.pendingAnalysisResult;
+
+    // Cap nhat cac truong metadata neu co gia tri moi
+    if (extracted.title) record.title = extracted.title;
+    if (extracted.authors) {
+      record.authors = extracted.authors;
+      record.uncertain_authors = false;
+    }
+    if (extracted.year) {
+      record.year = extracted.year;
+      record.uncertain_year = false;
+    }
+    if (extracted.venue) {
+      record.venue = extracted.venue;
+      record.uncertain_venue = false;
+    }
+    if (extracted.doi) {
+      record.doi = extracted.doi;
+      record.uncertain_doi = false;
+    }
+    if (extracted.abstract) {
+      record.abstract = extracted.abstract;
+      record.missing_abstract = false;
+    }
+    if (extracted.pdfUrl) record.pdfUrl = extracted.pdfUrl;
+    if (extracted.pageCount) record.page_count = extracted.pageCount;
+
+    // Ghi nhan PROVENANCE
+    record.extracted_url = extracted.sourceUrl;
+    record.extracted_at = new Date().toISOString();
+    record.extraction_method = extracted.method;
+    record.evidence_snippets = evidence;
+    record.user_verified = true;
+    // QUAN TRONG: query va retrieval_date goc duoc giu nguyen tuyet doi!
+
+    // Cap nhat goi y screening tu dong (nhung GIU NGUYEN finalDecision)
+    if (suggestedScreeningUpdate) {
+      record.screeningStage = suggestedScreeningUpdate.stage;
+      record.suggestedDecision = suggestedScreeningUpdate.suggestedDecision;
+      record.matchedCriteria = suggestedScreeningUpdate.matchedCriteria;
+      record.unknownCriteria = suggestedScreeningUpdate.unknownCriteria;
+      record.missingEvidence = suggestedScreeningUpdate.missingEvidence;
+      record.screeningReason = suggestedScreeningUpdate.screeningReason;
+      // finalDecision KHONG bi thay doi boi he thong
+    }
+
+    // Dong bo ca vao allRecords
+    if (allRecord) {
+      Object.assign(allRecord, record);
+    }
+
+    await this.saveSessionToStorage();
+    this.closeModal();
+    this.renderRecordsList();
+    this.setStatus(`✓ Đã cập nhật thành công dữ liệu và provenance cho bài báo #${record.id}`, 'success');
+  }
+
+  private handleCancelTabExtract() {
+    this.closeModal();
+    this.setStatus('Đã hủy bỏ cập nhật. Toàn bộ dữ liệu cũ được giữ nguyên.', 'info');
+  }
+
+  private closeModal() {
+    if (this.tabExtractModal) {
+      this.tabExtractModal.style.display = 'none';
+    }
+    this.pendingAnalysisResult = null;
+    this.pendingRecordId = null;
+  }
+
 
   private async updatePaperDecision(paperId: string, decision: ScreeningDecision) {
     const record = this.allRecords.find(r => r.id === paperId);

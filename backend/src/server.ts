@@ -8,6 +8,9 @@ import { deduplicateRecords } from './dedup';
 import { appendSearchLog } from './searchLogger';
 import { exportToCsv, exportScreeningCsv } from './exporter';
 import { sanitizeObject, sanitizeString } from './sanitizer';
+import { analyzeTabAgainstRecord } from './evidenceAnalyzer';
+import { parsePdfBuffer, parsePdfFromUrl } from './pdfService';
+import { PaperRecord, TabExtractedData } from './types';
 
 const app = express();
 
@@ -228,6 +231,73 @@ app.post('/api/scholar/export-session', (req: Request, res: Response) => {
       message: 'Đã lưu backup toàn bộ phiên làm việc thành công.',
       filePath: safePath
     });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/analyze-tab
+ * Phân tích đối chiếu metadata và full-text từ trang web/PDF với record đang chọn
+ */
+app.post('/api/scholar/analyze-tab', async (req: Request, res: Response) => {
+  try {
+    const { record, tabData, autoFetchPdf } = req.body as {
+      record: PaperRecord;
+      tabData: TabExtractedData;
+      autoFetchPdf?: boolean;
+    };
+
+    if (!record || !tabData) {
+      return res.status(400).json({ error: 'Cần cung cấp cả `record` và `tabData`.' });
+    }
+
+    // Nếu tabData có pdfUrl và chưa có pages, thử tải và parse PDF nếu autoFetchPdf = true
+    if (autoFetchPdf && tabData.pdfUrl && (!tabData.pages || tabData.pages.length === 0)) {
+      try {
+        const pdfRes = await parsePdfFromUrl(tabData.pdfUrl);
+        if (pdfRes.success) {
+          tabData.pages = pdfRes.pages;
+          tabData.pageCount = pdfRes.pageCount;
+          tabData.rawText = pdfRes.rawText;
+          tabData.isImagePdf = pdfRes.isImagePdf;
+          tabData.method = `${tabData.method} + PDF.js (${pdfRes.pageCount} trang)`;
+        }
+      } catch (pdfErr) {
+        console.warn('[Server] Không tự động tải được PDF:', pdfErr);
+      }
+    }
+
+    const analysis = analyzeTabAgainstRecord(record, tabData);
+    res.json({
+      success: true,
+      analysis
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/parse-pdf
+ * Trích xuất nội dung văn bản từng trang của tệp PDF từ URL hoặc Base64
+ */
+app.post('/api/scholar/parse-pdf', async (req: Request, res: Response) => {
+  try {
+    const { url, base64Data } = req.body as { url?: string; base64Data?: string };
+    if (!url && !base64Data) {
+      return res.status(400).json({ error: 'Vui lòng cung cấp `url` hoặc `base64Data` của tệp PDF.' });
+    }
+
+    let result;
+    if (base64Data) {
+      const buffer = Buffer.from(base64Data, 'base64');
+      result = await parsePdfBuffer(buffer);
+    } else if (url) {
+      result = await parsePdfFromUrl(url);
+    }
+
+    res.json(result);
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

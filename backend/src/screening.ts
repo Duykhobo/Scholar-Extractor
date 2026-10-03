@@ -139,26 +139,33 @@ export function hasRestApiScope(text: string): boolean {
 
 /**
  * Bộ tiêu chí Inclusion / Exclusion (IC/EC) dùng chung — nhóm 1 (SaoCungDuoc) · RQ FA26-EXT-12
- * Tham chiếu chính xác từ team-synthesis/ie_criteria.md & review-protocol.md
+ * Tham chiếu chính xác từ ie_criteria.md & review-protocol.md
  *
  * IC/EC CỐ ĐỊNH:
  * - IC-L: Paper viết bằng tiếng Anh (phải có bằng chứng riêng).
- * - IC-T: Đăng trên conference hoặc journal (không phải blog, thesis - phải có bằng chứng venue).
- * - IC-E: Có ít nhất 1 con số kết quả trong Table hoặc Figure.
+ * - IC-T: Đăng trên conference hoặc journal (không phải blog, thesis - phải có bằng chứng venue/metadata).
+ * - IC-E: Có ít nhất 1 con số kết quả trong Table hoặc Figure (chỉ nhắc tên metric trong abstract/text chưa đủ).
  * - EC-D: Trùng với paper đã có (Duplicate).
  * - EC-A: Không tải được full-text (CHỈ gắn khi xác nhận không tải được full-text, KHÔNG gắn khi chỉ thiếu abstract).
- * - EC-S: Dưới 4 trang (abstract, poster) - CHỈ dùng khi xác minh số trang < 4.
+ * - EC-S: Dưới 4 trang (abstract, poster) - CHỈ dùng khi xác minh số trang < 4 từ full-text, không đoán từ snippet.
  * - EC-N: Không có thực nghiệm (vision paper, tutorial).
  *
  * ĐIỀN THEO RQ FA26-EXT-12 (REST API Testing EP/BVA):
- * - IC-Y: Từ 2020 trở đi (2020 - 2026).
- * - IC-P: REST API: kiểm thử ở mức request cho dịch vụ HTTP (yêu cầu NL + schema API).
+ * - IC-Y: Từ 2020 trở đi (khung 2020 - 2026). Ghi thêm ngày chốt tìm kiếm theo protocol; mọi lần nới khoảng năm phải được ghi log.
+ * - IC-P: REST API: kiểm thử ở mức request cho dịch vụ HTTP (yêu cầu NL và/hoặc schema API: OpenAPI, Swagger, RAML). GraphQL riêng lẻ không đạt IC-P.
  * - IC-I: Kỹ thuật thiết kế test black-box: phân hoạch tương đương (EP) và/hoặc phân tích giá trị biên (BVA) cho tham số request.
+ *         Category partition/TSL chỉ được tính khi nội dung mô tả cho thấy đáp ứng IC-I; không tự động coi là EP/BVA.
  * - EC-O: Loại sẵn ≥ 2 chủ đề dễ lẫn:
  *     (1) KHÔNG về UI/E2E web testing (Selenium, Cypress, DOM UI);
  *     (2) KHÔNG về unit test thư viện nội bộ (package-level, class/method level, JUnit);
- *     (3) KHÔNG thuần bug report / fault localization (không sinh ca kiểm thử).
+ *     (3) KHÔNG thuần bug report / fault localization (không sinh ca kiểm thử);
  *     (4) Phi phần mềm hoặc xuất bản ngoài 2020-2026.
+ *
+ * HƯỚNG DẪN ÁP DỤNG:
+ * - Vòng 1: Đánh giá title/abstract; thiếu bằng chứng ghi Unsure. Không suy diễn thiếu abstract thành EC-A hay EC-N.
+ * - Vòng 2: Full-text; IC-I cần bằng chứng EP/BVA tham số request (phân biệt với nhắc trong Related Work/References).
+ *   IC-E cần số liệu định lượng trong Table/Figure.
+ * - Quyết định cuối do người review xác nhận; AI/extension chỉ gợi ý.
  */
 
 export function evaluateScreeningV1(

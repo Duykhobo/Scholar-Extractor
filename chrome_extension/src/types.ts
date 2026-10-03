@@ -35,6 +35,64 @@ export interface PaperRecord {
   screeningReason: string;
   finalDecision: ScreeningDecision | '';
   userNotes: string;
+
+  // Provenance & Du lieu bo sung tu tab dang mo / PDF
+  pdfUrl?: string;
+  extracted_url?: string;
+  extracted_at?: string;
+  extraction_method?: string;
+  evidence_snippets?: EvidenceSnippet[];
+  page_count?: number;
+  user_verified?: boolean;
+}
+
+export interface EvidenceSnippet {
+  type: 'IC-I' | 'IC-E' | 'Other';
+  term: string;
+  context: string;
+  page?: number;
+  section: 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown';
+  isValidEvidence: boolean;
+  reason?: string;
+}
+
+export interface TabExtractedData {
+  title?: string;
+  authors?: string;
+  year?: string;
+  venue?: string;
+  doi?: string;
+  abstract?: string;
+  pdfUrl?: string;
+  sourceUrl: string;
+  method: string;
+  rawText?: string;
+  pages?: { pageNum: number; text: string }[];
+  pageCount?: number;
+  isImagePdf?: boolean;
+}
+
+export interface TabAnalysisResult {
+  extracted: TabExtractedData;
+  isTitleMatch: boolean;
+  titleMatchConfidence: number;
+  titleMismatchWarning?: string;
+  changes: {
+    field: string;
+    oldValue: string;
+    newValue: string;
+    willChange: boolean;
+  }[];
+  evidence: EvidenceSnippet[];
+  suggestedScreeningUpdate?: {
+    stage: 'V1' | 'V2';
+    suggestedDecision: ScreeningDecision;
+    matchedCriteria: string[];
+    unknownCriteria: string[];
+    missingEvidence: string[];
+    screeningReason: string;
+  };
+  warnings: string[];
 }
 
 export interface DedupStats {

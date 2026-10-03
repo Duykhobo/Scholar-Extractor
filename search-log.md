@@ -142,3 +142,343 @@ Chọn ngẫu nhiên 5 bản ghi trong `01_all_records.csv` để kiểm tra ch�
 
 ---
 
+
+---
+
+# Search log — T.Duy · nguồn phụ trách: Semantic Scholar + Google Scholar (seed & bổ sung)
+*Ngày thực hiện: 2026-10-03 | Phương thức: SerpApi (Engine: google_scholar) | Search ID: `6ac091e43f79f5496cc92fb8`*
+
+## Bảng log chính (theo search-log-template.md của nhóm SaoCungDuoc)
+| # | Query nguyên văn | CSDL | Trường tìm | Bộ lọc | Ngày | Số kết quả | Số sau bỏ trùng | Ghi chú |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")` | Google Scholar (SerpApi) | Title / Abstract / All fields | `engine=google_scholar, as_ylo=2020, as_yhi=2026, hl=vi, totalRequests=6` | 2026-10-03 | 25 (UI: Chưa nhập (đối chiếu thủ công)) | 25 | Nguồn seed & bổ trợ — KHÔNG đếm vào PRISMA |
+
+## Tổng hợp
+- Tổng trước dedup: **25** · Sau dedup: **25** *(Lưu ý: Google Scholar & Semantic Scholar chỉ dùng tìm seed + snowballing — KHÔNG đếm số vào PRISMA)*.
+
+> **LƯU Ý PROTOCOL RBL (SaoCungDuoc · RQ FA26-EXT-12):** Nguồn Google Scholar đóng vai trò tìm kiếm tài liệu bổ trợ / snowballing (Supplementary Candidate Search). Theo protocol của nhóm, số lượng này **KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống** (vốn chỉ dành cho 3 CSDL đếm chính: IEEE Xplore, ACM DL, OpenAlex).
+
+### 1. Phép kiểm chứng 1: Khớp tổng số lượng (Total Count)
+| Chỉ số đối soát | Số lượng | Trạng thái / Ghi chú đối chiếu |
+| :--- | :--- | :--- |
+| Số kết quả trên giao diện Scholar (UI web) | Chưa nhập (đối chiếu thủ công) | Đối chiếu trực tiếp trên trình duyệt |
+| Tổng kết quả SerpApi báo (total_results) | 25 | Số ước lượng từ header search_information |
+| Số bản ghi thực tế thu thập được | 25 | Số record đã bóc tách từ các trang |
+| Trùng lặp chính xác theo DOI loại bỏ | 0 | Khóa chính DOI |
+| Đề xuất trùng lặp theo Title giữ lại xem xét | 1 | Giữ lại để người dùng đối chiếu |
+| **Số paper ứng viên bổ trợ (Candidate Papers)** | **25** | **Nguồn bổ trợ ngoài sơ đồ PRISMA chính** |
+
+> **Ghi chú chuẩn PRISMA:** Tổng kết quả ước lượng từ nguồn: **25**. Số record thực tế thu thập: **25**. Tuyệt đối không coi total_results là số paper đã thu thập.
+
+### 2. Phép kiểm chứng 2: Đối chiếu thực địa (Ground-Truth Spot-check 5 mẫu)
+- Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
+1. **Tiêu đề:** Combining TSL and LLM to Automate REST API Testing: A Comparative Study
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** arXiv preprint arXiv:2509.05540
+   - **URL gốc:** https://arxiv.org/abs/2509.05540
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+2. **Tiêu đề:** SmartSE: An Intelligent Framework for Automated Software Requirement Analysis and Test Case Generation Using Large Language Models
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Embedded and Real-Time …
+   - **URL gốc:** https://www.igi-global.com/article/smartse/409971
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+3. **Tiêu đề:** Evolutionary Robustness Testing of Rest Services
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2022 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/17a3049ed8edd2519b5a6e724937d36d/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+4. **Tiêu đề:** Enabling test automation for industrial PLC programs
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2024 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/8bc254b6896af7d031d7e7f12abc0681/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+5. **Tiêu đề:** SmartSE
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Embedded and Real-Time …
+   - **URL gốc:** https://www.sciencedirect.com/org/science/article/pii/S1947317626000019
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
+- [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.
+
+### 4. Ghi chú về Tiêu chí Sàng lọc IC/EC cho REST API Testing
+- **Phạm vi nghiên cứu (Scope):** Sinh ca kiểm thử tự động cho REST APIs (Automated Test Case Generation for REST APIs).
+- **Loại trừ theo EC-O:** Các nghiên cứu chỉ tập trung vào kiểm thử đơn vị nội bộ (internal unit testing, method/class level unit testing, JUnit) không liên quan đến REST API đều bị loại theo `EC-O` (Out of Scope).
+- **Hợp lệ (AI / LLM):** Các nghiên cứu ứng dụng AI / LLM / Machine Learning sinh ca kiểm thử cho REST API hoàn toàn hợp lệ, không bị loại trừ.
+- **Tình trạng Tóm tắt:** Google Scholar API qua SerpApi chỉ cung cấp đoạn trích dẫn ngắn (`snippet`), **không cung cấp toàn văn hay abstract đầy đủ**. Toàn bộ bài báo thiếu abstract hoặc thiếu bằng chứng quan trọng được phân loại gợi ý là **Unsure** [EC-A] để thẩm định qua toàn văn trước khi xác nhận `finalDecision`.
+
+---
+
+# Search log — T.Duy · nguồn phụ trách: Semantic Scholar + Google Scholar (seed & bổ sung)
+*Ngày thực hiện: 2026-10-03 | Phương thức: SerpApi (Engine: google_scholar) | Search ID: `6ac091e43f79f5496cc92fb8`*
+
+## Bảng log chính (theo search-log-template.md của nhóm SaoCungDuoc)
+| # | Query nguyên văn | CSDL | Trường tìm | Bộ lọc | Ngày | Số kết quả | Số sau bỏ trùng | Ghi chú |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")` | Google Scholar (SerpApi) | Title / Abstract / All fields | `engine=google_scholar, as_ylo=2020, as_yhi=2026, hl=vi, totalRequests=6` | 2026-10-03 | 25 (UI: Chưa nhập (đối chiếu thủ công)) | 25 | Nguồn seed & bổ trợ — KHÔNG đếm vào PRISMA |
+
+## Tổng hợp
+- Tổng trước dedup: **25** · Sau dedup: **25** *(Lưu ý: Google Scholar & Semantic Scholar chỉ dùng tìm seed + snowballing — KHÔNG đếm số vào PRISMA)*.
+
+> **LƯU Ý PROTOCOL RBL (SaoCungDuoc · RQ FA26-EXT-12):** Nguồn Google Scholar đóng vai trò tìm kiếm tài liệu bổ trợ / snowballing (Supplementary Candidate Search). Theo protocol của nhóm, số lượng này **KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống** (vốn chỉ dành cho 3 CSDL đếm chính: IEEE Xplore, ACM DL, OpenAlex).
+
+### 1. Phép kiểm chứng 1: Khớp tổng số lượng (Total Count)
+| Chỉ số đối soát | Số lượng | Trạng thái / Ghi chú đối chiếu |
+| :--- | :--- | :--- |
+| Số kết quả trên giao diện Scholar (UI web) | Chưa nhập (đối chiếu thủ công) | Đối chiếu trực tiếp trên trình duyệt |
+| Tổng kết quả SerpApi báo (total_results) | 25 | Số ước lượng từ header search_information |
+| Số bản ghi thực tế thu thập được | 25 | Số record đã bóc tách từ các trang |
+| Trùng lặp chính xác theo DOI loại bỏ | 0 | Khóa chính DOI |
+| Đề xuất trùng lặp theo Title giữ lại xem xét | 1 | Giữ lại để người dùng đối chiếu |
+| **Số paper ứng viên bổ trợ (Candidate Papers)** | **25** | **Nguồn bổ trợ ngoài sơ đồ PRISMA chính** |
+
+> **Ghi chú chuẩn PRISMA:** Tổng kết quả ước lượng từ nguồn: **25**. Số record thực tế thu thập: **25**. Tuyệt đối không coi total_results là số paper đã thu thập.
+
+### 2. Phép kiểm chứng 2: Đối chiếu thực địa (Ground-Truth Spot-check 5 mẫu)
+- Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
+1. **Tiêu đề:** Intermediate Representations for LLM-Based Test Generation: A Comparative Study in Automotive Software Verification
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://gupea.ub.gu.se/items/831f1338-9e17-4ae0-aa12-9ac81de2cf8c
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+2. **Tiêu đề:** Evolutionary Robustness Testing of Rest Services
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2022 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/17a3049ed8edd2519b5a6e724937d36d/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+3. **Tiêu đề:** SmartSE: An Intelligent Framework for Automated Software Requirement Analysis and Test Case Generation Using Large Language Models
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Embedded and Real-Time …
+   - **URL gốc:** https://www.igi-global.com/article/smartse/409971
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+4. **Tiêu đề:** The Role of Test Automation Frameworks In Enhancing Software Reliability: A Review Of Selenium, Python, And API Testing Tools
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2024 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Business …
+   - **URL gốc:** https://ijbei-journal.org/index.php/ijbei/article/view/18
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+5. **Tiêu đề:** Enabling test automation for industrial PLC programs
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2024 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/8bc254b6896af7d031d7e7f12abc0681/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
+- [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.
+
+### 4. Ghi chú về Tiêu chí Sàng lọc IC/EC cho REST API Testing
+- **Phạm vi nghiên cứu (Scope):** Sinh ca kiểm thử tự động cho REST APIs (Automated Test Case Generation for REST APIs).
+- **Loại trừ theo EC-O:** Các nghiên cứu chỉ tập trung vào kiểm thử đơn vị nội bộ (internal unit testing, method/class level unit testing, JUnit) không liên quan đến REST API đều bị loại theo `EC-O` (Out of Scope).
+- **Hợp lệ (AI / LLM):** Các nghiên cứu ứng dụng AI / LLM / Machine Learning sinh ca kiểm thử cho REST API hoàn toàn hợp lệ, không bị loại trừ.
+- **Tình trạng Tóm tắt:** Google Scholar API qua SerpApi chỉ cung cấp đoạn trích dẫn ngắn (`snippet`), **không cung cấp toàn văn hay abstract đầy đủ**. Toàn bộ bài báo thiếu abstract hoặc thiếu bằng chứng quan trọng được phân loại gợi ý là **Unsure** [EC-A] để thẩm định qua toàn văn trước khi xác nhận `finalDecision`.
+
+---
+
+# Search log — T.Duy · nguồn phụ trách: Semantic Scholar + Google Scholar (seed & bổ sung)
+*Ngày thực hiện: 2026-10-03 | Phương thức: SerpApi (Engine: google_scholar) | Search ID: `6ac091e43f79f5496cc92fb8`*
+
+## Bảng log chính (theo search-log-template.md của nhóm SaoCungDuoc)
+| # | Query nguyên văn | CSDL | Trường tìm | Bộ lọc | Ngày | Số kết quả | Số sau bỏ trùng | Ghi chú |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")` | Google Scholar (SerpApi) | Title / Abstract / All fields | `engine=google_scholar, as_ylo=2020, as_yhi=2026, hl=vi, totalRequests=6` | 2026-10-03 | 25 (UI: Chưa nhập (đối chiếu thủ công)) | 25 | Nguồn seed & bổ trợ — KHÔNG đếm vào PRISMA |
+
+## Tổng hợp
+- Tổng trước dedup: **25** · Sau dedup: **25** *(Lưu ý: Google Scholar & Semantic Scholar chỉ dùng tìm seed + snowballing — KHÔNG đếm số vào PRISMA)*.
+
+> **LƯU Ý PROTOCOL RBL (SaoCungDuoc · RQ FA26-EXT-12):** Nguồn Google Scholar đóng vai trò tìm kiếm tài liệu bổ trợ / snowballing (Supplementary Candidate Search). Theo protocol của nhóm, số lượng này **KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống** (vốn chỉ dành cho 3 CSDL đếm chính: IEEE Xplore, ACM DL, OpenAlex).
+
+### 1. Phép kiểm chứng 1: Khớp tổng số lượng (Total Count)
+| Chỉ số đối soát | Số lượng | Trạng thái / Ghi chú đối chiếu |
+| :--- | :--- | :--- |
+| Số kết quả trên giao diện Scholar (UI web) | Chưa nhập (đối chiếu thủ công) | Đối chiếu trực tiếp trên trình duyệt |
+| Tổng kết quả SerpApi báo (total_results) | 25 | Số ước lượng từ header search_information |
+| Số bản ghi thực tế thu thập được | 25 | Số record đã bóc tách từ các trang |
+| Trùng lặp chính xác theo DOI loại bỏ | 0 | Khóa chính DOI |
+| Đề xuất trùng lặp theo Title giữ lại xem xét | 1 | Giữ lại để người dùng đối chiếu |
+| **Số paper ứng viên bổ trợ (Candidate Papers)** | **25** | **Nguồn bổ trợ ngoài sơ đồ PRISMA chính** |
+
+> **Ghi chú chuẩn PRISMA:** Tổng kết quả ước lượng từ nguồn: **25**. Số record thực tế thu thập: **25**. Tuyệt đối không coi total_results là số paper đã thu thập.
+
+### 2. Phép kiểm chứng 2: Đối chiếu thực địa (Ground-Truth Spot-check 5 mẫu)
+- Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
+1. **Tiêu đề:** Automated Test Data and Test Oracle Generation for REST APIs
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://idus.us.es/bitstreams/4bbe0929-d74c-40b1-bb0b-4f94cbf7db57/download
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+2. **Tiêu đề:** SmartSE: An Intelligent Framework for Automated Software Requirement Analysis and Test Case Generation Using Large Language Models
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Embedded and Real-Time …
+   - **URL gốc:** https://www.igi-global.com/article/smartse/409971
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+3. **Tiêu đề:** Evolutionary Robustness Testing of Rest Services
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2022 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/17a3049ed8edd2519b5a6e724937d36d/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+4. **Tiêu đề:** LLM-driven, self-improving framework for security test automation: Leveraging karate DSL for augmented API resilience
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** IEEE Access
+   - **URL gốc:** https://ieeexplore.ieee.org/abstract/document/10942340/
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+5. **Tiêu đề:** The Role of Test Automation Frameworks In Enhancing Software Reliability: A Review Of Selenium, Python, And API Testing Tools
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2024 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Business …
+   - **URL gốc:** https://ijbei-journal.org/index.php/ijbei/article/view/18
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
+- [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.
+
+### 4. Ghi chú về Tiêu chí Sàng lọc IC/EC cho REST API Testing
+- **Phạm vi nghiên cứu (Scope):** Sinh ca kiểm thử tự động cho REST APIs (Automated Test Case Generation for REST APIs).
+- **Loại trừ theo EC-O:** Các nghiên cứu chỉ tập trung vào kiểm thử đơn vị nội bộ (internal unit testing, method/class level unit testing, JUnit) không liên quan đến REST API đều bị loại theo `EC-O` (Out of Scope).
+- **Hợp lệ (AI / LLM):** Các nghiên cứu ứng dụng AI / LLM / Machine Learning sinh ca kiểm thử cho REST API hoàn toàn hợp lệ, không bị loại trừ.
+- **Tình trạng Tóm tắt:** Google Scholar API qua SerpApi chỉ cung cấp đoạn trích dẫn ngắn (`snippet`), **không cung cấp toàn văn hay abstract đầy đủ**. Toàn bộ bài báo thiếu abstract hoặc thiếu bằng chứng quan trọng được phân loại gợi ý là **Unsure** [EC-A] để thẩm định qua toàn văn trước khi xác nhận `finalDecision`.
+
+---
+
+# Search log — T.Duy · nguồn phụ trách: Semantic Scholar + Google Scholar (seed & bổ sung)
+*Ngày thực hiện: 2026-10-03 | Phương thức: SerpApi (Engine: google_scholar) | Search ID: `6ac091e43f79f5496cc92fb8`*
+
+## Bảng log chính (theo search-log-template.md của nhóm SaoCungDuoc)
+| # | Query nguyên văn | CSDL | Trường tìm | Bộ lọc | Ngày | Số kết quả | Số sau bỏ trùng | Ghi chú |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")` | Google Scholar (SerpApi) | Title / Abstract / All fields | `engine=google_scholar, as_ylo=2020, as_yhi=2026, hl=vi, totalRequests=6` | 2026-10-03 | 25 (UI: Chưa nhập (đối chiếu thủ công)) | 25 | Nguồn seed & bổ trợ — KHÔNG đếm vào PRISMA |
+
+## Tổng hợp
+- Tổng trước dedup: **25** · Sau dedup: **25** *(Lưu ý: Google Scholar & Semantic Scholar chỉ dùng tìm seed + snowballing — KHÔNG đếm số vào PRISMA)*.
+
+> **LƯU Ý PROTOCOL RBL (SaoCungDuoc · RQ FA26-EXT-12):** Nguồn Google Scholar đóng vai trò tìm kiếm tài liệu bổ trợ / snowballing (Supplementary Candidate Search). Theo protocol của nhóm, số lượng này **KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống** (vốn chỉ dành cho 3 CSDL đếm chính: IEEE Xplore, ACM DL, OpenAlex).
+
+### 1. Phép kiểm chứng 1: Khớp tổng số lượng (Total Count)
+| Chỉ số đối soát | Số lượng | Trạng thái / Ghi chú đối chiếu |
+| :--- | :--- | :--- |
+| Số kết quả trên giao diện Scholar (UI web) | Chưa nhập (đối chiếu thủ công) | Đối chiếu trực tiếp trên trình duyệt |
+| Tổng kết quả SerpApi báo (total_results) | 25 | Số ước lượng từ header search_information |
+| Số bản ghi thực tế thu thập được | 25 | Số record đã bóc tách từ các trang |
+| Trùng lặp chính xác theo DOI loại bỏ | 0 | Khóa chính DOI |
+| Đề xuất trùng lặp theo Title giữ lại xem xét | 1 | Giữ lại để người dùng đối chiếu |
+| **Số paper ứng viên bổ trợ (Candidate Papers)** | **25** | **Nguồn bổ trợ ngoài sơ đồ PRISMA chính** |
+
+> **Ghi chú chuẩn PRISMA:** Tổng kết quả ước lượng từ nguồn: **25**. Số record thực tế thu thập: **25**. Tuyệt đối không coi total_results là số paper đã thu thập.
+
+### 2. Phép kiểm chứng 2: Đối chiếu thực địa (Ground-Truth Spot-check 5 mẫu)
+- Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
+1. **Tiêu đề:** From requirements to executable tests: llm-based system test generation for rest apis
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://epublications.vu.lt/object/elaba:308157395/
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+2. **Tiêu đề:** Req2test: an approach for the automatic generation of unit tests from user stories using llms
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Proceedings of the 41st ACM/SIGAPP Symposium …
+   - **URL gốc:** https://dl.acm.org/doi/abs/10.1145/3748522.3780013
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+3. **Tiêu đề:** Evolutionary Robustness Testing of Rest Services
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2022 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://search.proquest.com/openview/17a3049ed8edd2519b5a6e724937d36d/1?pq-origsite=gscholar&cbl=2026366&diss=y
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+4. **Tiêu đề:** Prompt Coverage Adequacy
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** arXiv preprint arXiv …
+   - **URL gốc:** https://arxiv.org/abs/2607.02057
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+5. **Tiêu đề:** Combining TSL and LLM to Automate REST API Testing: A Comparative Study
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** arXiv preprint arXiv:2509.05540
+   - **URL gốc:** https://arxiv.org/abs/2509.05540
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
+- [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.
+
+### 4. Ghi chú về Tiêu chí Sàng lọc IC/EC cho REST API Testing
+- **Phạm vi nghiên cứu (Scope):** Sinh ca kiểm thử tự động cho REST APIs (Automated Test Case Generation for REST APIs).
+- **Loại trừ theo EC-O:** Các nghiên cứu chỉ tập trung vào kiểm thử đơn vị nội bộ (internal unit testing, method/class level unit testing, JUnit) không liên quan đến REST API đều bị loại theo `EC-O` (Out of Scope).
+- **Hợp lệ (AI / LLM):** Các nghiên cứu ứng dụng AI / LLM / Machine Learning sinh ca kiểm thử cho REST API hoàn toàn hợp lệ, không bị loại trừ.
+- **Tình trạng Tóm tắt:** Google Scholar API qua SerpApi chỉ cung cấp đoạn trích dẫn ngắn (`snippet`), **không cung cấp toàn văn hay abstract đầy đủ**. Toàn bộ bài báo thiếu abstract hoặc thiếu bằng chứng quan trọng được phân loại gợi ý là **Unsure** [EC-A] để thẩm định qua toàn văn trước khi xác nhận `finalDecision`.
+
+---
+
+# Search log — T.Duy · nguồn phụ trách: Semantic Scholar + Google Scholar (seed & bổ sung)
+*Ngày thực hiện: 2026-10-03 | Phương thức: SerpApi (Engine: google_scholar) | Search ID: `6ac091e43f79f5496cc92fb8`*
+
+## Bảng log chính (theo search-log-template.md của nhóm SaoCungDuoc)
+| # | Query nguyên văn | CSDL | Trường tìm | Bộ lọc | Ngày | Số kết quả | Số sau bỏ trùng | Ghi chú |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")` | Google Scholar (SerpApi) | Title / Abstract / All fields | `engine=google_scholar, as_ylo=2020, as_yhi=2026, hl=vi, totalRequests=6` | 2026-10-03 | 25 (UI: Chưa nhập (đối chiếu thủ công)) | 25 | Nguồn seed & bổ trợ — KHÔNG đếm vào PRISMA |
+
+## Tổng hợp
+- Tổng trước dedup: **25** · Sau dedup: **25** *(Lưu ý: Google Scholar & Semantic Scholar chỉ dùng tìm seed + snowballing — KHÔNG đếm số vào PRISMA)*.
+
+> **LƯU Ý PROTOCOL RBL (SaoCungDuoc · RQ FA26-EXT-12):** Nguồn Google Scholar đóng vai trò tìm kiếm tài liệu bổ trợ / snowballing (Supplementary Candidate Search). Theo protocol của nhóm, số lượng này **KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống** (vốn chỉ dành cho 3 CSDL đếm chính: IEEE Xplore, ACM DL, OpenAlex).
+
+### 1. Phép kiểm chứng 1: Khớp tổng số lượng (Total Count)
+| Chỉ số đối soát | Số lượng | Trạng thái / Ghi chú đối chiếu |
+| :--- | :--- | :--- |
+| Số kết quả trên giao diện Scholar (UI web) | Chưa nhập (đối chiếu thủ công) | Đối chiếu trực tiếp trên trình duyệt |
+| Tổng kết quả SerpApi báo (total_results) | 25 | Số ước lượng từ header search_information |
+| Số bản ghi thực tế thu thập được | 25 | Số record đã bóc tách từ các trang |
+| Trùng lặp chính xác theo DOI loại bỏ | 0 | Khóa chính DOI |
+| Đề xuất trùng lặp theo Title giữ lại xem xét | 1 | Giữ lại để người dùng đối chiếu |
+| **Số paper ứng viên bổ trợ (Candidate Papers)** | **25** | **Nguồn bổ trợ ngoài sơ đồ PRISMA chính** |
+
+> **Ghi chú chuẩn PRISMA:** Tổng kết quả ước lượng từ nguồn: **25**. Số record thực tế thu thập: **25**. Tuyệt đối không coi total_results là số paper đã thu thập.
+
+### 2. Phép kiểm chứng 2: Đối chiếu thực địa (Ground-Truth Spot-check 5 mẫu)
+- Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
+1. **Tiêu đề:** Req2test: an approach for the automatic generation of unit tests from user stories using llms
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Proceedings of the 41st ACM/SIGAPP Symposium …
+   - **URL gốc:** https://dl.acm.org/doi/abs/10.1145/3748522.3780013
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+2. **Tiêu đề:** Automated Test Data and Test Oracle Generation for REST APIs
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Google Scholar
+   - **URL gốc:** https://idus.us.es/bitstreams/4bbe0929-d74c-40b1-bb0b-4f94cbf7db57/download
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+3. **Tiêu đề:** SmartSE
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** International Journal of Embedded and Real-Time …
+   - **URL gốc:** https://www.sciencedirect.com/org/science/article/pii/S1947317626000019
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+4. **Tiêu đề:** Development and verification of an orchestration architecture of AI agents for automated API testing with a unified representation of requirements
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** Technology audit and production reserves
+   - **URL gốc:** https://journals.uran.ua/tarp/article/view/360928
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+5. **Tiêu đề:** Combining TSL and LLM to Automate REST API Testing: A Comparative Study
+   - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
+   - **Venue:** arXiv preprint arXiv:2509.05540
+   - **URL gốc:** https://arxiv.org/abs/2509.05540
+   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+
+### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
+- [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.
+
+### 4. Ghi chú về Tiêu chí Sàng lọc IC/EC cho REST API Testing
+- **Phạm vi nghiên cứu (Scope):** Sinh ca kiểm thử tự động cho REST APIs (Automated Test Case Generation for REST APIs).
+- **Loại trừ theo EC-O:** Các nghiên cứu chỉ tập trung vào kiểm thử đơn vị nội bộ (internal unit testing, method/class level unit testing, JUnit) không liên quan đến REST API đều bị loại theo `EC-O` (Out of Scope).
+- **Hợp lệ (AI / LLM):** Các nghiên cứu ứng dụng AI / LLM / Machine Learning sinh ca kiểm thử cho REST API hoàn toàn hợp lệ, không bị loại trừ.
+- **Tình trạng Tóm tắt:** Google Scholar API qua SerpApi chỉ cung cấp đoạn trích dẫn ngắn (`snippet`), **không cung cấp toàn văn hay abstract đầy đủ**. Toàn bộ bài báo thiếu abstract hoặc thiếu bằng chứng quan trọng được phân loại gợi ý là **Unsure** [EC-A] để thẩm định qua toàn văn trước khi xác nhận `finalDecision`.

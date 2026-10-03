@@ -37,6 +37,15 @@
     resultsContainer;
     filterInput;
     filterDecisionSelect;
+    extractActiveTabBtn;
+    tabExtractModal;
+    modalBody;
+    confirmTabExtractBtn;
+    cancelTabExtractBtn;
+    closeModalBtn;
+    selectedRecordId = null;
+    pendingAnalysisResult = null;
+    pendingRecordId = null;
     async init() {
       this.bindDOMElements();
       this.attachEventListeners();
@@ -69,6 +78,12 @@
       this.resultsContainer = document.getElementById("resultsContainer");
       this.filterInput = document.getElementById("filterInput");
       this.filterDecisionSelect = document.getElementById("filterDecisionSelect");
+      this.extractActiveTabBtn = document.getElementById("extractActiveTabBtn");
+      this.tabExtractModal = document.getElementById("tabExtractModal");
+      this.modalBody = document.getElementById("modalBody");
+      this.confirmTabExtractBtn = document.getElementById("confirmTabExtractBtn");
+      this.cancelTabExtractBtn = document.getElementById("cancelTabExtractBtn");
+      this.closeModalBtn = document.getElementById("closeModalBtn");
     }
     attachEventListeners() {
       this.searchFirstBtn.addEventListener("click", () => this.handleSearchFirstPage());
@@ -80,6 +95,18 @@
       this.exportScreeningBtn.addEventListener("click", () => this.handleExportScreeningCsv());
       this.exportSessionBtn.addEventListener("click", () => this.handleExportSessionJson());
       this.saveLogBtn.addEventListener("click", () => this.handleSaveLog());
+      if (this.extractActiveTabBtn) {
+        this.extractActiveTabBtn.addEventListener("click", () => this.handleExtractFromActiveTab());
+      }
+      if (this.confirmTabExtractBtn) {
+        this.confirmTabExtractBtn.addEventListener("click", () => this.handleConfirmTabExtract());
+      }
+      if (this.cancelTabExtractBtn) {
+        this.cancelTabExtractBtn.addEventListener("click", () => this.handleCancelTabExtract());
+      }
+      if (this.closeModalBtn) {
+        this.closeModalBtn.addEventListener("click", () => this.handleCancelTabExtract());
+      }
       const loadStringABtn = document.getElementById("loadStringABtn");
       if (loadStringABtn) {
         loadStringABtn.addEventListener("click", () => {
@@ -373,6 +400,9 @@
     `;
     }
     renderRecordsList() {
+      if (this.extractActiveTabBtn) {
+        this.extractActiveTabBtn.style.display = this.uniqueRecords.length > 0 ? "inline-block" : "none";
+      }
       const keyword = this.filterInput.value.toLowerCase().trim();
       const decisionFilter = this.filterDecisionSelect.value;
       const filtered = this.uniqueRecords.filter((r) => {
@@ -395,16 +425,26 @@
         const isInclude = (r.finalDecision || r.suggestedDecision) === "Include";
         const isExclude = (r.finalDecision || r.suggestedDecision) === "Exclude";
         const isUnsure = (r.finalDecision || r.suggestedDecision) === "Unsure";
+        const isSelected = r.id === this.selectedRecordId;
         const dupWarning = r.potentialDuplicate ? `<div class="dup-badge">\u26A0\uFE0F \u0110\u1EC0 XU\u1EA4T TR\xD9NG L\u1EB6P: ${this.escapeHtml(r.duplicateReason || "")}</div>` : "";
         const matchedCriteriaStr = (r.matchedCriteria || []).map((c) => `<span class="badge badge-blue">${c}</span>`).join(" ");
         const unknownCriteriaStr = (r.unknownCriteria || []).map((c) => `<span class="badge badge-yellow" title="Ch\u01B0a x\xE1c minh">${c}?</span>`).join(" ");
         const missingEvidenceStr = r.missingEvidence && r.missingEvidence.length > 0 ? `<div style="font-size: 11px; color: #b45309; margin-top: 3px;">\u26A0\uFE0F <b>Thi\u1EBFu b\u1EB1ng ch\u1EE9ng:</b> ${this.escapeHtml(r.missingEvidence.join(", "))}</div>` : "";
+        const verifiedBadge = r.user_verified ? `<span class="badge badge-green" title="\u0110\xE3 tr\xEDch xu\u1EA5t & x\xE1c minh t\u1EEB tab">\u2713 \u0110\xE3 x\xE1c minh (${this.escapeHtml(r.extraction_method || "Tab")})</span>` : "";
+        const sourceUrlBadge = r.extracted_url ? `<div style="font-size: 10px; color: #475569; margin-top: 2px;">\u{1F310} <b>Ngu\u1ED3n Tab:</b> <a href="${r.extracted_url}" target="_blank">${this.escapeHtml(r.extracted_url.slice(0, 48))}...</a></div>` : "";
+        const pdfBadge = r.pdfUrl ? `<span style="font-size: 10px; color: #047857; margin-left: 6px;">\u{1F4C4} <b>PDF:</b> <a href="${r.pdfUrl}" target="_blank">M\u1EDF PDF (${r.page_count ? r.page_count + " trang" : "s\u1EB5n s\xE0ng"})</a></span>` : "";
+        const abstractBox = r.abstract ? `<div class="paper-snippet" style="border-left-color: #2563eb; background: #eff6ff; margin-top: 4px;"><b>Abstract [\u0110\xE3 tr\xEDch xu\u1EA5t]:</b><br><i>"${this.escapeHtml(r.abstract.slice(0, 260))}${r.abstract.length > 260 ? "..." : ""}"</i></div>` : "";
+        const evidenceSummary = r.evidence_snippets && r.evidence_snippets.length > 0 ? `<div style="font-size: 10px; color: #1e40af; margin-top: 3px;">\u{1F50D} <b>B\u1EB1ng ch\u1EE9ng tr\xEDch xu\u1EA5t (${r.evidence_snippets.length}):</b> ${(r.evidence_snippets || []).map((e) => `<span class="badge ${e.isValidEvidence ? "badge-blue" : "badge-yellow"}">${e.type} (${e.section}${e.page ? ", tr." + e.page : ""})</span>`).join(" ")}</div>` : "";
         return `
-        <div class="paper-card ${r.potentialDuplicate ? "paper-dup" : ""}" id="paper_${r.id}">
+        <div class="paper-card ${r.potentialDuplicate ? "paper-dup" : ""} ${isSelected ? "is-selected" : ""}" id="paper_${r.id}" data-id="${r.id}">
           ${dupWarning}
-          <div class="paper-header">
-            <span class="paper-index">#${idx + 1}</span>
-            <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
+          <div class="paper-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+            <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
+              <span class="paper-index">#${idx + 1}</span>
+              <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
+              ${verifiedBadge}
+            </div>
+            <button class="btn-extract-card" data-id="${r.id}" title="L\u1EA5y d\u1EEF li\u1EC7u & PDF t\u1EEB tab tr\xECnh duy\u1EC7t \u0111ang m\u1EDF v\xE0o b\xE0i b\xE1o n\xE0y">\u{1F4D1} L\u1EA5y t\u1EEB Tab</button>
           </div>
 
           <div class="paper-meta">
@@ -412,12 +452,18 @@
             <span>\u{1F4C5} <b>N\u0103m:</b> ${r.year || "N/A"} ${r.uncertain_year ? '<span class="tag-warn">Ch\u01B0a ch\u1EAFc ch\u1EAFn</span>' : ""}</span>
             <span>\u{1F3DB}\uFE0F <b>Venue:</b> ${this.escapeHtml(r.venue || "N/A")} ${r.uncertain_venue ? '<span class="tag-warn">C\u1EA7n x\xE1c minh</span>' : ""}</span>
             <span>\u{1F517} <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Tr\u1ED1ng (C\u1EA7n x\xE1c minh)</span>'}</span>
+            ${pdfBadge}
           </div>
+
+          ${sourceUrlBadge}
+          ${abstractBox}
 
           <div class="paper-snippet">
             <b>\u0110o\u1EA1n tr\xEDch (Snippet) [Kh\xF4ng ph\u1EA3i Abstract]:</b><br>
             <i>"${this.escapeHtml(r.snippet || "Kh\xF4ng c\xF3 \u0111o\u1EA1n tr\xEDch.")}"</i>
           </div>
+
+          ${evidenceSummary}
 
           <div class="screening-panel">
             <div class="screening-header">
@@ -441,6 +487,29 @@
         </div>
       `;
       }).join("");
+      this.resultsContainer.querySelectorAll(".paper-card").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          const target = e.target;
+          if (target.closest("button") || target.closest("input") || target.closest("select") || target.closest("a")) {
+            return;
+          }
+          const id = card.getAttribute("data-id");
+          if (id && id !== this.selectedRecordId) {
+            this.selectedRecordId = id;
+            this.renderRecordsList();
+          }
+        });
+      });
+      this.resultsContainer.querySelectorAll(".btn-extract-card").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const target = e.currentTarget;
+          const paperId = target.getAttribute("data-id");
+          if (paperId) {
+            this.handleExtractFromActiveTab(paperId);
+          }
+        });
+      });
       this.resultsContainer.querySelectorAll(".btn-dec").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const target = e.currentTarget;
@@ -457,6 +526,252 @@
           this.updatePaperNotes(paperId, target.value);
         });
       });
+    }
+    // Trich xuat du lieu tu Tab dang mo
+    async handleExtractFromActiveTab(paperId) {
+      const targetId = paperId || this.selectedRecordId;
+      if (!targetId) {
+        this.setStatus("Vui l\xF2ng ch\u1ECDn 1 b\xE0i b\xE1o t\u1EEB danh s\xE1ch k\u1EBFt qu\u1EA3 tr\u01B0\u1EDBc khi l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB tab.", "warning");
+        return;
+      }
+      const record = this.uniqueRecords.find((r) => r.id === targetId);
+      if (!record) {
+        this.setStatus("Kh\xF4ng t\xECm th\u1EA5y b\u1EA3n ghi \u0111\u01B0\u1EE3c ch\u1ECDn.", "error");
+        return;
+      }
+      this.selectedRecordId = targetId;
+      this.renderRecordsList();
+      this.setStatus("\u0110ang k\u1EBFt n\u1ED1i t\u1EDBi Tab \u0111ang m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t...", "info");
+      try {
+        const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (!tabs || tabs.length === 0 || !tabs[0].id) {
+          this.setStatus("Kh\xF4ng t\xECm th\u1EA5y tab tr\xECnh duy\u1EC7t \u0111ang k\xEDch ho\u1EA1t.", "error");
+          return;
+        }
+        const activeTab = tabs[0];
+        const activeUrl = activeTab.url || "";
+        let tabData = null;
+        if (activeUrl.toLowerCase().endsWith(".pdf") || activeUrl.toLowerCase().includes(".pdf?")) {
+          tabData = {
+            sourceUrl: activeUrl,
+            method: "Active Tab PDF URL",
+            title: activeTab.title || "",
+            pdfUrl: activeUrl
+          };
+        } else {
+          try {
+            const results = await chrome.scripting.executeScript({
+              target: { tabId: activeTab.id },
+              files: ["content-script.js"]
+            });
+            if (results && results[0] && results[0].result) {
+              tabData = results[0].result;
+            }
+          } catch (scriptErr) {
+            console.warn("executeScript failed, fallback to direct tab info:", scriptErr);
+          }
+          if (!tabData) {
+            tabData = {
+              sourceUrl: activeUrl,
+              method: "Browser Tab Fallback",
+              title: activeTab.title || ""
+            };
+          }
+        }
+        this.setStatus("\u0110ang g\u1EEDi d\u1EEF li\u1EC7u trang t\u1EDBi backend \u0111\u1EC3 ph\xE2n t\xEDch theo ti\xEAu ch\xED SLR...", "info");
+        const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            record,
+            tabData,
+            autoFetchPdf: true
+          })
+        });
+        const resData = await response.json();
+        if (!resData.success) {
+          throw new Error(resData.error || "L\u1ED7i khi ph\xE2n t\xEDch d\u1EEF li\u1EC7u tab");
+        }
+        const analysisResult = resData.data;
+        this.pendingAnalysisResult = analysisResult;
+        this.pendingRecordId = record.id;
+        this.showPreviewModal(analysisResult, record);
+        this.setStatus("\u2713 \u0110\xE3 ph\xE2n t\xEDch xong! H\xE3y xem tr\u01B0\u1EDBc v\xE0 x\xE1c nh\u1EADn c\u1EADp nh\u1EADt.", "success");
+      } catch (err) {
+        this.setStatus(`L\u1ED7i l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB tab: ${err.message}`, "error");
+      }
+    }
+    showPreviewModal(result, record) {
+      if (!this.tabExtractModal || !this.modalBody) return;
+      let warningHtml = "";
+      if (!result.isTitleMatch) {
+        warningHtml += `
+        <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; border-left-color: #dc2626;">
+          \u26A0\uFE0F <b>C\u1EA2NH B\xC1O TI\xCAU \u0110\u1EC0 KH\xD4NG KH\u1EDAP:</b><br>
+          ${this.escapeHtml(result.titleMismatchWarning || `\u0110\u1ED9 t\u01B0\u01A1ng \u0111\u1ED3ng ti\xEAu \u0111\u1EC1 ch\u1EC9 \u0111\u1EA1t ${(result.titleMatchConfidence * 100).toFixed(0)}%. H\xE3y ki\u1EC3m tra k\u1EF9 xem tab \u0111ang m\u1EDF c\xF3 \u0111\xFAng l\xE0 b\xE0i b\xE1o n\xE0y kh\xF4ng!`)}
+        </div>
+      `;
+      }
+      if (result.warnings && result.warnings.length > 0) {
+        warningHtml += result.warnings.map((w) => `
+        <div class="warning-banner">\u26A0\uFE0F ${this.escapeHtml(w)}</div>
+      `).join("");
+      }
+      const diffRows = result.changes.map((ch) => {
+        const cls = ch.willChange ? "diff-changed" : "diff-unchanged";
+        const statusIcon = ch.willChange ? "\u{1F504} S\u1EBD c\u1EADp nh\u1EADt" : "\u2796 Gi\u1EEF nguy\xEAn";
+        return `
+        <tr>
+          <td><b>${this.escapeHtml(ch.field)}</b></td>
+          <td>${this.escapeHtml(ch.oldValue || "(tr\u1ED1ng)")}</td>
+          <td class="${cls}">${this.escapeHtml(ch.newValue || "(tr\u1ED1ng)")}</td>
+          <td style="text-align: center;">${statusIcon}</td>
+        </tr>
+      `;
+      }).join("");
+      let evidenceHtml = "";
+      if (result.evidence && result.evidence.length > 0) {
+        const items = result.evidence.map((ev) => {
+          const itemClass = ev.isValidEvidence ? "evidence-item" : "evidence-item invalid";
+          const statusBadge = ev.isValidEvidence ? '<span class="badge badge-blue">\u2713 B\u1EB1ng ch\u1EE9ng h\u1EE3p l\u1EC7</span>' : '<span class="badge badge-red">\u2717 B\u1ECB lo\u1EA1i (Kh\xF4ng t\xEDnh \u0111\u1EA1t IC)</span>';
+          const sectionBadge = `<span class="badge badge-yellow">M\u1EE5c: ${this.escapeHtml(ev.section)}</span>`;
+          const pageBadge = ev.page ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : "";
+          return `
+          <div class="${itemClass}">
+            <div style="display: flex; gap: 6px; margin-bottom: 3px; align-items: center; flex-wrap: wrap;">
+              <b>[${ev.type}]</b>
+              ${statusBadge}
+              ${sectionBadge}
+              ${pageBadge}
+              <code style="font-size: 10px;">${this.escapeHtml(ev.term)}</code>
+            </div>
+            <div style="font-size: 11px; color: #1e293b; background: #f8fafc; padding: 4px; border-radius: 3px;">
+              "${this.escapeHtml(ev.context)}"
+            </div>
+            ${ev.reason ? `<div style="font-size: 10px; color: #b45309; margin-top: 2px;">\u2139\uFE0F ${this.escapeHtml(ev.reason)}</div>` : ""}
+          </div>
+        `;
+        }).join("");
+        evidenceHtml = `
+        <div class="evidence-box">
+          <b>\u{1F50D} B\u1EB1ng ch\u1EE9ng tr\xEDch xu\u1EA5t \u0111\u01B0\u1EE3c (${result.evidence.length}):</b>
+          <div style="margin-top: 6px;">${items}</div>
+        </div>
+      `;
+      } else {
+        evidenceHtml = `
+        <div class="evidence-box" style="color: #64748b;">
+          <i>Kh\xF4ng t\xECm th\u1EA5y b\u1EB1ng ch\u1EE9ng IC-I/IC-E tr\u1EF1c ti\u1EBFp t\u1EEB trang/PDF n\xE0y.</i>
+        </div>
+      `;
+      }
+      let screeningSuggestionHtml = "";
+      if (result.suggestedScreeningUpdate) {
+        const s = result.suggestedScreeningUpdate;
+        const decBadge = this.getDecisionBadge(s.suggestedDecision);
+        screeningSuggestionHtml = `
+        <div class="notice-callout" style="margin-top: 8px;">
+          <b>G\u1EE3i \xFD th\u1EA9m \u0111\u1ECBnh (${s.stage}):</b> ${decBadge} \u2014 ${this.escapeHtml(s.screeningReason)}<br>
+          <small style="color: #6b7280;">(L\u01B0u \xFD: Quy\u1EBFt \u0111\u1ECBnh cu\u1ED1i c\xF9ng <code>finalDecision</code> do b\u1EA1n quy\u1EBFt \u0111\u1ECBnh, h\u1EC7 th\u1ED1ng kh\xF4ng t\u1EF1 \xFD thay \u0111\u1ED5i)</small>
+        </div>
+      `;
+      }
+      this.modalBody.innerHTML = `
+      ${warningHtml}
+      <div style="margin-bottom: 8px; font-size: 11px; color: #475569;">
+        <span>\u{1F310} <b>Ngu\u1ED3n:</b> <a href="${this.escapeHtml(result.extracted.sourceUrl)}" target="_blank">${this.escapeHtml(result.extracted.sourceUrl)}</a></span><br>
+        <span>\u2699\uFE0F <b>Ph\u01B0\u01A1ng th\u1EE9c tr\xEDch xu\u1EA5t:</b> ${this.escapeHtml(result.extracted.method)}</span>
+        ${result.extracted.pageCount ? ` | <span>\u{1F4C4} <b>T\u1ED5ng s\u1ED1 trang:</b> ${result.extracted.pageCount}</span>` : ""}
+      </div>
+
+      <div style="margin-top: 6px;">
+        <b>So s\xE1nh c\xE1c tr\u01B0\u1EDDng d\u1EEF li\u1EC7u (Diff):</b>
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th style="width: 15%;">Tr\u01B0\u1EDDng</th>
+              <th style="width: 35%;">Gi\xE1 tr\u1ECB hi\u1EC7n t\u1EA1i</th>
+              <th style="width: 35%;">Gi\xE1 tr\u1ECB m\u1EDBi tr\xEDch xu\u1EA5t</th>
+              <th style="width: 15%;">Thao t\xE1c</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${diffRows}
+          </tbody>
+        </table>
+      </div>
+
+      ${evidenceHtml}
+      ${screeningSuggestionHtml}
+    `;
+      this.tabExtractModal.style.display = "flex";
+    }
+    async handleConfirmTabExtract() {
+      if (!this.pendingAnalysisResult || !this.pendingRecordId) {
+        this.closeModal();
+        return;
+      }
+      const record = this.uniqueRecords.find((r) => r.id === this.pendingRecordId);
+      const allRecord = this.allRecords.find((r) => r.id === this.pendingRecordId);
+      if (!record) {
+        this.closeModal();
+        return;
+      }
+      const { extracted, suggestedScreeningUpdate, evidence } = this.pendingAnalysisResult;
+      if (extracted.title) record.title = extracted.title;
+      if (extracted.authors) {
+        record.authors = extracted.authors;
+        record.uncertain_authors = false;
+      }
+      if (extracted.year) {
+        record.year = extracted.year;
+        record.uncertain_year = false;
+      }
+      if (extracted.venue) {
+        record.venue = extracted.venue;
+        record.uncertain_venue = false;
+      }
+      if (extracted.doi) {
+        record.doi = extracted.doi;
+        record.uncertain_doi = false;
+      }
+      if (extracted.abstract) {
+        record.abstract = extracted.abstract;
+        record.missing_abstract = false;
+      }
+      if (extracted.pdfUrl) record.pdfUrl = extracted.pdfUrl;
+      if (extracted.pageCount) record.page_count = extracted.pageCount;
+      record.extracted_url = extracted.sourceUrl;
+      record.extracted_at = (/* @__PURE__ */ new Date()).toISOString();
+      record.extraction_method = extracted.method;
+      record.evidence_snippets = evidence;
+      record.user_verified = true;
+      if (suggestedScreeningUpdate) {
+        record.screeningStage = suggestedScreeningUpdate.stage;
+        record.suggestedDecision = suggestedScreeningUpdate.suggestedDecision;
+        record.matchedCriteria = suggestedScreeningUpdate.matchedCriteria;
+        record.unknownCriteria = suggestedScreeningUpdate.unknownCriteria;
+        record.missingEvidence = suggestedScreeningUpdate.missingEvidence;
+        record.screeningReason = suggestedScreeningUpdate.screeningReason;
+      }
+      if (allRecord) {
+        Object.assign(allRecord, record);
+      }
+      await this.saveSessionToStorage();
+      this.closeModal();
+      this.renderRecordsList();
+      this.setStatus(`\u2713 \u0110\xE3 c\u1EADp nh\u1EADt th\xE0nh c\xF4ng d\u1EEF li\u1EC7u v\xE0 provenance cho b\xE0i b\xE1o #${record.id}`, "success");
+    }
+    handleCancelTabExtract() {
+      this.closeModal();
+      this.setStatus("\u0110\xE3 h\u1EE7y b\u1ECF c\u1EADp nh\u1EADt. To\xE0n b\u1ED9 d\u1EEF li\u1EC7u c\u0169 \u0111\u01B0\u1EE3c gi\u1EEF nguy\xEAn.", "info");
+    }
+    closeModal() {
+      if (this.tabExtractModal) {
+        this.tabExtractModal.style.display = "none";
+      }
+      this.pendingAnalysisResult = null;
+      this.pendingRecordId = null;
     }
     async updatePaperDecision(paperId, decision) {
       const record = this.allRecords.find((r) => r.id === paperId);

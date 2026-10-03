@@ -8,78 +8,177 @@
     doi = doi.replace(/^doi:\s*/i, "");
     return doi.toLowerCase().trim();
   }
-  function extractAcmDl() {
-    const items = [];
-    const elements = document.querySelectorAll(".issue-item__content, .search__item");
-    elements.forEach((el) => {
-      const titleEl = el.querySelector(".issue-item__title a, .hlFld-Title a");
-      const doiEl = el.querySelector(".issue-item__doi, a.issue-item__doi");
-      const authorEls = el.querySelectorAll(".author-name, .rlist--inline li a");
-      const abstractEl = el.querySelector(".issue-item__abstract, .abstract-text");
-      const yearEl = el.querySelector(".dot-separator, .epub-section");
-      const title = titleEl ? titleEl.innerText.trim() : "";
-      const url = titleEl ? titleEl.href : window.location.href;
-      const rawDoi = doiEl ? doiEl.innerText.trim() : "";
-      const authors = Array.from(authorEls).map((a) => a.innerText.trim()).filter(Boolean).join("; ");
-      const abstract = abstractEl ? abstractEl.innerText.trim() : "";
-      let year = "";
-      if (yearEl) {
-        const match = yearEl.innerText.match(/\b(19\d\d|20\d\d)\b/);
-        if (match) year = match[1];
-      }
-      if (title) {
-        items.push({
-          source: "ACM DL",
-          discoverySource: "ACM DL",
-          collectionMethod: "DOM Scraping",
-          title,
-          authors,
-          year,
-          venue: "ACM Digital Library",
-          doi: cleanDoi(rawDoi),
-          abstract,
-          url
-        });
+  function extractCurrentPageData() {
+    const getMeta = (name) => {
+      const el = document.querySelector(`meta[name="${name}" i], meta[property="${name}" i]`);
+      return el ? (el.getAttribute("content") || "").trim() : "";
+    };
+    const getAllMetas = (name) => {
+      const els = document.querySelectorAll(`meta[name="${name}" i], meta[property="${name}" i]`);
+      return Array.from(els).map((el) => (el.getAttribute("content") || "").trim()).filter(Boolean);
+    };
+    let title = getMeta("citation_title");
+    const citationAuthors = getAllMetas("citation_author");
+    let authors = citationAuthors.join("; ");
+    let doi = getMeta("citation_doi");
+    let venue = getMeta("citation_journal_title") || getMeta("citation_conference_title") || getMeta("citation_publisher");
+    let rawDate = getMeta("citation_publication_date") || getMeta("citation_date") || getMeta("citation_year");
+    let abstract = getMeta("citation_abstract");
+    let pdfUrl = getMeta("citation_pdf_url");
+    let method = "HighWire citation_* Meta";
+    const jsonLdScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    jsonLdScripts.forEach((script) => {
+      try {
+        const parsed = JSON.parse(script.textContent || "{}");
+        const items = Array.isArray(parsed) ? parsed : parsed["@graph"] ? parsed["@graph"] : [parsed];
+        for (const item of items) {
+          const itemType = String(item["@type"] || "").toLowerCase();
+          if (itemType.includes("article") || itemType.includes("scholarlyarticle") || itemType.includes("techreport") || itemType.includes("report") || itemType.includes("publication")) {
+            if (!title) title = item.headline || item.name || "";
+            if (!authors && item.author) {
+              const authorList = Array.isArray(item.author) ? item.author : [item.author];
+              authors = authorList.map((a) => typeof a === "string" ? a : a.name || "").filter(Boolean).join("; ");
+            }
+            if (!doi && (item.identifier || item.sameAs)) {
+              const idVal = String(item.identifier || item.sameAs);
+              const doiM = idVal.match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
+              if (doiM) doi = doiM[0];
+            }
+            if (!venue && item.isPartOf) {
+              venue = typeof item.isPartOf === "string" ? item.isPartOf : item.isPartOf.name || "";
+            }
+            if (!venue && item.publisher) {
+              venue = typeof item.publisher === "string" ? item.publisher : item.publisher.name || "";
+            }
+            if (!rawDate && item.datePublished) {
+              rawDate = String(item.datePublished);
+            }
+            if (!abstract && (item.description || item.abstract)) {
+              abstract = item.abstract || item.description || "";
+            }
+            method = "JSON-LD + citation_*";
+          }
+        }
+      } catch {
       }
     });
-    return items;
-  }
-  function extractGenericMeta() {
-    const getMeta = (name) => {
-      const el = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
-      return el ? el.getAttribute("content") : "";
-    };
-    const title = getMeta("citation_title") || document.title;
-    const doi = getMeta("citation_doi") || "";
-    const year = getMeta("citation_publication_date")?.slice(0, 4) || "";
-    const venue = getMeta("citation_journal_title") || getMeta("og:site_name") || "";
-    const abstract = getMeta("citation_abstract") || getMeta("description") || "";
-    const authors = Array.from(document.querySelectorAll('meta[name="citation_author"]')).map((m) => m.getAttribute("content")).filter(Boolean).join("; ");
-    return [{
-      source: "Web DOM",
-      discoverySource: "Web DOM",
-      collectionMethod: "DOM Scraping",
-      title: (title || "").trim(),
-      authors,
-      year,
-      venue,
-      doi: cleanDoi(doi || ""),
-      abstract: (abstract || "").trim(),
-      url: window.location.href
-    }];
-  }
-  (() => {
+    if (!title) {
+      title = getMeta("DC.title") || getMeta("dc.title") || getMeta("og:title");
+    }
+    if (!authors) {
+      const dcAuthors = getAllMetas("DC.creator").concat(getAllMetas("dc.creator"));
+      if (dcAuthors.length > 0) authors = dcAuthors.join("; ");
+    }
+    if (!doi) {
+      const dcId = getMeta("DC.identifier") || getMeta("dc.identifier");
+      const doiM = dcId.match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
+      if (doiM) doi = doiM[0];
+    }
+    if (!venue) {
+      venue = getMeta("DC.source") || getMeta("dc.source") || getMeta("og:site_name");
+    }
+    if (!rawDate) {
+      rawDate = getMeta("DC.date") || getMeta("dc.date") || getMeta("article:published_time");
+    }
+    if (!abstract) {
+      abstract = getMeta("DC.description") || getMeta("dc.description") || getMeta("description") || getMeta("og:description");
+    }
     const host = window.location.hostname.toLowerCase();
-    let results = [];
     if (host.includes("dl.acm.org")) {
-      results = extractAcmDl();
+      if (!title) {
+        const el = document.querySelector(".citation__title, .issue-item__title a, h1.citation__title");
+        if (el) title = el.innerText.trim();
+      }
+      if (!abstract) {
+        const el = document.querySelector(".abstractSection, .abstract-text");
+        if (el) abstract = el.innerText.trim();
+      }
+      if (!venue) venue = "ACM Digital Library";
+    }
+    if (host.includes("ieee.org")) {
+      if (!title) {
+        const el = document.querySelector(".document-title, h1.document-title");
+        if (el) title = el.innerText.trim();
+      }
+      if (!abstract) {
+        const el = document.querySelector(".abstract-text");
+        if (el) abstract = el.innerText.trim();
+      }
+    }
+    if (host.includes("springer.com")) {
+      if (!title) {
+        const el = document.querySelector(".c-article-title, h1.c-article-title");
+        if (el) title = el.innerText.trim();
+      }
+      if (!abstract) {
+        const el = document.querySelector("#Abs1-content, .c-article-section__content");
+        if (el) abstract = el.innerText.trim();
+      }
+    }
+    if (host.includes("arxiv.org")) {
+      if (!title) {
+        const el = document.querySelector("h1.title");
+        if (el) title = el.innerText.replace(/^Title:\s*/i, "").trim();
+      }
+      if (!abstract) {
+        const el = document.querySelector("blockquote.abstract");
+        if (el) abstract = el.innerText.replace(/^Abstract:\s*/i, "").trim();
+      }
+      if (!venue) venue = "arXiv";
+    }
+    if (!title) {
+      title = document.title.replace(/\s*\|\s*.*$/, "").replace(/\s*-\s*.*$/, "").trim();
+    }
+    let year = "";
+    if (rawDate) {
+      const yearMatch = rawDate.match(/\b(19\d\d|20\d\d)\b/);
+      if (yearMatch) year = yearMatch[1];
+    }
+    if (!pdfUrl) {
+      const linkEl = document.querySelector('link[rel="alternate"][type="application/pdf"], link[type="application/pdf"]');
+      if (linkEl && linkEl.href) {
+        pdfUrl = linkEl.href;
+      } else {
+        const aPdf = document.querySelector('a[href*=".pdf"], a.pdf-btn, a[data-testid="pdf-link"]');
+        if (aPdf && aPdf.href) pdfUrl = aPdf.href;
+      }
+    }
+    if (window.location.pathname.toLowerCase().endsWith(".pdf") || document.contentType === "application/pdf") {
+      pdfUrl = window.location.href;
+      method = "Active Tab PDF URL";
+    }
+    let rawText = "";
+    const articleEl = document.querySelector("article, main, #main-content, .article-content, #content");
+    if (articleEl) {
+      rawText = articleEl.innerText || "";
     } else {
-      results = extractGenericMeta();
+      rawText = document.body ? document.body.innerText || "" : "";
+    }
+    if (rawText.length > 2e5) {
+      rawText = rawText.slice(0, 2e5);
     }
     return {
-      results,
-      url: window.location.href,
-      count: results.length
+      sourceUrl: window.location.href,
+      method,
+      title: (title || "").trim(),
+      authors: (authors || "").trim(),
+      year: year || "",
+      venue: (venue || "").trim(),
+      doi: cleanDoi(doi),
+      abstract: (abstract || "").trim(),
+      // Tuyệt đối không lấy snippet làm abstract
+      pdfUrl: (pdfUrl || "").trim(),
+      rawText
     };
+  }
+  if (typeof window !== "undefined") {
+    window.extractCurrentPageData = extractCurrentPageData;
+  }
+  (() => {
+    try {
+      return extractCurrentPageData();
+    } catch (e) {
+      return null;
+    }
   })();
 })();
