@@ -659,11 +659,12 @@ class ScholarExtensionApp {
 
     try {
       const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-      if (!tabs || tabs.length === 0 || !tabs[0].id) {
+      if (!tabs || tabs.length === 0 || typeof tabs[0].id !== 'number') {
         this.setStatus('Không tìm thấy tab trình duyệt đang kích hoạt.', 'error');
         return;
       }
       const activeTab = tabs[0];
+      const tabId: number = activeTab.id as number;
       const activeUrl = activeTab.url || '';
 
       let tabData: any = null;
@@ -679,9 +680,25 @@ class ScholarExtensionApp {
       } else {
         // Thu executeScript tren trang web (HTML)
         try {
-          const results = await chrome.scripting.executeScript({
-            target: { tabId: activeTab.id },
+          // Buoc 1: Inject bundle content-script.js vao tab dang mo
+          await chrome.scripting.executeScript({
+            target: { tabId },
             files: ['content-script.js']
+          });
+
+          // Buoc 2: Thuc thi ham func de lay ket qua tu extractCurrentPageData ve popup
+          const results = await chrome.scripting.executeScript({
+            target: { tabId },
+            func: () => {
+              try {
+                if (typeof (window as any).extractCurrentPageData === 'function') {
+                  return (window as any).extractCurrentPageData();
+                }
+              } catch (e) {
+                console.error('Loi khi goi extractCurrentPageData trong tab:', e);
+              }
+              return null;
+            }
           });
           if (results && results[0] && results[0].result) {
             tabData = results[0].result;
@@ -725,13 +742,16 @@ class ScholarExtensionApp {
         throw new Error(resData.error || 'Lỗi khi phân tích dữ liệu tab');
       }
 
-      const analysisResult: TabAnalysisResult = resData.data || resData.analysis;
+      const analysisResult: TabAnalysisResult = resData.analysis || resData.data;
+      if (!analysisResult || !analysisResult.extracted) {
+        throw new Error('Dữ liệu phân tích trả về từ backend thiếu cấu trúc analysis hợp lệ.');
+      }
       this.pendingAnalysisResult = analysisResult;
       this.pendingRecordId = record.id;
 
-
       this.showPreviewModal(analysisResult, record);
       this.setStatus('✓ Đã phân tích xong! Hãy xem trước và xác nhận cập nhật.', 'success');
+
     } catch (err: any) {
       this.setStatus(`Lỗi lấy dữ liệu từ tab: ${err.message}`, 'error');
     }

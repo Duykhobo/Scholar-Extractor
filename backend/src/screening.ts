@@ -14,7 +14,10 @@ export interface ScreeningOptions {
   fullTextUnavailable?: boolean;
   publicationType?: string;
   sourceEvidence?: string;
+  hasVerifiedEpBva?: boolean;
+  hasVerifiedTableOrFigure?: boolean;
 }
+
 
 /**
  * 1. Helper kiểm tra ngôn ngữ tiếng Anh (IC-L)
@@ -398,7 +401,7 @@ export function evaluateScreeningV1(
 
   // (b) Kiểm tra IC-I (Kỹ thuật EP và/hoặc BVA cho tham số request)
   // Test generation, fuzzing, random testing hoặc LLM riêng lẻ KHÔNG ĐỦ
-  const hasEpBvaEvidence = hasEpOrBva(fullText);
+  const hasEpBvaEvidence = options?.hasVerifiedEpBva !== undefined ? options.hasVerifiedEpBva : hasEpOrBva(fullText);
   if (!hasEpBvaEvidence) {
     unknownCriteria.push('IC-I');
     missingEvidence.push('Thiếu bằng chứng kỹ thuật EP và/hoặc BVA cho tham số REST request (IC-I)');
@@ -433,12 +436,14 @@ export function evaluateScreeningV1(
   }
 
   // (e) Kiểm tra IC-E (Số liệu Table/Figure - Ca biên 3)
-  if (hasQuantitativeTableOrFigure(fullText)) {
+  const hasIceEvidence = options?.hasVerifiedTableOrFigure !== undefined ? options.hasVerifiedTableOrFigure : hasQuantitativeTableOrFigure(fullText);
+  if (hasIceEvidence) {
     matchedCriteria.push('IC-E');
   } else {
     unknownCriteria.push('IC-E');
     missingEvidence.push('Chưa xác minh số liệu định lượng trong Table/Figure (IC-E)');
   }
+
 
   // Đánh giá quyết định gợi ý vòng V1:
   // Cần đạt tối thiểu IC-P, IC-I, IC-Y, IC-L, IC-T. Nếu IC-T hoặc IC-L chưa xác minh -> Unsure
@@ -634,7 +639,8 @@ export function evaluateScreeningV2(
   }
 
   // Kiểm tra EP / BVA (IC-I)
-  if (hasEpOrBva(fullTextScan)) {
+  const hasEpBvaEvidence = options?.hasVerifiedEpBva !== undefined ? options.hasVerifiedEpBva : hasEpOrBva(fullTextScan);
+  if (hasEpBvaEvidence) {
     matchedCriteria.push('IC-I');
   } else {
     unknownCriteria.push('IC-I');
@@ -658,12 +664,14 @@ export function evaluateScreeningV2(
   }
 
   // Kiểm tra số liệu định lượng trong Table/Figure (IC-E - Ca biên 3)
-  if (hasQuantitativeTableOrFigure(fullTextScan)) {
+  const hasIceEvidence = options?.hasVerifiedTableOrFigure !== undefined ? options.hasVerifiedTableOrFigure : hasQuantitativeTableOrFigure(fullTextScan);
+  if (hasIceEvidence) {
     matchedCriteria.push('IC-E');
   } else {
     unknownCriteria.push('IC-E');
     missingEvidence.push('Chưa có bằng chứng số liệu định lượng trong Table hoặc Figure (IC-E)');
   }
+
 
   // 5. V2 KHÔNG ĐƯỢC INCLUDE KHI CÒN TIÊU CHÍ BẮT BUỘC UNKNOWN HOẶC THIẾU PAGECOUNT HỢP LỆ
   const mandatoryCriteria = ['IC-L', 'IC-T', 'IC-E', 'IC-Y', 'IC-P', 'IC-I'];

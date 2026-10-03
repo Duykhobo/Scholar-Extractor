@@ -14,11 +14,20 @@ export interface PdfParseResult {
  */
 export async function parsePdfBuffer(buffer: Buffer | ArrayBuffer | Uint8Array): Promise<PdfParseResult> {
   try {
-    const data = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
+    let data: Uint8Array;
+    if (typeof Buffer !== 'undefined' && Buffer.isBuffer(buffer)) {
+      data = new Uint8Array(buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength));
+    } else if (buffer instanceof Uint8Array) {
+      data = new Uint8Array(buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength));
+    } else {
+      data = new Uint8Array(buffer);
+    }
+
     const loadingTask = pdfjs.getDocument({
       data,
       useSystemFonts: true
     });
+
 
     const doc = await loadingTask.promise;
     const pageCount = doc.numPages;

@@ -293,11 +293,13 @@ app.post('/api/scholar/parse-pdf', async (req: Request, res: Response) => {
 
     let result;
     if (base64Data) {
-      const buffer = Buffer.from(base64Data, 'base64');
-      result = await parsePdfBuffer(buffer);
+      const buf = Buffer.from(base64Data, 'base64');
+      const uint8 = new Uint8Array(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
+      result = await parsePdfBuffer(uint8);
     } else if (url) {
       result = await parsePdfFromUrl(url);
     }
+
 
     res.json(result);
   } catch (err: any) {

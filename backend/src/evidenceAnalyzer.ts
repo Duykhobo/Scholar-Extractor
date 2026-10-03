@@ -148,7 +148,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
 
       // Quy tắc protocol: Category partition/TSL chỉ được tính khi nội dung mô tả cho thấy đáp ứng IC-I;
       // không tự động coi là EP/BVA.
-      const hasParameterContext = /\b(parameter|request|input|equivalence|boundary|partition)\b/i.test(context);
+      // YÊU CẦU: Bằng chứng rõ ràng về EP/BVA áp dụng cho tham số REST request.
+      const hasEpOrBvaInContext = /\b(equivalence(\s*partitioning|\s*classes)?|boundary[- ]value|boundary\s*testing|parameter\s*boundaries)\b/i.test(context);
+      const hasRequestParamInContext = /\b(parameter|request|query|path|body|header|endpoint)\b/i.test(context);
 
       if (section === 'Related Work' || section === 'References') {
         evidence.push({
@@ -160,7 +162,7 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
           isValidEvidence: false,
           reason: 'Category Partition / TSL chỉ được nhắc trong Related Work / References.'
         });
-      } else if (hasParameterContext) {
+      } else if (hasEpOrBvaInContext && hasRequestParamInContext) {
         hasValidIci = true;
         evidence.push({
           type: 'IC-I',
@@ -169,7 +171,7 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
           page: pageNum,
           section,
           isValidEvidence: true,
-          reason: 'Category-Partition / TSL có mô tả áp dụng phân hoạch tham số request đáp ứng IC-I.'
+          reason: 'Category-Partition / TSL có mô tả rõ ràng áp dụng EP/BVA cho tham số REST request đáp ứng IC-I.'
         });
       } else {
         evidence.push({
@@ -179,10 +181,11 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
           page: pageNum,
           section,
           isValidEvidence: false,
-          reason: 'Chỉ nhắc tên công cụ/kỹ thuật TSL đơn thuần, chưa đủ bằng chứng áp dụng EP/BVA cho tham số request.'
+          reason: 'Chỉ có “TSL + input” hoặc Category-Partition đơn thuần; chưa đủ bằng chứng xác minh EP/BVA cho tham số request. Bắt buộc giữ Unsure theo protocol.'
         });
       }
     }
+
 
     // B. Tìm kiếm bằng chứng IC-E (Table / Figure có số liệu định lượng)
     const tableFigureRegex = /\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b[^.\n\r]{0,120}?\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/gi;
@@ -280,6 +283,9 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
   const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages);
   warnings.push(...evidenceWarnings);
 
+  const hasValidIci = evidence.some(e => e.type === 'IC-I' && e.isValidEvidence === true);
+  const hasValidIce = evidence.some(e => e.type === 'IC-E' && e.isValidEvidence === true);
+
   if (tabData.isImagePdf) {
     warnings.push('⚠️ PDF chỉ chứa hình ảnh / bản scan (không trích xuất được văn bản số). Không suy diễn thiếu văn bản thành "không có thực nghiệm" (EC-N).');
   }
@@ -298,7 +304,9 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
       tabData.venue || record.venue,
       {
         pageCount: tabData.pageCount,
-        fullTextUnavailable: false
+        fullTextUnavailable: false,
+        hasVerifiedEpBva: hasValidIci,
+        hasVerifiedTableOrFigure: hasValidIce
       }
     );
     suggestedScreeningUpdate = screening;
@@ -312,11 +320,42 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
       tabData.venue || record.venue,
       {
         pageCount: tabData.pageCount,
-        fullTextUnavailable: false
+        fullTextUnavailable: false,
+        hasVerifiedEpBva: hasValidIci,
+        hasVerifiedTableOrFigure: hasValidIce
       }
     );
     suggestedScreeningUpdate = screening;
   }
+
+  // BẢO VỆ CHẮC CHẮN THEO PROTOCOL:
+  // Nếu bằng chứng IC-I thẩm định không hợp lệ (ví dụ BVA chỉ nằm trong Related Work hoặc chỉ có TSL+input chung):
+  // BẮT BUỘC LOẠI IC-I KHỎI MATCHEDCRITERIA VÀ KHÔNG ĐƯỢC GỢI Ý INCLUDE!
+  if (suggestedScreeningUpdate && !hasValidIci) {
+    suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter(c => c !== 'IC-I');
+    if (!suggestedScreeningUpdate.unknownCriteria.includes('IC-I')) {
+      suggestedScreeningUpdate.unknownCriteria.push('IC-I');
+    }
+    if (!suggestedScreeningUpdate.missingEvidence.some(m => m.includes('IC-I'))) {
+      suggestedScreeningUpdate.missingEvidence.push('Từ khóa kỹ thuật kiểm thử chỉ xuất hiện trong Related Work / References hoặc chưa chứng minh EP/BVA cho tham số request (IC-I)');
+    }
+    if (suggestedScreeningUpdate.suggestedDecision === 'Include') {
+      suggestedScreeningUpdate.suggestedDecision = 'Unsure';
+      suggestedScreeningUpdate.screeningReason = 'Chưa đạt IC-I: Từ khóa kỹ thuật kiểm thử (EP/BVA/TSL) chỉ nằm trong Related Work / References hoặc chưa có bằng chứng áp dụng cho tham số REST request. Giữ Unsure theo protocol.';
+    }
+  }
+
+  if (suggestedScreeningUpdate && !hasValidIce) {
+    suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter(c => c !== 'IC-E');
+    if (!suggestedScreeningUpdate.unknownCriteria.includes('IC-E')) {
+      suggestedScreeningUpdate.unknownCriteria.push('IC-E');
+    }
+    if (suggestedScreeningUpdate.suggestedDecision === 'Include') {
+      suggestedScreeningUpdate.suggestedDecision = 'Unsure';
+      suggestedScreeningUpdate.screeningReason = 'Chưa đạt IC-E: Chưa tìm thấy kết quả định lượng cụ thể trong Table hoặc Figure. Giữ Unsure theo protocol.';
+    }
+  }
+
 
   return {
     extracted: tabData,

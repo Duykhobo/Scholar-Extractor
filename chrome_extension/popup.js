@@ -544,11 +544,12 @@
       this.setStatus("\u0110ang k\u1EBFt n\u1ED1i t\u1EDBi Tab \u0111ang m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t...", "info");
       try {
         const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-        if (!tabs || tabs.length === 0 || !tabs[0].id) {
+        if (!tabs || tabs.length === 0 || typeof tabs[0].id !== "number") {
           this.setStatus("Kh\xF4ng t\xECm th\u1EA5y tab tr\xECnh duy\u1EC7t \u0111ang k\xEDch ho\u1EA1t.", "error");
           return;
         }
         const activeTab = tabs[0];
+        const tabId = activeTab.id;
         const activeUrl = activeTab.url || "";
         let tabData = null;
         if (activeUrl.toLowerCase().endsWith(".pdf") || activeUrl.toLowerCase().includes(".pdf?")) {
@@ -560,9 +561,22 @@
           };
         } else {
           try {
-            const results = await chrome.scripting.executeScript({
-              target: { tabId: activeTab.id },
+            await chrome.scripting.executeScript({
+              target: { tabId },
               files: ["content-script.js"]
+            });
+            const results = await chrome.scripting.executeScript({
+              target: { tabId },
+              func: () => {
+                try {
+                  if (typeof window.extractCurrentPageData === "function") {
+                    return window.extractCurrentPageData();
+                  }
+                } catch (e) {
+                  console.error("Loi khi goi extractCurrentPageData trong tab:", e);
+                }
+                return null;
+              }
             });
             if (results && results[0] && results[0].result) {
               tabData = results[0].result;
@@ -600,7 +614,10 @@
         if (!resData.success) {
           throw new Error(resData.error || "L\u1ED7i khi ph\xE2n t\xEDch d\u1EEF li\u1EC7u tab");
         }
-        const analysisResult = resData.data || resData.analysis;
+        const analysisResult = resData.analysis || resData.data;
+        if (!analysisResult || !analysisResult.extracted) {
+          throw new Error("D\u1EEF li\u1EC7u ph\xE2n t\xEDch tr\u1EA3 v\u1EC1 t\u1EEB backend thi\u1EBFu c\u1EA5u tr\xFAc analysis h\u1EE3p l\u1EC7.");
+        }
         this.pendingAnalysisResult = analysisResult;
         this.pendingRecordId = record.id;
         this.showPreviewModal(analysisResult, record);

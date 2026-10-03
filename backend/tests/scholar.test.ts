@@ -984,7 +984,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
   });
 
   // Scenario 4: Từ khóa "boundary" chỉ xuất hiện ở mục Related Work / References
-  test("Scenario 4: Từ khóa boundary chỉ xuất hiện ở Related Work / References -> isValidEvidence: false, không đạt IC-I", () => {
+  test("Scenario 4: Từ khóa boundary chỉ xuất hiện ở Related Work / References -> isValidEvidence: false, screening giữ Unsure (không Include)", () => {
     const textRelatedWorkOnly = `
       Section 1. Introduction
       We explore REST API web services and their reliability.
@@ -1008,6 +1008,125 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     assert.ok(iciEvidences.length > 0, "Tìm thấy đoạn chứa từ khóa");
     assert.ok(iciEvidences.every(e => e.isValidEvidence === false), "Tất cả bằng chứng trong Related Work phải isValidEvidence: false");
     assert.ok(warnings.some(w => w.includes("Related Work")), "Có cảnh báo từ khóa chỉ nằm trong Related Work");
+
+    // QUAN TRỌNG (Cao #3): Screening phải dùng bằng chứng đã thẩm định, KHÔNG được Include chỉ vì full-text có từ khóa
+    const testRecord: PaperRecord = {
+      id: "paper_rw_only",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "RESTful Service Testing",
+      authors: "Smith et al.",
+      year: "2024",
+      venue: "ACM Transactions on Software Engineering",
+      doi: "10.1145/9999",
+      snippet: "snippet",
+      abstract: "Abstract on REST services.",
+      url: "",
+      query: "",
+      retrieval_date: "",
+      search_id: "",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: false,
+      screeningStage: "V1",
+      matchedCriteria: ["IC-P", "IC-L", "IC-T", "IC-Y"],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    const analysis = analyzeTabAgainstRecord(testRecord, {
+      sourceUrl: "https://example.com/test",
+      method: "Web HTML",
+      title: "RESTful Service Testing",
+      pageCount: 10,
+      pages: [{ pageNum: 2, text: textRelatedWorkOnly }]
+    });
+
+    // Bắt buộc: IC-I không được có trong matchedCriteria và suggestedDecision phải là Unsure
+    assert.ok(
+      !analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"),
+      "IC-I không được nằm trong matchedCriteria khi BVA chỉ ở Related Work"
+    );
+    assert.equal(
+      analysis.suggestedScreeningUpdate?.suggestedDecision,
+      "Unsure",
+      "Quyết định screening gợi ý bắt buộc phải là Unsure (không được Include)"
+    );
+  });
+
+  // Scenario 4b: Chỉ có "TSL + input" chưa chứng minh EP/BVA cho tham số request -> Giữ Unsure
+  test("Scenario 4b: Chỉ có 'TSL + input' chưa chứng minh EP/BVA cho tham số request -> isValidEvidence: false, giữ Unsure", () => {
+    const textTslInputOnly = `
+      Section 3. Methodology
+      We model the web service using the Test Specification Language (TSL) based on input definitions.
+      We generate initial tests by covering standard inputs.
+
+      Section 4. Evaluation
+      Table 1 reports 80% coverage on 5 endpoints.
+    `;
+
+    const { evidence } = extractEvidenceFromPages([
+      { pageNum: 4, text: textTslInputOnly }
+    ]);
+
+    const tslEv = evidence.filter(e => e.type === "IC-I");
+    assert.ok(tslEv.length > 0, "Tìm thấy đoạn nhắc TSL");
+    assert.ok(
+      tslEv.every(e => e.isValidEvidence === false),
+      "Chỉ có 'TSL + input' chưa đủ để đạt IC-I -> isValidEvidence phải là false"
+    );
+
+    const testRecord: PaperRecord = {
+      id: "paper_tsl_only",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "TSL Input Modeling for Web Services",
+      authors: "Test Author",
+      year: "2024",
+      venue: "IEEE Conference on Software Testing",
+      doi: "10.1109/9998",
+      snippet: "snippet",
+      abstract: "Abstract on TSL web testing.",
+      url: "",
+      query: "",
+      retrieval_date: "",
+      search_id: "",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: false,
+      screeningStage: "V1",
+      matchedCriteria: ["IC-P", "IC-L", "IC-T", "IC-Y"],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    const analysis = analyzeTabAgainstRecord(testRecord, {
+      sourceUrl: "https://example.com/tsl",
+      method: "Web HTML",
+      title: "TSL Input Modeling for Web Services",
+      pageCount: 8,
+      pages: [{ pageNum: 4, text: textTslInputOnly }]
+    });
+
+    assert.ok(
+      !analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"),
+      "IC-I không được tính đạt khi chỉ có TSL+input"
+    );
+    assert.equal(
+      analysis.suggestedScreeningUpdate?.suggestedDecision,
+      "Unsure",
+      "Screening gợi ý bắt buộc phải là Unsure khi chưa xác minh EP/BVA cho tham số request"
+    );
   });
 
   // Scenario 5: Phương pháp áp dụng thực sự EP/BVA cho tham số REST API
@@ -1021,6 +1140,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       Section 4. Experimental Evaluation
       Table 1 reports 85% branch coverage and 14 bugs found across 6 REST API benchmarks.
     `;
+
 
     const epPos = textMethodology.indexOf("equivalence partitioning");
     const bvaPos = textMethodology.indexOf("boundary-value analysis");
@@ -1113,6 +1233,119 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     assert.equal(clonedRecord.finalDecision, "Include");
     assert.equal(clonedRecord.userNotes, "Verified by reviewer on 2026-10-01");
   });
+
+  // Scenario 8: Parse tệp PDF hợp lệ dạng Buffer và Uint8Array
+  test("Scenario 8: Parse tệp PDF hợp lệ dạng Buffer và Uint8Array trích xuất thành công văn bản số", async () => {
+    // Tệp PDF 1.4 hợp lệ tối giản chuẩn
+    const minimalPdfBase64 = "JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9NZWRpYUJveFswIDAgNjEyIDc5Ml0vQ29udGVudHMgNCAwIFIvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSPj4+Pj4+ZW5kb2JqCjQgMCBvYmo8PC9MZW5ndGggNzc+PnN0cmVhbQpCVAovRjEgMTIgVGYKMTAwIDcwMCBUZAooUkVTVCBBUEkgVGVzdGluZyB3aXRoIEJvdW5kYXJ5IFZhbHVlIEFuYWx5c2lzIGFuZCBFcXVpdmFsZW5jZSBQYXJ0aXRpb25pbmcpIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iajw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0hlbHZldGljYT4+ZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDU4IDAwMDAwIG4gCjAwMDAwMDAxMTUgMDAwMDAgbiAKMDAwMDAwMDI0NCAwMDAwMCBuIAowMDAwMDAwMzcyIDAwMDAwIG4gCnRyYWlsZXIKPDwvU2l6ZSA2L1Jvb3QgMSAwIFI+PgpzdGFydHhyZWYKNDQ5CiUlRU9G";
+    const pdfBuffer = Buffer.from(minimalPdfBase64, "base64");
+
+    // 1. Kiểm tra parse trực tiếp từ Node Buffer
+    const resFromBuffer = await parsePdfBuffer(pdfBuffer);
+    assert.equal(resFromBuffer.success, true, "Parse Buffer phải thành công");
+    assert.equal(resFromBuffer.pageCount, 1, "Số trang phải là 1");
+    assert.ok(
+      resFromBuffer.rawText.includes("REST API Testing with Boundary Value Analysis"),
+      "Trích xuất đúng chuỗi văn bản trong PDF"
+    );
+
+    // 2. Kiểm tra parse từ Uint8Array (chuẩn Web / PDF.js)
+    const uint8 = new Uint8Array(pdfBuffer.buffer.slice(pdfBuffer.byteOffset, pdfBuffer.byteOffset + pdfBuffer.byteLength));
+    const resFromUint8 = await parsePdfBuffer(uint8);
+    assert.equal(resFromUint8.success, true, "Parse Uint8Array phải thành công");
+    assert.equal(resFromUint8.pageCount, 1);
+  });
+
+  // Scenario 9: Kiểm tra toàn luồng (End-to-End): Đọc tab -> API -> Phân tích response { success, analysis } -> Diff & Preview
+  test("Scenario 9: Kiểm tra toàn luồng: Dữ liệu trích xuất -> API phân tích -> Cấu trúc analysis đầy đủ cho Preview", () => {
+    const record: PaperRecord = {
+      id: "paper_e2e",
+      source: "Google Scholar",
+      discoverySource: "SerpApi",
+      collectionMethod: "Automated Search",
+      title: "Automated REST API Testing with Boundary Value Analysis",
+      authors: "A. Unknown",
+      year: "2021",
+
+      venue: "Unknown Venue",
+      doi: "",
+      snippet: "Some generic snippet on web APIs.",
+      abstract: "",
+      url: "https://example.com/e2e",
+      query: "REST API testing",
+      retrieval_date: "2026-10-01",
+      search_id: "s_e2e",
+      uncertain_authors: true,
+      uncertain_year: false,
+      uncertain_venue: true,
+      uncertain_doi: true,
+      missing_abstract: true,
+      screeningStage: "V1",
+      matchedCriteria: ["IC-P"],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    const tabDataExtracted = {
+      sourceUrl: "https://dl.acm.org/doi/10.1145/3597503.3639178",
+      method: "HighWire Press citation_* Meta",
+      title: "Automated REST API Testing with Boundary Value Analysis and Equivalence Partitioning",
+      authors: "Nguyen Van A; Tran Van B",
+      year: "2024",
+      venue: "ACM Transactions on Software Engineering and Methodology",
+      doi: "10.1145/3597503.3639178",
+      abstract: "We introduce a novel testing approach combining equivalence partitioning and boundary value analysis on REST API request parameters.",
+      pdfUrl: "https://dl.acm.org/doi/pdf/10.1145/3597503.3639178",
+      pageCount: 14,
+      pages: [
+        {
+          pageNum: 1,
+          text: "Automated REST API Testing with Boundary Value Analysis and Equivalence Partitioning. Abstract: We introduce a novel testing approach..."
+        },
+        {
+          pageNum: 5,
+          text: "Section 3. Methodology. We apply equivalence partitioning and boundary-value analysis on HTTP request parameters."
+        },
+        {
+          pageNum: 11,
+          text: "Section 5. Results. Table 1 reports 88% branch coverage and 25 bugs found."
+        }
+      ]
+    };
+
+    // Gọi API analyzeTabAgainstRecord
+    const analysis = analyzeTabAgainstRecord(record, tabDataExtracted);
+
+    // Xác thực cấu trúc response theo yêu cầu của popup:
+    assert.ok(analysis.extracted, "Phải có trường extracted");
+    assert.equal(analysis.isTitleMatch, true, "Khớp tiêu đề với bài báo REST API");
+    assert.ok(analysis.changes.length > 0, "Phải có danh sách trường thay đổi (diff)");
+
+    // Kiểm tra các trường diff
+    const titleChange = analysis.changes.find(c => c.field === "title");
+    assert.equal(titleChange?.willChange, true);
+    assert.equal(titleChange?.newValue, tabDataExtracted.title);
+
+    const doiChange = analysis.changes.find(c => c.field === "doi");
+    assert.equal(doiChange?.willChange, true);
+    assert.equal(doiChange?.newValue, "10.1145/3597503.3639178");
+
+    // Kiểm tra bằng chứng IC-I và IC-E
+    const validIci = analysis.evidence.filter(e => e.type === "IC-I" && e.isValidEvidence);
+    assert.ok(validIci.length >= 1, "Có bằng chứng IC-I hợp lệ");
+
+    const validIce = analysis.evidence.filter(e => e.type === "IC-E" && e.isValidEvidence);
+    assert.ok(validIce.length >= 1, "Có bằng chứng IC-E hợp lệ");
+
+    // Đạt đủ 6 tiêu chí IC ở vòng V2
+    assert.equal(analysis.suggestedScreeningUpdate?.stage, "V2");
+    assert.equal(analysis.suggestedScreeningUpdate?.suggestedDecision, "Include");
+    assert.ok(analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"));
+    assert.ok(analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-E"));
+  });
 });
+
 
 
