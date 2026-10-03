@@ -1,0 +1,26 @@
+{
+  "name": "slr-serpapi-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js + TypeScript cho thu thập Google Scholar qua SerpApi phục vụ SLR môn SWT302",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "test": "node --test dist/tests/*.test.js || tsx --test tests/scholar.test.ts",
+    "test:unit": "tsx --test tests/scholar.test.ts",
+    "test:live": "tsx --test tests/live_integration.test.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

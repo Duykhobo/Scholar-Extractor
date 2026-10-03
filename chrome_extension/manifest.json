@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "SWT302 SLR Metadata Extractor (SerpApi)",
+  "version": "2.0.0",
+  "description": "Thu thập metadata Google Scholar qua SerpApi Backend phục vụ SLR môn SWT302",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:3001/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SWT302 Metadata Extractor (SerpApi)"
+  }
+}

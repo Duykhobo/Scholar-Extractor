@@ -1,0 +1,14 @@
+{
+  "name": "swt302-slr-extension",
+  "version": "2.0.0",
+  "description": "Chrome Extension Manifest V3 + TypeScript ho tro SLR SWT302 qua SerpApi Google Scholar Backend",
+  "scripts": {
+    "build": "esbuild src/popup.ts --bundle --outfile=popup.js --format=iife --target=es2022 && esbuild src/content-script.ts --bundle --outfile=content-script.js --format=iife --target=es2022",
+    "watch": "esbuild src/popup.ts --bundle --outfile=popup.js --watch"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2"
+  }
+}

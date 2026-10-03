@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>SWT302 SLR - SerpApi Google Scholar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>📚 Scholar Extractor</h1>
+      <span class="badge badge-blue">SerpApi V3</span>
+    </div>
+    <div id="backendStatusBadge" class="badge badge-yellow">● Đang kiểm tra Backend...</div>
+  </header>
+
+  <!-- Section 1: Thiet lap tim kiem & bo loc -->
+  <div class="section-card">
+    <div class="form-group">
+      <label for="queryInput">Chuỗi tìm kiếm nguyên văn (Search Query):</label>
+      <input type="text" id="queryInput" placeholder="Ví dụ: automated test case generation machine learning" value="automated test case generation machine learning">
+    </div>
+
+    <div class="filter-grid">
+      <div class="form-group">
+        <label for="asYloInput">Từ năm (as_ylo):</label>
+        <input type="text" id="asYloInput" value="2020">
+      </div>
+      <div class="form-group">
+        <label for="asYhiInput">Đến năm (as_yhi):</label>
+        <input type="text" id="asYhiInput" value="2026">
+      </div>
+      <div class="form-group">
+        <label for="hlInput">Ngôn ngữ (hl):</label>
+        <input type="text" id="hlInput" value="vi">
+      </div>
+      <div class="form-group">
+        <label for="maxPagesInput">Giới hạn trang:</label>
+        <input type="number" id="maxPagesInput" value="1" min="1" max="10">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uiTotalInput">Số kết quả xem trên Web Scholar (để đối chiếu đối soát, tùy chọn):</label>
+      <input type="number" id="uiTotalInput" placeholder="Ví dụ: 18200 (số hiển thị trên Google Scholar thực địa)">
+    </div>
+
+    <div class="button-group">
+      <button id="searchFirstBtn" class="btn-primary">🔍 Lấy trang 1 (start=0)</button>
+      <button id="nextBtn" class="btn-secondary" style="display: none;">⏩ Lấy trang tiếp (+10)</button>
+      <button id="autoFetchBtn" class="btn-secondary" style="display: none;">⚡ Lấy tối đa trang đã đặt</button>
+      <button id="stopBtn" class="btn-danger" style="display: none;">⏹ Dừng / Hủy</button>
+    </div>
+
+    <div id="status">Sẵn sàng thu thập dữ liệu Google Scholar.</div>
+  </div>
+
+  <!-- Section 2: Bang thong ke & metrics -->
+  <div id="statsBox" class="section-card" style="display: none;"></div>
+
+  <!-- Section 3: Bo loc cuc bo & danh sach bai bao -->
+  <div class="section-card">
+    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+      <input type="text" id="filterInput" placeholder="🔎 Lọc nhanh trong kết quả thu thập..." style="flex: 2;">
+      <select id="filterDecisionSelect" style="flex: 1;">
+        <option value="all">Tất cả quyết định</option>
+        <option value="Include">Chỉ Include</option>
+        <option value="Exclude">Chỉ Exclude</option>
+        <option value="Unsure">Chỉ Unsure</option>
+      </select>
+    </div>
+
+    <div id="resultsContainer">
+      <div class="empty-state">Chưa có dữ liệu. Bấm "Lấy trang 1" để bắt đầu thu thập.</div>
+    </div>
+
+    <div class="button-group" style="margin-top: 10px;">
+      <button id="exportCsvBtn" class="btn-success" style="display: none;">📥 Tải 01_all_records.csv (UTF-8 BOM)</button>
+      <button id="saveLogBtn" class="btn-primary" style="display: none;">💾 Ghi vào search-log.md</button>
+      <button id="exportJsonBtn" class="btn-secondary" style="display: none;">📦 Tải JSON Bằng chứng (Đã lọc sạch)</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

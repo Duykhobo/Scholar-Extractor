@@ -1,0 +1,157 @@
+export interface ScholarSearchParams {
+  engine?: 'google_scholar';
+  q: string;
+  as_ylo?: number | string;
+  as_yhi?: number | string;
+  hl?: string;
+  start?: number;
+  num?: number;
+}
+
+export interface SerpApiSearchMetadata {
+  id?: string;
+  status?: string;
+  json_endpoint?: string;
+  created_at?: string;
+  processed_at?: string;
+  google_scholar_url?: string;
+  raw_html_file?: string;
+  total_time_taken?: number;
+  from_cache?: boolean;
+  cache_age?: string | number;
+}
+
+export interface SerpApiSearchInformation {
+  total_results?: number;
+  time_taken_displayed?: number;
+  query_displayed?: string;
+}
+
+export interface SerpApiPublicationInfo {
+  summary?: string;
+  authors?: Array<{
+    name: string;
+    link?: string;
+    author_id?: string;
+    serpapi_scholar_link?: string;
+  }>;
+}
+
+export interface SerpApiOrganicResult {
+  position?: number;
+  title?: string;
+  result_id?: string;
+  link?: string;
+  snippet?: string;
+  publication_info?: SerpApiPublicationInfo;
+  resources?: Array<{
+    title?: string;
+    file_format?: string;
+    link?: string;
+  }>;
+  inline_links?: {
+    serpapi_cite_link?: string;
+    cited_by?: {
+      total?: number;
+      link?: string;
+      cites_id?: string;
+      serpapi_scholar_link?: string;
+    };
+    related_pages_link?: string;
+    versions?: {
+      total?: number;
+      link?: string;
+      cluster_id?: string;
+      serpapi_scholar_link?: string;
+    };
+  };
+}
+
+export interface SerpApiRawResponse {
+  search_metadata?: SerpApiSearchMetadata;
+  search_parameters?: Record<string, any>;
+  search_information?: SerpApiSearchInformation;
+  organic_results?: SerpApiOrganicResult[];
+  pagination?: {
+    current?: number;
+    next?: string;
+    other_pages?: Record<string, string>;
+  };
+  error?: string;
+}
+
+export type ScreeningDecision = 'Include' | 'Exclude' | 'Unsure';
+
+export interface PaperRecord {
+  id: string; // generated unique id
+  source: string; // 'Google Scholar'
+  discoverySource: string; // 'Google Scholar'
+  collectionMethod: string; // 'SerpApi'
+  title: string;
+  authors: string;
+  year: string;
+  venue: string;
+  doi: string;
+  snippet: string; // Luu ro snippet tu Scholar, khong coi la abstract
+  abstract: string; // Khong tu y suy doan abstract tu snippet
+  url: string;
+  query: string;
+  retrieval_date: string;
+  search_id: string;
+
+  // Cac co canh bao metadata chua chac chan can nguoi dung xac minh
+  uncertain_authors: boolean;
+  uncertain_year: boolean;
+  uncertain_venue: boolean;
+  uncertain_doi: boolean;
+  missing_abstract: boolean;
+
+  // Screening theo tieu chi IC/EC va bang chung EP/BVA
+  suggestedDecision: ScreeningDecision;
+  screeningReason: string;
+  finalDecision: ScreeningDecision | '';
+  userNotes: string;
+}
+
+export interface DedupStats {
+  initialCount: number;
+  dupByDoi: number;
+  dupByTitle: number;
+  totalUnique: number;
+}
+
+export interface SearchExecutionSummary {
+  searchId: string;
+  responseStatus: string;
+  fromCache: boolean;
+  cacheAge?: string | number;
+  apiRequestsUsed: number;
+  totalReportedResults: number;
+  recordsCollectedThisPage: number;
+  totalCollectedSoFar: number;
+  totalUniqueSoFar: number;
+  query: string;
+  executedParams: Record<string, any>;
+  timestamp: string;
+}
+
+export interface SearchLogPayload {
+  query: string;
+  searchId: string;
+  method: string;
+  params: Record<string, any>;
+  apiTotalResults: number;
+  uiTotalResults?: number;
+  collectedCount: number;
+  uniqueCount: number;
+  dedupStats: DedupStats;
+  spotChecks: Array<{
+    title: string;
+    year: string;
+    venue: string;
+    doi: string;
+    url: string;
+  }>;
+  retrievalDate: string;
+  notes?: string;
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build artifacts
+dist/
+*/dist/
+
+# Environment and sensitive keys
+.env
+*.env
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Evidence and logs
+evidence/
+backend/evidence/
+*.log
+npm-debug.log*
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
