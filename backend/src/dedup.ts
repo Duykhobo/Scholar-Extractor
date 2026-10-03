@@ -18,41 +18,50 @@ export function cleanDoi(rawDoi: string): string {
 }
 
 /**
- * Khu trung lap:
- * 1. Khoa chinh: DOI (neu co)
- * 2. Khoa phu: Normalized Title
+ * Quy tac Khử trùng lặp:
+ * 1. Khoa chinh: DOI chính xác (Exact DOI match) -> Loại bỏ trùng lặp hoàn toàn.
+ * 2. Khoa phu: Tiêu đề chuẩn hóa (Normalized Title) -> NẾU KHÁC DOI hoặc nguồn khác,
+ *    TUYỆT ĐỐI KHÔNG TỰ Ý LOẠI BỎ! Chuyển thành Đề xuất trùng (potentialDuplicate)
+ *    để người dùng tự xác nhận trên UI và giữ nguyên thông tin nguồn.
  */
 export function deduplicateRecords(records: PaperRecord[]): {
   uniqueRecords: PaperRecord[];
   dedupStats: DedupStats;
 } {
-  const seenDoi = new Set<string>();
-  const seenTitle = new Set<string>();
+  const seenDoi = new Map<string, PaperRecord>();
+  const seenTitle = new Map<string, PaperRecord>();
   const uniqueRecords: PaperRecord[] = [];
 
-  let dupByDoi = 0;
-  let dupByTitle = 0;
+  let exactDupByDoi = 0;
+  let potentialDupByTitle = 0;
 
   for (const record of records) {
     const cleanedDoi = cleanDoi(record.doi);
     const normTitle = normalizeTitle(record.title);
 
-    // 1. Kiem tra trung theo DOI (neu DOI hop le)
+    // 1. Kiem tra trung lap DOI tuyet doi
     if (cleanedDoi) {
       if (seenDoi.has(cleanedDoi)) {
-        dupByDoi++;
+        exactDupByDoi++;
+        // Trung DOI hoan toan -> loai bo ban ghi trung
         continue;
       }
-      seenDoi.add(cleanedDoi);
+      seenDoi.set(cleanedDoi, record);
     }
 
-    // 2. Kiem tra trung theo Tieu de chuan hoa
+    // 2. Kiem tra trung lap Tieu de chuan hoa
     if (normTitle) {
-      if (seenTitle.has(normTitle)) {
-        dupByTitle++;
-        continue;
+      const existingRecord = seenTitle.get(normTitle);
+      if (existingRecord) {
+        // Cung tieu de nhung khac DOI hoac khong co DOI:
+        // KHONG xoa! Danh dau potentialDuplicate de nguoi dung xem xet
+        potentialDupByTitle++;
+        record.potentialDuplicate = true;
+        record.duplicateOfId = existingRecord.id;
+        record.duplicateReason = `Trùng tiêu đề với [#${existingRecord.id.slice(-6)}], nguồn: ${existingRecord.source}. Giữ lại để người dùng thẩm định.`;
+      } else {
+        seenTitle.set(normTitle, record);
       }
-      seenTitle.add(normTitle);
     }
 
     uniqueRecords.push(record);
@@ -62,9 +71,9 @@ export function deduplicateRecords(records: PaperRecord[]): {
     uniqueRecords,
     dedupStats: {
       initialCount: records.length,
-      dupByDoi,
-      dupByTitle,
-      totalUnique: uniqueRecords.length
+      exactDupByDoi,
+      potentialDupByTitle,
+      totalRetained: uniqueRecords.length
     }
   };
 }

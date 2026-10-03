@@ -8,7 +8,7 @@ import {
   SearchExecutionSummary
 } from './types';
 import { sanitizeObject } from './sanitizer';
-import { evaluateScreening } from './screening';
+import { evaluateScreeningV1 } from './screening';
 
 export interface ScholarFetchResult {
   records: PaperRecord[];
@@ -240,8 +240,8 @@ export async function fetchScholarFromSerpApi(
     // Tuyet doi khong coi snippet la abstract
     const abstract = '';
 
-    // Danh gia screening so bo
-    const screening = evaluateScreening(title, snippet, abstract, pubMeta.year);
+    // Danh gia screening giai doan V1
+    const screening = evaluateScreeningV1(title, snippet, abstract, pubMeta.year);
 
     records.push({
       id: `${searchId}_${validParams.start}_${i + 1}`,
@@ -267,6 +267,10 @@ export async function fetchScholarFromSerpApi(
       uncertain_doi: true, // Luon can xac minh DOI vi khong co san
       missing_abstract: true, // Google Scholar khong co abstract toan van
 
+      potentialDuplicate: false,
+
+      screeningStage: screening.stage,
+      matchedCriteria: screening.matchedCriteria,
       suggestedDecision: screening.suggestedDecision,
       screeningReason: screening.screeningReason,
       finalDecision: '', // De trong de nguoi dung xac nhan

@@ -1,15 +1,29 @@
 import { PaperRecord, DedupStats, SearchExecutionSummary, ScreeningDecision } from './types';
 
-// Cau hinh mac dinh backend Node.js
 const DEFAULT_BACKEND_URL = 'http://localhost:3001';
+const STORAGE_KEY = 'scholar_slr_session_v2';
+
+interface SessionState {
+  allRecords: PaperRecord[];
+  uniqueRecords: PaperRecord[];
+  dedupStats: DedupStats;
+  searchSummary: SearchExecutionSummary | null;
+  allEvidences: any[];
+  currentStart: number;
+  apiRequestsUsed: number;
+  query: string;
+  asYlo: string;
+  asYhi: string;
+  hl: string;
+}
 
 class ScholarExtensionApp {
   private backendUrl: string = DEFAULT_BACKEND_URL;
   private allRecords: PaperRecord[] = [];
   private uniqueRecords: PaperRecord[] = [];
-  private dedupStats: DedupStats = { initialCount: 0, dupByDoi: 0, dupByTitle: 0, totalUnique: 0 };
+  private dedupStats: DedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
   private searchSummary: SearchExecutionSummary | null = null;
-  private lastSanitizedEvidence: any = null;
+  private allEvidences: any[] = [];
 
   private currentStart: number = 0;
   private isFetching: boolean = false;
@@ -23,13 +37,17 @@ class ScholarExtensionApp {
   private hlInput!: HTMLInputElement;
   private maxPagesInput!: HTMLInputElement;
   private uiTotalInput!: HTMLInputElement;
+  private backendUrlInput!: HTMLInputElement;
 
   private searchFirstBtn!: HTMLButtonElement;
   private nextBtn!: HTMLButtonElement;
   private autoFetchBtn!: HTMLButtonElement;
   private stopBtn!: HTMLButtonElement;
+  private resetBtn!: HTMLButtonElement;
+
   private exportCsvBtn!: HTMLButtonElement;
-  private exportJsonBtn!: HTMLButtonElement;
+  private exportScreeningBtn!: HTMLButtonElement;
+  private exportSessionBtn!: HTMLButtonElement;
   private saveLogBtn!: HTMLButtonElement;
 
   private statusDiv!: HTMLElement;
@@ -39,10 +57,11 @@ class ScholarExtensionApp {
   private filterInput!: HTMLInputElement;
   private filterDecisionSelect!: HTMLSelectElement;
 
-  init() {
+  async init() {
     this.bindDOMElements();
     this.attachEventListeners();
-    this.checkBackendHealth();
+    await this.restoreSessionFromStorage();
+    await this.checkBackendHealth();
   }
 
   private bindDOMElements() {
@@ -53,12 +72,19 @@ class ScholarExtensionApp {
     this.maxPagesInput = document.getElementById('maxPagesInput') as HTMLInputElement;
     this.uiTotalInput = document.getElementById('uiTotalInput') as HTMLInputElement;
 
+    this.backendUrlInput = document.getElementById('backendUrlInput') as HTMLInputElement;
+    if (this.backendUrlInput && this.backendUrlInput.value) {
+      this.backendUrl = this.backendUrlInput.value.trim() || DEFAULT_BACKEND_URL;
+    }
     this.searchFirstBtn = document.getElementById('searchFirstBtn') as HTMLButtonElement;
     this.nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
     this.autoFetchBtn = document.getElementById('autoFetchBtn') as HTMLButtonElement;
     this.stopBtn = document.getElementById('stopBtn') as HTMLButtonElement;
+    this.resetBtn = document.getElementById('resetBtn') as HTMLButtonElement;
+
     this.exportCsvBtn = document.getElementById('exportCsvBtn') as HTMLButtonElement;
-    this.exportJsonBtn = document.getElementById('exportJsonBtn') as HTMLButtonElement;
+    this.exportScreeningBtn = document.getElementById('exportScreeningBtn') as HTMLButtonElement;
+    this.exportSessionBtn = document.getElementById('exportSessionBtn') as HTMLButtonElement;
     this.saveLogBtn = document.getElementById('saveLogBtn') as HTMLButtonElement;
 
     this.statusDiv = document.getElementById('status') as HTMLElement;
@@ -74,10 +100,29 @@ class ScholarExtensionApp {
     this.nextBtn.addEventListener('click', () => this.handleFetchNextPage());
     this.autoFetchBtn.addEventListener('click', () => this.handleAutoFetchPages());
     this.stopBtn.addEventListener('click', () => this.handleStopFetch());
+    this.resetBtn.addEventListener('click', () => this.handleResetSession());
 
     this.exportCsvBtn.addEventListener('click', () => this.handleExportCsv());
-    this.exportJsonBtn.addEventListener('click', () => this.handleExportJson());
+    this.exportScreeningBtn.addEventListener('click', () => this.handleExportScreeningCsv());
+    this.exportSessionBtn.addEventListener('click', () => this.handleExportSessionJson());
     this.saveLogBtn.addEventListener('click', () => this.handleSaveLog());
+
+    // Gan chuoi mau tu protocol nhom (review-protocol.md)
+    const loadStringABtn = document.getElementById('loadStringABtn');
+    if (loadStringABtn) {
+      loadStringABtn.addEventListener('click', () => {
+        this.queryInput.value = '("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")';
+        this.setStatus('Đã điền Chuỗi A (Chính thức theo review-protocol.md).', 'info');
+      });
+    }
+
+    const loadStringBBtn = document.getElementById('loadStringBBtn');
+    if (loadStringBBtn) {
+      loadStringBBtn.addEventListener('click', () => {
+        this.queryInput.value = '("REST API" OR "RESTful API" OR "web API" OR "web service") AND ("boundary value analysis" OR "boundary value" OR "boundary testing" OR "equivalence partitioning") AND ("mutation testing" OR "mutants" OR "mutation score")';
+        this.setStatus('Đã điền Chuỗi B (Dự phòng nới rộng theo review-protocol.md).', 'info');
+      });
+    }
 
     // Loc cuc bo bang - Khong goi lai API
     this.filterInput.addEventListener('input', () => this.renderRecordsList());
@@ -95,19 +140,88 @@ class ScholarExtensionApp {
     this.statusDiv.style.color = colors[type];
   }
 
+  // Luu phien lam viec vao chrome.storage.local de khong bi mat khi dong popup
+  private async saveSessionToStorage() {
+    if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+      const state: SessionState = {
+        allRecords: this.allRecords,
+        uniqueRecords: this.uniqueRecords,
+        dedupStats: this.dedupStats,
+        searchSummary: this.searchSummary,
+        allEvidences: this.allEvidences,
+        currentStart: this.currentStart,
+        apiRequestsUsed: this.apiRequestsUsed,
+        query: this.queryInput.value,
+        asYlo: this.asYloInput.value,
+        asYhi: this.asYhiInput.value,
+        hl: this.hlInput.value
+      };
+      await chrome.storage.local.set({ [STORAGE_KEY]: state });
+    }
+  }
+
+  // Khoi phuc phien lam viec khi mo lai popup
+  private async restoreSessionFromStorage() {
+    if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+      const res = await chrome.storage.local.get([STORAGE_KEY]);
+      const state: SessionState | undefined = res[STORAGE_KEY];
+      if (state && state.allRecords && state.allRecords.length > 0) {
+        this.allRecords = state.allRecords;
+        this.uniqueRecords = state.uniqueRecords || state.allRecords;
+        this.dedupStats = state.dedupStats || this.dedupStats;
+        this.searchSummary = state.searchSummary;
+        this.allEvidences = state.allEvidences || [];
+        this.currentStart = state.currentStart || 0;
+        this.apiRequestsUsed = state.apiRequestsUsed || 0;
+
+        if (state.query) this.queryInput.value = state.query;
+        if (state.asYlo) this.asYloInput.value = state.asYlo;
+        if (state.asYhi) this.asYhiInput.value = state.asYhi;
+        if (state.hl) this.hlInput.value = state.hl;
+
+        this.updateStatsDisplay();
+        this.renderRecordsList();
+        this.setButtonsState(false);
+        this.setStatus(`✓ Đã khôi phục phiên làm việc trước: ${this.allRecords.length} bản ghi (Offset tiếp theo: start=${this.currentStart}).`, 'info');
+      }
+    }
+  }
+
+  private async handleResetSession() {
+    if (!confirm('Bạn có chắc chắn muốn xóa toàn bộ phiên hiện tại để bắt đầu lượt tìm kiếm mới?')) {
+      return;
+    }
+    this.allRecords = [];
+    this.uniqueRecords = [];
+    this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
+    this.searchSummary = null;
+    this.allEvidences = [];
+    this.currentStart = 0;
+    this.apiRequestsUsed = 0;
+
+    if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+      await chrome.storage.local.remove([STORAGE_KEY]);
+    }
+
+    this.statsBox.style.display = 'none';
+    this.resultsContainer.innerHTML = '<div class="empty-state">Đã làm mới phiên. Bấm "Lấy trang 1" để bắt đầu thu thập.</div>';
+    this.setButtonsState(false);
+    this.setStatus('Đã làm mới phiên làm việc thành công.', 'info');
+  }
+
   private async checkBackendHealth() {
     try {
       const res = await fetch(`${this.backendUrl}/api/health`, { method: 'GET' });
       if (res.ok) {
         const data = await res.json();
-        this.apiRequestsUsed = data.totalApiRequestsUsed || 0;
-        this.backendStatusBadge.innerHTML = `● Backend Online (Cổng 3001) | Key: ${data.isKeyConfigured ? '✓ Đã sẵn sàng' : '⚠ Chưa thấy trong .env'}`;
+        this.apiRequestsUsed = Math.max(this.apiRequestsUsed, data.totalApiRequestsUsed || 0);
+        this.backendStatusBadge.innerHTML = `● Backend Online (3001) | Key: ${data.isKeyConfigured ? '✓ Sẵn sàng' : '⚠ Chưa thấy trong .env'}`;
         this.backendStatusBadge.className = data.isKeyConfigured ? 'badge badge-green' : 'badge badge-yellow';
       } else {
         throw new Error('HTTP ' + res.status);
       }
     } catch {
-      this.backendStatusBadge.innerHTML = `✕ Không kết nối được Backend Node.js tại ${this.backendUrl}. Hãy mở terminal và chạy: <code>cd backend && npm start</code>`;
+      this.backendStatusBadge.innerHTML = `✕ Chưa bật Backend Node.js. Hãy chạy: <code>cd backend && npm start</code>`;
       this.backendStatusBadge.className = 'badge badge-red';
     }
   }
@@ -123,16 +237,28 @@ class ScholarExtensionApp {
     this.currentStart = 0;
     this.allRecords = [];
     this.uniqueRecords = [];
+    this.allEvidences = [];
     this.isCancelled = false;
 
-    await this.fetchSinglePage(0, true);
+    // Chi tang offset SAU KHI request thanh cong
+    const success = await this.fetchSinglePage(0, true);
+    if (success) {
+      this.currentStart = 10;
+      await this.saveSessionToStorage();
+    }
   }
 
   // 2. Lay trang tiep theo
   private async handleFetchNextPage() {
     if (this.isFetching) return;
-    this.currentStart += 10;
-    await this.fetchSinglePage(this.currentStart, false);
+    const offsetToFetch = this.currentStart;
+
+    // Chi cap nhat currentStart sau khi goi API thanh cong!
+    const success = await this.fetchSinglePage(offsetToFetch, false);
+    if (success) {
+      this.currentStart += 10;
+      await this.saveSessionToStorage();
+    }
   }
 
   // 3. Tu dong lay toi da N trang
@@ -148,34 +274,29 @@ class ScholarExtensionApp {
     this.stopBtn.style.display = 'inline-block';
     this.autoFetchBtn.disabled = true;
 
-    // Neu chua co ban ghi nao, bat dau tu trang 0
-    if (this.allRecords.length === 0) {
-      this.currentStart = 0;
-    } else {
-      this.currentStart += 10;
-    }
-
-    const initialStart = this.currentStart;
-    const targetEndStart = initialStart + (maxPages * 10);
-
-    while (this.currentStart < targetEndStart && !this.isCancelled) {
+    let pagesFetched = 0;
+    while (pagesFetched < maxPages && !this.isCancelled) {
       const pageIndex = Math.floor(this.currentStart / 10) + 1;
       this.setStatus(`Đang tải trang ${pageIndex}... (offset start=${this.currentStart})`, 'info');
 
+      // Chi cap nhat offset sau khi thanh cong
       const success = await this.fetchSinglePage(this.currentStart, false);
       if (!success || this.isCancelled) {
         break;
       }
 
       this.currentStart += 10;
-      // Nghỉ nhẹ 500ms giữa các request để bảo đảm ổn định
-      await new Promise(r => setTimeout(r, 500));
+      pagesFetched++;
+      await this.saveSessionToStorage();
+
+      // Giãn cách nhẹ 600ms
+      await new Promise(r => setTimeout(r, 600));
     }
 
     this.stopBtn.style.display = 'none';
     this.autoFetchBtn.disabled = false;
     if (this.isCancelled) {
-      this.setStatus(`Đã dừng quá trình lấy dữ liệu theo lệnh người dùng. Đã bảo toàn các trang trước!`, 'warning');
+      this.setStatus(`Đã dừng quá trình lấy dữ liệu. Dữ liệu các trang trước được bảo toàn an toàn!`, 'warning');
     }
   }
 
@@ -221,7 +342,9 @@ class ScholarExtensionApp {
 
       const newRecords: PaperRecord[] = data.records || [];
       this.searchSummary = data.summary;
-      this.lastSanitizedEvidence = data.evidence;
+      if (data.evidence) {
+        this.allEvidences.push(data.evidence);
+      }
       this.apiRequestsUsed = data.summary?.apiRequestsUsed || (this.apiRequestsUsed + 1);
 
       if (isReset) {
@@ -245,7 +368,7 @@ class ScholarExtensionApp {
       this.setStatus(`✓ Đã nhận ${newRecords.length} bài viết mới. Tổng tích lũy: ${this.allRecords.length} (Duy nhất: ${this.uniqueRecords.length}) ${cacheText}`, 'success');
       return true;
     } catch (err: any) {
-      this.setStatus(`Lỗi khi lấy dữ liệu: ${err.message}. Các bản ghi đã lấy trước đó vẫn được giữ nguyên an toàn!`, 'error');
+      this.setStatus(`Lỗi khi lấy dữ liệu: ${err.message}. Offset chưa tăng, dữ liệu cũ giữ nguyên an toàn!`, 'error');
       return false;
     } finally {
       this.isFetching = false;
@@ -276,11 +399,14 @@ class ScholarExtensionApp {
     this.searchFirstBtn.disabled = busy;
     this.nextBtn.disabled = busy;
     if (!busy) {
-      this.nextBtn.style.display = this.allRecords.length > 0 ? 'inline-block' : 'none';
-      this.autoFetchBtn.style.display = this.allRecords.length > 0 ? 'inline-block' : 'none';
-      this.exportCsvBtn.style.display = this.allRecords.length > 0 ? 'inline-block' : 'none';
-      this.exportJsonBtn.style.display = this.allRecords.length > 0 ? 'inline-block' : 'none';
-      this.saveLogBtn.style.display = this.allRecords.length > 0 ? 'inline-block' : 'none';
+      const hasRecords = this.allRecords.length > 0;
+      this.nextBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.autoFetchBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.resetBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.exportCsvBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.exportScreeningBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.exportSessionBtn.style.display = hasRecords ? 'inline-block' : 'none';
+      this.saveLogBtn.style.display = hasRecords ? 'inline-block' : 'none';
     }
   }
 
@@ -289,7 +415,7 @@ class ScholarExtensionApp {
 
     const s = this.searchSummary;
     const cacheLabel = s?.fromCache ? '<span class="badge badge-yellow">Từ cache SerpApi</span>' : '<span class="badge badge-green">Live API</span>';
-    const totalReported = s?.totalReportedResults?.toLocaleString() || '0';
+    const totalReported = s?.totalReportedResults ? s.totalReportedResults.toLocaleString() : 'N/A';
 
     this.statsBox.innerHTML = `
       <div class="stats-grid">
@@ -298,7 +424,7 @@ class ScholarExtensionApp {
           <div class="stat-value">${this.apiRequestsUsed}</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Tổng kết quả nguồn báo (Scholar)</div>
+          <div class="stat-label">Tổng kết quả nguồn báo</div>
           <div class="stat-value">${totalReported} <small class="text-muted">(Ước lượng)</small></div>
         </div>
         <div class="stat-card">
@@ -306,17 +432,17 @@ class ScholarExtensionApp {
           <div class="stat-value text-blue">${this.allRecords.length}</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Số paper sau bỏ trùng</div>
+          <div class="stat-label">Paper ứng viên duy nhất</div>
           <div class="stat-value text-green">${this.uniqueRecords.length}</div>
         </div>
       </div>
       <div class="stat-sub">
         <span><b>Mã tìm kiếm:</b> <code>${s?.searchId || 'N/A'}</code></span>
         <span><b>Trạng thái:</b> ${cacheLabel}</span>
-        <span><b>Trùng lặp:</b> DOI: ${this.dedupStats.dupByDoi} | Title: ${this.dedupStats.dupByTitle}</span>
+        <span><b>Trùng DOI:</b> ${this.dedupStats.exactDupByDoi} | <b>Trùng Title (giữ lại):</b> ${this.dedupStats.potentialDupByTitle}</span>
       </div>
       <div class="notice-callout">
-        <b>Quy tắc SLR/PRISMA:</b> Không coi <code>total_results</code> là số paper đã thu thập. Không coi <code>snippet</code> là abstract.
+        <b>Quy định Protocol RBL:</b> Nguồn Google Scholar chỉ là paper ứng viên bổ trợ, <b>không tính trực tiếp vào Identification của sơ đồ PRISMA chính</b>. Không coi <code>snippet</code> là abstract.
       </div>
     `;
   }
@@ -350,8 +476,15 @@ class ScholarExtensionApp {
       const isExclude = (r.finalDecision || r.suggestedDecision) === 'Exclude';
       const isUnsure = (r.finalDecision || r.suggestedDecision) === 'Unsure';
 
+      const dupWarning = r.potentialDuplicate
+        ? `<div class="dup-badge">⚠️ ĐỀ XUẤT TRÙNG LẶP: ${this.escapeHtml(r.duplicateReason || '')}</div>`
+        : '';
+
+      const matchedCriteriaStr = (r.matchedCriteria || []).map(c => `<span class="badge badge-blue">${c}</span>`).join(' ');
+
       return `
-        <div class="paper-card" id="paper_${r.id}">
+        <div class="paper-card ${r.potentialDuplicate ? 'paper-dup' : ''}" id="paper_${r.id}">
+          ${dupWarning}
           <div class="paper-header">
             <span class="paper-index">#${idx + 1}</span>
             <a href="${r.url || '#'}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
@@ -361,7 +494,7 @@ class ScholarExtensionApp {
             <span>👤 <b>Tác giả:</b> ${this.escapeHtml(r.authors || 'N/A')} ${r.uncertain_authors ? '<span class="tag-warn">Cần xác minh</span>' : ''}</span>
             <span>📅 <b>Năm:</b> ${r.year || 'N/A'} ${r.uncertain_year ? '<span class="tag-warn">Chưa chắc chắn</span>' : ''}</span>
             <span>🏛️ <b>Venue:</b> ${this.escapeHtml(r.venue || 'N/A')} ${r.uncertain_venue ? '<span class="tag-warn">Cần xác minh</span>' : ''}</span>
-            <span>🔗 <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Trống (Scholar không có sẵn)</span>'}</span>
+            <span>🔗 <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Trống (Cần xác minh)</span>'}</span>
           </div>
 
           <div class="paper-snippet">
@@ -371,9 +504,10 @@ class ScholarExtensionApp {
 
           <div class="screening-panel">
             <div class="screening-header">
-              <span><b>Gợi ý AI:</b> ${decisionBadge}</span>
-              <span class="reason-text">${this.escapeHtml(r.screeningReason)}</span>
+              <span><b>Gợi ý V1:</b> ${decisionBadge}</span>
+              <span><b>Tiêu chí khớp:</b> ${matchedCriteriaStr || '<small class="text-muted">Chưa khớp</small>'}</span>
             </div>
+            <div class="reason-text">${this.escapeHtml(r.screeningReason)}</div>
 
             <div class="decision-buttons" data-id="${r.id}">
               <span class="decision-label">Xác nhận của bạn (finalDecision):</span>
@@ -382,7 +516,7 @@ class ScholarExtensionApp {
               <button class="btn-dec ${isUnsure ? 'active-uns' : ''}" data-decision="Unsure">? Unsure</button>
             </div>
             <div class="user-notes-row">
-              <input type="text" class="notes-input" data-id="${r.id}" placeholder="Ghi chú thẩm định của bạn..." value="${this.escapeHtml(r.userNotes || '')}">
+              <input type="text" class="notes-input" data-id="${r.id}" placeholder="Ghi chú thẩm định của bạn (ví dụ: lý do nhận/loại, phương pháp REST API)..." value="${this.escapeHtml(r.userNotes || '')}">
             </div>
           </div>
         </div>
@@ -409,23 +543,25 @@ class ScholarExtensionApp {
     });
   }
 
-  private updatePaperDecision(paperId: string, decision: ScreeningDecision) {
+  private async updatePaperDecision(paperId: string, decision: ScreeningDecision) {
     const record = this.allRecords.find(r => r.id === paperId);
-    if (record) {
-      record.finalDecision = decision;
-    }
+    if (record) record.finalDecision = decision;
+
     const uniqueRecord = this.uniqueRecords.find(r => r.id === paperId);
-    if (uniqueRecord) {
-      uniqueRecord.finalDecision = decision;
-    }
+    if (uniqueRecord) uniqueRecord.finalDecision = decision;
+
+    await this.saveSessionToStorage();
     this.renderRecordsList();
   }
 
-  private updatePaperNotes(paperId: string, notes: string) {
+  private async updatePaperNotes(paperId: string, notes: string) {
     const record = this.allRecords.find(r => r.id === paperId);
     if (record) record.userNotes = notes;
+
     const uniqueRecord = this.uniqueRecords.find(r => r.id === paperId);
     if (uniqueRecord) uniqueRecord.userNotes = notes;
+
+    await this.saveSessionToStorage();
   }
 
   private getDecisionBadge(decision: ScreeningDecision): string {
@@ -434,7 +570,7 @@ class ScholarExtensionApp {
     return '<span class="badge badge-yellow">Unsure</span>';
   }
 
-  // Xuat CSV
+  // 1. Xuat CSV Metadata chuan 10 cot PRISMA
   private handleExportCsv() {
     if (this.uniqueRecords.length === 0) {
       this.setStatus('Chưa có bản ghi nào để xuất.', 'warning');
@@ -460,7 +596,7 @@ class ScholarExtensionApp {
       return `"${s}"`;
     };
 
-    let csvContent = '\uFEFF'; // UTF-8 BOM
+    let csvContent = '\uFEFF';
     csvContent += headers.join(',') + '\r\n';
 
     this.uniqueRecords.forEach(row => {
@@ -471,7 +607,7 @@ class ScholarExtensionApp {
         escapeCsv(row.year || ''),
         escapeCsv(row.venue || ''),
         escapeCsv(row.doi || ''),
-        escapeCsv(row.abstract || ''), // Khong coi snippet la abstract
+        escapeCsv(row.abstract || ''),
         escapeCsv(row.url || ''),
         escapeCsv(row.query || ''),
         escapeCsv(row.retrieval_date || '')
@@ -479,42 +615,112 @@ class ScholarExtensionApp {
       csvContent += line + '\r\n';
     });
 
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = '01_all_records.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    this.setStatus(`✓ Đã tải xuống file 01_all_records.csv (${this.uniqueRecords.length} bản ghi chuẩn UTF-8 BOM).`, 'success');
+    this.downloadFile(csvContent, '01_all_records.csv', 'text/csv;charset=utf-8;');
+    this.setStatus(`✓ Đã tải xuống file 01_all_records.csv (${this.uniqueRecords.length} bản ghi metadata chuẩn PRISMA).`, 'success');
   }
 
-  // Xuat JSON bang chung (da scrub sach moi credential)
-  private handleExportJson() {
-    if (!this.lastSanitizedEvidence) {
-      this.setStatus('Không có dữ liệu bằng chứng JSON.', 'warning');
+  // 2. Xuat CSV Screening Decisions day du quyet dinh & ghi chu
+  private handleExportScreeningCsv() {
+    if (this.uniqueRecords.length === 0) {
+      this.setStatus('Chưa có bản ghi nào để xuất.', 'warning');
       return;
     }
 
-    const blob = new Blob([JSON.stringify(this.lastSanitizedEvidence, null, 2)], {
-      type: 'application/json'
+    const headers = [
+      'id',
+      'source',
+      'title',
+      'year',
+      'venue',
+      'doi',
+      'url',
+      'screening_stage',
+      'matched_criteria',
+      'suggested_decision',
+      'screening_reason',
+      'final_decision',
+      'user_notes',
+      'potential_duplicate',
+      'duplicate_reason',
+      'query',
+      'retrieval_date'
+    ];
+
+    const escapeCsv = (str: unknown) => {
+      if (str === null || str === undefined) return '""';
+      const s = String(str).replace(/"/g, '""');
+      return `"${s}"`;
+    };
+
+    let csvContent = '\uFEFF';
+    csvContent += headers.join(',') + '\r\n';
+
+    this.uniqueRecords.forEach(row => {
+      const line = [
+        escapeCsv(row.id),
+        escapeCsv(row.source || row.discoverySource || 'Google Scholar'),
+        escapeCsv(row.title || ''),
+        escapeCsv(row.year || ''),
+        escapeCsv(row.venue || ''),
+        escapeCsv(row.doi || ''),
+        escapeCsv(row.url || ''),
+        escapeCsv(row.screeningStage || 'V1'),
+        escapeCsv((row.matchedCriteria || []).join('; ')),
+        escapeCsv(row.suggestedDecision || 'Unsure'),
+        escapeCsv(row.screeningReason || ''),
+        escapeCsv(row.finalDecision || ''),
+        escapeCsv(row.userNotes || ''),
+        escapeCsv(row.potentialDuplicate ? 'YES' : 'NO'),
+        escapeCsv(row.duplicateReason || ''),
+        escapeCsv(row.query || ''),
+        escapeCsv(row.retrieval_date || '')
+      ].join(',');
+      csvContent += line + '\r\n';
     });
+
+    this.downloadFile(csvContent, '02_screening_decisions.csv', 'text/csv;charset=utf-8;');
+    this.setStatus(`✓ Đã tải xuống file 02_screening_decisions.csv (Đầy đủ quyết định sàng lọc & ghi chú).`, 'success');
+  }
+
+  // 3. Xuat Backup toan bo session JSON
+  private handleExportSessionJson() {
+    const sessionPayload = {
+      timestamp: new Date().toISOString(),
+      query: this.queryInput.value,
+      filters: {
+        as_ylo: this.asYloInput.value,
+        as_yhi: this.asYhiInput.value,
+        hl: this.hlInput.value
+      },
+      stats: {
+        apiRequestsUsed: this.apiRequestsUsed,
+        totalCollected: this.allRecords.length,
+        totalRetained: this.uniqueRecords.length,
+        dedupStats: this.dedupStats,
+        searchSummary: this.searchSummary
+      },
+      records: this.uniqueRecords,
+      rawEvidences: this.allEvidences
+    };
+
+    const jsonContent = JSON.stringify(sessionPayload, null, 2);
+    this.downloadFile(jsonContent, `session_backup_${Date.now()}.json`, 'application/json');
+    this.setStatus('✓ Đã tải file Backup Toàn Phiên (Bao gồm dữ liệu tất cả các trang & bằng chứng).', 'success');
+  }
+
+  private downloadFile(content: string, filename: string, type: string) {
+    const blob = new Blob([content], { type });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `evidence_${this.searchSummary?.searchId || 'scholar'}.json`;
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-
-    this.setStatus('✓ Đã tải file JSON Bằng chứng (Đã loại bỏ dữ liệu nhạy cảm).', 'success');
   }
 
-  // Ghi search log vao search-log.md
+  // Ghi search log vao search-log.md (Paper ung vien bo tro ngoai PRISMA)
   private async handleSaveLog() {
     if (this.uniqueRecords.length === 0) {
       this.setStatus('Chưa có bản ghi nào để ghi nhật ký.', 'warning');
@@ -524,7 +730,6 @@ class ScholarExtensionApp {
     const uiVal = this.uiTotalInput.value.trim();
     const uiTotal = uiVal ? parseInt(uiVal, 10) : undefined;
 
-    // Chon ngau nhien toi da 5 ban ghi lam spot-check
     const shuffled = [...this.uniqueRecords].sort(() => 0.5 - Math.random());
     const spotChecks = shuffled.slice(0, 5).map(r => ({
       title: r.title,
@@ -548,7 +753,7 @@ class ScholarExtensionApp {
       apiTotalResults: this.searchSummary?.totalReportedResults || 0,
       uiTotalResults: uiTotal,
       collectedCount: this.allRecords.length,
-      uniqueCount: this.uniqueRecords.length,
+      candidateCount: this.uniqueRecords.length,
       dedupStats: this.dedupStats,
       spotChecks,
       retrievalDate: new Date().toISOString().split('T')[0]
@@ -564,7 +769,7 @@ class ScholarExtensionApp {
       });
       const data = await res.json();
       if (data.success) {
-        this.setStatus('✓ Đã ghi nhật ký vào search-log.md thành công (không ghi đè lượt tìm trước)!', 'success');
+        this.setStatus('✓ Đã ghi nhật ký vào search-log.md thành công (Ghi nhận số paper ứng viên bổ trợ ngoài PRISMA)!', 'success');
       } else {
         throw new Error(data.error);
       }

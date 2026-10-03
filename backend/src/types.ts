@@ -106,7 +106,14 @@ export interface PaperRecord {
   uncertain_doi: boolean;
   missing_abstract: boolean;
 
-  // Screening theo tieu chi IC/EC va bang chung EP/BVA
+  // De xuat trung lap (khong tu dong xoa neu khac DOI ma chi danh dau de nguoi dung xac nhan)
+  potentialDuplicate?: boolean;
+  duplicateOfId?: string;
+  duplicateReason?: string;
+
+  // Screening theo tieu chi IC-L/T/E/Y/P/I va EC-D/A/S/N/O
+  screeningStage: 'V1' | 'V2';
+  matchedCriteria: string[];
   suggestedDecision: ScreeningDecision;
   screeningReason: string;
   finalDecision: ScreeningDecision | '';
@@ -115,9 +122,9 @@ export interface PaperRecord {
 
 export interface DedupStats {
   initialCount: number;
-  dupByDoi: number;
-  dupByTitle: number;
-  totalUnique: number;
+  exactDupByDoi: number;
+  potentialDupByTitle: number;
+  totalRetained: number;
 }
 
 export interface SearchExecutionSummary {
@@ -143,7 +150,8 @@ export interface SearchLogPayload {
   apiTotalResults: number;
   uiTotalResults?: number;
   collectedCount: number;
-  uniqueCount: number;
+  candidateCount: number;
+  uniqueCount?: number; // Ho tro tuong thich neu client gui uniqueCount
   dedupStats: DedupStats;
   spotChecks: Array<{
     title: string;

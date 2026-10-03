@@ -23,6 +23,12 @@ export interface PaperRecord {
   uncertain_doi: boolean;
   missing_abstract: boolean;
 
+  potentialDuplicate?: boolean;
+  duplicateOfId?: string;
+  duplicateReason?: string;
+
+  screeningStage: 'V1' | 'V2';
+  matchedCriteria: string[];
   suggestedDecision: ScreeningDecision;
   screeningReason: string;
   finalDecision: ScreeningDecision | '';
@@ -31,9 +37,9 @@ export interface PaperRecord {
 
 export interface DedupStats {
   initialCount: number;
-  dupByDoi: number;
-  dupByTitle: number;
-  totalUnique: number;
+  exactDupByDoi: number;
+  potentialDupByTitle: number;
+  totalRetained: number;
 }
 
 export interface SearchExecutionSummary {
