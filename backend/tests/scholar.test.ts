@@ -8,7 +8,15 @@ import { cleanDoi, deduplicateRecords } from "../src/dedup";
 import { exportScreeningCsv } from "../src/exporter";
 import { sanitizeObject, sanitizeString } from "../src/sanitizer";
 import { fetchScholarFromSerpApi, validateSearchParams } from "../src/scholarService";
-import { evaluateScreeningV1, evaluateScreeningV2 } from "../src/screening";
+import {
+  evaluateScreeningV1,
+  evaluateScreeningV2,
+  hasEpOrBva,
+  hasQuantitativeTableOrFigure,
+  hasRestApiScope,
+  isConferenceOrJournal,
+  isEnglishVerified,
+} from "../src/screening";
 import { appendSearchLog } from "../src/searchLogger";
 import { getSafeOutputPath } from "../src/server";
 import { PaperRecord } from "../src/types";
@@ -368,6 +376,7 @@ describe("4. Strict Protocol Screening Rules (ie_criteria.md) & 5 Review Scenari
       textWithQuantitative,
       "2024",
       "IEEE Transactions on Software Engineering",
+      { pageCount: 8 },
     );
 
     assert.equal(
@@ -542,3 +551,268 @@ describe("7. Mocked SerpApi Execution & Offset Integrity", () => {
     assert.equal(result.summary.fromCache, true);
   });
 });
+
+describe("8. Regression Tests: 4 Ca Biên Đã Sửa (screening.ts)", () => {
+  // Ca biên 1: GraphQL riêng lẻ không được đánh dấu đạt IC-P
+  describe("Ca biên 1: GraphQL riêng lẻ không được đánh dấu đạt IC-P", () => {
+    test("hasRestApiScope helper: từ chối GraphQL riêng lẻ nhưng chấp nhận REST API hoặc REST kết hợp GraphQL", () => {
+      assert.equal(hasRestApiScope("Automated test generation for GraphQL APIs"), false);
+      assert.equal(hasRestApiScope("GraphQL schema validation and query testing"), false);
+      assert.equal(hasRestApiScope("Testing GraphQL endpoints with boundary value analysis"), false);
+
+      assert.equal(hasRestApiScope("Automated test generation for REST APIs"), true);
+      assert.equal(hasRestApiScope("Testing RESTful web services with OpenAPI"), true);
+      assert.equal(hasRestApiScope("A comparative study on testing REST and GraphQL APIs"), true);
+    });
+
+    test("evaluateScreeningV1: Nghiên cứu GraphQL riêng lẻ không đạt IC-P (đưa vào unknownCriteria, gợi ý Unsure)", () => {
+      const fullAbstract =
+        "In this paper, we propose a test generation tool for GraphQL APIs using Equivalence Partitioning (EP) and Boundary-Value Analysis (BVA). We evaluate query execution on 5 open GraphQL schemas.";
+      const res = evaluateScreeningV1(
+        "Automated Test Generation for GraphQL APIs with EP and BVA",
+        "Snippet about GraphQL testing",
+        fullAbstract,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+      );
+
+      assert.equal(res.suggestedDecision, "Unsure", "GraphQL riêng lẻ phải gợi ý Unsure");
+      assert.ok(!res.matchedCriteria.includes("IC-P"), "GraphQL riêng lẻ KHÔNG ĐƯỢC đánh dấu đạt IC-P");
+      assert.ok(res.unknownCriteria.includes("IC-P"), "IC-P phải ở trạng thái unknown");
+      assert.ok(
+        res.missingEvidence.some((e) => e.includes("GraphQL riêng lẻ")),
+        "Phải có ghi chú GraphQL riêng lẻ trong missingEvidence",
+      );
+    });
+
+    test("evaluateScreeningV2: Toàn văn chỉ có GraphQL không đạt IC-P -> Gợi ý Unsure", () => {
+      const fullText = `
+        We propose boundary value analysis for GraphQL APIs.
+        Table 1 reports 80% coverage and 25 faults found across 5 schemas.
+        Our tool tests GraphQL queries specifically.
+      `;
+      const res = evaluateScreeningV2(
+        "Testing GraphQL APIs with Boundary-Value Analysis",
+        "Abstract",
+        fullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+        { pageCount: 8 },
+      );
+
+      assert.equal(res.suggestedDecision, "Unsure", "GraphQL riêng lẻ ở V2 phải giữ Unsure");
+      assert.ok(!res.matchedCriteria.includes("IC-P"), "GraphQL riêng lẻ KHÔNG đạt IC-P");
+      assert.ok(res.unknownCriteria.includes("IC-P"), "IC-P chưa được xác minh");
+    });
+  });
+
+  // Ca biên 2: V2 thiếu pageCount hợp lệ phải Unsure; 3 trang Exclude, 4 trang qua kiểm tra EC-S
+  describe("Ca biên 2: V2 pageCount validation (thiếu pageCount -> Unsure; 3 trang -> Exclude; 4 trang -> qua EC-S)", () => {
+    const validFullText = `
+      In this paper we present REST API testing using boundary-value analysis (BVA) and equivalence partitioning (EP) on HTTP request parameters.
+      In Table 1: Experimental results show 94.5% branch coverage and 48 mutants detected across 15 REST services.
+    `;
+
+    test("V2 thiếu pageCount (undefined / <= 0 / NaN) -> Bắt buộc gợi ý Unsure", () => {
+      // 1. options undefined
+      const res1 = evaluateScreeningV2(
+        "REST API Testing with BVA and EP",
+        "Abstract",
+        validFullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+      );
+      assert.equal(res1.suggestedDecision, "Unsure", "Thiếu options/pageCount phải là Unsure");
+      assert.ok(res1.unknownCriteria.includes("EC-S"), "EC-S phải ở trạng thái unknown khi thiếu pageCount");
+
+      // 2. options rỗng
+      const res2 = evaluateScreeningV2(
+        "REST API Testing with BVA and EP",
+        "Abstract",
+        validFullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+        {},
+      );
+      assert.equal(res2.suggestedDecision, "Unsure", "options rỗng phải là Unsure");
+
+      // 3. pageCount = 0 hoặc âm
+      const res3 = evaluateScreeningV2(
+        "REST API Testing with BVA and EP",
+        "Abstract",
+        validFullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+        { pageCount: 0 },
+      );
+      assert.equal(res3.suggestedDecision, "Unsure", "pageCount = 0 phải là Unsure");
+    });
+
+    test("V2 có 3 trang (< 4 trang) -> Bắt buộc Exclude theo EC-S", () => {
+      const res = evaluateScreeningV2(
+        "REST API Testing with BVA and EP (Short Paper)",
+        "Abstract",
+        validFullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+        { pageCount: 3 },
+      );
+      assert.equal(res.suggestedDecision, "Exclude", "Bài báo 3 trang phải bị loại theo EC-S");
+      assert.ok(res.matchedCriteria.includes("EC-S"), "matchedCriteria phải có EC-S");
+      assert.ok(res.screeningReason.includes("EC-S"));
+    });
+
+    test("V2 có 4 trang (>= 4 trang) -> Vượt qua kiểm tra EC-S và đạt Include nếu đủ 6 tiêu chí IC", () => {
+      const res = evaluateScreeningV2(
+        "REST API Testing with BVA and EP",
+        "Abstract",
+        validFullText,
+        "2024",
+        "IEEE Transactions on Software Engineering",
+        { pageCount: 4 },
+      );
+      assert.equal(res.suggestedDecision, "Include", "Bài báo 4 trang đủ điều kiện độ dài, đạt Include");
+      assert.ok(!res.matchedCriteria.includes("EC-S"), "Không được gắn EC-S");
+      assert.equal(res.unknownCriteria.length, 0, "Không còn tiêu chí unknown");
+    });
+  });
+
+  // Ca biên 3: hasQuantitativeTableOrFigure nhận "Table 1 reports 80% coverage." nhưng không coi riêng số thứ tự là kết quả
+  describe("Ca biên 3: hasQuantitativeTableOrFigure nhận 'Table 1 reports 80% coverage.' và không nhầm số thứ tự", () => {
+    test("Nhận đúng câu chỉ định: 'Table 1 reports 80% coverage.'", () => {
+      assert.equal(hasQuantitativeTableOrFigure("Table 1 reports 80% coverage."), true);
+      assert.equal(hasQuantitativeTableOrFigure("Table 1 reports 80% coverage on test suites."), true);
+    });
+
+    test("KHÔNG coi riêng số thứ tự Table 1 hoặc tên bảng/hình là kết quả định lượng", () => {
+      assert.equal(hasQuantitativeTableOrFigure("Table 1"), false);
+      assert.equal(hasQuantitativeTableOrFigure("Table 1 reports coverage."), false);
+      assert.equal(hasQuantitativeTableOrFigure("In Table 1, we show the system architecture."), false);
+      assert.equal(hasQuantitativeTableOrFigure("Table 1: Experimental setup and evaluation."), false);
+      assert.equal(hasQuantitativeTableOrFigure("Figure 2 illustrates our model overview."), false);
+      assert.equal(hasQuantitativeTableOrFigure("See Table 1 and Figure 2 for details."), false);
+    });
+
+    test("Nhận các biến thể số liệu định lượng hợp lệ khác kèm Table / Figure", () => {
+      assert.equal(hasQuantitativeTableOrFigure("Figure 1 shows 94.5% branch coverage."), true);
+      assert.equal(hasQuantitativeTableOrFigure("Table 2: 48 mutants killed across endpoints."), true);
+      assert.equal(hasQuantitativeTableOrFigure("Figure 3 illustrates 120 bugs detected."), true);
+      assert.equal(hasQuantitativeTableOrFigure("80% coverage is reported in Table 1."), true);
+      assert.equal(hasQuantitativeTableOrFigure("48 mutants detected as shown in Table 1."), true);
+    });
+  });
+
+  // Ca biên 4: IC-T không được xác minh chỉ từ tên Springer/IEEE/ACM; Dùng metadata loại xuất bản; thesis/dissertation không đạt IC-T
+  describe("Ca biên 4: IC-T không xác minh chỉ từ tên Springer/IEEE/ACM; Dùng metadata & loại thesis/dissertation", () => {
+    test("Tên nhà xuất bản đứng riêng (Springer, IEEE, ACM) KHÔNG đủ để xác minh IC-T", () => {
+      assert.equal(isConferenceOrJournal("Springer"), false);
+      assert.equal(isConferenceOrJournal("Springer, Cham"), false);
+      assert.equal(isConferenceOrJournal("Springer Berlin Heidelberg"), false);
+      assert.equal(isConferenceOrJournal("IEEE"), false);
+      assert.equal(isConferenceOrJournal("IEEE Xplore"), false);
+      assert.equal(isConferenceOrJournal("ACM"), false);
+      assert.equal(isConferenceOrJournal("ACM Press"), false);
+
+      // Khi venue chỉ là Springer mà không có metadata -> V1 giữ Unsure về IC-T
+      const res = evaluateScreeningV1(
+        "REST API Testing with Boundary Value Analysis and Equivalence Partitioning",
+        "Snippet",
+        "We propose test case generation for REST APIs with BVA and EP on HTTP request parameters.",
+        "2024",
+        "Springer",
+      );
+      assert.equal(res.suggestedDecision, "Unsure", "Venue chỉ là Springer không được Include sơ bộ");
+      assert.ok(res.unknownCriteria.includes("IC-T"), "IC-T phải ở trạng thái unknown");
+      assert.ok(
+        res.missingEvidence.some((e) => e.includes("Springer/IEEE/ACM")),
+        "Phải có ghi chú cảnh báo không xác minh chỉ từ tên publisher",
+      );
+    });
+
+    test("Dùng metadata publicationType để xác minh IC-T hợp lệ", () => {
+      assert.equal(isConferenceOrJournal("Springer", { publicationType: "journal" }), true);
+      assert.equal(isConferenceOrJournal("IEEE", { publicationType: "conference" }), true);
+      assert.equal(isConferenceOrJournal("ACM", { publicationType: "proceedings" }), true);
+
+      const res = evaluateScreeningV1(
+        "REST API Testing with Boundary Value Analysis and Equivalence Partitioning",
+        "Snippet",
+        "We propose test case generation for REST APIs with BVA and EP on HTTP request parameters.",
+        "2024",
+        "Springer",
+        { publicationType: "journal" },
+      );
+      assert.ok(res.matchedCriteria.includes("IC-T"), "Đạt IC-T nhờ publicationType=journal");
+    });
+
+    test("Dùng sourceEvidence để xác minh IC-T hợp lệ", () => {
+      assert.equal(
+        isConferenceOrJournal("ACM", { sourceEvidence: "Proceedings of the 35th ACM Symposium on Software" }),
+        true,
+      );
+      const res = evaluateScreeningV1(
+        "REST API Testing with Boundary Value Analysis and Equivalence Partitioning",
+        "Snippet",
+        "We propose test case generation for REST APIs with BVA and EP on HTTP request parameters.",
+        "2024",
+        "ACM",
+        { sourceEvidence: "Proceedings of the 35th ACM Symposium on Software" },
+      );
+      assert.ok(res.matchedCriteria.includes("IC-T"), "Đạt IC-T nhờ sourceEvidence");
+    });
+
+    test("thesis / dissertation KHÔNG ĐẠT IC-T và bị loại trừ theo EC-O", () => {
+      assert.equal(isConferenceOrJournal("Ph.D. Dissertation, ACM"), false);
+      assert.equal(isConferenceOrJournal("Master's Thesis, Springer"), false);
+      assert.equal(isConferenceOrJournal("IEEE", { publicationType: "thesis" }), false);
+      assert.equal(isConferenceOrJournal("ACM", { publicationType: "dissertation" }), false);
+
+      // V1 loại trừ theo title thesis
+      const resV1Title = evaluateScreeningV1(
+        "Master's Thesis: Automated REST API Testing using Boundary-Value Analysis",
+        "Snippet",
+        "We present boundary testing on REST APIs.",
+        "2024",
+        "ACM",
+      );
+      assert.equal(resV1Title.suggestedDecision, "Exclude");
+      assert.ok(resV1Title.matchedCriteria.includes("EC-O"));
+
+      // V1 loại trừ theo venue dissertation
+      const resV1Venue = evaluateScreeningV1(
+        "Automated REST API Testing using Boundary-Value Analysis",
+        "Snippet",
+        "We present boundary testing on REST APIs.",
+        "2024",
+        "Doctoral Dissertation, University X",
+      );
+      assert.equal(resV1Venue.suggestedDecision, "Exclude");
+      assert.ok(resV1Venue.matchedCriteria.includes("EC-O"));
+
+      // V1 loại trừ theo publicationType = dissertation
+      const resV1PubType = evaluateScreeningV1(
+        "Automated REST API Testing using Boundary-Value Analysis",
+        "Snippet",
+        "We present boundary testing on REST APIs.",
+        "2024",
+        "Springer",
+        { publicationType: "dissertation" },
+      );
+      assert.equal(resV1PubType.suggestedDecision, "Exclude");
+      assert.ok(resV1PubType.matchedCriteria.includes("EC-O"));
+
+      // V2 loại trừ thesis theo EC-O
+      const resV2 = evaluateScreeningV2(
+        "Automated REST API Testing using Boundary-Value Analysis",
+        "Abstract",
+        "Full text of dissertation on REST APIs with EP/BVA Table 1 reports 80% coverage.",
+        "2024",
+        "Springer",
+        { publicationType: "thesis", pageCount: 120 },
+      );
+      assert.equal(resV2.suggestedDecision, "Exclude");
+      assert.ok(resV2.matchedCriteria.includes("EC-O"));
+    });
+  });
+});
+

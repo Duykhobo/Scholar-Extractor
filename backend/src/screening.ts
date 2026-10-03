@@ -12,6 +12,8 @@ export interface ScreeningEvaluation {
 export interface ScreeningOptions {
   pageCount?: number;
   fullTextUnavailable?: boolean;
+  publicationType?: string;
+  sourceEvidence?: string;
 }
 
 /**
@@ -30,14 +32,48 @@ export function isEnglishVerified(text: string): boolean {
 
 /**
  * 2. Helper kiểm tra hội nghị hoặc tạp chí khoa học (IC-T)
- * Phải có bằng chứng nơi xuất bản là conference/journal; không tự đánh dấu đạt nếu để trống hoặc Google Scholar.
+ * QUY TẮC BẮT BUỘC (Ca biên 4):
+ * - IC-T KHÔNG ĐƯỢC xác minh chỉ từ tên nhà xuất bản Springer / IEEE / ACM / Elsevier / Wiley.
+ * - Dùng metadata loại xuất bản (publicationType) và bằng chứng nguồn (sourceEvidence).
+ * - Luận văn / luận án (thesis / dissertation) không đạt IC-T.
  */
-export function isConferenceOrJournal(venue?: string): boolean {
+export function isConferenceOrJournal(
+  venue?: string,
+  options?: ScreeningOptions
+): boolean {
+  const thesisRegex = /\b(thesis|dissertation|master's\s*thesis|doctoral\s*dissertation|phd\s*thesis|bachelor's\s*thesis)\b/i;
+
+  // 1. Luận văn / luận án không đạt IC-T
+  if (options?.publicationType && thesisRegex.test(options.publicationType)) return false;
+  if (options?.sourceEvidence && thesisRegex.test(options.sourceEvidence)) return false;
+  if (venue && thesisRegex.test(venue)) return false;
+
+  // 2. Dùng metadata loại xuất bản nếu có
+  if (options?.publicationType) {
+    const pubType = options.publicationType.toLowerCase().trim();
+    if (/\b(conference|journal|proceedings|symposium|transactions|workshop)\b/i.test(pubType)) {
+      return true;
+    }
+  }
+
+  // 3. Dùng bằng chứng nguồn nếu có
+  if (options?.sourceEvidence) {
+    const evidence = options.sourceEvidence.toLowerCase().trim();
+    if (/\b(proceedings|conference|journal|transactions|symposium|workshop)\b/i.test(evidence)) {
+      return true;
+    }
+  }
+
   if (!venue || venue.trim().length === 0) return false;
   const v = venue.toLowerCase().trim();
   if (v === 'google scholar' || v === 'n/a' || v === 'unknown') return false;
-  const confJournalRegex = /\b(proceedings|conference|journal|transactions|symposium|workshop|ieee|acm|springer|elsevier|wiley|icse|issta|ase|fse|icst|tse|tosem|infsof|jss|sqj|esec|sigsoft|comsac|qsic|icws|icwe|services|scico|spe|software)\b/i;
-  return confJournalRegex.test(v);
+
+  // 4. IC-T KHÔNG ĐƯỢC xác minh chỉ từ tên Springer/IEEE/ACM:
+  // Không cho phép các chuỗi chỉ có tên publisher như "Springer", "IEEE", "ACM", "Elsevier", "Wiley", "Springer, Cham"...
+  // Phải chứa từ khóa thể loại hội nghị / tạp chí hoặc tên hội nghị / tạp chí chuyên ngành đã biết:
+  const confJournalKeywords = /\b(proceedings|conference|journal|transactions|symposium|workshop|icse|issta|ase|fse|icst|tse|tosem|infsof|jss|sqj|esec|sigsoft|comsac|qsic|icws|icwe|services|scico|spe|software)\b/i;
+
+  return confJournalKeywords.test(v);
 }
 
 /**
@@ -55,14 +91,50 @@ export function hasEpOrBva(text: string): boolean {
 
 /**
  * 4. Helper kiểm tra số liệu định lượng trong Table hoặc Figure (IC-E)
- * TUYỆT ĐỐI KHÔNG coi từ "Table", "evaluation", "coverage" đứng riêng là bằng chứng.
- * Phải có bảng/hình chỉ dẫn kèm con số định lượng cụ thể.
+ * QUY TẮC BẮT BUỘC (Ca biên 3):
+ * - hasQuantitativeTableOrFigure phải nhận được "Table 1 reports 80% coverage."
+ * - KHÔNG coi riêng số thứ tự của Table/Figure (như "Table 1", "Figure 2") là kết quả.
+ * - TUYỆT ĐỐI KHÔNG coi từ "Table", "evaluation", "coverage" đứng riêng là bằng chứng.
  */
 export function hasQuantitativeTableOrFigure(text: string): boolean {
   if (!text || text.trim().length === 0) return false;
-  // Bảng hoặc Hình kèm chỉ số định lượng cụ thể (tỷ lệ %, số lượng lỗi, mutants, requests...)
-  const tableFigureDataRegex = /\b(table|figure|fig\.)\s*\d+[^.\n\r]{0,100}?\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?))\b/i;
-  return tableFigureDataRegex.test(text);
+
+  // Mẫu 1: Table/Fig X ... [kết quả định lượng cụ thể] (vd: "Table 1 reports 80% coverage.", "Figure 2: 95% branch coverage", "Table 1 shows 48 mutants")
+  const tableThenDataRegex = /\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b[^.\n\r]{0,120}?\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/i;
+
+  // Mẫu 2: [kết quả định lượng cụ thể] ... Table/Fig X (vd: "80% coverage was reported in Table 1")
+  const dataThenTableRegex = /\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)[^.\n\r]{0,120}?\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b/i;
+
+  return tableThenDataRegex.test(text) || dataThenTableRegex.test(text);
+}
+
+/**
+ * 5. Helper kiểm tra phạm vi kiểm thử REST API ở mức HTTP request (IC-P)
+ * QUY TẮC BẮT BUỘC (Ca biên 1):
+ * - GraphQL riêng lẻ KHÔNG ĐƯỢC đánh dấu đạt IC-P.
+ */
+export function hasRestApiScope(text: string): boolean {
+  if (!text || text.trim().length === 0) return false;
+  const t = text.toLowerCase();
+
+  const hasGraphQL = /\bgraphql\b/i.test(t);
+  const explicitRestRegex = /\b(rest(\s*[-_]?\s*apis?|\s*[-_]?\s*ful)?|openapi|swagger|\braml\b)\b/i;
+  const hasExplicitRest = explicitRestRegex.test(t);
+
+  // Ca biên 1: Nếu là GraphQL riêng lẻ (không có REST API / OpenAPI / Swagger / RAML) -> không đạt IC-P
+  if (hasGraphQL && !hasExplicitRest) {
+    return false;
+  }
+
+  // Nếu có REST API cụ thể
+  if (hasExplicitRest) {
+    return true;
+  }
+
+  // Các dạng kiểm thử API/dịch vụ web qua HTTP requests
+  const generalHttpApiRegex = /\b(web\s*apis?|http\s*(requests?|endpoints?|traffic|payloads?)|microservices?\s*apis?|api\s*testing|web\s*service\s*testing)\b/i;
+
+  return generalHttpApiRegex.test(t);
 }
 
 /**
@@ -155,9 +227,15 @@ export function evaluateScreeningV1(
     };
   }
 
-  // 4. Kiểm tra EC-O: Blog, thesis, dissertation (vi phạm IC-T)
-  const thesisRegex = /\b(master's\s*thesis|doctoral\s*dissertation|phd\s*thesis|bachelor's\s*thesis)\b/i;
-  if (thesisRegex.test(title)) {
+  // 4. Kiểm tra EC-O: Blog, thesis, dissertation (vi phạm IC-T - Ca biên 4)
+  const thesisRegex = /\b(thesis|dissertation|master's\s*thesis|doctoral\s*dissertation|phd\s*thesis|bachelor's\s*thesis)\b/i;
+  const isThesis =
+    thesisRegex.test(title) ||
+    thesisRegex.test(venue || '') ||
+    thesisRegex.test(options?.publicationType || '') ||
+    thesisRegex.test(options?.sourceEvidence || '');
+
+  if (isThesis) {
     matchedCriteria.push('EC-O');
     return {
       stage: 'V1',
@@ -183,13 +261,13 @@ export function evaluateScreeningV1(
   }
 
   // 6. KIỂM TRA PHẠM VI REST API vs CÁC CHỦ ĐỀ NGOẠI PHẠM VI (EC-O theo ie_criteria.md)
-  const restApiRegex = /\b(rest(\s*[-_]?\s*apis?|\s*[-_]?\s*ful)?|web\s*apis?|openapi|swagger|\braml\b|graphql|http\s*(requests?|endpoints?|traffic|payloads?)|microservices?\s*apis?|api\s*testing|web\s*service\s*testing)\b/i;
-  const hasRestApiScope = restApiRegex.test(fullText);
+  // Ca biên 1: GraphQL riêng lẻ không được tính là REST API scope
+  const hasRestScope = hasRestApiScope(fullText);
 
   // (1) EC-O: UI / E2E web testing (Selenium, Cypress, DOM UI)
   const uiE2eRegex = /\b(selenium|cypress|playwright|web\s*ui\s*testing|gui\s*testing|dom[- ]based|user\s*interface\s*testing|end[- ]to[- ]end\s*web\s*test\w*)\b/i;
   const hasUiE2eScope = uiE2eRegex.test(fullText);
-  if (hasUiE2eScope && !hasRestApiScope) {
+  if (hasUiE2eScope && !hasRestScope) {
     matchedCriteria.push('EC-O');
     return {
       stage: 'V1',
@@ -205,9 +283,9 @@ export function evaluateScreeningV1(
   const internalUnitRegex = /\b(unit\s*test\w*|junit|test\s*units?|method[- ]level|class[- ]level|unit\s*level|developer[- ]written\s*tests|library\s*testing)\b/i;
   const hasInternalUnitScope = internalUnitRegex.test(fullText);
   const titleHasUnitTesting = /\b(unit\s*test\w*|junit|class[- ]level|method[- ]level)\b/i.test(title);
-  const titleHasRestApi = /\b(rest|api|openapi|swagger|graphql|microservice)\b/i.test(title);
+  const titleHasRestApi = /\b(rest(\s*[-_]?\s*apis?|\s*[-_]?\s*ful)?|openapi|swagger|microservice)\b/i.test(title);
 
-  if ((titleHasUnitTesting && !titleHasRestApi) || (hasInternalUnitScope && !hasRestApiScope)) {
+  if ((titleHasUnitTesting && !titleHasRestApi) || (hasInternalUnitScope && !hasRestScope)) {
     matchedCriteria.push('EC-O');
     return {
       stage: 'V1',
@@ -222,7 +300,7 @@ export function evaluateScreeningV1(
   // (3) EC-O: Thuần bug report / fault localization (không sinh ca kiểm thử)
   const pureFaultLocalizationRegex = /\b(fault\s*localization|bug\s*report\s*summarization|defect\s*prediction\s*only|bug\s*triage)\b/i;
   const anyTestGenRegex = /\b(test\s*case\s*generation|test\s*generation|automated\s*test|fuzzing|test\s*suite\s*generation|synthesis\s*of\s*tests|generating\s*tests|equivalence\s*partitioning|boundary[- ]value|boundary\s*testing)\b/i;
-  if (pureFaultLocalizationRegex.test(fullText) && !anyTestGenRegex.test(fullText) && !hasRestApiScope) {
+  if (pureFaultLocalizationRegex.test(fullText) && !anyTestGenRegex.test(fullText) && !hasRestScope) {
     matchedCriteria.push('EC-O');
     return {
       stage: 'V1',
@@ -251,15 +329,18 @@ export function evaluateScreeningV1(
   const hasFullAbstract = Boolean(abstract && abstract.trim().length > 50);
   if (!hasFullAbstract) {
     missingEvidence.push('abstract');
-    if (hasRestApiScope) {
+    if (hasRestScope) {
       matchedCriteria.push('IC-P');
     } else {
       unknownCriteria.push('IC-P');
+      if (fullText.includes('graphql')) {
+        missingEvidence.push('GraphQL riêng lẻ không thỏa mãn kiểm thử REST API ở mức HTTP request (IC-P)');
+      }
     }
     unknownCriteria.push('IC-I');
     unknownCriteria.push('IC-E');
 
-    if (isConferenceOrJournal(venue)) {
+    if (isConferenceOrJournal(venue, options)) {
       matchedCriteria.push('IC-T');
     } else {
       unknownCriteria.push('IC-T');
@@ -282,9 +363,20 @@ export function evaluateScreeningV1(
   }
 
   // 9. NẾU CÓ ABSTRACT ĐẦY ĐỦ:
-  // (a) Kiểm tra IC-P (REST API at HTTP request level)
-  if (!hasRestApiScope) {
+  // (a) Kiểm tra IC-P (REST API at HTTP request level - Ca biên 1)
+  if (!hasRestScope) {
     unknownCriteria.push('IC-P');
+    if (fullText.includes('graphql')) {
+      missingEvidence.push('GraphQL riêng lẻ không thỏa mãn kiểm thử REST API ở mức HTTP request (IC-P)');
+      return {
+        stage: 'V1',
+        suggestedDecision: 'Unsure',
+        matchedCriteria,
+        unknownCriteria,
+        missingEvidence,
+        screeningReason: 'Tài liệu về GraphQL riêng lẻ không thỏa mãn phạm vi kiểm thử REST API ở mức HTTP request [Thiếu IC-P]. Cần thẩm định toàn văn.'
+      };
+    }
     missingEvidence.push('Thiếu bằng chứng kiểm thử REST API ở mức HTTP request (IC-P)');
     return {
       stage: 'V1',
@@ -325,15 +417,15 @@ export function evaluateScreeningV1(
     missingEvidence.push('Chưa xác minh ngôn ngữ tiếng Anh (IC-L)');
   }
 
-  // (d) Kiểm tra IC-T (Conference/Journal có bằng chứng riêng)
-  if (isConferenceOrJournal(venue)) {
+  // (d) Kiểm tra IC-T (Conference/Journal có bằng chứng riêng - Ca biên 4: Không chỉ dựa vào Springer/IEEE/ACM)
+  if (isConferenceOrJournal(venue, options)) {
     matchedCriteria.push('IC-T');
   } else {
     unknownCriteria.push('IC-T');
-    missingEvidence.push('Nơi xuất bản chưa xác minh conference/journal (IC-T)');
+    missingEvidence.push('Nơi xuất bản chưa xác minh conference/journal (IC-T) (không xác minh chỉ từ tên Springer/IEEE/ACM)');
   }
 
-  // (e) Kiểm tra IC-E (Số liệu Table/Figure)
+  // (e) Kiểm tra IC-E (Số liệu Table/Figure - Ca biên 3)
   if (hasQuantitativeTableOrFigure(fullText)) {
     matchedCriteria.push('IC-E');
   } else {
@@ -372,8 +464,11 @@ export function evaluateScreeningV1(
 /**
  * Screening V2: Thẩm định Toàn văn (Full-Text)
  * QUY TẮC BẮT BUỘC:
- * - V2 KHÔNG ĐƯỢC Include khi full-text rỗng hoặc còn tiêu chí bắt buộc unknown.
- * - KHÔNG coi từ "Table", "evaluation", "coverage" là bằng chứng có kết quả định lượng trong Table/Figure.
+ * - V2 KHÔNG ĐƯỢC Include khi full-text rỗng, thiếu pageCount hợp lệ, hoặc còn tiêu chí bắt buộc unknown.
+ * - Ca biên 1: GraphQL riêng lẻ không được đánh dấu đạt IC-P.
+ * - Ca biên 2: V2 thiếu pageCount hợp lệ phải Unsure; 3 trang Exclude, 4 trang qua kiểm tra EC-S.
+ * - Ca biên 3: hasQuantitativeTableOrFigure nhận được "Table 1 reports 80% coverage." nhưng không coi riêng số thứ tự Table 1 là kết quả.
+ * - Ca biên 4: IC-T không được xác minh chỉ từ tên Springer/IEEE/ACM; Dùng metadata loại xuất bản và bằng chứng nguồn; thesis/dissertation không đạt IC-T.
  */
 export function evaluateScreeningV2(
   title: string,
@@ -412,8 +507,14 @@ export function evaluateScreeningV2(
     };
   }
 
-  // 3. Kiểm tra số trang < 4 theo EC-S
-  if (options?.pageCount !== undefined && options.pageCount > 0 && options.pageCount < 4) {
+  // 3. Kiểm tra số trang theo EC-S (Ca biên 2):
+  // - V2 thiếu pageCount hợp lệ phải Unsure;
+  // - 3 trang Exclude;
+  // - 4 trang qua kiểm tra EC-S.
+  const pageCount = options?.pageCount;
+  const hasValidPageCount = pageCount !== undefined && typeof pageCount === 'number' && !isNaN(pageCount) && pageCount > 0;
+
+  if (hasValidPageCount && pageCount < 4) {
     matchedCriteria.push('EC-S');
     return {
       stage: 'V2',
@@ -421,12 +522,38 @@ export function evaluateScreeningV2(
       matchedCriteria,
       unknownCriteria,
       missingEvidence,
-      screeningReason: `Loại theo EC-S: Đã xác minh bài báo dưới 4 trang (${options.pageCount} trang).`
+      screeningReason: `Loại theo EC-S: Đã xác minh bài báo dưới 4 trang (${pageCount} trang).`
     };
+  }
+
+  if (!hasValidPageCount) {
+    unknownCriteria.push('EC-S');
+    missingEvidence.push('Thiếu số trang hợp lệ để thẩm định EC-S (yêu cầu bài báo ≥ 4 trang)');
   }
 
   // 4. Kiểm tra loại trừ EC-O trên toàn văn
   const fullTextScan = `${title} ${abstract} ${fullTextContent}`.toLowerCase();
+
+  // Kiểm tra thesis / dissertation (Ca biên 4: thesis/dissertation không đạt IC-T)
+  const thesisRegex = /\b(thesis|dissertation|master's\s*thesis|doctoral\s*dissertation|phd\s*thesis|bachelor's\s*thesis)\b/i;
+  const isThesis =
+    thesisRegex.test(title) ||
+    thesisRegex.test(venue || '') ||
+    thesisRegex.test(options?.publicationType || '') ||
+    thesisRegex.test(options?.sourceEvidence || '') ||
+    thesisRegex.test(fullTextScan.slice(0, 1000));
+
+  if (isThesis) {
+    matchedCriteria.push('EC-O');
+    return {
+      stage: 'V2',
+      suggestedDecision: 'Exclude',
+      matchedCriteria,
+      unknownCriteria,
+      missingEvidence,
+      screeningReason: 'Loại theo EC-O (vi phạm IC-T): Tài liệu dạng luận văn/luận án, không phải hội nghị/tạp chí.'
+    };
+  }
 
   // Phi phần mềm
   const nonSoftwareKeywords = [
@@ -467,17 +594,16 @@ export function evaluateScreeningV2(
     missingEvidence.push('Năm xuất bản chưa xác định');
   }
 
-  // Kiểm tra REST API scope
-  const restApiRegex = /\b(rest(\s*[-_]?\s*apis?|\s*[-_]?\s*ful)?|web\s*apis?|openapi|swagger|\braml\b|graphql|http\s*(requests?|endpoints?|traffic|payloads?)|microservices?\s*apis?|api\s*testing|web\s*service\s*testing)\b/i;
-  const hasRestApiScope = restApiRegex.test(fullTextScan);
+  // Kiểm tra REST API scope (Ca biên 1: GraphQL riêng lẻ không được đánh dấu đạt IC-P)
+  const hasRestScope = hasRestApiScope(fullTextScan);
 
   // Unit test thư viện nội bộ
   const internalUnitRegex = /\b(unit\s*test\w*|junit|test\s*units?|method[- ]level|class[- ]level|unit\s*level|developer[- ]written\s*tests|library\s*testing)\b/i;
   const hasInternalUnitScope = internalUnitRegex.test(fullTextScan);
   const titleHasUnitTesting = /\b(unit\s*test\w*|junit|class[- ]level|method[- ]level)\b/i.test(title);
-  const titleHasRestApi = /\b(rest|api|openapi|swagger|graphql|microservice)\b/i.test(title);
+  const titleHasRestApi = /\b(rest(\s*[-_]?\s*apis?|\s*[-_]?\s*ful)?|openapi|swagger|microservice)\b/i.test(title);
 
-  if ((titleHasUnitTesting && !titleHasRestApi) || (hasInternalUnitScope && !hasRestApiScope)) {
+  if ((titleHasUnitTesting && !titleHasRestApi) || (hasInternalUnitScope && !hasRestScope)) {
     matchedCriteria.push('EC-O');
     return {
       stage: 'V2',
@@ -489,11 +615,15 @@ export function evaluateScreeningV2(
     };
   }
 
-  if (hasRestApiScope) {
+  if (hasRestScope) {
     matchedCriteria.push('IC-P');
   } else {
     unknownCriteria.push('IC-P');
-    missingEvidence.push('Thiếu bằng chứng kiểm thử REST API ở mức HTTP request (IC-P)');
+    if (fullTextScan.includes('graphql')) {
+      missingEvidence.push('GraphQL riêng lẻ không thỏa mãn kiểm thử REST API ở mức HTTP request (IC-P)');
+    } else {
+      missingEvidence.push('Thiếu bằng chứng kiểm thử REST API ở mức HTTP request (IC-P)');
+    }
   }
 
   // Kiểm tra EP / BVA (IC-I)
@@ -512,16 +642,15 @@ export function evaluateScreeningV2(
     missingEvidence.push('Chưa xác minh ngôn ngữ tiếng Anh (IC-L)');
   }
 
-  // Kiểm tra conference/journal (IC-T)
-  if (isConferenceOrJournal(venue) || isConferenceOrJournal(fullTextScan.slice(0, 1000))) {
+  // Kiểm tra conference/journal (IC-T - Ca biên 4: Không chỉ dựa vào Springer/IEEE/ACM)
+  if (isConferenceOrJournal(venue, options) || (!isThesis && isConferenceOrJournal(fullTextScan.slice(0, 1000), options))) {
     matchedCriteria.push('IC-T');
   } else {
     unknownCriteria.push('IC-T');
-    missingEvidence.push('Nơi xuất bản chưa xác minh conference/journal (IC-T)');
+    missingEvidence.push('Nơi xuất bản chưa xác minh conference/journal (IC-T) (không xác minh chỉ từ tên Springer/IEEE/ACM)');
   }
 
-  // Kiểm tra số liệu định lượng trong Table/Figure (IC-E)
-  // KHÔNG coi từ "Table", "evaluation", "coverage" đứng riêng là bằng chứng
+  // Kiểm tra số liệu định lượng trong Table/Figure (IC-E - Ca biên 3)
   if (hasQuantitativeTableOrFigure(fullTextScan)) {
     matchedCriteria.push('IC-E');
   } else {
@@ -529,18 +658,25 @@ export function evaluateScreeningV2(
     missingEvidence.push('Chưa có bằng chứng số liệu định lượng trong Table hoặc Figure (IC-E)');
   }
 
-  // 5. V2 KHÔNG ĐƯỢC INCLUDE KHI CÒN TIÊU CHÍ BẮT BUỘC UNKNOWN
+  // 5. V2 KHÔNG ĐƯỢC INCLUDE KHI CÒN TIÊU CHÍ BẮT BUỘC UNKNOWN HOẶC THIẾU PAGECOUNT HỢP LỆ
   const mandatoryCriteria = ['IC-L', 'IC-T', 'IC-E', 'IC-Y', 'IC-P', 'IC-I'];
   const hasAllMandatory = mandatoryCriteria.every(c => matchedCriteria.includes(c));
 
-  if (!hasAllMandatory || unknownCriteria.length > 0) {
+  if (!hasValidPageCount || !hasAllMandatory || unknownCriteria.length > 0) {
+    const unverifiedReasons: string[] = [];
+    if (!hasValidPageCount) {
+      unverifiedReasons.push('thiếu xác minh số trang hợp lệ (cần ≥ 4 trang để vượt qua EC-S)');
+    }
+    if (unknownCriteria.length > 0) {
+      unverifiedReasons.push(`tiêu chí chưa xác minh: ${unknownCriteria.join(', ')}`);
+    }
     return {
       stage: 'V2',
       suggestedDecision: 'Unsure',
       matchedCriteria,
       unknownCriteria,
       missingEvidence,
-      screeningReason: `Toàn văn còn tiêu chí bắt buộc chưa được xác minh (${unknownCriteria.join(', ')}). Bắt buộc gợi ý Unsure, không được Include.`
+      screeningReason: `Toàn văn chưa đủ điều kiện Include (${unverifiedReasons.join('; ')}). Bắt buộc gợi ý Unsure, không được Include.`
     };
   }
 
@@ -550,7 +686,7 @@ export function evaluateScreeningV2(
     matchedCriteria,
     unknownCriteria: [],
     missingEvidence: [],
-    screeningReason: 'Đạt toàn bộ 6 tiêu chí IC giai đoạn V2 (Toàn văn có đánh giá thực nghiệm định lượng trong Table/Figure cho REST API testing sử dụng EP/BVA, xuất bản conference/journal từ 2020 bằng tiếng Anh).'
+    screeningReason: 'Đạt toàn bộ 6 tiêu chí IC giai đoạn V2 và vượt qua kiểm tra EC-S (Toàn văn có đánh giá thực nghiệm định lượng trong Table/Figure cho REST API testing sử dụng EP/BVA, xuất bản conference/journal từ 2020 bằng tiếng Anh, dung lượng ≥ 4 trang).'
   };
 }
 
