@@ -397,6 +397,8 @@
         const isUnsure = (r.finalDecision || r.suggestedDecision) === "Unsure";
         const dupWarning = r.potentialDuplicate ? `<div class="dup-badge">\u26A0\uFE0F \u0110\u1EC0 XU\u1EA4T TR\xD9NG L\u1EB6P: ${this.escapeHtml(r.duplicateReason || "")}</div>` : "";
         const matchedCriteriaStr = (r.matchedCriteria || []).map((c) => `<span class="badge badge-blue">${c}</span>`).join(" ");
+        const unknownCriteriaStr = (r.unknownCriteria || []).map((c) => `<span class="badge badge-yellow" title="Ch\u01B0a x\xE1c minh">${c}?</span>`).join(" ");
+        const missingEvidenceStr = r.missingEvidence && r.missingEvidence.length > 0 ? `<div style="font-size: 11px; color: #b45309; margin-top: 3px;">\u26A0\uFE0F <b>Thi\u1EBFu b\u1EB1ng ch\u1EE9ng:</b> ${this.escapeHtml(r.missingEvidence.join(", "))}</div>` : "";
         return `
         <div class="paper-card ${r.potentialDuplicate ? "paper-dup" : ""}" id="paper_${r.id}">
           ${dupWarning}
@@ -420,9 +422,11 @@
           <div class="screening-panel">
             <div class="screening-header">
               <span><b>G\u1EE3i \xFD V1:</b> ${decisionBadge}</span>
-              <span><b>Ti\xEAu ch\xED kh\u1EDBp:</b> ${matchedCriteriaStr || '<small class="text-muted">Ch\u01B0a kh\u1EDBp</small>'}</span>
+              <span><b>Kh\u1EDBp:</b> ${matchedCriteriaStr || '<small class="text-muted">Ch\u01B0a</small>'}</span>
+              ${unknownCriteriaStr ? `<span><b>Ch\u01B0a x\xE1c minh:</b> ${unknownCriteriaStr}</span>` : ""}
             </div>
             <div class="reason-text">${this.escapeHtml(r.screeningReason)}</div>
+            ${missingEvidenceStr}
 
             <div class="decision-buttons" data-id="${r.id}">
               <span class="decision-label">X\xE1c nh\u1EADn c\u1EE7a b\u1EA1n (finalDecision):</span>
@@ -533,6 +537,8 @@
         "url",
         "screening_stage",
         "matched_criteria",
+        "unknown_criteria",
+        "missing_evidence",
         "suggested_decision",
         "screening_reason",
         "final_decision",
@@ -560,6 +566,8 @@
           escapeCsv(row.url || ""),
           escapeCsv(row.screeningStage || "V1"),
           escapeCsv((row.matchedCriteria || []).join("; ")),
+          escapeCsv((row.unknownCriteria || []).join("; ")),
+          escapeCsv((row.missingEvidence || []).join("; ")),
           escapeCsv(row.suggestedDecision || "Unsure"),
           escapeCsv(row.screeningReason || ""),
           escapeCsv(row.finalDecision || ""),

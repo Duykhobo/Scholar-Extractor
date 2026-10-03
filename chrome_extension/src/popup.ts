@@ -481,6 +481,10 @@ class ScholarExtensionApp {
         : '';
 
       const matchedCriteriaStr = (r.matchedCriteria || []).map(c => `<span class="badge badge-blue">${c}</span>`).join(' ');
+      const unknownCriteriaStr = (r.unknownCriteria || []).map(c => `<span class="badge badge-yellow" title="Chưa xác minh">${c}?</span>`).join(' ');
+      const missingEvidenceStr = (r.missingEvidence && r.missingEvidence.length > 0)
+        ? `<div style="font-size: 11px; color: #b45309; margin-top: 3px;">⚠️ <b>Thiếu bằng chứng:</b> ${this.escapeHtml(r.missingEvidence.join(', '))}</div>`
+        : '';
 
       return `
         <div class="paper-card ${r.potentialDuplicate ? 'paper-dup' : ''}" id="paper_${r.id}">
@@ -505,9 +509,11 @@ class ScholarExtensionApp {
           <div class="screening-panel">
             <div class="screening-header">
               <span><b>Gợi ý V1:</b> ${decisionBadge}</span>
-              <span><b>Tiêu chí khớp:</b> ${matchedCriteriaStr || '<small class="text-muted">Chưa khớp</small>'}</span>
+              <span><b>Khớp:</b> ${matchedCriteriaStr || '<small class="text-muted">Chưa</small>'}</span>
+              ${unknownCriteriaStr ? `<span><b>Chưa xác minh:</b> ${unknownCriteriaStr}</span>` : ''}
             </div>
             <div class="reason-text">${this.escapeHtml(r.screeningReason)}</div>
+            ${missingEvidenceStr}
 
             <div class="decision-buttons" data-id="${r.id}">
               <span class="decision-label">Xác nhận của bạn (finalDecision):</span>
@@ -636,6 +642,8 @@ class ScholarExtensionApp {
       'url',
       'screening_stage',
       'matched_criteria',
+      'unknown_criteria',
+      'missing_evidence',
       'suggested_decision',
       'screening_reason',
       'final_decision',
@@ -666,6 +674,8 @@ class ScholarExtensionApp {
         escapeCsv(row.url || ''),
         escapeCsv(row.screeningStage || 'V1'),
         escapeCsv((row.matchedCriteria || []).join('; ')),
+        escapeCsv((row.unknownCriteria || []).join('; ')),
+        escapeCsv((row.missingEvidence || []).join('; ')),
         escapeCsv(row.suggestedDecision || 'Unsure'),
         escapeCsv(row.screeningReason || ''),
         escapeCsv(row.finalDecision || ''),

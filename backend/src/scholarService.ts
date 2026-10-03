@@ -241,7 +241,7 @@ export async function fetchScholarFromSerpApi(
     const abstract = '';
 
     // Danh gia screening giai doan V1
-    const screening = evaluateScreeningV1(title, snippet, abstract, pubMeta.year);
+    const screening = evaluateScreeningV1(title, snippet, abstract, pubMeta.year, pubMeta.venue);
 
     records.push({
       id: `${searchId}_${validParams.start}_${i + 1}`,
@@ -271,6 +271,8 @@ export async function fetchScholarFromSerpApi(
 
       screeningStage: screening.stage,
       matchedCriteria: screening.matchedCriteria,
+      unknownCriteria: screening.unknownCriteria,
+      missingEvidence: screening.missingEvidence,
       suggestedDecision: screening.suggestedDecision,
       screeningReason: screening.screeningReason,
       finalDecision: '', // De trong de nguoi dung xac nhan

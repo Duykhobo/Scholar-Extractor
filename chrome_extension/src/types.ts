@@ -29,6 +29,8 @@ export interface PaperRecord {
 
   screeningStage: 'V1' | 'V2';
   matchedCriteria: string[];
+  unknownCriteria?: string[];
+  missingEvidence?: string[];
   suggestedDecision: ScreeningDecision;
   screeningReason: string;
   finalDecision: ScreeningDecision | '';

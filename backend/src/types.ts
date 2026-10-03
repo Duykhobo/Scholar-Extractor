@@ -114,6 +114,8 @@ export interface PaperRecord {
   // Screening theo tieu chi IC-L/T/E/Y/P/I va EC-D/A/S/N/O
   screeningStage: 'V1' | 'V2';
   matchedCriteria: string[];
+  unknownCriteria?: string[];
+  missingEvidence?: string[];
   suggestedDecision: ScreeningDecision;
   screeningReason: string;
   finalDecision: ScreeningDecision | '';
