@@ -117,14 +117,26 @@
     }
     if (host.includes("arxiv.org")) {
       if (!title) {
-        const el = document.querySelector("h1.title");
+        const el = document.querySelector("h1.title, h1.ltx_title, .ltx_title_document");
         if (el) title = el.innerText.replace(/^Title:\s*/i, "").trim();
       }
       if (!abstract) {
-        const el = document.querySelector("blockquote.abstract");
-        if (el) abstract = el.innerText.replace(/^Abstract:\s*/i, "").trim();
+        const ltxAbs = document.querySelector(".ltx_abstract, section.ltx_abstract, div.ltx_abstract, div.abstract");
+        if (ltxAbs) {
+          const pEls = ltxAbs.querySelectorAll(".ltx_p, p");
+          if (pEls.length > 0) {
+            abstract = Array.from(pEls).map((p) => p.innerText.trim()).filter(Boolean).join("\n\n");
+          } else {
+            const clone = ltxAbs.cloneNode(true);
+            clone.querySelectorAll(".ltx_title, .ltx_title_abstract, h1, h2, h3, h4, h5, h6").forEach((h) => h.remove());
+            abstract = clone.innerText.trim();
+          }
+        }
+        if (!abstract) {
+          const el = document.querySelector("blockquote.abstract");
+          if (el) abstract = el.innerText.replace(/^Abstract:\s*/i, "").trim();
+        }
       }
-      if (!venue) venue = "arXiv";
     }
     if (!title) {
       title = document.title.replace(/\s*\|\s*.*$/, "").replace(/\s*-\s*.*$/, "").trim();
@@ -134,12 +146,19 @@
       const yearMatch = rawDate.match(/\b(19\d\d|20\d\d)\b/);
       if (yearMatch) year = yearMatch[1];
     }
-    if (!pdfUrl) {
+    const currentUrl = window.location.href;
+    const arxivMatch = currentUrl.match(/arxiv\.org\/(?:abs|html|pdf)\/([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i) || currentUrl.match(/arxiv:([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i);
+    if (arxivMatch) {
+      const arxivId = arxivMatch[1].replace(/\.pdf$/i, "");
+      pdfUrl = `https://arxiv.org/pdf/${arxivId}`;
+    } else if (!pdfUrl) {
       const linkEl = document.querySelector('link[rel="alternate"][type="application/pdf"], link[type="application/pdf"]');
       if (linkEl && linkEl.href) {
         pdfUrl = linkEl.href;
       } else {
-        const aPdf = document.querySelector('a[href*=".pdf"], a.pdf-btn, a[data-testid="pdf-link"]');
+        const aPdf = document.querySelector(
+          'a.mobile-submission-download[href*="/pdf/"], a.download-pdf, a.pdf-link, header a[href*=".pdf"], nav a[href*=".pdf"], .article-tools a[href*=".pdf"], a[data-testid="pdf-link"], a.pdf-btn'
+        );
         if (aPdf && aPdf.href) pdfUrl = aPdf.href;
       }
     }
@@ -147,12 +166,69 @@
       pdfUrl = window.location.href;
       method = "Active Tab PDF URL";
     }
+    const structuredTables = [];
+    const tableElements = document.querySelectorAll("figure.ltx_table, figure:has(table), table");
+    tableElements.forEach((el, idx) => {
+      if (el.tagName.toLowerCase() === "table" && el.closest("figure.ltx_table, figure:has(table)")) {
+        return;
+      }
+      const anchorId = el.getAttribute("id") || el.querySelector("[id]")?.getAttribute("id") || `table-${idx + 1}`;
+      const captionEl = el.querySelector("figcaption, caption, .ltx_caption");
+      const caption = captionEl ? captionEl.innerText.replace(/\s+/g, " ").trim() : "";
+      const headers = [];
+      el.querySelectorAll("th, .ltx_th").forEach((th) => {
+        const t = th.innerText.replace(/\s+/g, " ").trim();
+        if (t) headers.push(t);
+      });
+      const cells = [];
+      el.querySelectorAll("td, .ltx_td").forEach((td) => {
+        const t = td.innerText.replace(/\s+/g, " ").trim();
+        if (t) cells.push(t);
+      });
+      const closestSection = el.closest('section[id], div[id^="S"]');
+      const sectionAnchor = closestSection ? closestSection.getAttribute("id") : "";
+      const sectionHeading = closestSection ? (closestSection.querySelector("h1, h2, h3, h4, h5, h6, .ltx_title")?.textContent || "").trim() : "";
+      const sectionIdentifier = sectionHeading || sectionAnchor || "";
+      const tableSummary = `[Table / Figure #${anchorId}${sectionAnchor ? ` in #${sectionAnchor}` : ""}: ${caption} | Headers: ${headers.join(" | ")} | Cells: ${cells.join(", ")}]`;
+      structuredTables.push({
+        id: anchorId,
+        caption,
+        section: sectionIdentifier || void 0,
+        anchor: `#${anchorId}`,
+        headers,
+        cells,
+        rawText: tableSummary
+      });
+    });
+    if (!authors) {
+      const authorEls = document.querySelectorAll(".ltx_authors .ltx_personname, .ltx_creator.ltx_role_author .ltx_personname, .authors .author");
+      if (authorEls.length > 0) {
+        authors = Array.from(authorEls).map((a) => a.innerText.trim()).filter(Boolean).join("; ");
+      }
+    }
+    if (!year) {
+      const dateEl = document.querySelector(".ltx_date, .ltx_dates, .header-meta .date");
+      if (dateEl) {
+        const ym = dateEl.innerText.match(/\b(19\d\d|20\d\d)\b/);
+        if (ym) year = ym[1];
+      }
+      if (!year && arxivMatch) {
+        const y2 = arxivMatch[1].slice(0, 2);
+        if (/^\d\d$/.test(y2)) {
+          year = `20${y2}`;
+        }
+      }
+    }
     let rawText = "";
     const articleEl = document.querySelector("article, main, #main-content, .article-content, #content");
     if (articleEl) {
       rawText = articleEl.innerText || "";
     } else {
       rawText = document.body ? document.body.innerText || "" : "";
+    }
+    if (structuredTables.length > 0) {
+      const tablesText = "\n\n=== STRUCTURED HTML TABLES ===\n" + structuredTables.map((t) => t.rawText).join("\n\n");
+      rawText += tablesText;
     }
     if (rawText.length > 2e5) {
       rawText = rawText.slice(0, 2e5);
@@ -168,7 +244,8 @@
       abstract: (abstract || "").trim(),
       // Tuyệt đối không lấy snippet làm abstract
       pdfUrl: (pdfUrl || "").trim(),
-      rawText
+      rawText,
+      tables: structuredTables
     };
   }
   if (typeof window !== "undefined") {

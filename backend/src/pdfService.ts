@@ -97,7 +97,32 @@ export async function parsePdfFromUrl(url: string): Promise<PdfParseResult> {
       };
     }
 
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.toLowerCase().includes('text/html')) {
+      return {
+        success: false,
+        pageCount: 0,
+        pages: [],
+        rawText: '',
+        isImagePdf: false,
+        error: `URL trả về trang HTML thay vì tệp PDF hợp lệ (${contentType})`
+      };
+    }
+
     const arrayBuffer = await response.arrayBuffer();
+    const uint8Header = new Uint8Array(arrayBuffer.slice(0, 10));
+    const headerStr = String.fromCharCode(...uint8Header);
+    if (!headerStr.startsWith('%PDF-')) {
+      return {
+        success: false,
+        pageCount: 0,
+        pages: [],
+        rawText: '',
+        isImagePdf: false,
+        error: 'Tệp tải về không có định dạng PDF hợp lệ (thiếu header %PDF-).'
+      };
+    }
+
     return await parsePdfBuffer(arrayBuffer);
   } catch (err: any) {
     return {

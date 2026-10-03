@@ -799,13 +799,15 @@ class ScholarExtensionApp {
           ? '<span class="badge badge-blue">✓ Bằng chứng hợp lệ</span>'
           : '<span class="badge badge-red">✗ Bị loại (Không tính đạt IC)</span>';
         const sectionBadge = `<span class="badge badge-yellow">Mục: ${this.escapeHtml(ev.section)}</span>`;
-        const pageBadge = ev.page ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : '';
+        const pageBadge = (ev.page !== undefined && ev.page !== null) ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : '';
+        const anchorBadge = ev.anchor ? `<span class="badge badge-yellow" title="HTML Anchor">${this.escapeHtml(ev.anchor)}</span>` : '';
         return `
           <div class="${itemClass}">
             <div style="display: flex; gap: 6px; margin-bottom: 3px; align-items: center; flex-wrap: wrap;">
               <b>[${ev.type}]</b>
               ${statusBadge}
               ${sectionBadge}
+              ${anchorBadge}
               ${pageBadge}
               <code style="font-size: 10px;">${this.escapeHtml(ev.term)}</code>
             </div>
@@ -901,8 +903,12 @@ class ScholarExtensionApp {
       record.uncertain_year = false;
     }
     if (extracted.venue) {
-      record.venue = extracted.venue;
-      record.uncertain_venue = false;
+      // QUY TẮC BẮT BUỘC: Không thay venue đã xác minh bằng tên nền tảng arXiv
+      const isArxivVenue = /^\s*arxiv(\.org)?\s*$/i.test(extracted.venue);
+      if (!isArxivVenue) {
+        record.venue = extracted.venue;
+        record.uncertain_venue = false;
+      }
     }
     if (extracted.doi) {
       record.doi = extracted.doi;

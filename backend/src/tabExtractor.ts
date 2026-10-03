@@ -139,9 +139,77 @@ export function extractMetadataFromHtml(html: string, pageUrl: string = ''): Tab
     abstract = getMeta('DC.description') || getMeta('dc.description') || getMeta('description') || getMeta('og:description');
   }
 
-  if (!pdfUrl) {
-    const pdfLinkM = html.match(/<link\s+[^>]*rel=["']alternate["'][^>]*type=["']application\/pdf["'][^>]*href=["']([^"']*)["']/i);
-    if (pdfLinkM) pdfUrl = pdfLinkM[1].trim();
+  // 4. arXiv DOM Selector Fallback (đặc thù cho LaTeXML / ar5iv / arXiv /abs/ & /html/)
+  const isArxiv = /arxiv\.org/i.test(pageUrl) || /arxiv:/i.test(pageUrl);
+
+  if (isArxiv) {
+    // A. Xác định PDF của chính paper từ arXiv ID: https://arxiv.org/pdf/{arxivId}
+    // Tuyệt đối không chọn liên kết .pdf đầu tiên trong nội dung bài
+    const arxivMatch = pageUrl.match(/arxiv\.org\/(?:abs|html|pdf)\/([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i)
+      || pageUrl.match(/arxiv:([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i);
+    if (arxivMatch) {
+      const arxivId = arxivMatch[1].replace(/\.pdf$/i, '');
+      pdfUrl = `https://arxiv.org/pdf/${arxivId}`;
+      methodUsed = 'arXiv Canonical URL';
+    }
+
+    // B. Lấy abstract từ cấu trúc DOM thực tế của arXiv HTML (.ltx_abstract)
+    if (!abstract) {
+      const ltxAbsMatch = html.match(/<(?:section|div)[^>]*class=["'][^"']*(?:ltx_abstract|abstract)[^"']*["'][^>]*>([\s\S]*?)<\/(?:section|div)>/i)
+        || html.match(/<blockquote[^>]*class=["'][^"']*abstract[^"']*["'][^>]*>([\s\S]*?)<\/blockquote>/i);
+      if (ltxAbsMatch) {
+        let absHtml = ltxAbsMatch[1];
+        // Loại bỏ thẻ tiêu đề bên trong abstract
+        absHtml = absHtml.replace(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi, '');
+        absHtml = absHtml.replace(/<span[^>]*class=["'][^"']*ltx_title[^"']*["'][^>]*>[\s\S]*?<\/span>/gi, '');
+
+        // Trích xuất các đoạn paragraph
+        const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+        const paragraphs: string[] = [];
+        let pMatch: RegExpExecArray | null;
+        while ((pMatch = pRegex.exec(absHtml)) !== null) {
+          const pText = pMatch[1].replace(/<[^>]+>/g, '').trim();
+          if (pText) paragraphs.push(pText);
+        }
+
+        if (paragraphs.length > 0) {
+          abstract = paragraphs.join('\n\n');
+        } else {
+          abstract = absHtml.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        }
+        abstract = abstract.replace(/^(?:Abstract[:.]?)\s*/i, '').trim();
+      }
+    }
+
+    // C. Tiêu đề arXiv HTML nếu chưa có
+    if (!title) {
+      const titleMatch = html.match(/<h1[^>]*class=["'][^"']*(?:title|ltx_title)[^"']*["'][^>]*>([\s\S]*?)<\/h1>/i);
+      if (titleMatch) {
+        title = titleMatch[1].replace(/<[^>]+>/g, '').replace(/^Title:\s*/i, '').trim();
+      }
+    }
+
+    // D. Tác giả từ cấu trúc DOM LaTeXML (.ltx_personname) nếu chưa có
+    if (!authors) {
+      const authorRegex = /<span[^>]*class=["'][^"']*ltx_personname[^"']*["'][^>]*>([\s\S]*?)<\/span>/gi;
+      const authorList: string[] = [];
+      let aMatch: RegExpExecArray | null;
+      while ((aMatch = authorRegex.exec(html)) !== null) {
+        const name = aMatch[1].replace(/<[^>]+>/g, '').trim();
+        if (name && !authorList.includes(name)) authorList.push(name);
+      }
+      if (authorList.length > 0) {
+        authors = authorList.join('; ');
+      }
+    }
+
+    // E. Năm từ arXiv ID (vd: 2509.05540v1 -> 2025) nếu chưa có
+    if (!rawDate && arxivMatch) {
+      const y2 = arxivMatch[1].slice(0, 2);
+      if (/^\d\d$/.test(y2)) {
+        rawDate = `20${y2}`;
+      }
+    }
   }
 
   // Chuẩn hóa năm 4 chữ số
@@ -160,6 +228,96 @@ export function extractMetadataFromHtml(html: string, pageUrl: string = ''): Tab
     }
   }
 
+  // 5. Đọc các bảng HTML có cấu trúc (table, figure.ltx_table, caption, headers, cells)
+  const structuredTables: Array<{
+    id?: string;
+    caption: string;
+    section?: string;
+    anchor: string;
+    headers: string[];
+    cells: string[];
+    rawText: string;
+  }> = [];
+
+  const figTableRegex = /<figure[^>]*class=["'][^"']*ltx_table[^"']*["'][^>]*id=["']([^"']*)["'][^>]*>([\s\S]*?)<\/figure>/gi;
+  let figMatch: RegExpExecArray | null;
+  while ((figMatch = figTableRegex.exec(html)) !== null) {
+    const tableId = figMatch[1];
+    const figBody = figMatch[2];
+    const sectionFromId = tableId.includes('.') ? tableId.split('.')[0] : undefined;
+
+    const capM = figBody.match(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/i);
+    const caption = capM ? capM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : '';
+
+    const headers: string[] = [];
+    const thRegex = /<th[^>]*>([\s\S]*?)<\/th>/gi;
+    let thM: RegExpExecArray | null;
+    while ((thM = thRegex.exec(figBody)) !== null) {
+      const t = thM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      if (t) headers.push(t);
+    }
+
+    const cells: string[] = [];
+    const tdRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+    let tdM: RegExpExecArray | null;
+    while ((tdM = tdRegex.exec(figBody)) !== null) {
+      const t = tdM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      if (t) cells.push(t);
+    }
+
+    const rawT = `[Table / Figure #${tableId}: ${caption} | Headers: ${headers.join(' | ')} | Cells: ${cells.join(', ')}]`;
+    structuredTables.push({
+      id: tableId,
+      caption,
+      section: sectionFromId,
+      anchor: `#${tableId}`,
+      headers,
+      cells,
+      rawText: rawT
+    });
+  }
+
+  // Generic <table> nếu chưa có từ figure
+  if (structuredTables.length === 0) {
+    const tableRegex = /<table[^>]*>([\s\S]*?)<\/table>/gi;
+    let tblMatch: RegExpExecArray | null;
+    let tblIdx = 1;
+    while ((tblMatch = tableRegex.exec(html)) !== null) {
+      const tblBody = tblMatch[1];
+      const capM = tblBody.match(/<caption[^>]*>([\s\S]*?)<\/caption>/i);
+      const caption = capM ? capM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : '';
+
+      const headers: string[] = [];
+      const thRegex = /<th[^>]*>([\s\S]*?)<\/th>/gi;
+      let thM: RegExpExecArray | null;
+      while ((thM = thRegex.exec(tblBody)) !== null) {
+        const t = thM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        if (t) headers.push(t);
+      }
+
+      const cells: string[] = [];
+      const tdRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      let tdM: RegExpExecArray | null;
+      while ((tdM = tdRegex.exec(tblBody)) !== null) {
+        const t = tdM[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        if (t) cells.push(t);
+      }
+
+      if (caption || cells.length > 0) {
+        const tId = `table-${tblIdx++}`;
+        const rawT = `[Table / Figure #${tId}: ${caption} | Headers: ${headers.join(' | ')} | Cells: ${cells.join(', ')}]`;
+        structuredTables.push({
+          id: tId,
+          caption,
+          anchor: `#${tId}`,
+          headers,
+          cells,
+          rawText: rawT
+        });
+      }
+    }
+  }
+
   // Xóa các tiền tố HTML entities thông dụng trong title/abstract
   const cleanText = (str?: string) =>
     (str || '')
@@ -171,15 +329,28 @@ export function extractMetadataFromHtml(html: string, pageUrl: string = ''): Tab
       .replace(/\s+/g, ' ')
       .trim();
 
+  // QUY TẮC BẮT BUỘC: Không gán hoặc coi "arXiv" / "arXiv.org" là venue đã xác minh
+  let cleanedVenue = cleanText(venue);
+  if (/^\s*arxiv(\.org)?\s*$/i.test(cleanedVenue)) {
+    cleanedVenue = '';
+  }
+
+  let rawText = '';
+  if (structuredTables.length > 0) {
+    rawText = structuredTables.map(t => t.rawText).join('\n\n');
+  }
+
   return {
     sourceUrl: pageUrl,
     method: methodUsed,
     title: cleanText(title),
     authors: cleanText(authors),
     year,
-    venue: cleanText(venue),
+    venue: cleanedVenue,
     doi: cleanDoi(doi),
     abstract: cleanText(abstract), // Tuyệt đối không lấy snippet làm abstract
-    pdfUrl: pdfUrl ? pdfUrl.trim() : ''
+    pdfUrl: pdfUrl ? pdfUrl.trim() : '',
+    rawText,
+    tables: structuredTables
   };
 }

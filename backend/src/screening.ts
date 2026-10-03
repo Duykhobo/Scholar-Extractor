@@ -25,9 +25,13 @@ export interface ScreeningOptions {
  */
 export function isEnglishVerified(text: string): boolean {
   if (!text || text.trim().length === 0) return false;
-  // Bỏ qua nếu có ký tự có dấu tiếng Việt
-  const nonEnglishDiacritics = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
-  if (nonEnglishDiacritics.test(text)) return false;
+  // Bỏ qua nếu có ký tự dấu thanh đặc trưng tiếng Việt hoặc từ vựng tiếng Việt
+  // (Không loại trừ chỉ vì tên tác giả/mô hình quốc tế chứa dấu Latin như Vânia, Sabiá, José)
+  const vietnameseUniqueDiacritics = /[ạảầấậẩẫằắặẳẵệểễịỉĩọỏồốộổỗờớợởỡụủừứựửữỳỷỹđ]/i;
+  if (vietnameseUniqueDiacritics.test(text)) return false;
+
+  const vietnameseWords = /\b(và|của|trong|cho|với|trên|tại|để|là|những|các|được|này|đó|chúng\s*tôi|bài\s*báo|nghiên\s*cứu|kết\s*quả|phương\s*pháp|kiểm\s*thử|đánh\s*giá)\b/i;
+  if (vietnameseWords.test(text)) return false;
 
   const englishWords = /\b(the|and|of|in|for|with|on|at|to|is|are|a|an|by|from|this|that|we|our|paper|results?|approach|method)\b/i;
   return englishWords.test(text);
@@ -102,13 +106,20 @@ export function hasEpOrBva(text: string): boolean {
 export function hasQuantitativeTableOrFigure(text: string): boolean {
   if (!text || text.trim().length === 0) return false;
 
-  // Mẫu 1: Table/Fig X ... [kết quả định lượng cụ thể] (vd: "Table 1 reports 80% coverage.", "Figure 2: 95% branch coverage", "Table 1 shows 48 mutants")
-  const tableThenDataRegex = /\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b[^.\n\r]{0,120}?\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/i;
+  // Con số định lượng cụ thể: hỗ trợ cả dấu chấm thập phân (80%, 95.5%) và dấu phẩy thập phân (71,7%, 40,8%)
+  const quantMetricPattern = `(?:\\d+(?:[.,]\\d+)?%|\\d+\\s*(?:mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\\b)`;
 
-  // Mẫu 2: [kết quả định lượng cụ thể] ... Table/Fig X (vd: "80% coverage was reported in Table 1")
-  const dataThenTableRegex = /\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)[^.\n\r]{0,120}?\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b/i;
+  // Mẫu 1: Table/Fig X ... [kết quả định lượng cụ thể]
+  // Hỗ trợ cả trong cùng câu văn lẫn trong khối bảng HTML / cấu trúc bảng nhiều dòng
+  const tableThenDataRegex = new RegExp(`\\b(table|figure|fig\\.)\\s*(\\d+|[ivx]+)\\b[\\s\\S]{0,2500}?\\b${quantMetricPattern}`, 'i');
 
-  return tableThenDataRegex.test(text) || dataThenTableRegex.test(text);
+  // Mẫu 2: [kết quả định lượng cụ thể] ... Table/Fig X
+  const dataThenTableRegex = new RegExp(`\\b${quantMetricPattern}[\\s\\S]{0,2500}?\\b(table|figure|fig\\.)\\s*(\\d+|[ivx]+)\\b`, 'i');
+
+  // Mẫu 3: Cấu trúc structured table summary [Table / Figure #...: ... | Cells: ... 71,7% ...]
+  const structuredTableRegex = new RegExp(`\\[Table\\s*\\/\\s*Figure\\s*#[^\\]]*?\\b${quantMetricPattern}`, 'i');
+
+  return tableThenDataRegex.test(text) || dataThenTableRegex.test(text) || structuredTableRegex.test(text);
 }
 
 /**

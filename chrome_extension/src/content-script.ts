@@ -161,14 +161,33 @@ export function extractCurrentPageData() {
   // arXiv
   if (host.includes('arxiv.org')) {
     if (!title) {
-      const el = document.querySelector('h1.title');
+      const el = document.querySelector('h1.title, h1.ltx_title, .ltx_title_document');
       if (el) title = (el as HTMLElement).innerText.replace(/^Title:\s*/i, '').trim();
     }
     if (!abstract) {
-      const el = document.querySelector('blockquote.abstract');
-      if (el) abstract = (el as HTMLElement).innerText.replace(/^Abstract:\s*/i, '').trim();
+      // 1. Selector thực tế của arXiv HTML (LaTeXML/ar5iv)
+      const ltxAbs = document.querySelector('.ltx_abstract, section.ltx_abstract, div.ltx_abstract, div.abstract');
+      if (ltxAbs) {
+        const pEls = ltxAbs.querySelectorAll('.ltx_p, p');
+        if (pEls.length > 0) {
+          abstract = Array.from(pEls)
+            .map(p => (p as HTMLElement).innerText.trim())
+            .filter(Boolean)
+            .join('\n\n');
+        } else {
+          const clone = ltxAbs.cloneNode(true) as HTMLElement;
+          clone.querySelectorAll('.ltx_title, .ltx_title_abstract, h1, h2, h3, h4, h5, h6').forEach(h => h.remove());
+          abstract = clone.innerText.trim();
+        }
+      }
+      // 2. Fallback cho trang arXiv /abs/
+      if (!abstract) {
+        const el = document.querySelector('blockquote.abstract');
+        if (el) abstract = (el as HTMLElement).innerText.replace(/^Abstract:\s*/i, '').trim();
+      }
     }
-    if (!venue) venue = 'arXiv';
+    // QUY TẮC BẮT BUỘC: Không gán venue = 'arXiv' vì arXiv chỉ là nền tảng / preprint repository.
+    // Nếu có tên venue hội nghị/tạp chí xác minh từ journal-ref thì dùng, ngược lại để trống.
   }
 
   // Tiêu đề trang HTML cuối cùng
@@ -183,13 +202,26 @@ export function extractCurrentPageData() {
     if (yearMatch) year = yearMatch[1];
   }
 
-  // 5. Tìm liên kết PDF
-  if (!pdfUrl) {
+  // 5. Xác định liên kết PDF:
+  // QUY TẮC BẮT BUỘC VỚI arXiv:
+  // Xác định PDF của chính paper từ arXiv ID: https://arxiv.org/pdf/{arxivId}
+  // Tuyệt đối không chọn liên kết .pdf đầu tiên trong nội dung bài (thường là link tài liệu tham khảo)
+  const currentUrl = window.location.href;
+  const arxivMatch = currentUrl.match(/arxiv\.org\/(?:abs|html|pdf)\/([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i)
+    || currentUrl.match(/arxiv:([a-z\-]+(?:\.[a-z\-]+)?\/\d{7}|\d{4}\.\d{4,5}(?:v\d+)?)/i);
+
+  if (arxivMatch) {
+    const arxivId = arxivMatch[1].replace(/\.pdf$/i, '');
+    pdfUrl = `https://arxiv.org/pdf/${arxivId}`;
+  } else if (!pdfUrl) {
     const linkEl = document.querySelector('link[rel="alternate"][type="application/pdf"], link[type="application/pdf"]') as HTMLLinkElement;
     if (linkEl && linkEl.href) {
       pdfUrl = linkEl.href;
     } else {
-      const aPdf = document.querySelector('a[href*=".pdf"], a.pdf-btn, a[data-testid="pdf-link"]') as HTMLAnchorElement;
+      // Chỉ tìm trong thanh công cụ, header, menu tải bài hoặc nút download chính; không quét thân bài / references
+      const aPdf = document.querySelector(
+        'a.mobile-submission-download[href*="/pdf/"], a.download-pdf, a.pdf-link, header a[href*=".pdf"], nav a[href*=".pdf"], .article-tools a[href*=".pdf"], a[data-testid="pdf-link"], a.pdf-btn'
+      ) as HTMLAnchorElement;
       if (aPdf && aPdf.href) pdfUrl = aPdf.href;
     }
   }
@@ -200,6 +232,80 @@ export function extractCurrentPageData() {
     method = 'Active Tab PDF URL';
   }
 
+  // 6. Đọc bảng HTML bằng cấu trúc table, caption, headers và cells
+  const structuredTables: Array<{
+    id?: string;
+    caption: string;
+    section?: string;
+    anchor: string;
+    headers: string[];
+    cells: string[];
+    rawText: string;
+  }> = [];
+
+  const tableElements = document.querySelectorAll('figure.ltx_table, figure:has(table), table');
+  tableElements.forEach((el, idx) => {
+    if (el.tagName.toLowerCase() === 'table' && el.closest('figure.ltx_table, figure:has(table)')) {
+      return; // Đã được xử lý bởi figure bọc ngoài
+    }
+
+    const anchorId = el.getAttribute('id') || el.querySelector('[id]')?.getAttribute('id') || `table-${idx + 1}`;
+    const captionEl = el.querySelector('figcaption, caption, .ltx_caption');
+    const caption = captionEl ? (captionEl as HTMLElement).innerText.replace(/\s+/g, ' ').trim() : '';
+
+    const headers: string[] = [];
+    el.querySelectorAll('th, .ltx_th').forEach(th => {
+      const t = (th as HTMLElement).innerText.replace(/\s+/g, ' ').trim();
+      if (t) headers.push(t);
+    });
+
+    const cells: string[] = [];
+    el.querySelectorAll('td, .ltx_td').forEach(td => {
+      const t = (td as HTMLElement).innerText.replace(/\s+/g, ' ').trim();
+      if (t) cells.push(t);
+    });
+
+    const closestSection = el.closest('section[id], div[id^="S"]');
+    const sectionAnchor = closestSection ? closestSection.getAttribute('id') : '';
+    const sectionHeading = closestSection ? (closestSection.querySelector('h1, h2, h3, h4, h5, h6, .ltx_title')?.textContent || '').trim() : '';
+    const sectionIdentifier = sectionHeading || sectionAnchor || '';
+
+    const tableSummary = `[Table / Figure #${anchorId}${sectionAnchor ? ` in #${sectionAnchor}` : ''}: ${caption} | Headers: ${headers.join(' | ')} | Cells: ${cells.join(', ')}]`;
+
+    structuredTables.push({
+      id: anchorId,
+      caption,
+      section: sectionIdentifier || undefined,
+      anchor: `#${anchorId}`,
+      headers,
+      cells,
+      rawText: tableSummary
+    });
+  });
+
+  // Trích xuất authors dự phòng nếu thiếu từ meta tags (đặc thù cấu trúc LaTeXML .ltx_personname)
+  if (!authors) {
+    const authorEls = document.querySelectorAll('.ltx_authors .ltx_personname, .ltx_creator.ltx_role_author .ltx_personname, .authors .author');
+    if (authorEls.length > 0) {
+      authors = Array.from(authorEls).map(a => (a as HTMLElement).innerText.trim()).filter(Boolean).join('; ');
+    }
+  }
+
+  // Trích xuất year dự phòng nếu thiếu
+  if (!year) {
+    const dateEl = document.querySelector('.ltx_date, .ltx_dates, .header-meta .date');
+    if (dateEl) {
+      const ym = (dateEl as HTMLElement).innerText.match(/\b(19\d\d|20\d\d)\b/);
+      if (ym) year = ym[1];
+    }
+    if (!year && arxivMatch) {
+      const y2 = arxivMatch[1].slice(0, 2);
+      if (/^\d\d$/.test(y2)) {
+        year = `20${y2}`;
+      }
+    }
+  }
+
   // Lấy nội dung text chính của trang (để phân tích bằng chứng IC-I/IC-E nếu là bài báo HTML đầy đủ)
   let rawText = '';
   const articleEl = document.querySelector('article, main, #main-content, .article-content, #content');
@@ -207,6 +313,12 @@ export function extractCurrentPageData() {
     rawText = (articleEl as HTMLElement).innerText || '';
   } else {
     rawText = document.body ? document.body.innerText || '' : '';
+  }
+
+  // Nối thêm thông tin bảng cấu trúc vào rawText để các regex quét được
+  if (structuredTables.length > 0) {
+    const tablesText = '\n\n=== STRUCTURED HTML TABLES ===\n' + structuredTables.map(t => t.rawText).join('\n\n');
+    rawText += tablesText;
   }
 
   // Giới hạn độ dài rawText để gửi an toàn
@@ -224,7 +336,8 @@ export function extractCurrentPageData() {
     doi: cleanDoi(doi),
     abstract: (abstract || '').trim(), // Tuyệt đối không lấy snippet làm abstract
     pdfUrl: (pdfUrl || '').trim(),
-    rawText
+    rawText,
+    tables: structuredTables
   };
 }
 

@@ -1347,5 +1347,192 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
   });
 });
 
+describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/2509.05540v1)", () => {
+  const arxivUrl = "https://arxiv.org/html/2509.05540v1";
+
+  const arxivHtmlSample = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="citation_title" content="Combining TSL and LLM to Automate REST API Testing: A Comparative Study">
+  <meta name="citation_author" content="Thiago Barradas">
+  <meta name="citation_author" content="Aline Paes">
+  <meta name="citation_author" content="Vânia Neves">
+  <meta name="citation_date" content="2025/09/08">
+  <title>Combining TSL and LLM to Automate REST API Testing: A Comparative Study</title>
+</head>
+<body>
+  <div class="ltx_page_main">
+    <h1 class="ltx_title ltx_title_document">Combining TSL and LLM to Automate REST API Testing: A Comparative Study</h1>
+    
+    <!-- 1. Cấu trúc DOM thực tế của arXiv HTML (.ltx_abstract) -->
+    <section class="ltx_abstract" id="abstract1">
+      <h6 class="ltx_title ltx_title_abstract">Abstract.</h6>
+      <p class="ltx_p">The effective execution of tests for REST APIs remains a considerable challenge for development teams, driven by the inherent complexity of distributed systems, the multitude of possible scenarios, and the limited time available for test design.</p>
+      <p class="ltx_p">To address these issues, we introduce RestTSLLM, an approach that uses Test Specification Language (TSL) in conjunction with Large Language Models (LLMs) to automate the generation of test cases for REST APIs. We evaluate equivalence partitioning and boundary-value analysis on REST API request parameters.</p>
+    </section>
+
+    <!-- Thân bài chứa link .pdf tài liệu tham khảo khác (bẫy mà bộ parser cũ mắc phải) -->
+    <div class="ltx_para">
+      Formal permission was obtained for the hotels-api project:
+      <a href="https://github.com/uffsoftwaretesting/RestTSLLM/tree/main/pdfs/use_permission_hotel_api_.pdf">use_permission_hotel_api_.pdf</a>
+    </div>
+
+    <!-- 3. Bảng HTML có cấu trúc Table 3 với số thập phân dùng dấu phẩy (71,7%, 40,8%) -->
+    <section id="S5" class="ltx_section">
+      <h2 class="ltx_title ltx_title_section">5 Results and discussion</h2>
+      <p class="ltx_p">The results, ordered from highest to lowest, are presented in Table 3.</p>
+
+      <figure class="ltx_table" id="S5.T3">
+        <figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 3: </span>Overall performance evaluation of LLMs on REST API integration testing.</figcaption>
+        <table class="ltx_tabular">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Branch Coverage</th>
+              <th>Mutation Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Claude 3.5 Sonnet</td>
+              <td>71,7%</td>
+              <td>68,4%</td>
+            </tr>
+            <tr>
+              <td>Baseline Restler</td>
+              <td>40,8%</td>
+              <td>35,2%</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+  </div>
+</body>
+</html>
+  `;
+
+  test("1. Lấy abstract từ cấu trúc DOM thực tế của arXiv HTML (.ltx_abstract)", () => {
+    const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
+
+    assert.ok(extracted.abstract, "Abstract không được rỗng");
+    assert.ok(extracted.abstract.length > 50, "Độ dài abstract phải đầy đủ");
+    assert.ok(!extracted.abstract.startsWith("Abstract."), "Phải loại bỏ tiêu đề Abstract.");
+    assert.ok(
+      extracted.abstract.includes("The effective execution of tests for REST APIs"),
+      "Phải chứa nội dung đoạn 1"
+    );
+    assert.ok(
+      extracted.abstract.includes("To address these issues, we introduce RestTSLLM"),
+      "Phải chứa nội dung đoạn 2"
+    );
+  });
+
+  test("2. Xác định PDF của chính paper từ arXiv ID (https://arxiv.org/pdf/2509.05540v1), không chọn .pdf đầu tiên trong thân bài", () => {
+    const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
+
+    // Phải là PDF canonical từ arXiv ID
+    assert.equal(extracted.pdfUrl, "https://arxiv.org/pdf/2509.05540v1");
+    // Tuyệt đối không chọn link use_permission_hotel_api_.pdf nằm trong nội dung bài
+    assert.notEqual(
+      extracted.pdfUrl,
+      "https://github.com/uffsoftwaretesting/RestTSLLM/tree/main/pdfs/use_permission_hotel_api_.pdf"
+    );
+  });
+
+  test("3. Đọc bảng HTML bằng cấu trúc table, caption, headers và cells; Table 3 dùng dấu phẩy thập phân (71,7%, 40,8%)", () => {
+    const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
+
+    // Phải nhận dạng được structured tables
+    assert.ok(extracted.tables && extracted.tables.length > 0, "Phải trích xuất được structured tables");
+    const table3 = extracted.tables?.find(t => t.id === "S5.T3" || (t.caption && t.caption.includes("Table 3")));
+    assert.ok(table3, "Phải tìm thấy Table 3 qua ID hoặc caption");
+    assert.ok(table3.cells?.includes("71,7%"), "Cells của Table 3 phải chứa '71,7%'");
+    assert.ok(table3.cells?.includes("40,8%"), "Cells của Table 3 phải chứa '40,8%'");
+
+    // hasQuantitativeTableOrFigure phải nhận dạng được số liệu dùng dấu phẩy thập phân
+    assert.equal(
+      hasQuantitativeTableOrFigure(table3.rawText),
+      true,
+      "hasQuantitativeTableOrFigure phải nhận được cấu trúc Table 3 với 71,7% và 40,8%"
+    );
+    assert.equal(
+      hasQuantitativeTableOrFigure(extracted.rawText || ""),
+      true,
+      "hasQuantitativeTableOrFigure phải nhận được Table 3 trong rawText"
+    );
+  });
+
+  test("4. Bằng chứng HTML lưu section/anchor; page=null (không gán số trang giả khi chưa parse PDF)", () => {
+    const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
+
+    // Trích xuất bằng chứng từ nội dung HTML (isPdf = false)
+    const { evidence } = extractEvidenceFromPages(
+      [{ pageNum: 1, text: extracted.rawText || "" }],
+      false, // isPdf = false
+      extracted.tables
+    );
+
+    const iceEvidence = evidence.find(e => e.type === "IC-E" && e.isValidEvidence);
+    assert.ok(iceEvidence, "Phải tìm thấy bằng chứng IC-E từ Table 3");
+
+    // QUY TẮC BẮT BUỘC: HTML evidence phải có page=null (hoặc undefined), không được gán page=1 giả tạo
+    assert.equal(iceEvidence.page, null, "Bằng chứng từ HTML phải có page=null");
+    assert.equal(iceEvidence.anchor, "#S5.T3", "Bằng chứng HTML phải lưu anchor #S5.T3");
+    assert.ok(iceEvidence.section.includes("Evaluation") || iceEvidence.section.includes("Results"), "Section phải là Evaluation/Results");
+  });
+
+  test("5. Không thay venue đã xác minh bằng tên nền tảng arXiv", () => {
+    const verifiedRecord: PaperRecord = {
+      id: "paper-test-arxiv-venue",
+      source: "Google Scholar",
+      discoverySource: "Google Scholar",
+      collectionMethod: "SerpApi",
+      title: "Combining TSL and LLM to Automate REST API Testing: A Comparative Study",
+      authors: "Thiago Barradas; Aline Paes; Vânia Neves",
+      year: "2025",
+      venue: "ACM Transactions on Software Engineering and Methodology",
+      doi: "10.1145/3597503.3639178",
+      snippet: "",
+      abstract: "",
+      url: arxivUrl,
+      query: "REST API testing",
+      retrieval_date: "2025-09-08",
+      search_id: "s1",
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: false,
+      user_verified: true,
+      screeningStage: "V1",
+      matchedCriteria: [],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: ""
+    };
+
+    // Trường hợp 1: Dữ liệu tab cố tình trả về venue: "arXiv"
+    const changes1 = calculateFieldChanges(verifiedRecord, {
+      venue: "arXiv"
+    });
+    const venueChange1 = changes1.find(c => c.field === "venue");
+    assert.equal(venueChange1?.willChange, false, "Không được thay venue đã có bằng arXiv");
+    assert.equal(venueChange1?.newValue, "ACM Transactions on Software Engineering and Methodology");
+
+    // Trường hợp 2: Trích xuất từ HTML arXiv
+    const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
+    assert.equal(extracted.venue, "", "extractMetadataFromHtml không được coi 'arXiv' là venue");
+
+    const changes2 = calculateFieldChanges(verifiedRecord, extracted);
+    const venueChange2 = changes2.find(c => c.field === "venue");
+    assert.equal(venueChange2?.willChange, false, "Venue đã xác minh phải được giữ nguyên tuyệt đối");
+    assert.equal(venueChange2?.newValue, "ACM Transactions on Software Engineering and Methodology");
+  });
+});
+
+
 
 

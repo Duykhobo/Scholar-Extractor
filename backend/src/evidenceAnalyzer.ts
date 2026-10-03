@@ -1,4 +1,4 @@
-import { PaperRecord, TabExtractedData, TabAnalysisResult, EvidenceSnippet } from './types';
+import { PaperRecord, TabExtractedData, TabAnalysisResult, EvidenceSnippet, StructuredTable } from './types';
 import { evaluateScreeningV1, evaluateScreeningV2, hasQuantitativeTableOrFigure } from './screening';
 
 /**
@@ -48,7 +48,7 @@ export function computeTitleSimilarity(title1?: string, title2?: string): number
 }
 
 /**
- * 2. Xác định Section chứa đoạn trích (Methodology, Related Work, References...)
+ * 2. Xác định Section chứa đoạn trích (Methodology, Evaluation, Related Work, References...)
  */
 export function detectSection(fullText: string, matchIndex: number): 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown' {
   // Quét ngược tối đa 1500 ký tự trước vị trí match để tìm tiêu đề mục gần nhất
@@ -81,9 +81,39 @@ export function detectSection(fullText: string, matchIndex: number): 'Methodolog
 }
 
 /**
- * 3. Trích xuất bằng chứng IC-I và IC-E từ nội dung văn bản (từng trang hoặc toàn bộ)
+ * 2b. Helper phân giải tên section từ anchor ID hoặc heading (S5 -> Evaluation, S3/S4 -> Methodology, S2 -> Related Work)
  */
-export function extractEvidenceFromPages(pages: { pageNum: number; text: string }[]): {
+export function resolveSectionName(sectionStr?: string): 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown' {
+  if (!sectionStr) return 'Evaluation';
+  const s = sectionStr.toLowerCase();
+  if (/\b(results?|discussion|evaluation|experiments?|findings)\b/i.test(s) || /^#?s5\b/i.test(s)) {
+    return 'Evaluation';
+  }
+  if (/\b(method|methodology|approach|system|architecture|design|implementation)\b/i.test(s) || /^#?s[34]\b/i.test(s)) {
+    return 'Methodology';
+  }
+  if (/\b(related|background|prior|literature)\b/i.test(s) || /^#?s2\b/i.test(s)) {
+    return 'Related Work';
+  }
+  if (/\b(reference|bibliography|cited)\b/i.test(s) || /^#?bib\b/i.test(s)) {
+    return 'References';
+  }
+  const detected = detectSection(sectionStr, sectionStr.length);
+  return detected !== 'Unknown' ? detected : 'Evaluation';
+}
+
+/**
+ * 3. Trích xuất bằng chứng IC-I và IC-E từ nội dung văn bản (từng trang PDF hoặc DOM HTML)
+ * QUY TẮC BẮT BUỘC:
+ * - Bằng chứng HTML lưu section/anchor; page=null. Chỉ ghi số trang khi thực sự parse PDF.
+ * - Table/Figure nhận dấu phẩy thập phân: 71,7%, 40,8%.
+ * - Đọc bảng HTML theo cấu trúc table, caption, headers và cells.
+ */
+export function extractEvidenceFromPages(
+  pages: { pageNum: number; text: string }[],
+  isPdf: boolean = true,
+  structuredTables?: StructuredTable[]
+): {
   evidence: EvidenceSnippet[];
   warnings: string[];
 } {
@@ -94,9 +124,59 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
   let hasValidIce = false;
   let mentionedMetricWithoutTable = false;
 
+  // 1. Phân tích trước từ danh sách Structured Tables (HTML tables) nếu có
+  if (structuredTables && structuredTables.length > 0) {
+    const quantMetricRegex = /\b(\d+(?:[.,]\d+)?%|\d+\s*(?:mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/i;
+
+    for (const tbl of structuredTables) {
+      const combinedText = `${tbl.caption || ''} ${(tbl.headers || []).join(' ')} ${(tbl.cells || []).join(' ')} ${tbl.rawText}`;
+      const quantMatch = combinedText.match(quantMetricRegex);
+
+      if (quantMatch) {
+        hasValidIce = true;
+        const matchedNum = quantMatch[0];
+        const allMatchedNumbers = (combinedText.match(/\b\d+(?:[.,]\d+)?%/g) || []).slice(0, 4);
+
+        const tblSection = resolveSectionName(tbl.section);
+        const anchor = tbl.anchor || (tbl.id ? `#${tbl.id}` : undefined);
+
+        // BẢNG HTML TỪ DOM LUÔN CÓ page: null; TUYỆT ĐỐI KHÔNG GÁN page=1
+        evidence.push({
+          type: 'IC-E',
+          term: tbl.caption || (tbl.id ? `Table #${tbl.id}` : 'Table'),
+          context: `[Bảng HTML ${tbl.id ? `#${tbl.id}` : ''}${tbl.caption ? `: ${tbl.caption}` : ''}] ${tbl.rawText.slice(0, 260)}...`,
+          page: null,
+          anchor,
+          section: tblSection,
+          isValidEvidence: true,
+          reason: `Bảng HTML có cấu trúc chứa số liệu định lượng thực nghiệm (${allMatchedNumbers.length > 0 ? allMatchedNumbers.join(', ') : matchedNum}).`
+        });
+      }
+    }
+  }
+
+  // 2. Quét nội dung text của từng trang (PDF) hoặc toàn bộ nội dung HTML
   for (const page of pages) {
     const text = page.text;
     const pageNum = page.pageNum;
+
+    // Helper tạo context label chuẩn: chỉ ghi số trang khi parse PDF thật, còn HTML ghi anchor/section
+    const getContextLabel = (matchIdx: number, section: string, anchorTag?: string): string => {
+      if (isPdf) {
+        return `[Trang ${pageNum} - ${section}]`;
+      }
+      if (anchorTag) {
+        return `[${anchorTag} - ${section}]`;
+      }
+      return `[Section: ${section}]`;
+    };
+
+    // Helper tìm anchor gần nhất trong phạm vi match
+    const findNearbyAnchor = (matchIdx: number): string | undefined => {
+      const windowText = text.slice(Math.max(0, matchIdx - 300), Math.min(text.length, matchIdx + 300));
+      const m = windowText.match(/#([a-zA-Z0-9_.-]+)/);
+      return m ? `#${m[1]}` : undefined;
+    };
 
     // A. Tìm kiếm bằng chứng IC-I
     // 1. Equivalence Partitioning / BVA
@@ -111,13 +191,16 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
       const context = text.slice(snippetStart, snippetEnd).replace(/\s+/g, ' ').trim();
 
       const section = detectSection(text, matchIndex);
+      const anchor = findNearbyAnchor(matchIndex);
+      const label = getContextLabel(matchIndex, section, anchor);
 
       if (section === 'Related Work' || section === 'References') {
         evidence.push({
           type: 'IC-I',
           term,
-          context: `[Trang ${pageNum} - ${section}] "...${context}..."`,
-          page: pageNum,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
           section,
           isValidEvidence: false,
           reason: 'Chỉ xuất hiện trong phần Tổng quan (Related Work / References) hoặc trích dẫn; không phải phương pháp nghiên cứu áp dụng.'
@@ -127,8 +210,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
         evidence.push({
           type: 'IC-I',
           term,
-          context: `[Trang ${pageNum} - ${section}] "...${context}..."`,
-          page: pageNum,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
           section,
           isValidEvidence: true,
           reason: 'Kỹ thuật EP/BVA được sử dụng trong phương pháp / thực nghiệm.'
@@ -145,10 +229,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
       const snippetEnd = Math.min(text.length, matchIndex + term.length + 80);
       const context = text.slice(snippetStart, snippetEnd).replace(/\s+/g, ' ').trim();
       const section = detectSection(text, matchIndex);
+      const anchor = findNearbyAnchor(matchIndex);
+      const label = getContextLabel(matchIndex, section, anchor);
 
-      // Quy tắc protocol: Category partition/TSL chỉ được tính khi nội dung mô tả cho thấy đáp ứng IC-I;
-      // không tự động coi là EP/BVA.
-      // YÊU CẦU: Bằng chứng rõ ràng về EP/BVA áp dụng cho tham số REST request.
       const hasEpOrBvaInContext = /\b(equivalence(\s*partitioning|\s*classes)?|boundary[- ]value|boundary\s*testing|parameter\s*boundaries)\b/i.test(context);
       const hasRequestParamInContext = /\b(parameter|request|query|path|body|header|endpoint)\b/i.test(context);
 
@@ -156,8 +239,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
         evidence.push({
           type: 'IC-I',
           term,
-          context: `[Trang ${pageNum} - ${section}] "...${context}..."`,
-          page: pageNum,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
           section,
           isValidEvidence: false,
           reason: 'Category Partition / TSL chỉ được nhắc trong Related Work / References.'
@@ -167,8 +251,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
         evidence.push({
           type: 'IC-I',
           term,
-          context: `[Trang ${pageNum} - ${section}] "...${context}..."`,
-          page: pageNum,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
           section,
           isValidEvidence: true,
           reason: 'Category-Partition / TSL có mô tả rõ ràng áp dụng EP/BVA cho tham số REST request đáp ứng IC-I.'
@@ -177,8 +262,9 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
         evidence.push({
           type: 'IC-I',
           term,
-          context: `[Trang ${pageNum} - ${section}] "...${context}..."`,
-          page: pageNum,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
           section,
           isValidEvidence: false,
           reason: 'Chỉ có “TSL + input” hoặc Category-Partition đơn thuần; chưa đủ bằng chứng xác minh EP/BVA cho tham số request. Bắt buộc giữ Unsure theo protocol.'
@@ -186,26 +272,35 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
       }
     }
 
-
     // B. Tìm kiếm bằng chứng IC-E (Table / Figure có số liệu định lượng)
-    const tableFigureRegex = /\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b[^.\n\r]{0,120}?\b(\d+(\.\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/gi;
+    // Hỗ trợ cả dấu chấm lẫn dấu phẩy thập phân: 71,7%, 40,8%, 80%
+    // Cho phép trải rộng qua nhiều dòng trong bảng (lên tới 1500 ký tự)
+    const tableFigureRegex = /\b(table|figure|fig\.)\s*(\d+|[ivx]+)\b[\s\S]{0,1500}?\b(\d+([.,]\d+)?%|\d+\s*(mutants?|faults?|bugs?|errors?|tests?|requests?|endpoints?)\b)/gi;
     while ((match = tableFigureRegex.exec(text)) !== null) {
       hasValidIce = true;
-      const term = match[0];
+      const term = match[0].slice(0, 100).replace(/\s+/g, ' ');
       const matchIndex = match.index;
       const snippetStart = Math.max(0, matchIndex - 40);
-      const snippetEnd = Math.min(text.length, matchIndex + term.length + 60);
+      const snippetEnd = Math.min(text.length, matchIndex + match[0].length + 60);
       const context = text.slice(snippetStart, snippetEnd).replace(/\s+/g, ' ').trim();
+      const section = detectSection(text, matchIndex);
+      const anchor = findNearbyAnchor(matchIndex);
+      const label = getContextLabel(matchIndex, section, anchor);
 
-      evidence.push({
-        type: 'IC-E',
-        term,
-        context: `[Trang ${pageNum}] "...${context}..."`,
-        page: pageNum,
-        section: detectSection(text, matchIndex),
-        isValidEvidence: true,
-        reason: 'Có số liệu định lượng thực nghiệm cụ thể trong Table / Figure.'
-      });
+      // Tránh trùng lặp nếu đã thêm từ structuredTables
+      const isAlreadyAdded = evidence.some(e => e.type === 'IC-E' && (e.anchor === anchor || (anchor && e.context.includes(anchor))));
+      if (!isAlreadyAdded) {
+        evidence.push({
+          type: 'IC-E',
+          term,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
+          section,
+          isValidEvidence: true,
+          reason: 'Có số liệu định lượng thực nghiệm cụ thể trong Table / Figure.'
+        });
+      }
     }
 
     // Cảnh báo nếu chỉ nhắc metric mà không có Table/Figure
@@ -228,6 +323,7 @@ export function extractEvidenceFromPages(pages: { pageNum: number; text: string 
 
 /**
  * 4. Tính toán danh sách các trường dữ liệu thay đổi giữa bản ghi cũ và dữ liệu trích xuất mới
+ * QUY TẮC BẮT BUỘC: Không thay venue đã xác minh bằng tên nền tảng arXiv.
  */
 export function calculateFieldChanges(record: PaperRecord, tabData: Partial<TabExtractedData>): TabAnalysisResult['changes'] {
   const changes: TabAnalysisResult['changes'] = [];
@@ -244,7 +340,28 @@ export function calculateFieldChanges(record: PaperRecord, tabData: Partial<TabE
 
   for (const item of fieldsToCheck) {
     const oldV = (item.oldVal || '').trim();
-    const newV = (item.newVal || '').trim();
+    let newV = (item.newVal || '').trim();
+
+    // Ca 5: Không thay venue đã xác minh bằng tên nền tảng arXiv hoặc chuỗi rỗng
+    if (item.field === 'venue') {
+      const isNewArxiv = /^\s*arxiv(\.org)?\s*$/i.test(newV);
+      if (isNewArxiv || !newV) {
+        if (oldV && oldV !== '(Trống)') {
+          // Giữ nguyên venue đã có, không cho phép thay đổi sang arXiv hoặc xoá venue đã xác minh
+          changes.push({
+            field: 'venue',
+            oldValue: oldV,
+            newValue: oldV,
+            willChange: false
+          });
+          continue;
+        } else {
+          // Ngay cả khi bản ghi cũ chưa có venue, không tự gán "arXiv" làm venue
+          newV = '';
+        }
+      }
+    }
+
     const willChange = Boolean(newV && newV !== oldV);
     changes.push({
       field: item.field,
@@ -279,8 +396,17 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
 
 
   // C. Phân tích bằng chứng từ nội dung các trang hoặc full-text
-  const pages = tabData.pages || (tabData.rawText ? [{ pageNum: 1, text: tabData.rawText }] : []);
-  const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages);
+  // Chỉ coi là PDF khi method có chứa PDF hoặc có danh sách pages thực từ PDF.js
+  const isPdf = Boolean(
+    (tabData.method && tabData.method.toLowerCase().includes('pdf')) ||
+    (tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0)
+  );
+
+  const pages = isPdf && tabData.pages
+    ? tabData.pages
+    : (tabData.rawText ? [{ pageNum: 1, text: tabData.rawText }] : []);
+
+  const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages, isPdf, tabData.tables);
   warnings.push(...evidenceWarnings);
 
   const hasValidIci = evidence.some(e => e.type === 'IC-I' && e.isValidEvidence === true);

@@ -660,13 +660,15 @@
           const itemClass = ev.isValidEvidence ? "evidence-item" : "evidence-item invalid";
           const statusBadge = ev.isValidEvidence ? '<span class="badge badge-blue">\u2713 B\u1EB1ng ch\u1EE9ng h\u1EE3p l\u1EC7</span>' : '<span class="badge badge-red">\u2717 B\u1ECB lo\u1EA1i (Kh\xF4ng t\xEDnh \u0111\u1EA1t IC)</span>';
           const sectionBadge = `<span class="badge badge-yellow">M\u1EE5c: ${this.escapeHtml(ev.section)}</span>`;
-          const pageBadge = ev.page ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : "";
+          const pageBadge = ev.page !== void 0 && ev.page !== null ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : "";
+          const anchorBadge = ev.anchor ? `<span class="badge badge-yellow" title="HTML Anchor">${this.escapeHtml(ev.anchor)}</span>` : "";
           return `
           <div class="${itemClass}">
             <div style="display: flex; gap: 6px; margin-bottom: 3px; align-items: center; flex-wrap: wrap;">
               <b>[${ev.type}]</b>
               ${statusBadge}
               ${sectionBadge}
+              ${anchorBadge}
               ${pageBadge}
               <code style="font-size: 10px;">${this.escapeHtml(ev.term)}</code>
             </div>
@@ -753,8 +755,11 @@
         record.uncertain_year = false;
       }
       if (extracted.venue) {
-        record.venue = extracted.venue;
-        record.uncertain_venue = false;
+        const isArxivVenue = /^\s*arxiv(\.org)?\s*$/i.test(extracted.venue);
+        if (!isArxivVenue) {
+          record.venue = extracted.venue;
+          record.uncertain_venue = false;
+        }
       }
       if (extracted.doi) {
         record.doi = extracted.doi;

@@ -50,10 +50,21 @@ export interface EvidenceSnippet {
   type: 'IC-I' | 'IC-E' | 'Other';
   term: string;
   context: string;
-  page?: number;
-  section: 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown';
+  page?: number | null;
+  anchor?: string;
+  section: 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown' | string;
   isValidEvidence: boolean;
   reason?: string;
+}
+
+export interface StructuredTable {
+  id?: string;
+  caption?: string;
+  section?: string;
+  anchor?: string;
+  headers?: string[];
+  cells?: string[];
+  rawText: string;
 }
 
 export interface TabExtractedData {
@@ -70,6 +81,7 @@ export interface TabExtractedData {
   pages?: { pageNum: number; text: string }[];
   pageCount?: number;
   isImagePdf?: boolean;
+  tables?: StructuredTable[];
 }
 
 export interface TabAnalysisResult {
