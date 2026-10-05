@@ -314,14 +314,42 @@ export function formatApa7Citation(record: PaperRecord): Apa7CitationResult {
   const year = record.year ? String(record.year).trim() : "";
   if (!year || isNaN(Number(year))) missingFields.push("Năm xuất bản (year)");
 
-  const title = (record.title || "").trim();
-  if (!title) missingFields.push("Tiêu đề (title)");
+  let title = (record.title || "").trim();
+  if (!title) {
+    missingFields.push("Tiêu đề (title)");
+  } else {
+    // Kiểm tra bài báo bị rút lại (RETRACTED)
+    if (
+      /\b(retracted|retraction)\b/i.test(title) ||
+      (record.abstract && /\b(retracted|retraction)\b/i.test(record.abstract))
+    ) {
+      missingFields.push("BÀI BÁO ĐÃ BỊ RÚT LẠI (RETRACTED) - KHÔNG ĐƯA VÀO BÁO CÁO");
+    }
+    // Kiểm tra tiêu đề bị cắt ngắn bởi Google Scholar
+    if (/…|\.{3}/.test(title)) {
+      missingFields.push("Tiêu đề bị cắt ngắn (...) từ trích dẫn Google Scholar, cần đối chiếu toàn văn");
+    }
+  }
 
-  const venue = (record.venue || "").trim();
-  if (!venue) missingFields.push("Nơi xuất bản / Tên tạp chí hoặc hội nghị (venue)");
+  let venue = (record.venue || "").trim();
+  const isSearchEngineOrRepo = /^(google scholar|google books|google|researchgate|proquest|ssrn|academia\.edu)\b/i.test(
+    venue,
+  );
+  if (!venue) {
+    missingFields.push("Nơi xuất bản / Tên tạp chí hoặc hội nghị (venue)");
+  } else if (isSearchEngineOrRepo) {
+    missingFields.push(`Tên tạp chí/hội nghị chưa xác minh (bị gán nhãn công cụ tìm kiếm / kho lưu: "${venue}")`);
+    venue = ""; // Không dùng tên search engine làm venue trong trích dẫn
+  } else if (/…|\.{3}/.test(venue)) {
+    missingFields.push(`Tên tạp chí bị cắt ngắn ("${venue}") từ trích dẫn Google Scholar, cần xác minh`);
+  }
 
   const doi = (record.doi || "").trim();
-  const doiUrl = doi ? (doi.startsWith("http") ? doi : `https://doi.org/${doi}`) : "";
+  const doiUrl = doi
+    ? doi.startsWith("http")
+      ? doi
+      : `https://doi.org/${doi.replace(/^https?:\/\/doi\.org\//, "")}`
+    : "";
 
   // Xác định loại công bố
   const isConf =
@@ -338,23 +366,20 @@ export function formatApa7Citation(record: PaperRecord): Apa7CitationResult {
   const titlePart = title ? (title.endsWith(".") ? title : `${title}.`) : "[Không có tiêu đề].";
 
   if (pubType === "conference") {
-    // Conference Paper: Author, A. A. (Year). Title of paper. In *Proceedings of the Conference* (optional pages). Publisher. DOI
-    citation = `${authorPart} ${yearPart}. ${titlePart} In *${venue}*`;
+    citation = `${authorPart} ${yearPart}. ${titlePart} In *${venue || "[Chưa rõ hội nghị]"}*`;
     if (record.page_count && record.page_count > 0) {
       citation += ` (${record.page_count} pages)`;
     }
     citation += ".";
     if (doiUrl) citation += ` ${doiUrl}`;
   } else if (pubType === "journal") {
-    // Journal Article: Author, A. A. (Year). Title of article. *Title of Periodical*, *xx*(x), pp-pp. DOI
-    citation = `${authorPart} ${yearPart}. ${titlePart} *${venue}*.`;
+    citation = `${authorPart} ${yearPart}. ${titlePart} *${venue || "[Chưa rõ tạp chí]"}*.`;
     if (doiUrl) citation += ` ${doiUrl}`;
   } else {
-    // General Scholarly Document
     citation = `${authorPart} ${yearPart}. ${titlePart}`;
     if (venue) citation += ` *${venue}*.`;
     if (doiUrl) citation += ` ${doiUrl}`;
-    else if (record.url) citation += ` ${record.url}`;
+    else if (record.url && !record.url.includes("scholar.google")) citation += ` ${record.url}`;
   }
 
   const isComplete = missingFields.length === 0;
@@ -377,20 +402,60 @@ export function formatApa7Citation(record: PaperRecord): Apa7CitationResult {
 export function exportApa7References(
   records: PaperRecord[],
   outputPath?: string,
+  options?: { onlyFinalIncluded?: boolean },
 ): { success: boolean; filePath?: string; textContent: string; completeCount: number; incompleteCount: number } {
   try {
-    const results = records.map(formatApa7Citation);
+    // 1. Phân loại theo finalDecision nếu có yêu cầu
+    const finalIncludes = records.filter((r) => r.finalDecision === "Include");
+    let targetRecords = records;
+    let headerScopeNote = `Tổng số bài: ${records.length}`;
+
+    if (options?.onlyFinalIncluded && finalIncludes.length > 0) {
+      targetRecords = finalIncludes;
+      headerScopeNote = `Phạm vi: Chỉ xuất các bài đã chốt thẩm định (finalDecision = Include: ${finalIncludes.length}/${records.length} bài)`;
+    } else if (options?.onlyFinalIncluded && finalIncludes.length === 0) {
+      headerScopeNote = `Phạm vi: Toàn bộ danh sách ứng viên (${records.length} bài) - Chưa có bài nào được chốt finalDecision = Include`;
+    }
+
+    // 2. Khử trùng lặp tuyệt đối (Deduplication) khi xuất trích dẫn APA
+    const seenDois = new Set<string>();
+    const seenTitles = new Set<string>();
+    const dedupedRecords: PaperRecord[] = [];
+
+    for (const r of targetRecords) {
+      const cleanDoi = r.doi
+        ? r.doi
+            .trim()
+            .toLowerCase()
+            .replace(/^https?:\/\/doi\.org\//, "")
+        : "";
+      const normTitle = (r.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+      if (cleanDoi) {
+        if (seenDois.has(cleanDoi)) continue;
+        seenDois.add(cleanDoi);
+      }
+      if (normTitle && normTitle.length > 15) {
+        if (seenTitles.has(normTitle)) continue;
+        seenTitles.add(normTitle);
+      }
+      dedupedRecords.push(r);
+    }
+
+    const results = dedupedRecords.map(formatApa7Citation);
     const completeList = results.filter((r) => r.isComplete);
     const incompleteList = results.filter((r) => !r.isComplete);
 
     let content = "=======================================================================\n";
     content += "DANH MỤC TÀI LIỆU THAM KHẢO (APA 7th EDITION REFERENCES)\n";
-    content += `Ngày xuất: ${new Date().toISOString().split("T")[0]} | Tổng số bài: ${records.length}\n`;
+    content += `Ngày xuất: ${new Date().toISOString().split("T")[0]} | ${headerScopeNote}\n`;
+    content += `Đã lọc trùng lặp: Giữ ${dedupedRecords.length} bài độc lập (Đủ chuẩn APA: ${completeList.length} | Cần bổ sung: ${incompleteList.length})\n`;
     content += "=======================================================================\n\n";
 
-    content += "--- CÁC BÀI BÁO ĐÃ XÁC MINH & ĐẦY ĐỦ THÔNG TIN APA 7 ---\n";
+    content += "--- PHẦN 1: CÁC BÀI BÁO ĐÃ XÁC MINH & ĐẦY ĐỦ THÔNG TIN APA 7 ---\n";
+    content += "(Đủ 4 trường: Tác giả, Năm, Tên tạp chí/hội nghị chuẩn, Tiêu đề đầy đủ không bị cắt ngắn)\n\n";
     if (completeList.length === 0) {
-      content += "(Chưa có bài báo nào đủ 100% metadata chuẩn APA 7)\n\n";
+      content += "(Chưa có bài báo nào đủ 100% metadata chuẩn APA 7 để trích dẫn trực tiếp)\n\n";
     } else {
       completeList.forEach((item, idx) => {
         content += `[${idx + 1}] ${item.citation}\n\n`;
@@ -398,8 +463,8 @@ export function exportApa7References(
     }
 
     content += "\n=======================================================================\n";
-    content += "--- ⚠️ DANH SÁCH BÀI BÁO CHƯA ĐỦ THÔNG TIN ĐỂ ĐỊNH DẠNG HOÀN CHỈNH APA 7 (CẦN BỔ SUNG) ---\n";
-    content += "(Quy tắc: Không tự bịa trường thông tin còn thiếu. Cần đối chiếu toàn văn hoặc nguồn xuất bản)\n";
+    content += "--- ⚠️ PHẦN 2: DANH SÁCH BÀI BÁO CHƯA ĐỦ THÔNG TIN ĐỂ ĐỊNH DẠNG HOÀN CHỈNH APA 7 ---\n";
+    content += "(Cần kiểm tra toàn văn hoặc trang web nhà xuất bản để bổ sung tên tạp chí/tiêu đề đầy đủ)\n";
     content += "=======================================================================\n\n";
 
     if (incompleteList.length === 0) {
@@ -407,7 +472,7 @@ export function exportApa7References(
     } else {
       incompleteList.forEach((item, idx) => {
         content += `[⚠️ ${idx + 1}] ${item.citation}\n`;
-        content += `    -> Thiếu các trường: ${item.missingFields.join(", ")}\n\n`;
+        content += `    -> Lý do chưa hoàn chỉnh: ${item.missingFields.join(" | ")}\n\n`;
       });
     }
 

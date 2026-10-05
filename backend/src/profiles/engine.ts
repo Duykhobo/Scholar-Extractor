@@ -243,7 +243,9 @@ export function evaluateCriterion(
       if (fields.includes("title")) searchBody += ` ${record.title || ""}`;
       if (fields.includes("abstract")) searchBody += ` ${record.abstract || ""}`;
       if (fields.includes("snippet")) searchBody += ` ${record.snippet || ""}`;
-      if (fields.includes("full_text") && context.fullText) searchBody += ` ${context.fullText}`;
+      if ((fields.includes("full_text") || fields.includes("abstract")) && context.fullText) {
+        searchBody += ` ${context.fullText}`;
+      }
 
       const { found, snippets } = findKeywordsInText(searchBody, keywords, parameters.caseSensitive);
       evidence.push(...snippets);
@@ -500,11 +502,19 @@ export function evaluateProfileScreening(
         }
       } else if (res.status === "unknown") {
         if (criterion.required) {
+          hasRequiredUnknown = true;
           unknownCriteria.push(criterion.id);
           missingEvidence.push(`${criterion.id} (${criterion.label}): ${res.reason}`);
         }
       }
     }
+  }
+
+  // Tự động kiểm tra bài báo bị rút lại (RETRACTED)
+  const isRetracted = /\b(retracted|retraction)\b/i.test(`${record.title || ""} ${record.abstract || ""}`);
+  if (isRetracted) {
+    hasExclusionMet = true;
+    exclusionMetReason = "Bị loại theo tiêu chí loại trừ: Bài báo đã bị rút lại (RETRACTED). Tuyệt đối không đưa vào tổng quan.";
   }
 
   // Ra quyết định gợi ý (suggestedDecision)
@@ -519,11 +529,19 @@ export function evaluateProfileScreening(
     screeningReason = inclusionNotMetReason;
   } else if (hasRequiredUnknown) {
     suggestedDecision = "Unsure";
-    screeningReason = `Còn ${unknownCriteria.length} tiêu chí bắt buộc chưa được xác minh đầy đủ (${unknownCriteria.join(", ")}). Bắt buộc giữ Unsure để kiểm tra thêm toàn văn.`;
+    screeningReason = `Còn ${unknownCriteria.length} tiêu chí bắt buộc chưa được xác minh đầy đủ (${unknownCriteria.join(", ")}). Chờ thẩm định toàn văn (Pending Full-Text).`;
   } else {
-    // Đủ điều kiện Include
-    suggestedDecision = "Include";
-    screeningReason = `Đạt toàn bộ ${matchedCriteria.length} tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.`;
+    // Toàn bộ tiêu chí metadata/title_abstract đã đạt. Kiểm tra xem đã có toàn văn thực tế chưa
+    const hasFullText = Boolean(context.fullText || record.page_count || (record.user_verified && record.pdfUrl));
+    const hasFullTextCriteria = profile.criteria.some((c) => c.stage === "full_text" && c.required);
+
+    if (hasFullTextCriteria && !hasFullText) {
+      suggestedDecision = "Unsure";
+      screeningReason = "Đạt sơ bộ vòng Tiêu đề & Tóm tắt. Chờ thẩm định toàn văn (Pending Full-Text) để kiểm tra nội dung và số trang.";
+    } else {
+      suggestedDecision = "Include";
+      screeningReason = `Đạt toàn bộ ${matchedCriteria.length} tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.`;
+    }
   }
 
   // Kiểm tra xem quyết định thủ công (finalDecision) trước đó có được đưa ra theo phiên bản profile cũ không
@@ -547,6 +565,12 @@ export function evaluateProfileScreening(
   }
   if (combinedText.includes("self-concept")) {
     conceptLabels.push("self-concept (Secondary)");
+  }
+  if (combinedText.includes("participation") || combinedText.includes("social interaction")) {
+    conceptLabels.push("social participation (Related)");
+  }
+  if (combinedText.includes("autonomy") || combinedText.includes("tự chủ")) {
+    conceptLabels.push("autonomy (Related)");
   }
 
   const modelContributions: string[] = [];

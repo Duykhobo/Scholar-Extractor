@@ -566,7 +566,14 @@ export function analyzeTabAgainstRecord(
     (tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0),
   );
 
-  const pages = isPdf && tabData.pages ? tabData.pages : tabData.rawText ? [{ pageNum: 1, text: tabData.rawText }] : [];
+  const pages =
+    isPdf && tabData.pages
+      ? tabData.pages
+      : tabData.rawText
+        ? [{ pageNum: 1, text: tabData.rawText }]
+        : tabData.abstract
+          ? [{ pageNum: 1, text: tabData.abstract }]
+          : [];
 
   const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages, isPdf, tabData.tables, profile);
   warnings.push(...evidenceWarnings);
@@ -582,11 +589,19 @@ export function analyzeTabAgainstRecord(
 
   // D. Gợi ý screening cập nhật
   let suggestedScreeningUpdate: TabAnalysisResult["suggestedScreeningUpdate"];
-  const fullTextToScan = pages.map((p) => p.text).join("\n") || tabData.rawText || "";
+  const fullTextToScan = pages.map((p) => p.text).join("\n") || tabData.rawText || tabData.abstract || "";
 
   if (profile && profile.id !== "preset_swt302") {
     const isV2 = Boolean(fullTextToScan.trim().length > 100 && tabData.pageCount);
-    const profileEval = evaluateProfileScreening(profile, record, {
+    const effectiveRecord: PaperRecord = {
+      ...record,
+      title: tabData.title || record.title,
+      abstract: tabData.abstract || record.abstract,
+      year: tabData.year || record.year,
+      venue: tabData.venue || record.venue,
+      doi: tabData.doi || record.doi,
+    };
+    const profileEval = evaluateProfileScreening(profile, effectiveRecord, {
       stage: isV2 ? "full_text" : "title_abstract",
       fullText: fullTextToScan,
       pageCount: tabData.pageCount,

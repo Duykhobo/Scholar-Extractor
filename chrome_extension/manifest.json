@@ -3,8 +3,8 @@
   "name": "Scholar Extractor - Research Document Collection & Screening",
   "version": "3.0.0",
   "description": "Công cụ thu thập và sàng lọc tài liệu cho nhiều nghiên cứu khoa học qua Google Scholar Backend",
-  "permissions": ["activeTab", "storage", "scripting"],
-  "host_permissions": ["http://localhost:3001/*"],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "host_permissions": ["http://localhost:3001/*", "<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "Scholar Extractor"

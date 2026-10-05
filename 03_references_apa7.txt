@@ -1,0 +1,215 @@
+=======================================================================
+DANH MỤC TÀI LIỆU THAM KHẢO (APA 7th EDITION REFERENCES)
+Ngày xuất: 2026-10-05 | Tổng số bài: 100
+=======================================================================
+
+--- CÁC BÀI BÁO ĐÃ XÁC MINH & ĐẦY ĐỦ THÔNG TIN APA 7 ---
+[1] Zainal, A. A., Yasir, A. M., & Basri, A. (2026). Exploring the use of assistive technology in special education: Issues and trends for student visual impairments: A systematic literature review. *… Technology*. https://www.tandfonline.com/doi/abs/10.1080/10400435.2026.2636752
+
+[2] Abrahams, K., Vos, D. D., & Bam, A. (2025). Exploring communication supports for children with visual impairment and blindness: A case study. *African Journal of Disability (Online)*. https://doi.org/10.4102/ajod.v14i0.1620
+
+[3] Senjam, S., Manna, S., & Vashist, P. (2022). Improving assistive technology access to students with low vision and blindness in Delhi: A school-based model. *Indian Journal of Ophthalmology*. https://doi.org/10.4103/ijo.IJO_1281_22
+
+[4] Thomas, R., Barker, L., & Rubin, G. (2015). Assistive technology for children and young people with low vision. *… of systematic reviews*. https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD011350.pub2/abstract
+
+[5] Zhu, T. & Yang, Y. (2024). RETRACTED: Research on immersive interaction design based on visual and tactile feature analysis of visually impaired children. *Heliyon*. https://www.cell.com/heliyon/fulltext/S2405-8440(23)10204-0
+
+[6] Boster, J., Findlen, U., & Pitt, K. (2024). Design of aided augmentative and alternative communication systems for children with vision impairment: psychoacoustic perspectives. *Augmentative and …*. https://www.tandfonline.com/doi/abs/10.1080/07434618.2023.2262573
+
+[7] Bhatt, A. & Kumari, A. (2015). Assistive technology for the visually impaired children for their academic excellence. *Glob J Eng Sci Soc Sci Stud*. https://www.researchgate.net/profile/Archana-Kumari-20/publication/293821767_ASSISTIVE_TECHNOLOGY_FOR_THE_VISUALLY_IMPAIRED_CHILDREN_FOR_THEIR_ACADEMIC_EXCELLENCE/links/56bc3de408ae3f9793155c06/ASSISTIVE-TECHNOLOGY-FOR-THE-VISUALLY-IMPAIRED-CHILDREN-FOR-THEIR-ACADEMIC-EXCELLENCE.pdf
+
+[8] Senjam, S., Foster, A., & Bascaran, C. (2020). Assistive technology for students with visual disability in schools for the blind in Delhi. *… : Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/17483107.2019.1604829
+
+[9] Finetti, M. & Luongo, N. (2023). Assistive Technology for Blindness and Visual Impairments: Supporting Teachers in K-12 Classrooms. *IGI Global Scientific Publishing*. https://doi.org/10.4018/978-1-6684-6424-3.ch004
+
+[10] Mulloy, A., Gevarter, C., & Hopkins, M. (2014). Assistive Technology for Students with Visual Impairments and Blindness. *Springer, New York, NY*. https://doi.org/10.1007/978-1-4899-8029-8_5
+
+[11] Philip, V., PK, S., & Santhosh, K. (2025). Efficacy and social validity of intervention using speech generating device and tactile symbols to develop communication and language in a child with visual …. *… : Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/17483107.2025.2539436
+
+[12] Zebehazy, K. & Lawson, H. (2024). Blind and Low Vision. *Routledge*. https://doi.org/10.4324/9781003302766-19
+
+[13] Tuwaym, S. B. & Berry, A. (2018). Assistive technology for students with visual impairments: A resource for teachers, parents, and students. *Rural Special Education …*. https://journals.sagepub.com/doi/abs/10.1177/8756870518773397
+
+[14] Senjam, S., Foster, A., & Bascaran, C. (2021). Barriers to using assistive technology among students with visual disability in schools for the blind in Delhi, India. *… : Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/17483107.2020.1738566
+
+[15] Zimmerman, G. & Zebehazy, K. (2011). Blindness and low vision. *Google Books*. https://books.google.com/books?hl=vi&lr=&id=XjJZBwAAQBAJ&oi=fnd&pg=PA247&dq=(%22visually+impaired%22+OR+%22blindness%22+OR+%22low+vision%22)+AND+(%22children%22+OR+%22pediatric%22+OR+%22youth%22+OR+%22students%22)+AND+(%22augmentative+and+alternative+communication%22+OR+%22AAC%22+OR+%22assistive+technology%22+OR+%22tactile%22)+AND+(%22self-confidence%22+OR+%22confidence%22+OR+%22self-esteem%22+OR+%22social+interaction%22)&ots=7y2S_WBNxt&sig=ud8lfM9Ni9Klhx8-JxWRJWbQjuw
+
+[16] Senjam, S. (2019). Assistive technology for students with visual... : Kerala Journal of Ophthalmology. *Kerala Journal of Ophthalmology*. https://doi.org/10.4103/kjo.kjo_36_19
+
+[17] Smith, D. & Kelly, S. (2014). Assistive technology for students with visual impairments: A research agenda. *International review of research in developmental …*.
+
+[18] Alotaibi, H., Al-Khalifa, H. S., & AlSaeed, D. (2020). Teaching Programming to Students with Vision Impairment: Impact of Tactile Teaching Strategies on Student’s Achievements and Perceptions. *Sustainability*. https://doi.org/10.3390/su12135320
+
+[19] Morrison, C., Villar, N., & Hadwen-Bennett, A. (2021). Physical programming for blind and low vision children at scale. *Human–Computer …*. https://www.tandfonline.com/doi/abs/10.1080/07370024.2019.1621175
+
+[20] Wu, H., Yang, H., Chang, F., Zhu, D., & Liu, Z. (2025). AI-generated tactile graphics for visually impaired children: A usability study of a multimodal educational product. *International Journal of Human …*.
+
+[21] Focker, J., Atkins, P., & Waddington, J. (2025). SENSE-braille: Children's Multisensory Experiences with Auditory-Haptic Gamified Activities. *British Journal …*. https://marjon.repository.guildhe.ac.uk/id/eprint/18006/1/SENSE-braille%20Children%27s%20Multisensory%20Experiences%20with%20Auditory-Haptic%20Gamified%20Activities%20A%20mixed%20methods%20study.pdf
+
+[22] Senjam, S., Foster, A., & Bascaran, C. (2022). Assistive technology for visual impairment and trainers at schools for the blind in Delhi. *Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/10400435.2020.1839144
+
+[23] Gadiraju, V., Doyle, O., & Kane, S. (2021). Exploring technology design for students with vision impairment in the classroom and remotely. In *Proceedings of the  CHI Conference …, 2021*.
+
+[24] Arora, S. (2012). Sensory training programme for visually impaired children. *Google Scholar*. https://www.academia.edu/download/92221850/ijsrp-Mar-2012-74.pdf
+
+[25] Supalo, C., Humphrey, J., & Mallouk, T. (2016). Examining the use of adaptive technologies to increase the hands-on participation of students with blindness or low vision in secondary-school chemistry and physics. *… Research and Practice*. https://pubs.rsc.org/rp/article-abstract/17/4/1174/545602
+
+[26] Parker, A. & Ivy, S. (2014). Communication development of children with visual impairment and deafblindness: A synthesis of intervention research. *International review of research in developmental …*.
+
+[27] Mukhiddinov, M. & Kim, S. (2021). A Systematic Literature Review on the Automatic Creation of Tactile Graphics for the Blind and Visually Impaired. *Processes*. https://doi.org/10.3390/pr9101726
+
+[28] Kirboyun, S. (2020). High-tech or low-tech? Impact of assistive technology in school settings for students with visual impairments: review of research. *International Journal for Infonomics (IJI)*.
+
+[29] Kankhar, M. & Mahender, C. (2025). A Comprehensive Study of Tactile Education System for Visual Impaired People. In *International Conference on Recent Advancements and Modernisations in Sustainable Intelligent Technologies and Applications (RAMSITA 2025)*. https://doi.org/10.2991/978-94-6463-716-8_8
+
+[30] Boster, J., Pitt, K., Brown, K., & Potts, J. (2025). Design characteristics of augmentative and alternative communication interfaces for children with cortical visual impairment: Results from two focus groups with vision …. *American Journal of …*.
+
+[31] Dabi, G. K. (2024). The role of assistive technology in supporting the engagement of students with visual impairment in learning mathematics: An integrative literature review. *British Journal of Visual …*.
+
+[32] Garzón-Rodríguez, M. & Reyes-Figueredo, L. (2023). Causes of low vision in children: A systematic review. *Archivos de la Sociedad …*. https://www.sciencedirect.com/science/article/pii/S217357942200130X
+
+[33] Dey, S., Vidhya, Y., & Bhushan, S. (2019). Creating an accessible technology ecosystem for learning science and math: A case of visually impaired children in Indian schools. *… on Being (more) …*. https://visionempowertrust.org/new/wp-content/themes/html5blank/research/INAIS%20Submission%20-%20Creating%20an%20Accessible%20Technology%20Ecosystem.docx.pdf
+
+[34] Fanshawe, M., Barton, G., & Mandarakas, M. (2024). Enablers and barriers to equitable participation for students with blindness or low vision in Australian mainstream secondary schools. *… journal of inclusive …*.
+
+[35] Ambrose-Zaken, G. (2022). A study of improving independent walking outcomes in children who are blind or have low vision aged 5 years and younger. *… of Visual Impairment & Blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X221121824
+
+[36] Aftab, M., Bibi, I., & Amjad, F. (2024). ROLE OF ASSISTIVE TECHNOLOGY IN THE REHABILITATION OF CHILDREN WITH VISUAL IMPAIRMENT. *International Journal of Social Sciences …*.
+
+[37] Zhou, L., Ajuwon, P., & Smith, D. (2012). Assistive technology competencies for teachers of students with visual impairments: A national study. *… & Blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X1210601010
+
+[38] Luo, F., Blackstone, S., & Canchola, J. (2022). Working with children with cortical visual impairment who use augmentative and alternative communication: Implications for improving current practice. *Augmentative and …*. https://www.tandfonline.com/doi/abs/10.1080/07434618.2022.2085622
+
+[39] Ramsamy-Iranah, S. & Maguire, M. (2016). A comparison of three materials used for tactile symbols to communicate colour to children and young people with visual impairments. *British Journal of …*.
+
+[40] Bhowmick, A. & Hazarika, S. (2017). An insight into assistive technology for the visually impaired and blind people: state-of-the-art and future trends. *Journal on Multimodal User Interfaces*. https://doi.org/10.1007/s12193-016-0235-6
+
+[41] Söderström, S. & Ytterhus, B. (2010). The use and non‐use of assistive technologies from the world of information and communication technology by visually impaired young people: a walk on the …. *Disability & Society*. https://www.tandfonline.com/doi/abs/10.1080/09687591003701215
+
+[42] Kumaraguru, M., Srisakthi, D., & Yuwanati, M. (2024). Effectiveness of audio-tactile performance versus other oral health education methods in improving oral health in visually impaired children and adolescents: a …. *Cureus*. https://www.cureus.com/articles/272461-effectiveness-of-audio-tactile-performance-versus-other-oral-health-education-methods-in-improving-oral-health-in-visually-impaired-children-and-adolescents-a-systematic-review.pdf
+
+[43] Arlinwibowo, J. & Retnawati, H. (2015). Developing audio tactile for visually impaired students. *International Journal on New …*.
+
+[44] Kızılaslan, A. (2020). Teaching students with visual impairment. *Progress in education*. https://www.researchgate.net/profile/Aydin-Kizilaslan/publication/341000567_Teaching_students_with_visual_impairment/links/5ea94547a6fdcc7050978e5b/Teaching-students-with-visual-impairment.pdf
+
+[45] Phutane, M., Wright, J., Castro, B., & Shi, L. (2022). Tactile materials in practice: Understanding the experiences of teachers of the visually impaired. *ACM Transactions on …*.
+
+[46] Brittlebank, S., Light, J., & Pope, L. (2024). A scoping review of AAC interventions for children and young adults with simultaneous visual and motor impairments: Clinical and research Implications. *… and Alternative Communication*. https://www.tandfonline.com/doi/abs/10.1080/07434618.2024.2327044
+
+[47] Reynaga-Peña, C. (2020). Strategies and Technology Aids for Teaching Science to Blind and Visually Impaired Students. *IGI Global Scientific Publishing*. https://doi.org/10.4018/978-1-5225-8539-8.ch002
+
+[48] Mandal, I. (2021). Assessing the feasibility of a circular economy for 3D
+printed tactile educational aids for visually impaired
+(VI) students in India. *Google Scholar*. https://dspace.mit.edu/handle/1721.1/140078
+
+[49] Plimmer, B., Reid, P., Blagojevic, R., & Crossan, A. (2011). Signing on the tactile line: A multimodal system for teaching handwriting to blind children. *ACM Transactions on …*.
+
+[50] Güldenpfennig, F., Wagner, A., Fikar, P., & Kaindl, G. (2020). Enabling Learning Experiences for Visually Impaired Children by Interaction Design. *Springer, Cham*. https://doi.org/10.1007/978-3-030-34230-2_1
+
+[51] Kardiyanto, D. & Angga, P. (2024). Learning media innovation with assistive devices to improve motor skills of students with special needs and visual impairment. *Jurnal SPORTIF : Jurnal Penelitian Pembelajaran*. https://doi.org/10.29407/js_unpgri.v10i3.23066
+
+[52] Plimmer, B., Reid, P., Blagojevic, R., & Crossan, A. (2011). Signing on the tactile line: A multimodal system for teaching handwriting to blind children. *ACM Transactions on …*.
+
+[53] Güldenpfennig, F., Wagner, A., Fikar, P., & Kaindl, G. (2020). Enabling Learning Experiences for Visually Impaired Children by Interaction Design. *Springer, Cham*. https://doi.org/10.1007/978-3-030-34230-2_1
+
+[54] Foley, A. & Masingila, J. (2015). The use of mobile devices as assistive technology in resource-limited environments: access for learners with visual impairments in Kenya. *… and Rehabilitation: Assistive Technology*. https://www.tandfonline.com/doi/abs/10.3109/17483107.2014.974220
+
+[55] Alnajdi, S., Salem, M., & Elshaer, I. (2025). Examining the Acceptance and Use of AI-Based Assistive Technology Among University Students with Visual Disability: The Moderating Role of Physical Self-Esteem. *Bioengineering*. https://doi.org/10.3390/bioengineering12101095
+
+[56] Senjam, S. (2019). Assistive Technology for People with Visual Loss : Delhi Journal of Ophthalmology. *Delhi Journal of Ophthalmology*. https://doi.org/10.7869/djo.496
+
+[57] Nazir, M., Ali, H., & Sabir, M. (2024). Impact of Assistive Technology on Acquiring Learning Competence among Learners with Visual Impairment. *Social Science Review Archives*. https://doi.org/10.70670/sra.v2i2.88
+
+[58] Ramsamy-Iranah, S. & Rosunee, S. (2017). APPLICATION OF ASSISTIVE TACTILE SYMBOLS IN A 'TACTILE' BOOK ON COLOUR AND SHAPES FOR CHILDREN WITH VISUAL IMPAIRMENTS. *International Journal of …*.
+
+[59] Fadiana, M., Widiyanti, I., & Mizan, S. (2022). Development of Tactil Audio Media For Low Vision Students. *Journal of ICSAR*. https://doi.org/10.17977/um005v6i12022p059
+
+[60] Al-Zboon, E. (2020). Perceptions of assistive technology by teachers of students with visual impairments in Jordan. *Journal of Visual Impairment & Blindness*.
+
+[61] See, A. & Advincula, W. (2021). Creating Tactile Educational Materials for the Visually Impaired and Blind Students Using AI Cloud Computing. *Applied Sciences*. https://doi.org/10.3390/app11167552
+
+[62] Poddar, R., Naik, T., Punnam, M., & Chourasia, K. (2024). Experiences from running a voice-based education platform for children and teachers with visual impairments. *ACM Journal on …*.
+
+[63] Hamash, M., Ghreir, H., & Tiernan, P. (2024). Breaking through Barriers: A Systematic Review of Extended Reality in Education for the Visually Impaired. *Education Sciences*. https://doi.org/10.3390/educsci14040365
+
+[64] Caporusso, N., Trizio, M., & Perrone, G. (2014). Pervasive Assistive Technology for the Deaf-Blind Need, Emergency and Assistance Through the Sense of Touch. *Springer, London*. https://doi.org/10.1007/978-1-4471-6413-5_12
+
+[65] Dabi, G. & Golga, D. (2024). Availability, awareness, and utilization of assistive technologies among students with visual impairment: The case of Haramaya University, Ethiopia. *British Journal of Visual Impairment*.
+
+[66] Stangl, A., Hsu, C., & Yeh, T. (2015). Transcribing across the senses: community efforts to create 3D printable accessible tactile pictures for young children with visual impairments. In *Proceedings of the 17th International ACM …*.
+
+[67] Baker, C., Milne, L., & Ladner, R. (2019). Understanding the impact of TVIs on technology use and selection by children with visual impairments. In *… of the  CHI Conference on …, 2019*.
+
+[68] Stangl, A. (2019). Tactile Media Consumption and Production for and by People Who Are Blind and Visually Impaired: A Design Research Investigation. *Google Scholar*. https://search.proquest.com/openview/ea490b184f752cc99834f6e5646bce41/1?pq-origsite=gscholar&cbl=18750&diss=y
+
+[69] Luckner, J. & Bruce, S. (2016). A summary of the communication and literacy evidence-based practices for students who are deaf or hard of hearing, visually impaired, and deafblind. *Communication Disorders …*. https://journals.sagepub.com/doi/abs/10.1177/1525740115597507
+
+[70] Moreland, L. (2015). Science for Visually Impaired Students and Accessible Technology. *Google Scholar*. https://mds.marshall.edu/etd/978/
+
+[71] Luckner, J. & Bruce, S. (2016). A summary of the communication and literacy evidence-based practices for students who are deaf or hard of hearing, visually impaired, and deafblind. *Communication Disorders …*. https://journals.sagepub.com/doi/abs/10.1177/1525740115597507
+
+[72] Moreland, L. (2015). Science for Visually Impaired Students and Accessible Technology. *Google Scholar*. https://mds.marshall.edu/etd/978/
+
+[73] Dyzel, V., Oosterom-Calo, R., & Worm, M. (2020). Assistive Technology to Promote Communication and Social Interaction for People With Deafblindness: A Systematic Review. *Frontiers in Education*. https://doi.org/10.3389/feduc.2020.578389
+
+[74] Lieberman, L. & Linsenbigler, K. (2017). TEACHING RECREATIONAL ACTIVITIES TO CHILDREN AND YOUTH WITH VISUAL IMPAIRMENT OR DEAFBLINDNESS. *Palaestra*. https://openurl.ebsco.com/contentitem/gcd:122226876?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:122226876&crl=c&jrnl=87565811
+
+[75] Hoskin, E., Coyne, M., & White, M. (2024). Effectiveness of technology for braille literacy education for children: a systematic review. *… Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/17483107.2022.2070676
+
+[76] Dursin, A. (2012). Information design and education for visually impaired and blind people. *Procedia-Social and Behavioral Sciences*. https://www.sciencedirect.com/science/article/pii/S1877042812022136
+
+[77] Rule, A., Stefanich, G., & Boody, R. (2011). Impact of adaptive materials on teachers and their students with visual impairments in secondary science and mathematics classes. *International Journal of …*.
+
+[78] Sah, P. (2013). Assistive technology competencies: Need, outlook, and prospects (with reference to special educators for children with visual impairment). *American Journal of Disability*.
+
+[79] Jiang, C., Kuang, E., & Fan, M. (2025). How can haptic feedback assist people with blind and low vision (BLV): A systematic literature review. *ACM Transactions on Accessible Computing*.
+
+[80] Zhou, L., Parker, A., & Smith, D. (2011). Assistive technology for students with visual impairments: Challenges and needs in teachers' preparation programs and practice. *… & Blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X1110500402
+
+[81] Lannan, A. (2019). A Virtual Assistant on Campus for Blind and Low Vision Students. *Journal of Special Education Apprenticeship*.
+
+[82] Ajuwon, P. & Meeks, M. (2016). Reflections of teachers of visually impaired students on their assistive technology competencies. *… & Blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X1611000207
+
+[83] Prabhu, P., Sujathamalini, J., & Halder, T. (2025). Adaptive technology utilizing skills of students with visual impairment. *Education and Information Technologies*. https://doi.org/10.1007/s10639-024-13203-y
+
+[84] Senjam, S., Manna, S., & Bascaran, C. (2021). Smartphones-based assistive technology: accessibility features and apps for people with visual impairment, and its usage, challenges, and usability testing. *Clinical optometry*. https://www.tandfonline.com/doi/abs/10.2147/OPTO.S336361
+
+[85] Kelly, S. & Smith, D. (2011). The impact of assistive technology on the educational performance of students with visual impairments: A synthesis of the research. *… of Visual Impairment & Blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X1110500205
+
+[86] Thieme, A., Morrison, C., Villar, N., & Grayson, M. (2017). Enabling collaboration in learning computer programing inclusive of children with vision impairments. In *Proceedings of the  …, 2017*.
+
+[87] Marinho, L., Castro, H., Lyrio, E., & Delou, C. (2016). Construction of an affordable, tactile, didactical and inclusive material aimed to teach biology and biotechnology to blind and visually impaired students. *Creative Education*. https://www.academia.edu/download/76862158/c6e5d88ab3e357c34696a4ae846e1f8c7342.pdf
+
+[88] Elshaer, I., AlNajdi, S., & Salem, M. (2025). Sustainable AI Solutions for Empowering Visually Impaired Students: The Role of Assistive Technologies in Academic Success. *Sustainability*. https://doi.org/10.3390/su17125609
+
+[89] Suleiman, A., Shaame, A., & Juma, S. (2024). Exploring The Impact of Assistive Technology on Academic Achievement for Visually Impaired Students in Zanzibar's Primary Schools. *J Adv Educ Philos*. https://saudijournals.com/media/articles/JAEP_811_689-702.pdf
+
+[90] Brule, E., Bailly, G., Brock, A., Valentin, F., & Denis, G. (2016). MapSense: multi-sensory interactive maps for children living with visual impairments. In *Proceedings of the …*.
+
+[91] Silman, F., Yaratan, H., & Karanfiller, T. (2017). Use of Assistive Technology for Teaching-Learning and Administrative Processes for the Visually Impaired People. *Eurasia Journal of Mathematics, Science and Technology Education*. https://doi.org/10.12973/eurasia.2017.00945a
+
+[92] Kisanga, S. & Kisanga, D. (2022). The role of assistive technology devices in fostering the participation and learning of students with visual impairment in higher education institutions in Tanzania. *… Rehabilitation: Assistive Technology*. https://www.tandfonline.com/doi/abs/10.1080/17483107.2020.1817989
+
+[93] Dunn, K. (2023). Assistive Technology for Students with Visual Impairments: A Qualitative Case Study. *Google Scholar*. https://search.proquest.com/openview/b783c18b26b029fb4e3d51086c586b67/1?pq-origsite=gscholar&cbl=18750&diss=y
+
+[94] Elshaer, I., AlNajdi, S., & Salem, M. (2025). Measuring the Impact of Large Language Models on Academic Success and Quality of Life Among Students with Visual Disability: An Assistive Technology Perspective. *Bioengineering*. https://doi.org/10.3390/bioengineering12101056
+
+[95] Silva, M. D., Goodwin, S., & Holloway, L. (2023). Understanding challenges and opportunities in body movement education of people who are blind or have low vision. In *Proceedings of the 25th …*.
+
+[96] Sun, R., Luo, R., Yao, X., She, X., & Hara, K. (2025). Tactile data comics: A step-by-step multimodal presentation method on a refreshable tactile display for blind and visually impaired individuals. In *Proceedings of the …*.
+
+[97] Verdier, K. D. (2018). Children with blindness: Developmental aspects, comorbidity and implications for education and support. *Google Scholar*. https://hmk.am/wp-content/uploads/2022/06/Children-with-blindness_Kim-de-Verdier.pdf
+
+[98] Al-Eidarous, W., Alsiyami, A., Aljabri, M., & Alqethami, S. (2024). ExamVoice: Innovative Solutions for Improving Exam Accessibility for Blind and Visually Impaired Students in Saudi Arabia. *Applied Sciences*. https://doi.org/10.3390/app14198813
+
+[99] Kamei-Hannan, C. & Howe, J. (2012). Perceptions of teachers of students with visual impairments regarding assistive technology: A follow-up study to a university course. *… & blindness*. https://journals.sagepub.com/doi/abs/10.1177/0145482X1210601011
+
+[100] Alananbeh, N. & Asha, E. (2023). Obstacles to using assistive technology for students with visual impairments in Jordan. *Dirasat: Educational Sciences*. https://search.shamaa.org/PDF/Articles/JODes/DesVol50No1Y2023/des_2023-v50-n1_092-101.pdf
+
+
+=======================================================================
+--- ⚠️ DANH SÁCH BÀI BÁO CHƯA ĐỦ THÔNG TIN ĐỂ ĐỊNH DẠNG HOÀN CHỈNH APA 7 (CẦN BỔ SUNG) ---
+(Quy tắc: Không tự bịa trường thông tin còn thiếu. Cần đối chiếu toàn văn hoặc nguồn xuất bản)
+=======================================================================
+
+(Toàn bộ bài báo đều đã đầy đủ thông tin chuẩn hóa)

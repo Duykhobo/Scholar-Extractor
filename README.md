@@ -185,15 +185,25 @@ extension/
   - Hệ thống **tuyệt đối không tự động ghi đè** `finalDecision` của bạn khi chạy lại phân tích.
   - Tiến độ **"Tiến độ Bài đưa vào Tổng quan (Target Included Papers)"** chỉ tính các bài báo có `finalDecision === 'Include'`.
 
-### 4. Trích xuất Toàn văn từ Tab hoặc Tải File PDF
+### 4. Tự động Truy cập Link & Sàng lọc (Auto-Screening)
 
-1. **Từ Tab đang mở**: Mở tab bài báo (trang web nhà xuất bản hoặc trang PDF) trên trình duyệt, quay lại extension và bấm **"📑 Tab"** trên thẻ bài báo hoặc **"📑 Lấy từ Tab Đang Mở"**.
-2. **Từ tệp PDF trên máy**: Bấm nút **"📁 Tải file PDF"** để chọn tệp `.pdf` từ ổ đĩa.
-3. Cửa sổ xem trước (Preview Modal) sẽ mở ra hiển thị:
-   - Cảnh báo độ tương đồng tiêu đề (nếu tab/PDF không khớp với bài báo đã chọn).
-   - Bảng so sánh (Diff) giữa metadata hiện tại và dữ liệu mới bóc tách được.
-   - Các đoạn bằng chứng (Evidence Snippets) kèm số trang, mục trích xuất và trạng thái hợp lệ.
-4. Bấm **"✓ Xác nhận Cập nhật"** để lưu dữ liệu và ghi nhận nguồn gốc xuất xứ (`provenance`).
+Nhằm giảm tải việc mở từng tab thủ công cho hàng trăm bài báo, Scholar Extractor hỗ trợ 2 chế độ tự động hóa:
+
+1. **⚡ Quét tự động từng bài (`⚡ Quét link`)**:
+   - Trên mỗi thẻ bài báo, bấm nút **`⚡ Quét link`** (ngay cạnh nút `📑 Tab`).
+   - Hệ thống sẽ tự động quét URL ngầm, trích xuất HighWire meta tags (`citation_abstract`, `citation_doi`, `citation_title`...), bóc tách bằng chứng theo tiêu chí của hồ sơ hiện tại và cập nhật quyết định gợi ý ngay lập tức mà không cần người dùng tự chuyển tab.
+2. **⚡ Tự động quét & Sàng lọc hàng loạt (`Batch Auto-Screen`)**:
+   - Bấm nút **`⚡ Tự động quét & Sàng lọc`** trên thanh công cụ kết quả.
+   - Chọn phạm vi:
+     - *Chỉ các bài chưa có Abstract / chưa xác minh* (Khuyên dùng).
+     - *10 bài tiếp theo* hoặc *20 bài tiếp theo* (để nhanh chóng đạt mục tiêu số bài Include).
+     - *Toàn bộ danh sách bài báo*.
+   - Tùy chọn: `[✓] Tự động xác nhận (finalDecision = Include)` nếu bài báo vượt qua toàn bộ tiêu chí nhận vào và không vi phạm tiêu chí loại trừ.
+   - Bấm **"🚀 Bắt đầu quét tự động"**: Hệ thống sẽ chạy tuần tự ngầm, hiển thị thanh tiến độ trực quan, và có thể bấm **`⏹️ Dừng quét`** bất kỳ lúc nào.
+3. **Thủ công từ Tab đang mở hoặc Tải PDF**:
+   - Mở tab bài báo trên trình duyệt và bấm **"📑 Tab"** trên bài báo đó.
+   - Hoặc bấm **"📁 Tải file PDF"** để nạp tệp PDF tải về từ máy.
+4. Bấm **"✓ Xác nhận Cập nhật"** khi xem trước để ghi nhận nguồn gốc xuất xứ (`provenance`).
 
 ### 5. Xuất Dữ liệu & Trích dẫn APA 7
 

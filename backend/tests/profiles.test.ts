@@ -1,12 +1,12 @@
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
+import { analyzeTabAgainstRecord } from "../src/evidenceAnalyzer";
 import { escapeCsvField, exportApa7References, formatApa7Author, formatApa7Citation } from "../src/exporter";
 import { isPrivateIp, validateUrlForSsrf } from "../src/pdfService";
 import { evaluateCriterion, evaluateProfileScreening } from "../src/profiles/engine";
 import { BUILTIN_PRESETS, PRESET_GENERIC, PRESET_SWT302, PRESET_VISUALLY_IMPAIRED_AAC } from "../src/profiles/presets";
 import { validateResearchProfile } from "../src/profiles/validator";
 import { PaperRecord, TabExtractedData } from "../src/types";
-import { analyzeTabAgainstRecord } from "../src/evidenceAnalyzer";
 
 describe("10. Research Profiles & Runtime Schema Validation", () => {
   test("Builtin presets (SWT302, Generic, Visually Impaired) are valid according to schema", () => {
@@ -186,9 +186,12 @@ describe("11. Configurable Screening Engine Evaluators", () => {
     };
 
     const res = evaluateProfileScreening(PRESET_VISUALLY_IMPAIRED_AAC, viRecord, { stage: "title_abstract" });
-    assert.ok(res.matchedCriteria.includes("IC-01"), "Must match IC-01 (Communication & Self-confidence)");
-    assert.ok(res.matchedCriteria.includes("IC-02"), "Must match IC-02 (Children with visual impairment in school)");
-    assert.ok(res.matchedCriteria.includes("IC-03"), "Must match IC-03 (Journal venue)");
+    assert.ok(res.matchedCriteria.includes("VI-IC-COMM"), "Must match VI-IC-COMM (Communication & Kind Support)");
+    assert.ok(
+      res.matchedCriteria.includes("VI-IC-POP"),
+      "Must match VI-IC-POP (Children with visual impairment in school)",
+    );
+    assert.ok(res.matchedCriteria.includes("VI-IC-PUB"), "Must match VI-IC-PUB (Journal venue)");
 
     // Model Contribution verification
     assert.ok(res.modelContributions?.includes("X"), "Must detect X (supportive communication)");
@@ -337,6 +340,8 @@ describe("12. Security: SSRF, CSV Injection & Citation Completeness", () => {
     const incompletePaper: PaperRecord = {
       ...completePaper,
       id: "p_incomplete",
+      title: "Incomplete Study on Adaptive Testing",
+      doi: "10.1109/INC.2023.9999",
       authors: "", // missing authors
       venue: "", // missing venue
     };
@@ -506,7 +511,7 @@ describe("13. Multi-Session Isolation, Tab Conflict & Profile Round-Trip", () =>
       venue: viRecord.venue,
       abstract: viRecord.abstract,
       rawText:
-        "We evaluate how augmentative and alternative communication tools help children with blindness improve their social interaction and self-confidence in education settings. Experimental results with N = 15 students show significant improvements.",
+        "We evaluate how kind and supportive communication along with augmentative and alternative communication tools help children with blindness improve their social interaction and self-confidence in education settings. Experimental results with N = 15 students show significant improvements.",
       pageCount: 8,
       method: "PDF.js",
     };
@@ -517,13 +522,13 @@ describe("13. Multi-Session Isolation, Tab Conflict & Profile Round-Trip", () =>
     const allReasons = JSON.stringify(analysis.suggestedScreeningUpdate || {});
     assert.equal(allReasons.includes("REST API"), false, "Must NOT contain REST API in screening update");
     assert.equal(allReasons.includes("EP/BVA"), false, "Must NOT contain EP/BVA in screening update");
-    assert.equal(allReasons.includes("IC-P"), false, "Must NOT contain IC-P in screening update");
-    assert.equal(allReasons.includes("IC-I"), false, "Must NOT contain IC-I in screening update");
+    assert.equal(allReasons.includes('"IC-P"'), false, "Must NOT contain IC-P in screening update");
+    assert.equal(allReasons.includes('"IC-I"'), false, "Must NOT contain IC-I in screening update");
 
-    // Phải khớp các tiêu chí của AAC/VI: IC-01, IC-02, IC-04
+    // Phải khớp các tiêu chí của AAC/VI: VI-IC-COMM, VI-IC-POP, VI-IC-FULLTEXT
     const matched = analysis.suggestedScreeningUpdate?.matchedCriteria || [];
-    assert.ok(matched.includes("IC-01"), "Must match IC-01 (Communication / Confidence keywords)");
-    assert.ok(matched.includes("IC-02"), "Must match IC-02 (Children with visual impairment / school context)");
-    assert.ok(matched.includes("IC-04"), "Must match IC-04 (Full text available)");
+    assert.ok(matched.includes("VI-IC-COMM"), "Must match VI-IC-COMM (Supportive communication)");
+    assert.ok(matched.includes("VI-IC-POP"), "Must match VI-IC-POP (Children with visual impairment)");
+    assert.ok(matched.includes("VI-IC-FULLTEXT"), "Must match VI-IC-FULLTEXT (Full text available)");
   });
 });

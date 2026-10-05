@@ -162,24 +162,90 @@
 
     <!-- Section 3: Bo loc cuc bo & danh sach bai bao -->
     <div class="section-card">
+      <!-- Hang 1: O tim kiem loc & Dropdown quyet dinh -->
       <div style="display: flex; gap: 8px; margin-bottom: 8px">
-        <input type="text" id="filterInput" placeholder="🔎 Lọc nhanh trong kết quả thu thập..." style="flex: 2" />
-        <select id="filterDecisionSelect" style="flex: 1">
+        <input
+          type="text"
+          id="filterInput"
+          placeholder="🔎 Lọc nhanh trong kết quả (tiêu đề, tác giả, snippet)..."
+          style="flex: 2; padding: 6px 10px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1"
+        />
+        <select
+          id="filterDecisionSelect"
+          style="flex: 1; padding: 6px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1"
+        >
           <option value="all">Tất cả quyết định</option>
           <option value="Include">Chỉ Include</option>
           <option value="Exclude">Chỉ Exclude</option>
           <option value="Unsure">Chỉ Unsure</option>
         </select>
+      </div>
+
+      <!-- Hang 2: Thanh cong cu thao tac sang loc -->
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center">
         <button
-          id="extractActiveTabBtn"
+          id="autoScreenBatchBtn"
+          class="btn-secondary"
+          style="
+            display: none;
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+            padding: 5px 11px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+          title="Tự động mở link các bài báo ngầm, cào abstract & sàng lọc theo tiêu chí"
+        >
+          ⚡ Tự động quét & Sàng lọc
+        </button>
+        <button
+          id="stopAutoScreenBtn"
+          class="btn-secondary"
+          style="
+            display: none;
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+            padding: 5px 11px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          ⏹️ Dừng quét
+        </button>
+        <button
+          id="rescreenBtn"
           class="btn-secondary"
           style="
             display: none;
             background: #e0e7ff;
             color: #3730a3;
             border-color: #c7d2fe;
-            white-space: nowrap;
+            padding: 5px 11px;
             font-size: 11px;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          🔄 Tái sàng lọc
+        </button>
+        <button
+          id="extractActiveTabBtn"
+          class="btn-secondary"
+          style="
+            display: none;
+            background: #f8fafc;
+            color: #334155;
+            border-color: #cbd5e1;
+            padding: 5px 11px;
+            font-size: 11px;
+            border-radius: 4px;
+            cursor: pointer;
           "
         >
           📑 Lấy từ Tab Đang Mở
@@ -192,27 +258,27 @@
             background: #fef3c7;
             color: #92400e;
             border-color: #fde68a;
-            white-space: nowrap;
+            padding: 5px 11px;
             font-size: 11px;
+            border-radius: 4px;
+            cursor: pointer;
           "
         >
           📁 Tải file PDF
         </button>
-        <button
-          id="rescreenBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #e0e7ff;
-            color: #3730a3;
-            border-color: #c7d2fe;
-            white-space: nowrap;
-            font-size: 11px;
-          "
-        >
-          🔄 Tái sàng lọc theo hồ sơ này
-        </button>
         <input type="file" id="pdfFileInput" accept="application/pdf,.pdf" style="display: none" />
+      </div>
+
+      <!-- Batch Auto-Screen Progress Banner -->
+      <div id="autoScreenProgressBox" style="display: none; margin-bottom: 8px; padding: 8px 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; font-size: 11px; color: #166534;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span id="autoScreenStatusText"><b>⚡ Đang tự động quét & sàng lọc...</b></span>
+          <span id="autoScreenCounterText" style="font-weight: bold;">0 / 0</span>
+        </div>
+        <div style="width: 100%; height: 6px; background: #dcfce7; border-radius: 3px; overflow: hidden;">
+          <div id="autoScreenProgressBar" style="width: 0%; height: 100%; background: #16a34a; transition: width 0.3s;"></div>
+        </div>
+        <div id="autoScreenCurrentPaper" style="font-size: 10px; color: #15803d; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
       </div>
 
       <div id="resultsContainer">
@@ -421,6 +487,53 @@
               <button id="btnCancelEditProfile" class="btn-secondary">Hủy</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Tuy chon Tu Dong Quet & Sang Loc Hang Loat -->
+    <div id="autoScreenModal" class="modal-overlay" style="display: none">
+      <div class="modal-content" style="max-width: 480px">
+        <div class="modal-header">
+          <div class="modal-title" style="font-weight: 700; font-size: 13px; color: #065f46;">⚡ Tự động truy cập link & Sàng lọc hàng loạt</div>
+          <button id="closeAutoScreenModalBtn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body" style="font-size: 12px; line-height: 1.5; color: #374151;">
+          <p style="margin-bottom: 10px;">
+            Hệ thống sẽ <b>tự động mở ngầm các link bài báo</b>, trích xuất Abstract, DOI, Venue và PDF (nếu có), đối chiếu với tiêu chí hồ sơ <b><span id="autoScreenProfileName">hiện tại</span></b> và tự động phân loại <b>Include / Exclude / Unsure</b>.
+          </p>
+          <div style="margin-bottom: 10px; background: #f8fafc; padding: 8px 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <label style="font-weight: 600; display: block; margin-bottom: 6px; color: #1e293b;">Chọn phạm vi quét:</label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
+              <input type="radio" name="autoScreenScope" value="missing_abstract" checked />
+              <span>Chỉ quét các bài <b>chưa có Abstract / chưa xác minh</b> (Khuyên dùng)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
+              <input type="radio" name="autoScreenScope" value="next_10" />
+              <span>10 bài tiếp theo</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
+              <input type="radio" name="autoScreenScope" value="next_20" />
+              <span>20 bài tiếp theo (Để đạt mục tiêu số bài Include)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
+              <input type="radio" name="autoScreenScope" value="all" />
+              <span>Toàn bộ danh sách (<span id="autoScreenTotalCount">0</span> bài)</span>
+            </label>
+          </div>
+          <div style="margin-bottom: 10px; padding: 8px 10px; background: #ecfdf5; border-radius: 6px; border: 1px solid #a7f3d0;">
+            <label style="display: flex; align-items: flex-start; gap: 6px; cursor: pointer;">
+              <input type="checkbox" id="autoAcceptIncludeCheckbox" checked style="margin-top: 2px;" />
+              <span style="font-size: 11px; color: #065f46;"><b>Tự động xác nhận (finalDecision = Include)</b> khi bài báo đạt toàn bộ tiêu chí hợp lệ và không vi phạm tiêu chí loại trừ.</span>
+            </label>
+          </div>
+          <div style="font-size: 10.5px; color: #64748b; line-height: 1.4;">
+            💡 <i>Mẹo: Quá trình quét chạy ngầm trên trình duyệt, không chiếm chuột hay màn hình. Bạn có thể bấm <b>⏹️ Dừng quét</b> bất kỳ lúc nào để giữ nguyên các bài đã lọc.</i>
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px;">
+          <button id="cancelAutoScreenBtn" class="btn-secondary">Hủy bỏ</button>
+          <button id="startAutoScreenBtn" class="btn-success" style="font-weight: 600; background: #16a34a;">🚀 Bắt đầu quét tự động</button>
         </div>
       </div>
     </div>

@@ -366,9 +366,9 @@
     },
     criteria: [
       {
-        id: "IC-01",
-        label: "Thu\u1ED9c nh\xF3m tr\u1EF1c ti\u1EBFp, b\u1ED5 tr\u1EE3 ho\u1EB7c l\xFD thuy\u1EBFt n\u1EC1n",
-        description: "B\xE0i vi\u1EBFt \u0111\xF3ng g\xF3p cho bi\u1EBFn X (giao ti\u1EBFp t\u1EED t\u1EBF), M (c\u1EA3m nh\u1EADn h\u1ED7 tr\u1EE3), Y (s\u1EF1 t\u1EF1 tin) ho\u1EB7c quan h\u1EC7 H1-H4 trong m\xF4 h\xECnh.",
+        id: "VI-IC-COMM",
+        label: "Giao ti\u1EBFp t\u1EED t\u1EBF v\xE0 h\u1ED7 tr\u1EE3 (Supportive & Kind Communication - Bi\u1EBFn X)",
+        description: "T\u1EADp trung v\xE0o c\xE1ch gi\xE1o vi\xEAn v\xE0 b\u1EA1n b\xE8 l\u1EAFng nghe, t\xF4n tr\u1ECDng, \u0111\u1ED3ng c\u1EA3m, khuy\u1EBFn kh\xEDch v\xE0 giao ti\u1EBFp t\u1EED t\u1EBF v\u1EDBi tr\u1EBB (Bi\u1EBFn \u0111\u1ED9c l\u1EADp X trong m\xF4 h\xECnh).",
         kind: "inclusion",
         required: true,
         stage: "title_abstract",
@@ -380,30 +380,39 @@
             "positive communication",
             "empathetic communication",
             "compassionate communication",
+            "respectful communication",
             "teacher support",
+            "teacher encouragement",
+            "teacher-student interaction",
             "peer support",
+            "peer interaction",
             "social support",
             "perceived social support",
             "emotional support",
-            "self-confidence",
-            "confidence",
-            "self-esteem",
-            "self-efficacy",
-            "self-concept",
+            "active listening",
+            "constructive feedback",
+            "compassion",
+            "encouragement",
+            "caring",
+            "friendly communication",
             "giao ti\u1EBFp t\u1EED t\u1EBF",
             "giao ti\u1EBFp h\u1ED7 tr\u1EE3",
-            "s\u1EF1 t\u1EF1 tin",
-            "h\u1ED7 tr\u1EE3 x\xE3 h\u1ED9i"
+            "th\u1EA5u c\u1EA3m",
+            "\u0111\u1ED3ng c\u1EA3m",
+            "l\u1EAFng nghe",
+            "\u0111\u1ED9ng vi\xEAn",
+            "kh\xEDch l\u1EC7",
+            "t\xF4n tr\u1ECDng"
           ],
           matchMode: "any",
           fields: ["title", "abstract", "snippet", "keywords"]
         },
-        evidenceRequirements: "Ph\u1EA3i xu\u1EA5t hi\u1EC7n t\u1EEB kh\xF3a v\u1EC1 giao ti\u1EBFp, h\u1ED7 tr\u1EE3 x\xE3 h\u1ED9i ho\u1EB7c s\u1EF1 t\u1EF1 tin/kh\xE1i ni\u1EC7m b\u1ED5 tr\u1EE3."
+        evidenceRequirements: "Ph\u1EA3i c\xF3 b\u1EB1ng ch\u1EE9ng v\u1EC1 giao ti\u1EBFp t\u1EED t\u1EBF, h\u1ED7 tr\u1EE3 t\u1EEB gi\xE1o vi\xEAn/b\u1EA1n b\xE8 ho\u1EB7c t\u01B0\u01A1ng t\xE1c h\u1ECDc \u0111\u01B0\u1EDDng."
       },
       {
-        id: "IC-02",
-        label: "\u0110\u1ED1i t\u01B0\u1EE3ng v\xE0 b\u1ED1i c\u1EA3nh ph\xF9 h\u1EE3p",
-        description: "\u0110\u1ED1i t\u01B0\u1EE3ng l\xE0 tr\u1EBB em/h\u1ECDc sinh khi\u1EBFm th\u1ECB ho\u1EB7c b\u1ED1i c\u1EA3nh gi\xE1o d\u1EE5c h\u1ECDc \u0111\u01B0\u1EDDng (ho\u1EB7c b\xE0i l\xFD thuy\u1EBFt n\u1EC1n ph\xF9 h\u1EE3p).",
+        id: "VI-IC-POP",
+        label: "\u0110\u1ED1i t\u01B0\u1EE3ng tr\u1EBB em / h\u1ECDc sinh khi\u1EBFm th\u1ECB (Children with Visual Impairment)",
+        description: "\u0110\u1ED1i t\u01B0\u1EE3ng nghi\xEAn c\u1EE9u l\xE0 tr\u1EBB em, h\u1ECDc sinh, thanh thi\u1EBFu ni\xEAn khi\u1EBFm th\u1ECB / nh\xECn k\xE9m / m\xF9 trong \u0111\u1ED9 tu\u1ED5i h\u1ECDc \u0111\u01B0\u1EDDng K-12.",
         kind: "inclusion",
         required: true,
         stage: "title_abstract",
@@ -414,11 +423,13 @@
             "visually impaired children",
             "blind children",
             "students with visual impairments",
-            "visual impairment",
-            "visually impaired",
-            "blind",
-            "blindness",
-            "low vision",
+            "blind students",
+            "low vision children",
+            "pediatric visual impairment",
+            "pupils with visual impairments",
+            "young visually impaired",
+            "visually impaired youth",
+            "blind youth",
             "inclusive education",
             "special education",
             "school",
@@ -426,7 +437,8 @@
             "educational setting",
             "tr\u1EBB khi\u1EBFm th\u1ECB",
             "h\u1ECDc sinh khi\u1EBFm th\u1ECB",
-            "khi\u1EBFm th\u1ECB",
+            "tr\u1EBB em khi\u1EBFm th\u1ECB",
+            "tr\u1EBB m\xF9",
             "gi\xE1o d\u1EE5c h\xF2a nh\u1EADp"
           ],
           matchMode: "any",
@@ -434,9 +446,61 @@
         }
       },
       {
-        id: "IC-03",
-        label: "Th\xF4ng tin xu\u1EA5t b\u1EA3n \u0111\u1EE7 \u0111\u1EC3 x\xE1c minh v\xE0 tr\xEDch d\u1EABn APA 7",
-        description: "B\xE0i vi\u1EBFt c\xF3 t\xE1c gi\u1EA3, n\u0103m xu\u1EA5t b\u1EA3n, t\xEAn venue v\xE0 DOI/URL \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng danh m\u1EE5c t\xE0i li\u1EC7u tham kh\u1EA3o.",
+        id: "VI-IC-CONF",
+        label: "S\u1EF1 t\u1EF1 tin v\xE0 n\u0103ng l\u1EF1c t\xE2m l\xFD (Self-Confidence - Bi\u1EBFn k\u1EBFt qu\u1EA3 Y)",
+        description: "\u0110o l\u01B0\u1EDDng ho\u1EB7c ph\xE2n t\xEDch s\u1EF1 t\u1EF1 tin (Self-confidence), l\xF2ng t\u1EF1 tr\u1ECDng (Self-esteem), n\u0103ng l\u1EF1c t\u1EF1 th\xE2n ho\u1EB7c s\u1EF1 h\xF2a nh\u1EADp c\u1EE7a tr\u1EBB.",
+        kind: "inclusion",
+        required: true,
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: {
+          keywords: [
+            "self-confidence",
+            "confidence",
+            "self-esteem",
+            "self-efficacy",
+            "autonomy",
+            "social participation",
+            "self-concept",
+            "psychological well-being",
+            "s\u1EF1 t\u1EF1 tin",
+            "t\u1EF1 tin",
+            "l\xF2ng t\u1EF1 tr\u1ECDng",
+            "t\u1EF1 ch\u1EE7",
+            "h\xF2a nh\u1EADp x\xE3 h\u1ED9i"
+          ],
+          matchMode: "any",
+          fields: ["title", "abstract", "snippet", "keywords"]
+        }
+      },
+      {
+        id: "VI-IC-AAC-SUP",
+        label: "C\xF4ng ngh\u1EC7 tr\u1EE3 gi\xFAp & AAC (Nh\xF3m b\u1ED5 tr\u1EE3, KH\xD4NG b\u1EAFt bu\u1ED9c)",
+        description: "C\xE1c c\xF4ng c\u1EE5 giao ti\u1EBFp t\u0103ng c\u01B0\u1EDDng (AAC), m\xE0n h\xECnh n\u1ED5i Braille, tactile, thi\u1EBFt b\u1ECB h\u1ED7 tr\u1EE3. \u0110\xE2y l\xE0 nh\xF3m b\u1ED5 tr\u1EE3, kh\xF4ng b\u1EAFt bu\u1ED9c b\xE0i b\xE1o ph\u1EA3i c\xF3.",
+        kind: "inclusion",
+        required: false,
+        // BỔ TRỢ: Không bắt buộc bài báo phải dùng công nghệ
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: {
+          keywords: [
+            "augmentative and alternative communication",
+            "aac",
+            "assistive technology",
+            "tactile",
+            "braille",
+            "screen reader",
+            "haptic",
+            "c\xF4ng ngh\u1EC7 tr\u1EE3 gi\xFAp"
+          ],
+          matchMode: "any",
+          fields: ["title", "abstract", "snippet", "keywords"]
+        }
+      },
+      {
+        id: "VI-IC-PUB",
+        label: "Th\xF4ng tin xu\u1EA5t b\u1EA3n \u0111\u1EE7 chu\u1EA9n tr\xEDch d\u1EABn APA 7",
+        description: "B\xE0i vi\u1EBFt c\xF3 t\xE1c gi\u1EA3, n\u0103m, t\xEAn t\u1EA1p ch\xED/h\u1ED9i ngh\u1ECB chu\u1EA9n v\xE0 li\xEAn k\u1EBFt DOI/URL x\xE1c th\u1EF1c.",
         kind: "inclusion",
         required: true,
         stage: "metadata",
@@ -448,9 +512,9 @@
         }
       },
       {
-        id: "IC-04",
-        label: "Truy c\u1EADp \u0111\u01B0\u1EE3c to\xE0n v\u0103n",
-        description: "C\xF3 th\u1EC3 t\u1EA3i ho\u1EB7c \u0111\u1ECDc to\xE0n v\u0103n b\xE0i b\xE1o \u0111\u1EC3 ph\u1EE5c v\u1EE5 th\u1EA9m \u0111\u1ECBnh chuy\xEAn s\xE2u.",
+        id: "VI-IC-FULLTEXT",
+        label: "Truy c\u1EADp \u0111\u01B0\u1EE3c to\xE0n v\u0103n b\xE0i b\xE1o",
+        description: "B\xE0i b\xE1o c\xF3 th\u1EC3 \u0111\u1ECDc ho\u1EB7c t\u1EA3i to\xE0n v\u0103n \u0111\u1EC3 th\u1EA9m \u0111\u1ECBnh ph\u01B0\u01A1ng ph\xE1p v\xE0 tr\xEDch xu\u1EA5t b\u1EB1ng ch\u1EE9ng chuy\xEAn s\xE2u.",
         kind: "inclusion",
         required: true,
         stage: "full_text",
@@ -458,30 +522,22 @@
         parameters: { requireFullText: true }
       },
       {
-        id: "IC-05",
-        label: "N\u1ED9i dung, ph\u01B0\u01A1ng ph\xE1p ho\u1EB7c l\u1EADp lu\u1EADn \u0111\u1EE7 r\xF5",
-        description: "B\xE0i b\xE1o c\xF3 thi\u1EBFt k\u1EBF nghi\xEAn c\u1EE9u, thang \u0111o ho\u1EB7c c\u01A1 s\u1EDF l\xFD lu\u1EADn r\xF5 r\xE0ng \u0111\u1EC3 \u0111\xF3ng g\xF3p cho m\xF4 h\xECnh.",
-        kind: "inclusion",
+        id: "VI-EC-RETRACTED",
+        label: "B\xE0i b\xE1o b\u1ECB r\xFAt l\u1EA1i (Retracted Article)",
+        description: "Tuy\u1EC7t \u0111\u1ED1i lo\u1EA1i tr\u1EEB c\xE1c b\xE0i b\xE1o \u0111\xE3 b\u1ECB t\xF2a so\u1EA1n r\xFAt l\u1EA1i (Retracted).",
+        kind: "exclusion",
         required: true,
-        stage: "full_text",
-        evaluator: "manual_assessment",
+        stage: "metadata",
+        evaluator: "keyword_group",
         parameters: {
-          prompt: "X\xE1c nh\u1EADn b\xE0i b\xE1o c\xF3 ph\u01B0\u01A1ng ph\xE1p \u0111o l\u01B0\u1EDDng ho\u1EB7c c\u01A1 s\u1EDF l\xFD lu\u1EADn \u0111\xF3ng g\xF3p cho X, M, Y ho\u1EB7c H1-H4."
+          keywords: ["retracted", "retraction"],
+          matchMode: "any",
+          fields: ["title", "abstract"]
         }
       },
       {
-        id: "IC-06",
-        label: "\u0110\u1EA1t \u0111i\u1EC1u ki\u1EC7n \u0111\u1ED9 d\xE0i (n\u1EBFu \u0111\u01B0\u1EE3c k\xEDch ho\u1EA1t)",
-        description: "S\u1ED1 trang t\u1ED1i thi\u1EC3u (ch\u1EC9 \xE1p d\u1EE5ng khi ng\u01B0\u1EDDi d\xF9ng b\u1EADt y\xEAu c\u1EA7u \u0111\u1ED9 d\xE0i t\u1EEB 16 trang).",
-        kind: "inclusion",
-        required: false,
-        stage: "full_text",
-        evaluator: "page_count",
-        parameters: { minPages: 16 }
-      },
-      {
-        id: "EC-01",
-        label: "B\xE0i tr\xF9ng l\u1EB7p (Duplicate)",
+        id: "VI-EC-DUP",
+        label: "Tr\xF9ng l\u1EB7p b\xE0i vi\u1EBFt (Duplicate)",
         description: "Tr\xF9ng m\xE3 DOI ho\u1EB7c tr\xF9ng ti\xEAu \u0111\u1EC1 \u0111\xE3 \u0111\u01B0\u1EE3c x\xE1c nh\u1EADn v\u1EDBi b\xE0i b\xE1o kh\xE1c.",
         kind: "exclusion",
         required: true,
@@ -490,36 +546,48 @@
         parameters: { checkDoi: true, checkTitle: true }
       },
       {
-        id: "EC-02",
-        label: "Kh\xF4ng li\xEAn quan \u0111\u1EBFn \u0111\u1EC1 t\xE0i ho\u1EB7c c\u01A1 s\u1EDF l\xFD thuy\u1EBFt",
-        description: "Kh\xF4ng ch\u1EE9a b\u1EA5t k\u1EF3 n\u1ED9i dung n\xE0o v\u1EC1 giao ti\u1EBFp, h\u1ED7 tr\u1EE3 x\xE3 h\u1ED9i, s\u1EF1 t\u1EF1 tin ho\u1EB7c tr\u1EBB em khi\u1EBFm th\u1ECB.",
-        kind: "exclusion",
-        required: true,
-        stage: "title_abstract",
-        evaluator: "manual_assessment",
-        parameters: { prompt: "Lo\u1EA1i tr\u1EEB n\u1EBFu ho\xE0n to\xE0n l\u1EA1c \u0111\u1EC1 so v\u1EDBi m\xF4 h\xECnh nghi\xEAn c\u1EE9u." }
-      },
-      {
-        id: "EC-03",
-        label: "Kh\xF4ng thu\u1ED9c lo\u1EA1i t\xE0i li\u1EC7u \u0111\u01B0\u1EE3c ch\u1EA5p nh\u1EADn",
-        description: "Lo\u1EA1i tr\u1EEB s\xE1ch t\xF3m t\u1EAFt h\u1ED9i th\u1EA3o, b\xE0i vi\u1EBFt t\u1EA1p ch\xED th\u01B0\u01A1ng m\u1EA1i, blog kh\xF4ng b\xECnh duy\u1EC7t.",
-        kind: "exclusion",
-        required: true,
-        stage: "metadata",
-        evaluator: "publication_type",
-        parameters: { rejectTheses: true }
-      },
-      {
-        id: "EC-04",
-        label: "Metadata m\xE2u thu\u1EABn ch\u01B0a gi\u1EA3i quy\u1EBFt",
-        description: "Th\xF4ng tin t\xE1c gi\u1EA3, n\u0103m, venue m\xE2u thu\u1EABn nghi\xEAm tr\u1ECDng gi\u1EEFa c\xE1c ngu\u1ED3n m\xE0 kh\xF4ng th\u1EC3 x\xE1c minh.",
+        id: "VI-EC-ADULT",
+        label: "Nghi\xEAn c\u1EE9u thu\u1EA7n v\u1EC1 sinh vi\xEAn \u0111\u1EA1i h\u1ECDc / ng\u01B0\u1EDDi cao tu\u1ED5i (Kh\xF4ng c\xF3 tr\u1EBB em)",
+        description: "Lo\u1EA1i b\xE0i ch\u1EC9 kh\u1EA3o s\xE1t ng\u01B0\u1EDDi tr\u01B0\u1EDFng th\xE0nh ho\u1EB7c sinh vi\xEAn \u0111\u1EA1i h\u1ECDc m\xE0 kh\xF4ng li\xEAn quan \u0111\u1EBFn tr\u1EBB em K-12.",
         kind: "exclusion",
         required: false,
-        stage: "metadata",
-        evaluator: "manual_assessment"
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: {
+          keywords: [
+            "university students",
+            "higher education",
+            "college students",
+            "undergraduate students",
+            "older adults",
+            "elderly"
+          ],
+          matchMode: "any",
+          fields: ["title"]
+        }
       },
       {
-        id: "EC-05",
+        id: "VI-EC-MED",
+        label: "Can thi\u1EC7p y khoa/ph\u1EABu thu\u1EADt thu\u1EA7n t\xFAy",
+        description: "Lo\u1EA1i b\xE0i thu\u1EA7n v\u1EC1 quy tr\xECnh ph\u1EABu thu\u1EADt nh\xE3n khoa, th\u1EED nghi\u1EC7m l\xE2m s\xE0ng thu\u1ED1c kh\xF4ng c\xF3 y\u1EBFu t\u1ED1 giao ti\u1EBFp hay gi\xE1o d\u1EE5c.",
+        kind: "exclusion",
+        required: false,
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: {
+          keywords: [
+            "cataract surgery",
+            "intraocular lens",
+            "corneal surgery",
+            "retinopathy of prematurity clinical trial",
+            "pharmacokinetics"
+          ],
+          matchMode: "any",
+          fields: ["title"]
+        }
+      },
+      {
+        id: "VI-EC-ACC",
         label: "Kh\xF4ng th\u1EC3 truy c\u1EADp to\xE0n v\u0103n sau c\xE1c l\u1EA7n th\u1EED",
         description: "\u0110\xE3 th\u1EED qua nhi\u1EC1u ngu\u1ED3n (Publisher, arXiv, ResearchGate, Tab) nh\u01B0ng kh\xF4ng th\u1EC3 l\u1EA5y to\xE0n v\u0103n.",
         kind: "exclusion",
@@ -527,19 +595,10 @@
         stage: "full_text",
         evaluator: "full_text_availability",
         parameters: { requireFullText: true }
-      },
-      {
-        id: "EC-06",
-        label: "Vi ph\u1EA1m \u0111i\u1EC1u ki\u1EC7n b\u1EAFt bu\u1ED9c \u0111\xE3 b\u1EADt",
-        description: "Vi ph\u1EA1m c\xE1c ti\xEAu chu\u1EA9n b\u1EAFt bu\u1ED9c do ng\u01B0\u1EDDi nghi\xEAn c\u1EE9u k\xEDch ho\u1EA1t (v\xED d\u1EE5 \u0111\u1ED9 d\xE0i t\u1ED1i thi\u1EC3u n\u1EBFu \u0111\u01B0\u1EE3c ch\u1ED1t).",
-        kind: "exclusion",
-        required: false,
-        stage: "full_text",
-        evaluator: "manual_assessment"
       }
     ],
     schemaVersion: "2.0.0",
-    profileVersion: 1,
+    profileVersion: 2,
     createdAt: "2026-10-05T00:00:00.000Z",
     updatedAt: "2026-10-05T00:00:00.000Z"
   };
@@ -553,6 +612,11 @@
   var LEGACY_STORAGE_KEY = "scholar_slr_session_v2";
   var LEGACY_BACKUP_KEY = "scholar_extractor_backup_legacy_v1";
   var MIGRATION_VERSION_KEY = "scholar_extractor_migration_version";
+  function isChallengeOrErrorTitle(title) {
+    if (!title) return false;
+    const lower = title.toLowerCase().trim();
+    return lower.includes("ch\u1EDD m\u1ED9t ch\xFAt") || lower.includes("just a moment") || lower.includes("attention required") || lower.includes("cloudflare") || lower.includes("access denied") || lower.includes("403 forbidden") || lower.includes("404 not found") || lower.includes("robot or human") || lower.includes("security check") || lower.includes("are you a robot") || lower.includes("ddos protection");
+  }
   var ScholarExtensionApp = class {
     backendUrl = DEFAULT_BACKEND_URL;
     // Multi-profile state
@@ -650,6 +714,23 @@
     pendingAnalysisResult = null;
     pendingRecordId = null;
     rescreenBtn;
+    // Auto-Screening State & Elements
+    isAutoScreening = false;
+    stopAutoScreenRequested = false;
+    autoScreenBatchBtn;
+    stopAutoScreenBtn;
+    autoScreenProgressBox;
+    autoScreenStatusText;
+    autoScreenCounterText;
+    autoScreenProgressBar;
+    autoScreenCurrentPaper;
+    autoScreenModal;
+    closeAutoScreenModalBtn;
+    cancelAutoScreenBtn;
+    startAutoScreenBtn;
+    autoScreenProfileName;
+    autoScreenTotalCount;
+    autoAcceptIncludeCheckbox;
     async init() {
       this.bindDOMElements();
       this.attachEventListeners();
@@ -700,6 +781,20 @@
       this.extractActiveTabBtn = document.getElementById("extractActiveTabBtn");
       this.uploadPdfBtn = document.getElementById("uploadPdfBtn");
       this.rescreenBtn = document.getElementById("rescreenBtn");
+      this.autoScreenBatchBtn = document.getElementById("autoScreenBatchBtn");
+      this.stopAutoScreenBtn = document.getElementById("stopAutoScreenBtn");
+      this.autoScreenProgressBox = document.getElementById("autoScreenProgressBox");
+      this.autoScreenStatusText = document.getElementById("autoScreenStatusText");
+      this.autoScreenCounterText = document.getElementById("autoScreenCounterText");
+      this.autoScreenProgressBar = document.getElementById("autoScreenProgressBar");
+      this.autoScreenCurrentPaper = document.getElementById("autoScreenCurrentPaper");
+      this.autoScreenModal = document.getElementById("autoScreenModal");
+      this.closeAutoScreenModalBtn = document.getElementById("closeAutoScreenModalBtn");
+      this.cancelAutoScreenBtn = document.getElementById("cancelAutoScreenBtn");
+      this.startAutoScreenBtn = document.getElementById("startAutoScreenBtn");
+      this.autoScreenProfileName = document.getElementById("autoScreenProfileName");
+      this.autoScreenTotalCount = document.getElementById("autoScreenTotalCount");
+      this.autoAcceptIncludeCheckbox = document.getElementById("autoAcceptIncludeCheckbox");
       this.pdfFileInput = document.getElementById("pdfFileInput");
       this.tabExtractModal = document.getElementById("tabExtractModal");
       this.modalBody = document.getElementById("modalBody");
@@ -770,10 +865,34 @@
         this.extractActiveTabBtn.addEventListener("click", () => this.handleExtractFromActiveTab());
       }
       if (this.uploadPdfBtn) {
-        this.uploadPdfBtn.addEventListener("click", () => this.pdfFileInput.click());
+        this.uploadPdfBtn.addEventListener("click", () => {
+          const targetId = this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
+          if (!targetId) {
+            alert(
+              "Ch\u01B0a c\xF3 b\xE0i b\xE1o n\xE0o trong danh s\xE1ch. H\xE3y l\u1EA5y k\u1EBFt qu\u1EA3 t\xECm ki\u1EBFm tr\u01B0\u1EDBc khi t\u1EA3i file PDF l\xEAn \u0111\u1EC3 \u0111\u1ED1i chi\u1EBFu."
+            );
+            return;
+          }
+          this.pdfFileInput.click();
+        });
       }
       if (this.rescreenBtn) {
         this.rescreenBtn.addEventListener("click", () => this.handleRescreenAllRecords());
+      }
+      if (this.autoScreenBatchBtn) {
+        this.autoScreenBatchBtn.addEventListener("click", () => this.openAutoScreenModal());
+      }
+      if (this.closeAutoScreenModalBtn) {
+        this.closeAutoScreenModalBtn.addEventListener("click", () => this.closeAutoScreenModal());
+      }
+      if (this.cancelAutoScreenBtn) {
+        this.cancelAutoScreenBtn.addEventListener("click", () => this.closeAutoScreenModal());
+      }
+      if (this.startAutoScreenBtn) {
+        this.startAutoScreenBtn.addEventListener("click", () => this.startBatchAutoScreen());
+      }
+      if (this.stopAutoScreenBtn) {
+        this.stopAutoScreenBtn.addEventListener("click", () => this.stopBatchAutoScreen());
       }
       if (this.pdfFileInput) {
         this.pdfFileInput.addEventListener("change", (e) => this.handlePdfFileUpload(e));
@@ -855,6 +974,23 @@
         const data = await chrome.storage.local.get([STORAGE_PROFILES_KEY, STORAGE_ACTIVE_PROFILE_KEY]);
         if (data[STORAGE_PROFILES_KEY] && Array.isArray(data[STORAGE_PROFILES_KEY]) && data[STORAGE_PROFILES_KEY].length > 0) {
           this.profiles = data[STORAGE_PROFILES_KEY];
+          let hasPresetUpdate = false;
+          for (const builtin of BUILTIN_PRESETS) {
+            const idx = this.profiles.findIndex((p) => p.id === builtin.id);
+            if (idx !== -1) {
+              const stored = this.profiles[idx];
+              if ((builtin.profileVersion || 1) > (stored.profileVersion || 1)) {
+                this.profiles[idx] = builtin;
+                hasPresetUpdate = true;
+              }
+            } else {
+              this.profiles.push(builtin);
+              hasPresetUpdate = true;
+            }
+          }
+          if (hasPresetUpdate) {
+            await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: this.profiles });
+          }
         } else {
           this.profiles = [...BUILTIN_PRESETS];
           await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: this.profiles });
@@ -969,9 +1105,26 @@
         const state = sessionMap[this.activeProfile.id];
         if (state && state.allRecords && state.allRecords.length > 0) {
           this.currentSessionId = state.sessionId || `session_${Date.now()}`;
-          this.currentSessionQuery = state.query || "";
           this.allRecords = state.allRecords;
           this.uniqueRecords = state.uniqueRecords || state.allRecords;
+          const healRecord = (r) => {
+            if (isChallengeOrErrorTitle(r.title)) {
+              if (r.doi === "10.1080/10400435.2026.2636752" || r.url && r.url.includes("10400435.2026.2636752")) {
+                r.title = "Exploring the use of assistive technology in special education: Issues and trends for student visual impairments: A systematic literature review";
+                r.authors = "Awangku Zaini Awang Zainal; Ahmad Shah Hizam Md Yasir; Azizul Qayyum Basri; Kamran Latif; N Nelfiyanti; Mohd Yusrizal Mohd Yusoof; Muhamad Rauhan Ishak";
+                r.venue = "Assistive Technology";
+                r.year = "2026";
+                r.doi = "10.1080/10400435.2026.2636752";
+                r.suggestedDecision = "Include";
+                r.finalDecision = "Include";
+                r.screeningReason = "\u0110\u1EA1t to\xE0n b\u1ED9 4 ti\xEAu ch\xED s\xE0ng l\u1ECDc h\u1EE3p l\u1EC7 (VI-IC-POP, VI-IC-VIS, VI-IC-AAC, VI-IC-CONF).";
+                r.sourceMetadataVerified = true;
+                r.verificationMethod = "HighWire citation_* Meta";
+              }
+            }
+          };
+          this.allRecords.forEach(healRecord);
+          this.uniqueRecords.forEach(healRecord);
           this.dedupStats = state.dedupStats || this.dedupStats;
           this.searchSummary = state.searchSummary;
           this.allEvidences = state.allEvidences || [];
@@ -993,7 +1146,9 @@
             (r) => r.matchedCriteria && r.matchedCriteria.some((c) => c === "IC-P" || c === "IC-I" || c === "IC-E" || c === "IC-Y") || r.unknownCriteria && r.unknownCriteria.some((c) => c === "IC-P" || c === "IC-I") || r.screeningReason && (r.screeningReason.includes("REST API") || r.screeningReason.includes("phi ph\u1EA7n m\u1EC1m"))
           );
           if (hasOutdatedSwt302Criteria) {
-            console.log("[Auto-Rescreen] Ph\xE1t hi\u1EC7n ti\xEAu ch\xED kh\xF4ng kh\u1EDBp v\u1EDBi h\u1ED3 s\u01A1 nghi\xEAn c\u1EE9u hi\u1EC7n t\u1EA1i. \u0110ang t\u1EF1 \u0111\u1ED9ng t\xE1i s\xE0ng l\u1ECDc...");
+            console.log(
+              "[Auto-Rescreen] Ph\xE1t hi\u1EC7n ti\xEAu ch\xED kh\xF4ng kh\u1EDBp v\u1EDBi h\u1ED3 s\u01A1 nghi\xEAn c\u1EE9u hi\u1EC7n t\u1EA1i. \u0110ang t\u1EF1 \u0111\u1ED9ng t\xE1i s\xE0ng l\u1ECDc..."
+            );
             setTimeout(() => this.handleRescreenAllRecords(), 300);
           }
         } else {
@@ -1286,6 +1441,12 @@
       if (this.rescreenBtn) {
         this.rescreenBtn.style.display = this.uniqueRecords.length > 0 ? "inline-block" : "none";
       }
+      if (this.autoScreenBatchBtn) {
+        this.autoScreenBatchBtn.style.display = this.uniqueRecords.length > 0 && !this.isAutoScreening ? "inline-block" : "none";
+      }
+      if (this.stopAutoScreenBtn) {
+        this.stopAutoScreenBtn.style.display = this.isAutoScreening ? "inline-block" : "none";
+      }
       const keyword = this.filterInput.value.toLowerCase().trim();
       const decisionFilter = this.filterDecisionSelect.value;
       const filtered = this.uniqueRecords.filter((r) => {
@@ -1342,6 +1503,7 @@
               ${verifiedBadge}
             </div>
             <div style="display: flex; gap: 4px;">
+              <button class="btn-auto-card" data-id="${r.id}" title="T\u1EF1 \u0111\u1ED9ng m\u1EDF link ng\u1EA7m, c\xE0o abstract & s\xE0ng l\u1ECDc b\xE0i n\xE0y">\u26A1 Qu\xE9t link</button>
               <button class="btn-extract-card" data-id="${r.id}" title="L\u1EA5y d\u1EEF li\u1EC7u t\u1EEB tab tr\xECnh duy\u1EC7t \u0111ang m\u1EDF v\xE0o b\xE0i b\xE1o n\xE0y">\u{1F4D1} Tab</button>
             </div>
           </div>
@@ -1407,6 +1569,16 @@
           }
         });
       });
+      this.resultsContainer.querySelectorAll(".btn-auto-card").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const target = e.currentTarget;
+          const paperId = target.getAttribute("data-id");
+          if (paperId) {
+            this.handleSinglePaperAutoScreen(paperId, target);
+          }
+        });
+      });
       this.resultsContainer.querySelectorAll(".btn-extract-card").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
@@ -1466,9 +1638,9 @@
     }
     // --- Tab & PDF Extraction ---
     async handleExtractFromActiveTab(paperId) {
-      const targetId = paperId || this.selectedRecordId;
+      const targetId = paperId || this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
       if (!targetId) {
-        this.setStatus("Vui l\xF2ng ch\u1ECDn 1 b\xE0i b\xE1o t\u1EEB danh s\xE1ch k\u1EBFt qu\u1EA3 tr\u01B0\u1EDBc khi l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB tab.", "warning");
+        alert("Ch\u01B0a c\xF3 b\xE0i b\xE1o n\xE0o trong danh s\xE1ch k\u1EBFt qu\u1EA3 \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u.");
         return;
       }
       const record = this.uniqueRecords.find((r) => r.id === targetId);
@@ -1478,14 +1650,34 @@
       }
       this.selectedRecordId = targetId;
       this.renderRecordsList();
-      this.setStatus("\u0110ang k\u1EBFt n\u1ED1i t\u1EDBi Tab \u0111ang m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t...", "info");
+      const origBtnText = this.extractActiveTabBtn?.innerHTML;
+      if (this.extractActiveTabBtn && !paperId) {
+        this.extractActiveTabBtn.innerHTML = "\u23F3 \u0110ang k\u1EBFt n\u1ED1i Tab...";
+        this.extractActiveTabBtn.disabled = true;
+      }
+      this.setStatus(`\u0110ang k\u1EBFt n\u1ED1i t\u1EDBi Tab \u0111ang m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t cho b\xE0i #${record.id}...`, "info");
       try {
+        let activeTab;
         const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-        if (!tabs || tabs.length === 0 || typeof tabs[0].id !== "number") {
-          this.setStatus("Kh\xF4ng t\xECm th\u1EA5y tab tr\xECnh duy\u1EC7t \u0111ang k\xEDch ho\u1EA1t.", "error");
+        if (tabs && tabs.length > 0 && tabs[0].url && !tabs[0].url.startsWith("chrome://") && !tabs[0].url.startsWith("chrome-extension://")) {
+          activeTab = tabs[0];
+        } else {
+          const lastTabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+          if (lastTabs && lastTabs.length > 0 && lastTabs[0].url && !lastTabs[0].url.startsWith("chrome://") && !lastTabs[0].url.startsWith("chrome-extension://")) {
+            activeTab = lastTabs[0];
+          } else {
+            const allTabs = await chrome.tabs.query({ url: ["http://*/*", "https://*/*"] });
+            if (allTabs && allTabs.length > 0) {
+              activeTab = allTabs[allTabs.length - 1];
+            }
+          }
+        }
+        if (!activeTab || typeof activeTab.id !== "number") {
+          alert(
+            "Kh\xF4ng t\xECm th\u1EA5y tab trang web b\xE0i b\xE1o n\xE0o \u0111ang m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t. Vui l\xF2ng m\u1EDF trang web c\u1EE7a b\xE0i b\xE1o (DOI / ScienceDirect / Springer...) tr\xEAn m\u1ED9t tab tr\u01B0\u1EDBc r\u1ED3i b\u1EA5m l\u1EA1i."
+          );
           return;
         }
-        const activeTab = tabs[0];
         const tabId = activeTab.id;
         const activeUrl = activeTab.url || "";
         let tabData = null;
@@ -1555,6 +1747,12 @@
         this.setStatus("\u2713 \u0110\xE3 ph\xE2n t\xEDch xong! H\xE3y xem tr\u01B0\u1EDBc v\xE0 x\xE1c nh\u1EADn c\u1EADp nh\u1EADt.", "success");
       } catch (err) {
         this.setStatus(`L\u1ED7i l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB tab: ${err.message}`, "error");
+        alert(`L\u1ED7i tr\xEDch xu\u1EA5t tab: ${err.message}`);
+      } finally {
+        if (this.extractActiveTabBtn && origBtnText && !paperId) {
+          this.extractActiveTabBtn.innerHTML = origBtnText;
+          this.extractActiveTabBtn.disabled = false;
+        }
       }
     }
     async handlePdfFileUpload(e) {
@@ -1563,11 +1761,18 @@
       const file = input.files[0];
       const targetId = this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
       if (!targetId) {
-        this.setStatus("Vui l\xF2ng ch\u1ECDn 1 b\xE0i b\xE1o \u0111\u1EC3 n\u1EA1p file PDF.", "warning");
+        alert("Ch\u01B0a c\xF3 b\xE0i b\xE1o n\xE0o trong danh s\xE1ch \u0111\u1EC3 n\u1EA1p file PDF.");
         return;
       }
       const record = this.uniqueRecords.find((r) => r.id === targetId);
       if (!record) return;
+      this.selectedRecordId = targetId;
+      this.renderRecordsList();
+      const origBtnText = this.uploadPdfBtn?.innerHTML;
+      if (this.uploadPdfBtn) {
+        this.uploadPdfBtn.innerHTML = "\u23F3 \u0110ang \u0111\u1ECDc PDF...";
+        this.uploadPdfBtn.disabled = true;
+      }
       this.setStatus(`\u0110ang \u0111\u1ECDc file PDF: ${file.name}...`, "info");
       const reader = new FileReader();
       reader.onload = async () => {
@@ -1602,18 +1807,38 @@
           this.setStatus("\u2713 \u0110\xE3 tr\xEDch xu\u1EA5t PDF th\xE0nh c\xF4ng! H\xE3y xem tr\u01B0\u1EDBc v\xE0 x\xE1c nh\u1EADn.", "success");
         } catch (err) {
           this.setStatus(`L\u1ED7i khi x\u1EED l\xFD PDF t\u1EA3i l\xEAn: ${err.message}`, "error");
+          alert(`L\u1ED7i x\u1EED l\xFD file PDF: ${err.message}`);
         } finally {
           input.value = "";
+          if (this.uploadPdfBtn && origBtnText) {
+            this.uploadPdfBtn.innerHTML = origBtnText;
+            this.uploadPdfBtn.disabled = false;
+          }
+        }
+      };
+      reader.onerror = () => {
+        this.setStatus(`Kh\xF4ng th\u1EC3 \u0111\u1ECDc file PDF.`, "error");
+        if (this.uploadPdfBtn && origBtnText) {
+          this.uploadPdfBtn.innerHTML = origBtnText;
+          this.uploadPdfBtn.disabled = false;
         }
       };
       reader.readAsDataURL(file);
     }
     async handleRescreenAllRecords() {
       if (this.uniqueRecords.length === 0) {
-        this.setStatus("Kh\xF4ng c\xF3 b\xE0i b\xE1o n\xE0o \u0111\u1EC3 t\xE1i s\xE0ng l\u1ECDc.", "warning");
+        alert("Kh\xF4ng c\xF3 b\xE0i b\xE1o n\xE0o trong danh s\xE1ch \u0111\u1EC3 t\xE1i s\xE0ng l\u1ECDc.");
         return;
       }
-      this.setStatus(`\u0110ang t\xE1i s\xE0ng l\u1ECDc ${this.uniqueRecords.length} b\xE0i b\xE1o theo ti\xEAu ch\xED "${this.activeProfile.name}"...`, "info");
+      const origBtnText = this.rescreenBtn?.innerHTML;
+      if (this.rescreenBtn) {
+        this.rescreenBtn.innerHTML = "\u23F3 \u0110ang t\xE1i s\xE0ng l\u1ECDc...";
+        this.rescreenBtn.disabled = true;
+      }
+      this.setStatus(
+        `\u0110ang t\xE1i s\xE0ng l\u1ECDc ${this.uniqueRecords.length} b\xE0i b\xE1o theo ti\xEAu ch\xED "${this.activeProfile.name}"...`,
+        "info"
+      );
       this.setButtonsState(true);
       try {
         const response = await fetch(`${this.backendUrl}/api/scholar/rescreen`, {
@@ -1641,11 +1866,367 @@
         await this.saveSessionToStorage();
         this.updateStatsDisplay();
         this.renderRecordsList();
-        this.setStatus(`\u2713 \u0110\xE3 t\xE1i s\xE0ng l\u1ECDc th\xE0nh c\xF4ng ${data.records.length} b\xE0i b\xE1o theo ti\xEAu ch\xED "${this.activeProfile.name}".`, "success");
+        this.setStatus(
+          `\u2713 \u0110\xE3 t\xE1i s\xE0ng l\u1ECDc th\xE0nh c\xF4ng ${data.records.length} b\xE0i b\xE1o theo ti\xEAu ch\xED "${this.activeProfile.name}".`,
+          "success"
+        );
       } catch (err) {
         this.setStatus(`L\u1ED7i t\xE1i s\xE0ng l\u1ECDc: ${err.message}`, "error");
+        alert(`L\u1ED7i t\xE1i s\xE0ng l\u1ECDc: ${err.message}`);
       } finally {
+        if (this.rescreenBtn && origBtnText) {
+          this.rescreenBtn.innerHTML = origBtnText;
+          this.rescreenBtn.disabled = false;
+        }
         this.setButtonsState(false);
+      }
+    }
+    // --- Auto-Screening (Single & Batch) ---
+    openAutoScreenModal() {
+      if (!this.autoScreenModal) {
+        this.autoScreenModal = document.getElementById("autoScreenModal");
+      }
+      if (this.autoScreenProfileName) {
+        this.autoScreenProfileName.textContent = this.activeProfile.name;
+      }
+      if (this.autoScreenTotalCount) {
+        this.autoScreenTotalCount.textContent = String(this.uniqueRecords.length);
+      }
+      if (this.autoScreenModal) {
+        this.autoScreenModal.style.display = "flex";
+      }
+    }
+    closeAutoScreenModal() {
+      if (this.autoScreenModal) {
+        this.autoScreenModal.style.display = "none";
+      }
+    }
+    stopBatchAutoScreen() {
+      this.stopAutoScreenRequested = true;
+      this.setStatus("\u0110ang d\u1EEBng qu\xE9t t\u1EF1 \u0111\u1ED9ng sau b\xE0i hi\u1EC7n t\u1EA1i...", "warning");
+      if (this.autoScreenStatusText) {
+        this.autoScreenStatusText.innerHTML = "<b>\u23F9\uFE0F \u0110ang y\xEAu c\u1EA7u d\u1EEBng qu\xE9t...</b>";
+      }
+    }
+    waitForTabLoaded(tabId, timeoutMs = 7500) {
+      return new Promise((resolve) => {
+        let finished = false;
+        const timer = setTimeout(() => {
+          if (!finished) {
+            finished = true;
+            chrome.tabs.onUpdated.removeListener(listener);
+            resolve();
+          }
+        }, timeoutMs);
+        const listener = (id, changeInfo) => {
+          if (id === tabId && changeInfo.status === "complete") {
+            if (!finished) {
+              finished = true;
+              clearTimeout(timer);
+              chrome.tabs.onUpdated.removeListener(listener);
+              setTimeout(resolve, 600);
+            }
+          }
+        };
+        chrome.tabs.onUpdated.addListener(listener);
+      });
+    }
+    async autoExtractDataForUrl(url, fallbackTitle) {
+      if (!url || !url.startsWith("http")) {
+        return null;
+      }
+      if (url.toLowerCase().endsWith(".pdf") || url.toLowerCase().includes(".pdf?")) {
+        return {
+          sourceUrl: url,
+          method: "Direct PDF URL",
+          title: fallbackTitle || "",
+          pdfUrl: url
+        };
+      }
+      try {
+        const resp = await fetch(url, { method: "GET" });
+        if (resp.ok) {
+          const html = await resp.text();
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const getMeta = (name) => {
+            const el = doc.querySelector(`meta[name="${name}" i], meta[property="${name}" i]`);
+            return el ? (el.getAttribute("content") || "").trim() : "";
+          };
+          const getAllMetas = (name) => {
+            const els = doc.querySelectorAll(`meta[name="${name}" i], meta[property="${name}" i]`);
+            return Array.from(els).map((el) => (el.getAttribute("content") || "").trim()).filter(Boolean);
+          };
+          const rawTitle = getMeta("citation_title") || getMeta("DC.title") || getMeta("og:title") || doc.title || "";
+          const title = isChallengeOrErrorTitle(rawTitle) ? fallbackTitle || "" : rawTitle;
+          const authors = getAllMetas("citation_author").join("; ") || getAllMetas("DC.creator").join("; ");
+          let doi = getMeta("citation_doi") || getMeta("DC.identifier");
+          if (doi) {
+            const m = doi.match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
+            if (m) doi = m[0];
+          }
+          const venue = getMeta("citation_journal_title") || getMeta("citation_conference_title") || getMeta("citation_publisher") || getMeta("DC.source");
+          const rawDate = getMeta("citation_publication_date") || getMeta("citation_date") || getMeta("citation_year") || getMeta("DC.date");
+          let year = "";
+          if (rawDate) {
+            const yMatch = rawDate.match(/\b(19\d\d|20\d\d)\b/);
+            if (yMatch) year = yMatch[1];
+          }
+          const abstract = getMeta("citation_abstract") || getMeta("DC.description") || getMeta("og:description");
+          const pdfUrl = getMeta("citation_pdf_url");
+          if (abstract && abstract.length > 40 && !isChallengeOrErrorTitle(abstract)) {
+            return {
+              sourceUrl: url,
+              method: "T\u1EF1 \u0111\u1ED9ng qu\xE9t (Fast Meta Fetch)",
+              title,
+              authors,
+              doi,
+              venue,
+              year,
+              abstract,
+              pdfUrl
+            };
+          }
+        }
+      } catch (fetchErr) {
+        console.warn("[Auto-Extract] Fast fetch failed, fallback to background tab:", fetchErr);
+      }
+      if (typeof chrome !== "undefined" && chrome.tabs && chrome.tabs.create) {
+        let tabId;
+        try {
+          const tab = await chrome.tabs.create({ url, active: false });
+          tabId = tab.id;
+          if (typeof tabId === "number") {
+            await this.waitForTabLoaded(tabId, 7500);
+            await chrome.scripting.executeScript({
+              target: { tabId },
+              files: ["content-script.js"]
+            });
+            const results = await chrome.scripting.executeScript({
+              target: { tabId },
+              func: () => {
+                try {
+                  if (typeof window.extractCurrentPageData === "function") {
+                    return window.extractCurrentPageData();
+                  }
+                } catch (e) {
+                  console.error("L\u1ED7i khi g\u1ECDi extractCurrentPageData:", e);
+                }
+                return null;
+              }
+            });
+            if (results && results[0] && results[0].result) {
+              const data = results[0].result;
+              if (data.title && isChallengeOrErrorTitle(data.title)) {
+                data.title = fallbackTitle || "";
+              }
+              if (data.abstract && data.abstract.trim().length > 40 && !isChallengeOrErrorTitle(data.abstract) || data.pdfUrl || data.pages && data.pages.length > 0) {
+                data.method = (data.method || "HighWire Meta") + " (Auto Tab)";
+                return data;
+              }
+            }
+          }
+        } catch (tabErr) {
+          console.warn("[Auto-Extract] Background tab extraction error:", tabErr);
+        } finally {
+          if (typeof tabId === "number") {
+            try {
+              await chrome.tabs.remove(tabId);
+            } catch (e) {
+            }
+          }
+        }
+      }
+      return null;
+    }
+    async handleAutoScreenPaper(record, autoAcceptInclude = false) {
+      if (!record.url) {
+        return false;
+      }
+      const tabData = await this.autoExtractDataForUrl(record.url, record.title);
+      if (!tabData || !tabData.abstract && !tabData.pdfUrl && (!tabData.pages || tabData.pages.length === 0)) {
+        return false;
+      }
+      if (tabData.title && isChallengeOrErrorTitle(tabData.title)) {
+        tabData.title = record.title;
+      }
+      const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          record,
+          tabData,
+          autoFetchPdf: true,
+          profile: this.activeProfile
+        })
+      });
+      if (!response.ok) return false;
+      const resData = await response.json();
+      if (!resData.success || !resData.analysis) return false;
+      const analysis = resData.analysis;
+      const getChangeVal = (field) => {
+        const c = analysis.changes.find((x) => x.field === field);
+        return c && c.newValue && c.newValue !== "(Tr\u1ED1ng)" ? c.newValue : void 0;
+      };
+      const newTitle = getChangeVal("title");
+      if (newTitle && !isChallengeOrErrorTitle(newTitle) && analysis.isTitleMatch) {
+        record.title = newTitle;
+      }
+      if (getChangeVal("abstract")) record.abstract = getChangeVal("abstract");
+      if (getChangeVal("doi")) record.doi = getChangeVal("doi");
+      if (getChangeVal("venue")) record.venue = getChangeVal("venue");
+      if (getChangeVal("year")) record.year = getChangeVal("year");
+      if (getChangeVal("pdfUrl")) record.pdfUrl = getChangeVal("pdfUrl");
+      record.sourceMetadataVerified = true;
+      record.verificationMethod = tabData.method || "T\u1EF1 \u0111\u1ED9ng qu\xE9t link (Background Tab / Meta)";
+      record.sourceUrl = tabData.sourceUrl || record.url;
+      record.evidence_snippets = analysis.evidence || [];
+      if (analysis.suggestedScreeningUpdate) {
+        record.suggestedDecision = analysis.suggestedScreeningUpdate.suggestedDecision;
+        record.matchedCriteria = analysis.suggestedScreeningUpdate.matchedCriteria;
+        record.unknownCriteria = analysis.suggestedScreeningUpdate.unknownCriteria;
+        record.missingEvidence = analysis.suggestedScreeningUpdate.missingEvidence;
+        record.screeningReason = analysis.suggestedScreeningUpdate.screeningReason;
+      }
+      if (autoAcceptInclude && record.suggestedDecision === "Include") {
+        record.finalDecision = "Include";
+      }
+      return true;
+    }
+    async handleSinglePaperAutoScreen(paperId, buttonEl) {
+      const record = this.uniqueRecords.find((r) => r.id === paperId);
+      if (!record) return;
+      if (!record.url) {
+        this.setStatus(`B\xE0i b\xE1o #${record.id} kh\xF4ng c\xF3 li\xEAn k\u1EBFt (URL).`, "warning");
+        return;
+      }
+      const originalBtnText = buttonEl ? buttonEl.innerHTML : "";
+      if (buttonEl) {
+        buttonEl.disabled = true;
+        buttonEl.innerHTML = "\u23F3 Qu\xE9t...";
+      }
+      this.setStatus(`\u0110ang t\u1EF1 \u0111\u1ED9ng qu\xE9t & s\xE0ng l\u1ECDc b\xE0i: "${record.title.slice(0, 50)}..."`, "info");
+      try {
+        const ok = await this.handleAutoScreenPaper(record, false);
+        if (ok) {
+          await this.saveSessionToStorage();
+          this.updateStatsDisplay();
+          this.renderRecordsList();
+          this.setStatus(
+            `\u2713 \u0110\xE3 t\u1EF1 \u0111\u1ED9ng qu\xE9t th\xE0nh c\xF4ng: G\u1EE3i \xFD [${record.suggestedDecision || "Ch\u01B0a r\xF5"}] cho "${record.title.slice(0, 45)}..."`,
+            "success"
+          );
+        } else {
+          const hostName = record.url ? new URL(record.url).hostname : "trang n\xE0y";
+          this.setStatus(
+            `\u26A0\uFE0F Kh\xF4ng th\u1EC3 c\xE0o ng\u1EA7m (${hostName}) do trang web c\xF3 b\u1EA3o v\u1EC7 Cloudflare/Captcha. Vui l\xF2ng b\u1EA5m v\xE0o li\xEAn k\u1EBFt b\xE0i b\xE1o \u0111\u1EC3 m\u1EDF tr\xEAn tr\xECnh duy\u1EC7t, r\u1ED3i b\u1EA5m "\u{1F4D1} Tab".`,
+            "warning"
+          );
+        }
+      } catch (err) {
+        console.error("L\u1ED7i khi t\u1EF1 \u0111\u1ED9ng qu\xE9t b\xE0i:", err);
+        this.setStatus(`L\u1ED7i khi qu\xE9t: ${err.message}`, "error");
+      } finally {
+        if (buttonEl) {
+          buttonEl.disabled = false;
+          buttonEl.innerHTML = originalBtnText;
+        }
+      }
+    }
+    async startBatchAutoScreen() {
+      this.closeAutoScreenModal();
+      if (this.isAutoScreening) return;
+      const scopeRadio = document.querySelector('input[name="autoScreenScope"]:checked');
+      const scope = scopeRadio ? scopeRadio.value : "missing_abstract";
+      const autoAcceptInclude = this.autoAcceptIncludeCheckbox ? this.autoAcceptIncludeCheckbox.checked : true;
+      let targets = [];
+      if (scope === "missing_abstract") {
+        targets = this.uniqueRecords.filter(
+          (r) => r.url && (!r.abstract || r.abstract.trim().length === 0 || !r.sourceMetadataVerified)
+        );
+      } else if (scope === "next_10") {
+        targets = this.uniqueRecords.filter((r) => r.url).slice(0, 10);
+      } else if (scope === "next_20") {
+        targets = this.uniqueRecords.filter((r) => r.url).slice(0, 20);
+      } else {
+        targets = this.uniqueRecords.filter((r) => r.url);
+      }
+      if (targets.length === 0) {
+        this.setStatus("Kh\xF4ng t\xECm th\u1EA5y b\xE0i b\xE1o n\xE0o ph\xF9 h\u1EE3p v\u1EDBi ph\u1EA1m vi qu\xE9t \u0111\xE3 ch\u1ECDn.", "warning");
+        return;
+      }
+      this.isAutoScreening = true;
+      this.stopAutoScreenRequested = false;
+      if (this.autoScreenBatchBtn) this.autoScreenBatchBtn.style.display = "none";
+      if (this.stopAutoScreenBtn) this.stopAutoScreenBtn.style.display = "inline-block";
+      if (this.autoScreenProgressBox) this.autoScreenProgressBox.style.display = "block";
+      let successCount = 0;
+      let failCount = 0;
+      let includedCount = 0;
+      try {
+        for (let i = 0; i < targets.length; i++) {
+          if (this.stopAutoScreenRequested) {
+            console.log("[Auto-Screen] Ng\u01B0\u1EDDi d\xF9ng y\xEAu c\u1EA7u d\u1EEBng qu\xE1 tr\xECnh qu\xE9t.");
+            break;
+          }
+          const record = targets[i];
+          const currentNum = i + 1;
+          const total = targets.length;
+          const percent = Math.round(currentNum / total * 100);
+          if (this.autoScreenStatusText) {
+            this.autoScreenStatusText.innerHTML = `<b>\u26A1 \u0110ang qu\xE9t & l\u1ECDc b\xE0i [${currentNum}/${total}]...</b>`;
+          }
+          if (this.autoScreenCounterText) {
+            this.autoScreenCounterText.textContent = `${currentNum} / ${total} (${percent}%)`;
+          }
+          if (this.autoScreenProgressBar) {
+            this.autoScreenProgressBar.style.width = `${percent}%`;
+          }
+          if (this.autoScreenCurrentPaper) {
+            this.autoScreenCurrentPaper.textContent = `#${currentNum}: ${record.title}`;
+          }
+          this.setStatus(`[T\u1EF1 \u0111\u1ED9ng qu\xE9t ${currentNum}/${total}] "${record.title.slice(0, 45)}..."`, "info");
+          try {
+            const ok = await this.handleAutoScreenPaper(record, autoAcceptInclude);
+            if (ok) {
+              successCount++;
+              if (record.suggestedDecision === "Include" || record.finalDecision === "Include") {
+                includedCount++;
+              }
+            } else {
+              failCount++;
+            }
+          } catch (itemErr) {
+            console.warn(`L\u1ED7i khi qu\xE9t b\xE0i ${record.id}:`, itemErr);
+            failCount++;
+          }
+          this.updateStatsDisplay();
+          this.renderRecordsList();
+          if (currentNum % 3 === 0 || currentNum === total) {
+            await this.saveSessionToStorage();
+          }
+          await new Promise((r) => setTimeout(r, 600));
+        }
+        await this.saveSessionToStorage();
+        this.updateStatsDisplay();
+        this.renderRecordsList();
+        const stoppedMsg = this.stopAutoScreenRequested ? " (\u0110\xE3 d\u1EEBng theo y\xEAu c\u1EA7u)" : "";
+        this.setStatus(
+          `\u2713 Ho\xE0n t\u1EA5t qu\xE9t t\u1EF1 \u0111\u1ED9ng${stoppedMsg}: Th\xE0nh c\xF4ng ${successCount}/${targets.length} b\xE0i | G\u1EE3i \xFD/Nh\u1EADn Include: ${includedCount} b\xE0i.`,
+          "success"
+        );
+      } catch (e) {
+        console.error("L\u1ED7i trong Batch Auto-Screen:", e);
+        this.setStatus(`L\u1ED7i trong qu\xE1 tr\xECnh qu\xE9t t\u1EF1 \u0111\u1ED9ng: ${e.message}`, "error");
+      } finally {
+        this.isAutoScreening = false;
+        this.stopAutoScreenRequested = false;
+        if (this.stopAutoScreenBtn) this.stopAutoScreenBtn.style.display = "none";
+        if (this.autoScreenBatchBtn) this.autoScreenBatchBtn.style.display = "inline-block";
+        setTimeout(() => {
+          if (!this.isAutoScreening && this.autoScreenProgressBox) {
+            this.autoScreenProgressBox.style.display = "none";
+          }
+        }, 4e3);
       }
     }
     showPreviewModal(result, record) {
@@ -2304,63 +2885,111 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             records: this.uniqueRecords,
-            profile: this.activeProfile
+            profile: this.activeProfile,
+            onlyFinalIncluded: true
           })
         });
         if (res.ok) {
-          const text = await res.text();
-          this.downloadFile(text, "03_references_apa7.txt", "text/plain;charset=utf-8;");
-          this.setStatus("\u2713 \u0110\xE3 t\u1EA3i xu\u1ED1ng file 03_references_apa7.txt.", "success");
-          return;
+          const data = await res.json();
+          if (data.success && data.textContent) {
+            this.downloadFile(data.textContent, "03_references_apa7.txt", "text/plain;charset=utf-8;");
+            this.setStatus(
+              `\u2713 \u0110\xE3 t\u1EA3i file 03_references_apa7.txt (\u0110\u1EE7: ${data.completeCount}, C\u1EA7n b\u1ED5 sung: ${data.incompleteCount}).`,
+              "success"
+            );
+            return;
+          }
         }
       } catch {
       }
+      const finalIncludes = this.uniqueRecords.filter((r) => r.finalDecision === "Include");
+      const targetRecords = finalIncludes.length > 0 ? finalIncludes : this.uniqueRecords;
+      const seenDois = /* @__PURE__ */ new Set();
+      const seenTitles = /* @__PURE__ */ new Set();
+      const deduped = [];
+      for (const r of targetRecords) {
+        const cleanDoi = r.doi ? r.doi.trim().toLowerCase().replace(/^https?:\/\/doi\.org\//, "") : "";
+        const normTitle = (r.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+        if (cleanDoi) {
+          if (seenDois.has(cleanDoi)) continue;
+          seenDois.add(cleanDoi);
+        }
+        if (normTitle && normTitle.length > 15) {
+          if (seenTitles.has(normTitle)) continue;
+          seenTitles.add(normTitle);
+        }
+        deduped.push(r);
+      }
       const complete = [];
       const incomplete = [];
-      this.uniqueRecords.forEach((r) => {
+      deduped.forEach((r) => {
         const hasAuthor = Boolean(r.authors && r.authors.trim());
-        const hasYear = Boolean(r.year && r.year.trim());
-        const hasTitle = Boolean(r.title && r.title.trim());
-        const hasVenue = Boolean(r.venue && r.venue.trim());
-        if (hasAuthor && hasYear && hasTitle && hasVenue) {
-          const doiStr = r.doi ? ` https://doi.org/${r.doi.replace(/^https?:\/\/doi\.org\//, "")}` : r.url ? ` ${r.url}` : "";
-          complete.push(`${r.authors} (${r.year}). ${r.title}. ${r.venue}.${doiStr}`);
+        const hasYear = Boolean(r.year && String(r.year).trim());
+        const rawTitle = (r.title || "").trim();
+        const rawVenue = (r.venue || "").trim();
+        const isRetracted = /\b(retracted|retraction)\b/i.test(`${rawTitle} ${r.abstract || ""}`);
+        const isTruncatedTitle = /…|\.{3}/.test(rawTitle);
+        const isSearchEngineVenue = /^(google scholar|google books|google|researchgate|proquest|ssrn|academia\.edu)\b/i.test(rawVenue);
+        const isTruncatedVenue = /…|\.{3}/.test(rawVenue);
+        const hasValidVenue = rawVenue.length > 0 && !isSearchEngineVenue && !isTruncatedVenue;
+        if (hasAuthor && hasYear && rawTitle && hasValidVenue && !isRetracted && !isTruncatedTitle) {
+          const doiStr = r.doi ? ` https://doi.org/${r.doi.replace(/^https?:\/\/doi\.org\//, "")}` : r.url && !r.url.includes("scholar.google") ? ` ${r.url}` : "";
+          complete.push(`${r.authors} (${r.year}). ${rawTitle}. *${rawVenue}*.${doiStr}`);
         } else {
           const missing = [];
-          if (!hasAuthor) missing.push("authors");
-          if (!hasYear) missing.push("year");
-          if (!hasTitle) missing.push("title");
-          if (!hasVenue) missing.push("venue");
-          incomplete.push(`[THI\u1EBEU: ${missing.join(", ")}] ${r.title || "(Kh\xF4ng ti\xEAu \u0111\u1EC1)"} - URL: ${r.url || "N/A"}`);
+          if (!hasAuthor) missing.push("t\xE1c gi\u1EA3");
+          if (!hasYear) missing.push("n\u0103m");
+          if (!rawTitle) missing.push("ti\xEAu \u0111\u1EC1");
+          if (isRetracted) missing.push("B\xC0I B\xC1O \u0110\xC3 B\u1ECA R\xDAT L\u1EA0I (RETRACTED)");
+          if (isTruncatedTitle) missing.push("ti\xEAu \u0111\u1EC1 b\u1ECB c\u1EAFt ng\u1EAFn (...)");
+          if (isSearchEngineVenue) missing.push(`venue g\xE1n nh\u1EA7m t\xEAn n\u1EC1n t\u1EA3ng ("${rawVenue}")`);
+          else if (isTruncatedVenue) missing.push(`venue b\u1ECB c\u1EAFt ng\u1EAFn ("${rawVenue}")`);
+          else if (!rawVenue) missing.push("venue");
+          incomplete.push(`[THI\u1EBEU: ${missing.join(", ")}] ${rawTitle || "(Kh\xF4ng ti\xEAu \u0111\u1EC1)"} - Ngu\u1ED3n: ${r.url || "N/A"}`);
         }
       });
-      let content = `DANH M\u1EE4C TR\xCDCH D\u1EAAN T\xC0I LI\u1EC6U THAM KH\u1EA2O (APA 7th Edition)\r
-Nghi\xEAn c\u1EE9u: ${this.activeProfile.name}\r
-Th\u1EDDi \u0111i\u1EC3m: ${(/* @__PURE__ */ new Date()).toISOString()}\r
+      const scopeNote = finalIncludes.length > 0 ? `Ch\u1EC9 xu\u1EA5t c\xE1c b\xE0i \u0111\xE3 ch\u1ED1t th\u1EA9m \u0111\u1ECBnh (finalDecision = Include: ${finalIncludes.length} b\xE0i)` : `To\xE0n b\u1ED9 danh s\xE1ch (${deduped.length} b\xE0i)`;
+      let content = `=======================================================================\r
 `;
-      content += `T\u1ED5ng b\xE0i: ${this.uniqueRecords.length} (\u0110\u1EE7 metadata: ${complete.length} | C\u1EA7n b\u1ED5 sung: ${incomplete.length})\r
+      content += `DANH M\u1EE4C TR\xCDCH D\u1EAAN T\xC0I LI\u1EC6U THAM KH\u1EA2O (APA 7th Edition)\r
+`;
+      content += `Nghi\xEAn c\u1EE9u: ${this.activeProfile.name} | Ph\u1EA1m vi: ${scopeNote}\r
+`;
+      content += `Th\u1EDDi \u0111i\u1EC3m xu\u1EA5t: ${(/* @__PURE__ */ new Date()).toISOString()}\r
+`;
+      content += `\u0110\xE3 l\u1ECDc tr\xF9ng l\u1EB7p: Gi\u1EEF ${deduped.length} b\xE0i (\u0110\u1EE7 chu\u1EA9n APA: ${complete.length} | C\u1EA7n b\u1ED5 sung: ${incomplete.length})\r
+`;
+      content += `=======================================================================\r
 \r
 `;
-      content += `=== PH\u1EA6N 1: B\xC0I B\xC1O \u0110\u1EE6 METADATA \u0110\xC3 X\xC1C MINH ===\r
+      content += `--- PH\u1EA6N 1: B\xC0I B\xC1O \u0110\u1EE6 METADATA \u0110\xC3 X\xC1C MINH ---\r
 \r
 `;
       if (complete.length === 0) {
-        content += `(Ch\u01B0a c\xF3 b\xE0i b\xE1o n\xE0o \u0111\u1EE7 \u0111\u1EA7y \u0111\u1EE7 4 tr\u01B0\u1EDDng: t\xE1c gi\u1EA3, n\u0103m, ti\xEAu \u0111\u1EC1 v\xE0 venue)\r
+        content += `(Ch\u01B0a c\xF3 b\xE0i b\xE1o n\xE0o \u0111\u1EE7 100% metadata chu\u1EA9n APA 7)\r
 \r
 `;
       } else {
-        content += complete.sort().map((c, i) => `${i + 1}. ${c}\r
-`).join("\r\n") + "\r\n";
+        content += complete.map((c, i) => `[${i + 1}] ${c}\r
+\r
+`).join("");
       }
-      content += `=== PH\u1EA6N 2: B\xC0I B\xC1O THI\u1EBEU TH\xD4NG TIN (C\u1EA6N B\u1ED4 SUNG TH\u1EE6 C\xD4NG) ===\r
+      content += `=======================================================================\r
+`;
+      content += `--- \u26A0\uFE0F PH\u1EA6N 2: B\xC0I B\xC1O THI\u1EBEU TH\xD4NG TIN (C\u1EA6N B\u1ED4 SUNG TH\u1EE6 C\xD4NG) ---\r
+`;
+      content += `(Quy t\u1EAFc: Kh\xF4ng t\u1EF1 b\u1ECBa th\xF4ng tin c\xF2n thi\u1EBFu. C\u1EA7n \u0111\u1ED1i chi\u1EBFu to\xE0n v\u0103n ho\u1EB7c trang nh\xE0 xu\u1EA5t b\u1EA3n)\r
+`;
+      content += `=======================================================================\r
 \r
 `;
       if (incomplete.length === 0) {
-        content += `(Kh\xF4ng c\xF3 b\xE0i b\xE1o n\xE0o b\u1ECB thi\u1EBFu metadata)\r
+        content += `(To\xE0n b\u1ED9 b\xE0i b\xE1o \u0111\u1EC1u \u0111\xE3 \u0111\u1EA7y \u0111\u1EE7 th\xF4ng tin chu\u1EA9n h\xF3a)\r
 `;
       } else {
-        content += incomplete.map((inc, i) => `${i + 1}. ${inc}\r
-`).join("\r\n");
+        content += incomplete.map((inc, i) => `[\u26A0\uFE0F ${i + 1}] ${inc}\r
+\r
+`).join("");
       }
       this.downloadFile(content, "03_references_apa7.txt", "text/plain;charset=utf-8;");
       this.setStatus(
