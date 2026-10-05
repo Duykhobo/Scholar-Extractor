@@ -1,14 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import { config } from './config';
-import {
-  ScholarSearchParams,
-  SerpApiRawResponse,
-  PaperRecord,
-  SearchExecutionSummary
-} from './types';
-import { sanitizeObject } from './sanitizer';
-import { evaluateScreeningV1 } from './screening';
+import fs from "fs";
+import path from "path";
+import { config } from "./config";
+import { evaluateProfileScreening } from "./profiles/engine";
+import { PRESET_GENERIC } from "./profiles/presets";
+import { ResearchProfile } from "./profiles/types";
+import { sanitizeObject } from "./sanitizer";
+import { evaluateScreeningV1 } from "./screening";
+import { PaperRecord, ScholarSearchParams, SearchExecutionSummary, SerpApiRawResponse } from "./types";
 
 export interface ScholarFetchResult {
   records: PaperRecord[];
@@ -36,51 +34,63 @@ export function validateSearchParams(params: ScholarSearchParams): {
   validParams: Record<string, string>;
   error?: string;
 } {
-  if (!params || typeof params.q !== 'string' || !params.q.trim()) {
-    return { validParams: {}, error: 'Tham số truy vấn (q) là bắt buộc và không được rỗng.' };
+  if (!params || typeof params.q !== "string" || !params.q.trim()) {
+    return { validParams: {}, error: "Tham số truy vấn (q) là bắt buộc và không được rỗng." };
   }
 
   const q = params.q.trim();
-  const as_ylo = String(params.as_ylo ?? '2020').trim();
-  const as_yhi = String(params.as_yhi ?? '2026').trim();
-  const hl = String(params.hl ?? 'vi').trim();
+  const hl = String(params.hl ?? "vi").trim();
   const start = Math.max(0, parseInt(String(params.start ?? 0), 10) || 0);
   const num = Math.min(20, Math.max(10, parseInt(String(params.num ?? 10), 10) || 10));
 
-  // Kiem tra hop le cua nam
-  if (!/^\d{4}$/.test(as_ylo) || !/^\d{4}$/.test(as_yhi)) {
-    return { validParams: {}, error: 'Khoảng năm (as_ylo, as_yhi) phải là định dạng 4 chữ số hợp lệ.' };
+  const hasYlo = params.as_ylo !== undefined && params.as_ylo !== "" && params.as_ylo !== null;
+  const hasYhi = params.as_yhi !== undefined && params.as_yhi !== "" && params.as_yhi !== null;
+
+  // Giữ mặc định 2020-2026 khi params không chỉ định (để tương thích ngược với SWT302)
+  const as_ylo = hasYlo ? String(params.as_ylo).trim() : params.as_ylo === "" ? "" : "2020";
+  const as_yhi = hasYhi ? String(params.as_yhi).trim() : params.as_yhi === "" ? "" : "2026";
+
+  // Kiểm tra tính hợp lệ của năm nếu có truyền vào
+  if (as_ylo && !/^\d{4}$/.test(as_ylo)) {
+    return { validParams: {}, error: "Khoảng năm (as_ylo) phải là định dạng 4 chữ số hợp lệ." };
+  }
+  if (as_yhi && !/^\d{4}$/.test(as_yhi)) {
+    return { validParams: {}, error: "Khoảng năm (as_yhi) phải là định dạng 4 chữ số hợp lệ." };
   }
 
-  return {
-    validParams: {
-      engine: 'google_scholar',
-      q,
-      as_ylo,
-      as_yhi,
-      hl,
-      start: String(start),
-      num: String(num)
-    }
+  const validParams: Record<string, string> = {
+    engine: "google_scholar",
+    q,
+    hl,
+    start: String(start),
+    num: String(num),
   };
+
+  if (as_ylo) validParams.as_ylo = as_ylo;
+  if (as_yhi) validParams.as_yhi = as_yhi;
+
+  return { validParams };
 }
 
 /**
  * Trich xuat can than metadata tu publication_info ma khong suy doan lieu linh
  */
 export function parsePublicationInfo(summary?: string, authorsList?: Array<{ name: string }>) {
-  let authors = '';
-  let venue = '';
-  let year = '';
+  let authors = "";
+  let venue = "";
+  let year = "";
   let uncertain_authors = false;
   let uncertain_venue = false;
   let uncertain_year = false;
 
   // 1. Authors
   if (authorsList && Array.isArray(authorsList) && authorsList.length > 0) {
-    authors = authorsList.map(a => a.name.trim()).filter(Boolean).join('; ');
+    authors = authorsList
+      .map((a) => a.name.trim())
+      .filter(Boolean)
+      .join("; ");
   } else if (summary) {
-    const parts = summary.split(' - ');
+    const parts = summary.split(" - ");
     if (parts.length > 0 && parts[0].trim()) {
       authors = parts[0].trim();
       uncertain_authors = true; // Trich tu summary, can xac minh
@@ -93,7 +103,7 @@ export function parsePublicationInfo(summary?: string, authorsList?: Array<{ nam
 
   // 2. Year va Venue tu summary
   if (summary) {
-    const parts = summary.split(' - ');
+    const parts = summary.split(" - ");
     if (parts.length >= 2) {
       const middlePart = parts[1].trim();
       // Tim nam 4 chu so (19xx hoac 20xx)
@@ -101,7 +111,10 @@ export function parsePublicationInfo(summary?: string, authorsList?: Array<{ nam
       if (yearMatch) {
         year = yearMatch[1];
         // Phan con lai coi la venue tiem nang
-        venue = middlePart.replace(/\b(19\d\d|20\d\d)\b/, '').replace(/[,\s]+$/, '').trim();
+        venue = middlePart
+          .replace(/\b(19\d\d|20\d\d)\b/, "")
+          .replace(/[,\s]+$/, "")
+          .trim();
       } else {
         venue = middlePart;
         uncertain_year = true;
@@ -118,11 +131,11 @@ export function parsePublicationInfo(summary?: string, authorsList?: Array<{ nam
 
   return {
     authors,
-    venue: venue || 'Google Scholar',
+    venue: venue || "Google Scholar",
     year,
     uncertain_authors,
     uncertain_venue,
-    uncertain_year
+    uncertain_year,
   };
 }
 
@@ -131,7 +144,8 @@ export function parsePublicationInfo(summary?: string, authorsList?: Array<{ nam
  */
 export async function fetchScholarFromSerpApi(
   rawParams: ScholarSearchParams,
-  mockFetchFn?: (url: string) => Promise<any>
+  mockFetchFn?: (url: string) => Promise<any>,
+  profile?: ResearchProfile,
 ): Promise<ScholarFetchResult> {
   const { validParams, error: validationError } = validateSearchParams(rawParams);
   if (validationError) {
@@ -139,13 +153,13 @@ export async function fetchScholarFromSerpApi(
   }
 
   if (!config.isKeyConfigured() && !mockFetchFn) {
-    throw new Error('SERPAPI_KEY chưa được cấu hình trong biến môi trường backend (.env).');
+    throw new Error("SERPAPI_KEY chưa được cấu hình trong biến môi trường backend (.env).");
   }
 
   // Xay dung URL goi toi SerpApi Search API
   const queryParams = new URLSearchParams({
     ...validParams,
-    api_key: config.serpApiKey
+    api_key: config.serpApiKey,
   });
   const apiUrl = `${config.serpApiBaseUrl}?${queryParams.toString()}`;
 
@@ -165,9 +179,9 @@ export async function fetchScholarFromSerpApi(
         const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
         try {
           const res = await fetch(apiUrl, {
-            method: 'GET',
-            headers: { 'Accept': 'application/json' },
-            signal: controller.signal
+            method: "GET",
+            headers: { Accept: "application/json" },
+            signal: controller.signal,
           });
           clearTimeout(timeoutId);
 
@@ -192,13 +206,15 @@ export async function fetchScholarFromSerpApi(
       lastError = err;
       if (attempt < maxRetries) {
         // Exponential backoff nhe (1 giay)
-        await new Promise(resolve => setTimeout(resolve, attempt * 1000));
+        await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
       }
     }
   }
 
   if (!rawJson) {
-    throw new Error(`Không thể kết nối tới SerpApi sau ${maxRetries} lần thử: ${lastError?.message || 'Lỗi không xác định'}`);
+    throw new Error(
+      `Không thể kết nối tới SerpApi sau ${maxRetries} lần thử: ${lastError?.message || "Lỗi không xác định"}`,
+    );
   }
 
   // 1. Loc bo toan bo du lieu nhay cam (SERPAPI_KEY) khoi rawJson truoc khi lam bang chung
@@ -206,22 +222,22 @@ export async function fetchScholarFromSerpApi(
 
   // 2. Lay thong tin tong quan
   const searchId = rawJson.search_metadata?.id || `scholar_${Date.now()}`;
-  const responseStatus = rawJson.search_metadata?.status || 'Unknown';
+  const responseStatus = rawJson.search_metadata?.status || "Unknown";
   const fromCache = Boolean(rawJson.search_metadata?.from_cache);
   const cacheAge = rawJson.search_metadata?.cache_age;
   const totalReportedResults = rawJson.search_information?.total_results || 0;
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split("T")[0];
 
   // 3. Luu file bang chung JSON vao thu muc backend/evidence (da duoc sanitize)
   try {
-    const evidenceDir = path.resolve(__dirname, '../evidence');
+    const evidenceDir = path.resolve(__dirname, "../evidence");
     if (!fs.existsSync(evidenceDir)) {
       fs.mkdirSync(evidenceDir, { recursive: true });
     }
     const evidenceFilePath = path.join(evidenceDir, `${searchId}_start_${validParams.start}.json`);
-    fs.writeFileSync(evidenceFilePath, JSON.stringify(sanitizedEvidence, null, 2), 'utf-8');
+    fs.writeFileSync(evidenceFilePath, JSON.stringify(sanitizedEvidence, null, 2), "utf-8");
   } catch (fsErr) {
-    console.error('[ScholarService] Cảnh báo không ghi được file bằng chứng:', fsErr);
+    console.error("[ScholarService] Cảnh báo không ghi được file bằng chứng:", fsErr);
   }
 
   // 4. Parse danh sach organic_results thanh PaperRecord
@@ -230,29 +246,64 @@ export async function fetchScholarFromSerpApi(
 
   for (let i = 0; i < organicList.length; i++) {
     const item = organicList[i];
-    const title = (item.title || '').trim();
+    const title = (item.title || "").trim();
     if (!title) continue;
 
     const pubMeta = parsePublicationInfo(item.publication_info?.summary, item.publication_info?.authors);
-    const snippet = (item.snippet || '').trim();
-    const url = item.link || (rawJson.search_metadata?.google_scholar_url || '');
+    const snippet = (item.snippet || "").trim();
+    const url = item.link || rawJson.search_metadata?.google_scholar_url || "";
 
     // Tuyet doi khong coi snippet la abstract
-    const abstract = '';
+    const abstract = "";
 
-    // Danh gia screening giai doan V1
-    const screening = evaluateScreeningV1(title, snippet, abstract, pubMeta.year, pubMeta.venue);
+    let matchedCriteria: string[] = [];
+    let unknownCriteria: string[] = [];
+    let missingEvidence: string[] = [];
+    let suggestedDecision: "Include" | "Exclude" | "Unsure" = "Unsure";
+    let screeningReason = "";
+    let screeningStage: "V1" | "V2" = "V1";
+
+    // Neu ho so la preset_swt302, su dung bo quy tac goc cua mon SWT302
+    if (profile && profile.id === "preset_swt302") {
+      const screening = evaluateScreeningV1(title, snippet, abstract, pubMeta.year, pubMeta.venue);
+      matchedCriteria = screening.matchedCriteria;
+      unknownCriteria = screening.unknownCriteria;
+      missingEvidence = screening.missingEvidence;
+      suggestedDecision = screening.suggestedDecision;
+      screeningReason = screening.screeningReason;
+      screeningStage = screening.stage;
+    } else {
+      // Cho tat ca cac ho so nghien cuu khac (bao gom ho so tre khiem thi AAC hoac ho so tong quat), su dung engine danh gia dong
+      const activeEvalProfile = profile || PRESET_GENERIC;
+      const pEval = evaluateProfileScreening(
+        activeEvalProfile,
+        {
+          title,
+          authors: pubMeta.authors,
+          year: pubMeta.year,
+          venue: pubMeta.venue,
+          snippet,
+          abstract,
+        } as any,
+        { stage: "title_abstract" },
+      );
+      matchedCriteria = pEval.matchedCriteria;
+      unknownCriteria = pEval.unknownCriteria;
+      missingEvidence = pEval.missingEvidence;
+      suggestedDecision = pEval.suggestedDecision;
+      screeningReason = pEval.screeningReason;
+    }
 
     records.push({
       id: `${searchId}_${validParams.start}_${i + 1}`,
-      source: 'Google Scholar',
-      discoverySource: 'Google Scholar',
-      collectionMethod: 'SerpApi',
+      source: "Google Scholar",
+      discoverySource: "Google Scholar",
+      collectionMethod: "SerpApi",
       title,
       authors: pubMeta.authors,
       year: pubMeta.year,
       venue: pubMeta.venue,
-      doi: '', // Google Scholar organic khong cung cap truc tiep DOI
+      doi: "", // Google Scholar organic khong cung cap truc tiep DOI
       snippet,
       abstract,
       url,
@@ -269,14 +320,14 @@ export async function fetchScholarFromSerpApi(
 
       potentialDuplicate: false,
 
-      screeningStage: screening.stage,
-      matchedCriteria: screening.matchedCriteria,
-      unknownCriteria: screening.unknownCriteria,
-      missingEvidence: screening.missingEvidence,
-      suggestedDecision: screening.suggestedDecision,
-      screeningReason: screening.screeningReason,
-      finalDecision: '', // De trong de nguoi dung xac nhan
-      userNotes: ''
+      screeningStage,
+      matchedCriteria,
+      unknownCriteria,
+      missingEvidence,
+      suggestedDecision,
+      screeningReason,
+      finalDecision: "", // De trong de nguoi dung xac nhan
+      userNotes: "",
     });
   }
 
@@ -292,12 +343,12 @@ export async function fetchScholarFromSerpApi(
     totalUniqueSoFar: records.length,
     query: validParams.q,
     executedParams: validParams,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   };
 
   return {
     records,
     summary,
-    sanitizedEvidence
+    sanitizedEvidence,
   };
 }

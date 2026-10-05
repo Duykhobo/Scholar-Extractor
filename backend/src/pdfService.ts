@@ -75,25 +75,141 @@ export async function parsePdfBuffer(buffer: Buffer | ArrayBuffer | Uint8Array):
   }
 }
 
-/**
- * Tải và trích xuất PDF từ URL
- */
-export async function parsePdfFromUrl(url: string): Promise<PdfParseResult> {
-  try {
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Scholar-Extractor/2.0'
-      }
-    });
+import dns from 'dns';
+import net from 'net';
 
-    if (!response.ok) {
+/**
+ * Kiểm tra xem địa chỉ IP có thuộc mạng nội bộ, loopback, hoặc cloud metadata không (SSRF Protection)
+ */
+export function isPrivateIp(ip: string): boolean {
+  if (net.isIPv4(ip)) {
+    const parts = ip.split('.').map(Number);
+    // 127.0.0.0/8 (Loopback)
+    if (parts[0] === 127) return true;
+    // 10.0.0.0/8 (Private)
+    if (parts[0] === 10) return true;
+    // 172.16.0.0/12 (Private)
+    if (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) return true;
+    // 192.168.0.0/16 (Private)
+    if (parts[0] === 192 && parts[1] === 168) return true;
+    // 169.254.0.0/16 (Link-local / Cloud metadata: AWS, Azure, GCP 169.254.169.254)
+    if (parts[0] === 169 && parts[1] === 254) return true;
+    // 0.0.0.0/8
+    if (parts[0] === 0) return true;
+    return false;
+  }
+  if (net.isIPv6(ip)) {
+    const lower = ip.toLowerCase();
+    // ::1 (Loopback)
+    if (lower === '::1' || lower === '0:0:0:0:0:0:0:1') return true;
+    // fc00::/7 (Unique local)
+    if (lower.startsWith('fc') || lower.startsWith('fd')) return true;
+    // fe80::/10 (Link-local)
+    if (lower.startsWith('fe8') || lower.startsWith('fe9') || lower.startsWith('fea') || lower.startsWith('feb')) return true;
+    return false;
+  }
+  return false;
+}
+
+/**
+ * Xác thực URL chống tấn công SSRF (Server-Side Request Forgery)
+ */
+export async function validateUrlForSsrf(urlString: string): Promise<{ safe: boolean; error?: string }> {
+  try {
+    const parsed = new URL(urlString);
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+      return { safe: false, error: `Giao thức không được phép (${parsed.protocol}). Chỉ chấp nhận http hoặc https.` };
+    }
+
+    const hostname = parsed.hostname;
+    if (!hostname || hostname === 'localhost' || hostname.endsWith('.local') || hostname.endsWith('.internal')) {
+      return { safe: false, error: `Host "${hostname}" không được phép (SSRF protection).` };
+    }
+
+    // Nếu hostname là IP trực tiếp
+    if (net.isIP(hostname)) {
+      if (isPrivateIp(hostname)) {
+        return { safe: false, error: `Địa chỉ IP "${hostname}" thuộc dải mạng nội bộ hoặc link-local (SSRF protection).` };
+      }
+      return { safe: true };
+    }
+
+    // Phân giải DNS kiểm tra dải IP
+    try {
+      const addresses = await dns.promises.lookup(hostname, { all: true });
+      for (const addr of addresses) {
+        if (isPrivateIp(addr.address)) {
+          return { safe: false, error: `Tên miền "${hostname}" phân giải về IP nội bộ (${addr.address}) (SSRF protection).` };
+        }
+      }
+    } catch (dnsErr: any) {
+      return { safe: false, error: `Không thể phân giải tên miền: ${dnsErr.message}` };
+    }
+
+    return { safe: true };
+  } catch (err: any) {
+    return { safe: false, error: `URL không hợp lệ: ${err.message}` };
+  }
+}
+
+/**
+ * Tải và trích xuất PDF từ URL với bảo vệ SSRF & kiểm tra an toàn từng bước chuyển hướng (Redirects)
+ */
+export async function parsePdfFromUrl(initialUrl: string): Promise<PdfParseResult> {
+  try {
+    let currentUrl = initialUrl;
+    let response: any = null;
+    const maxRedirects = 5;
+
+    for (let i = 0; i < maxRedirects; i++) {
+      // 1. Kiểm tra SSRF trước mỗi request
+      const ssrfCheck = await validateUrlForSsrf(currentUrl);
+      if (!ssrfCheck.safe) {
+        return {
+          success: false,
+          pageCount: 0,
+          pages: [],
+          rawText: '',
+          isImagePdf: false,
+          error: `Yêu cầu bị từ chối do chính sách bảo mật SSRF: ${ssrfCheck.error}`
+        };
+      }
+
+      response = await fetch(currentUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Scholar-Extractor/2.0'
+        },
+        redirect: 'manual' // Thủ công xử lý redirect để kiểm tra an toàn URL đích
+      });
+
+      // Kiểm tra HTTP redirect (301, 302, 303, 307, 308)
+      if ([301, 302, 303, 307, 308].includes(response.status)) {
+        const location = response.headers.get('location');
+        if (!location) {
+          return {
+            success: false,
+            pageCount: 0,
+            pages: [],
+            rawText: '',
+            isImagePdf: false,
+            error: `Chuyển hướng HTTP ${response.status} thiếu header Location.`
+          };
+        }
+        currentUrl = new URL(location, currentUrl).toString();
+        continue;
+      }
+
+      break;
+    }
+
+    if (!response || !response.ok) {
       return {
         success: false,
         pageCount: 0,
         pages: [],
         rawText: '',
         isImagePdf: false,
-        error: `Không thể tải tệp PDF từ URL (HTTP ${response.status}: ${response.statusText})`
+        error: `Không thể tải tệp PDF từ URL (HTTP ${response?.status || 'Unknown'}: ${response?.statusText || ''})`
       };
     }
 

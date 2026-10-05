@@ -1,3 +1,5 @@
+import { evaluateProfileScreening } from "./profiles/engine";
+import { ResearchProfile } from "./profiles/types";
 import { evaluateScreeningV1, evaluateScreeningV2, hasQuantitativeTableOrFigure } from "./screening";
 import { EvidenceSnippet, PaperRecord, StructuredTable, TabAnalysisResult, TabExtractedData } from "./types";
 
@@ -121,12 +123,107 @@ export function extractEvidenceFromPages(
   pages: { pageNum: number; text: string }[],
   isPdf: boolean = true,
   structuredTables?: StructuredTable[],
+  profile?: ResearchProfile,
 ): {
   evidence: EvidenceSnippet[];
   warnings: string[];
 } {
   const evidence: EvidenceSnippet[] = [];
   const warnings: string[] = [];
+
+  // Helper detect section
+  const detectSectionLocal = (str: string, pos: number): string => detectSection(str, pos);
+
+  // Truong hop su dung Ho so Nghien cuu rieng (khong phai preset_swt302)
+  if (profile && profile.id !== "preset_swt302") {
+    // 1. Quet bang bieu structuredTables
+    if (structuredTables && structuredTables.length > 0) {
+      for (const tbl of structuredTables) {
+        const combinedText = `${tbl.caption || ""} ${(tbl.headers || []).join(" ")} ${(tbl.cells || []).join(" ")}`;
+        if (
+          /\b(\d+(?:[.,]\d+)?%|p\s*[<=]\s*0\.\d+|N\s*=\s*\d+|M\s*=\s*|SD\s*=\s*|score|sample|participants?)\b/i.test(
+            combinedText,
+          )
+        ) {
+          const anchor = tbl.id ? `#${tbl.id}` : undefined;
+          evidence.push({
+            type: "EVIDENCE_TABLE",
+            term: tbl.caption || (tbl.id ? `Table #${tbl.id}` : "Table"),
+            context: `[Bảng HTML ${tbl.id ? `#${tbl.id}` : ""}${tbl.caption ? `: ${tbl.caption}` : ""}] ${tbl.rawText.slice(0, 260)}...`,
+            page: null,
+            anchor,
+            section: resolveSectionName(tbl.section),
+            isValidEvidence: true,
+            reason: `Bảng dữ liệu định lượng / thực nghiệm của nghiên cứu.`,
+          });
+        }
+      }
+    }
+
+    // 2. Quet noi dung text tung trang theo tieu chi cua profile
+    for (const page of pages) {
+      const text = page.text;
+      const pageNum = page.pageNum;
+
+      const getContextLabel = (matchIdx: number, section: string, anchorTag?: string): string => {
+        if (isPdf) return `[Trang ${pageNum} - ${section}]`;
+        if (anchorTag) return `[${anchorTag} - ${section}]`;
+        return `[Section: ${section}]`;
+      };
+
+      const findNearbyAnchor = (matchIdx: number): string | undefined => {
+        const windowText = text.slice(Math.max(0, matchIdx - 300), Math.min(text.length, matchIdx + 300));
+        const m = windowText.match(/#([a-zA-Z0-9_.-]+)/);
+        return m ? `#${m[1]}` : undefined;
+      };
+
+      for (const criterion of profile.criteria) {
+        const keywords = criterion.parameters?.keywords || [];
+        if (!Array.isArray(keywords) || keywords.length === 0) continue;
+
+        for (const kw of keywords) {
+          if (!kw || typeof kw !== "string") continue;
+          const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const kwRegex = new RegExp(`\\b${escaped}\\b`, "gi");
+          let match: RegExpExecArray | null;
+
+          while ((match = kwRegex.exec(text)) !== null) {
+            const term = match[0];
+            const matchIndex = match.index;
+            const snippetStart = Math.max(0, matchIndex - 60);
+            const snippetEnd = Math.min(text.length, matchIndex + term.length + 80);
+            const context = text.slice(snippetStart, snippetEnd).replace(/\s+/g, " ").trim();
+
+            const section = detectSectionLocal(text, matchIndex);
+            const anchor = findNearbyAnchor(matchIndex);
+            const label = getContextLabel(matchIndex, section, anchor);
+
+            const isReferences = section === "References";
+            evidence.push({
+              type: criterion.id,
+              term,
+              context: `${label} "...${context}..."`,
+              page: isPdf ? pageNum : null,
+              anchor,
+              section,
+              isValidEvidence: !isReferences,
+              reason: isReferences
+                ? `Xuất hiện trong References/Trích dẫn.`
+                : `Khớp tiêu chí [${criterion.id}: ${criterion.label}].`,
+            });
+
+            if (
+              evidence.filter((e) => e.type === criterion.id && e.term.toLowerCase() === term.toLowerCase()).length >= 3
+            ) {
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    return { evidence, warnings };
+  }
 
   let hasValidIci = false;
   let hasValidIce = false;
@@ -404,8 +501,8 @@ export function calculateFieldChanges(
   ];
 
   for (const item of fieldsToCheck) {
-    const oldV = (item.oldVal || "").trim();
-    let newV = (item.newVal || "").trim();
+    const oldV = String(item.oldVal !== undefined && item.oldVal !== null ? item.oldVal : "").trim();
+    let newV = String(item.newVal !== undefined && item.newVal !== null ? item.newVal : "").trim();
 
     // Ca 5: Không thay venue đã xác minh bằng tên nền tảng arXiv hoặc chuỗi rỗng
     if (item.field === "venue") {
@@ -441,7 +538,11 @@ export function calculateFieldChanges(
 /**
  * 5. Phân tích đối chiếu giữa Tab Extracted Data và Paper Record được chọn
  */
-export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtractedData): TabAnalysisResult {
+export function analyzeTabAgainstRecord(
+  record: PaperRecord,
+  tabData: TabExtractedData,
+  profile?: ResearchProfile,
+): TabAnalysisResult {
   const warnings: string[] = [];
 
   // A. Kiểm tra độ tương đồng tiêu đề
@@ -460,7 +561,6 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
   const changes = calculateFieldChanges(record, tabData);
 
   // C. Phân tích bằng chứng từ nội dung các trang hoặc full-text
-  // Chỉ coi là PDF khi method có chứa PDF hoặc có danh sách pages thực từ PDF.js
   const isPdf = Boolean(
     (tabData.method && tabData.method.toLowerCase().includes("pdf")) ||
     (tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0),
@@ -468,7 +568,7 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
 
   const pages = isPdf && tabData.pages ? tabData.pages : tabData.rawText ? [{ pageNum: 1, text: tabData.rawText }] : [];
 
-  const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages, isPdf, tabData.tables);
+  const { evidence, warnings: evidenceWarnings } = extractEvidenceFromPages(pages, isPdf, tabData.tables, profile);
   warnings.push(...evidenceWarnings);
 
   const hasValidIci = evidence.some((e) => e.type === "IC-I" && e.isValidEvidence === true);
@@ -484,7 +584,24 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
   let suggestedScreeningUpdate: TabAnalysisResult["suggestedScreeningUpdate"];
   const fullTextToScan = pages.map((p) => p.text).join("\n") || tabData.rawText || "";
 
-  if (fullTextToScan.trim().length > 100 && tabData.pageCount) {
+  if (profile && profile.id !== "preset_swt302") {
+    const isV2 = Boolean(fullTextToScan.trim().length > 100 && tabData.pageCount);
+    const profileEval = evaluateProfileScreening(profile, record, {
+      stage: isV2 ? "full_text" : "title_abstract",
+      fullText: fullTextToScan,
+      pageCount: tabData.pageCount,
+      isImagePdf: tabData.isImagePdf,
+      tables: tabData.tables,
+    });
+    suggestedScreeningUpdate = {
+      stage: isV2 ? "V2" : "V1",
+      suggestedDecision: profileEval.suggestedDecision,
+      matchedCriteria: profileEval.matchedCriteria,
+      unknownCriteria: profileEval.unknownCriteria,
+      missingEvidence: profileEval.missingEvidence,
+      screeningReason: profileEval.screeningReason,
+    };
+  } else if (fullTextToScan.trim().length > 100 && tabData.pageCount) {
     // Vòng V2
     const screening = evaluateScreeningV2(
       tabData.title || record.title,
@@ -518,65 +635,67 @@ export function analyzeTabAgainstRecord(record: PaperRecord, tabData: TabExtract
     suggestedScreeningUpdate = screening;
   }
 
-  // BẢO VỆ CHẮC CHẮN THEO PROTOCOL:
-  // Nếu bằng chứng IC-I thẩm định không hợp lệ (ví dụ BVA chỉ nằm trong Related Work hoặc chỉ có TSL+input chung):
-  // BẮT BUỘC LOẠI IC-I KHỎI MATCHEDCRITERIA VÀ KHÔNG ĐƯỢC GỢI Ý INCLUDE!
-  if (suggestedScreeningUpdate && !hasValidIci) {
-    suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter((c) => c !== "IC-I");
-    if (!suggestedScreeningUpdate.unknownCriteria.includes("IC-I")) {
-      suggestedScreeningUpdate.unknownCriteria.push("IC-I");
+  // BẢO VỆ CHẮC CHẮN THEO PROTOCOL (CHỈ ÁP DỤNG CHO HỒ SƠ SWT302):
+  if (!profile || profile.id === "preset_swt302") {
+    // Nếu bằng chứng IC-I thẩm định không hợp lệ (ví dụ BVA chỉ nằm trong Related Work hoặc chỉ có TSL+input chung):
+    // BẮT BUỘC LOẠI IC-I KHỎI MATCHEDCRITERIA VÀ KHÔNG ĐƯỢC GỢI Ý INCLUDE!
+    if (suggestedScreeningUpdate && !hasValidIci) {
+      suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter((c) => c !== "IC-I");
+      if (!suggestedScreeningUpdate.unknownCriteria.includes("IC-I")) {
+        suggestedScreeningUpdate.unknownCriteria.push("IC-I");
+      }
+      if (!suggestedScreeningUpdate.missingEvidence.some((m) => m.includes("IC-I"))) {
+        suggestedScreeningUpdate.missingEvidence.push(
+          "Từ khóa kỹ thuật kiểm thử chỉ xuất hiện trong Related Work / References hoặc chưa chứng minh EP/BVA cho tham số request (IC-I)",
+        );
+      }
+      if (suggestedScreeningUpdate.suggestedDecision === "Include") {
+        suggestedScreeningUpdate.suggestedDecision = "Unsure";
+        suggestedScreeningUpdate.screeningReason =
+          "Chưa đạt IC-I: Từ khóa kỹ thuật kiểm thử (EP/BVA/TSL) chỉ nằm trong Related Work / References hoặc chưa có bằng chứng áp dụng cho tham số REST request. Giữ Unsure theo protocol.";
+      }
     }
-    if (!suggestedScreeningUpdate.missingEvidence.some((m) => m.includes("IC-I"))) {
-      suggestedScreeningUpdate.missingEvidence.push(
-        "Từ khóa kỹ thuật kiểm thử chỉ xuất hiện trong Related Work / References hoặc chưa chứng minh EP/BVA cho tham số request (IC-I)",
+
+    if (suggestedScreeningUpdate && !hasValidIce) {
+      suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter((c) => c !== "IC-E");
+      if (!suggestedScreeningUpdate.unknownCriteria.includes("IC-E")) {
+        suggestedScreeningUpdate.unknownCriteria.push("IC-E");
+      }
+      if (suggestedScreeningUpdate.suggestedDecision === "Include") {
+        suggestedScreeningUpdate.suggestedDecision = "Unsure";
+        suggestedScreeningUpdate.screeningReason =
+          "Chưa đạt IC-E: Chưa tìm thấy kết quả định lượng cụ thể trong Table hoặc Figure. Giữ Unsure theo protocol.";
+      }
+    }
+
+    // ĐỒNG BỘ NẾU CÓ BẰNG CHỨNG HỢP LỆ VÀ ĐỦ 6 TIÊU CHÍ IC:
+    if (suggestedScreeningUpdate && hasValidIci) {
+      if (!suggestedScreeningUpdate.matchedCriteria.includes("IC-I")) {
+        suggestedScreeningUpdate.matchedCriteria.push("IC-I");
+      }
+      suggestedScreeningUpdate.unknownCriteria = suggestedScreeningUpdate.unknownCriteria.filter((c) => c !== "IC-I");
+      suggestedScreeningUpdate.missingEvidence = suggestedScreeningUpdate.missingEvidence.filter(
+        (m) => !m.includes("IC-I"),
       );
     }
-    if (suggestedScreeningUpdate.suggestedDecision === "Include") {
-      suggestedScreeningUpdate.suggestedDecision = "Unsure";
+
+    if (suggestedScreeningUpdate && hasValidIce) {
+      if (!suggestedScreeningUpdate.matchedCriteria.includes("IC-E")) {
+        suggestedScreeningUpdate.matchedCriteria.push("IC-E");
+      }
+      suggestedScreeningUpdate.unknownCriteria = suggestedScreeningUpdate.unknownCriteria.filter((c) => c !== "IC-E");
+      suggestedScreeningUpdate.missingEvidence = suggestedScreeningUpdate.missingEvidence.filter(
+        (m) => !m.includes("IC-E"),
+      );
+    }
+
+    const mandatoryCriteria = ["IC-L", "IC-T", "IC-E", "IC-Y", "IC-P", "IC-I"];
+    const allMandatoryMatched = mandatoryCriteria.every((c) => suggestedScreeningUpdate?.matchedCriteria.includes(c));
+    if (suggestedScreeningUpdate && allMandatoryMatched && suggestedScreeningUpdate.unknownCriteria.length === 0) {
+      suggestedScreeningUpdate.suggestedDecision = "Include";
       suggestedScreeningUpdate.screeningReason =
-        "Chưa đạt IC-I: Từ khóa kỹ thuật kiểm thử (EP/BVA/TSL) chỉ nằm trong Related Work / References hoặc chưa có bằng chứng áp dụng cho tham số REST request. Giữ Unsure theo protocol.";
+        "Thỏa mãn toàn bộ 6 tiêu chí IC ở vòng V2 (Full-text: IC-L, IC-T, IC-Y, IC-P, IC-I, IC-E). Không vi phạm tiêu chí EC nào.";
     }
-  }
-
-  if (suggestedScreeningUpdate && !hasValidIce) {
-    suggestedScreeningUpdate.matchedCriteria = suggestedScreeningUpdate.matchedCriteria.filter((c) => c !== "IC-E");
-    if (!suggestedScreeningUpdate.unknownCriteria.includes("IC-E")) {
-      suggestedScreeningUpdate.unknownCriteria.push("IC-E");
-    }
-    if (suggestedScreeningUpdate.suggestedDecision === "Include") {
-      suggestedScreeningUpdate.suggestedDecision = "Unsure";
-      suggestedScreeningUpdate.screeningReason =
-        "Chưa đạt IC-E: Chưa tìm thấy kết quả định lượng cụ thể trong Table hoặc Figure. Giữ Unsure theo protocol.";
-    }
-  }
-
-  // ĐỒNG BỘ NẾU CÓ BẰNG CHỨNG HỢP LỆ VÀ ĐỦ 6 TIÊU CHÍ IC:
-  if (suggestedScreeningUpdate && hasValidIci) {
-    if (!suggestedScreeningUpdate.matchedCriteria.includes("IC-I")) {
-      suggestedScreeningUpdate.matchedCriteria.push("IC-I");
-    }
-    suggestedScreeningUpdate.unknownCriteria = suggestedScreeningUpdate.unknownCriteria.filter((c) => c !== "IC-I");
-    suggestedScreeningUpdate.missingEvidence = suggestedScreeningUpdate.missingEvidence.filter(
-      (m) => !m.includes("IC-I"),
-    );
-  }
-
-  if (suggestedScreeningUpdate && hasValidIce) {
-    if (!suggestedScreeningUpdate.matchedCriteria.includes("IC-E")) {
-      suggestedScreeningUpdate.matchedCriteria.push("IC-E");
-    }
-    suggestedScreeningUpdate.unknownCriteria = suggestedScreeningUpdate.unknownCriteria.filter((c) => c !== "IC-E");
-    suggestedScreeningUpdate.missingEvidence = suggestedScreeningUpdate.missingEvidence.filter(
-      (m) => !m.includes("IC-E"),
-    );
-  }
-
-  const mandatoryCriteria = ["IC-L", "IC-T", "IC-E", "IC-Y", "IC-P", "IC-I"];
-  const allMandatoryMatched = mandatoryCriteria.every((c) => suggestedScreeningUpdate?.matchedCriteria.includes(c));
-  if (suggestedScreeningUpdate && allMandatoryMatched && suggestedScreeningUpdate.unknownCriteria.length === 0) {
-    suggestedScreeningUpdate.suggestedDecision = "Include";
-    suggestedScreeningUpdate.screeningReason =
-      "Thỏa mãn toàn bộ 6 tiêu chí IC ở vòng V2 (Full-text: IC-L, IC-T, IC-Y, IC-P, IC-I, IC-E). Không vi phạm tiêu chí EC nào.";
   }
 
   return {

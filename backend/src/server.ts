@@ -6,11 +6,14 @@ import { config } from './config';
 import { fetchScholarFromSerpApi, getApiRequestsCount } from './scholarService';
 import { deduplicateRecords } from './dedup';
 import { appendSearchLog } from './searchLogger';
-import { exportToCsv, exportScreeningCsv } from './exporter';
+import { exportToCsv, exportScreeningCsv, exportFullScreeningCsv, exportApa7References } from './exporter';
 import { sanitizeObject, sanitizeString } from './sanitizer';
 import { analyzeTabAgainstRecord } from './evidenceAnalyzer';
 import { parsePdfBuffer, parsePdfFromUrl, extractAbstractFromPdfPages } from './pdfService';
+import { BUILTIN_PRESETS, PRESET_GENERIC, validateResearchProfile, ResearchProfile, evaluateProfileScreening } from './profiles';
+import { evaluateScreeningV1 } from './screening';
 import { PaperRecord, TabExtractedData } from './types';
+import { runMigrations, DbRepository, isDbOnline } from './db';
 
 const app = express();
 
@@ -25,8 +28,51 @@ app.get('/api/health', (req: Request, res: Response) => {
     service: 'SerpApi Google Scholar Backend',
     isKeyConfigured: config.isKeyConfigured(),
     totalApiRequestsUsed: getApiRequestsCount(),
+    dbConnected: isDbOnline(),
     timestamp: new Date().toISOString()
   });
+});
+
+// Database status & sync endpoints
+app.get('/api/db/status', async (req: Request, res: Response) => {
+  const stats = await DbRepository.getStats();
+  res.json({
+    success: true,
+    ...stats
+  });
+});
+
+app.post('/api/db/sync', async (req: Request, res: Response) => {
+  try {
+    const { profile, session, records } = req.body as {
+      profile?: ResearchProfile;
+      session?: any;
+      records?: PaperRecord[];
+    };
+
+    if (profile) {
+      await DbRepository.upsertProfile(profile);
+    }
+    if (session && profile) {
+      await DbRepository.saveSession({
+        ...session,
+        researchId: profile.id
+      });
+    }
+    let savedCount = 0;
+    if (records && records.length > 0 && profile) {
+      const dbRes = await DbRepository.upsertPapersAndLinks(records, profile.id, session?.id);
+      savedCount = dbRes.savedCount;
+    }
+
+    res.json({
+      success: true,
+      savedRecords: savedCount,
+      dbConnected: isDbOnline()
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 /**
@@ -65,7 +111,7 @@ export function getSafeOutputPath(
  */
 app.post('/api/scholar/search', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { q, as_ylo, as_yhi, hl, start, num } = req.body;
+    let { q, as_ylo, as_yhi, hl, start, num, profile, researchId } = req.body;
 
     if (!q || typeof q !== 'string') {
       return res.status(400).json({
@@ -73,14 +119,25 @@ app.post('/api/scholar/search', async (req: Request, res: Response, next: NextFu
       });
     }
 
-    const result = await fetchScholarFromSerpApi({
-      q,
-      as_ylo,
-      as_yhi,
-      hl,
-      start,
-      num
-    });
+    if (!profile && researchId) {
+      profile = BUILTIN_PRESETS.find((p) => p.id === researchId);
+    }
+    if (!profile) {
+      profile = PRESET_GENERIC;
+    }
+
+    const result = await fetchScholarFromSerpApi(
+      {
+        q,
+        as_ylo,
+        as_yhi,
+        hl,
+        start,
+        num
+      },
+      undefined,
+      profile
+    );
 
     // Sanitization layer truoc khi tra response cho client
     const sanitizedResponse = sanitizeObject({
@@ -93,6 +150,90 @@ app.post('/api/scholar/search', async (req: Request, res: Response, next: NextFu
     res.json(sanitizedResponse);
   } catch (err: any) {
     next(err);
+  }
+});
+
+/**
+ * POST /api/scholar/rescreen
+ * Tái đánh giá toàn bộ danh sách paper theo hồ sơ nghiên cứu đã chọn
+ */
+app.post('/api/scholar/rescreen', (req: Request, res: Response) => {
+  try {
+    let { records, profile, researchId } = req.body as {
+      records: PaperRecord[];
+      profile?: ResearchProfile;
+      researchId?: string;
+    };
+
+    if (!records || !Array.isArray(records)) {
+      return res.status(400).json({ error: 'Danh sách `records` là bắt buộc.' });
+    }
+
+    if (!profile && researchId) {
+      profile = BUILTIN_PRESETS.find((p) => p.id === researchId);
+    }
+    const activeEvalProfile = profile || PRESET_GENERIC;
+
+    const updatedRecords = records.map((record) => {
+      let matchedCriteria: string[] = [];
+      let unknownCriteria: string[] = [];
+      let missingEvidence: string[] = [];
+      let suggestedDecision: 'Include' | 'Exclude' | 'Unsure' = 'Unsure';
+      let screeningReason = '';
+
+      if (activeEvalProfile.id === 'preset_swt302') {
+        const screening = evaluateScreeningV1(
+          record.title,
+          record.snippet || '',
+          record.abstract || '',
+          record.year,
+          record.venue
+        );
+        matchedCriteria = screening.matchedCriteria;
+        unknownCriteria = screening.unknownCriteria;
+        missingEvidence = screening.missingEvidence;
+        suggestedDecision = screening.suggestedDecision;
+        screeningReason = screening.screeningReason;
+      } else {
+        const pEval = evaluateProfileScreening(
+          activeEvalProfile,
+          {
+            title: record.title,
+            authors: record.authors,
+            year: record.year,
+            venue: record.venue,
+            snippet: record.snippet || '',
+            abstract: record.abstract || '',
+          } as any,
+          { stage: record.abstract ? 'title_abstract' : 'metadata' }
+        );
+        matchedCriteria = pEval.matchedCriteria;
+        unknownCriteria = pEval.unknownCriteria;
+        missingEvidence = pEval.missingEvidence;
+        suggestedDecision = pEval.suggestedDecision;
+        screeningReason = pEval.screeningReason;
+      }
+
+      return {
+        ...record,
+        researchId: activeEvalProfile.id,
+        profileVersion: activeEvalProfile.profileVersion,
+        matchedCriteria,
+        unknownCriteria,
+        missingEvidence,
+        suggestedDecision,
+        screeningReason,
+      };
+    });
+
+    res.json({
+      success: true,
+      records: updatedRecords,
+      total: updatedRecords.length,
+      profileId: activeEvalProfile.id,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
   }
 });
 
@@ -237,15 +378,110 @@ app.post('/api/scholar/export-session', (req: Request, res: Response) => {
 });
 
 /**
+ * GET /api/scholar/presets
+ * Trả về danh sách 3 preset hồ sơ nghiên cứu mẫu
+ */
+app.get('/api/scholar/presets', (req: Request, res: Response) => {
+  res.json({
+    success: true,
+    presets: BUILTIN_PRESETS
+  });
+});
+
+/**
+ * POST /api/scholar/profiles/validate
+ * Kiểm tra tính hợp lệ của ResearchProfile tại runtime
+ */
+app.post('/api/scholar/profiles/validate', (req: Request, res: Response) => {
+  const result = validateResearchProfile(req.body);
+  if (!result.valid) {
+    return res.status(400).json({
+      success: false,
+      errors: result.errors
+    });
+  }
+  res.json({
+    success: true,
+    profile: result.sanitizedProfile
+  });
+});
+
+/**
+ * POST /api/scholar/export-full
+ * Xuất file CSV sàng lọc đầy đủ chuẩn hóa đa nghiên cứu
+ */
+app.post('/api/scholar/export-full', (req: Request, res: Response) => {
+  try {
+    const { records, filename, researchId, profileVersion, sessionId } = req.body;
+    if (!Array.isArray(records)) {
+      return res.status(400).json({ error: 'Tham số `records` phải là mảng.' });
+    }
+
+    const { safePath, error } = getSafeOutputPath(filename, '02_screening_decisions_full.csv');
+    if (error || !safePath) {
+      return res.status(400).json({ error });
+    }
+
+    const exportResult = exportFullScreeningCsv(records, safePath, { researchId, profileVersion, sessionId });
+    if (!exportResult.success) {
+      return res.status(500).json({ error: exportResult.error });
+    }
+
+    res.json({
+      success: true,
+      message: `Đã xuất ${records.length} bản ghi sàng lọc đầy đủ thành công.`,
+      filePath: exportResult.filePath
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/export-apa7
+ * Xuất danh mục trích dẫn chuẩn APA 7th Edition (phân tách bài đầy đủ và bài cần bổ sung)
+ */
+app.post('/api/scholar/export-apa7', (req: Request, res: Response) => {
+  try {
+    const { records, filename } = req.body;
+    if (!Array.isArray(records)) {
+      return res.status(400).json({ error: 'Tham số `records` phải là mảng.' });
+    }
+
+    const { safePath, error } = getSafeOutputPath(filename, '03_references_apa7.txt');
+    if (error || !safePath) {
+      return res.status(400).json({ error });
+    }
+
+    const result = exportApa7References(records, safePath);
+    if (!result.success) {
+      return res.status(500).json({ error: 'Không thể xuất danh mục APA 7.' });
+    }
+
+    res.json({
+      success: true,
+      message: `Đã định dạng ${records.length} bài báo theo chuẩn APA 7 (${result.completeCount} bài đầy đủ, ${result.incompleteCount} bài cần bổ sung).`,
+      filePath: result.filePath,
+      textContent: result.textContent,
+      completeCount: result.completeCount,
+      incompleteCount: result.incompleteCount
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
  * POST /api/scholar/analyze-tab
  * Phân tích đối chiếu metadata và full-text từ trang web/PDF với record đang chọn
  */
 app.post('/api/scholar/analyze-tab', async (req: Request, res: Response) => {
   try {
-    const { record, tabData, autoFetchPdf } = req.body as {
+    const { record, tabData, autoFetchPdf, profile } = req.body as {
       record: PaperRecord;
       tabData: TabExtractedData;
       autoFetchPdf?: boolean;
+      profile?: ResearchProfile;
     };
 
     if (!record || !tabData) {
@@ -276,7 +512,7 @@ app.post('/api/scholar/analyze-tab', async (req: Request, res: Response) => {
       }
     }
 
-    const analysis = analyzeTabAgainstRecord(record, tabData);
+    const analysis = analyzeTabAgainstRecord(record, tabData, profile);
     res.json({
       success: true,
       data: analysis,
@@ -339,6 +575,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 export { app };
 
 if (require.main === module) {
+  runMigrations().catch((err) => console.log('[DB] Migration note:', err.message));
   app.listen(config.port, () => {
     console.log(`[SLR Backend] Đang chạy tại http://localhost:${config.port}`);
     console.log(`[SLR Backend] Trạng thái SERPAPI_KEY: ${config.isKeyConfigured() ? '✓ Đã cấu hình hợp lệ' : '✗ Chưa cấu hình'}`);

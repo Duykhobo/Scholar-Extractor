@@ -1,5 +1,5 @@
 export interface ScholarSearchParams {
-  engine?: 'google_scholar';
+  engine?: "google_scholar";
   q: string;
   as_ylo?: number | string;
   as_yhi?: number | string;
@@ -80,7 +80,7 @@ export interface SerpApiRawResponse {
   error?: string;
 }
 
-export type ScreeningDecision = 'Include' | 'Exclude' | 'Unsure';
+export type ScreeningDecision = "Include" | "Exclude" | "Unsure";
 
 export interface PaperRecord {
   id: string; // generated unique id
@@ -112,13 +112,13 @@ export interface PaperRecord {
   duplicateReason?: string;
 
   // Screening theo tieu chi IC-L/T/E/Y/P/I va EC-D/A/S/N/O
-  screeningStage: 'V1' | 'V2';
+  screeningStage: "V1" | "V2";
   matchedCriteria: string[];
   unknownCriteria?: string[];
   missingEvidence?: string[];
   suggestedDecision: ScreeningDecision;
   screeningReason: string;
-  finalDecision: ScreeningDecision | '';
+  finalDecision: ScreeningDecision | "";
   userNotes: string;
 
   // Provenance & Du lieu bo sung tu tab dang mo / PDF
@@ -129,15 +129,24 @@ export interface PaperRecord {
   evidence_snippets?: EvidenceSnippet[];
   page_count?: number;
   user_verified?: boolean;
+
+  // Mô hình nghiên cứu & Đóng góp học thuật
+  researchId?: string;
+  sessionId?: string;
+  profileVersion?: number;
+  isPdfVerified?: boolean;
+  modelContribution?: string[]; // e.g. ['X', 'M', 'Y', 'H1', 'H2', 'H3', 'H4']
+  conceptLabels?: string[]; // e.g. ['self-confidence (Primary Y)', 'self-esteem', 'self-efficacy']
+  literatureGroup?: "direct" | "supporting" | "foundational" | string;
 }
 
 export interface EvidenceSnippet {
-  type: 'IC-I' | 'IC-E' | 'Other';
+  type: "IC-I" | "IC-E" | "Other" | string;
   term: string;
   context: string;
   page?: number | null;
   anchor?: string;
-  section: 'Methodology' | 'Evaluation' | 'Related Work' | 'References' | 'Unknown' | string;
+  section: "Methodology" | "Evaluation" | "Related Work" | "References" | "Unknown" | string;
   isValidEvidence: boolean;
   reason?: string;
 }
@@ -182,7 +191,7 @@ export interface TabAnalysisResult {
   }[];
   evidence: EvidenceSnippet[];
   suggestedScreeningUpdate?: {
-    stage: 'V1' | 'V2';
+    stage: "V1" | "V2";
     suggestedDecision: ScreeningDecision;
     matchedCriteria: string[];
     unknownCriteria: string[];

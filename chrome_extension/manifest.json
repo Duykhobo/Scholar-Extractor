@@ -1,18 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "SWT302 SLR Metadata Extractor (SerpApi)",
-  "version": "2.0.0",
-  "description": "Thu thập metadata Google Scholar qua SerpApi Backend phục vụ SLR môn SWT302",
-  "permissions": [
-    "activeTab",
-    "storage",
-    "scripting"
-  ],
-  "host_permissions": [
-    "http://localhost:3001/*"
-  ],
+  "name": "Scholar Extractor - Research Document Collection & Screening",
+  "version": "3.0.0",
+  "description": "Công cụ thu thập và sàng lọc tài liệu cho nhiều nghiên cứu khoa học qua Google Scholar Backend",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["http://localhost:3001/*"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "SWT302 Metadata Extractor (SerpApi)"
+    "default_title": "Scholar Extractor"
   }
 }
