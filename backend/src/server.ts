@@ -9,7 +9,7 @@ import { appendSearchLog } from './searchLogger';
 import { exportToCsv, exportScreeningCsv } from './exporter';
 import { sanitizeObject, sanitizeString } from './sanitizer';
 import { analyzeTabAgainstRecord } from './evidenceAnalyzer';
-import { parsePdfBuffer, parsePdfFromUrl } from './pdfService';
+import { parsePdfBuffer, parsePdfFromUrl, extractAbstractFromPdfPages } from './pdfService';
 import { PaperRecord, TabExtractedData } from './types';
 
 const app = express();
@@ -268,6 +268,14 @@ app.post('/api/scholar/analyze-tab', async (req: Request, res: Response) => {
       }
     }
 
+    // Nếu tabData chưa có abstract nhưng có pages, thử trích xuất abstract từ các trang đầu của PDF
+    if ((!tabData.abstract || tabData.abstract.trim().length === 0) && tabData.pages && tabData.pages.length > 0) {
+      const extractedAbs = extractAbstractFromPdfPages(tabData.pages);
+      if (extractedAbs) {
+        tabData.abstract = extractedAbs;
+      }
+    }
+
     const analysis = analyzeTabAgainstRecord(record, tabData);
     res.json({
       success: true,
@@ -300,8 +308,19 @@ app.post('/api/scholar/parse-pdf', async (req: Request, res: Response) => {
       result = await parsePdfFromUrl(url);
     }
 
+    if (!result) {
+      return res.status(500).json({ success: false, error: 'Không thể xử lý tệp PDF.' });
+    }
 
-    res.json(result);
+    let extractedAbstract: string | undefined;
+    if (result.success && result.pages && result.pages.length > 0) {
+      extractedAbstract = extractAbstractFromPdfPages(result.pages);
+    }
+
+    res.json({
+      ...result,
+      extractedAbstract
+    });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

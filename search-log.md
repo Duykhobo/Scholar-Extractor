@@ -174,9 +174,14 @@ Chọn ngẫu nhiên 5 bản ghi trong `01_all_records.csv` để kiểm tra ch�
 - Đối chiếu tiêu đề, năm và DOI giữa bản ghi thu thập và bài báo gốc:
 1. **Tiêu đề:** Combining TSL and LLM to Automate REST API Testing: A Comparative Study
    - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
-   - **Venue:** arXiv preprint arXiv:2509.05540
+   - **Venue đã đối chiếu:** Brazilian Symposium on Software Engineering (SBES) *(bản lưu trữ: arXiv:2509.05540)*
    - **URL gốc:** https://arxiv.org/abs/2509.05540
-   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+   - **Kết quả đối chiếu thực địa & Screening Vòng 2 (Full-text):** [x] Khớp 100% với bài báo gốc
+     - **IC-T:** Đạt (Xuất bản tại SBES - Conference chuyên ngành Software Engineering).
+     - **IC-I:** Đạt (Bằng chứng phương pháp tại **Trang 4** áp dụng Equivalence Partitioning & Boundary-Value Analysis cho các tham số REST API request; một đoạn TSL chưa đủ không phủ nhận bằng chứng EP/BVA hợp lệ này).
+     - **IC-E:** Đạt (Bằng chứng chính tại **Table 3** ở Mục 5: Branch Coverage 71,7%, Mutation Score 68,4%; đính chính Table 2 là bảng mô tả dự án và 33.33% là trọng số tính điểm ở đoạn text bên cạnh).
+     - **Quyết định Vòng 2:** **Include** (thỏa mãn cả 6 tiêu chí IC).
+     - **Luồng PRISMA:** Thuộc 25 bài ứng viên bổ trợ Google Scholar, **chưa/không đưa vào nhánh PRISMA chính**.
 
 2. **Tiêu đề:** SmartSE: An Intelligent Framework for Automated Software Requirement Analysis and Test Case Generation Using Large Language Models
    - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2026 | **DOI:** `N/A (Cần bổ sung)`
@@ -470,9 +475,14 @@ Chọn ngẫu nhiên 5 bản ghi trong `01_all_records.csv` để kiểm tra ch�
 
 5. **Tiêu đề:** Combining TSL and LLM to Automate REST API Testing: A Comparative Study
    - **Nguồn:** Google Scholar (SerpApi - Ứng viên bổ trợ) | **Năm:** 2025 | **DOI:** `N/A (Cần bổ sung)`
-   - **Venue:** arXiv preprint arXiv:2509.05540
+   - **Venue đã đối chiếu:** Brazilian Symposium on Software Engineering (SBES) *(bản lưu trữ: arXiv:2509.05540)*
    - **URL gốc:** https://arxiv.org/abs/2509.05540
-   - **Kết quả đối chiếu:** [ ] Khớp 100% với bài viết gốc trên Google Scholar
+   - **Kết quả đối chiếu thực địa & Screening Vòng 2 (Full-text):** [x] Khớp 100% với bài báo gốc
+     - **IC-T:** Đạt (SBES).
+     - **IC-I:** Đạt (Bằng chứng phương pháp tại **Trang 4**: áp dụng EP/BVA cho tham số REST API request; một đoạn TSL chưa đủ không phủ nhận bằng chứng này).
+     - **IC-E:** Đạt (Bằng chứng chính tại **Table 3** ở Mục 5: 71,7% Branch Coverage, 68,4% Mutation Score; không nhầm với Table 2 mô tả dự án / 33.33% trọng số).
+     - **Quyết định Vòng 2:** **Include** (thỏa mãn đầy đủ 6 tiêu chí IC).
+     - **Luồng PRISMA:** Thuộc 25 bài ứng viên bổ trợ Google Scholar, **chưa/không đưa vào nhánh PRISMA chính**.
 
 ### 3. Phép kiểm chứng 3: Tính tái lập (Reproducibility)
 - [ ] Chạy lại cùng một truy vấn với cùng tham số SerpApi (`as_ylo=2020`, `as_yhi=2026`, `hl=vi`): Kết quả số lượng thu được đồng nhất.

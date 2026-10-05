@@ -135,3 +135,23 @@ export async function parsePdfFromUrl(url: string): Promise<PdfParseResult> {
     };
   }
 }
+
+/**
+ * Trích xuất Abstract từ các trang đầu của PDF nếu có
+ */
+export function extractAbstractFromPdfPages(pages: { pageNum: number; text: string }[]): string | undefined {
+  if (!pages || pages.length === 0) return undefined;
+  for (const page of pages.slice(0, 10)) {
+    const text = page.text;
+    // Bắt đầu bằng Abstract (hoặc Abstract:)
+    const absMatch = text.match(/\bAbstract\b[\s\.:\-_]*([\s\S]{60,3000}?)(?=(?:\b(?:Keywords|Index Terms|Categories|Key\s*words|Resumo|Contents|Table of Contents)\b|(?:\n|\s)\d+\s+[A-Z]|(?:\n|\s)[1-9]\.|$))/i);
+    if (absMatch) {
+      const candidate = absMatch[1].replace(/\s+/g, ' ').trim();
+      if (candidate.length >= 50) {
+        return candidate;
+      }
+    }
+  }
+  return undefined;
+}
+

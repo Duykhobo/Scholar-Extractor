@@ -5,30 +5,28 @@ import path from "path";
 
 import { config } from "../src/config";
 import { cleanDoi, deduplicateRecords } from "../src/dedup";
+import {
+  analyzeTabAgainstRecord,
+  calculateFieldChanges,
+  computeTitleSimilarity,
+  detectSection,
+  extractEvidenceFromPages,
+} from "../src/evidenceAnalyzer";
 import { exportScreeningCsv } from "../src/exporter";
+import { parsePdfBuffer } from "../src/pdfService";
 import { sanitizeObject, sanitizeString } from "../src/sanitizer";
 import { fetchScholarFromSerpApi, validateSearchParams } from "../src/scholarService";
 import {
   evaluateScreeningV1,
   evaluateScreeningV2,
-  hasEpOrBva,
   hasQuantitativeTableOrFigure,
   hasRestApiScope,
   isConferenceOrJournal,
-  isEnglishVerified,
 } from "../src/screening";
 import { appendSearchLog } from "../src/searchLogger";
 import { getSafeOutputPath } from "../src/server";
-import { PaperRecord } from "../src/types";
 import { extractMetadataFromHtml } from "../src/tabExtractor";
-import {
-  computeTitleSimilarity,
-  detectSection,
-  extractEvidenceFromPages,
-  analyzeTabAgainstRecord,
-  calculateFieldChanges
-} from "../src/evidenceAnalyzer";
-import { parsePdfBuffer } from "../src/pdfService";
+import { PaperRecord } from "../src/types";
 
 describe("1. Parameter Validation & Security Gate", () => {
   test("validateSearchParams accepts valid parameters with defaults", () => {
@@ -899,14 +897,14 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Unsure",
       screeningReason: "reason",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     // Tab đang mở là bài báo hoàn toàn khác
     const tabDataDiff = {
       sourceUrl: "https://example.com/other",
       method: "HighWire citation_* Meta",
-      title: "Deep Learning Approaches for Medical Image Segmentation"
+      title: "Deep Learning Approaches for Medical Image Segmentation",
     };
 
     const simDiff = computeTitleSimilarity(tabDataDiff.title, record.title);
@@ -920,7 +918,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     const tabDataMatch = {
       sourceUrl: "https://example.com/same",
       method: "HighWire citation_* Meta",
-      title: "Automated REST API testing via boundary-value analysis."
+      title: "Automated REST API testing via boundary-value analysis.",
     };
     const simMatch = computeTitleSimilarity(tabDataMatch.title, record.title);
     assert.ok(simMatch >= 0.8, `Độ tương đồng phải >= 0.8 (thực tế: ${simMatch})`);
@@ -942,7 +940,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       title: "Scanned Paper",
       isImagePdf: true,
       pageCount: 8,
-      pages: [{ pageNum: 1, text: "Scan image only" }]
+      pages: [{ pageNum: 1, text: "Scan image only" }],
     };
 
     const record: PaperRecord = {
@@ -971,11 +969,14 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Unsure",
       screeningReason: "",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     const analysis = analyzeTabAgainstRecord(record, tabDataImagePdf);
-    assert.ok(analysis.warnings.some(w => w.includes("bản scan") || w.includes("EC-N")), "Cảnh báo không suy diễn EC-N khi PDF scan");
+    assert.ok(
+      analysis.warnings.some((w) => w.includes("bản scan") || w.includes("EC-N")),
+      "Cảnh báo không suy diễn EC-N khi PDF scan",
+    );
     // Quyết định gợi ý không được là Exclude theo EC-N
     if (analysis.suggestedScreeningUpdate) {
       assert.notEqual(analysis.suggestedScreeningUpdate.suggestedDecision, "Exclude");
@@ -1000,14 +1001,18 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     const sectionDetected = detectSection(textRelatedWorkOnly, textRelatedWorkOnly.indexOf("boundary-value analysis"));
     assert.equal(sectionDetected, "Related Work");
 
-    const { evidence, warnings } = extractEvidenceFromPages([
-      { pageNum: 2, text: textRelatedWorkOnly }
-    ]);
+    const { evidence, warnings } = extractEvidenceFromPages([{ pageNum: 2, text: textRelatedWorkOnly }]);
 
-    const iciEvidences = evidence.filter(e => e.type === "IC-I");
+    const iciEvidences = evidence.filter((e) => e.type === "IC-I");
     assert.ok(iciEvidences.length > 0, "Tìm thấy đoạn chứa từ khóa");
-    assert.ok(iciEvidences.every(e => e.isValidEvidence === false), "Tất cả bằng chứng trong Related Work phải isValidEvidence: false");
-    assert.ok(warnings.some(w => w.includes("Related Work")), "Có cảnh báo từ khóa chỉ nằm trong Related Work");
+    assert.ok(
+      iciEvidences.every((e) => e.isValidEvidence === false),
+      "Tất cả bằng chứng trong Related Work phải isValidEvidence: false",
+    );
+    assert.ok(
+      warnings.some((w) => w.includes("Related Work")),
+      "Có cảnh báo từ khóa chỉ nằm trong Related Work",
+    );
 
     // QUAN TRỌNG (Cao #3): Screening phải dùng bằng chứng đã thẩm định, KHÔNG được Include chỉ vì full-text có từ khóa
     const testRecord: PaperRecord = {
@@ -1036,7 +1041,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Unsure",
       screeningReason: "",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     const analysis = analyzeTabAgainstRecord(testRecord, {
@@ -1044,18 +1049,18 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       method: "Web HTML",
       title: "RESTful Service Testing",
       pageCount: 10,
-      pages: [{ pageNum: 2, text: textRelatedWorkOnly }]
+      pages: [{ pageNum: 2, text: textRelatedWorkOnly }],
     });
 
     // Bắt buộc: IC-I không được có trong matchedCriteria và suggestedDecision phải là Unsure
     assert.ok(
       !analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"),
-      "IC-I không được nằm trong matchedCriteria khi BVA chỉ ở Related Work"
+      "IC-I không được nằm trong matchedCriteria khi BVA chỉ ở Related Work",
     );
     assert.equal(
       analysis.suggestedScreeningUpdate?.suggestedDecision,
       "Unsure",
-      "Quyết định screening gợi ý bắt buộc phải là Unsure (không được Include)"
+      "Quyết định screening gợi ý bắt buộc phải là Unsure (không được Include)",
     );
   });
 
@@ -1070,15 +1075,13 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       Table 1 reports 80% coverage on 5 endpoints.
     `;
 
-    const { evidence } = extractEvidenceFromPages([
-      { pageNum: 4, text: textTslInputOnly }
-    ]);
+    const { evidence } = extractEvidenceFromPages([{ pageNum: 4, text: textTslInputOnly }]);
 
-    const tslEv = evidence.filter(e => e.type === "IC-I");
+    const tslEv = evidence.filter((e) => e.type === "IC-I");
     assert.ok(tslEv.length > 0, "Tìm thấy đoạn nhắc TSL");
     assert.ok(
-      tslEv.every(e => e.isValidEvidence === false),
-      "Chỉ có 'TSL + input' chưa đủ để đạt IC-I -> isValidEvidence phải là false"
+      tslEv.every((e) => e.isValidEvidence === false),
+      "Chỉ có 'TSL + input' chưa đủ để đạt IC-I -> isValidEvidence phải là false",
     );
 
     const testRecord: PaperRecord = {
@@ -1107,7 +1110,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Unsure",
       screeningReason: "",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     const analysis = analyzeTabAgainstRecord(testRecord, {
@@ -1115,17 +1118,17 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       method: "Web HTML",
       title: "TSL Input Modeling for Web Services",
       pageCount: 8,
-      pages: [{ pageNum: 4, text: textTslInputOnly }]
+      pages: [{ pageNum: 4, text: textTslInputOnly }],
     });
 
     assert.ok(
       !analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"),
-      "IC-I không được tính đạt khi chỉ có TSL+input"
+      "IC-I không được tính đạt khi chỉ có TSL+input",
     );
     assert.equal(
       analysis.suggestedScreeningUpdate?.suggestedDecision,
       "Unsure",
-      "Screening gợi ý bắt buộc phải là Unsure khi chưa xác minh EP/BVA cho tham số request"
+      "Screening gợi ý bắt buộc phải là Unsure khi chưa xác minh EP/BVA cho tham số request",
     );
   });
 
@@ -1141,21 +1144,18 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       Table 1 reports 85% branch coverage and 14 bugs found across 6 REST API benchmarks.
     `;
 
-
     const epPos = textMethodology.indexOf("equivalence partitioning");
     const bvaPos = textMethodology.indexOf("boundary-value analysis");
 
     assert.equal(detectSection(textMethodology, epPos), "Methodology");
     assert.equal(detectSection(textMethodology, bvaPos), "Methodology");
 
-    const { evidence } = extractEvidenceFromPages([
-      { pageNum: 5, text: textMethodology }
-    ]);
+    const { evidence } = extractEvidenceFromPages([{ pageNum: 5, text: textMethodology }]);
 
-    const validIci = evidence.filter(e => e.type === "IC-I" && e.isValidEvidence === true);
+    const validIci = evidence.filter((e) => e.type === "IC-I" && e.isValidEvidence === true);
     assert.ok(validIci.length >= 2, "Cả EP và BVA trong Methodology đều được công nhận là bằng chứng hợp lệ");
 
-    const validIce = evidence.filter(e => e.type === "IC-E" && e.isValidEvidence === true);
+    const validIce = evidence.filter((e) => e.type === "IC-E" && e.isValidEvidence === true);
     assert.ok(validIce.length >= 1, "Table 1 với số liệu định lượng được công nhận là bằng chứng IC-E");
   });
 
@@ -1172,13 +1172,14 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       We observed that mutation score is higher than random testing, and coverage is improved.
     `;
 
-    const { evidence, warnings } = extractEvidenceFromPages([
-      { pageNum: 3, text: textWithoutTable }
-    ]);
+    const { evidence, warnings } = extractEvidenceFromPages([{ pageNum: 3, text: textWithoutTable }]);
 
-    const hasIce = evidence.some(e => e.type === "IC-E" && e.isValidEvidence === true);
+    const hasIce = evidence.some((e) => e.type === "IC-E" && e.isValidEvidence === true);
     assert.equal(hasIce, false, "Không có Table hoặc Figure với số liệu định lượng");
-    assert.ok(warnings.some(w => w.includes("chưa tìm thấy Table hoặc Figure")), "Cảnh báo chỉ nhắc metric mà thiếu kết quả định lượng");
+    assert.ok(
+      warnings.some((w) => w.includes("chưa tìm thấy Table hoặc Figure")),
+      "Cảnh báo chỉ nhắc metric mà thiếu kết quả định lượng",
+    );
   });
 
   // Scenario 7: Người dùng bấm hủy -> Dữ liệu cũ được giữ nguyên, không mất query/retrieval_date/finalDecision
@@ -1209,7 +1210,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Include",
       screeningReason: "Screening v1 reason",
       finalDecision: "Include",
-      userNotes: "Verified by reviewer on 2026-10-01"
+      userNotes: "Verified by reviewer on 2026-10-01",
     };
 
     // Deep clone trước khi phân tích
@@ -1220,7 +1221,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       method: "HighWire",
       title: "Overwritten New Title",
       doi: "10.9999/new",
-      abstract: "New extracted abstract"
+      abstract: "New extracted abstract",
     });
 
     assert.ok(diff.length > 0, "Tính toán được các trường có thay đổi");
@@ -1237,7 +1238,8 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
   // Scenario 8: Parse tệp PDF hợp lệ dạng Buffer và Uint8Array
   test("Scenario 8: Parse tệp PDF hợp lệ dạng Buffer và Uint8Array trích xuất thành công văn bản số", async () => {
     // Tệp PDF 1.4 hợp lệ tối giản chuẩn
-    const minimalPdfBase64 = "JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9NZWRpYUJveFswIDAgNjEyIDc5Ml0vQ29udGVudHMgNCAwIFIvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSPj4+Pj4+ZW5kb2JqCjQgMCBvYmo8PC9MZW5ndGggNzc+PnN0cmVhbQpCVAovRjEgMTIgVGYKMTAwIDcwMCBUZAooUkVTVCBBUEkgVGVzdGluZyB3aXRoIEJvdW5kYXJ5IFZhbHVlIEFuYWx5c2lzIGFuZCBFcXVpdmFsZW5jZSBQYXJ0aXRpb25pbmcpIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iajw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0hlbHZldGljYT4+ZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDU4IDAwMDAwIG4gCjAwMDAwMDAxMTUgMDAwMDAgbiAKMDAwMDAwMDI0NCAwMDAwMCBuIAowMDAwMDAwMzcyIDAwMDAwIG4gCnRyYWlsZXIKPDwvU2l6ZSA2L1Jvb3QgMSAwIFI+PgpzdGFydHhyZWYKNDQ5CiUlRU9G";
+    const minimalPdfBase64 =
+      "JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9NZWRpYUJveFswIDAgNjEyIDc5Ml0vQ29udGVudHMgNCAwIFIvUmVzb3VyY2VzPDwvRm9udDw8L0YxIDUgMCBSPj4+Pj4+ZW5kb2JqCjQgMCBvYmo8PC9MZW5ndGggNzc+PnN0cmVhbQpCVAovRjEgMTIgVGYKMTAwIDcwMCBUZAooUkVTVCBBUEkgVGVzdGluZyB3aXRoIEJvdW5kYXJ5IFZhbHVlIEFuYWx5c2lzIGFuZCBFcXVpdmFsZW5jZSBQYXJ0aXRpb25pbmcpIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iajw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0hlbHZldGljYT4+ZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDU4IDAwMDAwIG4gCjAwMDAwMDAxMTUgMDAwMDAgbiAKMDAwMDAwMDI0NCAwMDAwMCBuIAowMDAwMDAwMzcyIDAwMDAwIG4gCnRyYWlsZXIKPDwvU2l6ZSA2L1Jvb3QgMSAwIFI+PgpzdGFydHhyZWYKNDQ5CiUlRU9G";
     const pdfBuffer = Buffer.from(minimalPdfBase64, "base64");
 
     // 1. Kiểm tra parse trực tiếp từ Node Buffer
@@ -1246,11 +1248,13 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     assert.equal(resFromBuffer.pageCount, 1, "Số trang phải là 1");
     assert.ok(
       resFromBuffer.rawText.includes("REST API Testing with Boundary Value Analysis"),
-      "Trích xuất đúng chuỗi văn bản trong PDF"
+      "Trích xuất đúng chuỗi văn bản trong PDF",
     );
 
     // 2. Kiểm tra parse từ Uint8Array (chuẩn Web / PDF.js)
-    const uint8 = new Uint8Array(pdfBuffer.buffer.slice(pdfBuffer.byteOffset, pdfBuffer.byteOffset + pdfBuffer.byteLength));
+    const uint8 = new Uint8Array(
+      pdfBuffer.buffer.slice(pdfBuffer.byteOffset, pdfBuffer.byteOffset + pdfBuffer.byteLength),
+    );
     const resFromUint8 = await parsePdfBuffer(uint8);
     assert.equal(resFromUint8.success, true, "Parse Uint8Array phải thành công");
     assert.equal(resFromUint8.pageCount, 1);
@@ -1285,7 +1289,7 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       suggestedDecision: "Unsure",
       screeningReason: "",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     const tabDataExtracted = {
@@ -1296,23 +1300,24 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
       year: "2024",
       venue: "ACM Transactions on Software Engineering and Methodology",
       doi: "10.1145/3597503.3639178",
-      abstract: "We introduce a novel testing approach combining equivalence partitioning and boundary value analysis on REST API request parameters.",
+      abstract:
+        "We introduce a novel testing approach combining equivalence partitioning and boundary value analysis on REST API request parameters.",
       pdfUrl: "https://dl.acm.org/doi/pdf/10.1145/3597503.3639178",
       pageCount: 14,
       pages: [
         {
           pageNum: 1,
-          text: "Automated REST API Testing with Boundary Value Analysis and Equivalence Partitioning. Abstract: We introduce a novel testing approach..."
+          text: "Automated REST API Testing with Boundary Value Analysis and Equivalence Partitioning. Abstract: We introduce a novel testing approach...",
         },
         {
           pageNum: 5,
-          text: "Section 3. Methodology. We apply equivalence partitioning and boundary-value analysis on HTTP request parameters."
+          text: "Section 3. Methodology. We apply equivalence partitioning and boundary-value analysis on HTTP request parameters.",
         },
         {
           pageNum: 11,
-          text: "Section 5. Results. Table 1 reports 88% branch coverage and 25 bugs found."
-        }
-      ]
+          text: "Section 5. Results. Table 1 reports 88% branch coverage and 25 bugs found.",
+        },
+      ],
     };
 
     // Gọi API analyzeTabAgainstRecord
@@ -1324,19 +1329,19 @@ describe("9. Regression Tests: Chức năng Trích xuất Tab đang mở & PDF (
     assert.ok(analysis.changes.length > 0, "Phải có danh sách trường thay đổi (diff)");
 
     // Kiểm tra các trường diff
-    const titleChange = analysis.changes.find(c => c.field === "title");
+    const titleChange = analysis.changes.find((c) => c.field === "title");
     assert.equal(titleChange?.willChange, true);
     assert.equal(titleChange?.newValue, tabDataExtracted.title);
 
-    const doiChange = analysis.changes.find(c => c.field === "doi");
+    const doiChange = analysis.changes.find((c) => c.field === "doi");
     assert.equal(doiChange?.willChange, true);
     assert.equal(doiChange?.newValue, "10.1145/3597503.3639178");
 
     // Kiểm tra bằng chứng IC-I và IC-E
-    const validIci = analysis.evidence.filter(e => e.type === "IC-I" && e.isValidEvidence);
+    const validIci = analysis.evidence.filter((e) => e.type === "IC-I" && e.isValidEvidence);
     assert.ok(validIci.length >= 1, "Có bằng chứng IC-I hợp lệ");
 
-    const validIce = analysis.evidence.filter(e => e.type === "IC-E" && e.isValidEvidence);
+    const validIce = analysis.evidence.filter((e) => e.type === "IC-E" && e.isValidEvidence);
     assert.ok(validIce.length >= 1, "Có bằng chứng IC-E hợp lệ");
 
     // Đạt đủ 6 tiêu chí IC ở vòng V2
@@ -1421,11 +1426,11 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
     assert.ok(!extracted.abstract.startsWith("Abstract."), "Phải loại bỏ tiêu đề Abstract.");
     assert.ok(
       extracted.abstract.includes("The effective execution of tests for REST APIs"),
-      "Phải chứa nội dung đoạn 1"
+      "Phải chứa nội dung đoạn 1",
     );
     assert.ok(
       extracted.abstract.includes("To address these issues, we introduce RestTSLLM"),
-      "Phải chứa nội dung đoạn 2"
+      "Phải chứa nội dung đoạn 2",
     );
   });
 
@@ -1437,7 +1442,7 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
     // Tuyệt đối không chọn link use_permission_hotel_api_.pdf nằm trong nội dung bài
     assert.notEqual(
       extracted.pdfUrl,
-      "https://github.com/uffsoftwaretesting/RestTSLLM/tree/main/pdfs/use_permission_hotel_api_.pdf"
+      "https://github.com/uffsoftwaretesting/RestTSLLM/tree/main/pdfs/use_permission_hotel_api_.pdf",
     );
   });
 
@@ -1446,7 +1451,7 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
 
     // Phải nhận dạng được structured tables
     assert.ok(extracted.tables && extracted.tables.length > 0, "Phải trích xuất được structured tables");
-    const table3 = extracted.tables?.find(t => t.id === "S5.T3" || (t.caption && t.caption.includes("Table 3")));
+    const table3 = extracted.tables?.find((t) => t.id === "S5.T3" || (t.caption && t.caption.includes("Table 3")));
     assert.ok(table3, "Phải tìm thấy Table 3 qua ID hoặc caption");
     assert.ok(table3.cells?.includes("71,7%"), "Cells của Table 3 phải chứa '71,7%'");
     assert.ok(table3.cells?.includes("40,8%"), "Cells của Table 3 phải chứa '40,8%'");
@@ -1455,12 +1460,12 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
     assert.equal(
       hasQuantitativeTableOrFigure(table3.rawText),
       true,
-      "hasQuantitativeTableOrFigure phải nhận được cấu trúc Table 3 với 71,7% và 40,8%"
+      "hasQuantitativeTableOrFigure phải nhận được cấu trúc Table 3 với 71,7% và 40,8%",
     );
     assert.equal(
       hasQuantitativeTableOrFigure(extracted.rawText || ""),
       true,
-      "hasQuantitativeTableOrFigure phải nhận được Table 3 trong rawText"
+      "hasQuantitativeTableOrFigure phải nhận được Table 3 trong rawText",
     );
   });
 
@@ -1471,16 +1476,19 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
     const { evidence } = extractEvidenceFromPages(
       [{ pageNum: 1, text: extracted.rawText || "" }],
       false, // isPdf = false
-      extracted.tables
+      extracted.tables,
     );
 
-    const iceEvidence = evidence.find(e => e.type === "IC-E" && e.isValidEvidence);
+    const iceEvidence = evidence.find((e) => e.type === "IC-E" && e.isValidEvidence);
     assert.ok(iceEvidence, "Phải tìm thấy bằng chứng IC-E từ Table 3");
 
     // QUY TẮC BẮT BUỘC: HTML evidence phải có page=null (hoặc undefined), không được gán page=1 giả tạo
     assert.equal(iceEvidence.page, null, "Bằng chứng từ HTML phải có page=null");
     assert.equal(iceEvidence.anchor, "#S5.T3", "Bằng chứng HTML phải lưu anchor #S5.T3");
-    assert.ok(iceEvidence.section.includes("Evaluation") || iceEvidence.section.includes("Results"), "Section phải là Evaluation/Results");
+    assert.ok(
+      iceEvidence.section.includes("Evaluation") || iceEvidence.section.includes("Results"),
+      "Section phải là Evaluation/Results",
+    );
   });
 
   test("5. Không thay venue đã xác minh bằng tên nền tảng arXiv", () => {
@@ -1492,7 +1500,7 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
       title: "Combining TSL and LLM to Automate REST API Testing: A Comparative Study",
       authors: "Thiago Barradas; Aline Paes; Vânia Neves",
       year: "2025",
-      venue: "ACM Transactions on Software Engineering and Methodology",
+      venue: "Brazilian Symposium on Software Engineering (SBES)",
       doi: "10.1145/3597503.3639178",
       snippet: "",
       abstract: "",
@@ -1511,28 +1519,180 @@ describe("13. Regression Tests: arXiv HTML Extraction (https://arxiv.org/html/25
       suggestedDecision: "Unsure",
       screeningReason: "",
       finalDecision: "",
-      userNotes: ""
+      userNotes: "",
     };
 
     // Trường hợp 1: Dữ liệu tab cố tình trả về venue: "arXiv"
     const changes1 = calculateFieldChanges(verifiedRecord, {
-      venue: "arXiv"
+      venue: "arXiv",
     });
-    const venueChange1 = changes1.find(c => c.field === "venue");
+    const venueChange1 = changes1.find((c) => c.field === "venue");
     assert.equal(venueChange1?.willChange, false, "Không được thay venue đã có bằng arXiv");
-    assert.equal(venueChange1?.newValue, "ACM Transactions on Software Engineering and Methodology");
+    assert.equal(venueChange1?.newValue, "Brazilian Symposium on Software Engineering (SBES)");
 
     // Trường hợp 2: Trích xuất từ HTML arXiv
     const extracted = extractMetadataFromHtml(arxivHtmlSample, arxivUrl);
     assert.equal(extracted.venue, "", "extractMetadataFromHtml không được coi 'arXiv' là venue");
 
     const changes2 = calculateFieldChanges(verifiedRecord, extracted);
-    const venueChange2 = changes2.find(c => c.field === "venue");
+    const venueChange2 = changes2.find((c) => c.field === "venue");
     assert.equal(venueChange2?.willChange, false, "Venue đã xác minh phải được giữ nguyên tuyệt đối");
-    assert.equal(venueChange2?.newValue, "ACM Transactions on Software Engineering and Methodology");
+    assert.equal(venueChange2?.newValue, "Brazilian Symposium on Software Engineering (SBES)");
+  });
+
+  test("6. Table 3 làm bằng chứng chính cho IC-E; một đoạn TSL không đạt không phủ nhận bằng chứng EP/BVA hợp lệ ở trang 4", () => {
+    // 1. Phân biệt Table 2 (chỉ mô tả dự án / trọng số tính điểm 33.33%) vs Table 3 (kết quả thực nghiệm)
+    // 2. Trích xuất bằng chứng với đoạn văn bản chứa cả TSL và EP/BVA hợp lệ ở phương pháp (trang 4)
+    const pages = [
+      {
+        pageNum: 3,
+        text: "Section 3: Background on Test Specification Language (TSL) and Category-Partition method for input parameters.",
+      },
+      {
+        pageNum: 4,
+        text: "Section 4 Method: We apply equivalence partitioning (EP) and boundary-value analysis (BVA) on REST API request parameters.",
+      },
+      {
+        pageNum: 5,
+        text: "Section 5: Table 3 Overall performance evaluation shows Claude 3.5 Sonnet achieved 71.7% branch coverage and 68.4% mutation score.",
+      },
+    ];
+
+    const { evidence } = extractEvidenceFromPages(pages, true);
+
+    // Bằng chứng IC-I: phải có bằng chứng hợp lệ từ trang 4 (EP/BVA)
+    const validIci = evidence.filter((e) => e.type === "IC-I" && e.isValidEvidence);
+    assert.ok(validIci.length >= 1, "Bằng chứng EP/BVA ở trang 4 phải được ghi nhận là hợp lệ cho IC-I");
+
+    // Bằng chứng IC-E: ghi nhận từ Table 3 với kết quả định lượng
+    const validIce = evidence.filter((e) => e.type === "IC-E" && e.isValidEvidence);
+    assert.ok(validIce.length >= 1, "Bằng chứng IC-E phải được ghi nhận từ Table 3");
+
+    // Đánh giá screening: Khi có bằng chứng EP/BVA hợp lệ ở trang 4, đoạn TSL ở trang 3 không phủ nhận kết quả
+    const fullText = pages.map((p) => p.text).join("\n");
+    const screening = evaluateScreeningV2(
+      "Combining TSL and LLM to Automate REST API Testing: A Comparative Study",
+      "Abstract",
+      fullText,
+      "2025",
+      "Brazilian Symposium on Software Engineering (SBES)",
+      { pageCount: 10, hasVerifiedEpBva: true, hasVerifiedTableOrFigure: true },
+    );
+
+    assert.equal(screening.suggestedDecision, "Include", "Đủ 6 tiêu chí IC ở Vòng 2, quyết định gợi ý phải là Include");
+    assert.ok(screening.matchedCriteria.includes("IC-I"), "Phải đạt IC-I");
+    assert.ok(screening.matchedCriteria.includes("IC-E"), "Phải đạt IC-E");
+    assert.ok(screening.matchedCriteria.includes("IC-T"), "Phải đạt IC-T qua venue SBES");
+  });
+
+  test("7. Pipeline hoàn chỉnh: Tự động trích xuất venue SBES từ HTML, loại bỏ Table 2, chọn Table 3, và gợi ý Include", () => {
+    const fullHtmlSample = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta name="citation_title" content="Combining TSL and LLM to Automate REST API Testing: A Comparative Study">
+        <meta name="citation_author" content="Thiago Barradas">
+        <meta name="citation_date" content="2025/09/08">
+        <title>Combining TSL and LLM to Automate REST API Testing: A Comparative Study</title>
+      </head>
+      <body>
+        <div class="ltx_role_header">SBES ’25, September 22–26, 2025, Recife, PE</div>
+        <div class="ltx_abstract"><p>We introduce RestTSLLM to automate REST API testing with LLMs.</p></div>
+
+        <!-- Table 2: Dataset description table - Must be EXCLUDED from IC-E -->
+        <figure class="ltx_table" id="S4.T2">
+          <figcaption>Table 2: Selected Projects Name License .NET Version Endpoints Dependencies Stars Forks Stars + Forks CLOC</figcaption>
+          <table>
+            <thead><tr><th>Name</th><th>License</th><th>Endpoints</th><th>CLOC</th></tr></thead>
+            <tbody><tr><td>hotels-api</td><td>MIT</td><td>14</td><td>2.843</td></tr></tbody>
+          </table>
+        </figure>
+        <p>Weights assigned to metrics: 33.33% each to balance evaluation.</p>
+
+        <!-- Method Section: Valid EP/BVA evidence for IC-I -->
+        <div class="ltx_section" id="S3">
+          <h2>Our approach</h2>
+          <p>We apply boundary testing, equivalence classes on REST API request parameters.</p>
+        </div>
+
+        <!-- Table 3: Experimental evaluation table - Must be IDENTIFIED as IC-E -->
+        <figure class="ltx_table" id="S5.T3">
+          <figcaption>Table 3: Average of the metrics for the tests generated by LLMs</figcaption>
+          <table>
+            <thead><tr><th>Model</th><th>Branch Coverage</th><th>Mutation Score</th></tr></thead>
+            <tbody><tr><td>Claude 3.5 Sonnet</td><td>71,7%</td><td>68,4%</td></tr></tbody>
+          </table>
+        </figure>
+      </body>
+      </html>
+    `;
+
+    // 1. Trích xuất metadata
+    const extracted = extractMetadataFromHtml(fullHtmlSample, arxivUrl);
+    assert.equal(
+      extracted.venue,
+      "Brazilian Symposium on Software Engineering (SBES)",
+      "Phải tự động trích xuất venue SBES từ running head HTML",
+    );
+
+    // 2. Phân tích đối chiếu với bản ghi cũ (vốn có venue arXiv hoặc rỗng)
+    const existingRecord: PaperRecord = {
+      id: "paper-sbes-full",
+      source: "Google Scholar",
+      discoverySource: "Google Scholar",
+      collectionMethod: "SerpApi",
+      title: "Combining TSL and LLM to Automate REST API Testing: A Comparative Study",
+      authors: "Thiago Barradas; Aline Paes; Vânia de Oliveira Neves",
+      year: "2025",
+      venue: "arXiv preprint arXiv:2509.05540",
+      doi: "",
+      snippet: "… REST API testing. Automating test generation can reduce time …",
+      abstract: "",
+      url: arxivUrl,
+      query: "REST API testing",
+      retrieval_date: "2026-10-05",
+      search_id: "s1",
+      user_verified: false,
+      screeningStage: "V1",
+      matchedCriteria: [],
+      suggestedDecision: "Unsure",
+      screeningReason: "",
+      finalDecision: "",
+      userNotes: "",
+    };
+
+    // Chuẩn bị dữ liệu phân tích tab (với pageCount = 11)
+    const tabExtractedData = {
+      ...extracted,
+      pageCount: 11,
+      rawText: fullHtmlSample,
+    };
+
+    const analysis = analyzeTabAgainstRecord(existingRecord, tabExtractedData as any);
+
+    // 3. Kiểm tra bằng chứng IC-E: Table 3 được nhận, Table 2 bị loại
+    const iceList = analysis.evidence.filter((e) => e.type === "IC-E");
+    assert.ok(
+      iceList.some((e) => e.term.includes("Table 3") || e.anchor === "#S5.T3"),
+      "Table 3 phải được ghi nhận là IC-E",
+    );
+    assert.ok(
+      !iceList.some((e) => e.term.includes("Table 2") || e.anchor === "#S4.T2"),
+      "Table 2 (mô tả dự án) KHÔNG được nhận là IC-E",
+    );
+
+    // 4. Kiểm tra bằng chứng IC-I: Trang/Mục phương pháp có boundary testing / equivalence classes
+    const iciList = analysis.evidence.filter((e) => e.type === "IC-I" && e.isValidEvidence);
+    assert.ok(iciList.length >= 1, "Phải có bằng chứng IC-I hợp lệ");
+
+    // 5. Kiểm tra gợi ý V2: Đủ 6 tiêu chí IC (IC-L, IC-T, IC-Y, IC-P, IC-I, IC-E) -> Gợi ý Include
+    assert.equal(
+      analysis.suggestedScreeningUpdate?.suggestedDecision,
+      "Include",
+      "Quyết định gợi ý V2 phải tự động là Include",
+    );
+    assert.ok(analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-T"), "IC-T phải đạt qua venue SBES");
+    assert.ok(analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-I"), "IC-I phải đạt qua EP/BVA");
+    assert.ok(analysis.suggestedScreeningUpdate?.matchedCriteria.includes("IC-E"), "IC-E phải đạt qua Table 3");
   });
 });
-
-
-
-
