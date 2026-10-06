@@ -1,9 +1,88 @@
 import sql from "mssql";
+import { BUILTIN_PRESETS } from "../profiles/presets";
 import { ResearchProfile } from "../profiles/types";
 import { BackgroundJob, PaperRecord } from "../types";
 import { getDbPool } from "./connection";
 
 export class DbRepository {
+  /**
+   * Khoi tao / seed cac preset mac dinh xuong database neu chua co
+   */
+  static async seedBuiltinProfiles(): Promise<number> {
+    const pool = await getDbPool();
+    if (!pool) return 0;
+
+    let count = 0;
+    for (const preset of BUILTIN_PRESETS) {
+      const ok = await this.upsertProfile(preset);
+      if (ok) count++;
+    }
+    return count;
+  }
+
+  /**
+   * Dam bao ho so cha (ResearchProfiles) ton tai truoc khi thuc hien cac thao tac tren bang con
+   */
+  static async ensureProfileExists(
+    researchId: string,
+    profileData?: Partial<ResearchProfile>,
+  ): Promise<boolean> {
+    if (!researchId) return false;
+    const pool = await getDbPool();
+    if (!pool) return false;
+
+    try {
+      const checkReq = pool.request();
+      checkReq.input("id", sql.VarChar(100), researchId);
+      const res = await checkReq.query("SELECT id FROM ResearchProfiles WHERE id = @id;");
+      if (res.recordset && res.recordset.length > 0) {
+        return true;
+      }
+
+      // Neu chua co, tim trong builtin presets
+      const matchedPreset = BUILTIN_PRESETS.find((p) => p.id === researchId);
+      if (matchedPreset) {
+        return await this.upsertProfile(matchedPreset);
+      }
+
+      // Neu co profileData truyen vao
+      if (profileData && profileData.name) {
+        return await this.upsertProfile({
+          id: researchId,
+          name: profileData.name || researchId,
+          description: profileData.description || "",
+          reviewType: profileData.reviewType || "systematic_review",
+          targetIncludedCount: profileData.targetIncludedCount || 20,
+          profileVersion: profileData.profileVersion || 1,
+          ...profileData,
+        } as ResearchProfile);
+      }
+
+      // Neu hoan toan chua co thong tin, tao ho so mac dinh de tranh vi pham khoa ngoai
+      const insertReq = pool.request();
+      insertReq.input("id", sql.VarChar(100), researchId);
+      insertReq.input("name", sql.NVarChar(255), researchId);
+      insertReq.input("description", sql.NVarChar(sql.MAX), "Tự động tạo cho nghiên cứu " + researchId);
+      insertReq.input("reviewType", sql.VarChar(50), "systematic_review");
+      insertReq.input("targetIncludedCount", sql.Int, 20);
+      insertReq.input("profileVersion", sql.Int, 1);
+      insertReq.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify({ id: researchId, name: researchId }));
+
+      await insertReq.query(`
+        MERGE INTO ResearchProfiles AS target
+        USING (SELECT @id AS id) AS src
+        ON (target.id = src.id)
+        WHEN NOT MATCHED THEN
+          INSERT (id, name, description, reviewType, targetIncludedCount, profileVersion, configJson)
+          VALUES (@id, @name, @description, @reviewType, @targetIncludedCount, @profileVersion, @configJson);
+      `);
+      return true;
+    } catch (err: any) {
+      console.warn(`[DB] Khong the ensureProfileExists cho ${researchId}:`, err.message);
+      return false;
+    }
+  }
+
   /**
    * Lưu hoặc cập nhật Hồ sơ Nghiên cứu (ResearchProfile)
    */
@@ -63,6 +142,9 @@ export class DbRepository {
     const pool = await getDbPool();
     if (!pool) return false;
 
+    // Dam bao Profile cha ton tai truoc khi insert vao ResearchSessions
+    await this.ensureProfileExists(session.researchId);
+
     try {
       const req = pool.request();
       req.input("id", sql.VarChar(100), session.id);
@@ -112,6 +194,9 @@ export class DbRepository {
   ): Promise<{ savedCount: number; error?: string }> {
     const pool = await getDbPool();
     if (!pool) return { savedCount: 0, error: "Database offline" };
+
+    // Dam bao Profile cha ton tai truoc khi MERGE vao ResearchPaperLinks
+    await this.ensureProfileExists(researchId);
 
     let saved = 0;
     for (const record of records) {

@@ -31,6 +31,11 @@ export async function runMigrations(): Promise<boolean> {
       console.log(`[DB] Da chay thanh cong migration: ${sqlFile}`);
     }
 
+    // Tu dong seed cac profile mau de tranh loi foreign key constraint
+    const { DbRepository } = await import("./repository");
+    const seeded = await DbRepository.seedBuiltinProfiles();
+    console.log(`[DB] Da seed/dong bo ${seeded} builtin research profiles.`);
+
     return true;
   } catch (err: any) {
     console.error("[DB] Loi khi chay schema migration:", err.message);
