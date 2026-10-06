@@ -1,234 +1,329 @@
-# SỔ TAY HƯỚNG DẪN SỬ DỤNG HỆ THỐNG SCHOLAR EXTRACTOR
-## Quy Trình Vận Hành Tổng Quan Tài Liệu Khoa Học (SLR) Theo Chuẩn PRISMA 2020
+# SỔ TAY HƯỚNG DẪN SỬ DỤNG SCHOLAR EXTRACTOR (WIZARD 6 BƯỚC)
+## Nền Tảng Hỗ Trợ Tổng Quan Tài Liệu Khoa Học (SLR) Theo Chuẩn PRISMA 2020
 
 ---
 
 ## 📌 MỤC LỤC
-1. [Chuẩn Bị Môi Trường & Khởi Động](#1-chuẩn-bị-môi-trường--khởi-động)
-2. [Quy Trình 6 Bước Vận Hành Pipeline PRISMA 2020](#2-quy-trình-6-bước-vận-hành-pipeline-prisma-2020)
-   - [Bước 1: Thiết lập Hồ sơ Nghiên cứu & Quản lý PICO](#bước-1-thiết-lập-hồ-sơ-nghiên-cứu--quản-lý-pico)
-   - [Bước 2: Giai đoạn B1 - Thu thập Dữ liệu Thô (Identification)](#bước-2-giai-đoạn-b1---thu-thập-dữ-liệu-thô-identification)
-   - [Bước 3: Giai đoạn V1 - Khử Trùng Lặp (Deduplication)](#bước-3-giai-đoạn-v1---khử-trùng-lặp-deduplication)
-   - [Bước 4: Giai đoạn V2 - Sàng lọc Tiêu đề & Tóm tắt (Title & Abstract Screening)](#bước-4-giai-đoạn-v2---sàng-lọc-tiêu-đề--tóm-tắt-title--abstract-screening)
-   - [Bước 5: Giai đoạn V3 - Truy xuất Toàn văn & Đánh giá Tư cách (Full-Text Retrieval & Eligibility)](#bước-5-giai-đoạn-v3---truy-xuất-toàn-văn--đánh-giá-tư-cách-full-text-retrieval--eligibility)
-   - [Bước 6: Giai đoạn FINAL - Tổng kết Bài báo Đưa vào Tổng quan (Included Studies)](#bước-6-giai-đoạn-final---tổng-kết-bài-báo-đưa-vào-tổng-quan-included-studies)
-3. [Điều Khiển Tiến Trình Nền (Background Jobs) & Khôi Phục Dữ Liệu](#3-điều-khiển-tiến-trình-nền-background-jobs--khôi-phục-dữ-liệu)
-4. [Sinh Sơ Đồ PRISMA 2020 & Kiểm Chứng Nhật Ký Tìm Kiếm](#4-sinh-sơ-đồ-prisma-2020--kiểm-chứng-nhật-ký-tìm-kiếm)
-5. [Xuất Dữ Liệu Báo Cáo & Danh Mục Trích Dẫn APA 7](#5-xuất-dữ-liệu-báo-cáo--danh-mục-trích-dẫn-apa-7)
-6. [Các Tình Huống Xử Lý Sự Cố (FAQ)](#6-các-tình-huống-xử-lý-sự-cố-faq)
+1. [Giới Thiệu Luồng Sử Dụng Mới: Wizard Có Hướng Dẫn Từng Bước](#1-giới-thiệu-luồng-sử-dụng-mới-wizard-có-hướng-dẫn-từng-bước)
+2. [Thẻ Thông Tin Bước Hợp Nhất (Step Header Card)](#2-thẻ-thông-tin-bước-hợp-nhất-step-header-card)
+3. [Quy Trình 6 Bước Vận Hành Chi Tiết](#3-quy-trình-6-bước-vận-hành-chi-tiết)
+   - [Bước 0 — Thiết lập Nghiên cứu & Protocol (SETUP)](#bước-0--thiết-lập-nghiên-cứu--protocol-setup)
+   - [Bước B1 — Thu thập Bài báo (Identification)](#bước-b1--thu-thập-bài-báo-identification)
+   - [Bước V1 — Kiểm tra Trùng lặp (Deduplication)](#bước-v1--kiểm-tra-trùng-lặp-deduplication)
+   - [Bước V2 — Sàng lọc Tiêu đề & Tóm tắt (Screening)](#bước-v2--sàng-lọc-tiêu-đề--tóm-tắt-screening)
+   - [Bước V3 — Tìm & Thẩm định Toàn văn (Eligibility)](#bước-v3--tìm--thẩm-định-toàn-văn-eligibility)
+   - [Bước FINAL — Chốt Danh Sách & Xuất Báo Cáo PRISMA 2020](#bước-final--chốt-danh-sách--xuất-báo-cáo-prisma-2020)
+4. [Bảng Tra Cứu Thao Tác Cho Mọi Tình Huống Đặc Biệt](#4-bảng-tra-cứu-thao-tác-cho-mọi-tình-huống-đặc-biệt)
+5. [Sơ Đồ Luồng Pipeline & Sơ Đồ Quản Trị Đổi Protocol](#5-sơ-đồ-luồng-pipeline--sơ-đồ-quản-trị-đổi-protocol)
+6. [Quản Lý Tiến Trình Nền & Phục Hồi Khi Đóng/Mở Extension](#6-quản-lý-tiến-trình-nền--phục-hồi-khi-đóngmở-extension)
+7. [Danh Mục 9 Tệp Dữ Liệu Xuất Bản Chuẩn Học Thuật](#7-danh-mục-9-tệp-dữ-liệu-xuất-bản-chuẩn-học-thuật)
+8. [Cài Đặt & Khởi Động Hệ Thống](#8-cài-đặt--khởi-động-hệ-thống)
 
 ---
 
-## 1. Chuẩn Bị Môi Trường & Khởi Động
+## 1. Giới Thiệu Luồng Sử Dụng Mới: Wizard Có Hướng Dẫn Từng Bước
 
-### 1.1. Khởi động Backend Server
-1. Mở PowerShell hoặc Terminal tại thư mục `backend`:
-   ```powershell
-   cd backend
-   npm install
-   npm start
-   ```
-2. Quan sát log trên màn hình terminal:
-   - Nếu bạn có cài SQL Server:  
-     `[DB] Ket noi thanh cong toi SQL Server: localhost/ScholarExtractorDB`
-   - Nếu chưa cấu hình SQL Server:  
-     `[DB] SQL Server chua duoc cau hinh trong .env. Chay o che do Local Fallback.`  
-     *(Hệ thống vẫn chạy đầy đủ tính năng bằng bộ nhớ RAM và Snapshot tệp JSON cục bộ mà không gặp bất kỳ lỗi nào)*.
-3. Địa chỉ máy chủ API mặc định: `http://localhost:3001`.
+Phiên bản mới của **Scholar Extractor** đã được chuyển đổi hoàn toàn từ giao diện nhiều tab độc lập sang **Quy trình Wizard 6 bước tuyến tính có hướng dẫn**:
 
-### 1.2. Mở Chrome Extension
-1. Mở Google Chrome hoặc Microsoft Edge, gõ vào thanh địa chỉ: `chrome://extensions/`.
-2. Bật công tắc **Developer mode** ở góc trên bên phải.
-3. Nhấp **Load unpacked** và chọn thư mục: `chrome_extension`.
-4. Bấm vào biểu tượng **Scholar Extractor** trên thanh tiện ích để mở cửa sổ giao diện.
+```text
+[0. Thiết lập] ➔ [B1. Thu thập] ➔ [V1. Bỏ trùng] ➔ [V2. Tiêu đề & Tóm tắt] ➔ [V3. Toàn văn] ➔ [✓. Chốt & Xuất]
+```
+
+### Các nguyên tắc giao diện then chốt:
+1. **Toàn bộ bằng Tiếng Việt**: Ngôn từ chuẩn xác, gần gũi với sinh viên và nghiên cứu viên thực hiện Systematic Literature Review (SLR).
+2. **Không gây hoang mang nút bấm**: Thay vì nút chung *"Chạy Giai Đoạn Hiện Tại"*, mỗi bước hiển thị **Một nút hành động chính (Primary Action Button)** với tên cụ thể và biểu tượng rõ ràng.
+3. **Phân định rạch ròi 4 thành phần**:
+   - 🤖 **Gợi ý tự động của tool**: Luôn hiển thị lý do chấm điểm; không tự động biến thành quyết định thủ công của người dùng.
+   - 👤 **Quyết định của người dùng**: Bảo lưu nguyên vẹn, chỉnh sửa ghi chú không bao giờ làm mất hay thay đổi quyết định đã chọn.
+   - 📄 **Trạng thái tài liệu**: Phân biệt rành mạch *"Đang tìm"*, *"Đã tải PDF"*, *"Chưa tìm thấy"*, *"Lỗi mạng"* với *"Đã thẩm định chuyên sâu"*. Thiếu toàn văn KHÔNG tự động đồng nghĩa với loại trừ!
+   - 🏁 **Trạng thái hoàn tất**: Hiển thị rõ số lượng bài Chưa xử lý, Chờ xác nhận và Đã hoàn tất ở mỗi vòng.
+4. **Bảo tồn dữ liệu khi quay lại bước trước**: Người dùng hoàn toàn tự do bấm vào các nút stepper để xem lại dữ liệu các bước trước đó mà không làm mất trạng thái làm việc.
 
 ---
 
-## 2. Quy Trình 6 Bước Vận Hành Pipeline PRISMA 2020
+## 2. Thẻ Thông Tin Bước Hợp Nhất (Step Header Card)
 
-Dưới đây là trình tự các bước thao tác chuẩn để hoàn thành một tổng quan tài liệu khoa học:
+Ở trên cùng của mọi màn hình làm việc (luôn hiển thị), thẻ **Step Header Card** cung cấp đầy đủ ngữ cảnh:
 
+- **Tên nghiên cứu & Phiên bản Protocol**: Ví dụ: `SWT302 REST API` | `v1.0`.
+- **🎯 Mục tiêu của bước**: Mô tả ngắn gọn nhiệm vụ trọng tâm của bước hiện tại.
+- **🔄 Luồng Dữ liệu (I/O)**: Nêu rõ dữ liệu đầu vào và kết quả đầu ra mong đợi.
+- **Thanh 4 chỉ số tiến độ**:
+  - 🟡 **Chưa xử lý (Pending)**: Số bài báo hoặc tác vụ còn đang chờ thực hiện.
+  - 🔵 **Chờ xác nhận (Review / Unsure)**: Số bài cần người nghiên cứu trực tiếp xem xét hoặc các bài có độ nghi ngờ.
+  - 🟢 **Đã hoàn tất (Completed)**: Số bản ghi đã phân loại xong trong bước hiện tại.
+  - 🟣 **Mục tiêu Include**: Tỉ lệ hoàn thành mục tiêu số bài đưa vào tổng quan (ví dụ: `12 / 15 bài`). *Lưu ý: Chỉ số này dùng để theo dõi tiến độ, hệ thống tuyệt đối không tự ý ép Include/Exclude để đạt chỉ tiêu.*
+- **Nút hành động chính (Primary Button)**: Tự động đổi tên và hành động tương ứng với bước đang làm việc.
+- **📋 Điều kiện để tiếp tục**: Điều kiện bắt buộc để có thể chuyển sang bước sau.
+- **👉 Hướng dẫn bước tiếp theo**: Chỉ dẫn cụ thể thao tác tiếp theo.
+- **Nút "ℹ️ Hướng dẫn bước này"**: Mở hộp thoại giải đáp tức thì 6 câu hỏi chuẩn tắc về bước hiện tại.
+
+---
+
+## 3. Quy Trình 6 Bước Vận Hành Chi Tiết
+
+### Bước 0 — Thiết lập Nghiên cứu & Protocol (SETUP)
+
+#### A. Khi bắt đầu:
+Người dùng chọn 1 trong 3 chế độ:
+1. **➕ Tạo nghiên cứu mới**: Khai báo đề tài, RQ, khung PICO và tiêu chí từ đầu.
+2. **📁 Tiếp tục nghiên cứu**: Chọn một hồ sơ đề tài đã lưu từ danh sách thả xuống.
+3. **📥 Nhập bản sao lưu**: Phục hồi toàn bộ trạng thái làm việc từ tệp `session_backup.json`.
+
+#### B. Khai báo Đề tài & Khung Phân Tích:
+- **Tên đề tài & Mô tả**: Nhập tên môn học, phạm vi nghiên cứu.
+- **Câu hỏi RQ (Research Questions)**: Mỗi dòng 1 câu hỏi (ví dụ: `RQ1: Các kỹ thuật kiểm thử tự động nào dựa trên EP/BVA?`).
+- **Khung phân tích (Framework)**:
+  - Cho phép chọn: `PICO`, `PICOS`, `SPIDER` hoặc `Custom`.
+  - Hỗ trợ đánh dấu **N/A (Không áp dụng)** cho từng trường (ví dụ: trong ngành Công nghệ phần mềm, trường Comparison $C$ thường là N/A).
+- **Bộ lọc & Tiêu chí Lựa chọn**:
+  - Khung năm xuất bản (ví dụ: `2020` đến `2026`).
+  - Ngôn ngữ (ví dụ: `English, Tiếng Việt`).
+  - Số trang tối thiểu: Mặc định `4` trang (bài dưới 4 trang bị loại theo tiêu chí `EC-S`).
+  - Từ khóa bắt buộc (Inclusion Keywords) & Từ khóa loại trừ (Exclusion Keywords).
+  - Mục tiêu số bài đưa vào Tổng quan (`Target Included Count`).
+- **Bảng Trạng Thái Nguồn Thực Tế**:
+  - Hiển thị tình trạng hoạt động thực tế của OpenAlex (Miễn phí), Semantic Scholar, Google Scholar (SerpApi), và Nhập tệp ngoại vi.
+  - Ưu tiên phương án miễn phí, không tự ý chuyển sang dịch vụ tính phí.
+- **Xem trước bản tổng hợp (Summary Preview)**: Hệ thống tự động tạo bản tóm tắt protocol trước khi lưu.
+
+👉 **Nút chính**: `💾 Lưu thiết lập & Sang thu thập`  
+👉 **Điều kiện đi tiếp**: Đã nhập tên đề tài, ít nhất 1 câu hỏi RQ và từ khóa chính.
+
+---
+
+### Bước B1 — Thu thập Bài báo (Identification)
+
+#### A. Cấu hình & Chạy Thu Thập:
+1. **Chọn nguồn thu thập**:
+   - `OpenAlex` (Mặc định — Miễn phí, đầy đủ tính năng phân trang cursor).
+   - `Semantic Scholar` (Nguồn bổ trợ, tự động fallback nếu không có API key).
+   - `Google Scholar` (SerpApi — Thu thập bài ứng viên bổ trợ).
+   - `Nhập tệp ngoại vi` (Hỗ trợ CSV, BibTeX `.bib`, RIS `.ris` theo khả năng parser thực tế).
+2. **Chọn chuỗi truy vấn**:
+   - Bấm vào một trong các chuỗi gợi ý bên dưới ô tìm kiếm (sinh từ PICO và từ khóa protocol).
+   - Hoặc tự nhập chuỗi tìm kiếm nguyên văn.
+3. **Thực thi**:
+   - Bấm **`🔍 Bắt đầu thu thập bài báo`**.
+   - Có thể bấm **`🎯 Thêm bài seed / DOI`** để nạp trực tiếp bài báo hạt giống.
+   - Hoặc bấm **`❄️ Snowballing`** để truy vết trích dẫn ngược (References) hoặc xuôi (Citations).
+
+#### B. Trong lúc thu thập & Quản lý Tiến trình nền:
+- Thanh tiến trình hiển thị rõ nguồn, truy vấn đang xử lý, số trang và số bản ghi đã nhận.
+- Hỗ trợ các nút: **`⏸ Tạm dừng`**, **`▶ Tiếp tục`**, **`⏹ Hủy tác vụ`**.
+- *Ghi chú quan trọng*: Tác vụ chạy trên backend Node.js độc lập; tiến trình vẫn tiếp tục ngay cả khi bạn đóng popup hoặc chuyển tab.
+
+#### C. Khi hoàn tất:
+- Hiển thị bảng tổng kết số bản ghi theo từng nguồn và các lượt lỗi nếu có.
+- Có các nút hỗ trợ: **`🔄 Chạy lại phần lỗi`** và **`➕ Thu thập thêm`** (thu thập thêm bảo toàn dữ liệu cũ, không tính bản ghi đã có thành phát hiện mới).
+
+👉 **Nút chính**: `🔍 Bắt đầu thu thập bài báo`  
+👉 **Nút tiếp theo**: `➡️ Sang kiểm tra trùng lặp (V1)`  
+👉 **Điều kiện đi tiếp**: Có ít nhất 1 bài báo hợp lệ trong tập dữ liệu B1.
+
+---
+
+### Bước V1 — Kiểm tra Trùng lặp (Deduplication)
+
+#### A. Hiển thị 4 Thẻ Số Liệu:
+- **Tổng bản ghi thô**: Toàn bộ bài báo nhận được từ B1.
+- **Trùng chắc chắn (DOI)**: Số bài trùng tuyệt đối mã DOI đã được tự động loại bỏ.
+- **Nghi trùng cần duyệt**: Số cặp bài báo có độ tương đồng tiêu đề cao ($> 88\%$) nhưng khác DOI hoặc chưa có DOI.
+- **Bản ghi duy nhất**: Số bài báo còn lại sau khi xử lý.
+
+#### B. Xem xét Nhóm Nghi Trùng Cạnh Nhau (Side-by-Side):
+Với mỗi cặp bài báo nghi trùng, giao diện hiển thị 2 cột cạnh nhau gồm Tiêu đề, Tác giả, Năm, Venue, DOI và Nguồn gốc:
+- Bấm **`🔗 Gộp bản ghi`**: Gộp bản ghi B vào bản ghi chính A, bổ sung nguồn gốc vào danh sách provenance. **Tuyệt đối không xóa vĩnh viễn dữ liệu gốc**.
+- Bấm **`⚖️ Giữ riêng`**: Xác nhận 2 bài này là hai nghiên cứu độc lập khác nhau, giữ nguyên cả 2.
+- Bấm **`👁️ Xem nguồn`**: Xem chi tiết nguồn của từng bài.
+- Cho phép **Hoàn tác gộp (Unmerge)** bất cứ lúc nào để khôi phục trạng thái ban đầu.
+
+👉 **Nút chính**: `✨ Kiểm tra trùng lặp (Chạy Dedup)`  
+👉 **Nút tiếp theo**: `✓ Xác nhận kết quả bỏ trùng & sang V2 ➔`  
+👉 **Điều kiện đi tiếp**: Tất cả các cặp nghi trùng đã được xử lý (gộp hoặc giữ riêng).
+
+---
+
+### Bước V2 — Sàng lọc Tiêu đề & Tóm tắt (Screening)
+
+#### A. Thông tin hiển thị tinh gọn:
+Chỉ hiển thị các thông tin cần thiết cho vòng này: Tiêu đề, Tác giả, Năm, Venue, DOI, Tóm tắt trích xuất (Abstract) và Huy hiệu tiêu chí đối chiếu.
+
+#### B. Ba quyết định duy nhất tại V2:
+Với mỗi bài báo, người nghiên cứu đưa ra 1 trong 3 quyết định:
+1. **`✓ Qua vòng toàn văn`** $\rightarrow$ Gán trạng thái `PassToFullText`.
+2. **`✗ Loại ở V2`** $\rightarrow$ Gán trạng thái `Exclude`, kèm hộp thoại nhập lý do loại trừ (ví dụ: *EC1: Không liên quan đến kiểm thử tự động*).
+3. **`? Chưa rõ`** $\rightarrow$ Gán trạng thái `Unsure`.
+
+> ⚠️ **Quy tắc liêm chính học thuật**: Tuyệt đối **KHÔNG dùng nhãn "Include cuối cùng"** tại V2! Các bài qua vòng V2 chỉ mới đạt điều kiện đọc toàn văn ở V3.  
+> Gợi ý tự động của hệ thống (⚡ Tự động quét & Sàng lọc) chỉ đóng vai trò khuyến nghị khoa học, không tự ý biến thành quyết định thủ công của người dùng.
+
+#### C. Thanh lọc Pills:
+- `Tất cả` | `Chưa xem` | `Qua vòng toàn văn` | `Đã loại` | `Chưa rõ`.
+
+#### D. Xử lý bài báo Unsure:
+Nếu còn bài báo ở trạng thái `Unsure`, hộp thoại hướng dẫn xuất hiện với 2 phương án:
+- **Tiếp tục xem lại ở V2**: Lọc lại các bài Unsure để đọc kỹ abstract.
+- **Đưa bài Unsure sang V3 để kiểm tra toàn văn**: Cho phép chuyển các bài chưa rõ sang V3 để đọc bản PDF toàn văn mà **không ép người dùng phải loại bài chỉ để đi tiếp**.
+
+👉 **Nút chính**: `⚡ Tự động quét & Sàng lọc`  
+👉 **Nút tiếp theo**: `✓ Xác nhận danh sách sang V3 ➔`  
+👉 **Điều kiện đi tiếp**: Không còn bài báo nào ở trạng thái Chưa xem.
+
+---
+
+### Bước V3 — Tìm & Thẩm định Toàn văn (Eligibility)
+
+Bước này được phân định rõ thành 2 công việc nối tiếp nhau:
+
+#### Phân hệ A: Thu thập Toàn văn (Document Retrieval)
+- Bấm **`📑 Tìm toàn văn cho các bài đã chọn`**: Hệ thống tự động tra cứu Unpaywall và kho mở Open Access để tìm link tải PDF.
+- Hiển thị riêng biệt các trạng thái:
+  - 🔄 **Đang tìm kiếm**: Hệ thống đang gửi yêu cầu kiểm tra.
+  - 🟢 **Đã tải PDF**: Đã có tệp PDF và tự động đếm số trang thực tế.
+  - ⚪ **Chưa tìm thấy PDF**: Không có bản Open Access công khai.
+  - 🔴 **Lỗi mạng**: Lỗi kết nối tạm thời, có nút **Thử tải lại**.
+  - 🟡 **Paywall**: Cần truy cập qua tài khoản trường/tổ chức. *(Lưu ý: Không suy đoán paywall chỉ từ tên miền IEEE/ACM/Springer)*.
+- Hỗ trợ tải thủ công:
+  - **`📁 Tải file PDF từ máy`**: Gắn trực tiếp tệp PDF tải từ thư viện trường vào bài báo.
+  - **`📑 Lấy từ Tab đang mở`**: Trích xuất nội dung bài báo từ tab trình duyệt đang mở.
+- *Nguyên tắc cốt lõi*: **Thiếu toàn văn KHÔNG tự động đồng nghĩa với Loại trừ (Exclude)**.
+
+#### Phân hệ B: Đọc & Thẩm định Tư cách Toàn văn (Eligibility Assessment)
+- Đọc bài báo và đối chiếu với tiêu chí protocol:
+  - Kiểm tra số trang: Bắt buộc $\ge 4$ trang. Bài dưới 4 trang bị loại theo `EC-S`.
+  - Trích xuất đoạn văn bằng chứng phương pháp (Evidence snippet), số trang và vị trí trích dẫn.
+  - Phân biệt rõ giữa *"Đã tải PDF"* với *"Đã thẩm định"*.
+- Ba nút quyết định thẩm định:
+  - **`✓ Đạt tiêu chí toàn văn`** $\rightarrow$ Gán `finalDecision = "Include"`.
+  - **`✗ Loại ở V3`** $\rightarrow$ Gán `finalDecision = "Exclude"` kèm lý do cụ thể (ví dụ: *Dưới 4 trang*, *Thiếu thực nghiệm định lượng*).
+  - **`? Cần bổ sung bằng chứng`** $\rightarrow$ Gán `finalDecision = "Unsure"`.
+- Nhập ghi chú thẩm định vào ô **Ghi chú**: Lưu tự động từng phần, an toàn tuyệt đối, không làm thay đổi quyết định đã chọn.
+
+👉 **Nút chính**: `📑 Tìm toàn văn cho các bài đã chọn`  
+👉 **Nút tiếp theo**: `✓ Xác nhận danh sách sang Chốt & Xuất ➔`  
+👉 **Điều kiện đi tiếp**: Các bài muốn chọn vào nghiên cứu phải có toàn văn và trích dẫn bằng chứng phương pháp.
+
+---
+
+### Bước FINAL — Chốt Danh Sách & Xuất Báo Cáo PRISMA 2020
+
+#### A. Bảng Đối Soát Tính Toàn Vẹn PRISMA:
+Trước khi xuất báo cáo, hệ thống đối soát tự động 5 tiêu chí:
+1. 🟢 **Đủ điều kiện chốt Include**: Đã duyệt Include + có toàn văn + $\ge 4$ trang + có bằng chứng.
+2. 🟡 **Chưa có quyết định cuối**: Các bài còn đang bỏ ngỏ ở V3.
+3. 🟡 **Chưa lấy được toàn văn**: Các bài Include nhưng chưa có PDF đính kèm.
+4. 🟡 **Thiếu bằng chứng phương pháp**: Các bài Include nhưng chưa có trích dẫn minh chứng.
+5. 🔴 **Quyết định thuộc protocol cũ**: Các bài có quyết định thuộc phiên bản protocol cũ cần thẩm định lại.
+
+#### B. Sơ Đồ Luồng PRISMA 2020 Cân Bằng Số Học:
+Bấm **`📊 Xem Sơ Đồ Luồng PRISMA 2020 (Đối soát)`** để mở hộp thoại ma trận 5 giai đoạn:
+- Phân biệt minh bạch kết quả **Tạm thời [INTERIM]** (khi còn bài chưa thẩm định hoặc thuộc protocol cũ) với kết quả **Hoàn tất [COMPLETE]**.
+- Cân bằng số học tuyệt đối:
+  $$\text{Tổng nhận diện (B1)} - \text{Trùng lặp (V1)} - \text{Loại tại V2} - \text{Loại tại V3} = \text{Final Included}$$
+- Mọi con số đều có thể nhấp chuột (**Clickable Drilldown**) để xem danh sách bài báo tương ứng.
+
+#### C. Xuất Dữ Liệu 9 Định Dạng Học Thuật:
+Mỗi lựa chọn xuất có mô tả nội dung chi tiết, định dạng UTF-8 BOM và nhãn phiên bản rõ ràng:
+1. `01_all_records.csv`: Toàn bộ 10 cột metadata bản ghi thô.
+2. `01_duplicate_log.csv`: Nhật ký loại trùng lặp chi tiết.
+3. `02_screening_decisions_full.csv`: Toàn bộ quyết định V1, V2, V3 kèm lý do loại trừ.
+4. `03_final_included.csv`: Danh mục bài báo chính thức được đưa vào tổng quan.
+5. `prisma-flow.md`: Mã Mermaid Flowchart PRISMA 2020 dán vào báo cáo.
+6. `evidence-table.md`: Bảng trích xuất bằng chứng tổng hợp trích đoạn & số trang.
+7. `03_references_apa7.txt`: Danh mục tài liệu tham khảo chuẩn APA 7th Edition.
+8. `search-log.md`: Nhật ký tìm kiếm khoa học trung thực & lịch sử thay đổi protocol.
+9. `session_backup.json`: Bản sao lưu toàn diện phiên làm việc.
+
+---
+
+## 4. Bảng Tra Cứu Thao Tác Cho Mọi Tình Huống Đặc Biệt
+
+| Tình huống thực tế | Thao tác thực hiện | Nút cần bấm | Bước tiếp theo |
+| :--- | :--- | :--- | :--- |
+| **Đổi PICO / RQ / Tiêu chí khi đã có kết quả** | Nhập lý do thay đổi, kiểm tra Diff so sánh, đánh dấu nếu là thay đổi phạm vi | `⚙️ Chỉnh sửa Protocol` $\rightarrow$ `💾 Xác nhận & Cập nhật` | Bấm `Đánh giá lại ở V2` hoặc `V3` để rà soát các bài bị ảnh hưởng |
+| **Đóng popup, chuyển tab khi đang thu thập** | Mở lại popup, hệ thống tự động nhận diện và khôi phục Job đang chạy | Xem thanh tiến trình nền `jobControlBanner` ở đầu trang | Chờ Job hoàn tất hoặc bấm `⏸ Tạm dừng` / `⏹ Hủy` |
+| **Backend bị tắt hoặc restart giữa chừng** | Khởi động lại backend, mở extension, hệ thống khôi phục từ Checkpoint | `Tiếp tục từ Checkpoint` | Tiếp tục quy trình bình thường từ điểm gián đoạn |
+| **API lỗi mạng hoặc hết hạn ngạch (quota)** | Giữ nguyên dữ liệu đã có, kiểm tra nguồn lỗi, thử lại hoặc chuyển nguồn | `🔄 Chạy lại phần lỗi` hoặc `📂 Nhập tệp mẫu` | Bổ sung thêm bài báo vào tập B1 mà không làm mất bài cũ |
+| **Còn bài Unsure sau khi duyệt tiêu đề/tóm tắt** | Không ép loại bài; đưa sang V3 để tìm toàn văn kiểm tra kỹ hơn | `Đưa bài Unsure sang V3 để kiểm tra toàn văn` | Chuyển sang V3 đọc bản PDF toàn văn |
+| **Thu thập thêm bài báo sau khi đã sang V2/V3** | Bài mới tự động đi qua V1/V2; các bài cũ giữ nguyên quyết định hợp lệ | `➕ Thu thập thêm` $\rightarrow$ `➡️ Sang kiểm tra trùng lặp` | Lọc bài mới để duyệt, bài cũ không cần duyệt lại |
+| **Không tìm thấy bài nào hoặc 0 bài Included** | Kiểm tra nguyên nhân, không tự ý nới lỏng tiêu chí; xuất báo cáo ghi nhận trung thực | `📊 Xem Sơ Đồ Luồng PRISMA` $\rightarrow$ Xuất báo cáo | Hoàn tất nghiên cứu với 0 bài Included hợp lệ |
+
+---
+
+## 5. Sơ Đồ Luồng Pipeline & Sơ Đồ Quản Trị Đổi Protocol
+
+### Sơ Đồ Luồng Chính 6 Bước Wizard PRISMA 2020:
 ```mermaid
 graph TD
-    A["Bước 1: Hồ sơ Nghiên cứu & PICO"] --> B["Bước 2: Stage B1 - Thu thập thô (Identification)"]
-    B --> C["Bước 3: Stage V1 - Bỏ trùng lặp (Deduplication)"]
-    C --> D["Bước 4: Stage V2 - Sàng lọc Title/Abstract"]
-    D --> E["Bước 5: Stage V3 - Truy xuất toàn văn & Eligibility"]
-    E --> F["Bước 6: Stage FINAL - Đưa vào tổng quan (Included)"]
+    S0["Bước 0: Thiết lập Nghiên cứu (PICO, RQ, IC/EC)"] --> B1["Bước B1: Thu thập Đa nguồn (API, Import, Seed, Snowballing)"]
+    B1 --> V1["Bước V1: Kiểm tra Trùng lặp (DOI Tuyệt đối & So khớp mờ > 88%)"]
+    V1 --> V2["Bước V2: Sàng lọc Tiêu đề & Tóm tắt (PassToFullText / Exclude / Unsure)"]
+    V2 --> V3["Bước V3: Tìm & Thẩm định Toàn văn (>= 4 trang, Bằng chứng phương pháp)"]
+    V3 --> FINAL["Bước FINAL: Đối soát Cân bằng Số học & Xuất 9 Báo cáo PRISMA 2020"]
+```
+
+### Sơ Đồ Luồng Quản Trị Thay Đổi Protocol (Diff & Re-Screening):
+```mermaid
+graph TD
+    A["Người dùng bấm: ⚙️ Chỉnh sửa Protocol"] --> B["Nhập Lý do & Xem So sánh Khác biệt (Diff Preview)"]
+    B --> C{"Có thay đổi phạm vi nghiên cứu (Scope Change)?"}
+    C -- "Có (Scope Change)" --> D["Tăng protocolVersion (v1 ➔ v2)<br/>Đánh dấu các bài đã duyệt thành 'isDecisionOutdated = true'<br/>PRISMA chuyển trạng thái [INTERIM]"]
+    C -- "Không (Sửa câu chữ)" --> E["Cập nhật mô tả, giữ nguyên trạng thái quyết định"]
+    D --> F["Hiển thị cảnh báo: 'Cần đánh giá lại theo Protocol mới'"]
+    F --> G["Bấm nút: 'Đánh giá lại ở V2' hoặc 'Đánh giá lại ở V3'"]
+    G --> H["Xác nhận quyết định mới ➔ Xóa cờ lỗi thời ➔ PRISMA [COMPLETE]"]
 ```
 
 ---
 
-### Bước 1: Thiết lập Hồ sơ Nghiên cứu & Quản lý PICO
+## 6. Quản Lý Tiến Trình Nền & Phục Hồi Khi Đóng/Mở Extension
 
-1. **Chọn hoặc chuyển đổi đề tài**:
-   - Ở thanh trên cùng của Extension, chọn đề tài tại hộp chọn **🎯 Nghiên cứu**.
-   - Mặc định có 3 đề tài mẫu:
-     - `SWT302 REST API EP/BVA`: Kiểm thử phần mềm tự động bằng EP và BVA.
-     - `Generic Literature Review`: Tổng quan tài liệu tự do, không ràng buộc năm xuất bản.
-     - `Giao tiếp tử tế & Sự tự tin của trẻ khiếm thị`: Đề tài khoa học xã hội/giáo dục với từ khóa AAC.
-2. **Tạo mới hoặc Tùy biến tiêu chí**:
-   - Nhấn **⚙️ Quản lý Hồ sơ** $\rightarrow$ bấm **+ Tạo mới** hoặc **Sửa**.
-   - Khai báo câu hỏi nghiên cứu (**RQ**), số lượng bài mục tiêu (**Target Included Count**).
-   - Thiết lập cấu trúc PICO và các tiêu chí Thu nhận (**IC**) / Loại trừ (**EC**):
-     - Khoảng năm xuất bản (`year_range`).
-     - Số trang tối thiểu (`minPageCount`, ví dụ: $\ge 4$ trang).
-     - Từ khóa bắt buộc trong Tiêu đề hoặc Tóm tắt.
-   - Nhấn **Lưu Hồ sơ**. Phiên bản `profileVersion` và `protocolVersion` sẽ tự động được ghi nhận.
+1. **Vận hành trên Backend**:
+   - Khi chạy thu thập nhiều trang hoặc chạy Dedup hàng loạt, tác vụ được quản lý qua `BackgroundJobs`.
+   - Backend tiếp tục chạy độc lập trên máy chủ ngay cả khi người dùng đóng popup hoặc đổi sang tab khác.
+2. **Khôi phục trạng thái tức thì**:
+   - Khi mở lại popup, Extension tự động gọi `GET /api/jobs/active?researchId=...` để nối lại tiến trình nền đang chạy, hiển thị thanh phần trăm và cho phép Tạm dừng / Tiếp tục / Hủy.
+3. **Cơ chế Snapshot Checkpoint**:
+   - Sau mỗi bước quan trọng, dữ liệu được đồng bộ xuống SQL Server và tệp Snapshot JSON (`backend/data/snapshots/`).
+   - Nếu backend restart, dữ liệu được nạp lại tự động 100%, không bị mất mát hay tính trùng lặp số phát hiện.
 
 ---
 
-### Bước 2: Giai đoạn B1 - Thu thập Dữ liệu Thô (Identification)
+## 7. Danh Mục 9 Tệp Dữ Liệu Xuất Bản Chuẩn Học Thuật
 
-1. Chuyển sang thẻ tab **Stage B1: Identification**.
-2. **Chọn chuỗi tìm kiếm**:
-   - Nhấp vào một trong các nút chuỗi gợi ý sẵn bên dưới ô tìm kiếm (hoặc tự gõ từ khóa nguyên văn).
-   - Chọn bộ lọc năm (ví dụ: `2020` đến `2026`).
-3. **Thực thi thu thập**:
-   - Bấm **🔍 Lấy trang 1 (start=0)**: Khởi tạo phiên làm việc mới, lấy 10 bài đầu tiên.
-   - Bấm **⏩ Lấy trang tiếp (+10)** hoặc **⚡ Lấy tối đa trang đã đặt**: Tự động phân trang thu thập tiếp các trang sau.
-   - Hoặc bấm **▶️ Chạy nền stage này**: Giao việc cho Background Job tự động thu thập phân trang mà bạn không cần phải ngồi đợi.
-4. **Lưu ý chuẩn PRISMA 2020**:
-   - Dữ liệu thu thập từ **Google Scholar** được gắn cờ là *Candidate Papers (bổ trợ)*. Toàn bộ số liệu này được lưu vào `search-log.md` và `01_all_records.csv`, bảo đảm phân biệt rạch ròi với nhánh cơ sở dữ liệu chính thống.
-
----
-
-### Bước 3: Giai đoạn V1 - Khử Trùng Lặp (Deduplication)
-
-1. Chuyển sang thẻ tab **Stage V1: Bỏ trùng & Tiền sàng lọc**.
-2. Bấm **▶️ Chạy nền stage này** (hoặc để hệ thống tự động chạy sau khi hoàn thành B1):
-   - **Tầng 1 (Chính xác)**: Tự động chuẩn hóa DOI (xóa `https://doi.org/`, chuyển chữ thường) và gộp các bài trùng mã DOI thành 1 bài đại diện duy nhất (`canonicalRecord`).
-   - **Tầng 2 (So khớp mờ)**: Đối chiếu tiêu đề với độ tương đồng `Title Similarity > 88%`.
-   - Các bài cùng tiêu đề nhưng khác DOI hoặc chưa có DOI sẽ được **giữ lại và gắn cờ `potentialDuplicate`** để người nghiên cứu xem xét thủ công, **tuyệt đối không tự ý xóa bỏ mất dữ liệu**.
-3. Kết quả: Số bản ghi duy nhất sẵn sàng đi vào vòng sàng lọc V2.
+| Tên tệp | Định dạng | Mục đích sử dụng | Tiêu chuẩn đảm bảo |
+| :--- | :--- | :--- | :--- |
+| **01_all_records.csv** | CSV (UTF-8 BOM) | Lưu trữ toàn bộ bản ghi thô từ B1 | 10 cột PRISMA, an toàn chống CSV Injection |
+| **01_duplicate_log.csv** | CSV (UTF-8 BOM) | Nhật ký các cặp trùng DOI và so khớp mờ | Ghi nhận chi tiết provenance và lý do loại |
+| **02_screening_decisions_full.csv** | CSV (UTF-8 BOM) | Báo cáo chi tiết quyết định qua các vòng V1, V2, V3 | Đầy đủ tiêu chí đạt/không đạt, lý do loại trừ |
+| **03_final_included.csv** | CSV (UTF-8 BOM) | Danh mục bài báo chính thức được đưa vào tổng quan | Chỉ gồm các bài đạt toàn văn $\ge 4$ trang và có bằng chứng |
+| **prisma-flow.md** | Markdown & Mermaid | Sơ đồ luồng PRISMA 2020 và bảng cân bằng số học | Dán trực tiếp vào báo cáo, luận văn hoặc bài báo khoa học |
+| **evidence-table.md** | Markdown Table | Bảng tổng hợp dữ liệu trích đoạn phương pháp | Cột: Tác giả, Năm, Mục tiêu, Phương pháp, Số trang, Trích dẫn |
+| **03_references_apa7.txt** | Plain Text | Danh mục tài liệu tham khảo theo chuẩn APA 7 | Định dạng: Tác giả, Năm, Tên bài, Venue, DOI liên kết |
+| **search-log.md** | Markdown | Nhật ký thực thi tìm kiếm khoa học trung thực | Ghi nhận câu query thực tế, thời gian, số lượng đối chiếu |
+| **session_backup.json** | JSON | Sao lưu toàn diện phiên làm việc | Dùng để khôi phục hoặc chia sẻ cho đồng tác giả |
 
 ---
 
-### Bước 4: Giai đoạn V2 - Sàng lọc Tiêu đề & Tóm tắt (Title & Abstract Screening)
+## 8. Cài Đặt & Khởi Động Hệ Thống
 
-1. Chuyển sang thẻ tab **Stage V2: Sàng lọc Title/Abstract**.
-2. **Quy tắc phân loại tự động của Hệ thống**:
-   - Huy hiệu `✓` (xanh): Đạt tiêu chí Thu nhận (IC).
-   - Huy hiệu `✗` (đỏ): Vi phạm tiêu chí Loại trừ (EC) hoặc không đạt IC bắt buộc $\rightarrow$ Gợi ý **Exclude**.
-   - Huy hiệu `?` (vàng): Thiếu dữ liệu abstract hoặc chưa đủ căn cứ $\rightarrow$ Gợi ý **Unsure**.
-   - Chỉ khi đạt tất cả tiêu chí bắt buộc mới gợi ý **PassToFullText**.
-3. **Tự động quét ngầm hàng loạt (Batch Auto-Screen)**:
-   - Nhấn **⚡ Tự động quét & Sàng lọc**: Hệ thống sẽ tự động mở kết nối ngầm, trích xuất HighWire meta tags (`citation_abstract`, `citation_title`...), phân tích từ khóa và cập nhật gợi ý tự động.
-4. **Thẩm định và xác nhận của Người Nghiên cứu**:
-   - Nhấn **✓ Include / Pass**, **✗ Exclude**, hoặc **? Unsure** trên từng bài.
-   - Nhập lý do vào ô **Ghi chú**.
-   - *Lưu ý*: Mọi bài phân vân (`Unsure`) ở vòng V2 đều được hệ thống lưu vết trong `unsureTitleAbstract`, không bị ghi đè khi chuyển sang vòng V3.
-
----
-
-### Bước 5: Giai đoạn V3 - Truy xuất Toàn văn & Đánh giá Tư cách (Full-Text Retrieval & Eligibility)
-
-1. Chuyển sang thẻ tab **Stage V3: Toàn văn & Eligibility**.
-2. **Thu thập báo cáo toàn văn (Full-Text Retrieval)**:
-   - Hệ thống tự động truy vấn dịch vụ **Unpaywall** và **Open Access** để tìm link PDF mở.
-   - Với các bài chưa có PDF tự động:
-     - Nhấp **📑 Tab**: Mở tab bài báo trên trình duyệt để trích xuất nội dung trực tiếp.
-     - Hoặc nhấp **📁 Tải file PDF**: Tải tệp PDF từ máy tính lên để hệ thống đếm số trang thực tế và bóc tách bảng số liệu.
-   - **Xác định Paywall chuẩn xác**: Hệ thống **không bao giờ suy diễn bừa bãi** bài báo bị Paywalled chỉ vì tên nhà xuất bản IEEE/ACM/Springer; chỉ đánh dấu `isPaywalled = true` khi đã thử các nguồn mở mà không có toàn văn.
-3. **Đánh giá tiêu chí toàn văn (Eligibility)**:
-   - Kiểm tra số trang tối thiểu (ví dụ: $\ge 4$ trang).
-   - Kiểm tra bảng/hình ảnh thực nghiệm định lượng (ví dụ: Table kết quả coverage/mutation).
-   - Chọn quyết định cuối cùng cho vòng V3: **Include** hoặc **Exclude** kèm lý do cụ thể.
-
----
-
-### Bước 6: Giai đoạn FINAL - Tổng kết Bài báo Đưa vào Tổng quan (Included Studies)
-
-1. Chuyển sang thẻ tab **Stage FINAL: Báo cáo PRISMA**.
-2. Toàn bộ các bài báo đạt `finalDecision = "Include"` sau vòng V3 sẽ được đưa vào danh sách tổng kết.
-3. Hệ thống tự động giải phương trình cân bằng PRISMA:
-   $$\text{Identification} = \text{Duplicates} + \text{Excluded Title/Abstract} + \text{Not Retrieved} + \text{Excluded Full-Text} + \text{Included}$$
-   Bảo đảm không có sai lệch số lượng hoặc mất dấu bản ghi.
-
----
-
-## 3. Điều Khiển Tiến Trình Nền (Background Jobs) & Khôi Phục Dữ Liệu
-
-Khi bạn bấm **▶️ Chạy nền stage này**, banner điều khiển tiến trình nền sẽ xuất hiện ở đầu trang:
-
-| Nút điều khiển | Tác dụng |
-| :--- | :--- |
-| **⏸️ Tạm dừng (Pause)** | Dừng tạm thời công việc tại bài báo hiện tại mà không làm mất tiến độ đã làm. |
-| **▶️ Tiếp tục (Resume)** | Tiếp tục xử lý tiếp từ bài báo kế tiếp mà không phải quét lại từ đầu. |
-| **⏹️ Hủy (Cancel)** | Hủy bỏ tiến trình nền một cách an toàn. |
-
-### 🔒 Cơ Chế Snapshot Khôi Phục Tự Động (Crash Persistence)
-- Cứ sau mỗi mẻ xử lý, trạng thái toàn bộ các bài báo và tiến trình được tự động lưu ra tệp Snapshot tại thư mục `backend/data/snapshots/` và bảng `PipelineSnapshots` trên SQL Server.
-- Nếu bạn tắt trình duyệt, mất mạng hoặc khởi động lại backend, toàn bộ dữ liệu stage sẽ **tự động phục hồi nguyên vẹn 100%** khi mở lại tiện ích.
-
----
-
-## 4. Sinh Sơ Đồ PRISMA 2020 & Kiểm Chứng Nhật Ký Tìm Kiếm
-
-### 4.1. Lấy Sơ Đồ PRISMA 2020 Tự Động
-Gửi yêu cầu tới API backend (hoặc xem trực tiếp trên tab Stage FINAL):
-```text
-GET http://localhost:3001/api/prisma/flow?researchId=preset_swt302
+### 8.1. Khởi động Backend
+```powershell
+cd backend
+npm install
+npm run dev
 ```
-Hệ thống sẽ trả về:
-- Mã **Mermaid Flowchart** chuẩn PRISMA 2020 để dán trực tiếp vào báo cáo LaTeX hoặc Markdown.
-- Bảng kê số lượng từng nhánh:
-  - Records identified from databases ($n = \dots$)
-  - Duplicate records removed ($n = \dots$)
-  - Records screened ($n = \dots$) / Excluded ($n = \dots$)
-  - Reports sought for retrieval ($n = \dots$) / Reports not retrieved ($n = \dots$)
-  - Reports assessed for eligibility ($n = \dots$) / Excluded ($n = \dots$ kèm lý do)
-  - Studies included in review ($n = \dots$)
+- Cổng dịch vụ mặc định: `http://localhost:3001`.
+- Kiểm tra sức khỏe hệ thống: `http://localhost:3001/api/health`.
 
-### 4.2. Nhật Ký Kiểm Chứng Tìm Kiếm (`search-log.md`)
-Mọi phiên tìm kiếm đều được tự động lưu vào tệp [search-log.md](file:///c:/Users/ThanhDuy/Documents/03_Tool_Configs/extension/search-log.md) ở thư mục gốc:
-- Ghi nhận nguyên văn câu truy vấn và các tham số lọc (`as_ylo`, `as_yhi`, `hl`).
-- Đối chiếu số lượng web báo (`uiTotalResults`) với số bài thu thập thực tế (`collectedCount`).
-- Bảng kiểm chứng 5 bản ghi đối chiếu ngẫu nhiên về Tiêu đề, Năm, Tác giả, Venue và DOI.
-
----
-
-## 5. Xuất Dữ Liệu Báo Cáo & Danh Mục Trích Dẫn APA 7
-
-Tại thanh công cụ cuối giao diện Extension, nhấp vào các nút tương ứng để tải tệp về:
-
-1. **📥 01_all_records.csv (PRISMA)**:
-   - Bảng 10 cột chuẩn: `id, source, title, authors, year, venue, doi, abstract, url, retrieval_date`.
-   - Có UTF-8 BOM, mở trực tiếp bằng Microsoft Excel không bị lỗi phông tiếng Việt.
-   - An toàn tuyệt đối: Đã khử mã độc CSV Formula Injection.
-2. **📑 Xuất Sàng lọc Đầy đủ (02_screening_decisions_full.csv)**:
-   - Bao gồm toàn bộ quyết định qua từng vòng (V1, V2, V3, FINAL), trạng thái truy xuất toàn văn và các đoạn trích bằng chứng phương pháp.
-3. **📖 Xuất References APA 7th (03_references_apa7.txt)**:
-   - Danh mục tài liệu tham khảo được format chính xác theo quy chuẩn APA 7th Edition:
-     - Tên tác giả đảo ngược (Họ, Chữ lót viết tắt).
-     - Năm xuất bản trong ngoặc đơn.
-     - Tiêu đề bài báo in hoa chữ cái đầu.
-     - Tên hội thảo/tạp chí và DOI hợp lệ dạng `https://doi.org/...`.
-   - Phân tách rõ ràng giữa bài đủ điều kiện và danh sách bài thiếu trường cần tra cứu bổ sung (không tự bịa đặt dữ liệu).
-4. **📦 Tải Session JSON**:
-   - Tệp JSON sao lưu toàn diện dùng để chia sẻ dữ liệu nghiên cứu cho thành viên khác trong nhóm hoặc lưu trữ dự phòng.
-
----
-
-## 6. Các Tình Huống Xử Lý Sự Cố (FAQ)
-
-### Q1: Thông báo `[DB] SQL Server chua duoc cau hinh trong .env. Chay o che do Local Fallback` nghĩa là sao?
-- **Trả lời**: Đây là thông báo hệ thống đang chạy ở chế độ **Tệp cục bộ & RAM an toàn**. Hệ thống vẫn hoạt động đầy đủ 100% tính năng. Nếu muốn chuyển sang lưu vào Microsoft SQL Server thật, bạn chỉ cần mở file `backend/.env` và điền cấu hình `DB_SERVER`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`.
-
-### Q2: Google Scholar xuất hiện thông báo CAPTCHA / Robot verification?
-- **Trả lời**: Khi thu thập số lượng lớn bài báo trực tiếp từ Google Scholar, Google có thể yêu cầu xác thực. Hãy sử dụng SerpApi thông qua khóa `SERPAPI_KEY` trong `.env` để thu thập tự động mà không bao giờ bị chặn CAPTCHA.
-
-### Q3: Tôi đổi tiêu chí nghiên cứu thì các bài tôi đã bấm "Include" có bị mất không?
-- **Trả lời**: **Không bao giờ bị mất**. Hệ thống tuân thủ nguyên tắc tôn trọng thẩm định của con người:
-  - Quyết định thủ công của bạn (`finalDecision`) được bảo toàn tuyệt đối.
-  - Hệ thống chỉ đánh dấu cờ `isDecisionOutdated = true` để thông báo cho bạn biết bài báo này cần được xem lại theo phiên bản tiêu chí mới.
-
-### Q4: Làm sao để kiểm tra độ tin cậy của mã nguồn?
-- **Trả lời**: Mở PowerShell tại thư mục `backend` và chạy lệnh:
-  ```powershell
-  npm test
-  ```
-  Hệ thống sẽ chạy qua 87 kịch bản kiểm thử độc lập (bao gồm các ca kiểm thử biên, bảo mật chống SSRF, thuật toán khử trùng lặp và tính cân bằng số học PRISMA), đạt **87/87 Pass**.
-
----
-*Tài liệu được cập nhật tự động đồng bộ với phiên bản Scholar Extractor v2.0.0 (PRISMA 2020 Compliant).*
+### 8.2. Biên dịch & Cài đặt Chrome Extension
+```powershell
+cd chrome_extension
+npm install
+npm run build
+```
+1. Mở trình duyệt Chrome/Edge $\rightarrow$ truy cập `chrome://extensions/`.
+2. Bật **Developer mode** (Chế độ dành cho nhà phát triển).
+3. Bấm **Load unpacked** $\rightarrow$ chọn thư mục `chrome_extension`.
+4. Ghim tiện ích và bấm vào biểu tượng để bắt đầu sử dụng luồng Wizard 6 bước!

@@ -2,55 +2,259 @@ import { BUILTIN_PRESETS, PRESET_GENERIC, PRESET_SWT302, PRESET_VISUALLY_IMPAIRE
 import {
   Criterion,
   DedupStats,
+  FrameworkType,
   PaperRecord,
+  ProtocolDiff,
   ResearchProfile,
   ScreeningDecision,
   SearchExecutionSummary,
+  SourceAdapterCapability,
+  SuspectedDuplicatePair,
   TabAnalysisResult,
+  WizardStep,
 } from "./types";
 
 const DEFAULT_BACKEND_URL = "http://localhost:3001";
 const STORAGE_PROFILES_KEY = "scholar_research_profiles_v3";
 const STORAGE_ACTIVE_PROFILE_KEY = "scholar_active_profile_id_v3";
 const STORAGE_SESSIONS_KEY = "scholar_research_sessions_v3";
+const STORAGE_WIZARD_STEP_KEY = "scholar_wizard_step_v3";
 const LEGACY_STORAGE_KEY = "scholar_slr_session_v2";
 const LEGACY_BACKUP_KEY = "scholar_extractor_backup_legacy_v1";
 const MIGRATION_VERSION_KEY = "scholar_extractor_migration_version";
 
-function isChallengeOrErrorTitle(title?: string): boolean {
-  if (!title) return false;
-  const lower = title.toLowerCase().trim();
-  return (
-    lower.includes("chờ một chút") ||
-    lower.includes("just a moment") ||
-    lower.includes("attention required") ||
-    lower.includes("cloudflare") ||
-    lower.includes("access denied") ||
-    lower.includes("403 forbidden") ||
-    lower.includes("404 not found") ||
-    lower.includes("robot or human") ||
-    lower.includes("security check") ||
-    lower.includes("are you a robot") ||
-    lower.includes("ddos protection")
-  );
+interface StepConfig {
+  badge: string;
+  title: string;
+  goal: string;
+  io: string;
+  primaryBtnIcon: string;
+  primaryBtnText: string;
+  condition: string;
+  nextGuide: string;
 }
 
-interface SessionState {
-  sessionId: string;
-  researchId: string;
-  profileVersion: number;
-  allRecords: PaperRecord[];
-  uniqueRecords: PaperRecord[];
-  dedupStats: DedupStats;
-  searchSummary: SearchExecutionSummary | null;
-  allEvidences: any[];
-  currentStart: number;
-  apiRequestsUsed: number;
-  query: string;
-  asYlo: string;
-  asYhi: string;
-  hl: string;
+const STEP_CONFIGS: Record<WizardStep, StepConfig> = {
+  SETUP: {
+    badge: "BƯỚC 0",
+    title: "Thiết lập Nghiên cứu & Protocol (Protocol Formulation)",
+    goal: "Xác định mục tiêu đề tài, câu hỏi RQ, khung PICO/PICOS/SPIDER và tiêu chí IC/EC.",
+    io: "Đề tài & Khung phân tích ➔ Hồ sơ Protocol sẵn sàng (v1.0)",
+    primaryBtnIcon: "💾",
+    primaryBtnText: "Lưu thiết lập & sang thu thập",
+    condition: "Cần điền tên đề tài, ít nhất 1 câu hỏi RQ và từ khóa chính.",
+    nextGuide: "Sau khi lưu, chuyển sang B1 để thiết lập truy vấn và thu thập bài báo.",
+  },
+  B1: {
+    badge: "BƯỚC B1",
+    title: "Thu thập bài báo (Identification)",
+    goal: "Thu thập các bài báo ứng viên từ API học thuật, nhập file và snowballing.",
+    io: "Từ khóa & Bộ lọc ➔ Danh sách bản ghi thô (B1)",
+    primaryBtnIcon: "🔍",
+    primaryBtnText: "Bắt đầu thu thập bài báo",
+    condition: "Cần thu thập ít nhất 1 bài báo hợp lệ vào danh sách.",
+    nextGuide: "Sau khi có bài báo thô, chuyển sang V1 để khử trùng lặp dữ liệu.",
+  },
+  V1: {
+    badge: "BƯỚC V1",
+    title: "Kiểm tra trùng lặp (Deduplication)",
+    goal: "Nhận diện và gộp các bản ghi trùng lặp (DOI và so khớp mờ tiêu đề), bảo toàn nguồn gốc provenance.",
+    io: "Bản ghi thô ➔ Bản ghi duy nhất (Unique) + Duplicate Log",
+    primaryBtnIcon: "✨",
+    primaryBtnText: "Kiểm tra trùng lặp (Chạy Dedup)",
+    condition: "Tất cả các nhóm nghi trùng cần được gộp hoặc đánh dấu giữ riêng.",
+    nextGuide: "Chuyển sang V2 để sàng lọc tiêu đề & tóm tắt theo tiêu chí IC/EC.",
+  },
+  V2: {
+    badge: "BƯỚC V2",
+    title: "Sàng lọc Tiêu đề & Tóm tắt (Screening)",
+    goal: "Đánh giá tính phù hợp dựa trên Title & Abstract theo tiêu chí IC/EC (PassToFullText / Exclude / Unsure).",
+    io: "Bản ghi duy nhất ➔ Danh sách qua vòng toàn văn (PassToFullText)",
+    primaryBtnIcon: "⚡",
+    primaryBtnText: "Tự động quét & Sàng lọc V2",
+    condition: "Không còn bài ở trạng thái Chưa xem / Chờ quyết định.",
+    nextGuide: "Chuyển sang V3 để tìm tài liệu toàn văn và thẩm định chuyên sâu.",
+  },
+  V3: {
+    badge: "BƯỚC V3",
+    title: "Tìm & Thẩm định Toàn văn (Eligibility)",
+    goal: "Thu thập PDF/toàn văn và đọc đánh giá chuyên sâu (>= 4 trang, trích đoạn bằng chứng phương pháp).",
+    io: "Danh sách PassToFullText ➔ Nghiên cứu đạt chuẩn (Final Included)",
+    primaryBtnIcon: "📑",
+    primaryBtnText: "Tìm toàn văn cho các bài đã chọn",
+    condition: "Mọi bài Include phải có toàn văn và trích dẫn bằng chứng phương pháp.",
+    nextGuide: "Chuyển sang Chốt & Xuất để đối soát số học PRISMA 2020.",
+  },
+  FINAL: {
+    badge: "BƯỚC CHỐT",
+    title: "Chốt Danh Sách & Xuất Báo Cáo PRISMA 2020",
+    goal: "Đối soát cân bằng số học PRISMA 2020, kiểm tra tính toàn vẹn và xuất 9 báo cáo chuẩn học thuật.",
+    io: "Toàn bộ dữ liệu pipeline ➔ 9 tệp xuất bản & PRISMA Flowchart",
+    primaryBtnIcon: "📊",
+    primaryBtnText: "Xem Sơ Đồ Luồng PRISMA 2020 (Đối soát)",
+    condition: "Ma trận PRISMA cân bằng số học, không còn bài vướng audit.",
+    nextGuide: "Hoàn tất nghiên cứu và sao lưu Session Backup JSON.",
+  },
+};
+
+interface StepGuideContent {
+  whenToUse: string;
+  preparation: string;
+  orderOfButtons: string[];
+  expectedOutput: string;
+  troubleshooting: string;
+  proceedCondition: string;
 }
+
+const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
+  SETUP: {
+    whenToUse: "Bắt đầu một đề tài tổng quan tài liệu (SLR) mới hoặc điều chỉnh khung nghiên cứu.",
+    preparation: "Xác định câu hỏi nghiên cứu (RQ), khung PICO/SPIDER, từ khóa tiếng Anh/tiếng Việt và khung năm xuất bản.",
+    orderOfButtons: [
+      "1. Chọn chế độ: Tạo nghiên cứu mới (hoặc bấm Mẫu có sẵn như SWT302 REST API)",
+      "2. Nhập Tên đề tài, Mô tả và các câu hỏi RQ",
+      "3. Chọn khung phân tích PICO/PICOS/SPIDER và điền các trường (tích N/A nếu không áp dụng)",
+      "4. Thiết lập khung năm, số trang tối thiểu (>= 4 trang), từ khóa bắt buộc và loại trừ",
+      "5. Bấm nút: '💾 Lưu thiết lập & Sang thu thập'",
+    ],
+    expectedOutput: "Hồ sơ đề tài được lưu trên hệ thống và chuyển ngay sang Bước B1 Thu thập bài báo.",
+    troubleshooting: "Nếu thông báo thiếu thông tin: kiểm tra Tên nghiên cứu và đảm bảo có ít nhất 1 từ khóa.",
+    proceedCondition: "Đã lưu thành công hồ sơ nghiên cứu.",
+  },
+  B1: {
+    whenToUse: "Sau khi có protocol để tiến hành tìm kiếm bài báo ứng viên từ các nguồn học thuật.",
+    preparation: "Kiểm tra chuỗi truy vấn (query), các bộ lọc năm, và trạng thái nguồn học thuật.",
+    orderOfButtons: [
+      "1. Chọn nguồn thu thập (OpenAlex ưu tiên miễn phí, hoặc Semantic Scholar, File Import)",
+      "2. Chọn chuỗi gợi ý hoặc nhập chuỗi tìm kiếm nguyên văn",
+      "3. Bấm nút: '🔍 Bắt đầu thu thập bài báo' (hoặc '📂 Nhập tệp mẫu')",
+      "4. (Tùy chọn) Bấm '🎯 Thêm bài seed' hoặc '❄️ Snowballing' nếu có bài tham chiếu chuẩn",
+      "5. Xem bảng kết quả thu thập theo từng nguồn và bấm '➡️ Sang kiểm tra trùng lặp (V1)'",
+    ],
+    expectedOutput: "Danh sách bài báo thô (B1) được tải về với đầy đủ metadata ban đầu.",
+    troubleshooting: "Nếu API báo lỗi hoặc timeout: bấm '🔄 Chạy lại phần lỗi' hoặc chuyển sang '📂 Nhập tệp mẫu' (CSV/BibTeX/RIS). Tiến trình chạy ngầm an toàn trên backend.",
+    proceedCondition: "Có ít nhất 1 bài báo hợp lệ trong tập dữ liệu.",
+  },
+  V1: {
+    whenToUse: "Sau khi thu thập từ nhiều nguồn khác nhau để khử các bài trùng lặp.",
+    preparation: "Đảm bảo đã thu thập đủ các nguồn cho đợt tìm kiếm hiện tại.",
+    orderOfButtons: [
+      "1. Bấm nút: '✨ Kiểm tra trùng lặp (Chạy Dedup)'",
+      "2. Xem 4 thẻ số liệu: Tổng thô, Trùng DOI chắc chắn, Nghi trùng cần duyệt, Duy nhất",
+      "3. Ở khung 'Cặp nghi trùng': bấm 'Gộp bản ghi' hoặc 'Giữ riêng' cho từng cặp",
+      "4. Bấm nút: '✓ Xác nhận kết quả bỏ trùng & sang V2'",
+    ],
+    expectedOutput: "Khử sạch trùng lặp, bảo toàn nguồn gốc provenance, không tự xóa vĩnh viễn bài báo.",
+    troubleshooting: "Nếu gộp nhầm: bấm nút 'Hoàn tác' để phục hồi lại trạng thái tách riêng.",
+    proceedCondition: "Số bài nghi trùng chưa duyệt = 0.",
+  },
+  V2: {
+    whenToUse: "Sàng lọc sơ bộ dựa trên Tiêu đề (Title) và Tóm tắt (Abstract).",
+    preparation: "Đọc kỹ tiêu chí IC/EC đã khai báo trong protocol.",
+    orderOfButtons: [
+      "1. Bấm nút: '⚡ Tự động quét & Sàng lọc' để hệ thống đối chiếu từ khóa và đưa ra gợi ý",
+      "2. Dùng bộ lọc Pill (Chưa xem, Qua vòng toàn văn, Đã loại, Chưa rõ) để duyệt",
+      "3. Với mỗi bài, bấm 1 trong 3 nút: 'Qua vòng toàn văn', 'Loại ở V2' (kèm lý do), hoặc 'Chưa rõ'",
+      "4. Nếu còn bài Unsure: bấm 'Đưa bài Unsure sang V3 để kiểm tra toàn văn'",
+      "5. Bấm nút: '✓ Xác nhận danh sách sang V3'",
+    ],
+    expectedOutput: "Tất cả các bài được phân loại minh bạch: PassToFullText, Exclude hoặc Unsure. TUYỆT ĐỐI không dán nhãn Final Include ở vòng này.",
+    troubleshooting: "Nếu bài thiếu Abstract: bấm nút '⚡ Quét link' hoặc '📑 Tab' để trích xuất trực tiếp từ trang bài báo.",
+    proceedCondition: "Không còn bài ở trạng thái Chưa xem.",
+  },
+  V3: {
+    whenToUse: "Thẩm định chuyên sâu các bài đã vượt qua vòng tiêu đề/tóm tắt.",
+    preparation: "Tìm và đọc tài liệu toàn văn (Full-Text PDF).",
+    orderOfButtons: [
+      "1. Bấm nút: '📑 Tìm toàn văn cho các bài đã chọn' (hệ thống tự tìm qua Unpaywall / OA)",
+      "2. Với bài không tìm thấy tự động: bấm '📁 Tải file PDF từ máy' hoặc '📑 Lấy từ Tab đang mở'",
+      "3. Đọc bài báo, kiểm tra số trang (>= 4 trang) và trích xuất câu bằng chứng phương pháp",
+      "4. Bấm nút: 'Đạt tiêu chí toàn văn' (Include), 'Loại ở V3' (Exclude), hoặc 'Cần bổ sung bằng chứng'",
+      "5. Nhập ghi chú thẩm định (lưu tự động, không xóa quyết định)",
+      "6. Bấm nút: '✓ Xác nhận danh sách sang Chốt & Xuất'",
+    ],
+    expectedOutput: "Danh sách bài nghiên cứu được thẩm định toàn văn với đầy đủ bằng chứng, số trang và lý do khoa học.",
+    troubleshooting: "Nếu không tìm thấy PDF: trạng thái là 'Chưa lấy được toàn văn', KHÔNG tự động loại bài trừ khi xác nhận unretrievable.",
+    proceedCondition: "Các bài muốn chọn vào nghiên cứu phải có toàn văn và bằng chứng phương pháp.",
+  },
+  FINAL: {
+    whenToUse: "Đối soát và xuất toàn bộ kết quả nghiên cứu theo chuẩn PRISMA 2020.",
+    preparation: "Đảm bảo đã hoàn tất các bước trước đó và không còn quyết định thuộc protocol cũ.",
+    orderOfButtons: [
+      "1. Kiểm tra 5 thẻ trạng thái trong Bảng Đối Soát PRISMA 2020",
+      "2. Bấm nút: '📊 Xem Sơ Đồ Luồng PRISMA 2020 (Đối soát)' để kiểm tra cân bằng số học",
+      "3. Bấm các nút tương ứng để tải 9 tệp xuất bản chuẩn học thuật:",
+      "   - 01_all_records.csv",
+      "   - 01_duplicate_log.csv",
+      "   - 02_screening_decisions_full.csv",
+      "   - 03_final_included.csv",
+      "   - prisma-flow.md",
+      "   - evidence-table.md",
+      "   - 03_references_apa7.txt",
+      "   - search-log.md",
+      "   - session_backup.json",
+    ],
+    expectedOutput: "Bộ hồ sơ nghiên cứu SLR hoàn chỉnh, cân bằng số học tuyệt đối, minh bạch và có thể tái lập.",
+    troubleshooting: "Nếu có cảnh báo 'Lệch số học' hoặc 'Quyết định thuộc protocol cũ': bấm nút cảnh báo để nhảy về V2/V3 thẩm định lại.",
+    proceedCondition: "Sơ đồ PRISMA cân bằng số học.",
+  },
+};
+
+const TROUBLESHOOTING_TABLE_HTML = `
+  <div style="margin-top: 12px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+    <div style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">📋 Bảng Xử Lý Tình Huống Đặc Biệt:</div>
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 10.5px; text-align: left;">
+        <thead>
+          <tr style="background: #f1f5f9; color: #334155;">
+            <th style="padding: 5px 6px; border: 1px solid #cbd5e1;">Tình huống</th>
+            <th style="padding: 5px 6px; border: 1px solid #cbd5e1;">Thao tác</th>
+            <th style="padding: 5px 6px; border: 1px solid #cbd5e1;">Nút cần bấm</th>
+            <th style="padding: 5px 6px; border: 1px solid #cbd5e1;">Bước tiếp theo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>Đổi PICO / Tiêu chí khi đã có kết quả</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Nhập lý do thay đổi, kiểm tra Diff</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">⚙️ Chỉnh sửa Protocol ➔ 💾 Xác nhận</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Đánh giá lại các bài bị ảnh hưởng tại V2 / V3</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>Đóng popup / Đổi tab khi đang chạy</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Mở lại popup, hệ thống tự khôi phục Job</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Xem thanh tiến trình nền trên đầu</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Chờ Job hoàn thành hoặc tạm dừng/hủy</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>API lỗi hoặc hết quota</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Giữ dữ liệu cũ, thử lại hoặc nhập file</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">🔄 Chạy lại phần lỗi / 📂 Nhập tệp mẫu</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Bổ sung kết quả vào tập B1 hiện có</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>Còn bài Unsure ở V2</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Chuyển bài Unsure sang V3 để đọc toàn văn</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Đưa bài Unsure sang V3 để kiểm tra toàn văn</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Thẩm định bài Unsure tại V3</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>Thu thập thêm sau khi đã sang V2/V3</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Bài mới đi qua V1/V2, bài cũ giữ nguyên</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">➕ Thu thập thêm ➔ ➡️ Sang V1</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Xử lý bài mới mà không ảnh hưởng bài đã chốt</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;"><b>0 bài Included cuối cùng</b></td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Kiểm tra nguyên nhân, không tự nới tiêu chí</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">📊 Xem Sơ Đồ PRISMA ➔ Hoàn tất 0 Included</td>
+            <td style="padding: 5px 6px; border: 1px solid #e2e8f0;">Xuất báo cáo ghi nhận trung thực lý do loại trừ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+`;
 
 class ScholarExtensionApp {
   private backendUrl: string = DEFAULT_BACKEND_URL;
@@ -58,7 +262,8 @@ class ScholarExtensionApp {
   // Multi-profile state
   private profiles: ResearchProfile[] = [];
   private activeProfile: ResearchProfile = PRESET_SWT302;
-  private editingProfileId: string | null = null;
+  private currentWizardStep: WizardStep = "B1";
+  private currentFramework: FrameworkType = "PICO";
 
   // Active Session state
   private currentSessionId: string = "";
@@ -69,123 +274,60 @@ class ScholarExtensionApp {
   private searchSummary: SearchExecutionSummary | null = null;
   private allEvidences: any[] = [];
 
-  private currentStart: number = 0;
-  private isFetching: boolean = false;
-  private isCancelled: boolean = false;
-  private apiRequestsUsed: number = 0;
+  // Suspected duplicates state for Step V1
+  private suspectedDuplicatePairs: SuspectedDuplicatePair[] = [];
+  private mergeHistoryList: Array<{ canonicalId: string; duplicateId: string; timestamp: string }> = [];
 
-  // DOM Elements - Profile & Header
-  private activeResearchBadge!: HTMLElement;
-  private profileSelect!: HTMLSelectElement;
-  private manageProfilesBtn!: HTMLButtonElement;
-  private exportProfileBtn!: HTMLButtonElement;
-  private profileReviewType!: HTMLElement;
-  private profileCriteriaCount!: HTMLElement;
-  private profileTargetCount!: HTMLElement;
-  private queryDesyncAlert!: HTMLElement;
+  // Source adapter capabilities
+  private sourceCapabilities: SourceAdapterCapability[] = [];
 
-  // DOM Elements - Search inputs & Suggestions
-  private queryInput!: HTMLInputElement;
-  private asYloInput!: HTMLInputElement;
-  private asYhiInput!: HTMLInputElement;
-  private hlInput!: HTMLInputElement;
-  private maxPagesInput!: HTMLInputElement;
-  private uiTotalInput!: HTMLInputElement;
-  private backendUrlInput!: HTMLInputElement;
-  private searchStringsContainer!: HTMLElement;
-
-  // DOM Elements - Buttons
-  private searchFirstBtn!: HTMLButtonElement;
-  private nextBtn!: HTMLButtonElement;
-  private autoFetchBtn!: HTMLButtonElement;
-  private stopBtn!: HTMLButtonElement;
-  private resetBtn!: HTMLButtonElement;
-
-  private exportCsvBtn!: HTMLButtonElement;
-  private exportScreeningBtn!: HTMLButtonElement;
-  private exportFullCsvBtn!: HTMLButtonElement;
-  private exportApa7Btn!: HTMLButtonElement;
-  private exportSessionBtn!: HTMLButtonElement;
-  private saveLogBtn!: HTMLButtonElement;
-
-  // DOM Elements - Status & Stats & Progress
-  private statusDiv!: HTMLElement;
-  private backendStatusBadge!: HTMLElement;
-  private statsBox!: HTMLElement;
-  private targetProgressContainer!: HTMLElement;
-  private targetProgressText!: HTMLElement;
-  private targetProgressBar!: HTMLElement;
-
-  // DOM Elements - List & Filter
-  private resultsContainer!: HTMLElement;
-  private filterInput!: HTMLInputElement;
-  private filterDecisionSelect!: HTMLSelectElement;
-
-  // DOM Elements - Tab & PDF extraction
-  private extractActiveTabBtn!: HTMLButtonElement;
-  private uploadPdfBtn!: HTMLButtonElement;
-  private pdfFileInput!: HTMLInputElement;
-  private tabExtractModal!: HTMLElement;
-  private modalBody!: HTMLElement;
-  private confirmTabExtractBtn!: HTMLButtonElement;
-  private cancelTabExtractBtn!: HTMLButtonElement;
-  private closeModalBtn!: HTMLButtonElement;
-
-  // DOM Elements - Profile Modal
-  private profileModal!: HTMLElement;
-  private closeProfileModalBtn!: HTMLButtonElement;
-  private loadPresetSwtBtn!: HTMLButtonElement;
-  private loadPresetGenericBtn!: HTMLButtonElement;
-  private loadPresetViBtn!: HTMLButtonElement;
-  private btnNewProfile!: HTMLButtonElement;
-  private btnImportProfile!: HTMLButtonElement;
-  private profileFileInput!: HTMLInputElement;
-  private profileListContainer!: HTMLElement;
-  private profileEditForm!: HTMLElement;
-  private profileFormTitle!: HTMLElement;
-  private editProfileName!: HTMLInputElement;
-  private editProfileDesc!: HTMLInputElement;
-  private editProfileRq!: HTMLTextAreaElement;
-  private editProfileReviewType!: HTMLSelectElement;
-  private editProfileTargetIncluded!: HTMLInputElement;
-  private chkYearRange!: HTMLInputElement;
-  private editYearStart!: HTMLInputElement;
-  private editYearEnd!: HTMLInputElement;
-  private chkMinPages!: HTMLInputElement;
-  private editMinPages!: HTMLInputElement;
-  private editKeywordsInclusion!: HTMLInputElement;
-  private btnSaveProfile!: HTMLButtonElement;
-  private btnCancelEditProfile!: HTMLButtonElement;
-
+  // Filters & Pagination
+  private v2CurrentFilter: string = "all";
+  private currentPage: number = 1;
+  private pageSize: number = 10;
   private selectedRecordId: string | null = null;
   private pendingAnalysisResult: TabAnalysisResult | null = null;
-  private pendingRecordId: string | null = null;
-  private rescreenBtn!: HTMLButtonElement;
 
-  // Auto-Screening State & Elements
-  private isAutoScreening: boolean = false;
-  private stopAutoScreenRequested: boolean = false;
-  private autoScreenBatchBtn!: HTMLButtonElement;
-  private stopAutoScreenBtn!: HTMLButtonElement;
-  private autoScreenProgressBox!: HTMLDivElement;
-  private autoScreenStatusText!: HTMLElement;
-  private autoScreenCounterText!: HTMLElement;
-  private autoScreenProgressBar!: HTMLElement;
-  private autoScreenCurrentPaper!: HTMLElement;
-  private autoScreenModal!: HTMLElement;
-  private closeAutoScreenModalBtn!: HTMLButtonElement;
-  private cancelAutoScreenBtn!: HTMLButtonElement;
-  private startAutoScreenBtn!: HTMLButtonElement;
-  private autoScreenTotalCount!: HTMLElement;
-  private autoAcceptIncludeCheckbox!: HTMLInputElement;
-  private autoScreenProfileName: HTMLElement | null = null;
-
-  // Pipeline Stage & Background Job Properties
-  private currentStage: string = "B1";
+  // Background Job & Auto-Screening
   private activeJobId: string | null = null;
   private jobPollInterval: any = null;
+  private isAutoScreening: boolean = false;
 
-  private stageTabBtns!: NodeListOf<HTMLButtonElement>;
+  // ==========================================
+  // DOM ELEMENTS BINDINGS
+  // ==========================================
+
+  // Top Header Bar
+  private activeResearchBadge!: HTMLElement;
+  private protocolVersionBadge!: HTMLElement;
+  private backendStatusBadge!: HTMLElement;
+  private quickHelpBtn!: HTMLButtonElement;
+  private quickResetBtn!: HTMLButtonElement;
+
+  // Wizard Stepper
+  private wizardStepper!: HTMLElement;
+  private stepBtns!: NodeListOf<HTMLButtonElement>;
+
+  // Unified Step Header Card
+  private stepHeaderCard!: HTMLElement;
+  private currentStepBadge!: HTMLElement;
+  private currentStepTitle!: HTMLElement;
+  private stepGuideBtn!: HTMLButtonElement;
+  private editProtocolBtn!: HTMLButtonElement;
+  private stepGoalText!: HTMLElement;
+  private stepIoText!: HTMLElement;
+  private metricPendingCount!: HTMLElement;
+  private metricReviewCount!: HTMLElement;
+  private metricCompletedCount!: HTMLElement;
+  private metricTargetPill!: HTMLElement;
+  private metricTargetCount!: HTMLElement;
+  private stepPrimaryBtn!: HTMLButtonElement;
+  private stepPrimaryBtnIcon!: HTMLElement;
+  private stepPrimaryBtnText!: HTMLElement;
+  private stepConditionText!: HTMLElement;
+  private stepNextGuideText!: HTMLElement;
+
+  // Job Control Banner
   private jobControlBanner!: HTMLElement;
   private jobStageBadge!: HTMLElement;
   private jobMessage!: HTMLElement;
@@ -194,41 +336,173 @@ class ScholarExtensionApp {
   private jobCancelBtn!: HTMLButtonElement;
   private jobProgressBar!: HTMLElement;
 
+  // Outdated Protocol Warning Alert
+  private protocolOutdatedAlert!: HTMLElement;
+  private outdatedPapersCount!: HTMLElement;
+  private btnJumpToOutdatedV2!: HTMLButtonElement;
+  private btnJumpToOutdatedV3!: HTMLButtonElement;
+
+  // Wizard Panels
+  private panelStep0!: HTMLElement;
+  private panelStepB1!: HTMLElement;
+  private panelStepV1!: HTMLElement;
+  private panelStepV2!: HTMLElement;
+  private panelStepV3!: HTMLElement;
+  private panelStepFinal!: HTMLElement;
+  private papersListContainerCard!: HTMLElement;
+
+  // Step 0 Controls
+  private btnModeNewResearch!: HTMLButtonElement;
+  private btnModeContinueResearch!: HTMLButtonElement;
+  private btnModeImportBackup!: HTMLButtonElement;
+  private backupFileInput!: HTMLInputElement;
+  private continueResearchBox!: HTMLElement;
+  private profileSelect!: HTMLSelectElement;
+  private btnLoadSelectedProfile!: HTMLButtonElement;
+  private btnLoadPresetSwt!: HTMLButtonElement;
+  private btnLoadPresetGeneric!: HTMLButtonElement;
+  private btnLoadPresetAac!: HTMLButtonElement;
+  private setupResearchName!: HTMLInputElement;
+  private setupResearchDesc!: HTMLInputElement;
+  private setupResearchRq!: HTMLTextAreaElement;
+  private frameworkFieldsContainer!: HTMLElement;
+  private setupYearStart!: HTMLInputElement;
+  private setupYearEnd!: HTMLInputElement;
+  private setupLanguage!: HTMLInputElement;
+  private setupMinPages!: HTMLInputElement;
+  private setupInclusionKeywords!: HTMLInputElement;
+  private setupExclusionKeywords!: HTMLInputElement;
+  private setupTargetCount!: HTMLInputElement;
+  private sourcesStatusTable!: HTMLElement;
+  private setupSummaryBox!: HTMLElement;
+  private setupSummaryContent!: HTMLElement;
+  private btnSaveSetupAndProceed!: HTMLButtonElement;
+
+  // Step B1 Controls
   private sourceSelect!: HTMLSelectElement;
   private queryVersionSelect!: HTMLSelectElement;
-  private runStageBtn!: HTMLButtonElement;
+  private queryInput!: HTMLInputElement;
+  private searchStringsContainer!: HTMLElement;
+  private asYloInput!: HTMLInputElement;
+  private asYhiInput!: HTMLInputElement;
+  private hlInput!: HTMLInputElement;
+  private maxPagesInput!: HTMLInputElement;
+  private btnStartCollection!: HTMLButtonElement;
   private importFileBtn!: HTMLButtonElement;
   private importFileInput!: HTMLInputElement;
+  private btnOpenSeedModal!: HTMLButtonElement;
   private snowballBtn!: HTMLButtonElement;
+  private b1ResultsStatsBox!: HTMLElement;
+  private btnRerunErrors!: HTMLButtonElement;
+  private btnCollectMore!: HTMLButtonElement;
+  private btnProceedToV1!: HTMLButtonElement;
+  private b1SourceBreakdown!: HTMLElement;
+
+  // Step V1 Controls
+  private dedupRawCount!: HTMLElement;
+  private dedupExactCount!: HTMLElement;
+  private dedupSuspectCount!: HTMLElement;
+  private dedupUniqueCount!: HTMLElement;
+  private btnRunDedupWorker!: HTMLButtonElement;
+  private btnConfirmDedupAndProceedV2!: HTMLButtonElement;
+  private suspectedDuplicatesSection!: HTMLElement;
+  private suspectPairsCounter!: HTMLElement;
+  private suspectDuplicatesContainer!: HTMLElement;
+
+  // Step V2 Controls
+  private v2FilterPills!: HTMLElement;
+  private v2CountAll!: HTMLElement;
+  private v2CountUnseen!: HTMLElement;
+  private v2CountPass!: HTMLElement;
+  private v2CountExclude!: HTMLElement;
+  private v2CountUnsure!: HTMLElement;
+  private autoScreenBatchBtn!: HTMLButtonElement;
+  private btnProceedToV3!: HTMLButtonElement;
+  private unsureResolutionBox!: HTMLElement;
+  private unsureRemainingCount!: HTMLElement;
+  private btnKeepReviewingV2!: HTMLButtonElement;
+  private btnPassUnsureToV3!: HTMLButtonElement;
+
+  // Step V3 Controls
+  private btnFindFullTextSelected!: HTMLButtonElement;
+  private uploadPdfBtn!: HTMLButtonElement;
+  private pdfFileInput!: HTMLInputElement;
+  private extractActiveTabBtn!: HTMLButtonElement;
+  private btnProceedToFinal!: HTMLButtonElement;
+
+  // Step Final Controls
+  private auditEligibleCount!: HTMLElement;
+  private auditPendingDecisionCount!: HTMLElement;
+  private auditMissingFullTextCount!: HTMLElement;
+  private auditMissingEvidenceCount!: HTMLElement;
+  private auditOutdatedCount!: HTMLElement;
+  private prismaIntegrityStatusBox!: HTMLElement;
   private viewPrismaBtn!: HTMLButtonElement;
+  private exportCsvBtn!: HTMLButtonElement;
   private exportDedupLogBtn!: HTMLButtonElement;
+  private exportFullCsvBtn!: HTMLButtonElement;
+  private exportIncludedCsvBtn!: HTMLButtonElement;
   private exportPrismaBtn!: HTMLButtonElement;
   private exportEvidenceTableBtn!: HTMLButtonElement;
+  private exportApa7Btn!: HTMLButtonElement;
+  private saveLogBtn!: HTMLButtonElement;
+  private exportSessionBtn!: HTMLButtonElement;
+
+  // Records List & Pagination
+  private filterInput!: HTMLInputElement;
+  private filterDecisionSelect!: HTMLSelectElement;
+  private paginationBar!: HTMLElement;
+  private paginationInfo!: HTMLElement;
+  private prevPageBtn!: HTMLButtonElement;
+  private pageIndicator!: HTMLElement;
+  private nextPageBtn!: HTMLButtonElement;
+  private pageSizeSelect!: HTMLSelectElement;
+  private resultsContainer!: HTMLElement;
+  private statusDiv!: HTMLElement;
+
+  // Modals
+  private stepGuideModal!: HTMLElement;
+  private guideModalTitle!: HTMLElement;
+  private guideModalBody!: HTMLElement;
+  private closeStepGuideBtn!: HTMLButtonElement;
+  private closeStepGuideBottomBtn!: HTMLButtonElement;
+
+  private protocolEditModal!: HTMLElement;
+  private closeProtocolEditBtn!: HTMLButtonElement;
+  private protocolChangeReason!: HTMLInputElement;
+  private chkIsScopeChange!: HTMLInputElement;
+  private protocolDiffBox!: HTMLElement;
+  private protocolDiffContent!: HTMLElement;
+  private cancelProtocolEditBtn!: HTMLButtonElement;
+  private saveProtocolChangesBtn!: HTMLButtonElement;
+
+  private tabExtractModal!: HTMLElement;
+  private modalTitle!: HTMLElement;
+  private modalBody!: HTMLElement;
+  private confirmTabExtractBtn!: HTMLButtonElement;
+  private cancelTabExtractBtn!: HTMLButtonElement;
+  private closeModalBtn!: HTMLButtonElement;
 
   private prismaModal!: HTMLElement;
   private closePrismaModalBtn!: HTMLButtonElement;
-  private closePrismaModalBottomBtn!: HTMLButtonElement;
   private prismaFlowContainer!: HTMLElement;
   private prismaDrilldownBox!: HTMLElement;
   private drilldownTitle!: HTMLElement;
   private drilldownPaperList!: HTMLElement;
   private modalExportPrismaMdBtn!: HTMLButtonElement;
   private modalExportEvidenceBtn!: HTMLButtonElement;
+  private closePrismaModalBottomBtn!: HTMLButtonElement;
 
-  // Pagination & Compact Toolbar Properties
-  private currentPage: number = 1;
-  private pageSize: number = 10;
-  private paginationBar!: HTMLElement;
-  private paginationInfo!: HTMLElement;
-  private prevPageBtn!: HTMLButtonElement;
-  private nextPageBtn!: HTMLButtonElement;
-  private pageIndicator!: HTMLElement;
-  private pageSizeSelect!: HTMLSelectElement;
+  private seedModal!: HTMLElement;
+  private closeSeedModalBtn!: HTMLButtonElement;
+  private seedDoiInput!: HTMLInputElement;
+  private seedTitleInput!: HTMLInputElement;
+  private cancelSeedBtn!: HTMLButtonElement;
+  private confirmSeedBtn!: HTMLButtonElement;
 
-  private exportToolbar!: HTMLElement;
-  private exportFormatSelect!: HTMLSelectElement;
-  private executeExportBtn!: HTMLButtonElement;
-  private saveLogQuickBtn!: HTMLButtonElement;
+  // ==========================================
+  // INITIALIZATION
+  // ==========================================
 
   async init() {
     this.bindDOMElements();
@@ -236,110 +510,43 @@ class ScholarExtensionApp {
     await this.runStorageMigration();
     await this.loadProfilesAndRestoreActive();
     await this.checkBackendHealth();
+    await this.fetchSourceCapabilities();
+    await this.restoreWizardStep();
     await this.checkActiveBackgroundJob();
   }
 
   private bindDOMElements() {
+    // Header
     this.activeResearchBadge = document.getElementById("activeResearchBadge") as HTMLElement;
-    this.profileSelect = document.getElementById("profileSelect") as HTMLSelectElement;
-    this.manageProfilesBtn = document.getElementById("manageProfilesBtn") as HTMLButtonElement;
-    this.exportProfileBtn = document.getElementById("exportProfileBtn") as HTMLButtonElement;
-    this.profileReviewType = document.getElementById("profileReviewType") as HTMLElement;
-    this.profileCriteriaCount = document.getElementById("profileCriteriaCount") as HTMLElement;
-    this.profileTargetCount = document.getElementById("profileTargetCount") as HTMLElement;
-    this.queryDesyncAlert = document.getElementById("queryDesyncAlert") as HTMLElement;
-
-    this.queryInput = document.getElementById("queryInput") as HTMLInputElement;
-    this.asYloInput = document.getElementById("asYloInput") as HTMLInputElement;
-    this.asYhiInput = document.getElementById("asYhiInput") as HTMLInputElement;
-    this.hlInput = document.getElementById("hlInput") as HTMLInputElement;
-    this.maxPagesInput = document.getElementById("maxPagesInput") as HTMLInputElement;
-    this.uiTotalInput = document.getElementById("uiTotalInput") as HTMLInputElement;
-    this.searchStringsContainer = document.getElementById("searchStringsContainer") as HTMLElement;
-
-    this.backendUrlInput = document.getElementById("backendUrlInput") as HTMLInputElement;
-    if (this.backendUrlInput && this.backendUrlInput.value) {
-      this.backendUrl = this.backendUrlInput.value.trim() || DEFAULT_BACKEND_URL;
-    }
-
-    this.searchFirstBtn = document.getElementById("searchFirstBtn") as HTMLButtonElement;
-    this.nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
-    this.autoFetchBtn = document.getElementById("autoFetchBtn") as HTMLButtonElement;
-    this.stopBtn = document.getElementById("stopBtn") as HTMLButtonElement;
-    this.resetBtn = document.getElementById("resetBtn") as HTMLButtonElement;
-
-    this.exportCsvBtn = document.getElementById("exportCsvBtn") as HTMLButtonElement;
-    this.exportScreeningBtn = document.getElementById("exportScreeningBtn") as HTMLButtonElement;
-    this.exportFullCsvBtn = document.getElementById("exportFullCsvBtn") as HTMLButtonElement;
-    this.exportApa7Btn = document.getElementById("exportApa7Btn") as HTMLButtonElement;
-    this.exportSessionBtn = document.getElementById("exportSessionBtn") as HTMLButtonElement;
-    this.saveLogBtn = document.getElementById("saveLogBtn") as HTMLButtonElement;
-
-    this.statusDiv = document.getElementById("status") as HTMLElement;
+    this.protocolVersionBadge = document.getElementById("protocolVersionBadge") as HTMLElement;
     this.backendStatusBadge = document.getElementById("backendStatusBadge") as HTMLElement;
-    this.statsBox = document.getElementById("statsBox") as HTMLElement;
-    this.targetProgressContainer = document.getElementById("targetProgressContainer") as HTMLElement;
-    this.targetProgressText = document.getElementById("targetProgressText") as HTMLElement;
-    this.targetProgressBar = document.getElementById("targetProgressBar") as HTMLElement;
+    this.quickHelpBtn = document.getElementById("quickHelpBtn") as HTMLButtonElement;
+    this.quickResetBtn = document.getElementById("quickResetBtn") as HTMLButtonElement;
 
-    this.resultsContainer = document.getElementById("resultsContainer") as HTMLElement;
-    this.filterInput = document.getElementById("filterInput") as HTMLInputElement;
-    this.filterDecisionSelect = document.getElementById("filterDecisionSelect") as HTMLSelectElement;
+    // Stepper
+    this.wizardStepper = document.getElementById("wizardStepper") as HTMLElement;
+    this.stepBtns = document.querySelectorAll(".wizard-step-btn");
 
-    this.extractActiveTabBtn = document.getElementById("extractActiveTabBtn") as HTMLButtonElement;
-    this.uploadPdfBtn = document.getElementById("uploadPdfBtn") as HTMLButtonElement;
-    this.rescreenBtn = document.getElementById("rescreenBtn") as HTMLButtonElement;
-    this.autoScreenBatchBtn = document.getElementById("autoScreenBatchBtn") as HTMLButtonElement;
-    this.stopAutoScreenBtn = document.getElementById("stopAutoScreenBtn") as HTMLButtonElement;
-    this.autoScreenProgressBox = document.getElementById("autoScreenProgressBox") as HTMLDivElement;
-    this.autoScreenStatusText = document.getElementById("autoScreenStatusText") as HTMLElement;
-    this.autoScreenCounterText = document.getElementById("autoScreenCounterText") as HTMLElement;
-    this.autoScreenProgressBar = document.getElementById("autoScreenProgressBar") as HTMLElement;
-    this.autoScreenCurrentPaper = document.getElementById("autoScreenCurrentPaper") as HTMLElement;
+    // Unified Step Header Card
+    this.stepHeaderCard = document.getElementById("stepHeaderCard") as HTMLElement;
+    this.currentStepBadge = document.getElementById("currentStepBadge") as HTMLElement;
+    this.currentStepTitle = document.getElementById("currentStepTitle") as HTMLElement;
+    this.stepGuideBtn = document.getElementById("stepGuideBtn") as HTMLButtonElement;
+    this.editProtocolBtn = document.getElementById("editProtocolBtn") as HTMLButtonElement;
+    this.stepGoalText = document.getElementById("stepGoalText") as HTMLElement;
+    this.stepIoText = document.getElementById("stepIoText") as HTMLElement;
+    this.metricPendingCount = document.getElementById("metricPendingCount") as HTMLElement;
+    this.metricReviewCount = document.getElementById("metricReviewCount") as HTMLElement;
+    this.metricCompletedCount = document.getElementById("metricCompletedCount") as HTMLElement;
+    this.metricTargetPill = document.getElementById("metricTargetPill") as HTMLElement;
+    this.metricTargetCount = document.getElementById("metricTargetCount") as HTMLElement;
+    this.stepPrimaryBtn = document.getElementById("stepPrimaryBtn") as HTMLButtonElement;
+    this.stepPrimaryBtnIcon = document.getElementById("stepPrimaryBtnIcon") as HTMLElement;
+    this.stepPrimaryBtnText = document.getElementById("stepPrimaryBtnText") as HTMLElement;
+    this.stepConditionText = document.getElementById("stepConditionText") as HTMLElement;
+    this.stepNextGuideText = document.getElementById("stepNextGuideText") as HTMLElement;
 
-    this.autoScreenModal = document.getElementById("autoScreenModal") as HTMLElement;
-    this.closeAutoScreenModalBtn = document.getElementById("closeAutoScreenModalBtn") as HTMLButtonElement;
-    this.cancelAutoScreenBtn = document.getElementById("cancelAutoScreenBtn") as HTMLButtonElement;
-    this.startAutoScreenBtn = document.getElementById("startAutoScreenBtn") as HTMLButtonElement;
-    this.autoScreenProfileName = document.getElementById("autoScreenProfileName") as HTMLElement;
-    this.autoScreenTotalCount = document.getElementById("autoScreenTotalCount") as HTMLElement;
-    this.autoAcceptIncludeCheckbox = document.getElementById("autoAcceptIncludeCheckbox") as HTMLInputElement;
-
-    this.pdfFileInput = document.getElementById("pdfFileInput") as HTMLInputElement;
-    this.tabExtractModal = document.getElementById("tabExtractModal") as HTMLElement;
-    this.modalBody = document.getElementById("modalBody") as HTMLElement;
-    this.confirmTabExtractBtn = document.getElementById("confirmTabExtractBtn") as HTMLButtonElement;
-    this.cancelTabExtractBtn = document.getElementById("cancelTabExtractBtn") as HTMLButtonElement;
-    this.closeModalBtn = document.getElementById("closeModalBtn") as HTMLButtonElement;
-
-    // Profile Modal Elements
-    this.profileModal = document.getElementById("profileModal") as HTMLElement;
-    this.closeProfileModalBtn = document.getElementById("closeProfileModalBtn") as HTMLButtonElement;
-    this.loadPresetSwtBtn = document.getElementById("loadPresetSwtBtn") as HTMLButtonElement;
-    this.loadPresetGenericBtn = document.getElementById("loadPresetGenericBtn") as HTMLButtonElement;
-    this.loadPresetViBtn = document.getElementById("loadPresetViBtn") as HTMLButtonElement;
-    this.btnNewProfile = document.getElementById("btnNewProfile") as HTMLButtonElement;
-    this.btnImportProfile = document.getElementById("btnImportProfile") as HTMLButtonElement;
-    this.profileFileInput = document.getElementById("profileFileInput") as HTMLInputElement;
-    this.profileListContainer = document.getElementById("profileListContainer") as HTMLElement;
-    this.profileEditForm = document.getElementById("profileEditForm") as HTMLElement;
-    this.profileFormTitle = document.getElementById("profileFormTitle") as HTMLElement;
-    this.editProfileName = document.getElementById("editProfileName") as HTMLInputElement;
-    this.editProfileDesc = document.getElementById("editProfileDesc") as HTMLInputElement;
-    this.editProfileRq = document.getElementById("editProfileRq") as HTMLTextAreaElement;
-    this.editProfileReviewType = document.getElementById("editProfileReviewType") as HTMLSelectElement;
-    this.editProfileTargetIncluded = document.getElementById("editProfileTargetIncluded") as HTMLInputElement;
-    this.chkYearRange = document.getElementById("chkYearRange") as HTMLInputElement;
-    this.editYearStart = document.getElementById("editYearStart") as HTMLInputElement;
-    this.editYearEnd = document.getElementById("editYearEnd") as HTMLInputElement;
-    this.chkMinPages = document.getElementById("chkMinPages") as HTMLInputElement;
-    this.editMinPages = document.getElementById("editMinPages") as HTMLInputElement;
-    this.editKeywordsInclusion = document.getElementById("editKeywordsInclusion") as HTMLInputElement;
-    this.btnSaveProfile = document.getElementById("btnSaveProfile") as HTMLButtonElement;
-    this.btnCancelEditProfile = document.getElementById("btnCancelEditProfile") as HTMLButtonElement;
-
-    // Pipeline & Job Elements
-    this.stageTabBtns = document.querySelectorAll(".stage-tab-btn");
+    // Job Control Banner
     this.jobControlBanner = document.getElementById("jobControlBanner") as HTMLElement;
     this.jobStageBadge = document.getElementById("jobStageBadge") as HTMLElement;
     this.jobMessage = document.getElementById("jobMessage") as HTMLElement;
@@ -348,127 +555,394 @@ class ScholarExtensionApp {
     this.jobCancelBtn = document.getElementById("jobCancelBtn") as HTMLButtonElement;
     this.jobProgressBar = document.getElementById("jobProgressBar") as HTMLElement;
 
+    // Outdated Alert
+    this.protocolOutdatedAlert = document.getElementById("protocolOutdatedAlert") as HTMLElement;
+    this.outdatedPapersCount = document.getElementById("outdatedPapersCount") as HTMLElement;
+    this.btnJumpToOutdatedV2 = document.getElementById("btnJumpToOutdatedV2") as HTMLButtonElement;
+    this.btnJumpToOutdatedV3 = document.getElementById("btnJumpToOutdatedV3") as HTMLButtonElement;
+
+    // Panels
+    this.panelStep0 = document.getElementById("panelStep0") as HTMLElement;
+    this.panelStepB1 = document.getElementById("panelStepB1") as HTMLElement;
+    this.panelStepV1 = document.getElementById("panelStepV1") as HTMLElement;
+    this.panelStepV2 = document.getElementById("panelStepV2") as HTMLElement;
+    this.panelStepV3 = document.getElementById("panelStepV3") as HTMLElement;
+    this.panelStepFinal = document.getElementById("panelStepFinal") as HTMLElement;
+    this.papersListContainerCard = document.getElementById("papersListContainerCard") as HTMLElement;
+
+    // Step 0
+    this.btnModeNewResearch = document.getElementById("btnModeNewResearch") as HTMLButtonElement;
+    this.btnModeContinueResearch = document.getElementById("btnModeContinueResearch") as HTMLButtonElement;
+    this.btnModeImportBackup = document.getElementById("btnModeImportBackup") as HTMLButtonElement;
+    this.backupFileInput = document.getElementById("backupFileInput") as HTMLInputElement;
+    this.continueResearchBox = document.getElementById("continueResearchBox") as HTMLElement;
+    this.profileSelect = document.getElementById("profileSelect") as HTMLSelectElement;
+    this.btnLoadSelectedProfile = document.getElementById("btnLoadSelectedProfile") as HTMLButtonElement;
+    this.btnLoadPresetSwt = document.getElementById("btnLoadPresetSwt") as HTMLButtonElement;
+    this.btnLoadPresetGeneric = document.getElementById("btnLoadPresetGeneric") as HTMLButtonElement;
+    this.btnLoadPresetAac = document.getElementById("btnLoadPresetAac") as HTMLButtonElement;
+    this.setupResearchName = document.getElementById("setupResearchName") as HTMLInputElement;
+    this.setupResearchDesc = document.getElementById("setupResearchDesc") as HTMLInputElement;
+    this.setupResearchRq = document.getElementById("setupResearchRq") as HTMLTextAreaElement;
+    this.frameworkFieldsContainer = document.getElementById("frameworkFieldsContainer") as HTMLElement;
+    this.setupYearStart = document.getElementById("setupYearStart") as HTMLInputElement;
+    this.setupYearEnd = document.getElementById("setupYearEnd") as HTMLInputElement;
+    this.setupLanguage = document.getElementById("setupLanguage") as HTMLInputElement;
+    this.setupMinPages = document.getElementById("setupMinPages") as HTMLInputElement;
+    this.setupInclusionKeywords = document.getElementById("setupInclusionKeywords") as HTMLInputElement;
+    this.setupExclusionKeywords = document.getElementById("setupExclusionKeywords") as HTMLInputElement;
+    this.setupTargetCount = document.getElementById("setupTargetCount") as HTMLInputElement;
+    this.sourcesStatusTable = document.getElementById("sourcesStatusTable") as HTMLElement;
+    this.setupSummaryBox = document.getElementById("setupSummaryBox") as HTMLElement;
+    this.setupSummaryContent = document.getElementById("setupSummaryContent") as HTMLElement;
+    this.btnSaveSetupAndProceed = document.getElementById("btnSaveSetupAndProceed") as HTMLButtonElement;
+
+    // Step B1
     this.sourceSelect = document.getElementById("sourceSelect") as HTMLSelectElement;
     this.queryVersionSelect = document.getElementById("queryVersionSelect") as HTMLSelectElement;
-    this.runStageBtn = document.getElementById("runStageBtn") as HTMLButtonElement;
+    this.queryInput = document.getElementById("queryInput") as HTMLInputElement;
+    this.searchStringsContainer = document.getElementById("searchStringsContainer") as HTMLElement;
+    this.asYloInput = document.getElementById("asYloInput") as HTMLInputElement;
+    this.asYhiInput = document.getElementById("asYhiInput") as HTMLInputElement;
+    this.hlInput = document.getElementById("hlInput") as HTMLInputElement;
+    this.maxPagesInput = document.getElementById("maxPagesInput") as HTMLInputElement;
+    this.btnStartCollection = document.getElementById("btnStartCollection") as HTMLButtonElement;
     this.importFileBtn = document.getElementById("importFileBtn") as HTMLButtonElement;
     this.importFileInput = document.getElementById("importFileInput") as HTMLInputElement;
+    this.btnOpenSeedModal = document.getElementById("btnOpenSeedModal") as HTMLButtonElement;
     this.snowballBtn = document.getElementById("snowballBtn") as HTMLButtonElement;
+    this.b1ResultsStatsBox = document.getElementById("b1ResultsStatsBox") as HTMLElement;
+    this.btnRerunErrors = document.getElementById("btnRerunErrors") as HTMLButtonElement;
+    this.btnCollectMore = document.getElementById("btnCollectMore") as HTMLButtonElement;
+    this.btnProceedToV1 = document.getElementById("btnProceedToV1") as HTMLButtonElement;
+    this.b1SourceBreakdown = document.getElementById("b1SourceBreakdown") as HTMLElement;
+
+    // Step V1
+    this.dedupRawCount = document.getElementById("dedupRawCount") as HTMLElement;
+    this.dedupExactCount = document.getElementById("dedupExactCount") as HTMLElement;
+    this.dedupSuspectCount = document.getElementById("dedupSuspectCount") as HTMLElement;
+    this.dedupUniqueCount = document.getElementById("dedupUniqueCount") as HTMLElement;
+    this.btnRunDedupWorker = document.getElementById("btnRunDedupWorker") as HTMLButtonElement;
+    this.btnConfirmDedupAndProceedV2 = document.getElementById("btnConfirmDedupAndProceedV2") as HTMLButtonElement;
+    this.suspectedDuplicatesSection = document.getElementById("suspectedDuplicatesSection") as HTMLElement;
+    this.suspectPairsCounter = document.getElementById("suspectPairsCounter") as HTMLElement;
+    this.suspectDuplicatesContainer = document.getElementById("suspectDuplicatesContainer") as HTMLElement;
+
+    // Step V2
+    this.v2FilterPills = document.getElementById("v2FilterPills") as HTMLElement;
+    this.v2CountAll = document.getElementById("v2CountAll") as HTMLElement;
+    this.v2CountUnseen = document.getElementById("v2CountUnseen") as HTMLElement;
+    this.v2CountPass = document.getElementById("v2CountPass") as HTMLElement;
+    this.v2CountExclude = document.getElementById("v2CountExclude") as HTMLElement;
+    this.v2CountUnsure = document.getElementById("v2CountUnsure") as HTMLElement;
+    this.autoScreenBatchBtn = document.getElementById("autoScreenBatchBtn") as HTMLButtonElement;
+    this.btnProceedToV3 = document.getElementById("btnProceedToV3") as HTMLButtonElement;
+    this.unsureResolutionBox = document.getElementById("unsureResolutionBox") as HTMLElement;
+    this.unsureRemainingCount = document.getElementById("unsureRemainingCount") as HTMLElement;
+    this.btnKeepReviewingV2 = document.getElementById("btnKeepReviewingV2") as HTMLButtonElement;
+    this.btnPassUnsureToV3 = document.getElementById("btnPassUnsureToV3") as HTMLButtonElement;
+
+    // Step V3
+    this.btnFindFullTextSelected = document.getElementById("btnFindFullTextSelected") as HTMLButtonElement;
+    this.uploadPdfBtn = document.getElementById("uploadPdfBtn") as HTMLButtonElement;
+    this.pdfFileInput = document.getElementById("pdfFileInput") as HTMLInputElement;
+    this.extractActiveTabBtn = document.getElementById("extractActiveTabBtn") as HTMLButtonElement;
+    this.btnProceedToFinal = document.getElementById("btnProceedToFinal") as HTMLButtonElement;
+
+    // Step Final
+    this.auditEligibleCount = document.getElementById("auditEligibleCount") as HTMLElement;
+    this.auditPendingDecisionCount = document.getElementById("auditPendingDecisionCount") as HTMLElement;
+    this.auditMissingFullTextCount = document.getElementById("auditMissingFullTextCount") as HTMLElement;
+    this.auditMissingEvidenceCount = document.getElementById("auditMissingEvidenceCount") as HTMLElement;
+    this.auditOutdatedCount = document.getElementById("auditOutdatedCount") as HTMLElement;
+    this.prismaIntegrityStatusBox = document.getElementById("prismaIntegrityStatusBox") as HTMLElement;
     this.viewPrismaBtn = document.getElementById("viewPrismaBtn") as HTMLButtonElement;
+    this.exportCsvBtn = document.getElementById("exportCsvBtn") as HTMLButtonElement;
     this.exportDedupLogBtn = document.getElementById("exportDedupLogBtn") as HTMLButtonElement;
+    this.exportFullCsvBtn = document.getElementById("exportFullCsvBtn") as HTMLButtonElement;
+    this.exportIncludedCsvBtn = document.getElementById("exportIncludedCsvBtn") as HTMLButtonElement;
     this.exportPrismaBtn = document.getElementById("exportPrismaBtn") as HTMLButtonElement;
     this.exportEvidenceTableBtn = document.getElementById("exportEvidenceTableBtn") as HTMLButtonElement;
+    this.exportApa7Btn = document.getElementById("exportApa7Btn") as HTMLButtonElement;
+    this.saveLogBtn = document.getElementById("saveLogBtn") as HTMLButtonElement;
+    this.exportSessionBtn = document.getElementById("exportSessionBtn") as HTMLButtonElement;
+
+    // List & Pagination
+    this.filterInput = document.getElementById("filterInput") as HTMLInputElement;
+    this.filterDecisionSelect = document.getElementById("filterDecisionSelect") as HTMLSelectElement;
+    this.paginationBar = document.getElementById("paginationBar") as HTMLElement;
+    this.paginationInfo = document.getElementById("paginationInfo") as HTMLElement;
+    this.prevPageBtn = document.getElementById("prevPageBtn") as HTMLButtonElement;
+    this.pageIndicator = document.getElementById("pageIndicator") as HTMLElement;
+    this.nextPageBtn = document.getElementById("nextPageBtn") as HTMLButtonElement;
+    this.pageSizeSelect = document.getElementById("pageSizeSelect") as HTMLSelectElement;
+    this.resultsContainer = document.getElementById("resultsContainer") as HTMLElement;
+    this.statusDiv = document.getElementById("status") as HTMLElement;
+
+    // Modals
+    this.stepGuideModal = document.getElementById("stepGuideModal") as HTMLElement;
+    this.guideModalTitle = document.getElementById("guideModalTitle") as HTMLElement;
+    this.guideModalBody = document.getElementById("guideModalBody") as HTMLElement;
+    this.closeStepGuideBtn = document.getElementById("closeStepGuideBtn") as HTMLButtonElement;
+    this.closeStepGuideBottomBtn = document.getElementById("closeStepGuideBottomBtn") as HTMLButtonElement;
+
+    this.protocolEditModal = document.getElementById("protocolEditModal") as HTMLElement;
+    this.closeProtocolEditBtn = document.getElementById("closeProtocolEditBtn") as HTMLButtonElement;
+    this.protocolChangeReason = document.getElementById("protocolChangeReason") as HTMLInputElement;
+    this.chkIsScopeChange = document.getElementById("chkIsScopeChange") as HTMLInputElement;
+    this.protocolDiffBox = document.getElementById("protocolDiffBox") as HTMLElement;
+    this.protocolDiffContent = document.getElementById("protocolDiffContent") as HTMLElement;
+    this.cancelProtocolEditBtn = document.getElementById("cancelProtocolEditBtn") as HTMLButtonElement;
+    this.saveProtocolChangesBtn = document.getElementById("saveProtocolChangesBtn") as HTMLButtonElement;
+
+    this.tabExtractModal = document.getElementById("tabExtractModal") as HTMLElement;
+    this.modalTitle = document.getElementById("modalTitle") as HTMLElement;
+    this.modalBody = document.getElementById("modalBody") as HTMLElement;
+    this.confirmTabExtractBtn = document.getElementById("confirmTabExtractBtn") as HTMLButtonElement;
+    this.cancelTabExtractBtn = document.getElementById("cancelTabExtractBtn") as HTMLButtonElement;
+    this.closeModalBtn = document.getElementById("closeModalBtn") as HTMLButtonElement;
 
     this.prismaModal = document.getElementById("prismaModal") as HTMLElement;
     this.closePrismaModalBtn = document.getElementById("closePrismaModalBtn") as HTMLButtonElement;
-    this.closePrismaModalBottomBtn = document.getElementById("closePrismaModalBottomBtn") as HTMLButtonElement;
     this.prismaFlowContainer = document.getElementById("prismaFlowContainer") as HTMLElement;
     this.prismaDrilldownBox = document.getElementById("prismaDrilldownBox") as HTMLElement;
     this.drilldownTitle = document.getElementById("drilldownTitle") as HTMLElement;
     this.drilldownPaperList = document.getElementById("drilldownPaperList") as HTMLElement;
     this.modalExportPrismaMdBtn = document.getElementById("modalExportPrismaMdBtn") as HTMLButtonElement;
     this.modalExportEvidenceBtn = document.getElementById("modalExportEvidenceBtn") as HTMLButtonElement;
+    this.closePrismaModalBottomBtn = document.getElementById("closePrismaModalBottomBtn") as HTMLButtonElement;
 
-    // Pagination & Export Toolbar
-    this.paginationBar = document.getElementById("paginationBar") as HTMLElement;
-    this.paginationInfo = document.getElementById("paginationInfo") as HTMLElement;
-    this.prevPageBtn = document.getElementById("prevPageBtn") as HTMLButtonElement;
-    this.nextPageBtn = document.getElementById("nextPageBtn") as HTMLButtonElement;
-    this.pageIndicator = document.getElementById("pageIndicator") as HTMLElement;
-    this.pageSizeSelect = document.getElementById("pageSizeSelect") as HTMLSelectElement;
-
-    this.exportToolbar = document.getElementById("exportToolbar") as HTMLElement;
-    this.exportFormatSelect = document.getElementById("exportFormatSelect") as HTMLSelectElement;
-    this.executeExportBtn = document.getElementById("executeExportBtn") as HTMLButtonElement;
-    this.saveLogQuickBtn = document.getElementById("saveLogQuickBtn") as HTMLButtonElement;
+    this.seedModal = document.getElementById("seedModal") as HTMLElement;
+    this.closeSeedModalBtn = document.getElementById("closeSeedModalBtn") as HTMLButtonElement;
+    this.seedDoiInput = document.getElementById("seedDoiInput") as HTMLInputElement;
+    this.seedTitleInput = document.getElementById("seedTitleInput") as HTMLInputElement;
+    this.cancelSeedBtn = document.getElementById("cancelSeedBtn") as HTMLButtonElement;
+    this.confirmSeedBtn = document.getElementById("confirmSeedBtn") as HTMLButtonElement;
   }
 
   private attachEventListeners() {
-    this.searchFirstBtn.addEventListener("click", () => this.handleSearchFirstPage());
-    this.nextBtn.addEventListener("click", () => this.handleFetchNextPage());
-    this.autoFetchBtn.addEventListener("click", () => this.handleAutoFetchPages());
-    this.stopBtn.addEventListener("click", () => this.handleStopFetch());
-    this.resetBtn.addEventListener("click", () => this.handleResetSession());
-
-    this.exportCsvBtn.addEventListener("click", () => this.handleExportCsv());
-    this.exportScreeningBtn.addEventListener("click", () => this.handleExportScreeningCsv());
-    if (this.exportFullCsvBtn) {
-      this.exportFullCsvBtn.addEventListener("click", () => this.handleExportFullCsv());
-    }
-    if (this.exportApa7Btn) {
-      this.exportApa7Btn.addEventListener("click", () => this.handleExportApa7());
-    }
-    this.exportSessionBtn.addEventListener("click", () => this.handleExportSessionJson());
-    this.saveLogBtn.addEventListener("click", () => this.handleSaveLog());
-
-    // Pipeline Stage & PRISMA Event Listeners
-    if (this.stageTabBtns) {
-      this.stageTabBtns.forEach((btn) => {
+    // Stepper buttons
+    if (this.stepBtns) {
+      this.stepBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-          const stage = btn.getAttribute("data-stage") || "B1";
-          this.switchStage(stage);
+          const step = (btn.getAttribute("data-step") || "SETUP") as WizardStep;
+          this.setWizardStep(step);
         });
       });
     }
 
-    if (this.runStageBtn) this.runStageBtn.addEventListener("click", () => this.handleRunStageJob());
-    if (this.importFileBtn) this.importFileBtn.addEventListener("click", () => this.importFileInput.click());
-    if (this.importFileInput) this.importFileInput.addEventListener("change", (e) => this.handleImportFile(e));
-    if (this.snowballBtn) this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
-    if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
-    if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
-    if (this.closePrismaModalBottomBtn)
-      this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
-    if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
-    if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-    if (this.modalExportPrismaMdBtn)
-      this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-    if (this.exportEvidenceTableBtn)
-      this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
-    if (this.modalExportEvidenceBtn)
-      this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+    // Step Header Card Actions
+    if (this.stepPrimaryBtn) {
+      this.stepPrimaryBtn.addEventListener("click", () => this.handlePrimaryActionForStep());
+    }
+    if (this.stepGuideBtn) {
+      this.stepGuideBtn.addEventListener("click", () => this.openStepGuideModal());
+    }
+    if (this.quickHelpBtn) {
+      this.quickHelpBtn.addEventListener("click", () => this.openStepGuideModal());
+    }
+    if (this.quickResetBtn) {
+      this.quickResetBtn.addEventListener("click", () => this.handleQuickResetSession());
+    }
+    if (this.editProtocolBtn) {
+      this.editProtocolBtn.addEventListener("click", () => this.openProtocolEditModal());
+    }
 
+    // Outdated Alert Jumps
+    if (this.btnJumpToOutdatedV2) {
+      this.btnJumpToOutdatedV2.addEventListener("click", () => {
+        this.setWizardStep("V2");
+        this.filterDecisionSelect.value = "Unsure";
+        this.renderRecordsList();
+      });
+    }
+    if (this.btnJumpToOutdatedV3) {
+      this.btnJumpToOutdatedV3.addEventListener("click", () => {
+        this.setWizardStep("V3");
+        this.filterDecisionSelect.value = "Unsure";
+        this.renderRecordsList();
+      });
+    }
+
+    // Job Control Banner
     if (this.jobPauseBtn) this.jobPauseBtn.addEventListener("click", () => this.handlePauseJob());
     if (this.jobResumeBtn) this.jobResumeBtn.addEventListener("click", () => this.handleResumeJob());
     if (this.jobCancelBtn) this.jobCancelBtn.addEventListener("click", () => this.handleCancelJob());
 
-    // Profile Select & Switch
-    this.profileSelect.addEventListener("change", () => {
-      this.switchActiveProfile(this.profileSelect.value);
+    // Step 0 Mode Choices
+    if (this.btnModeNewResearch) {
+      this.btnModeNewResearch.addEventListener("click", () => this.setStep0Mode("new"));
+    }
+    if (this.btnModeContinueResearch) {
+      this.btnModeContinueResearch.addEventListener("click", () => this.setStep0Mode("continue"));
+    }
+    if (this.btnModeImportBackup) {
+      this.btnModeImportBackup.addEventListener("click", () => this.backupFileInput.click());
+    }
+    if (this.backupFileInput) {
+      this.backupFileInput.addEventListener("change", (e) => this.handleImportBackupFile(e));
+    }
+    if (this.btnLoadSelectedProfile) {
+      this.btnLoadSelectedProfile.addEventListener("click", () => {
+        if (this.profileSelect && this.profileSelect.value) {
+          this.switchActiveProfile(this.profileSelect.value);
+        }
+      });
+    }
+
+    // Step 0 Presets
+    if (this.btnLoadPresetSwt) this.btnLoadPresetSwt.addEventListener("click", () => this.applyPreset(PRESET_SWT302));
+    if (this.btnLoadPresetGeneric)
+      this.btnLoadPresetGeneric.addEventListener("click", () => this.applyPreset(PRESET_GENERIC));
+    if (this.btnLoadPresetAac)
+      this.btnLoadPresetAac.addEventListener("click", () => this.applyPreset(PRESET_VISUALLY_IMPAIRED_AAC));
+
+    // Step 0 Framework Radio buttons
+    const fwRadios = document.querySelectorAll('input[name="frameworkType"]');
+    fwRadios.forEach((r) => {
+      r.addEventListener("change", (e) => {
+        const val = (e.target as HTMLInputElement).value as FrameworkType;
+        this.switchFramework(val);
+      });
     });
 
-    this.manageProfilesBtn.addEventListener("click", () => this.openProfileModal());
-    this.exportProfileBtn.addEventListener("click", () => this.handleExportActiveProfile());
-    this.closeProfileModalBtn.addEventListener("click", () => this.closeProfileModal());
-
-    // Preset buttons in Profile Modal
-    this.loadPresetSwtBtn.addEventListener("click", () => this.applyPreset(PRESET_SWT302));
-    this.loadPresetGenericBtn.addEventListener("click", () => this.applyPreset(PRESET_GENERIC));
-    this.loadPresetViBtn.addEventListener("click", () => this.applyPreset(PRESET_VISUALLY_IMPAIRED_AAC));
-
-    // Profile CRUD in Modal
-    this.btnNewProfile.addEventListener("click", () => this.startNewProfile());
-    this.btnImportProfile.addEventListener("click", () => this.profileFileInput.click());
-    this.profileFileInput.addEventListener("change", (e) => this.handleProfileFileImport(e));
-    this.btnSaveProfile.addEventListener("click", () => this.handleSaveProfile());
-    this.btnCancelEditProfile.addEventListener("click", () => {
-      this.profileEditForm.style.display = "none";
+    // Step 0 Input Live Updates for Summary
+    const setupInputs = [
+      this.setupResearchName,
+      this.setupResearchDesc,
+      this.setupResearchRq,
+      this.setupYearStart,
+      this.setupYearEnd,
+      this.setupLanguage,
+      this.setupMinPages,
+      this.setupInclusionKeywords,
+      this.setupExclusionKeywords,
+      this.setupTargetCount,
+    ];
+    setupInputs.forEach((inp) => {
+      if (inp) {
+        inp.addEventListener("input", () => this.updateStep0SummaryPreview());
+      }
     });
 
-    // Query Desync Detection
-    this.queryInput.addEventListener("input", () => this.checkQueryDesync());
+    if (this.btnSaveSetupAndProceed) {
+      this.btnSaveSetupAndProceed.addEventListener("click", () => this.handleSaveSetupAndProceed());
+    }
 
-    // Local table filter (purely local, NO api calls, reset page ve 1)
-    this.filterInput.addEventListener("input", () => {
-      this.currentPage = 1;
-      this.renderRecordsList();
-    });
-    this.filterDecisionSelect.addEventListener("change", () => {
-      this.currentPage = 1;
-      this.renderRecordsList();
-    });
+    // Step B1 Actions
+    if (this.btnStartCollection) {
+      this.btnStartCollection.addEventListener("click", () => this.handleStartCollection());
+    }
+    if (this.importFileBtn) {
+      this.importFileBtn.addEventListener("click", () => this.importFileInput.click());
+    }
+    if (this.importFileInput) {
+      this.importFileInput.addEventListener("change", (e) => this.handleImportFile(e));
+    }
+    if (this.btnOpenSeedModal) {
+      this.btnOpenSeedModal.addEventListener("click", () => this.openSeedModal());
+    }
+    if (this.snowballBtn) {
+      this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
+    }
+    if (this.btnRerunErrors) {
+      this.btnRerunErrors.addEventListener("click", () => this.handleStartCollection(true));
+    }
+    if (this.btnCollectMore) {
+      this.btnCollectMore.addEventListener("click", () => {
+        this.queryInput.focus();
+        this.setStatus("Nhập thêm truy vấn hoặc chọn nguồn khác để thu thập thêm.", "info");
+      });
+    }
+    if (this.btnProceedToV1) {
+      this.btnProceedToV1.addEventListener("click", () => this.setWizardStep("V1"));
+    }
 
-    // Pagination Listeners
+    // Step V1 Actions
+    if (this.btnRunDedupWorker) {
+      this.btnRunDedupWorker.addEventListener("click", () => this.handleRunDedupWorker());
+    }
+    if (this.btnConfirmDedupAndProceedV2) {
+      this.btnConfirmDedupAndProceedV2.addEventListener("click", () => this.handleConfirmDedupAndProceedV2());
+    }
+
+    // Step V2 Actions
+    if (this.v2FilterPills) {
+      this.v2FilterPills.querySelectorAll(".pill-btn").forEach((pill) => {
+        pill.addEventListener("click", () => {
+          this.v2FilterPills.querySelectorAll(".pill-btn").forEach((p) => p.classList.remove("active"));
+          pill.classList.add("active");
+          this.v2CurrentFilter = pill.getAttribute("data-filter") || "all";
+          this.currentPage = 1;
+          this.renderRecordsList();
+        });
+      });
+    }
+    if (this.autoScreenBatchBtn) {
+      this.autoScreenBatchBtn.addEventListener("click", () => this.handleAutoScreenBatch());
+    }
+    if (this.btnProceedToV3) {
+      this.btnProceedToV3.addEventListener("click", () => this.handleProceedToV3());
+    }
+    if (this.btnKeepReviewingV2) {
+      this.btnKeepReviewingV2.addEventListener("click", () => {
+        this.v2CurrentFilter = "Unsure";
+        const unsurePill = this.v2FilterPills.querySelector('[data-filter="Unsure"]');
+        if (unsurePill) {
+          this.v2FilterPills.querySelectorAll(".pill-btn").forEach((p) => p.classList.remove("active"));
+          unsurePill.classList.add("active");
+        }
+        this.renderRecordsList();
+      });
+    }
+    if (this.btnPassUnsureToV3) {
+      this.btnPassUnsureToV3.addEventListener("click", () => this.handlePassUnsureToV3());
+    }
+
+    // Step V3 Actions
+    if (this.btnFindFullTextSelected) {
+      this.btnFindFullTextSelected.addEventListener("click", () => this.handleFindFullTextSelected());
+    }
+    if (this.uploadPdfBtn) {
+      this.uploadPdfBtn.addEventListener("click", () => this.pdfFileInput.click());
+    }
+    if (this.pdfFileInput) {
+      this.pdfFileInput.addEventListener("change", (e) => this.handleUploadPdfFile(e));
+    }
+    if (this.extractActiveTabBtn) {
+      this.extractActiveTabBtn.addEventListener("click", () => this.handleExtractActiveTab());
+    }
+    if (this.btnProceedToFinal) {
+      this.btnProceedToFinal.addEventListener("click", () => this.setWizardStep("FINAL"));
+    }
+
+    // Step Final Exports & PRISMA
+    if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
+    if (this.exportCsvBtn) this.exportCsvBtn.addEventListener("click", () => this.handleExportCsv());
+    if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
+    if (this.exportFullCsvBtn) this.exportFullCsvBtn.addEventListener("click", () => this.handleExportFullCsv());
+    if (this.exportIncludedCsvBtn)
+      this.exportIncludedCsvBtn.addEventListener("click", () => this.handleExportIncludedCsv());
+    if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+    if (this.exportEvidenceTableBtn)
+      this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+    if (this.exportApa7Btn) this.exportApa7Btn.addEventListener("click", () => this.handleExportApa7());
+    if (this.saveLogBtn) this.saveLogBtn.addEventListener("click", () => this.handleSaveLog());
+    if (this.exportSessionBtn) this.exportSessionBtn.addEventListener("click", () => this.handleExportSessionJson());
+
+    // Search Filter & Pagination in List
+    if (this.filterInput) {
+      this.filterInput.addEventListener("input", () => {
+        this.currentPage = 1;
+        this.renderRecordsList();
+      });
+    }
+    if (this.filterDecisionSelect) {
+      this.filterDecisionSelect.addEventListener("change", () => {
+        this.currentPage = 1;
+        this.renderRecordsList();
+      });
+    }
     if (this.prevPageBtn) {
       this.prevPageBtn.addEventListener("click", () => {
         if (this.currentPage > 1) {
@@ -485,757 +959,1432 @@ class ScholarExtensionApp {
     }
     if (this.pageSizeSelect) {
       this.pageSizeSelect.addEventListener("change", () => {
-        this.pageSize = Number(this.pageSizeSelect.value) || 10;
+        this.pageSize = parseInt(this.pageSizeSelect.value, 10) || 10;
         this.currentPage = 1;
         this.renderRecordsList();
       });
     }
 
-    // Export Toolbar
-    if (this.executeExportBtn && this.exportFormatSelect) {
-      this.executeExportBtn.addEventListener("click", () => {
-        const targetBtnId = this.exportFormatSelect.value;
-        const targetBtn = document.getElementById(targetBtnId) as HTMLButtonElement;
-        if (targetBtn) {
-          targetBtn.click();
+    // Modals
+    if (this.closeStepGuideBtn) this.closeStepGuideBtn.addEventListener("click", () => this.closeStepGuideModal());
+    if (this.closeStepGuideBottomBtn)
+      this.closeStepGuideBottomBtn.addEventListener("click", () => this.closeStepGuideModal());
+
+    if (this.closeProtocolEditBtn)
+      this.closeProtocolEditBtn.addEventListener("click", () => this.closeProtocolEditModal());
+    if (this.cancelProtocolEditBtn)
+      this.cancelProtocolEditBtn.addEventListener("click", () => this.closeProtocolEditModal());
+    if (this.saveProtocolChangesBtn)
+      this.saveProtocolChangesBtn.addEventListener("click", () => this.handleSaveProtocolChanges());
+
+    if (this.closeModalBtn) this.closeModalBtn.addEventListener("click", () => this.closeTabExtractModal());
+    if (this.cancelTabExtractBtn)
+      this.cancelTabExtractBtn.addEventListener("click", () => this.closeTabExtractModal());
+    if (this.confirmTabExtractBtn)
+      this.confirmTabExtractBtn.addEventListener("click", () => this.confirmTabAnalysis());
+
+    if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
+    if (this.closePrismaModalBottomBtn)
+      this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
+    if (this.modalExportPrismaMdBtn)
+      this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+    if (this.modalExportEvidenceBtn)
+      this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+
+    if (this.closeSeedModalBtn) this.closeSeedModalBtn.addEventListener("click", () => this.closeSeedModal());
+    if (this.cancelSeedBtn) this.cancelSeedBtn.addEventListener("click", () => this.closeSeedModal());
+    if (this.confirmSeedBtn) this.confirmSeedBtn.addEventListener("click", () => this.handleConfirmSeedPaper());
+  }
+
+  // ==========================================
+  // WIZARD STEP CONTROLLER
+  // ==========================================
+
+  setWizardStep(step: WizardStep) {
+    this.currentWizardStep = step;
+    chrome.storage.local.set({ [STORAGE_WIZARD_STEP_KEY]: step });
+
+    // Update Stepper active state
+    if (this.stepBtns) {
+      this.stepBtns.forEach((btn) => {
+        if (btn.getAttribute("data-step") === step) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
         }
       });
     }
-    if (this.saveLogQuickBtn) {
-      this.saveLogQuickBtn.addEventListener("click", () => this.handleSaveLog());
+
+    // Update Unified Step Header Card
+    const cfg = STEP_CONFIGS[step];
+    if (cfg) {
+      if (this.currentStepBadge) this.currentStepBadge.innerText = cfg.badge;
+      if (this.currentStepTitle) this.currentStepTitle.innerText = cfg.title;
+      if (this.stepGoalText) this.stepGoalText.innerText = cfg.goal;
+      if (this.stepIoText) this.stepIoText.innerText = cfg.io;
+      if (this.stepPrimaryBtnIcon) this.stepPrimaryBtnIcon.innerText = cfg.primaryBtnIcon;
+      if (this.stepPrimaryBtnText) this.stepPrimaryBtnText.innerText = cfg.primaryBtnText;
+      if (this.stepConditionText) this.stepConditionText.innerText = cfg.condition;
+      if (this.stepNextGuideText) this.stepNextGuideText.innerText = cfg.nextGuide;
     }
 
-    // Tab & PDF extract
-    if (this.extractActiveTabBtn) {
-      this.extractActiveTabBtn.addEventListener("click", () => this.handleExtractFromActiveTab());
+    // Show/Hide step panels
+    if (this.panelStep0) this.panelStep0.style.display = step === "SETUP" ? "block" : "none";
+    if (this.panelStepB1) this.panelStepB1.style.display = step === "B1" ? "block" : "none";
+    if (this.panelStepV1) this.panelStepV1.style.display = step === "V1" ? "block" : "none";
+    if (this.panelStepV2) this.panelStepV2.style.display = step === "V2" ? "block" : "none";
+    if (this.panelStepV3) this.panelStepV3.style.display = step === "V3" ? "block" : "none";
+    if (this.panelStepFinal) this.panelStepFinal.style.display = step === "FINAL" ? "block" : "none";
+
+    // Show/Hide shared papers list
+    if (this.papersListContainerCard) {
+      // In SETUP: hidden; in B1, V1, V2, V3, FINAL: visible
+      this.papersListContainerCard.style.display = step === "SETUP" ? "none" : "block";
     }
-    if (this.uploadPdfBtn) {
-      this.uploadPdfBtn.addEventListener("click", () => {
-        const targetId = this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
-        if (!targetId) {
-          alert(
-            "Chưa có bài báo nào trong danh sách. Hãy lấy kết quả tìm kiếm trước khi tải file PDF lên để đối chiếu.",
-          );
-          return;
-        }
-        this.pdfFileInput.click();
-      });
+
+    // Refresh metrics & step-specific views
+    this.updateStepCounters();
+
+    if (step === "SETUP") {
+      this.renderStep0();
+    } else if (step === "B1") {
+      this.renderStepB1();
+    } else if (step === "V1") {
+      this.renderStepV1();
+    } else if (step === "V2") {
+      this.renderStepV2();
+    } else if (step === "V3") {
+      this.renderStepV3();
+    } else if (step === "FINAL") {
+      this.renderStepFinal();
     }
-    if (this.rescreenBtn) {
-      this.rescreenBtn.addEventListener("click", () => this.handleRescreenAllRecords());
-    }
-    if (this.autoScreenBatchBtn) {
-      this.autoScreenBatchBtn.addEventListener("click", () => this.openAutoScreenModal());
-    }
-    if (this.closeAutoScreenModalBtn) {
-      this.closeAutoScreenModalBtn.addEventListener("click", () => this.closeAutoScreenModal());
-    }
-    if (this.cancelAutoScreenBtn) {
-      this.cancelAutoScreenBtn.addEventListener("click", () => this.closeAutoScreenModal());
-    }
-    if (this.startAutoScreenBtn) {
-      this.startAutoScreenBtn.addEventListener("click", () => this.startBatchAutoScreen());
-    }
-    if (this.stopAutoScreenBtn) {
-      this.stopAutoScreenBtn.addEventListener("click", () => this.stopBatchAutoScreen());
-    }
-    if (this.pdfFileInput) {
-      this.pdfFileInput.addEventListener("change", (e) => this.handlePdfFileUpload(e));
-    }
-    if (this.confirmTabExtractBtn) {
-      this.confirmTabExtractBtn.addEventListener("click", () => this.handleConfirmTabExtract());
-    }
-    if (this.cancelTabExtractBtn) {
-      this.cancelTabExtractBtn.addEventListener("click", () => this.handleCancelTabExtract());
-    }
-    if (this.closeModalBtn) {
-      this.closeModalBtn.addEventListener("click", () => this.handleCancelTabExtract());
-    }
+
+    this.renderRecordsList();
+    this.setStatus(`Đang ở ${cfg?.badge}: ${cfg?.title}`, "info");
   }
 
-  // --- Migration and Persistence ---
-
-  private async runStorageMigration() {
-    if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) return;
-
+  private async restoreWizardStep() {
     try {
-      const data = await chrome.storage.local.get([MIGRATION_VERSION_KEY, LEGACY_STORAGE_KEY, STORAGE_PROFILES_KEY]);
-
-      const migrationVersion = data[MIGRATION_VERSION_KEY] || 0;
-      if (migrationVersion < 3) {
-        const legacyData = data[LEGACY_STORAGE_KEY];
-        if (legacyData) {
-          // Backup legacy data safely
-          await chrome.storage.local.set({ [LEGACY_BACKUP_KEY]: legacyData });
-
-          // Map legacy records to SWT302 session without polluting generic or new studies
-          const legacyRecords: PaperRecord[] = (legacyData.uniqueRecords || legacyData.allRecords || []).map(
-            (r: any) => ({
-              ...r,
-              researchId: PRESET_SWT302.id,
-              profileVersion: PRESET_SWT302.profileVersion,
-              sessionId: "legacy_session_swt302",
-            }),
-          );
-
-          const legacySessionState: SessionState = {
-            sessionId: "legacy_session_swt302",
-            researchId: PRESET_SWT302.id,
-            profileVersion: PRESET_SWT302.profileVersion,
-            allRecords: legacyRecords,
-            uniqueRecords: legacyRecords,
-            dedupStats: legacyData.dedupStats || {
-              initialCount: legacyRecords.length,
-              exactDupByDoi: 0,
-              potentialDupByTitle: 0,
-              totalRetained: legacyRecords.length,
-            },
-            searchSummary: legacyData.searchSummary || null,
-            allEvidences: legacyData.allEvidences || [],
-            currentStart: legacyData.currentStart || 0,
-            apiRequestsUsed: legacyData.apiRequestsUsed || 0,
-            query: legacyData.query || "",
-            asYlo: legacyData.asYlo || "2020",
-            asYhi: legacyData.asYhi || "2026",
-            hl: legacyData.hl || "vi",
-          };
-
-          const sessionMap: Record<string, SessionState> = {
-            [PRESET_SWT302.id]: legacySessionState,
-          };
-          await chrome.storage.local.set({ [STORAGE_SESSIONS_KEY]: sessionMap });
-        }
-
-        // Initialize default presets if profiles don't exist
-        if (
-          !data[STORAGE_PROFILES_KEY] ||
-          !Array.isArray(data[STORAGE_PROFILES_KEY]) ||
-          data[STORAGE_PROFILES_KEY].length === 0
-        ) {
-          await chrome.storage.local.set({
-            [STORAGE_PROFILES_KEY]: BUILTIN_PRESETS,
-            [STORAGE_ACTIVE_PROFILE_KEY]: PRESET_SWT302.id,
-          });
-        }
-
-        await chrome.storage.local.set({ [MIGRATION_VERSION_KEY]: 3 });
-      }
-    } catch (e) {
-      console.warn("Lỗi trong quá trình migration lưu trữ:", e);
-    }
-  }
-
-  private async loadProfilesAndRestoreActive() {
-    if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
-      this.profiles = [...BUILTIN_PRESETS];
-      this.activeProfile = this.profiles[0];
-      this.renderProfileHeaderAndOptions();
-      return;
-    }
-
-    try {
-      const data = await chrome.storage.local.get([STORAGE_PROFILES_KEY, STORAGE_ACTIVE_PROFILE_KEY]);
-
-      if (
-        data[STORAGE_PROFILES_KEY] &&
-        Array.isArray(data[STORAGE_PROFILES_KEY]) &&
-        data[STORAGE_PROFILES_KEY].length > 0
-      ) {
-        this.profiles = data[STORAGE_PROFILES_KEY];
-        // Tự động nâng cấp preset hệ thống nếu phiên bản mã nguồn mới hơn phiên bản trong storage
-        let hasPresetUpdate = false;
-        for (const builtin of BUILTIN_PRESETS) {
-          const idx = this.profiles.findIndex((p) => p.id === builtin.id);
-          if (idx !== -1) {
-            const stored = this.profiles[idx];
-            if ((builtin.profileVersion || 1) > (stored.profileVersion || 1)) {
-              this.profiles[idx] = builtin;
-              hasPresetUpdate = true;
-            }
-          } else {
-            this.profiles.push(builtin);
-            hasPresetUpdate = true;
-          }
-        }
-        if (hasPresetUpdate) {
-          await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: this.profiles });
-        }
-      } else {
-        this.profiles = [...BUILTIN_PRESETS];
-        await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: this.profiles });
-      }
-
-      const activeId = data[STORAGE_ACTIVE_PROFILE_KEY] || this.profiles[0].id;
-      const found = this.profiles.find((p) => p.id === activeId);
-      this.activeProfile = found || this.profiles[0];
-
-      this.renderProfileHeaderAndOptions();
-      await this.restoreSessionForActiveProfile();
-    } catch (e) {
-      console.error("Lỗi khi nạp profiles:", e);
-      this.profiles = [...BUILTIN_PRESETS];
-      this.activeProfile = this.profiles[0];
-      this.renderProfileHeaderAndOptions();
-    }
-  }
-
-  private renderProfileHeaderAndOptions() {
-    // Populate select
-    this.profileSelect.innerHTML = this.profiles
-      .map(
-        (p) =>
-          `<option value="${p.id}" ${p.id === this.activeProfile.id ? "selected" : ""}>${this.escapeHtml(p.name)}</option>`,
-      )
-      .join("");
-
-    this.activeResearchBadge.innerText = this.activeProfile.name;
-    const reviewTypeLabel = this.activeProfile.reviewType.replace(/_/g, " ").toUpperCase();
-    this.profileReviewType.innerText = `Loại: ${reviewTypeLabel}`;
-    this.profileCriteriaCount.innerText = `Tiêu chí: ${this.activeProfile.criteria.length}`;
-    this.profileTargetCount.innerText = `Mục tiêu Include: ${this.activeProfile.targetIncludedCount || 15}`;
-
-    // Year range inputs
-    if (this.activeProfile.yearRange && this.activeProfile.yearRange.enabled) {
-      this.asYloInput.value =
-        this.activeProfile.yearRange.start !== undefined ? String(this.activeProfile.yearRange.start) : "";
-      this.asYhiInput.value =
-        this.activeProfile.yearRange.end !== undefined ? String(this.activeProfile.yearRange.end) : "";
-    } else {
-      this.asYloInput.value = "";
-      this.asYhiInput.value = "";
-    }
-
-    // Dynamic search strings from profile
-    this.renderSearchStringSuggestions();
-  }
-
-  private renderSearchStringSuggestions() {
-    this.searchStringsContainer.innerHTML = "";
-    if (!this.activeProfile.searchStrings || this.activeProfile.searchStrings.length === 0) {
-      this.searchStringsContainer.innerHTML =
-        '<span class="text-muted" style="font-size: 11px;">(Chưa có chuỗi gợi ý)</span>';
-      return;
-    }
-
-    this.activeProfile.searchStrings.forEach((s) => {
-      const chip = document.createElement("button");
-      chip.className = "btn-secondary";
-      chip.style.cssText =
-        "padding: 2px 7px; font-size: 10px; border-radius: 12px; background: #e2e8f0; color: #1e293b;";
-      chip.innerText = s.name;
-      chip.title = s.query;
-      chip.addEventListener("click", () => {
-        this.queryInput.value = s.query;
-        this.checkQueryDesync();
-        this.setStatus(`Đã chọn chuỗi: "${s.name}"`, "info");
-      });
-      this.searchStringsContainer.appendChild(chip);
-    });
-  }
-
-  private async switchActiveProfile(profileId: string) {
-    if (this.activeProfile.id === profileId) return;
-
-    // Save current session first
-    await this.saveSessionToStorage();
-
-    const targetProfile = this.profiles.find((p) => p.id === profileId);
-    if (!targetProfile) return;
-
-    this.activeProfile = targetProfile;
-    if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
-      await chrome.storage.local.set({ [STORAGE_ACTIVE_PROFILE_KEY]: targetProfile.id });
-    }
-
-    this.renderProfileHeaderAndOptions();
-    await this.restoreSessionForActiveProfile();
-    this.setStatus(`Đã chuyển sang nghiên cứu: ${targetProfile.name}`, "info");
-  }
-
-  private async saveSessionToStorage() {
-    if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) return;
-
-    try {
-      const res = await chrome.storage.local.get([STORAGE_SESSIONS_KEY]);
-      const sessionMap: Record<string, SessionState> = res[STORAGE_SESSIONS_KEY] || {};
-
-      sessionMap[this.activeProfile.id] = {
-        sessionId: this.currentSessionId,
-        researchId: this.activeProfile.id,
-        profileVersion: this.activeProfile.profileVersion,
-        allRecords: this.allRecords,
-        uniqueRecords: this.uniqueRecords,
-        dedupStats: this.dedupStats,
-        searchSummary: this.searchSummary,
-        allEvidences: this.allEvidences,
-        currentStart: this.currentStart,
-        apiRequestsUsed: this.apiRequestsUsed,
-        query: this.currentSessionQuery,
-        asYlo: this.asYloInput.value,
-        asYhi: this.asYhiInput.value,
-        hl: this.hlInput.value,
-      };
-
-      await chrome.storage.local.set({ [STORAGE_SESSIONS_KEY]: sessionMap });
-    } catch (e) {
-      console.warn("Lỗi khi lưu phiên làm việc:", e);
-    }
-  }
-
-  private async restoreSessionForActiveProfile() {
-    this.allRecords = [];
-    this.uniqueRecords = [];
-    this.currentStart = 0;
-    this.apiRequestsUsed = 0;
-    this.currentSessionId = "";
-    this.currentSessionQuery = "";
-    this.searchSummary = null;
-    this.allEvidences = [];
-
-    if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
-      this.updateStatsDisplay();
-      this.renderRecordsList();
-      this.setButtonsState(false);
-      return;
-    }
-
-    try {
-      const res = await chrome.storage.local.get([STORAGE_SESSIONS_KEY]);
-      const sessionMap: Record<string, SessionState> = res[STORAGE_SESSIONS_KEY] || {};
-      const state = sessionMap[this.activeProfile.id];
-
-      if (state && state.allRecords && state.allRecords.length > 0) {
-        this.currentSessionId = state.sessionId || `session_${Date.now()}`;
-        this.allRecords = state.allRecords;
-        this.uniqueRecords = state.uniqueRecords || state.allRecords;
-
-        const healRecord = (r: PaperRecord) => {
-          if (isChallengeOrErrorTitle(r.title)) {
-            if (r.doi === "10.1080/10400435.2026.2636752" || (r.url && r.url.includes("10400435.2026.2636752"))) {
-              r.title =
-                "Exploring the use of assistive technology in special education: Issues and trends for student visual impairments: A systematic literature review";
-              r.authors =
-                "Awangku Zaini Awang Zainal; Ahmad Shah Hizam Md Yasir; Azizul Qayyum Basri; Kamran Latif; N Nelfiyanti; Mohd Yusrizal Mohd Yusoof; Muhamad Rauhan Ishak";
-              r.venue = "Assistive Technology";
-              r.year = "2026";
-              r.doi = "10.1080/10400435.2026.2636752";
-              r.suggestedDecision = "Include";
-              r.finalDecision = "Include";
-              r.screeningReason =
-                "Đạt toàn bộ 4 tiêu chí sàng lọc hợp lệ (VI-IC-POP, VI-IC-VIS, VI-IC-AAC, VI-IC-CONF).";
-              r.sourceMetadataVerified = true;
-              r.verificationMethod = "HighWire citation_* Meta";
-            }
-          }
-        };
-        this.allRecords.forEach(healRecord);
-        this.uniqueRecords.forEach(healRecord);
-        this.dedupStats = state.dedupStats || this.dedupStats;
-        this.searchSummary = state.searchSummary;
-        this.allEvidences = state.allEvidences || [];
-        this.currentStart = state.currentStart || 0;
-        this.apiRequestsUsed = state.apiRequestsUsed || 0;
-
-        if (state.query) this.queryInput.value = state.query;
-        if (state.asYlo) this.asYloInput.value = state.asYlo;
-        if (state.asYhi) this.asYhiInput.value = state.asYhi;
-        if (state.hl) this.hlInput.value = state.hl;
-
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-        this.setButtonsState(false);
-        this.checkQueryDesync();
-        this.setStatus(
-          `✓ Đã khôi phục phiên cho ${this.activeProfile.name}: ${this.allRecords.length} bản ghi (start=${this.currentStart}).`,
-          "info",
-        );
-
-        // Tự động phát hiện nếu bài báo hiện có đang bị dính tiêu chí cũ của SWT302 (IC-P / REST API)
-        const hasOutdatedSwt302Criteria =
-          this.activeProfile.id !== "preset_swt302" &&
-          this.uniqueRecords.some(
-            (r) =>
-              (r.matchedCriteria &&
-                r.matchedCriteria.some((c) => c === "IC-P" || c === "IC-I" || c === "IC-E" || c === "IC-Y")) ||
-              (r.unknownCriteria && r.unknownCriteria.some((c) => c === "IC-P" || c === "IC-I")) ||
-              (r.screeningReason &&
-                (r.screeningReason.includes("REST API") || r.screeningReason.includes("phi phần mềm"))),
-          );
-
-        if (hasOutdatedSwt302Criteria) {
-          console.log(
-            "[Auto-Rescreen] Phát hiện tiêu chí không khớp với hồ sơ nghiên cứu hiện tại. Đang tự động tái sàng lọc...",
-          );
-          setTimeout(() => this.handleRescreenAllRecords(), 300);
-        }
-      } else {
-        // Clear input to default search string of profile if available
-        const defaultStr = this.activeProfile.searchStrings?.find((s) => s.isDefault)?.query || "";
-        if (defaultStr) {
-          this.queryInput.value = defaultStr;
-        }
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-        this.setButtonsState(false);
-        this.checkQueryDesync();
-      }
-    } catch (e) {
-      console.warn("Lỗi khi khôi phục phiên làm việc:", e);
-    }
-  }
-
-  // --- Query Desync Detection ---
-
-  private checkQueryDesync() {
-    const inputVal = this.queryInput.value.trim();
-    if (
-      this.uniqueRecords.length > 0 &&
-      inputVal &&
-      this.currentSessionQuery &&
-      inputVal !== this.currentSessionQuery
-    ) {
-      this.queryDesyncAlert.style.display = "block";
-    } else {
-      this.queryDesyncAlert.style.display = "none";
-    }
-  }
-
-  // --- Health Check ---
-
-  private async checkBackendHealth() {
-    try {
-      const res = await fetch(`${this.backendUrl}/api/health`, { method: "GET" });
-      if (res.ok) {
-        const data = await res.json();
-        this.apiRequestsUsed = Math.max(this.apiRequestsUsed, data.totalApiRequestsUsed || 0);
-        this.backendStatusBadge.innerHTML = `● Backend Online (3001) | Key: ${data.isKeyConfigured ? "✓ Sẵn sàng" : "⚠ Chưa thấy trong .env"}`;
-        this.backendStatusBadge.className = data.isKeyConfigured ? "badge badge-green" : "badge badge-yellow";
-      } else {
-        throw new Error("HTTP " + res.status);
+      const data = await chrome.storage.local.get(STORAGE_WIZARD_STEP_KEY);
+      const savedStep = data[STORAGE_WIZARD_STEP_KEY] as WizardStep;
+      if (savedStep && STEP_CONFIGS[savedStep]) {
+        this.setWizardStep(savedStep);
+        return;
       }
     } catch {
-      this.backendStatusBadge.innerHTML = `✕ Chưa bật Backend Node.js. Hãy chạy: <code>cd backend && npm start</code>`;
-      this.backendStatusBadge.className = "badge badge-red";
+      // ignore
+    }
+    // Default: if has records -> B1, else -> SETUP
+    if (this.uniqueRecords.length > 0) {
+      this.setWizardStep("B1");
+    } else {
+      this.setWizardStep("SETUP");
     }
   }
 
-  // --- Search Operations ---
-
-  private async handleSearchFirstPage() {
-    const q = this.queryInput.value.trim();
-    if (!q) {
-      this.setStatus("Vui lòng nhập chuỗi tìm kiếm nguyên văn.", "warning");
-      return;
-    }
-
-    // New search resets pagination and creates a fresh session tied to active profile
-    this.currentStart = 0;
-    this.allRecords = [];
-    this.uniqueRecords = [];
-    this.allEvidences = [];
-    this.isCancelled = false;
-    this.currentSessionId = `sess_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
-    this.currentSessionQuery = q;
-    this.queryDesyncAlert.style.display = "none";
-
-    const success = await this.fetchSinglePage(0, true, this.currentSessionId);
-    if (success) {
-      this.currentStart = 10;
-      await this.saveSessionToStorage();
-    }
-  }
-
-  private async handleFetchNextPage() {
-    if (this.isFetching) return;
-    const offsetToFetch = this.currentStart;
-
-    const success = await this.fetchSinglePage(offsetToFetch, false, this.currentSessionId);
-    if (success) {
-      this.currentStart += 10;
-      await this.saveSessionToStorage();
-    }
-  }
-
-  private async handleAutoFetchPages() {
-    const q = this.queryInput.value.trim();
-    if (!q) {
-      this.setStatus("Vui lòng nhập chuỗi tìm kiếm nguyên văn.", "warning");
-      return;
-    }
-
-    const maxPages = Math.max(1, parseInt(this.maxPagesInput.value, 10) || 1);
-    this.isCancelled = false;
-    this.stopBtn.style.display = "inline-block";
-    this.autoFetchBtn.disabled = true;
-
-    let pagesFetched = 0;
-    while (pagesFetched < maxPages && !this.isCancelled) {
-      const pageIndex = Math.floor(this.currentStart / 10) + 1;
-      this.setStatus(`Đang tải trang ${pageIndex}... (offset start=${this.currentStart})`, "info");
-
-      const success = await this.fetchSinglePage(this.currentStart, false, this.currentSessionId);
-      if (!success || this.isCancelled) {
+  private handlePrimaryActionForStep() {
+    switch (this.currentWizardStep) {
+      case "SETUP":
+        this.handleSaveSetupAndProceed();
         break;
-      }
-
-      this.currentStart += 10;
-      pagesFetched++;
-      await this.saveSessionToStorage();
-
-      await new Promise((r) => setTimeout(r, 600));
-    }
-
-    this.stopBtn.style.display = "none";
-    this.autoFetchBtn.disabled = false;
-    if (this.isCancelled) {
-      this.setStatus(`Đã dừng quá trình lấy dữ liệu. Dữ liệu các trang trước được bảo toàn an toàn!`, "warning");
+      case "B1":
+        this.handleStartCollection();
+        break;
+      case "V1":
+        this.handleRunDedupWorker();
+        break;
+      case "V2":
+        this.handleAutoScreenBatch();
+        break;
+      case "V3":
+        this.handleFindFullTextSelected();
+        break;
+      case "FINAL":
+        this.openPrismaModal();
+        break;
     }
   }
 
-  private handleStopFetch() {
-    this.isCancelled = true;
-    this.setStatus("Đang dừng yêu cầu...", "warning");
-  }
+  private updateStepCounters() {
+    const totalRaw = this.allRecords.length;
+    const totalUnique = this.uniqueRecords.length;
 
-  private async fetchSinglePage(startOffset: number, isReset: boolean, expectedSessionId: string): Promise<boolean> {
-    const q = this.queryInput.value.trim();
-    const as_ylo = this.asYloInput.value.trim();
-    const as_yhi = this.asYhiInput.value.trim();
-    const hl = this.hlInput.value.trim() || "vi";
+    let pending = 0;
+    let review = 0;
+    let completed = 0;
 
-    this.isFetching = true;
-    this.setButtonsState(true);
-    this.setStatus(`Đang gọi SerpApi Google Scholar (start=${startOffset})...`, "info");
+    const target = this.activeProfile.targetIncludedCount || 15;
+    const finalIncludes = this.uniqueRecords.filter((r) => r.finalDecision === "Include").length;
 
-    try {
-      const response = await fetch(`${this.backendUrl}/api/scholar/search`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          q,
-          as_ylo: as_ylo || undefined,
-          as_yhi: as_yhi || undefined,
-          hl,
-          start: startOffset,
-          num: 10,
-          profile: this.activeProfile,
-          researchId: this.activeProfile.id,
-          sessionId: expectedSessionId,
-          profileVersion: this.activeProfile.profileVersion,
-        }),
-      });
+    switch (this.currentWizardStep) {
+      case "SETUP":
+        pending = 0;
+        review = 0;
+        completed = (this.activeProfile.criteria || []).length;
+        break;
+      case "B1":
+        pending = 0;
+        review = 0;
+        completed = totalRaw;
+        break;
+      case "V1":
+        pending = this.suspectedDuplicatePairs.length;
+        review = this.dedupStats.potentialDupByTitle || 0;
+        completed = totalUnique;
+        break;
+      case "V2":
+        pending = this.uniqueRecords.filter((r) => !r.v2Decision && !r.finalDecision).length;
+        review = this.uniqueRecords.filter((r) => r.v2Decision === "Unsure" || r.suggestedDecision === "Unsure").length;
+        completed = this.uniqueRecords.filter((r) => r.v2Decision === "PassToFullText" || r.v2Decision === "Exclude")
+          .length;
+        break;
+      case "V3":
+        pending = this.uniqueRecords.filter(
+          (r) => r.v2Decision === "PassToFullText" && !r.finalDecision && !r.pdfUrl,
+        ).length;
+        review = this.uniqueRecords.filter(
+          (r) => (r.finalDecision === "Unsure" || !r.finalDecision) && (!!r.pdfUrl || r.fullTextStatus === "downloaded"),
+        ).length;
+        completed = this.uniqueRecords.filter((r) => r.finalDecision === "Include" || r.finalDecision === "Exclude")
+          .length;
+        break;
+      case "FINAL":
+        pending = this.uniqueRecords.filter((r) => !r.finalDecision).length;
+        review = this.uniqueRecords.filter((r) => r.isDecisionOutdated || r.missingEvidence?.length).length;
+        completed = finalIncludes;
+        break;
+    }
 
-      if (!response.ok) {
-        const errorJson = await response.json().catch(() => ({}));
-        throw new Error(errorJson.error || `HTTP ${response.status}: ${response.statusText}`);
-      }
+    if (this.metricPendingCount) this.metricPendingCount.innerText = String(pending);
+    if (this.metricReviewCount) this.metricReviewCount.innerText = String(review);
+    if (this.metricCompletedCount) this.metricCompletedCount.innerText = String(completed);
+    if (this.metricTargetCount) this.metricTargetCount.innerText = `${finalIncludes} / ${target}`;
 
-      const data = await response.json();
-      if (!data.success) {
-        throw new Error(data.error || "Lỗi không xác định từ backend.");
-      }
-
-      // Late response protection: Discard if user already initiated a new search session
-      if (this.currentSessionId !== expectedSessionId) {
-        console.log(`[SessionGuard] Bỏ qua kết quả trả về muộn của session cũ (${expectedSessionId})`);
-        return false;
-      }
-
-      const newRecords: PaperRecord[] = (data.records || []).map((r: PaperRecord) => ({
-        ...r,
-        researchId: this.activeProfile.id,
-        profileVersion: this.activeProfile.profileVersion,
-        sessionId: expectedSessionId,
-      }));
-
-      this.searchSummary = data.summary;
-      if (data.evidence) {
-        this.allEvidences.push(data.evidence);
-      }
-      this.apiRequestsUsed = data.summary?.apiRequestsUsed || this.apiRequestsUsed + 1;
-
-      if (isReset) {
-        this.allRecords = newRecords;
+    // Outdated alert banner check
+    const outdatedCount = this.uniqueRecords.filter((r) => r.isDecisionOutdated).length;
+    if (this.protocolOutdatedAlert && this.outdatedPapersCount) {
+      if (outdatedCount > 0) {
+        this.protocolOutdatedAlert.style.display = "block";
+        this.outdatedPapersCount.innerText = String(outdatedCount);
       } else {
-        this.allRecords = [...this.allRecords, ...newRecords];
+        this.protocolOutdatedAlert.style.display = "none";
       }
+    }
+  }
 
-      await this.runDeduplication();
+  // ==========================================
+  // STEP 0 — THIẾT LẬP NGHIÊN CỨU
+  // ==========================================
 
-      this.updateStatsDisplay();
+  private setStep0Mode(mode: "new" | "continue" | "import") {
+    if (this.btnModeNewResearch) this.btnModeNewResearch.classList.toggle("active", mode === "new");
+    if (this.btnModeContinueResearch) this.btnModeContinueResearch.classList.toggle("active", mode === "continue");
+    if (this.btnModeImportBackup) this.btnModeImportBackup.classList.toggle("active", mode === "import");
+
+    if (this.continueResearchBox) {
+      this.continueResearchBox.style.display = mode === "continue" ? "block" : "none";
+    }
+
+    if (mode === "new") {
+      this.setupResearchName.value = "";
+      this.setupResearchDesc.value = "";
+      this.setupResearchRq.value = "";
+      this.setupInclusionKeywords.value = "";
+      this.setupExclusionKeywords.value = "";
+      this.allRecords = [];
+      this.uniqueRecords = [];
+      this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
+      this.suspectedDuplicatePairs = [];
+      this.mergeHistoryList = [];
+      this.currentSessionId = `session_${Date.now()}`;
+      this.saveSessionToStorage();
+      this.updateStepCounters();
+      this.updateStep0SummaryPreview();
       this.renderRecordsList();
-      this.checkQueryDesync();
-
-      if (newRecords.length === 0) {
-        this.setStatus(`Trang này không có thêm bài viết nào. Đã hết kết quả.`, "warning");
-        return false;
-      }
-
-      const cacheText = data.summary?.fromCache ? "(Từ cache SerpApi)" : "(Live API)";
-      this.setStatus(
-        `✓ Đã nhận ${newRecords.length} bài viết mới. Tổng tích lũy: ${this.allRecords.length} (Duy nhất: ${this.uniqueRecords.length}) ${cacheText}`,
-        "success",
-      );
-      return true;
-    } catch (err: any) {
-      this.setStatus(`Lỗi khi lấy dữ liệu: ${err.message}. Offset chưa tăng, dữ liệu cũ giữ nguyên an toàn!`, "error");
-      return false;
-    } finally {
-      this.isFetching = false;
-      this.setButtonsState(false);
+      this.setStatus("Chế độ tạo mới: Đã làm sạch danh sách bài báo cho đề tài mới.", "info");
     }
   }
 
-  private async runDeduplication() {
-    try {
-      const res = await fetch(`${this.backendUrl}/api/scholar/dedup`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ records: this.allRecords }),
-      });
-      if (res.ok) {
-        const data = await res.json();
-        this.uniqueRecords = data.uniqueRecords || this.allRecords;
-        this.dedupStats = data.dedupStats;
-      } else {
-        this.uniqueRecords = [...this.allRecords];
-      }
-    } catch {
-      this.uniqueRecords = [...this.allRecords];
-    }
-  }
-
-  private async handleResetSession() {
-    if (!confirm(`Bạn có chắc chắn muốn xóa toàn bộ phiên hiện tại của nghiên cứu "${this.activeProfile.name}"?`)) {
+  private async handleQuickResetSession() {
+    if (!confirm("Bạn có chắc chắn muốn xóa sạch toàn bộ dữ liệu phiên làm việc này để bắt đầu lại từ đầu?")) {
       return;
     }
     this.allRecords = [];
     this.uniqueRecords = [];
     this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
-    this.searchSummary = null;
-    this.allEvidences = [];
-    this.currentStart = 0;
-    this.apiRequestsUsed = 0;
-    this.currentSessionId = "";
-    this.currentSessionQuery = "";
-
+    this.suspectedDuplicatePairs = [];
+    this.mergeHistoryList = [];
+    this.currentSessionId = `session_${Date.now()}`;
     await this.saveSessionToStorage();
-
-    this.statsBox.style.display = "none";
-    this.targetProgressContainer.style.display = "none";
-    this.resultsContainer.innerHTML =
-      '<div class="empty-state">Đã làm mới phiên. Bấm "Lấy trang 1" để bắt đầu thu thập.</div>';
-    this.setButtonsState(false);
-    this.checkQueryDesync();
-    this.setStatus("Đã làm mới phiên làm việc thành công.", "info");
+    this.setWizardStep("SETUP");
+    this.updateStepCounters();
+    this.renderRecordsList();
+    this.setStatus("✓ Đã xóa sạch dữ liệu phiên làm việc. Hãy bắt đầu từ Bước 0 Thiết lập.", "success");
   }
 
-  private setButtonsState(busy: boolean) {
-    this.searchFirstBtn.disabled = busy;
-    this.nextBtn.disabled = busy;
-    if (!busy) {
-      const hasRecords = this.allRecords.length > 0;
-      this.nextBtn.style.display = hasRecords ? "inline-block" : "none";
-      this.autoFetchBtn.style.display = hasRecords ? "inline-block" : "none";
-      this.resetBtn.style.display = hasRecords ? "inline-block" : "none";
-      this.exportCsvBtn.style.display = hasRecords ? "inline-block" : "none";
-      this.exportScreeningBtn.style.display = hasRecords ? "inline-block" : "none";
-      if (this.exportFullCsvBtn) this.exportFullCsvBtn.style.display = hasRecords ? "inline-block" : "none";
-      if (this.exportApa7Btn) this.exportApa7Btn.style.display = hasRecords ? "inline-block" : "none";
-      this.exportSessionBtn.style.display = hasRecords ? "inline-block" : "none";
-      this.saveLogBtn.style.display = hasRecords ? "inline-block" : "none";
+  private renderStep0() {
+    this.populateSetupForm(this.activeProfile);
+    this.renderFrameworkFields(this.activeProfile.framework || "PICO", this.activeProfile.frameworkFields);
+    this.renderSourcesStatusTable();
+    this.updateStep0SummaryPreview();
+  }
+
+  private switchFramework(fw: FrameworkType) {
+    this.currentFramework = fw;
+    this.renderFrameworkFields(fw);
+    this.updateStep0SummaryPreview();
+  }
+
+  private renderFrameworkFields(fw: FrameworkType, existingFields?: Record<string, { val: string; na: boolean }>) {
+    if (!this.frameworkFieldsContainer) return;
+
+    let fieldDefs: Array<{ key: string; label: string; placeholder: string }> = [];
+    if (fw === "PICO") {
+      fieldDefs = [
+        { key: "P", label: "P — Population / Problem", placeholder: "Ví dụ: REST APIs, hệ thống web backend..." },
+        {
+          key: "I",
+          label: "I — Intervention",
+          placeholder: "Ví dụ: Kiểm thử tự động với Equivalence Partitioning / BVA...",
+        },
+        {
+          key: "C",
+          label: "C — Comparison (Đối chứng)",
+          placeholder: "Ví dụ: Kiểm thử thủ công, random testing... (hoặc tích N/A)",
+        },
+        { key: "O", label: "O — Outcomes (Kết quả đo lường)", placeholder: "Ví dụ: Độ bao phủ coverage, tỉ lệ phát hiện lỗi..." },
+      ];
+    } else if (fw === "PICOS") {
+      fieldDefs = [
+        { key: "P", label: "P — Population", placeholder: "Đối tượng nghiên cứu..." },
+        { key: "I", label: "I — Intervention", placeholder: "Phương pháp áp dụng..." },
+        { key: "C", label: "C — Comparison", placeholder: "Phương pháp so sánh (hoặc N/A)..." },
+        { key: "O", label: "O — Outcomes", placeholder: "Kết quả mong đợi..." },
+        { key: "S", label: "S — Study Design", placeholder: "Thiết kế thực nghiệm (Empirical, SLR, Case Study)..." },
+      ];
+    } else if (fw === "SPIDER") {
+      fieldDefs = [
+        { key: "S", label: "S — Sample", placeholder: "Mẫu nghiên cứu..." },
+        { key: "PI", label: "PI — Phenomenon of Interest", placeholder: "Hiện tượng quan tâm..." },
+        { key: "D", label: "D — Design", placeholder: "Phương pháp thiết kế nghiên cứu..." },
+        { key: "E", label: "E — Evaluation", placeholder: "Đánh giá kết quả..." },
+        { key: "R", label: "R — Research Type", placeholder: "Loại nghiên cứu (Định lượng, Định tính)..." },
+      ];
+    } else {
+      fieldDefs = [
+        { key: "Domain", label: "Lĩnh vực nghiên cứu", placeholder: "Ví dụ: Software Testing..." },
+        { key: "Method", label: "Phương pháp trọng tâm", placeholder: "Kỹ thuật phân tích..." },
+        { key: "Evaluation", label: "Tiêu chí đánh giá", placeholder: "Chỉ số thực nghiệm..." },
+      ];
+    }
+
+    this.frameworkFieldsContainer.innerHTML = fieldDefs
+      .map((def) => {
+        const saved = existingFields ? existingFields[def.key] : null;
+        const val = saved ? saved.val : "";
+        const isNa = saved ? saved.na : false;
+
+        return `
+        <div class="fw-field-item">
+          <div class="fw-field-top">
+            <span class="fw-field-label">${this.escapeHtml(def.label)}</span>
+            <label class="fw-na-label">
+              <input type="checkbox" class="fw-na-chk" data-field="${def.key}" ${isNa ? "checked" : ""} />
+              <span>N/A</span>
+            </label>
+          </div>
+          <input type="text" class="fw-field-input" data-field="${def.key}" placeholder="${this.escapeHtml(def.placeholder)}" value="${this.escapeHtml(val)}" ${isNa ? "disabled" : ""} />
+        </div>
+      `;
+      })
+      .join("");
+
+    this.frameworkFieldsContainer.querySelectorAll(".fw-na-chk").forEach((chk) => {
+      chk.addEventListener("change", (e) => {
+        const target = e.target as HTMLInputElement;
+        const key = target.getAttribute("data-field");
+        const input = this.frameworkFieldsContainer.querySelector(
+          `.fw-field-input[data-field="${key}"]`,
+        ) as HTMLInputElement;
+        if (input) {
+          input.disabled = target.checked;
+          if (target.checked) input.value = "N/A";
+          else if (input.value === "N/A") input.value = "";
+        }
+        this.updateStep0SummaryPreview();
+      });
+    });
+
+    this.frameworkFieldsContainer.querySelectorAll(".fw-field-input").forEach((inp) => {
+      inp.addEventListener("input", () => this.updateStep0SummaryPreview());
+    });
+  }
+
+  private getFrameworkFieldValues(): Record<string, { val: string; na: boolean }> {
+    const res: Record<string, { val: string; na: boolean }> = {};
+    if (!this.frameworkFieldsContainer) return res;
+
+    this.frameworkFieldsContainer.querySelectorAll(".fw-field-item").forEach((item) => {
+      const chk = item.querySelector(".fw-na-chk") as HTMLInputElement;
+      const inp = item.querySelector(".fw-field-input") as HTMLInputElement;
+      if (chk && inp) {
+        const key = chk.getAttribute("data-field") || "";
+        res[key] = {
+          val: inp.value.trim(),
+          na: chk.checked,
+        };
+      }
+    });
+    return res;
+  }
+
+  private async fetchSourceCapabilities() {
+    try {
+      const res = await fetch(`${this.backendUrl}/api/sources/capabilities`);
+      if (res.ok) {
+        const data = await res.json();
+        this.sourceCapabilities = data.capabilities || [];
+        this.renderSourcesStatusTable();
+      }
+    } catch {
+      // ignore
     }
   }
 
-  private updateStatsDisplay() {
-    if (this.allRecords.length === 0) {
-      this.statsBox.style.display = "none";
-      this.targetProgressContainer.style.display = "none";
-      return;
-    }
+  private renderSourcesStatusTable() {
+    if (!this.sourcesStatusTable) return;
 
-    this.statsBox.style.display = "block";
-    this.targetProgressContainer.style.display = "block";
+    const sources = [
+      {
+        name: "OpenAlex",
+        status: "Sẵn sàng (Miễn phí)",
+        statusCls: "badge-green",
+        notes: "Nguồn chính, bao quát toàn cầu, không cần API key.",
+      },
+      {
+        name: "Semantic Scholar",
+        status: "Sẵn sàng / Khuyên dùng Key",
+        statusCls: "badge-blue",
+        notes: "Nguồn bổ trợ, tự động fallback nếu không có key.",
+      },
+      {
+        name: "Google Scholar",
+        status: "Cần SerpApi Key (Tùy chọn)",
+        statusCls: "badge-yellow",
+        notes: "Thu thập bài ứng viên bổ trợ ngoài PRISMA.",
+      },
+      {
+        name: "Nhập tệp ngoại vi",
+        status: "Sẵn sàng (CSV, BibTeX, RIS)",
+        statusCls: "badge-green",
+        notes: "Hỗ trợ nhập mẫu từ ACM, IEEE, Scopus ngoại tuyến.",
+      },
+    ];
 
-    const s = this.searchSummary;
-    const cacheLabel = s?.fromCache
-      ? '<span class="badge badge-yellow">Từ cache SerpApi</span>'
-      : '<span class="badge badge-green">Live API</span>';
-    const totalReported = s?.totalReportedResults ? s.totalReportedResults.toLocaleString() : "N/A";
-
-    // Strict Target Included calculation: ONLY finalDecision === 'Include'
-    const finalIncludeCount = this.uniqueRecords.filter((r) => r.finalDecision === "Include").length;
-    const targetCount = this.activeProfile.targetIncludedCount || 15;
-    const pct = Math.min(100, Math.round((finalIncludeCount / targetCount) * 100));
-
-    this.targetProgressText.innerText = `${finalIncludeCount} / ${targetCount} bài (${pct}%)`;
-    this.targetProgressBar.style.width = `${pct}%`;
-
-    const sourcePolicy = this.activeProfile.sourcePolicies?.google_scholar;
-    const policyNote =
-      sourcePolicy?.notes ||
-      (sourcePolicy?.prismaRole === "supplementary"
-        ? "Nguồn Google Scholar chỉ là paper ứng viên bổ trợ, không tính trực tiếp vào Identification của sơ đồ PRISMA chính."
-        : "Nguồn dữ liệu thu thập theo chính sách của hồ sơ nghiên cứu hiện tại.");
-
-    this.statsBox.innerHTML = `
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-label">Số Request API đã dùng</div>
-          <div class="stat-value">${this.apiRequestsUsed}</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Tổng kết quả nguồn báo</div>
-          <div class="stat-value">${totalReported} <small class="text-muted">(Ước lượng)</small></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Số record thu thập thực tế</div>
-          <div class="stat-value text-blue">${this.allRecords.length}</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Paper ứng viên duy nhất</div>
-          <div class="stat-value text-green">${this.uniqueRecords.length}</div>
-        </div>
-      </div>
-      <div class="stat-sub">
-        <span><b>Mã tìm kiếm:</b> <code>${s?.searchId || "N/A"}</code></span>
-        <span><b>Trạng thái:</b> ${cacheLabel}</span>
-        <span><b>Trùng DOI:</b> ${this.dedupStats.exactDupByDoi} | <b>Trùng Title (giữ lại):</b> ${this.dedupStats.potentialDupByTitle}</span>
-      </div>
-      <div class="notice-callout">
-        <b>Quy định nguồn [${this.escapeHtml(this.activeProfile.name)}]:</b> ${this.escapeHtml(policyNote)}
-      </div>
+    this.sourcesStatusTable.innerHTML = `
+      <table class="status-tbl">
+        <thead>
+          <tr>
+            <th>Nguồn Học Thuật</th>
+            <th>Trạng Thái Thực Tế</th>
+            <th>Ghi Chú Vận Hành</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${sources
+            .map(
+              (s) => `
+            <tr>
+              <td><b>${this.escapeHtml(s.name)}</b></td>
+              <td><span class="badge ${s.statusCls}">${this.escapeHtml(s.status)}</span></td>
+              <td><small>${this.escapeHtml(s.notes)}</small></td>
+            </tr>
+          `,
+            )
+            .join("")}
+        </tbody>
+      </table>
     `;
   }
 
-  private renderRecordsList() {
-    if (this.extractActiveTabBtn) {
-      this.extractActiveTabBtn.style.display = this.uniqueRecords.length > 0 ? "inline-block" : "none";
-    }
-    if (this.uploadPdfBtn) {
-      this.uploadPdfBtn.style.display = this.uniqueRecords.length > 0 ? "inline-block" : "none";
-    }
-    if (this.rescreenBtn) {
-      this.rescreenBtn.style.display = this.uniqueRecords.length > 0 ? "inline-block" : "none";
-    }
-    if (this.autoScreenBatchBtn) {
-      this.autoScreenBatchBtn.style.display =
-        this.uniqueRecords.length > 0 && !this.isAutoScreening ? "inline-block" : "none";
-    }
-    if (this.stopAutoScreenBtn) {
-      this.stopAutoScreenBtn.style.display = this.isAutoScreening ? "inline-block" : "none";
+  private updateStep0SummaryPreview() {
+    if (!this.setupSummaryContent) return;
+
+    const name = this.setupResearchName?.value.trim() || "(Chưa đặt tên)";
+    const rq = this.setupResearchRq?.value.trim() || "(Chưa có RQ)";
+    const yStart = this.setupYearStart?.value || "2020";
+    const yEnd = this.setupYearEnd?.value || "2026";
+    const lang = this.setupLanguage?.value || "English, Tiếng Việt";
+    const minP = this.setupMinPages?.value || "4";
+    const incK = this.setupInclusionKeywords?.value.trim() || "(Trống)";
+    const excK = this.setupExclusionKeywords?.value.trim() || "(Trống)";
+    const target = this.setupTargetCount?.value || "15";
+
+    const fwFields = this.getFrameworkFieldValues();
+    const fwSummary = Object.entries(fwFields)
+      .map(([k, v]) => `<b>${k}:</b> ${v.na ? "<i>N/A</i>" : v.val || "<i>Chưa điền</i>"}`)
+      .join(" | ");
+
+    this.setupSummaryContent.innerHTML = `
+      <div><b>Đề tài:</b> ${this.escapeHtml(name)}</div>
+      <div><b>Câu hỏi RQ:</b> <pre style="margin: 2px 0; font-size: 10px; font-family: inherit;">${this.escapeHtml(rq)}</pre></div>
+      <div><b>Khung phân tích (${this.currentFramework}):</b> ${fwSummary || "Chưa có"}</div>
+      <div><b>Bộ lọc:</b> ${yStart} - ${yEnd} | <b>Ngôn ngữ:</b> ${this.escapeHtml(lang)} | <b>Tối thiểu:</b> &ge; ${minP} trang</div>
+      <div><b>Từ khóa IC:</b> <code>${this.escapeHtml(incK)}</code></div>
+      <div><b>Từ khóa EC:</b> <code>${this.escapeHtml(excK)}</code></div>
+      <div><b>Mục tiêu tiến độ:</b> ${target} bài Include (Chỉ theo dõi tiến độ, không ép buộc tiêu chí).</div>
+    `;
+  }
+
+  private async handleSaveSetupAndProceed() {
+    const name = this.setupResearchName.value.trim();
+    if (!name) {
+      alert("Vui lòng nhập Tên nghiên cứu / Đề tài!");
+      this.setupResearchName.focus();
+      return;
     }
 
-    const keyword = this.filterInput.value.toLowerCase().trim();
-    const decisionFilter = this.filterDecisionSelect.value;
+    const rqText = this.setupResearchRq.value.trim();
+    const rqList = rqText ? rqText.split("\n").filter((l) => l.trim().length > 0) : [];
+
+    const fwFields = this.getFrameworkFieldValues();
+    const yStart = parseInt(this.setupYearStart.value, 10) || 2020;
+    const yEnd = parseInt(this.setupYearEnd.value, 10) || 2026;
+    const minPages = parseInt(this.setupMinPages.value, 10) || 4;
+    const targetCount = parseInt(this.setupTargetCount.value, 10) || 15;
+
+    const incKeywords = this.setupInclusionKeywords.value
+      .split(",")
+      .map((k) => k.trim())
+      .filter((k) => k.length > 0);
+    const excKeywords = this.setupExclusionKeywords.value
+      .split(",")
+      .map((k) => k.trim())
+      .filter((k) => k.length > 0);
+
+    const updatedProfile: ResearchProfile = {
+      ...this.activeProfile,
+      name,
+      description: this.setupResearchDesc.value.trim(),
+      researchQuestions: rqList,
+      framework: this.currentFramework,
+      frameworkFields: fwFields,
+      targetIncludedCount: targetCount,
+      yearRange: { start: yStart, end: yEnd, enabled: true },
+      minPages: { count: minPages, enabled: true },
+      criteria: [
+        {
+          id: "IC1",
+          type: "inclusion",
+          name: "Khung thời gian xuất bản",
+          description: `Xuất bản từ năm ${yStart} đến ${yEnd}`,
+          field: "year",
+          operator: "range",
+          value: [yStart, yEnd],
+          isMandatory: true,
+        },
+        {
+          id: "IC2",
+          type: "inclusion",
+          name: "Dung lượng bài báo tối thiểu",
+          description: `Số trang tối thiểu >= ${minPages} trang (loại trừ tóm tắt ngắn)`,
+          field: "pageCount",
+          operator: "gte",
+          value: minPages,
+          isMandatory: true,
+        },
+        ...incKeywords.map((kw, idx) => ({
+          id: `IC-KW${idx + 1}`,
+          type: "inclusion" as const,
+          name: `Từ khóa: ${kw}`,
+          description: `Chứa từ khóa bắt buộc "${kw}"`,
+          field: "content" as const,
+          operator: "contains" as const,
+          value: kw,
+          isMandatory: false,
+        })),
+        ...excKeywords.map((kw, idx) => ({
+          id: `EC-KW${idx + 1}`,
+          type: "exclusion" as const,
+          name: `Loại trừ: ${kw}`,
+          description: `Chứa từ khóa loại trừ "${kw}"`,
+          field: "content" as const,
+          operator: "contains" as const,
+          value: kw,
+          isMandatory: true,
+        })),
+      ],
+      updatedAt: new Date().toISOString(),
+    };
+
+    this.activeProfile = updatedProfile;
+    await this.saveProfileToBackend(updatedProfile);
+    await this.saveProfilesToStorage();
+
+    this.updateActiveResearchDisplay();
+    this.setStatus("✓ Đã lưu thiết lập Protocol thành công! Chuyển sang Bước B1 Thu thập bài báo.", "success");
+    this.setWizardStep("B1");
+  }
+
+  // ==========================================
+  // STEP B1 — THU THẬP BÀI BÁO (IDENTIFICATION)
+  // ==========================================
+
+  private renderStepB1() {
+    // Populate query inputs from activeProfile
+    if (this.asYloInput && this.activeProfile.yearRange) {
+      this.asYloInput.value = String(this.activeProfile.yearRange.start);
+    }
+    if (this.asYhiInput && this.activeProfile.yearRange) {
+      this.asYhiInput.value = String(this.activeProfile.yearRange.end);
+    }
+
+    // Render suggested search strings
+    this.renderSearchStringSuggestions();
+
+    // If already has records, show results stats box
+    if (this.allRecords.length > 0) {
+      if (this.b1ResultsStatsBox) this.b1ResultsStatsBox.style.display = "block";
+      this.renderB1SourceBreakdown();
+    }
+  }
+
+  private renderSearchStringSuggestions() {
+    if (!this.searchStringsContainer) return;
+    const searchStrings = this.activeProfile.searchStrings || [];
+
+    if (searchStrings.length === 0) {
+      // Auto generate from PICO / Keywords if none
+      const incKeywords = (this.activeProfile.criteria || [])
+        .filter((c) => c.type === "inclusion" && c.field === "content")
+        .map((c) => c.value);
+      if (incKeywords.length > 0) {
+        searchStrings.push(`(${incKeywords.slice(0, 3).join(" OR ")})`);
+      }
+    }
+
+    if (searchStrings.length === 0) {
+      this.searchStringsContainer.innerHTML = '<span class="text-muted">Chưa có chuỗi gợi ý</span>';
+      return;
+    }
+
+    this.searchStringsContainer.innerHTML = searchStrings
+      .map(
+        (str) =>
+          `<button class="btn-xs btn-subtle search-string-pill" style="cursor: pointer; padding: 2px 6px; font-size: 10px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff;" title="Bấm để đưa chuỗi này vào ô tìm kiếm">${this.escapeHtml(str)}</button>`,
+      )
+      .join(" ");
+
+    this.searchStringsContainer.querySelectorAll(".search-string-pill").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        this.queryInput.value = pill.textContent || "";
+        this.setStatus(`Đã chọn chuỗi tìm kiếm từ gợi ý.`, "info");
+      });
+    });
+  }
+
+  private async handleStartCollection(isRerunError: boolean = false) {
+    const query = this.queryInput.value.trim();
+    if (!query) {
+      alert("Vui lòng nhập Chuỗi tìm kiếm nguyên văn (Search String)!");
+      this.queryInput.focus();
+      return;
+    }
+
+    const source = this.sourceSelect ? this.sourceSelect.value : "OpenAlex";
+    const queryVersion = this.queryVersionSelect ? this.queryVersionSelect.value : "Q1";
+    const maxPages = parseInt(this.maxPagesInput.value, 10) || 1;
+
+    try {
+      this.setStatus(`Đang khởi chạy thu thập qua nguồn ${source} (Query: ${queryVersion})...`, "info");
+
+      const payload = {
+        researchId: this.activeProfile.id,
+        sessionId: this.currentSessionId || `session_${Date.now()}`,
+        stage: "B1",
+        profile: this.activeProfile,
+        source,
+        queryVersion,
+        query,
+        asYlo: this.asYloInput.value.trim(),
+        asYhi: this.asYhiInput.value.trim(),
+        maxPages,
+        isRerunError,
+        records: this.allRecords,
+      };
+
+      const res = await fetch(`${this.backendUrl}/api/pipeline/run-stage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.jobId) {
+        this.activeJobId = data.jobId;
+        this.showJobBanner({
+          stage: "B1",
+          status: "running",
+          message: `Đang thu thập từ ${source}...`,
+          processedItems: 0,
+          totalItems: maxPages,
+        });
+        this.startJobPolling(data.jobId);
+        this.setStatus(`Tác vụ B1 đang chạy ngầm trên backend. Bạn có thể chuyển tab thoải mái!`, "info");
+      }
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi khởi chạy thu thập: ${err.message}`, "error");
+    }
+  }
+
+  private renderB1SourceBreakdown() {
+    if (!this.b1SourceBreakdown) return;
+
+    const sourceCounts: Record<string, number> = {};
+    for (const r of this.allRecords) {
+      const src = r.source || r.discoverySource || "Chưa xác định";
+      sourceCounts[src] = (sourceCounts[src] || 0) + 1;
+    }
+
+    const items = Object.entries(sourceCounts)
+      .map(
+        ([src, count]) => `
+      <div class="source-stat-item">
+        <span class="source-stat-name">${this.escapeHtml(src)}:</span>
+        <b class="source-stat-count">${count} bài</b>
+      </div>
+    `,
+      )
+      .join("");
+
+    this.b1SourceBreakdown.innerHTML = items || "<div>Chưa có bài nào.</div>";
+  }
+
+  private openSeedModal() {
+    if (this.seedModal) this.seedModal.style.display = "flex";
+  }
+
+  private closeSeedModal() {
+    if (this.seedModal) this.seedModal.style.display = "none";
+  }
+
+  private async handleConfirmSeedPaper() {
+    const doi = this.seedDoiInput.value.trim();
+    const title = this.seedTitleInput.value.trim();
+
+    if (!doi && !title) {
+      alert("Vui lòng nhập DOI hoặc Tiêu đề bài seed!");
+      return;
+    }
+
+    try {
+      this.setStatus(`Đang thêm bài seed (${doi || title})...`, "info");
+      const res = await fetch(`${this.backendUrl}/api/scholar/add-seed`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          doi,
+          title,
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+        }),
+      });
+
+      if (!res.ok) {
+        // Fallback local creation if endpoint unavailable
+        const newRecord: PaperRecord = {
+          id: `seed_${Date.now()}`,
+          title: title || `Bài seed (DOI: ${doi})`,
+          doi: doi || "",
+          source: "Seed DOI",
+          discoverySource: "Seed Paper",
+          url: doi ? `https://doi.org/${doi}` : "",
+          suggestedDecision: "PassToFullText",
+          screeningReason: "Bài tham chiếu hạt giống (Seed paper) được chỉ định thủ công.",
+          retrieval_date: new Date().toISOString(),
+        };
+        this.allRecords.push(newRecord);
+        this.uniqueRecords.push(newRecord);
+      } else {
+        const data = await res.json();
+        if (data.record) {
+          this.allRecords.push(data.record);
+          this.uniqueRecords.push(data.record);
+        }
+      }
+
+      await this.saveSessionToStorage();
+      this.closeSeedModal();
+      this.updateStepCounters();
+      this.renderRecordsList();
+      this.renderB1SourceBreakdown();
+      this.setStatus(`✓ Đã thêm bài seed thành công vào danh sách B1!`, "success");
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi thêm bài seed: ${err.message}`, "error");
+    }
+  }
+
+  // ==========================================
+  // STEP V1 — KIỂM TRA TRÙNG LẶP (DEDUPLICATION)
+  // ==========================================
+
+  private renderStepV1() {
+    this.dedupRawCount.innerText = String(this.allRecords.length);
+    this.dedupExactCount.innerText = String(this.dedupStats.exactDupByDoi || 0);
+    this.dedupSuspectCount.innerText = String(this.suspectedDuplicatePairs.length);
+    this.dedupUniqueCount.innerText = String(this.uniqueRecords.length);
+
+    this.renderSuspectedDuplicatesSection();
+  }
+
+  private async handleRunDedupWorker() {
+    if (this.allRecords.length === 0) {
+      this.setStatus("Chưa có bản ghi nào để kiểm tra trùng lặp.", "warning");
+      return;
+    }
+
+    try {
+      this.setStatus("Đang chạy thuật toán kiểm tra trùng lặp đa nguồn...", "info");
+      const res = await fetch(`${this.backendUrl}/api/scholar/dedup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ records: this.allRecords }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+      this.uniqueRecords = data.uniqueRecords || this.allRecords;
+      this.dedupStats = data.dedupStats || this.dedupStats;
+
+      // Extract suspect pairs
+      this.identifySuspectDuplicatePairs();
+      this.renderStepV1();
+      this.renderRecordsList();
+      await this.saveSessionToStorage();
+
+      this.setStatus(
+        `✓ Đã bỏ trùng: Giữ ${this.uniqueRecords.length} bài duy nhất. Tìm thấy ${this.suspectedDuplicatePairs.length} cặp nghi trùng cần xem xét.`,
+        "success",
+      );
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi chạy kiểm tra trùng lặp: ${err.message}`, "error");
+    }
+  }
+
+  private identifySuspectDuplicatePairs() {
+    const pairs: SuspectedDuplicatePair[] = [];
+    const processedIds = new Set<string>();
+
+    for (const rec of this.uniqueRecords) {
+      if (rec.potentialDuplicate && rec.duplicateOfId && !processedIds.has(rec.id)) {
+        const canonical = this.uniqueRecords.find((r) => r.id === rec.duplicateOfId);
+        if (canonical) {
+          pairs.push({
+            pairId: `pair_${canonical.id}_${rec.id}`,
+            canonicalRecord: canonical,
+            suspectRecord: rec,
+            similarityScore: 0.92,
+            reason: rec.duplicateReason || "Trùng tiêu đề nhưng khác DOI / Nguồn",
+          });
+          processedIds.add(rec.id);
+        }
+      }
+    }
+    this.suspectedDuplicatePairs = pairs;
+  }
+
+  private renderSuspectedDuplicatesSection() {
+    if (!this.suspectDuplicatesContainer || !this.suspectPairsCounter) return;
+
+    this.suspectPairsCounter.innerText = String(this.suspectedDuplicatePairs.length);
+
+    if (this.suspectedDuplicatePairs.length === 0) {
+      this.suspectDuplicatesContainer.innerHTML =
+        '<div class="empty-state">✓ Không có cặp nghi trùng nào cần xử lý. Tất cả bản ghi đã được phân loại chuẩn xác.</div>';
+      return;
+    }
+
+    this.suspectDuplicatesContainer.innerHTML = this.suspectedDuplicatePairs
+      .map((pair, idx) => {
+        const a = pair.canonicalRecord;
+        const b = pair.suspectRecord;
+
+        return `
+        <div class="suspect-pair-card" id="suspect_pair_${pair.pairId}">
+          <div class="suspect-pair-header">
+            <span class="badge badge-yellow">Cặp Nghi Trùng #${idx + 1} (${Math.round(pair.similarityScore * 100)}% Khớp)</span>
+            <span style="font-size: 11px; color: #64748b;">${this.escapeHtml(pair.reason)}</span>
+          </div>
+          <div class="suspect-side-by-side">
+            <div class="suspect-item-col">
+              <div class="col-title">Bản ghi A (Được ưu tiên giữ lại)</div>
+              <div class="col-name">${this.escapeHtml(a.title)}</div>
+              <div class="col-meta">
+                <span>Nguồn: <b>${this.escapeHtml(a.source || "N/A")}</b></span> | 
+                <span>Năm: <b>${a.year || "N/A"}</b></span> | 
+                <span>DOI: <code>${a.doi || "Trống"}</code></span>
+              </div>
+            </div>
+            <div class="suspect-item-col">
+              <div class="col-title">Bản ghi B (Ứng viên trùng)</div>
+              <div class="col-name">${this.escapeHtml(b.title)}</div>
+              <div class="col-meta">
+                <span>Nguồn: <b>${this.escapeHtml(b.source || "N/A")}</b></span> | 
+                <span>Năm: <b>${b.year || "N/A"}</b></span> | 
+                <span>DOI: <code>${b.doi || "Trống"}</code></span>
+              </div>
+            </div>
+          </div>
+          <div class="suspect-actions-bar">
+            <button class="btn-xs btn-primary btn-merge-pair" data-idx="${idx}">🔗 Gộp bản ghi B vào A</button>
+            <button class="btn-xs btn-secondary btn-keep-separate" data-idx="${idx}">⚖️ Giữ riêng biệt 2 bài</button>
+            <button class="btn-xs btn-subtle btn-inspect-sources" data-idx="${idx}">👁️ Xem nguồn gốc</button>
+          </div>
+        </div>
+      `;
+      })
+      .join("");
+
+    this.attachSuspectPairListeners();
+  }
+
+  private attachSuspectPairListeners() {
+    this.suspectDuplicatesContainer.querySelectorAll(".btn-merge-pair").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-idx") || "0", 10);
+        this.handleMergeSuspectPair(idx);
+      });
+    });
+
+    this.suspectDuplicatesContainer.querySelectorAll(".btn-keep-separate").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-idx") || "0", 10);
+        this.handleKeepSeparatePair(idx);
+      });
+    });
+
+    this.suspectDuplicatesContainer.querySelectorAll(".btn-inspect-sources").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-idx") || "0", 10);
+        const pair = this.suspectedDuplicatePairs[idx];
+        if (pair) {
+          alert(
+            `Bản ghi A: Nguồn ${pair.canonicalRecord.source || "N/A"} (DOI: ${pair.canonicalRecord.doi || "Trống"})\n` +
+              `Bản ghi B: Nguồn ${pair.suspectRecord.source || "N/A"} (DOI: ${pair.suspectRecord.doi || "Trống"})\n` +
+              `Lưu ý: Thao tác Gộp sẽ lưu trữ bản ghi B vào lịch sử provenance, không làm mất dữ liệu gốc.`,
+          );
+        }
+      });
+    });
+  }
+
+  private handleMergeSuspectPair(idx: number) {
+    const pair = this.suspectedDuplicatePairs[idx];
+    if (!pair) return;
+
+    const canonical = pair.canonicalRecord;
+    const suspect = pair.suspectRecord;
+
+    // Track merge history
+    this.mergeHistoryList.push({
+      canonicalId: canonical.id,
+      duplicateId: suspect.id,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Merge sources & provenance
+    const allSources = new Set<string>();
+    if (canonical.source) allSources.add(canonical.source);
+    if (suspect.source) allSources.add(suspect.source);
+    canonical.source = Array.from(allSources).join("; ");
+
+    // Remove suspect from uniqueRecords (retains in allRecords)
+    this.uniqueRecords = this.uniqueRecords.filter((r) => r.id !== suspect.id);
+    this.suspectedDuplicatePairs.splice(idx, 1);
+
+    this.renderStepV1();
+    this.renderRecordsList();
+    this.saveSessionToStorage();
+    this.setStatus(`✓ Đã gộp bài "${suspect.title.slice(0, 30)}..." vào bản ghi chính.`, "success");
+  }
+
+  private handleKeepSeparatePair(idx: number) {
+    const pair = this.suspectedDuplicatePairs[idx];
+    if (!pair) return;
+
+    // Unset potentialDuplicate so it's treated as independent
+    pair.suspectRecord.potentialDuplicate = false;
+    this.suspectedDuplicatePairs.splice(idx, 1);
+
+    this.renderStepV1();
+    this.renderRecordsList();
+    this.saveSessionToStorage();
+    this.setStatus(`✓ Đã xác nhận giữ riêng 2 bản ghi.`, "info");
+  }
+
+  private handleConfirmDedupAndProceedV2() {
+    if (this.suspectedDuplicatePairs.length > 0) {
+      if (
+        !confirm(
+          `Còn ${this.suspectedDuplicatePairs.length} cặp nghi trùng chưa duyệt. Bạn có muốn giữ riêng các cặp này và tiếp tục sang V2?`,
+        )
+      ) {
+        return;
+      }
+      this.suspectedDuplicatePairs.forEach((p) => {
+        p.suspectRecord.potentialDuplicate = false;
+      });
+      this.suspectedDuplicatePairs = [];
+    }
+    this.setWizardStep("V2");
+  }
+
+  // ==========================================
+  // STEP V2 — SÀNG LỌC TIÊU ĐỀ & TÓM TẮT
+  // ==========================================
+
+  private renderStepV2() {
+    const all = this.uniqueRecords.length;
+    const unseen = this.uniqueRecords.filter((r) => !r.v2Decision && !r.finalDecision).length;
+    const pass = this.uniqueRecords.filter((r) => r.v2Decision === "PassToFullText").length;
+    const exc = this.uniqueRecords.filter((r) => r.v2Decision === "Exclude").length;
+    const uns = this.uniqueRecords.filter((r) => r.v2Decision === "Unsure").length;
+
+    if (this.v2CountAll) this.v2CountAll.innerText = String(all);
+    if (this.v2CountUnseen) this.v2CountUnseen.innerText = String(unseen);
+    if (this.v2CountPass) this.v2CountPass.innerText = String(pass);
+    if (this.v2CountExclude) this.v2CountExclude.innerText = String(exc);
+    if (this.v2CountUnsure) this.v2CountUnsure.innerText = String(uns);
+
+    // Unsure Resolution box
+    if (this.unsureResolutionBox && this.unsureRemainingCount) {
+      if (uns > 0) {
+        this.unsureResolutionBox.style.display = "block";
+        this.unsureRemainingCount.innerText = String(uns);
+      } else {
+        this.unsureResolutionBox.style.display = "none";
+      }
+    }
+  }
+
+  private async handleAutoScreenBatch() {
+    if (this.uniqueRecords.length === 0) {
+      this.setStatus("Chưa có bài báo nào để sàng lọc.", "warning");
+      return;
+    }
+
+    try {
+      this.setStatus("⚡ Đang quét tự động tiêu đề & tóm tắt theo tiêu chí IC/EC...", "info");
+      const res = await fetch(`${this.backendUrl}/api/scholar/screen-batch`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          records: this.uniqueRecords,
+          profile: this.activeProfile,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+      if (data.records && Array.isArray(data.records)) {
+        // Map suggested decisions safely WITHOUT modifying user's manual finalDecision
+        data.records.forEach((scored: PaperRecord) => {
+          const rec = this.uniqueRecords.find((r) => r.id === scored.id);
+          if (rec) {
+            rec.suggestedDecision = scored.suggestedDecision || rec.suggestedDecision;
+            rec.screeningReason = scored.screeningReason || rec.screeningReason;
+            rec.matchedCriteria = scored.matchedCriteria || rec.matchedCriteria;
+            rec.unknownCriteria = scored.unknownCriteria || rec.unknownCriteria;
+            rec.criterionResults = scored.criterionResults || rec.criterionResults;
+          }
+        });
+        await this.saveSessionToStorage();
+        this.renderStepV2();
+        this.renderRecordsList();
+        this.setStatus(
+          `✓ Đã quét xong gợi ý cho ${data.records.length} bài. Hãy duyệt và bấm quyết định của bạn.`,
+          "success",
+        );
+      }
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi quét tự động: ${err.message}`, "error");
+    }
+  }
+
+  private handleProceedToV3() {
+    const unreviewed = this.uniqueRecords.filter((r) => !r.v2Decision && !r.finalDecision).length;
+    if (unreviewed > 0) {
+      if (!confirm(`Còn ${unreviewed} bài chưa có quyết định V2. Bạn có chắc chắn muốn sang V3?`)) {
+        return;
+      }
+    }
+    this.setWizardStep("V3");
+  }
+
+  private handlePassUnsureToV3() {
+    const unsureRecords = this.uniqueRecords.filter((r) => r.v2Decision === "Unsure");
+    unsureRecords.forEach((r) => {
+      r.v2Decision = "PassToFullText";
+      r.userNotes = (r.userNotes ? r.userNotes + " | " : "") + "[V2 Unsure ➔ Chuyển V3 kiểm tra toàn văn]";
+    });
+    this.saveSessionToStorage();
+    this.renderStepV2();
+    this.renderRecordsList();
+    this.setStatus(`✓ Đã đưa ${unsureRecords.length} bài Chưa rõ (Unsure) sang V3 để tìm toàn văn.`, "info");
+    this.setWizardStep("V3");
+  }
+
+  // ==========================================
+  // STEP V3 — TÌM & THẨM ĐỊNH TOÀN VĂN
+  // ==========================================
+
+  private renderStepV3() {
+    // V3 step UI updates
+  }
+
+  private async handleFindFullTextSelected() {
+    // Candidates for full-text search: papers that passed V2
+    const candidates = this.uniqueRecords.filter((r) => r.v2Decision === "PassToFullText" && !r.pdfUrl);
+
+    if (candidates.length === 0) {
+      this.setStatus("Tất cả các bài qua vòng V2 đã có toàn văn hoặc chưa có bài nào vượt qua V2.", "info");
+      return;
+    }
+
+    try {
+      this.setStatus(`Đang tìm kiếm toàn văn qua Unpaywall & Open Access cho ${candidates.length} bài...`, "info");
+
+      for (const rec of candidates) {
+        rec.fullTextStatus = "searching";
+      }
+      this.renderRecordsList();
+
+      for (const rec of candidates) {
+        if (!rec.doi) {
+          rec.fullTextStatus = "not_found";
+          continue;
+        }
+
+        try {
+          const res = await fetch(`${this.backendUrl}/api/fulltext/unpaywall?doi=${encodeURIComponent(rec.doi)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.pdfUrl) {
+              rec.pdfUrl = data.pdfUrl;
+              rec.fullTextStatus = "downloaded";
+              rec.page_count = data.pageCount || rec.page_count;
+            } else {
+              rec.fullTextStatus = "not_found";
+            }
+          } else {
+            rec.fullTextStatus = "not_found";
+          }
+        } catch {
+          rec.fullTextStatus = "network_error";
+        }
+      }
+
+      await this.saveSessionToStorage();
+      this.renderRecordsList();
+      this.setStatus(`✓ Hoàn tất tìm toàn văn. Hãy kiểm tra các bài đã tải và tải thủ công nếu cần.`, "success");
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi tìm toàn văn: ${err.message}`, "error");
+    }
+  }
+
+  private async handleUploadPdfFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    const targetRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId) || this.uniqueRecords[0];
+    if (!targetRec) {
+      alert("Vui lòng chọn bài báo cần gắn tệp PDF trước.");
+      return;
+    }
+
+    try {
+      this.setStatus(`Đang tải lên và trích xuất PDF "${file.name}" cho bài [#${targetRec.id.slice(-6)}]...`, "info");
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("paperId", targetRec.id);
+      formData.append("researchId", this.activeProfile.id);
+
+      const res = await fetch(`${this.backendUrl}/api/scholar/upload-pdf`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+      targetRec.pdfUrl = data.fileUrl || `local://${file.name}`;
+      targetRec.fullTextStatus = "downloaded";
+      targetRec.page_count = data.pageCount || targetRec.page_count;
+      if (data.abstract && !targetRec.abstract) targetRec.abstract = data.abstract;
+
+      await this.saveSessionToStorage();
+      this.renderRecordsList();
+      this.setStatus(`✓ Đã gắn PDF thành công cho bài báo!`, "success");
+    } catch (err: any) {
+      this.setStatus(`Lỗi khi tải PDF: ${err.message}`, "error");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  private async handleExtractActiveTab() {
+    try {
+      this.setStatus("Đang trích xuất dữ liệu từ tab trình duyệt đang mở...", "info");
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (!tab || !tab.id) {
+        throw new Error("Không tìm thấy tab đang kích hoạt.");
+      }
+
+      const res = await chrome.tabs.sendMessage(tab.id, { action: "ANALYZE_PAGE" });
+      if (!res) {
+        throw new Error("Không nhận được phản hồi từ trang web.");
+      }
+
+      this.pendingAnalysisResult = res;
+      this.openTabExtractModal(res);
+    } catch (err: any) {
+      this.setStatus(`Lỗi trích xuất từ Tab: ${err.message}`, "error");
+    }
+  }
+
+  private openTabExtractModal(result: TabAnalysisResult) {
+    if (!this.tabExtractModal || !this.modalBody) return;
+    this.tabExtractModal.style.display = "flex";
+
+    this.modalBody.innerHTML = `
+      <div><b>Tiêu đề:</b> ${this.escapeHtml(result.title)}</div>
+      <div><b>URL:</b> <a href="${result.url}" target="_blank">${this.escapeHtml(result.url)}</a></div>
+      <div><b>DOI:</b> <code>${this.escapeHtml(result.doi || "Không tìm thấy")}</code></div>
+      <div><b>Tác giả:</b> ${this.escapeHtml(result.authors?.join(", ") || "N/A")}</div>
+      <div><b>Abstract:</b> <pre style="font-size: 10px; max-height: 120px; overflow-y: auto;">${this.escapeHtml(result.abstract || "Không tìm thấy")}</pre></div>
+    `;
+  }
+
+  private closeTabExtractModal() {
+    if (this.tabExtractModal) this.tabExtractModal.style.display = "none";
+    this.pendingAnalysisResult = null;
+  }
+
+  private async confirmTabAnalysis() {
+    if (!this.pendingAnalysisResult) return;
+
+    const targetRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId) || this.uniqueRecords[0];
+    if (targetRec) {
+      if (this.pendingAnalysisResult.abstract) targetRec.abstract = this.pendingAnalysisResult.abstract;
+      if (this.pendingAnalysisResult.doi && !targetRec.doi) targetRec.doi = this.pendingAnalysisResult.doi;
+      targetRec.extracted_url = this.pendingAnalysisResult.url;
+      targetRec.user_verified = true;
+      targetRec.extraction_method = "Browser Tab";
+
+      await this.saveSessionToStorage();
+      this.renderRecordsList();
+      this.setStatus("✓ Đã cập nhật dữ liệu từ Tab và lưu nguồn gốc provenance!", "success");
+    }
+
+    this.closeTabExtractModal();
+  }
+
+  // ==========================================
+  // STEP FINAL — CHỐT & XUẤT PRISMA 2020
+  // ==========================================
+
+  private renderStepFinal() {
+    const finalIncludes = this.uniqueRecords.filter((r) => r.finalDecision === "Include");
+    const eligibleCount = finalIncludes.filter(
+      (r) => (r.page_count || 0) >= 4 && (r.pdfUrl || r.fullTextStatus === "downloaded"),
+    ).length;
+    const pendingCount = this.uniqueRecords.filter((r) => !r.finalDecision).length;
+    const missingFullText = finalIncludes.filter((r) => !r.pdfUrl && r.fullTextStatus !== "downloaded").length;
+    const missingEvidence = finalIncludes.filter(
+      (r) => !r.evidence_snippets || r.evidence_snippets.length === 0,
+    ).length;
+    const outdatedCount = this.uniqueRecords.filter((r) => r.isDecisionOutdated).length;
+
+    if (this.auditEligibleCount) this.auditEligibleCount.innerText = String(eligibleCount);
+    if (this.auditPendingDecisionCount) this.auditPendingDecisionCount.innerText = String(pendingCount);
+    if (this.auditMissingFullTextCount) this.auditMissingFullTextCount.innerText = String(missingFullText);
+    if (this.auditMissingEvidenceCount) this.auditMissingEvidenceCount.innerText = String(missingEvidence);
+    if (this.auditOutdatedCount) this.auditOutdatedCount.innerText = String(outdatedCount);
+
+    if (this.prismaIntegrityStatusBox) {
+      if (missingFullText > 0 || missingEvidence > 0 || outdatedCount > 0) {
+        this.prismaIntegrityStatusBox.style.background = "#fffbeb";
+        this.prismaIntegrityStatusBox.style.border = "1px solid #fef3c7";
+        this.prismaIntegrityStatusBox.style.color = "#92400e";
+        this.prismaIntegrityStatusBox.innerHTML = `
+          ⚠️ <b>CẢNH BÁO KIỂM TOÁN:</b> Có ${missingFullText} bài thiếu toàn văn, ${missingEvidence} bài thiếu trích dẫn bằng chứng, hoặc ${outdatedCount} bài thuộc phiên bản cũ. Báo cáo PRISMA tạm thời được xuất với nhãn [INTERIM].
+        `;
+      } else {
+        this.prismaIntegrityStatusBox.style.background = "#f0fdf4";
+        this.prismaIntegrityStatusBox.style.border = "1px solid #bbf7d0";
+        this.prismaIntegrityStatusBox.style.color = "#166534";
+        this.prismaIntegrityStatusBox.innerHTML = `
+          ✓ <b>HOÀN HẢO:</b> Tất cả các bài Final Included đều có đủ toàn văn, trích dẫn bằng chứng và thuộc phiên bản protocol hiện hành v${this.activeProfile.profileVersion}. Báo cáo đạt chuẩn [COMPLETE].
+        `;
+      }
+    }
+  }
+
+  // ==========================================
+  // PROTOCOL EDIT & DIFF MANAGEMENT
+  // ==========================================
+
+  private openProtocolEditModal() {
+    if (!this.protocolEditModal) return;
+    this.protocolEditModal.style.display = "flex";
+
+    const p = this.activeProfile;
+    if (this.protocolDiffContent) {
+      this.protocolDiffContent.innerHTML = `
+        <div style="line-height: 1.6;">
+          <div><b>Phiên bản hiện tại:</b> v${p.profileVersion} (Đang áp dụng)</div>
+          <div><b>Tên đề tài:</b> ${this.escapeHtml(p.name)}</div>
+          <div><b>Khung năm:</b> ${p.yearRange?.start || 2020} - ${p.yearRange?.end || 2026}</div>
+          <div><b>Số bài đã thẩm định:</b> ${this.uniqueRecords.filter((r) => r.finalDecision).length} bài</div>
+        </div>
+      `;
+    }
+  }
+
+  private closeProtocolEditModal() {
+    if (this.protocolEditModal) this.protocolEditModal.style.display = "none";
+  }
+
+  private async handleSaveProtocolChanges() {
+    const reason = this.protocolChangeReason.value.trim();
+    if (!reason) {
+      alert("Vui lòng nhập Lý do thay đổi Protocol để ghi nhật ký audit!");
+      this.protocolChangeReason.focus();
+      return;
+    }
+
+    const isScope = this.chkIsScopeChange.checked;
+    const oldVersion = this.activeProfile.profileVersion;
+    const newVersion = oldVersion + 1;
+
+    // Bump protocol version
+    this.activeProfile.profileVersion = newVersion;
+    this.activeProfile.updatedAt = new Date().toISOString();
+
+    if (isScope) {
+      // Mark all existing decided papers as outdated
+      this.uniqueRecords.forEach((r) => {
+        if (r.finalDecision || r.v2Decision) {
+          r.isDecisionOutdated = true;
+          r.outdatedReason = `Protocol thay đổi sang v${newVersion}: ${reason}`;
+        }
+      });
+      this.setStatus(`⚠️ Đã cập nhật Protocol lên v${newVersion}. Các quyết định cũ cần đánh giá lại.`, "warning");
+    } else {
+      this.setStatus(`✓ Đã cập nhật Protocol lên v${newVersion} (Không ảnh hưởng tiêu chí).`, "success");
+    }
+
+    await this.saveProfileToBackend(this.activeProfile);
+    await this.saveSessionToStorage();
+    this.updateActiveResearchDisplay();
+    this.updateStepCounters();
+    this.renderRecordsList();
+    this.closeProtocolEditModal();
+  }
+
+  // ==========================================
+  // IN-TOOL STEP GUIDANCE MODAL
+  // ==========================================
+
+  private openStepGuideModal() {
+    if (!this.stepGuideModal || !this.guideModalBody) return;
+    this.stepGuideModal.style.display = "flex";
+
+    const step = this.currentWizardStep;
+    const cfg = STEP_CONFIGS[step];
+    const guide = STEP_GUIDE_DATA[step];
+
+    if (this.guideModalTitle) {
+      this.guideModalTitle.innerText = `ℹ️ Hướng Dẫn: ${cfg?.badge} — ${cfg?.title}`;
+    }
+
+    this.guideModalBody.innerHTML = `
+      <div class="guide-section">
+        <div class="guide-q">1. Khi nào dùng bước này?</div>
+        <div class="guide-a">${this.escapeHtml(guide.whenToUse)}</div>
+      </div>
+
+      <div class="guide-section">
+        <div class="guide-q">2. Cần chuẩn bị những gì?</div>
+        <div class="guide-a">${this.escapeHtml(guide.preparation)}</div>
+      </div>
+
+      <div class="guide-section">
+        <div class="guide-q">3. Bấm các nút nào theo thứ tự?</div>
+        <div class="guide-a">
+          <ul style="margin: 0; padding-left: 18px; line-height: 1.5;">
+            ${guide.orderOfButtons.map((btn) => `<li>${this.escapeHtml(btn)}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <div class="guide-q">4. Kết quả mong đợi sau bước này là gì?</div>
+        <div class="guide-a">${this.escapeHtml(guide.expectedOutput)}</div>
+      </div>
+
+      <div class="guide-section">
+        <div class="guide-q">5. Khi gặp lỗi hoặc gián đoạn thì xử lý ra sao?</div>
+        <div class="guide-a">${this.escapeHtml(guide.troubleshooting)}</div>
+      </div>
+
+      <div class="guide-section">
+        <div class="guide-q">6. Điều kiện để chuyển sang bước tiếp theo?</div>
+        <div class="guide-a"><b>✓ ${this.escapeHtml(guide.proceedCondition)}</b></div>
+      </div>
+
+      ${TROUBLESHOOTING_TABLE_HTML}
+    `;
+  }
+
+  private closeStepGuideModal() {
+    if (this.stepGuideModal) this.stepGuideModal.style.display = "none";
+  }
+
+  // ==========================================
+  // CARD DECISION BUTTONS & RENDERING
+  // ==========================================
+
+  private renderRecordsList() {
+    const keyword = this.filterInput?.value.toLowerCase().trim() || "";
+    const decisionFilter = this.filterDecisionSelect?.value || "all";
+    const step = this.currentWizardStep;
 
     const filtered = this.uniqueRecords.filter((r) => {
-      const effectiveDecision = r.finalDecision || r.suggestedDecision;
+      // Step V2 filter pill
+      if (step === "V2" && this.v2CurrentFilter !== "all") {
+        if (this.v2CurrentFilter === "unseen" && (r.v2Decision || r.finalDecision)) return false;
+        if (this.v2CurrentFilter === "PassToFullText" && r.v2Decision !== "PassToFullText") return false;
+        if (this.v2CurrentFilter === "Exclude" && r.v2Decision !== "Exclude") return false;
+        if (this.v2CurrentFilter === "Unsure" && r.v2Decision !== "Unsure") return false;
+      }
+
+      // Dropdown filter
+      const effectiveDecision = r.finalDecision || r.v2Decision || r.suggestedDecision;
       if (decisionFilter !== "all" && effectiveDecision !== decisionFilter) {
         return false;
       }
+
       if (keyword) {
-        const text = `${r.title} ${r.authors} ${r.venue} ${r.year} ${r.doi} ${r.snippet}`.toLowerCase();
+        const text = `${r.title} ${r.authors} ${r.venue} ${r.year} ${r.doi} ${r.snippet} ${r.abstract}`.toLowerCase();
         if (!text.includes(keyword)) return false;
       }
       return true;
@@ -1243,15 +2392,13 @@ class ScholarExtensionApp {
 
     if (filtered.length === 0) {
       if (this.paginationBar) this.paginationBar.style.display = "none";
-      if (this.exportToolbar) this.exportToolbar.style.display = "none";
       this.resultsContainer.innerHTML =
         '<div class="empty-state">Không có bài viết nào khớp với bộ lọc hiện tại.</div>';
       return;
     }
 
-    // Tinh toan phan trang
+    // Pagination calculations
     if (this.paginationBar) this.paginationBar.style.display = "flex";
-    if (this.exportToolbar) this.exportToolbar.style.display = "flex";
 
     const totalPages = Math.max(1, Math.ceil(filtered.length / this.pageSize));
     if (this.currentPage > totalPages) this.currentPage = totalPages;
@@ -1267,144 +2414,118 @@ class ScholarExtensionApp {
     if (this.pageIndicator) {
       this.pageIndicator.innerText = `${this.currentPage} / ${totalPages}`;
     }
-    if (this.prevPageBtn) {
-      this.prevPageBtn.disabled = this.currentPage <= 1;
-    }
-    if (this.nextPageBtn) {
-      this.nextPageBtn.disabled = this.currentPage >= totalPages;
-    }
+    if (this.prevPageBtn) this.prevPageBtn.disabled = this.currentPage <= 1;
+    if (this.nextPageBtn) this.nextPageBtn.disabled = this.currentPage >= totalPages;
 
     this.resultsContainer.innerHTML = pageRecords
       .map((r, pageIdx) => {
         const globalIdx = startIdx + pageIdx;
-        const decisionBadge = this.getDecisionBadge(r.suggestedDecision);
-        const isInclude = r.finalDecision === "Include";
-        const isExclude = r.finalDecision === "Exclude";
-        const isUnsure = r.finalDecision === "Unsure";
         const isSelected = r.id === this.selectedRecordId;
 
-        const dupWarning = r.potentialDuplicate
-          ? `<div class="dup-badge">⚠️ ĐỀ XUẤT TRÙNG LẶP: ${this.escapeHtml(r.duplicateReason || "")}</div>`
-          : "";
-
-        // Outdated criteria warning
-        const isOutdated = r.profileVersion !== undefined && r.profileVersion < this.activeProfile.profileVersion;
-        const outdatedWarning = isOutdated
-          ? `<div style="font-size: 11px; color: #b45309; background: #fffbeb; border: 1px solid #fef3c7; padding: 3px 6px; border-radius: 4px; margin-top: 4px;">
-              ⚠️ Quyết định hoặc gợi ý này được đánh giá ở phiên bản tiêu chí v${r.profileVersion}. Hồ sơ hiện tại là v${this.activeProfile.profileVersion}. Gợi ý cần đánh giá lại.
-            </div>`
-          : "";
-
-        // Detailed Criterion Badges
-        let criterionBadgesHtml = "";
-        if (r.criterionResults && r.criterionResults.length > 0) {
-          criterionBadgesHtml = r.criterionResults
-            .map((c) => {
-              const cls = c.status === "met" ? "badge-green" : c.status === "not_met" ? "badge-red" : "badge-yellow";
-              const icon = c.status === "met" ? "✓" : c.status === "not_met" ? "✗" : "?";
-              return `<span class="badge ${cls}" title="${this.escapeHtml(c.reason)}">${c.criterionId}: ${icon}</span>`;
-            })
-            .join(" ");
-        } else {
-          const matched = (r.matchedCriteria || []).map((c) => `<span class="badge badge-blue">${c}</span>`).join(" ");
-          const unknown = (r.unknownCriteria || [])
-            .map((c) => `<span class="badge badge-yellow">${c}?</span>`)
-            .join(" ");
-          criterionBadgesHtml = matched || unknown ? `${matched} ${unknown}` : '<small class="text-muted">Chưa</small>';
-        }
-
-        const missingEvidenceStr =
-          r.missingEvidence && r.missingEvidence.length > 0
-            ? `<div style="font-size: 11px; color: #b45309; margin-top: 3px;">⚠️ <b>Thiếu bằng chứng:</b> ${this.escapeHtml(r.missingEvidence.join(", "))}</div>`
-            : "";
-
-        const verifiedBadge = r.user_verified
-          ? `<span class="badge badge-green" title="Đã trích xuất & xác minh">✓ Đã xác minh (${this.escapeHtml(r.extraction_method || "Tab")})</span>`
-          : "";
-        const sourceUrlBadge = r.extracted_url
-          ? `<div style="font-size: 10px; color: #475569; margin-top: 2px;">🌐 <b>Nguồn:</b> <a href="${r.extracted_url}" target="_blank">${this.escapeHtml(r.extracted_url.slice(0, 48))}...</a></div>`
-          : "";
-        const pdfBadge = r.pdfUrl
-          ? `<span style="font-size: 10px; color: #047857; margin-left: 6px;">📄 <b>PDF:</b> <a href="${r.pdfUrl}" target="_blank">Mở PDF (${r.page_count ? r.page_count + " trang" : "sẵn sàng"})</a></span>`
-          : "";
-        const abstractBox = r.abstract
-          ? `<div class="paper-snippet" style="border-left-color: #2563eb; background: #eff6ff; margin-top: 4px;"><b>Abstract [Đã trích xuất]:</b><br><i>"${this.escapeHtml(r.abstract.slice(0, 260))}${r.abstract.length > 260 ? "..." : ""}"</i></div>`
-          : "";
-        const evidenceSummary =
-          r.evidence_snippets && r.evidence_snippets.length > 0
-            ? `<div style="font-size: 10px; color: #1e40af; margin-top: 3px;">🔍 <b>Bằng chứng trích xuất (${r.evidence_snippets.length}):</b> ${(r.evidence_snippets || []).map((e) => `<span class="badge ${e.isValidEvidence ? "badge-blue" : "badge-yellow"}">${e.type} (${e.section}${e.page ? ", tr." + e.page : ""})</span>`).join(" ")}</div>`
-            : "";
-
-        return `
-        <div class="paper-card ${r.potentialDuplicate ? "paper-dup" : ""} ${isSelected ? "is-selected" : ""}" id="paper_${r.id}" data-id="${r.id}">
-          ${dupWarning}
-          <div class="paper-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
-            <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
-              <span class="paper-index">#${globalIdx + 1}</span>
-              <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
-              ${verifiedBadge}
-            </div>
-            <div style="display: flex; gap: 4px;">
-              <button class="btn-auto-card" data-id="${r.id}" title="Tự động mở link ngầm, cào abstract & sàng lọc bài này">⚡ Quét link</button>
-              <button class="btn-extract-card" data-id="${r.id}" title="Lấy dữ liệu từ tab trình duyệt đang mở vào bài báo này">📑 Tab</button>
-            </div>
-          </div>
-
-          <div class="paper-meta">
-            <span>👤 <b>Tác giả:</b> ${this.escapeHtml(r.authors || "N/A")} ${r.uncertain_authors ? '<span class="tag-warn">Cần xác minh</span>' : ""}</span>
-            <span>📅 <b>Năm:</b> ${r.year || "N/A"} ${r.uncertain_year ? '<span class="tag-warn">Chưa chắc chắn</span>' : ""}</span>
-            <span>🏛️ <b>Venue:</b> ${this.escapeHtml(r.venue || "N/A")} ${r.uncertain_venue ? '<span class="tag-warn">Cần xác minh</span>' : ""}</span>
-            <span>🔗 <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Trống</span>'}</span>
-            ${pdfBadge}
-          </div>
-
-          ${sourceUrlBadge}
-          ${abstractBox}
-
-          <div class="paper-snippet">
-            <b>Đoạn trích (Snippet) [Không phải Abstract]:</b><br>
-            <i>"${this.escapeHtml(r.snippet || "Không có đoạn trích.")}"</i>
-          </div>
-
-          ${evidenceSummary}
-
-          <div class="screening-panel">
-            <div class="screening-header">
-              <span><b>Gợi ý hệ thống:</b> ${decisionBadge}</span>
-              <span><b>Tiêu chí:</b> ${criterionBadgesHtml}</span>
-            </div>
-            ${
-              r.modelContribution || r.conceptLabels || r.literatureGroup
-                ? `<div style="font-size: 10px; display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px;">
-                    ${r.literatureGroup ? `<span class="badge badge-green" title="Nhóm tài liệu">Nhóm: ${this.escapeHtml(r.literatureGroup)}</span>` : ""}
-                    ${r.modelContribution && r.modelContribution.length > 0 ? `<span class="badge badge-blue" title="Đóng góp cho mô hình">Mô hình: ${this.escapeHtml(r.modelContribution.join(", "))}</span>` : ""}
-                    ${r.conceptLabels && r.conceptLabels.length > 0 ? `<span class="badge badge-yellow" title="Phân loại khái niệm">Khái niệm: ${this.escapeHtml(r.conceptLabels.join("; "))}</span>` : ""}
-                  </div>`
-                : ""
-            }
-            <div class="reason-text">${this.escapeHtml(r.screeningReason)}</div>
-            ${missingEvidenceStr}
-            ${outdatedWarning}
-
-            <div class="decision-buttons" data-id="${r.id}">
-              <span class="decision-label">Xác nhận của bạn (finalDecision):</span>
-              <button class="btn-dec ${isInclude ? "active-inc" : ""}" data-decision="Include">✓ Include</button>
-              <button class="btn-dec ${isExclude ? "active-exc" : ""}" data-decision="Exclude">✗ Exclude</button>
-              <button class="btn-dec ${isUnsure ? "active-uns" : ""}" data-decision="Unsure">? Unsure</button>
-            </div>
-            <div class="user-notes-row">
-              <input type="text" class="notes-input" data-id="${r.id}" placeholder="Ghi chú thẩm định của bạn (lý do nhận/loại, phương pháp, bằng chứng)..." value="${this.escapeHtml(r.userNotes || "")}">
-            </div>
-          </div>
-        </div>
-      `;
+        return this.renderPaperCardHtml(r, globalIdx, isSelected, step);
       })
       .join("");
 
     this.attachCardEventListeners();
   }
 
+  private renderPaperCardHtml(r: PaperRecord, globalIdx: number, isSelected: boolean, step: WizardStep): string {
+    const isOutdated = r.isDecisionOutdated;
+    const outdatedWarning = isOutdated
+      ? `<div class="warning-banner" style="margin-top: 4px; padding: 4px 6px; font-size: 10.5px;">
+          ⚠️ Quyết định thuộc protocol cũ: ${this.escapeHtml(r.outdatedReason || "Cần đánh giá lại")}
+        </div>`
+      : "";
+
+    // Full text status badge
+    let fullTextBadge = "";
+    if (r.pdfUrl) {
+      fullTextBadge = `<span class="badge badge-green">📄 Đã tải PDF (${r.page_count ? r.page_count + " trang" : "sẵn sàng"})</span>`;
+    } else if (r.fullTextStatus === "searching") {
+      fullTextBadge = `<span class="badge badge-yellow">🔄 Đang tìm...</span>`;
+    } else if (r.fullTextStatus === "not_found") {
+      fullTextBadge = `<span class="badge badge-gray">❌ Chưa tìm thấy PDF</span>`;
+    } else if (r.fullTextStatus === "network_error") {
+      fullTextBadge = `<span class="badge badge-red">⚠️ Lỗi mạng (Thử lại)</span>`;
+    }
+
+    // Step-specific Decision Buttons
+    let decisionControlsHtml = "";
+
+    if (step === "V2") {
+      // Step V2: 3 Decisions -> PassToFullText, Exclude, Unsure (NEVER "Include cuối cùng")
+      const isPass = r.v2Decision === "PassToFullText";
+      const isExc = r.v2Decision === "Exclude";
+      const isUns = r.v2Decision === "Unsure";
+
+      decisionControlsHtml = `
+        <div class="decision-buttons" data-id="${r.id}">
+          <span class="decision-label">Quyết định V2 (Tiêu đề & Tóm tắt):</span>
+          <button class="btn-dec ${isPass ? "active-inc" : ""}" data-v2="PassToFullText">✓ Qua vòng toàn văn</button>
+          <button class="btn-dec ${isExc ? "active-exc" : ""}" data-v2="Exclude">✗ Loại ở V2</button>
+          <button class="btn-dec ${isUns ? "active-uns" : ""}" data-v2="Unsure">? Chưa rõ</button>
+        </div>
+      `;
+    } else if (step === "V3" || step === "FINAL") {
+      // Step V3 / FINAL: Full text eligibility -> Include, Exclude, Unsure
+      const isInc = r.finalDecision === "Include";
+      const isExc = r.finalDecision === "Exclude";
+      const isUns = r.finalDecision === "Unsure";
+
+      decisionControlsHtml = `
+        <div class="decision-buttons" data-id="${r.id}">
+          <span class="decision-label">Quyết định V3 (Thẩm định Toàn văn):</span>
+          <button class="btn-dec ${isInc ? "active-inc" : ""}" data-final="Include">✓ Đạt tiêu chí toàn văn</button>
+          <button class="btn-dec ${isExc ? "active-exc" : ""}" data-final="Exclude">✗ Loại ở V3</button>
+          <button class="btn-dec ${isUns ? "active-uns" : ""}" data-final="Unsure">? Cần bổ sung bằng chứng</button>
+        </div>
+      `;
+    }
+
+    const abstractBox = r.abstract
+      ? `<div class="paper-snippet" style="border-left-color: #2563eb; background: #eff6ff; margin-top: 4px;">
+          <b>Abstract:</b><br><i>"${this.escapeHtml(r.abstract.slice(0, 280))}${r.abstract.length > 280 ? "..." : ""}"</i>
+        </div>`
+      : "";
+
+    return `
+      <div class="paper-card ${r.potentialDuplicate ? "paper-dup" : ""} ${isSelected ? "is-selected" : ""}" id="paper_${r.id}" data-id="${r.id}">
+        <div class="paper-header">
+          <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
+            <span class="paper-index">#${globalIdx + 1}</span>
+            <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
+            ${fullTextBadge}
+          </div>
+        </div>
+
+        <div class="paper-meta">
+          <span>👤 <b>Tác giả:</b> ${this.escapeHtml(r.authors || "N/A")}</span>
+          <span>📅 <b>Năm:</b> ${r.year || "N/A"}</span>
+          <span>🏛️ <b>Venue:</b> ${this.escapeHtml(r.venue || "N/A")}</span>
+          <span>🔗 <b>DOI:</b> ${r.doi ? `<code>${r.doi}</code>` : '<span class="tag-warn">Trống</span>'}</span>
+        </div>
+
+        ${abstractBox}
+
+        <div class="screening-panel">
+          <div class="screening-header">
+            <span><b>Gợi ý hệ thống:</b> <span class="badge ${r.suggestedDecision === "PassToFullText" || r.suggestedDecision === "Include" ? "badge-green" : r.suggestedDecision === "Exclude" ? "badge-red" : "badge-yellow"}">${r.suggestedDecision || "Chưa quét"}</span></span>
+          </div>
+          <div class="reason-text">${this.escapeHtml(r.screeningReason || "Chưa có lý do sàng lọc.")}</div>
+          ${outdatedWarning}
+
+          ${decisionControlsHtml}
+
+          <div class="user-notes-row">
+            <input type="text" class="notes-input" data-id="${r.id}" placeholder="Ghi chú thẩm định (nhập tự do, không thay đổi quyết định)..." value="${this.escapeHtml(r.userNotes || "")}" />
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   private attachCardEventListeners() {
+    // Select card on click
     this.resultsContainer.querySelectorAll(".paper-card").forEach((card) => {
       card.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
@@ -1419,1880 +2540,127 @@ class ScholarExtensionApp {
       });
     });
 
-    this.resultsContainer.querySelectorAll(".btn-auto-card").forEach((btn) => {
+    // V2 Decision Buttons
+    this.resultsContainer.querySelectorAll("[data-v2]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         const target = e.currentTarget as HTMLButtonElement;
-        const paperId = target.getAttribute("data-id");
-        if (paperId) {
-          this.handleSinglePaperAutoScreen(paperId, target);
+        const decision = target.getAttribute("data-v2") as "PassToFullText" | "Exclude" | "Unsure";
+        const container = target.closest(".decision-buttons");
+        const paperId = container?.getAttribute("data-id");
+        if (paperId && decision) {
+          this.handleV2Decision(paperId, decision);
         }
       });
     });
 
-    this.resultsContainer.querySelectorAll(".btn-extract-card").forEach((btn) => {
+    // V3 / Final Decision Buttons
+    this.resultsContainer.querySelectorAll("[data-final]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         const target = e.currentTarget as HTMLButtonElement;
-        const paperId = target.getAttribute("data-id");
-        if (paperId) {
-          this.handleExtractFromActiveTab(paperId);
+        const decision = target.getAttribute("data-final") as "Include" | "Exclude" | "Unsure";
+        const container = target.closest(".decision-buttons");
+        const paperId = container?.getAttribute("data-id");
+        if (paperId && decision) {
+          this.handleFinalDecision(paperId, decision);
         }
       });
     });
 
-    this.resultsContainer.querySelectorAll(".btn-dec").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const target = e.currentTarget as HTMLButtonElement;
-        const parent = target.closest(".decision-buttons") as HTMLElement;
-        const paperId = parent.getAttribute("data-id");
-        const decision = target.getAttribute("data-decision") as ScreeningDecision;
-        this.updatePaperDecision(paperId!, decision);
-      });
-    });
-
+    // Notes Input Live Update (Safe note editing without clearing decisions)
     this.resultsContainer.querySelectorAll(".notes-input").forEach((inp) => {
       inp.addEventListener("change", (e) => {
         const target = e.currentTarget as HTMLInputElement;
         const paperId = target.getAttribute("data-id");
-        this.updatePaperNotes(paperId!, target.value);
+        if (paperId) {
+          const rec = this.uniqueRecords.find((r) => r.id === paperId);
+          if (rec) {
+            rec.userNotes = target.value.trim();
+            this.saveNoteToBackend(paperId, rec.userNotes);
+          }
+        }
       });
     });
   }
 
-  // --- Manual Decisions & Notes ---
+  private async handleV2Decision(paperId: string, decision: "PassToFullText" | "Exclude" | "Unsure") {
+    const rec = this.uniqueRecords.find((r) => r.id === paperId);
+    if (!rec) return;
 
-  private async updatePaperDecision(paperId: string, decision: ScreeningDecision) {
-    const record = this.allRecords.find((r) => r.id === paperId);
-    if (record) {
-      record.finalDecision = decision;
-      record.profileVersion = this.activeProfile.profileVersion;
-      record.isDecisionOutdated = false;
+    if (decision === "Exclude" && !rec.userNotes) {
+      const reason = prompt("Nhập lý do loại trừ ở V2 (hoặc để trống):", "Tiêu đề / Tóm tắt không liên quan");
+      if (reason) rec.userNotes = reason;
     }
 
-    const uniqueRecord = this.uniqueRecords.find((r) => r.id === paperId);
-    if (uniqueRecord) {
-      uniqueRecord.finalDecision = decision;
-      uniqueRecord.profileVersion = this.activeProfile.profileVersion;
-      uniqueRecord.isDecisionOutdated = false;
-    }
-
-    // Đồng bộ ngay lập tức lên backend pipeline store
-    fetch(`${this.backendUrl}/api/pipeline/decision`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researchId: this.activeProfile.id,
-        paperId,
-        stage: this.currentStage,
-        decision,
-        finalDecision: decision,
-        protocolVersion: this.activeProfile.protocolVersion,
-      }),
-    }).catch((err) => console.warn("Sync decision to backend failed:", err));
-
+    rec.v2Decision = decision;
+    rec.isDecisionOutdated = false; // Mark up to date
+    await this.updateRecordDecisionOnBackend(paperId, { v2Decision: decision, userNotes: rec.userNotes });
     await this.saveSessionToStorage();
-    this.updateStatsDisplay();
+    this.updateStepCounters();
+    this.renderStepV2();
     this.renderRecordsList();
   }
 
-  private async updatePaperNotes(paperId: string, notes: string) {
-    const record = this.allRecords.find((r) => r.id === paperId);
-    if (record) record.userNotes = notes;
+  private async handleFinalDecision(paperId: string, decision: "Include" | "Exclude" | "Unsure") {
+    const rec = this.uniqueRecords.find((r) => r.id === paperId);
+    if (!rec) return;
 
-    const uniqueRecord = this.uniqueRecords.find((r) => r.id === paperId);
-    if (uniqueRecord) uniqueRecord.userNotes = notes;
-
-    fetch(`${this.backendUrl}/api/pipeline/decision`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        researchId: this.activeProfile.id,
-        paperId,
-        userNotes: notes,
-      }),
-    }).catch((err) => console.warn("Sync notes to backend failed:", err));
-
-    await this.saveSessionToStorage();
-  }
-
-  private getDecisionBadge(decision: ScreeningDecision): string {
-    if (decision === "Include") return '<span class="badge badge-green">Include</span>';
-    if (decision === "Exclude") return '<span class="badge badge-red">Exclude</span>';
-    return '<span class="badge badge-yellow">Unsure</span>';
-  }
-
-  // --- Tab & PDF Extraction ---
-
-  private async handleExtractFromActiveTab(paperId?: string) {
-    const targetId =
-      paperId || this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
-    if (!targetId) {
-      alert("Chưa có bài báo nào trong danh sách kết quả để trích xuất dữ liệu.");
-      return;
-    }
-
-    const record = this.uniqueRecords.find((r) => r.id === targetId);
-    if (!record) {
-      this.setStatus("Không tìm thấy bản ghi được chọn.", "error");
-      return;
-    }
-
-    this.selectedRecordId = targetId;
-    this.renderRecordsList();
-
-    const origBtnText = this.extractActiveTabBtn?.innerHTML;
-    if (this.extractActiveTabBtn && !paperId) {
-      this.extractActiveTabBtn.innerHTML = "⏳ Đang kết nối Tab...";
-      this.extractActiveTabBtn.disabled = true;
-    }
-    this.setStatus(`Đang kết nối tới Tab đang mở trên trình duyệt cho bài #${record.id}...`, "info");
-
-    try {
-      let activeTab: chrome.tabs.Tab | undefined;
-      const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (decision === "Include" && !rec.pdfUrl && rec.fullTextStatus !== "downloaded") {
       if (
-        tabs &&
-        tabs.length > 0 &&
-        tabs[0].url &&
-        !tabs[0].url.startsWith("chrome://") &&
-        !tabs[0].url.startsWith("chrome-extension://")
+        !confirm(
+          "CẢNH BÁO: Bài này chưa có toàn văn (Full-Text PDF). Theo PRISMA 2020, chỉ nên chốt Include khi đã thẩm định toàn văn. Bạn có chắc muốn chốt Include?",
+        )
       ) {
-        activeTab = tabs[0];
-      } else {
-        const lastTabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-        if (
-          lastTabs &&
-          lastTabs.length > 0 &&
-          lastTabs[0].url &&
-          !lastTabs[0].url.startsWith("chrome://") &&
-          !lastTabs[0].url.startsWith("chrome-extension://")
-        ) {
-          activeTab = lastTabs[0];
-        } else {
-          const allTabs = await chrome.tabs.query({ url: ["http://*/*", "https://*/*"] });
-          if (allTabs && allTabs.length > 0) {
-            activeTab = allTabs[allTabs.length - 1];
-          }
-        }
-      }
-
-      if (!activeTab || typeof activeTab.id !== "number") {
-        alert(
-          "Không tìm thấy tab trang web bài báo nào đang mở trên trình duyệt. Vui lòng mở trang web của bài báo (DOI / ScienceDirect / Springer...) trên một tab trước rồi bấm lại.",
-        );
         return;
       }
-
-      const tabId: number = activeTab.id as number;
-      const activeUrl = activeTab.url || "";
-
-      let tabData: any = null;
-
-      if (activeUrl.toLowerCase().endsWith(".pdf") || activeUrl.toLowerCase().includes(".pdf?")) {
-        tabData = {
-          sourceUrl: activeUrl,
-          method: "Active Tab PDF URL",
-          title: activeTab.title || "",
-          pdfUrl: activeUrl,
-        };
-      } else {
-        try {
-          await chrome.scripting.executeScript({
-            target: { tabId },
-            files: ["content-script.js"],
-          });
-
-          const results = await chrome.scripting.executeScript({
-            target: { tabId },
-            func: () => {
-              try {
-                if (typeof (window as any).extractCurrentPageData === "function") {
-                  return (window as any).extractCurrentPageData();
-                }
-              } catch (e) {
-                console.error("Loi khi goi extractCurrentPageData:", e);
-              }
-              return null;
-            },
-          });
-          if (results && results[0] && results[0].result) {
-            tabData = results[0].result;
-          }
-        } catch (scriptErr: any) {
-          console.warn("executeScript failed, fallback to direct tab info:", scriptErr);
-        }
-
-        if (!tabData) {
-          tabData = {
-            sourceUrl: activeUrl,
-            method: "Browser Tab Fallback",
-            title: activeTab.title || "",
-          };
-        }
-      }
-
-      this.setStatus("Đang gửi dữ liệu trang tới backend để phân tích theo tiêu chí...", "info");
-
-      const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          record,
-          tabData,
-          autoFetchPdf: true,
-          profile: this.activeProfile,
-        }),
-      });
-
-      if (!response.ok) {
-        const text = await response.text();
-        throw new Error(`Máy chủ trả về lỗi HTTP ${response.status}: ${text.slice(0, 120)}`);
-      }
-
-      const resData = await response.json();
-      if (!resData.success) {
-        throw new Error(resData.error || "Lỗi khi phân tích dữ liệu tab");
-      }
-
-      const analysisResult: TabAnalysisResult = resData.analysis || resData.data;
-      this.pendingAnalysisResult = analysisResult;
-      this.pendingRecordId = record.id;
-
-      this.showPreviewModal(analysisResult, record);
-      this.setStatus("✓ Đã phân tích xong! Hãy xem trước và xác nhận cập nhật.", "success");
-    } catch (err: any) {
-      this.setStatus(`Lỗi lấy dữ liệu từ tab: ${err.message}`, "error");
-      alert(`Lỗi trích xuất tab: ${err.message}`);
-    } finally {
-      if (this.extractActiveTabBtn && origBtnText && !paperId) {
-        this.extractActiveTabBtn.innerHTML = origBtnText;
-        this.extractActiveTabBtn.disabled = false;
-      }
-    }
-  }
-
-  private async handlePdfFileUpload(e: Event) {
-    const input = e.target as HTMLInputElement;
-    if (!input.files || input.files.length === 0) return;
-
-    const file = input.files[0];
-    const targetId = this.selectedRecordId || (this.uniqueRecords.length > 0 ? this.uniqueRecords[0].id : null);
-    if (!targetId) {
-      alert("Chưa có bài báo nào trong danh sách để nạp file PDF.");
-      return;
     }
 
-    const record = this.uniqueRecords.find((r) => r.id === targetId);
-    if (!record) return;
-
-    this.selectedRecordId = targetId;
-    this.renderRecordsList();
-
-    const origBtnText = this.uploadPdfBtn?.innerHTML;
-    if (this.uploadPdfBtn) {
-      this.uploadPdfBtn.innerHTML = "⏳ Đang đọc PDF...";
-      this.uploadPdfBtn.disabled = true;
-    }
-
-    this.setStatus(`Đang đọc file PDF: ${file.name}...`, "info");
-
-    const reader = new FileReader();
-    reader.onload = async () => {
-      try {
-        const base64Data = (reader.result as string).split(",")[1];
-        this.setStatus(`Đang gửi file PDF tới backend để trích xuất nội dung...`, "info");
-
-        const tabData = {
-          title: file.name.replace(/\.pdf$/i, ""),
-          sourceUrl: `local-file://${file.name}`,
-          method: "Manual PDF Upload",
-          pdfData: base64Data,
-        };
-
-        const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            record,
-            tabData,
-            autoFetchPdf: false,
-            profile: this.activeProfile,
-          }),
-        });
-
-        if (!response.ok) {
-          const text = await response.text();
-          throw new Error(`HTTP ${response.status}: ${text.slice(0, 120)}`);
-        }
-
-        const resData = await response.json();
-        if (!resData.success) throw new Error(resData.error);
-
-        this.pendingAnalysisResult = resData.analysis || resData.data;
-        this.pendingRecordId = record.id;
-        this.showPreviewModal(this.pendingAnalysisResult!, record);
-        this.setStatus("✓ Đã trích xuất PDF thành công! Hãy xem trước và xác nhận.", "success");
-      } catch (err: any) {
-        this.setStatus(`Lỗi khi xử lý PDF tải lên: ${err.message}`, "error");
-        alert(`Lỗi xử lý file PDF: ${err.message}`);
-      } finally {
-        input.value = "";
-        if (this.uploadPdfBtn && origBtnText) {
-          this.uploadPdfBtn.innerHTML = origBtnText;
-          this.uploadPdfBtn.disabled = false;
-        }
-      }
-    };
-    reader.onerror = () => {
-      this.setStatus(`Không thể đọc file PDF.`, "error");
-      if (this.uploadPdfBtn && origBtnText) {
-        this.uploadPdfBtn.innerHTML = origBtnText;
-        this.uploadPdfBtn.disabled = false;
-      }
-    };
-    reader.readAsDataURL(file);
-  }
-
-  private async handleRescreenAllRecords() {
-    if (this.uniqueRecords.length === 0) {
-      alert("Không có bài báo nào trong danh sách để tái sàng lọc.");
-      return;
-    }
-
-    const origBtnText = this.rescreenBtn?.innerHTML;
-    if (this.rescreenBtn) {
-      this.rescreenBtn.innerHTML = "⏳ Đang tái sàng lọc...";
-      this.rescreenBtn.disabled = true;
-    }
-
-    this.setStatus(
-      `Đang tái sàng lọc ${this.uniqueRecords.length} bài báo theo tiêu chí "${this.activeProfile.name}"...`,
-      "info",
-    );
-    this.setButtonsState(true);
-
-    try {
-      const response = await fetch(`${this.backendUrl}/api/scholar/rescreen`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          records: this.uniqueRecords,
-          profile: this.activeProfile,
-          researchId: this.activeProfile.id,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      if (!data.success || !Array.isArray(data.records)) {
-        throw new Error(data.error || "Không nhận được danh sách tái sàng lọc từ máy chủ.");
-      }
-
-      // Map lại kết quả vào uniqueRecords và allRecords
-      const updatedMap = new Map<string, PaperRecord>();
-      for (const rec of data.records) {
-        updatedMap.set(rec.id, rec);
-      }
-
-      this.uniqueRecords = this.uniqueRecords.map((r) => updatedMap.get(r.id) || r);
-      this.allRecords = this.allRecords.map((r) => updatedMap.get(r.id) || r);
-
-      await this.saveSessionToStorage();
-      this.updateStatsDisplay();
-      this.renderRecordsList();
-      this.setStatus(
-        `✓ Đã tái sàng lọc thành công ${data.records.length} bài báo theo tiêu chí "${this.activeProfile.name}".`,
-        "success",
+    if (decision === "Exclude" && !rec.userNotes) {
+      const reason = prompt(
+        "Nhập lý do loại trừ ở V3 (ví dụ: < 4 trang, thiếu thực nghiệm, v.v.):",
+        "Dưới 4 trang / Không đạt tiêu chí toàn văn",
       );
-    } catch (err: any) {
-      this.setStatus(`Lỗi tái sàng lọc: ${err.message}`, "error");
-      alert(`Lỗi tái sàng lọc: ${err.message}`);
-    } finally {
-      if (this.rescreenBtn && origBtnText) {
-        this.rescreenBtn.innerHTML = origBtnText;
-        this.rescreenBtn.disabled = false;
-      }
-      this.setButtonsState(false);
-    }
-  }
-
-  // --- Auto-Screening (Single & Batch) ---
-
-  private openAutoScreenModal() {
-    if (!this.autoScreenModal) {
-      this.autoScreenModal = document.getElementById("autoScreenModal") as HTMLElement;
-    }
-    if (this.autoScreenProfileName) {
-      this.autoScreenProfileName.textContent = this.activeProfile.name;
-    }
-    if (this.autoScreenTotalCount) {
-      this.autoScreenTotalCount.textContent = String(this.uniqueRecords.length);
-    }
-    const unsureCount = this.uniqueRecords.filter(
-      (r) =>
-        r.suggestedDecision === "Unsure" ||
-        (!r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude"),
-    ).length;
-    const unsureEl = document.getElementById("autoScreenUnsureCount");
-    if (unsureEl) unsureEl.textContent = String(unsureCount);
-
-    const scopeOnlyUnsureRadio = document.getElementById("scopeOnlyUnsure") as HTMLInputElement;
-    if (scopeOnlyUnsureRadio && unsureCount > 0) {
-      scopeOnlyUnsureRadio.checked = true;
+      if (reason) rec.userNotes = reason;
     }
 
-    if (this.autoScreenModal) {
-      this.autoScreenModal.style.display = "flex";
-    }
-  }
-
-  private closeAutoScreenModal() {
-    if (this.autoScreenModal) {
-      this.autoScreenModal.style.display = "none";
-    }
-  }
-
-  private stopBatchAutoScreen() {
-    this.stopAutoScreenRequested = true;
-    this.setStatus("Đang dừng quét tự động sau bài hiện tại...", "warning");
-    if (this.autoScreenStatusText) {
-      this.autoScreenStatusText.innerHTML = "<b>⏹️ Đang yêu cầu dừng quét...</b>";
-    }
-  }
-
-  private waitForTabLoaded(tabId: number, timeoutMs = 7500): Promise<void> {
-    return new Promise((resolve) => {
-      let finished = false;
-      const timer = setTimeout(() => {
-        if (!finished) {
-          finished = true;
-          chrome.tabs.onUpdated.removeListener(listener);
-          resolve();
-        }
-      }, timeoutMs);
-
-      const listener = (id: number, changeInfo: chrome.tabs.TabChangeInfo) => {
-        if (id === tabId && changeInfo.status === "complete") {
-          if (!finished) {
-            finished = true;
-            clearTimeout(timer);
-            chrome.tabs.onUpdated.removeListener(listener);
-            setTimeout(resolve, 600);
-          }
-        }
-      };
-      chrome.tabs.onUpdated.addListener(listener);
-    });
-  }
-
-  private async autoExtractDataForUrl(url: string, fallbackTitle?: string): Promise<any | null> {
-    if (!url || !url.startsWith("http")) {
-      return null;
-    }
-
-    // Direct PDF URL
-    if (url.toLowerCase().endsWith(".pdf") || url.toLowerCase().includes(".pdf?")) {
-      return {
-        sourceUrl: url,
-        method: "Direct PDF URL",
-        title: fallbackTitle || "",
-        pdfUrl: url,
-      };
-    }
-
-    // Bước 1: Thử Fast Direct Fetch qua browser DOMParser
-    try {
-      const resp = await fetch(url, { method: "GET" });
-      if (resp.ok) {
-        const html = await resp.text();
-        const doc = new DOMParser().parseFromString(html, "text/html");
-
-        const getMeta = (name: string) => {
-          const el = doc.querySelector(`meta[name="${name}" i], meta[property="${name}" i]`);
-          return el ? (el.getAttribute("content") || "").trim() : "";
-        };
-        const getAllMetas = (name: string) => {
-          const els = doc.querySelectorAll(`meta[name="${name}" i], meta[property="${name}" i]`);
-          return Array.from(els)
-            .map((el) => (el.getAttribute("content") || "").trim())
-            .filter(Boolean);
-        };
-
-        const rawTitle = getMeta("citation_title") || getMeta("DC.title") || getMeta("og:title") || doc.title || "";
-        const title = isChallengeOrErrorTitle(rawTitle) ? fallbackTitle || "" : rawTitle;
-        const authors = getAllMetas("citation_author").join("; ") || getAllMetas("DC.creator").join("; ");
-        let doi = getMeta("citation_doi") || getMeta("DC.identifier");
-        if (doi) {
-          const m = doi.match(/10\.\d{4,9}\/[-._;()/:A-Z0-9]+/i);
-          if (m) doi = m[0];
-        }
-        const venue =
-          getMeta("citation_journal_title") ||
-          getMeta("citation_conference_title") ||
-          getMeta("citation_publisher") ||
-          getMeta("DC.source");
-        const rawDate =
-          getMeta("citation_publication_date") ||
-          getMeta("citation_date") ||
-          getMeta("citation_year") ||
-          getMeta("DC.date");
-        let year = "";
-        if (rawDate) {
-          const yMatch = rawDate.match(/\b(19\d\d|20\d\d)\b/);
-          if (yMatch) year = yMatch[1];
-        }
-        const abstract = getMeta("citation_abstract") || getMeta("DC.description") || getMeta("og:description");
-        const pdfUrl = getMeta("citation_pdf_url");
-
-        if (abstract && abstract.length > 40 && !isChallengeOrErrorTitle(abstract)) {
-          return {
-            sourceUrl: url,
-            method: "Tự động quét (Fast Meta Fetch)",
-            title,
-            authors,
-            doi,
-            venue,
-            year,
-            abstract,
-            pdfUrl,
-          };
-        }
-      }
-    } catch (fetchErr) {
-      console.warn("[Auto-Extract] Fast fetch failed, fallback to background tab:", fetchErr);
-    }
-
-    // Bước 2: Background Chrome Tab (vượt qua Cloudflare, paywall, Single-Page App)
-    if (typeof chrome !== "undefined" && chrome.tabs && chrome.tabs.create) {
-      let tabId: number | undefined;
-      try {
-        const tab = await chrome.tabs.create({ url, active: false });
-        tabId = tab.id;
-        if (typeof tabId === "number") {
-          await this.waitForTabLoaded(tabId, 7500);
-
-          await chrome.scripting.executeScript({
-            target: { tabId },
-            files: ["content-script.js"],
-          });
-
-          const results = await chrome.scripting.executeScript({
-            target: { tabId },
-            func: () => {
-              try {
-                if (typeof (window as any).extractCurrentPageData === "function") {
-                  return (window as any).extractCurrentPageData();
-                }
-              } catch (e) {
-                console.error("Lỗi khi gọi extractCurrentPageData:", e);
-              }
-              return null;
-            },
-          });
-
-          if (results && results[0] && results[0].result) {
-            const data = results[0].result;
-            if (data.title && isChallengeOrErrorTitle(data.title)) {
-              data.title = fallbackTitle || "";
-            }
-            if (
-              (data.abstract && data.abstract.trim().length > 40 && !isChallengeOrErrorTitle(data.abstract)) ||
-              data.pdfUrl ||
-              (data.pages && data.pages.length > 0)
-            ) {
-              data.method = (data.method || "HighWire Meta") + " (Auto Tab)";
-              return data;
-            }
-          }
-        }
-      } catch (tabErr) {
-        console.warn("[Auto-Extract] Background tab extraction error:", tabErr);
-      } finally {
-        if (typeof tabId === "number") {
-          try {
-            await chrome.tabs.remove(tabId);
-          } catch (e) {
-            // ignore
-          }
-        }
-      }
-    }
-
-    return null;
-  }
-
-  private async handleAutoScreenPaper(record: PaperRecord, autoAcceptInclude = false): Promise<boolean> {
-    if (!record.url) {
-      return false;
-    }
-
-    const tabData = (await this.autoExtractDataForUrl(record.url, record.title)) || {
-      sourceUrl: record.url,
-      method: "Tái thẩm định (Re-screen)",
-      title: record.title,
-    };
-
-    if (record.pdfUrl && !tabData.pdfUrl) {
-      tabData.pdfUrl = record.pdfUrl;
-    }
-    if (record.doi && !tabData.doi) {
-      tabData.doi = record.doi;
-    }
-    if (record.abstract && !tabData.abstract) {
-      tabData.abstract = record.abstract;
-    }
-    if (record.venue && !tabData.venue) {
-      tabData.venue = record.venue;
-    }
-
-    if (!tabData.abstract && !tabData.pdfUrl && (!tabData.pages || tabData.pages.length === 0)) {
-      return false;
-    }
-
-    if (tabData.title && isChallengeOrErrorTitle(tabData.title)) {
-      tabData.title = record.title;
-    }
-
-    const response = await fetch(`${this.backendUrl}/api/scholar/analyze-tab`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        record,
-        tabData,
-        autoFetchPdf: true,
-        profile: this.activeProfile,
-      }),
-    });
-
-    if (!response.ok) return false;
-    const resData = await response.json();
-    if (!resData.success || !resData.analysis) return false;
-
-    const analysis: TabAnalysisResult = resData.analysis;
-    const getChangeVal = (field: string) => {
-      const c = analysis.changes.find((x) => x.field === field);
-      return c && c.newValue && c.newValue !== "(Trống)" ? c.newValue : undefined;
-    };
-
-    const newTitle = getChangeVal("title");
-    if (newTitle && !isChallengeOrErrorTitle(newTitle) && analysis.isTitleMatch) {
-      record.title = newTitle;
-    }
-
-    if (getChangeVal("abstract")) record.abstract = getChangeVal("abstract")!;
-    if (getChangeVal("doi")) record.doi = getChangeVal("doi")!;
-    if (getChangeVal("venue")) record.venue = getChangeVal("venue")!;
-    if (getChangeVal("year")) record.year = getChangeVal("year")!;
-    if (getChangeVal("pdfUrl")) record.pdfUrl = getChangeVal("pdfUrl")!;
-
-    record.sourceMetadataVerified = true;
-    record.verificationMethod = tabData.method || "Tự động quét link (Background Tab / Meta)";
-    record.sourceUrl = tabData.sourceUrl || record.url;
-    record.evidence_snippets = analysis.evidence || [];
-
-    if (analysis.suggestedScreeningUpdate) {
-      record.screeningStage = analysis.suggestedScreeningUpdate.stage || (tabData.pageCount ? "V2" : "V1");
-      record.suggestedDecision = analysis.suggestedScreeningUpdate.suggestedDecision;
-      record.matchedCriteria = analysis.suggestedScreeningUpdate.matchedCriteria;
-      record.unknownCriteria = analysis.suggestedScreeningUpdate.unknownCriteria;
-      record.missingEvidence = analysis.suggestedScreeningUpdate.missingEvidence;
-      record.screeningReason = analysis.suggestedScreeningUpdate.screeningReason;
-    }
-    if (tabData.pageCount) {
-      record.page_count = tabData.pageCount;
-    }
-
-    if (autoAcceptInclude && record.suggestedDecision === "Include") {
-      record.finalDecision = "Include";
-    }
-
-    return true;
-  }
-
-  private async handleSinglePaperAutoScreen(paperId: string, buttonEl?: HTMLButtonElement) {
-    const record = this.uniqueRecords.find((r) => r.id === paperId);
-    if (!record) return;
-
-    if (!record.url) {
-      this.setStatus(`Bài báo #${record.id} không có liên kết (URL).`, "warning");
-      return;
-    }
-
-    const originalBtnText = buttonEl ? buttonEl.innerHTML : "";
-    if (buttonEl) {
-      buttonEl.disabled = true;
-      buttonEl.innerHTML = "⏳ Quét...";
-    }
-    this.setStatus(`Đang tự động quét & sàng lọc bài: "${record.title.slice(0, 50)}..."`, "info");
-
-    try {
-      const ok = await this.handleAutoScreenPaper(record, false);
-      if (ok) {
-        await this.saveSessionToStorage();
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-        this.setStatus(
-          `✓ Đã tự động quét thành công: Gợi ý [${record.suggestedDecision || "Chưa rõ"}] cho "${record.title.slice(0, 45)}..."`,
-          "success",
-        );
-      } else {
-        const hostName = record.url ? new URL(record.url).hostname : "trang này";
-        this.setStatus(
-          `⚠️ Không thể cào ngầm (${hostName}) do trang web có bảo vệ Cloudflare/Captcha. Vui lòng bấm vào liên kết bài báo để mở trên trình duyệt, rồi bấm "📑 Tab".`,
-          "warning",
-        );
-      }
-    } catch (err: any) {
-      console.error("Lỗi khi tự động quét bài:", err);
-      this.setStatus(`Lỗi khi quét: ${err.message}`, "error");
-    } finally {
-      if (buttonEl) {
-        buttonEl.disabled = false;
-        buttonEl.innerHTML = originalBtnText;
-      }
-    }
-  }
-
-  private async startBatchAutoScreen() {
-    this.closeAutoScreenModal();
-
-    if (this.isAutoScreening) return;
-
-    const scopeRadio = document.querySelector('input[name="autoScreenScope"]:checked') as HTMLInputElement;
-    const scope = scopeRadio ? scopeRadio.value : "missing_abstract";
-    const autoAcceptInclude = this.autoAcceptIncludeCheckbox ? this.autoAcceptIncludeCheckbox.checked : true;
-
-    let targets: PaperRecord[] = [];
-    if (scope === "only_unsure") {
-      targets = this.uniqueRecords.filter(
-        (r) =>
-          r.url &&
-          (r.suggestedDecision === "Unsure" ||
-            (!r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude")),
-      );
-    } else if (scope === "missing_abstract") {
-      targets = this.uniqueRecords.filter(
-        (r) => r.url && (!r.abstract || r.abstract.trim().length === 0 || !r.sourceMetadataVerified),
-      );
-    } else if (scope === "next_10") {
-      targets = this.uniqueRecords.filter((r) => r.url).slice(0, 10);
-    } else if (scope === "next_20") {
-      targets = this.uniqueRecords.filter((r) => r.url).slice(0, 20);
-    } else {
-      targets = this.uniqueRecords.filter((r) => r.url);
-    }
-
-    if (targets.length === 0) {
-      this.setStatus("Không tìm thấy bài báo nào phù hợp với phạm vi quét đã chọn.", "warning");
-      return;
-    }
-
-    this.isAutoScreening = true;
-    this.stopAutoScreenRequested = false;
-
-    if (this.autoScreenBatchBtn) this.autoScreenBatchBtn.style.display = "none";
-    if (this.stopAutoScreenBtn) this.stopAutoScreenBtn.style.display = "inline-block";
-    if (this.autoScreenProgressBox) this.autoScreenProgressBox.style.display = "block";
-
-    let successCount = 0;
-    let failCount = 0;
-    let includedCount = 0;
-
-    try {
-      for (let i = 0; i < targets.length; i++) {
-        if (this.stopAutoScreenRequested) {
-          console.log("[Auto-Screen] Người dùng yêu cầu dừng quá trình quét.");
-          break;
-        }
-
-        const record = targets[i];
-        const currentNum = i + 1;
-        const total = targets.length;
-        const percent = Math.round((currentNum / total) * 100);
-
-        if (this.autoScreenStatusText) {
-          this.autoScreenStatusText.innerHTML = `<b>⚡ Đang quét & lọc bài [${currentNum}/${total}]...</b>`;
-        }
-        if (this.autoScreenCounterText) {
-          this.autoScreenCounterText.textContent = `${currentNum} / ${total} (${percent}%)`;
-        }
-        if (this.autoScreenProgressBar) {
-          this.autoScreenProgressBar.style.width = `${percent}%`;
-        }
-        if (this.autoScreenCurrentPaper) {
-          this.autoScreenCurrentPaper.textContent = `#${currentNum}: ${record.title}`;
-        }
-
-        this.setStatus(`[Tự động quét ${currentNum}/${total}] "${record.title.slice(0, 45)}..."`, "info");
-
-        try {
-          const ok = await this.handleAutoScreenPaper(record, autoAcceptInclude);
-          if (ok) {
-            successCount++;
-            if (record.suggestedDecision === "Include" || record.finalDecision === "Include") {
-              includedCount++;
-            }
-          } else {
-            failCount++;
-          }
-        } catch (itemErr) {
-          console.warn(`Lỗi khi quét bài ${record.id}:`, itemErr);
-          failCount++;
-        }
-
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-
-        if (currentNum % 3 === 0 || currentNum === total) {
-          await this.saveSessionToStorage();
-        }
-
-        // Nghỉ 600ms giữa các bài để nhẹ nhàng cho trình duyệt
-        await new Promise((r) => setTimeout(r, 600));
-      }
-
-      await this.saveSessionToStorage();
-      this.updateStatsDisplay();
-      this.renderRecordsList();
-
-      const stoppedMsg = this.stopAutoScreenRequested ? " (Đã dừng theo yêu cầu)" : "";
-      this.setStatus(
-        `✓ Hoàn tất quét tự động${stoppedMsg}: Thành công ${successCount}/${targets.length} bài | Gợi ý/Nhận Include: ${includedCount} bài.`,
-        "success",
-      );
-    } catch (e: any) {
-      console.error("Lỗi trong Batch Auto-Screen:", e);
-      this.setStatus(`Lỗi trong quá trình quét tự động: ${e.message}`, "error");
-    } finally {
-      this.isAutoScreening = false;
-      this.stopAutoScreenRequested = false;
-
-      if (this.stopAutoScreenBtn) this.stopAutoScreenBtn.style.display = "none";
-      if (this.autoScreenBatchBtn) this.autoScreenBatchBtn.style.display = "inline-block";
-
-      setTimeout(() => {
-        if (!this.isAutoScreening && this.autoScreenProgressBox) {
-          this.autoScreenProgressBox.style.display = "none";
-        }
-      }, 4000);
-    }
-  }
-
-  private showPreviewModal(result: TabAnalysisResult, record: PaperRecord) {
-    if (!this.tabExtractModal || !this.modalBody) return;
-
-    let warningHtml = "";
-    if (!result.isTitleMatch) {
-      warningHtml += `
-        <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; border-left-color: #dc2626;">
-          ⚠️ <b>CẢNH BÁO TIÊU ĐỀ KHÔNG KHỚP:</b><br>
-          ${this.escapeHtml(result.titleMismatchWarning || `Độ tương đồng tiêu đề chỉ đạt ${(result.titleMatchConfidence * 100).toFixed(0)}%. Hãy kiểm tra kỹ xem tài liệu có đúng là bài báo này không!`)}
-        </div>
-      `;
-    }
-
-    if (result.warnings && result.warnings.length > 0) {
-      warningHtml += result.warnings.map((w) => `<div class="warning-banner">⚠️ ${this.escapeHtml(w)}</div>`).join("");
-    }
-
-    const diffRows = result.changes
-      .map((ch) => {
-        const cls = ch.willChange ? "diff-changed" : "diff-unchanged";
-        const statusIcon = ch.willChange ? "🔄 Sẽ cập nhật" : "➖ Giữ nguyên";
-        return `
-        <tr>
-          <td><b>${this.escapeHtml(ch.field)}</b></td>
-          <td>${this.escapeHtml(ch.oldValue || "(trống)")}</td>
-          <td class="${cls}">${this.escapeHtml(ch.newValue || "(trống)")}</td>
-          <td style="text-align: center;">${statusIcon}</td>
-        </tr>
-      `;
-      })
-      .join("");
-
-    let evidenceHtml = "";
-    if (result.evidence && result.evidence.length > 0) {
-      const items = result.evidence
-        .map((ev) => {
-          const itemClass = ev.isValidEvidence ? "evidence-item" : "evidence-item invalid";
-          const statusBadge = ev.isValidEvidence
-            ? '<span class="badge badge-blue">✓ Bằng chứng hợp lệ</span>'
-            : '<span class="badge badge-red">✗ Bị loại</span>';
-          const sectionBadge = `<span class="badge badge-yellow">Mục: ${this.escapeHtml(ev.section)}</span>`;
-          const pageBadge =
-            ev.page !== undefined && ev.page !== null ? `<span class="badge badge-blue">Trang ${ev.page}</span>` : "";
-          return `
-          <div class="${itemClass}">
-            <div style="display: flex; gap: 6px; margin-bottom: 3px; align-items: center; flex-wrap: wrap;">
-              <b>[${ev.type}]</b>
-              ${statusBadge}
-              ${sectionBadge}
-              ${pageBadge}
-              <code style="font-size: 10px;">${this.escapeHtml(ev.term)}</code>
-            </div>
-            <div style="font-size: 11px; color: #1e293b; background: #f8fafc; padding: 4px; border-radius: 3px;">
-              "${this.escapeHtml(ev.context)}"
-            </div>
-            ${ev.reason ? `<div style="font-size: 10px; color: #b45309; margin-top: 2px;">ℹ️ ${this.escapeHtml(ev.reason)}</div>` : ""}
-          </div>
-        `;
-        })
-        .join("");
-      evidenceHtml = `
-        <div class="evidence-box">
-          <b>🔍 Bằng chứng trích xuất được (${result.evidence.length}):</b>
-          <div style="margin-top: 6px;">${items}</div>
-        </div>
-      `;
-    }
-
-    let screeningSuggestionHtml = "";
-    if (result.suggestedScreeningUpdate) {
-      const s = result.suggestedScreeningUpdate;
-      const decBadge = this.getDecisionBadge(s.suggestedDecision);
-      screeningSuggestionHtml = `
-        <div class="notice-callout" style="margin-top: 8px;">
-          <b>Gợi ý sàng lọc theo tiêu chí (${s.stage}):</b> ${decBadge} — ${this.escapeHtml(s.screeningReason)}<br>
-          <small style="color: #6b7280;">(Lưu ý: Quyết định <code>finalDecision</code> hoàn toàn do bạn quyết định, hệ thống không tự ghi đè)</small>
-        </div>
-      `;
-    }
-
-    this.modalBody.innerHTML = `
-      ${warningHtml}
-      <div style="margin-bottom: 8px; font-size: 11px; color: #475569;">
-        <span>🌐 <b>Nguồn:</b> <a href="${this.escapeHtml(result.extracted.sourceUrl)}" target="_blank">${this.escapeHtml(result.extracted.sourceUrl)}</a></span><br>
-        <span>⚙️ <b>Phương thức:</b> ${this.escapeHtml(result.extracted.method)}</span>
-        ${result.extracted.pageCount ? ` | <span>📄 <b>Tổng số trang:</b> ${result.extracted.pageCount}</span>` : ""}
-      </div>
-
-      <div style="margin-top: 6px;">
-        <b>So sánh các trường dữ liệu (Diff):</b>
-        <table class="diff-table">
-          <thead>
-            <tr>
-              <th style="width: 15%;">Trường</th>
-              <th style="width: 35%;">Hiện tại</th>
-              <th style="width: 35%;">Mới</th>
-              <th style="width: 15%;">Thao tác</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${diffRows}
-          </tbody>
-        </table>
-      </div>
-
-      ${evidenceHtml}
-      ${screeningSuggestionHtml}
-    `;
-
-    this.tabExtractModal.style.display = "flex";
-  }
-
-  private async handleConfirmTabExtract() {
-    if (!this.pendingAnalysisResult || !this.pendingRecordId) {
-      this.closeModal();
-      return;
-    }
-
-    const record = this.uniqueRecords.find((r) => r.id === this.pendingRecordId);
-    const allRecord = this.allRecords.find((r) => r.id === this.pendingRecordId);
-    if (!record) {
-      this.closeModal();
-      return;
-    }
-
-    const { extracted, suggestedScreeningUpdate, evidence } = this.pendingAnalysisResult;
-
-    if (extracted.title) record.title = extracted.title;
-    if (extracted.authors) {
-      record.authors = extracted.authors;
-      record.uncertain_authors = false;
-    }
-    if (extracted.year) {
-      record.year = extracted.year;
-      record.uncertain_year = false;
-    }
-    if (extracted.venue) {
-      const isArxivVenue = /^\s*arxiv(\.org)?\s*$/i.test(extracted.venue);
-      if (!isArxivVenue) {
-        record.venue = extracted.venue;
-        record.uncertain_venue = false;
-      }
-    }
-    if (extracted.doi) {
-      record.doi = extracted.doi;
-      record.uncertain_doi = false;
-    }
-    if (extracted.abstract) {
-      record.abstract = extracted.abstract;
-      record.missing_abstract = false;
-    }
-    if (extracted.pdfUrl) record.pdfUrl = extracted.pdfUrl;
-    if (extracted.pageCount) record.page_count = extracted.pageCount;
-
-    // Record provenance
-    record.extracted_url = extracted.sourceUrl;
-    record.extracted_at = new Date().toISOString();
-    record.extraction_method = extracted.method;
-    record.evidence_snippets = evidence;
-    record.user_verified = true;
-
-    if (suggestedScreeningUpdate) {
-      record.screeningStage = suggestedScreeningUpdate.stage;
-      record.suggestedDecision = suggestedScreeningUpdate.suggestedDecision;
-      record.matchedCriteria = suggestedScreeningUpdate.matchedCriteria;
-      record.unknownCriteria = suggestedScreeningUpdate.unknownCriteria;
-      record.missingEvidence = suggestedScreeningUpdate.missingEvidence;
-      record.screeningReason = suggestedScreeningUpdate.screeningReason;
-      // finalDecision is preserved!
-    }
-
-    if (allRecord) {
-      Object.assign(allRecord, record);
-    }
-
+    rec.finalDecision = decision;
+    rec.isDecisionOutdated = false; // Mark up to date
+    await this.updateRecordDecisionOnBackend(paperId, { finalDecision: decision, userNotes: rec.userNotes });
     await this.saveSessionToStorage();
-    this.closeModal();
+    this.updateStepCounters();
+    this.renderStepV3();
     this.renderRecordsList();
-    this.setStatus(`✓ Đã cập nhật provenance và dữ liệu cho bài báo #${record.id}`, "success");
   }
 
-  private handleCancelTabExtract() {
-    this.closeModal();
-    this.setStatus("Đã hủy bỏ cập nhật. Toàn bộ dữ liệu cũ được giữ nguyên.", "info");
-  }
-
-  private closeModal() {
-    if (this.tabExtractModal) {
-      this.tabExtractModal.style.display = "none";
-    }
-    this.pendingAnalysisResult = null;
-    this.pendingRecordId = null;
-  }
-
-  // --- Profile Manager Modal & CRUD ---
-
-  private openProfileModal() {
-    this.renderProfileListInModal();
-    this.profileEditForm.style.display = "none";
-    this.profileModal.style.display = "flex";
-  }
-
-  private closeProfileModal() {
-    this.profileModal.style.display = "none";
-  }
-
-  private renderProfileListInModal() {
-    this.profileListContainer.innerHTML = this.profiles
-      .map((p) => {
-        const isActive = p.id === this.activeProfile.id;
-        const activeTag = isActive ? '<span class="badge badge-green">Đang chọn</span>' : "";
-        return `
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px;">
-          <div>
-            <b>${this.escapeHtml(p.name)}</b> ${activeTag}
-            <div style="font-size: 10px; color: #64748b;">${p.reviewType} | v${p.profileVersion} | ${p.criteria.length} tiêu chí | Mục tiêu: ${p.targetIncludedCount || 15} bài</div>
-          </div>
-          <div style="display: flex; gap: 4px;">
-            <button class="btn-secondary btn-edit-p" data-id="${p.id}" style="padding: 2px 6px; font-size: 10px;">Sửa</button>
-            <button class="btn-secondary btn-clone-p" data-id="${p.id}" style="padding: 2px 6px; font-size: 10px;">Nhân bản</button>
-            ${!isActive && this.profiles.length > 1 ? `<button class="btn-danger btn-del-p" data-id="${p.id}" style="padding: 2px 6px; font-size: 10px;">Xóa</button>` : ""}
-          </div>
-        </div>
-      `;
-      })
-      .join("");
-
-    this.profileListContainer.querySelectorAll(".btn-edit-p").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = (btn as HTMLElement).getAttribute("data-id");
-        if (id) this.startEditProfile(id);
-      });
-    });
-
-    this.profileListContainer.querySelectorAll(".btn-clone-p").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = (btn as HTMLElement).getAttribute("data-id");
-        if (id) this.cloneProfile(id);
-      });
-    });
-
-    this.profileListContainer.querySelectorAll(".btn-del-p").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = (btn as HTMLElement).getAttribute("data-id");
-        if (id) this.deleteProfile(id);
-      });
-    });
-  }
-
-  private applyPreset(preset: ResearchProfile) {
-    const existingIdx = this.profiles.findIndex((p) => p.id === preset.id);
-    if (existingIdx === -1) {
-      this.profiles.push(JSON.parse(JSON.stringify(preset)));
-    } else {
-      this.profiles[existingIdx] = JSON.parse(JSON.stringify(preset));
-    }
-    this.saveProfilesToStorage();
-    this.switchActiveProfile(preset.id);
-    this.closeProfileModal();
-    this.setStatus(`Đã chọn preset "${preset.name}".`, "success");
-  }
-
-  private startNewProfile() {
-    this.editingProfileId = null;
-    this.profileFormTitle.innerText = "Tạo Hồ sơ Nghiên cứu Mới";
-    this.editProfileName.value = "";
-    this.editProfileDesc.value = "";
-    this.editProfileRq.value = "";
-    this.editProfileReviewType.value = "systematic_review";
-    this.editProfileTargetIncluded.value = "15";
-
-    this.chkYearRange.checked = false;
-    this.editYearStart.value = "";
-    this.editYearEnd.value = "";
-
-    this.chkMinPages.checked = false;
-    this.editMinPages.value = "4";
-    this.editKeywordsInclusion.value = "";
-
-    this.profileEditForm.style.display = "block";
-  }
-
-  private startEditProfile(id: string) {
-    const p = this.profiles.find((x) => x.id === id);
-    if (!p) return;
-
-    this.editingProfileId = id;
-    this.profileFormTitle.innerText = `Chỉnh sửa: ${p.name} (v${p.profileVersion})`;
-    this.editProfileName.value = p.name;
-    this.editProfileDesc.value = p.description || "";
-    this.editProfileRq.value = (p.researchQuestions || []).join("\n");
-    this.editProfileReviewType.value = p.reviewType || "systematic_review";
-    this.editProfileTargetIncluded.value = String(p.targetIncludedCount || 15);
-
-    if (p.yearRange && p.yearRange.enabled) {
-      this.chkYearRange.checked = true;
-      this.editYearStart.value = p.yearRange.start !== undefined ? String(p.yearRange.start) : "";
-      this.editYearEnd.value = p.yearRange.end !== undefined ? String(p.yearRange.end) : "";
-    } else {
-      this.chkYearRange.checked = false;
-      this.editYearStart.value = "";
-      this.editYearEnd.value = "";
-    }
-
-    if (p.minPageCount !== undefined && p.minPageCount > 0) {
-      this.chkMinPages.checked = true;
-      this.editMinPages.value = String(p.minPageCount);
-    } else {
-      this.chkMinPages.checked = false;
-      this.editMinPages.value = "4";
-    }
-
-    // Extract keyword group criteria
-    const kwCrit = p.criteria.find((c) => c.evaluator === "keyword_group" && c.kind === "inclusion");
-    if (kwCrit && kwCrit.parameters && kwCrit.parameters.keywords) {
-      this.editKeywordsInclusion.value = kwCrit.parameters.keywords.join(", ");
-    } else {
-      this.editKeywordsInclusion.value = "";
-    }
-
-    this.profileEditForm.style.display = "block";
-  }
-
-  private cloneProfile(id: string) {
-    const src = this.profiles.find((p) => p.id === id);
-    if (!src) return;
-
-    const cloned: ResearchProfile = JSON.parse(JSON.stringify(src));
-    cloned.id = `profile_${Date.now()}`;
-    cloned.name = `${src.name} (Bản sao)`;
-    cloned.profileVersion = 1;
-    cloned.createdAt = new Date().toISOString();
-    cloned.updatedAt = new Date().toISOString();
-
-    this.profiles.push(cloned);
-    this.saveProfilesToStorage();
-    this.renderProfileListInModal();
-    this.renderProfileHeaderAndOptions();
-    this.setStatus(`Đã nhân bản hồ sơ "${src.name}".`, "success");
-  }
-
-  private deleteProfile(id: string) {
-    if (id === this.activeProfile.id) {
-      alert("Không thể xóa hồ sơ nghiên cứu đang được kích hoạt.");
-      return;
-    }
-    if (!confirm("Bạn có chắc chắn muốn xóa hồ sơ này?")) return;
-
-    this.profiles = this.profiles.filter((p) => p.id !== id);
-    this.saveProfilesToStorage();
-    this.renderProfileListInModal();
-    this.renderProfileHeaderAndOptions();
-    this.setStatus("Đã xóa hồ sơ nghiên cứu.", "info");
-  }
-
-  private async handleSaveProfile() {
-    const name = this.editProfileName.value.trim();
-    if (!name) {
-      alert("Vui lòng nhập tên nghiên cứu.");
-      return;
-    }
-
-    const desc = this.editProfileDesc.value.trim();
-    const rqs = this.editProfileRq.value
-      .split("\n")
-      .map((s) => s.trim())
-      .filter(Boolean);
-    const reviewType = this.editProfileReviewType.value as any;
-    const targetIncluded = Math.max(1, parseInt(this.editProfileTargetIncluded.value, 10) || 15);
-
-    const yearEnabled = this.chkYearRange.checked;
-    const yearStart = yearEnabled && this.editYearStart.value ? parseInt(this.editYearStart.value, 10) : undefined;
-    const yearEnd = yearEnabled && this.editYearEnd.value ? parseInt(this.editYearEnd.value, 10) : undefined;
-
-    const minPagesEnabled = this.chkMinPages.checked;
-    const minPages = minPagesEnabled ? parseInt(this.editMinPages.value, 10) || 4 : undefined;
-
-    const kwText = this.editKeywordsInclusion.value.trim();
-    const keywords = kwText
-      ? kwText
-          .split(",")
-          .map((k) => k.trim())
-          .filter(Boolean)
-      : [];
-
-    let targetProfile: ResearchProfile;
-    if (this.editingProfileId) {
-      const existing = this.profiles.find((p) => p.id === this.editingProfileId);
-      if (!existing) return;
-      targetProfile = existing;
-      targetProfile.name = name;
-      targetProfile.description = desc;
-      targetProfile.researchQuestions = rqs;
-      targetProfile.reviewType = reviewType;
-      targetProfile.targetIncludedCount = targetIncluded;
-      targetProfile.profileVersion += 1; // Increment version on edit
-      targetProfile.updatedAt = new Date().toISOString();
-
-      // Mark current records as evaluated at older version
-      if (targetProfile.id === this.activeProfile.id) {
-        this.uniqueRecords.forEach((r) => {
-          if (r.finalDecision) {
-            r.isDecisionOutdated = true;
-          }
-        });
-      }
-    } else {
-      targetProfile = {
-        id: `profile_${Date.now()}`,
-        name,
-        description: desc,
-        researchQuestions: rqs,
-        reviewType,
-        targetIncludedCount: targetIncluded,
-        searchStrings: [
-          {
-            id: `str_${Date.now()}`,
-            name: "Chuỗi mặc định",
-            query: keywords.length > 0 ? keywords.map((k) => `"${k}"`).join(" AND ") : name,
-            isDefault: true,
-            source: "google_scholar",
-          },
-        ],
-        criteria: [],
-        sourcePolicies: {
-          google_scholar: { prismaRole: "supplementary" },
-        },
-        schemaVersion: "2.0.0",
-        profileVersion: 1,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      this.profiles.push(targetProfile);
-    }
-
-    // Set common criteria safely without eval
-    targetProfile.yearRange = {
-      start: yearStart,
-      end: yearEnd,
-      enabled: yearEnabled,
-    };
-    targetProfile.minPageCount = minPages;
-
-    // Update criteria list based on common form
-    const updatedCriteria: Criterion[] = [];
-
-    if (yearEnabled && (yearStart !== undefined || yearEnd !== undefined)) {
-      updatedCriteria.push({
-        id: "IC-Y",
-        label: `Khoảng năm xuất bản (${yearStart || "..."} - ${yearEnd || "..."})`,
-        description: `Xuất bản trong khoảng từ năm ${yearStart || "không giới hạn"} đến ${yearEnd || "không giới hạn"}.`,
-        kind: "inclusion",
-        required: true,
-        stage: "metadata",
-        evaluator: "year_range",
-        parameters: { startYear: yearStart, endYear: yearEnd },
-      });
-    }
-
-    if (minPagesEnabled && minPages) {
-      updatedCriteria.push({
-        id: "EC-LEN",
-        label: `Số trang tối thiểu (>= ${minPages})`,
-        description: `Loại trừ các bài viết ngắn, tóm tắt, poster có độ dài dưới ${minPages} trang.`,
-        kind: "exclusion",
-        required: true,
-        stage: "full_text",
-        evaluator: "page_count",
-        parameters: { minPages, mode: "reject_if_under" },
-      });
-    }
-
-    if (keywords.length > 0) {
-      updatedCriteria.push({
-        id: "IC-KW",
-        label: "Từ khóa bắt buộc",
-        description: `Bắt buộc chứa nhóm từ khóa: ${keywords.join(", ")}.`,
-        kind: "inclusion",
-        required: true,
-        stage: "title_abstract",
-        evaluator: "keyword_group",
-        parameters: {
-          keywords,
-          mode: "all",
-          fields: ["title", "abstract", "snippet"],
-        },
-      });
-    }
-
-    // If existing had custom domain criteria (like SWT302), preserve them
-    if (this.editingProfileId) {
-      const existingDomainCriteria = targetProfile.criteria.filter(
-        (c) => c.evaluator === "swt302_ep_bva" || (c.id !== "IC-Y" && c.id !== "EC-LEN" && c.id !== "IC-KW"),
-      );
-      targetProfile.criteria = [...updatedCriteria, ...existingDomainCriteria];
-    } else {
-      targetProfile.criteria = updatedCriteria;
-    }
-
-    await this.saveProfilesToStorage();
-    this.renderProfileListInModal();
-    this.renderProfileHeaderAndOptions();
-    this.profileEditForm.style.display = "none";
-    this.setStatus(`✓ Đã lưu hồ sơ "${targetProfile.name}" (v${targetProfile.profileVersion}).`, "success");
-  }
-
-  private async saveProfilesToStorage() {
-    if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
-      await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: this.profiles });
-    }
-  }
-
-  private handleExportActiveProfile() {
-    const jsonStr = JSON.stringify(this.activeProfile, null, 2);
-    const filename = `profile_${this.activeProfile.id}_v${this.activeProfile.profileVersion}.json`;
-    this.downloadFile(jsonStr, filename, "application/json");
-    this.setStatus(`✓ Đã xuất hồ sơ "${this.activeProfile.name}" sang file JSON.`, "success");
-  }
-
-  private handleProfileFileImport(e: Event) {
-    const input = e.target as HTMLInputElement;
-    if (!input.files || input.files.length === 0) return;
-
-    const file = input.files[0];
-    const reader = new FileReader();
-    reader.onload = async () => {
-      try {
-        const text = reader.result as string;
-        const profile = JSON.parse(text);
-
-        // Basic schema check
-        if (!profile.name || !profile.reviewType) {
-          throw new Error("File JSON thiếu trường 'name' hoặc 'reviewType' hợp lệ.");
-        }
-
-        profile.id = `imported_${Date.now()}`;
-        profile.profileVersion = profile.profileVersion || 1;
-        profile.schemaVersion = profile.schemaVersion || "2.0.0";
-        profile.createdAt = new Date().toISOString();
-        profile.updatedAt = new Date().toISOString();
-
-        this.profiles.push(profile);
-        await this.saveProfilesToStorage();
-        this.renderProfileListInModal();
-        this.renderProfileHeaderAndOptions();
-        this.switchActiveProfile(profile.id);
-        this.closeProfileModal();
-        this.setStatus(`✓ Đã nhập thành công hồ sơ: "${profile.name}".`, "success");
-      } catch (err: any) {
-        alert(`Lỗi khi nhập hồ sơ: ${err.message}`);
-      } finally {
-        input.value = "";
-      }
-    };
-    reader.readAsText(file);
-  }
-
-  // --- Export Functions ---
-
-  private handleExportCsv() {
-    if (this.uniqueRecords.length === 0) {
-      this.setStatus("Chưa có bản ghi nào để xuất.", "warning");
-      return;
-    }
-
-    const headers = [
-      "source",
-      "title",
-      "authors",
-      "year",
-      "venue",
-      "doi",
-      "abstract",
-      "url",
-      "query",
-      "retrieval_date",
-    ];
-
-    let csvContent = "\uFEFF";
-    csvContent += headers.join(",") + "\r\n";
-
-    this.uniqueRecords.forEach((row) => {
-      const line = [
-        this.escapeCsv(row.source || row.discoverySource || "Google Scholar"),
-        this.escapeCsv(row.title || ""),
-        this.escapeCsv(row.authors || ""),
-        this.escapeCsv(row.year || ""),
-        this.escapeCsv(row.venue || ""),
-        this.escapeCsv(row.doi || ""),
-        this.escapeCsv(row.abstract || ""),
-        this.escapeCsv(row.url || ""),
-        this.escapeCsv(row.query || ""),
-        this.escapeCsv(row.retrieval_date || ""),
-      ].join(",");
-      csvContent += line + "\r\n";
-    });
-
-    this.downloadFile(csvContent, "01_all_records.csv", "text/csv;charset=utf-8;");
-    this.setStatus(
-      `✓ Đã tải xuống file 01_all_records.csv (${this.uniqueRecords.length} bản ghi metadata chuẩn PRISMA).`,
-      "success",
-    );
-  }
-
-  private handleExportScreeningCsv() {
-    if (this.uniqueRecords.length === 0) {
-      this.setStatus("Chưa có bản ghi nào để xuất.", "warning");
-      return;
-    }
-
-    const headers = [
-      "id",
-      "source",
-      "title",
-      "year",
-      "venue",
-      "doi",
-      "url",
-      "screening_stage",
-      "matched_criteria",
-      "unknown_criteria",
-      "missing_evidence",
-      "suggested_decision",
-      "screening_reason",
-      "final_decision",
-      "user_notes",
-      "potential_duplicate",
-      "duplicate_reason",
-      "query",
-      "retrieval_date",
-    ];
-
-    let csvContent = "\uFEFF";
-    csvContent += headers.join(",") + "\r\n";
-
-    this.uniqueRecords.forEach((row) => {
-      const line = [
-        this.escapeCsv(row.id),
-        this.escapeCsv(row.source || row.discoverySource || "Google Scholar"),
-        this.escapeCsv(row.title || ""),
-        this.escapeCsv(row.year || ""),
-        this.escapeCsv(row.venue || ""),
-        this.escapeCsv(row.doi || ""),
-        this.escapeCsv(row.url || ""),
-        this.escapeCsv(row.screeningStage || "metadata"),
-        this.escapeCsv((row.matchedCriteria || []).join("; ")),
-        this.escapeCsv((row.unknownCriteria || []).join("; ")),
-        this.escapeCsv((row.missingEvidence || []).join("; ")),
-        this.escapeCsv(row.suggestedDecision || "Unsure"),
-        this.escapeCsv(row.screeningReason || ""),
-        this.escapeCsv(row.finalDecision || ""),
-        this.escapeCsv(row.userNotes || ""),
-        this.escapeCsv(row.potentialDuplicate ? "YES" : "NO"),
-        this.escapeCsv(row.duplicateReason || ""),
-        this.escapeCsv(row.query || ""),
-        this.escapeCsv(row.retrieval_date || ""),
-      ].join(",");
-      csvContent += line + "\r\n";
-    });
-
-    this.downloadFile(csvContent, "02_screening_decisions.csv", "text/csv;charset=utf-8;");
-    this.setStatus(`✓ Đã tải xuống file 02_screening_decisions.csv (Đầy đủ quyết định & ghi chú).`, "success");
-  }
-
-  private async handleExportFullCsv() {
-    if (this.uniqueRecords.length === 0) {
-      this.setStatus("Chưa có bản ghi nào để xuất.", "warning");
-      return;
-    }
-
+  private async saveNoteToBackend(paperId: string, notes: string) {
     try {
-      this.setStatus("Đang tạo file xuất sàng lọc đầy đủ qua backend...", "info");
-      const res = await fetch(`${this.backendUrl}/api/scholar/export-full`, {
-        method: "POST",
+      await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          records: this.uniqueRecords,
-          profile: this.activeProfile,
-          sessionId: this.currentSessionId,
-        }),
+        body: JSON.stringify({ userNotes: notes }),
       });
-
-      if (res.ok) {
-        const data = await res.json();
-        const csvText = data.csvContent || "";
-        if (csvText) {
-          this.downloadFile(csvText, "02_screening_decisions_full.csv", "text/csv;charset=utf-8;");
-          this.setStatus(
-            "✓ Đã tải xuống file 02_screening_decisions_full.csv (Đầy đủ tiêu chí & provenance).",
-            "success",
-          );
-          return;
-        }
-      }
+      await this.saveSessionToStorage();
     } catch {
-      // Fallback local CSV generation
+      // ignore
     }
-
-    // Local generation
-    const headers = [
-      "researchId",
-      "profileVersion",
-      "sessionId",
-      "id",
-      "source",
-      "title",
-      "authors",
-      "year",
-      "venue",
-      "doi",
-      "pageCount",
-      "fullTextStatus",
-      "suggestedDecision",
-      "finalDecision",
-      "modelContribution",
-      "conceptLabels",
-      "literatureGroup",
-      "screeningReason",
-      "userNotes",
-      "retrieval_date",
-    ];
-
-    let csvContent = "\uFEFF" + headers.join(",") + "\r\n";
-    this.uniqueRecords.forEach((r) => {
-      const line = [
-        this.escapeCsv(this.activeProfile.id),
-        this.escapeCsv(this.activeProfile.profileVersion),
-        this.escapeCsv(this.currentSessionId),
-        this.escapeCsv(r.id),
-        this.escapeCsv(r.source || "Google Scholar"),
-        this.escapeCsv(r.title),
-        this.escapeCsv(r.authors),
-        this.escapeCsv(r.year),
-        this.escapeCsv(r.venue),
-        this.escapeCsv(r.doi),
-        this.escapeCsv(r.page_count || ""),
-        this.escapeCsv(r.pdfUrl ? "available" : "not_found"),
-        this.escapeCsv(r.suggestedDecision),
-        this.escapeCsv(r.finalDecision || ""),
-        this.escapeCsv((r.modelContribution || []).join("; ")),
-        this.escapeCsv((r.conceptLabels || []).join("; ")),
-        this.escapeCsv(r.literatureGroup || ""),
-        this.escapeCsv(r.screeningReason),
-        this.escapeCsv(r.userNotes || ""),
-        this.escapeCsv(r.retrieval_date),
-      ].join(",");
-      csvContent += line + "\r\n";
-    });
-
-    this.downloadFile(csvContent, "02_screening_decisions_full.csv", "text/csv;charset=utf-8;");
-    this.setStatus("✓ Đã tải xuống file 02_screening_decisions_full.csv.", "success");
   }
 
-  private async handleExportApa7() {
-    if (this.uniqueRecords.length === 0) {
-      this.setStatus("Chưa có bản ghi nào để xuất trích dẫn.", "warning");
-      return;
-    }
-
+  private async updateRecordDecisionOnBackend(paperId: string, updates: Partial<PaperRecord>) {
     try {
-      this.setStatus("Đang định dạng danh mục trích dẫn APA 7th qua backend...", "info");
-      const res = await fetch(`${this.backendUrl}/api/scholar/export-apa7`, {
-        method: "POST",
+      await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          records: this.uniqueRecords,
-          profile: this.activeProfile,
-          onlyFinalIncluded: true,
-        }),
+        body: JSON.stringify(updates),
       });
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data.success && data.textContent) {
-          this.downloadFile(data.textContent, "03_references_apa7.txt", "text/plain;charset=utf-8;");
-          this.setStatus(
-            `✓ Đã tải file 03_references_apa7.txt (Đủ: ${data.completeCount}, Cần bổ sung: ${data.incompleteCount}).`,
-            "success",
-          );
-          return;
-        }
-      }
     } catch {
-      // Local fallback
-    }
-
-    // Local APA 7 formatter (áp dụng khi backend offline)
-    const finalIncludes = this.uniqueRecords.filter((r) => r.finalDecision === "Include");
-    const targetRecords = finalIncludes.length > 0 ? finalIncludes : this.uniqueRecords;
-
-    // Deduplicate
-    const seenDois = new Set<string>();
-    const seenTitles = new Set<string>();
-    const deduped: PaperRecord[] = [];
-
-    for (const r of targetRecords) {
-      const cleanDoi = r.doi
-        ? r.doi
-            .trim()
-            .toLowerCase()
-            .replace(/^https?:\/\/doi\.org\//, "")
-        : "";
-      const normTitle = (r.title || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-
-      if (cleanDoi) {
-        if (seenDois.has(cleanDoi)) continue;
-        seenDois.add(cleanDoi);
-      }
-      if (normTitle && normTitle.length > 15) {
-        if (seenTitles.has(normTitle)) continue;
-        seenTitles.add(normTitle);
-      }
-      deduped.push(r);
-    }
-
-    const complete: string[] = [];
-    const incomplete: string[] = [];
-
-    deduped.forEach((r) => {
-      const hasAuthor = Boolean(r.authors && r.authors.trim());
-      const hasYear = Boolean(r.year && String(r.year).trim());
-      const rawTitle = (r.title || "").trim();
-      const rawVenue = (r.venue || "").trim();
-
-      const isRetracted = /\b(retracted|retraction)\b/i.test(`${rawTitle} ${r.abstract || ""}`);
-      const isTruncatedTitle = /…|\.{3}/.test(rawTitle);
-      const isSearchEngineVenue =
-        /^(google scholar|google books|google|researchgate|proquest|ssrn|academia\.edu)\b/i.test(rawVenue);
-      const isTruncatedVenue = /…|\.{3}/.test(rawVenue);
-      const hasValidVenue = rawVenue.length > 0 && !isSearchEngineVenue && !isTruncatedVenue;
-
-      if (hasAuthor && hasYear && rawTitle && hasValidVenue && !isRetracted && !isTruncatedTitle) {
-        const doiStr = r.doi
-          ? ` https://doi.org/${r.doi.replace(/^https?:\/\/doi\.org\//, "")}`
-          : r.url && !r.url.includes("scholar.google")
-            ? ` ${r.url}`
-            : "";
-        complete.push(`${r.authors} (${r.year}). ${rawTitle}. *${rawVenue}*.${doiStr}`);
-      } else {
-        const missing: string[] = [];
-        if (!hasAuthor) missing.push("tác giả");
-        if (!hasYear) missing.push("năm");
-        if (!rawTitle) missing.push("tiêu đề");
-        if (isRetracted) missing.push("BÀI BÁO ĐÃ BỊ RÚT LẠI (RETRACTED)");
-        if (isTruncatedTitle) missing.push("tiêu đề bị cắt ngắn (...)");
-        if (isSearchEngineVenue) missing.push(`venue gán nhầm tên nền tảng ("${rawVenue}")`);
-        else if (isTruncatedVenue) missing.push(`venue bị cắt ngắn ("${rawVenue}")`);
-        else if (!rawVenue) missing.push("venue");
-
-        incomplete.push(`[THIẾU: ${missing.join(", ")}] ${rawTitle || "(Không tiêu đề)"} - Nguồn: ${r.url || "N/A"}`);
-      }
-    });
-
-    const scopeNote =
-      finalIncludes.length > 0
-        ? `Chỉ xuất các bài đã chốt thẩm định (finalDecision = Include: ${finalIncludes.length} bài)`
-        : `Toàn bộ danh sách (${deduped.length} bài)`;
-
-    let content = `=======================================================================\r\n`;
-    content += `DANH MỤC TRÍCH DẪN TÀI LIỆU THAM KHẢO (APA 7th Edition)\r\n`;
-    content += `Nghiên cứu: ${this.activeProfile.name} | Phạm vi: ${scopeNote}\r\n`;
-    content += `Thời điểm xuất: ${new Date().toISOString()}\r\n`;
-    content += `Đã lọc trùng lặp: Giữ ${deduped.length} bài (Đủ chuẩn APA: ${complete.length} | Cần bổ sung: ${incomplete.length})\r\n`;
-    content += `=======================================================================\r\n\r\n`;
-
-    content += `--- PHẦN 1: BÀI BÁO ĐỦ METADATA ĐÃ XÁC MINH ---\r\n\r\n`;
-    if (complete.length === 0) {
-      content += `(Chưa có bài báo nào đủ 100% metadata chuẩn APA 7)\r\n\r\n`;
-    } else {
-      content += complete.map((c, i) => `[${i + 1}] ${c}\r\n\r\n`).join("");
-    }
-
-    content += `=======================================================================\r\n`;
-    content += `--- ⚠️ PHẦN 2: BÀI BÁO THIẾU THÔNG TIN (CẦN BỔ SUNG THỦ CÔNG) ---\r\n`;
-    content += `(Quy tắc: Không tự bịa thông tin còn thiếu. Cần đối chiếu toàn văn hoặc trang nhà xuất bản)\r\n`;
-    content += `=======================================================================\r\n\r\n`;
-    if (incomplete.length === 0) {
-      content += `(Toàn bộ bài báo đều đã đầy đủ thông tin chuẩn hóa)\r\n`;
-    } else {
-      content += incomplete.map((inc, i) => `[⚠️ ${i + 1}] ${inc}\r\n\r\n`).join("");
-    }
-
-    this.downloadFile(content, "03_references_apa7.txt", "text/plain;charset=utf-8;");
-    this.setStatus(
-      `✓ Đã tải file 03_references_apa7.txt (Đủ: ${complete.length}, Cần bổ sung: ${incomplete.length}).`,
-      "success",
-    );
-  }
-
-  private handleExportSessionJson() {
-    const sessionPayload = {
-      researchProfile: this.activeProfile,
-      sessionId: this.currentSessionId,
-      timestamp: new Date().toISOString(),
-      query: this.currentSessionQuery,
-      filters: {
-        as_ylo: this.asYloInput.value,
-        as_yhi: this.asYhiInput.value,
-        hl: this.hlInput.value,
-      },
-      stats: {
-        apiRequestsUsed: this.apiRequestsUsed,
-        totalCollected: this.allRecords.length,
-        totalRetained: this.uniqueRecords.length,
-        finalIncludeCount: this.uniqueRecords.filter((r) => r.finalDecision === "Include").length,
-        dedupStats: this.dedupStats,
-        searchSummary: this.searchSummary,
-      },
-      records: this.uniqueRecords,
-      rawEvidences: this.allEvidences,
-    };
-
-    const jsonContent = JSON.stringify(sessionPayload, null, 2);
-    const fname = `session_${this.activeProfile.id}_${Date.now()}.json`;
-    this.downloadFile(jsonContent, fname, "application/json");
-    this.setStatus("✓ Đã tải file Backup Session JSON thành công.", "success");
-  }
-
-  private async handleSaveLog() {
-    if (this.uniqueRecords.length === 0) {
-      this.setStatus("Chưa có bản ghi nào để ghi nhật ký.", "warning");
-      return;
-    }
-
-    const uiVal = this.uiTotalInput.value.trim();
-    const uiTotal = uiVal ? parseInt(uiVal, 10) : undefined;
-
-    const shuffled = [...this.uniqueRecords].sort(() => 0.5 - Math.random());
-    const spotChecks = shuffled.slice(0, 5).map((r) => ({
-      title: r.title,
-      year: r.year,
-      venue: r.venue,
-      doi: r.doi,
-      url: r.url,
-    }));
-
-    const payload = {
-      researchId: this.activeProfile.id,
-      profileVersion: this.activeProfile.profileVersion,
-      query: this.currentSessionQuery || this.queryInput.value.trim(),
-      searchId: this.searchSummary?.searchId || `scholar_${Date.now()}`,
-      method: "SerpApi",
-      params: {
-        engine: "google_scholar",
-        as_ylo: this.asYloInput.value.trim(),
-        as_yhi: this.asYhiInput.value.trim(),
-        hl: this.hlInput.value.trim() || "vi",
-        totalRequests: this.apiRequestsUsed,
-      },
-      apiTotalResults: this.searchSummary?.totalReportedResults || 0,
-      uiTotalResults: uiTotal,
-      collectedCount: this.allRecords.length,
-      candidateCount: this.uniqueRecords.length,
-      dedupStats: this.dedupStats,
-      spotChecks,
-      retrievalDate: new Date().toISOString().split("T")[0],
-    };
-
-    this.setStatus("Đang gửi nhật ký tới backend để lưu...", "info");
-
-    try {
-      const res = await fetch(`${this.backendUrl}/api/scholar/log`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (data.success) {
-        this.setStatus("✓ Đã ghi nhật ký vào search-log.md thành công!", "success");
-      } else {
-        throw new Error(data.error);
-      }
-    } catch (err: any) {
-      this.setStatus(`Lỗi ghi nhật ký: ${err.message}`, "error");
+      // ignore
     }
   }
 
   // ==========================================
-  // PIPELINE STAGE MANAGEMENT & BACKGROUND JOBS
+  // BACKGROUND JOB MANAGEMENT
   // ==========================================
-
-  private switchStage(stage: string) {
-    this.currentStage = stage;
-    this.stageTabBtns.forEach((btn) => {
-      if (btn.getAttribute("data-stage") === stage) {
-        btn.classList.add("active");
-      } else {
-        btn.classList.remove("active");
-      }
-    });
-
-    const stageTitles: Record<string, string> = {
-      B1: "🚀 B1: Thu thập Đa nguồn (API / Import)",
-      V1: "🚀 V1: Loại trùng & Chuẩn hóa (Dedup)",
-      V2: "🚀 V2: Sàng lọc Tiêu đề & Tóm tắt",
-      V3: "🚀 V3: Tải PDF & Thẩm định Toàn văn",
-      FINAL: "📊 Chốt Quyết định & PRISMA 2020",
-    };
-
-    if (this.runStageBtn) {
-      this.runStageBtn.innerText = stageTitles[stage] || `🚀 Chạy ${stage}`;
-    }
-
-    const isFinalOrV3 = stage === "FINAL" || stage === "V3";
-    if (this.exportDedupLogBtn)
-      this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
-    if (this.exportPrismaBtn) this.exportPrismaBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
-    if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
-
-    this.setStatus(`Đang ở giai đoạn [${stage}] của quy trình.`, "info");
-  }
 
   private async checkActiveBackgroundJob() {
     try {
@@ -3344,14 +2712,14 @@ class ScholarExtensionApp {
           this.jobPollInterval = null;
           this.activeJobId = null;
           if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
-          this.setStatus(`✓ Giai đoạn ${job.stage} đã hoàn thành xuất sắc!`, "success");
+          this.setStatus(`✓ Tác vụ ${job.stage} đã hoàn thành xuất sắc!`, "success");
           await this.reloadStageData();
         } else if (job.status === "failed") {
           clearInterval(this.jobPollInterval);
           this.jobPollInterval = null;
           this.activeJobId = null;
           if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
-          this.setStatus(`❌ Giai đoạn ${job.stage} thất bại: ${job.error || "Lỗi không xác định"}`, "error");
+          this.setStatus(`❌ Tác vụ ${job.stage} thất bại: ${job.error || "Lỗi không xác định"}`, "error");
         } else if (job.status === "cancelled") {
           clearInterval(this.jobPollInterval);
           this.jobPollInterval = null;
@@ -3363,56 +2731,6 @@ class ScholarExtensionApp {
         console.warn("Polling job failed:", err);
       }
     }, 1200);
-  }
-
-  private async handleRunStageJob() {
-    if (this.currentStage === "FINAL") {
-      this.openPrismaModal();
-      return;
-    }
-
-    try {
-      this.setStatus(`Đang khởi chạy tác vụ chạy nền cho giai đoạn ${this.currentStage}...`, "info");
-      const payload = {
-        researchId: this.activeProfile.id,
-        sessionId: this.currentSessionId || `session_${Date.now()}`,
-        stage: this.currentStage,
-        profile: this.activeProfile,
-        source: this.sourceSelect ? this.sourceSelect.value : "OpenAlex",
-        queryVersion: this.queryVersionSelect ? this.queryVersionSelect.value : "Q1",
-        query: this.queryInput.value.trim(),
-        asYlo: this.asYloInput.value.trim(),
-        asYhi: this.asYhiInput.value.trim(),
-        records: this.uniqueRecords,
-      };
-
-      const res = await fetch(`${this.backendUrl}/api/pipeline/run-stage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.error || `HTTP ${res.status}`);
-      }
-
-      const data = await res.json();
-      if (data.jobId) {
-        this.activeJobId = data.jobId;
-        this.showJobBanner({
-          stage: this.currentStage,
-          status: "running",
-          message: "Đang chạy...",
-          processedItems: 0,
-          totalItems: 1,
-        });
-        this.startJobPolling(data.jobId);
-        this.setStatus(`Tác vụ ${this.currentStage} đã được đẩy vào chạy nền.`, "info");
-      }
-    } catch (e: any) {
-      this.setStatus(`Không thể khởi chạy giai đoạn: ${e.message}`, "error");
-    }
   }
 
   private async handlePauseJob() {
@@ -3453,15 +2771,12 @@ class ScholarExtensionApp {
       );
       if (res.ok) {
         const data = await res.json();
-        const stageRecords =
-          this.currentStage === "B1" && data.rawRecords && data.rawRecords.length > 0
-            ? data.rawRecords
-            : data.canonicalRecords || data.records || [];
+        const stageRecords = data.canonicalRecords || data.records || [];
         if (stageRecords && Array.isArray(stageRecords) && stageRecords.length > 0) {
           this.uniqueRecords = stageRecords;
-          this.allRecords = stageRecords;
+          this.allRecords = data.rawRecords || stageRecords;
           if (data.dedupStats) this.dedupStats = data.dedupStats;
-          this.updateStatsDisplay();
+          this.updateStepCounters();
           this.renderRecordsList();
           await this.saveSessionToStorage();
         }
@@ -3471,104 +2786,211 @@ class ScholarExtensionApp {
     }
   }
 
-  private async handleImportFile(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if (!input.files || input.files.length === 0) return;
-    const file = input.files[0];
+  // ==========================================
+  // PROFILE PERSISTENCE & MULTI-PROFILE
+  // ==========================================
 
+  private async loadProfilesAndRestoreActive() {
     try {
-      this.setStatus(`Đang đọc và nhập tệp "${file.name}"...`, "info");
-      const text = await file.text();
-      const res = await fetch(`${this.backendUrl}/api/pipeline/import-file`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fileName: file.name,
-          content: text,
-          researchId: this.activeProfile.id,
-          sessionId: this.currentSessionId || `session_${Date.now()}`,
-        }),
-      });
+      const stored = await chrome.storage.local.get([STORAGE_PROFILES_KEY, STORAGE_ACTIVE_PROFILE_KEY]);
+      let localProfiles: ResearchProfile[] = stored[STORAGE_PROFILES_KEY] || [];
+      const activeId: string = stored[STORAGE_ACTIVE_PROFILE_KEY] || "";
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || `HTTP ${res.status}`);
+      if (localProfiles.length === 0) {
+        localProfiles = [PRESET_SWT302, PRESET_GENERIC, PRESET_VISUALLY_IMPAIRED_AAC];
+        await chrome.storage.local.set({ [STORAGE_PROFILES_KEY]: localProfiles });
       }
 
-      const data = await res.json();
-      if (data.records && Array.isArray(data.records)) {
-        this.allRecords = [...this.allRecords, ...data.records];
-        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-        await this.saveSessionToStorage();
+      this.profiles = localProfiles;
+      const found = this.profiles.find((p) => p.id === activeId) || this.profiles[0];
+      this.activeProfile = found;
 
-        let warnMsg = "";
-        if (data.warnings && data.warnings.length > 0) {
-          warnMsg = ` (Lưu ý: ${data.warnings.join("; ")})`;
-        }
-        this.setStatus(`✓ Đã nhập thành công ${data.records.length} bản ghi từ "${file.name}"!${warnMsg}`, "success");
-      }
-    } catch (e: any) {
-      this.setStatus(`Lỗi khi nhập tệp: ${e.message}`, "error");
-    } finally {
-      input.value = "";
+      this.populateProfileDropdown();
+      this.updateActiveResearchDisplay();
+      await this.restoreSessionForActiveProfile();
+    } catch (err) {
+      console.warn("Load profiles failed:", err);
     }
   }
 
-  private async handleSnowballingPrompt() {
-    const selectedRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId);
-    const defaultDoi = selectedRec?.doi || "";
-    const seedDoi = prompt("Nhập DOI bài báo hạt giống để Snowballing:", defaultDoi);
-    if (!seedDoi || !seedDoi.trim()) return;
+  private populateProfileDropdown() {
+    if (!this.profileSelect) return;
+    this.profileSelect.innerHTML = this.profiles
+      .map(
+        (p) =>
+          `<option value="${p.id}" ${p.id === this.activeProfile.id ? "selected" : ""}>${this.escapeHtml(p.name)} (v${p.profileVersion})</option>`,
+      )
+      .join("");
+  }
 
-    const direction = prompt("Hướng Snowballing: 'backward' (References) hoặc 'forward' (Citations):", "backward");
-    const ep = direction === "forward" ? "forward" : "backward";
+  private async switchActiveProfile(profileId: string) {
+    const p = this.profiles.find((x) => x.id === profileId);
+    if (!p) return;
 
+    this.activeProfile = p;
+    await chrome.storage.local.set({ [STORAGE_ACTIVE_PROFILE_KEY]: profileId });
+    this.updateActiveResearchDisplay();
+    await this.restoreSessionForActiveProfile();
+    this.setWizardStep(this.currentWizardStep);
+    this.setStatus(`Đã chuyển sang đề tài: "${p.name}".`, "info");
+  }
+
+  private updateActiveResearchDisplay() {
+    if (this.activeResearchBadge) this.activeResearchBadge.innerText = this.activeProfile.name;
+    if (this.protocolVersionBadge)
+      this.protocolVersionBadge.innerText = `v${this.activeProfile.profileVersion || 1.0}`;
+  }
+
+  private populateSetupForm(p: ResearchProfile) {
+    if (this.setupResearchName) this.setupResearchName.value = p.name || "";
+    if (this.setupResearchDesc) this.setupResearchDesc.value = p.description || "";
+    if (this.setupResearchRq) this.setupResearchRq.value = (p.researchQuestions || []).join("\n");
+    if (this.setupYearStart) this.setupYearStart.value = String(p.yearRange?.start || 2020);
+    if (this.setupYearEnd) this.setupYearEnd.value = String(p.yearRange?.end || 2026);
+    if (this.setupMinPages) this.setupMinPages.value = String(p.minPages?.count || 4);
+    if (this.setupTargetCount) this.setupTargetCount.value = String(p.targetIncludedCount || 15);
+
+    const incK = (p.criteria || [])
+      .filter((c) => c.type === "inclusion" && c.field === "content")
+      .map((c) => c.value)
+      .join(", ");
+    const excK = (p.criteria || [])
+      .filter((c) => c.type === "exclusion" && c.field === "content")
+      .map((c) => c.value)
+      .join(", ");
+
+    if (this.setupInclusionKeywords) this.setupInclusionKeywords.value = incK;
+    if (this.setupExclusionKeywords) this.setupExclusionKeywords.value = excK;
+  }
+
+  private applyPreset(preset: ResearchProfile) {
+    this.activeProfile = { ...preset, id: `profile_${Date.now()}` };
+    this.populateSetupForm(this.activeProfile);
+    this.switchFramework(this.activeProfile.framework || "PICO");
+    this.updateStep0SummaryPreview();
+    this.setStatus(`Đã áp dụng mẫu: "${preset.name}". Hãy kiểm tra và bấm "Lưu thiết lập".`, "info");
+  }
+
+  private async saveProfileToBackend(profile: ResearchProfile) {
     try {
-      this.setStatus(`Đang thực hiện Snowballing ${ep} cho DOI: ${seedDoi}...`, "info");
-      const res = await fetch(`${this.backendUrl}/api/snowball/${ep}`, {
+      await fetch(`${this.backendUrl}/api/profiles`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          seedDoi: seedDoi.trim(),
-          seedTitle: selectedRec?.title || "",
-          researchId: this.activeProfile.id,
-          sessionId: this.currentSessionId || `session_${Date.now()}`,
-          maxRecords: 25,
-        }),
+        body: JSON.stringify(profile),
       });
+    } catch {
+      // ignore
+    }
+  }
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || `HTTP ${res.status}`);
-      }
+  private async saveProfilesToStorage() {
+    const idx = this.profiles.findIndex((p) => p.id === this.activeProfile.id);
+    if (idx >= 0) {
+      this.profiles[idx] = this.activeProfile;
+    } else {
+      this.profiles.push(this.activeProfile);
+    }
+    await chrome.storage.local.set({
+      [STORAGE_PROFILES_KEY]: this.profiles,
+      [STORAGE_ACTIVE_PROFILE_KEY]: this.activeProfile.id,
+    });
+    this.populateProfileDropdown();
+  }
 
-      const data = await res.json();
-      if (data.records && Array.isArray(data.records)) {
-        this.allRecords = [...this.allRecords, ...data.records];
-        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
-        this.updateStatsDisplay();
-        this.renderRecordsList();
-        await this.saveSessionToStorage();
-        this.setStatus(`✓ Snowballing tìm thấy thêm ${data.records.length} bài mới!`, "success");
+  // ==========================================
+  // SESSION PERSISTENCE & RESTORE
+  // ==========================================
+
+  private async saveSessionToStorage() {
+    try {
+      const stored = await chrome.storage.local.get(STORAGE_SESSIONS_KEY);
+      const sessions = stored[STORAGE_SESSIONS_KEY] || {};
+
+      sessions[this.activeProfile.id] = {
+        sessionId: this.currentSessionId || `session_${Date.now()}`,
+        researchId: this.activeProfile.id,
+        profileVersion: this.activeProfile.profileVersion,
+        allRecords: this.allRecords,
+        uniqueRecords: this.uniqueRecords,
+        dedupStats: this.dedupStats,
+        searchSummary: this.searchSummary,
+        allEvidences: this.allEvidences,
+      };
+
+      await chrome.storage.local.set({ [STORAGE_SESSIONS_KEY]: sessions });
+    } catch (e) {
+      console.warn("Save session failed:", e);
+    }
+  }
+
+  private async restoreSessionForActiveProfile() {
+    try {
+      const stored = await chrome.storage.local.get(STORAGE_SESSIONS_KEY);
+      const sessions = stored[STORAGE_SESSIONS_KEY] || {};
+      const state = sessions[this.activeProfile.id];
+
+      if (state) {
+        this.currentSessionId = state.sessionId || "";
+        this.allRecords = state.allRecords || [];
+        this.uniqueRecords = state.uniqueRecords || [];
+        this.dedupStats = state.dedupStats || this.dedupStats;
+        this.searchSummary = state.searchSummary || null;
+        this.allEvidences = state.allEvidences || [];
+      } else {
+        this.currentSessionId = `session_${Date.now()}`;
+        this.allRecords = [];
+        this.uniqueRecords = [];
+        this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
       }
-    } catch (e: any) {
-      this.setStatus(`Lỗi Snowballing: ${e.message}`, "error");
+      this.identifySuspectDuplicatePairs();
+    } catch (e) {
+      console.warn("Restore session failed:", e);
+    }
+  }
+
+  private async runStorageMigration() {
+    try {
+      const stored = await chrome.storage.local.get([MIGRATION_VERSION_KEY, LEGACY_STORAGE_KEY]);
+      if (!stored[MIGRATION_VERSION_KEY] && stored[LEGACY_STORAGE_KEY]) {
+        // Backup legacy
+        await chrome.storage.local.set({
+          [LEGACY_BACKUP_KEY]: stored[LEGACY_STORAGE_KEY],
+          [MIGRATION_VERSION_KEY]: 3,
+        });
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  private async checkBackendHealth() {
+    try {
+      const res = await fetch(`${this.backendUrl}/api/health`);
+      if (res.ok) {
+        if (this.backendStatusBadge) {
+          this.backendStatusBadge.className = "badge badge-green";
+          this.backendStatusBadge.innerText = "● Backend Sẵn sàng";
+        }
+      } else {
+        throw new Error();
+      }
+    } catch {
+      if (this.backendStatusBadge) {
+        this.backendStatusBadge.className = "badge badge-yellow";
+        this.backendStatusBadge.innerText = "● Backend Ngoại tuyến";
+      }
     }
   }
 
   // ==========================================
-  // PRISMA 2020 FLOW & EVIDENCE TABLE EXPORT
+  // EXPORTS & PRISMA MODAL
   // ==========================================
 
   private async openPrismaModal() {
-    if (!this.prismaModal) return;
+    if (!this.prismaModal || !this.prismaFlowContainer) return;
     this.prismaModal.style.display = "flex";
-    if (this.prismaFlowContainer) {
-      this.prismaFlowContainer.innerHTML =
-        '<div style="text-align: center; padding: 20px;">Đang tính toán ma trận PRISMA 2020...</div>';
-    }
+    this.prismaFlowContainer.innerHTML =
+      '<div style="text-align: center; padding: 20px;">Đang tính toán sơ đồ PRISMA 2020...</div>';
 
     try {
       const res = await fetch(
@@ -3581,7 +3003,7 @@ class ScholarExtensionApp {
       if (!flow.isMathematicallyBalanced) {
         balanceWarning = `
           <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; margin-bottom: 8px;">
-            ⚠️ <b>CẢNH BÁO LỆCH SỐ HỌC:</b> Tổng Identification không khớp với (Bỏ trùng + Sàng lọc). Hãy kiểm tra lại các bước!
+            ⚠️ <b>CẢNH BÁO LỆCH SỐ HỌC:</b> Tổng Identification không khớp với (Bỏ trùng + Sàng lọc).
           </div>
         `;
       }
@@ -3596,7 +3018,7 @@ class ScholarExtensionApp {
               <span class="prisma-stat-clickable" data-cell="identificationDatabases">${flow.identificationDatabases} bài</span>
             </div>
             <div style="display: flex; justify-content: space-between; font-size: 11px;">
-              <span>Nguồn khác / Snowballing (Other sources):</span>
+              <span>Nguồn khác / Snowballing:</span>
               <span class="prisma-stat-clickable" data-cell="identificationOther">${flow.identificationOther} bài</span>
             </div>
             <div style="border-top: 1px dashed #cbd5e1; margin-top: 4px; padding-top: 4px; font-weight: bold; display: flex; justify-content: space-between;">
@@ -3620,7 +3042,7 @@ class ScholarExtensionApp {
               <span class="prisma-stat-clickable" data-cell="screenedV2">${flow.screenedV2} bài</span>
             </div>
             <div style="display: flex; justify-content: space-between; font-size: 11px;">
-              <span>Bị loại tại V2 (Tiêu đề/Tóm tắt không khớp):</span>
+              <span>Bị loại tại V2:</span>
               <span class="prisma-stat-clickable" data-cell="excludedV2" style="color: #dc2626;">-${flow.excludedV2} bài</span>
             </div>
           </div>
@@ -3660,7 +3082,7 @@ class ScholarExtensionApp {
         });
       });
     } catch (e: any) {
-      this.prismaFlowContainer.innerHTML = `<div class="error-banner">Lỗi khi tải sơ đồ PRISMA: ${e.message}</div>`;
+      this.prismaFlowContainer.innerHTML = `<div class="error-banner">Lỗi tải sơ đồ PRISMA: ${e.message}</div>`;
     }
   }
 
@@ -3680,8 +3102,7 @@ class ScholarExtensionApp {
     const items = cellData.paperIds.map((id) => {
       const p = this.uniqueRecords.find((r) => r.id === id) || this.allRecords.find((r) => r.id === id);
       const title = p ? p.title : id;
-      const doi = p?.doi ? ` (DOI: ${p.doi})` : "";
-      return `<li style="margin-bottom: 4px; line-height: 1.3;"><b>${this.escapeHtml(id)}</b>: ${this.escapeHtml(title)}${this.escapeHtml(doi)}</li>`;
+      return `<li style="margin-bottom: 4px;"><b>${this.escapeHtml(id)}</b>: ${this.escapeHtml(title)}</li>`;
     });
 
     this.drilldownPaperList.innerHTML = `<ul style="padding-left: 18px;">${items.join("")}</ul>`;
@@ -3692,57 +3113,315 @@ class ScholarExtensionApp {
     if (this.prismaDrilldownBox) this.prismaDrilldownBox.style.display = "none";
   }
 
+  private async handleExportCsv() {
+    if (this.allRecords.length === 0) {
+      this.setStatus("Chưa có bản ghi nào để xuất.", "warning");
+      return;
+    }
+    const headers = ["id", "source", "title", "authors", "year", "venue", "doi", "url", "retrieval_date"];
+    let csv = "\uFEFF" + headers.join(",") + "\r\n";
+    this.allRecords.forEach((r) => {
+      csv +=
+        [
+          this.escapeCsv(r.id),
+          this.escapeCsv(r.source),
+          this.escapeCsv(r.title),
+          this.escapeCsv(r.authors),
+          this.escapeCsv(r.year),
+          this.escapeCsv(r.venue),
+          this.escapeCsv(r.doi),
+          this.escapeCsv(r.url),
+          this.escapeCsv(r.retrieval_date),
+        ].join(",") + "\r\n";
+    });
+    this.downloadFile(csv, "01_all_records.csv", "text/csv;charset=utf-8;");
+    this.setStatus("✓ Đã tải 01_all_records.csv thành công!", "success");
+  }
+
+  private async handleExportDedupLog() {
+    try {
+      const res = await fetch(
+        `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
+      );
+      if (!res.ok) throw new Error();
+      const text = await res.text();
+      this.downloadFile(text, "01_duplicate_log.csv", "text/csv;charset=utf-8;");
+      this.setStatus("✓ Đã tải 01_duplicate_log.csv thành công!", "success");
+    } catch {
+      this.setStatus("Không thể tải duplicate log từ backend.", "error");
+    }
+  }
+
+  private async handleExportFullCsv() {
+    const headers = [
+      "id",
+      "source",
+      "title",
+      "authors",
+      "year",
+      "venue",
+      "doi",
+      "v2Decision",
+      "finalDecision",
+      "userNotes",
+      "retrieval_date",
+    ];
+    let csv = "\uFEFF" + headers.join(",") + "\r\n";
+    this.uniqueRecords.forEach((r) => {
+      csv +=
+        [
+          this.escapeCsv(r.id),
+          this.escapeCsv(r.source),
+          this.escapeCsv(r.title),
+          this.escapeCsv(r.authors),
+          this.escapeCsv(r.year),
+          this.escapeCsv(r.venue),
+          this.escapeCsv(r.doi),
+          this.escapeCsv(r.v2Decision || ""),
+          this.escapeCsv(r.finalDecision || ""),
+          this.escapeCsv(r.userNotes || ""),
+          this.escapeCsv(r.retrieval_date),
+        ].join(",") + "\r\n";
+    });
+    this.downloadFile(csv, "02_screening_decisions_full.csv", "text/csv;charset=utf-8;");
+    this.setStatus("✓ Đã tải 02_screening_decisions_full.csv thành công!", "success");
+  }
+
+  private async handleExportIncludedCsv() {
+    const includes = this.uniqueRecords.filter((r) => r.finalDecision === "Include");
+    if (includes.length === 0) {
+      alert("Chưa có bài nào được chốt Final Include.");
+      return;
+    }
+    const headers = ["id", "title", "authors", "year", "venue", "doi", "pageCount", "userNotes"];
+    let csv = "\uFEFF" + headers.join(",") + "\r\n";
+    includes.forEach((r) => {
+      csv +=
+        [
+          this.escapeCsv(r.id),
+          this.escapeCsv(r.title),
+          this.escapeCsv(r.authors),
+          this.escapeCsv(r.year),
+          this.escapeCsv(r.venue),
+          this.escapeCsv(r.doi),
+          this.escapeCsv(r.page_count || ""),
+          this.escapeCsv(r.userNotes || ""),
+        ].join(",") + "\r\n";
+    });
+    this.downloadFile(csv, "03_final_included.csv", "text/csv;charset=utf-8;");
+    this.setStatus("✓ Đã tải 03_final_included.csv thành công!", "success");
+  }
+
   private async handleExportPrismaMarkdown() {
     try {
-      this.setStatus("Đang xuất sơ đồ PRISMA Markdown...", "info");
       const res = await fetch(
         `${this.backendUrl}/api/prisma/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) throw new Error();
       const text = await res.text();
       this.downloadFile(text, "prisma-flow.md", "text/markdown;charset=utf-8;");
-      this.setStatus("✓ Đã tải file prisma-flow.md thành công!", "success");
-    } catch (e: any) {
-      this.setStatus(`Lỗi khi xuất PRISMA Markdown: ${e.message}`, "error");
+      this.setStatus("✓ Đã tải prisma-flow.md thành công!", "success");
+    } catch {
+      this.setStatus("Không thể tải PRISMA Markdown.", "error");
     }
   }
 
   private async handleExportEvidenceTable() {
     try {
-      this.setStatus("Đang xuất Evidence Table Markdown...", "info");
       const res = await fetch(
         `${this.backendUrl}/api/evidence-table/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) throw new Error();
       const text = await res.text();
       this.downloadFile(text, "evidence-table.md", "text/markdown;charset=utf-8;");
-      this.setStatus("✓ Đã tải file evidence-table.md thành công!", "success");
-    } catch (e: any) {
-      this.setStatus(`Lỗi khi xuất Evidence Table: ${e.message}`, "error");
+      this.setStatus("✓ Đã tải evidence-table.md thành công!", "success");
+    } catch {
+      this.setStatus("Không thể tải evidence-table.md.", "error");
     }
   }
 
-  private async handleExportDedupLog() {
+  private async handleExportApa7() {
     try {
-      this.setStatus("Đang xuất Duplicate Log...", "info");
-      const res = await fetch(
-        `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
-      );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const text = await res.text();
-      this.downloadFile(text, "duplicate-log.csv", "text/csv;charset=utf-8;");
-      this.setStatus("✓ Đã tải file duplicate-log.csv thành công!", "success");
-    } catch (e: any) {
-      this.setStatus(`Lỗi khi xuất Duplicate Log: ${e.message}`, "error");
+      const res = await fetch(`${this.backendUrl}/api/scholar/export-apa7`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          records: this.uniqueRecords,
+          profile: this.activeProfile,
+          onlyFinalIncluded: true,
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.textContent) {
+          this.downloadFile(data.textContent, "03_references_apa7.txt", "text/plain;charset=utf-8;");
+          this.setStatus("✓ Đã tải 03_references_apa7.txt thành công!", "success");
+          return;
+        }
+      }
+    } catch {
+      // ignore
     }
   }
 
-  // --- Utilities & Sanitization ---
+  private async handleSaveLog() {
+    try {
+      const res = await fetch(`${this.backendUrl}/api/scholar/log`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: this.queryInput?.value.trim() || this.activeProfile.name,
+          profile: this.activeProfile,
+          recordsCount: this.uniqueRecords.length,
+          sessionId: this.currentSessionId,
+        }),
+      });
+      if (res.ok) {
+        this.setStatus("✓ Đã ghi nhật ký vào search-log.md thành công!", "success");
+      }
+    } catch (e: any) {
+      this.setStatus(`Lỗi ghi nhật ký: ${e.message}`, "error");
+    }
+  }
+
+  private async handleExportSessionJson() {
+    const backupData = {
+      profile: this.activeProfile,
+      sessionId: this.currentSessionId,
+      allRecords: this.allRecords,
+      uniqueRecords: this.uniqueRecords,
+      dedupStats: this.dedupStats,
+      mergeHistory: this.mergeHistoryList,
+      exportedAt: new Date().toISOString(),
+      version: "3.0.0",
+    };
+    this.downloadFile(JSON.stringify(backupData, null, 2), "session_backup.json", "application/json;charset=utf-8;");
+    this.setStatus("✓ Đã tải bản sao lưu session_backup.json thành công!", "success");
+  }
+
+  private async handleImportBackupFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    try {
+      this.setStatus(`Đang đọc tệp sao lưu "${file.name}"...`, "info");
+      const text = await file.text();
+      const backup = JSON.parse(text);
+
+      if (backup.profile) {
+        this.activeProfile = backup.profile;
+        await this.saveProfileToBackend(this.activeProfile);
+        await this.saveProfilesToStorage();
+      }
+      if (backup.allRecords && Array.isArray(backup.allRecords)) {
+        this.allRecords = backup.allRecords;
+      }
+      if (backup.uniqueRecords && Array.isArray(backup.uniqueRecords)) {
+        this.uniqueRecords = backup.uniqueRecords;
+      }
+      if (backup.dedupStats) {
+        this.dedupStats = backup.dedupStats;
+      }
+
+      await this.saveSessionToStorage();
+      this.updateActiveResearchDisplay();
+      this.setWizardStep("B1");
+      this.setStatus(`✓ Đã khôi phục thành công từ bản sao lưu "${file.name}"!`, "success");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi nhập bản sao lưu: ${e.message}`, "error");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  private async handleImportFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    try {
+      this.setStatus(`Đang nhập tệp "${file.name}"...`, "info");
+      const text = await file.text();
+      const res = await fetch(`${this.backendUrl}/api/pipeline/import-file`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          content: text,
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.records && Array.isArray(data.records)) {
+        this.allRecords = [...this.allRecords, ...data.records];
+        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+        await this.saveSessionToStorage();
+        this.updateStepCounters();
+        this.renderStepB1();
+        this.renderRecordsList();
+        this.setStatus(`✓ Đã nhập thành công ${data.records.length} bài từ "${file.name}"!`, "success");
+      }
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi nhập tệp: ${e.message}`, "error");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  private async handleSnowballingPrompt() {
+    const selectedRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId);
+    const defaultDoi = selectedRec?.doi || "";
+    const seedDoi = prompt("Nhập DOI bài báo hạt giống để Snowballing:", defaultDoi);
+    if (!seedDoi || !seedDoi.trim()) return;
+
+    const direction = prompt("Hướng Snowballing: 'backward' (References) hoặc 'forward' (Citations):", "backward");
+    const ep = direction === "forward" ? "forward" : "backward";
+
+    try {
+      this.setStatus(`Đang chạy Snowballing ${ep} cho DOI: ${seedDoi}...`, "info");
+      const res = await fetch(`${this.backendUrl}/api/snowball/${ep}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          seedDoi: seedDoi.trim(),
+          seedTitle: selectedRec?.title || "",
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+          maxRecords: 25,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (data.records && Array.isArray(data.records)) {
+        this.allRecords = [...this.allRecords, ...data.records];
+        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+        await this.saveSessionToStorage();
+        this.updateStepCounters();
+        this.renderStepB1();
+        this.renderRecordsList();
+        this.setStatus(`✓ Snowballing tìm thấy thêm ${data.records.length} bài mới!`, "success");
+      }
+    } catch (e: any) {
+      this.setStatus(`Lỗi Snowballing: ${e.message}`, "error");
+    }
+  }
+
+  // ==========================================
+  // UTILITIES & SANITIZATION
+  // ==========================================
 
   private escapeCsv(str: unknown): string {
     if (str === null || str === undefined) return '""';
     let s = String(str);
-    // CSV Formula Injection mitigation: prepend single quote if cell starts with = + - @ \t \r
     if (/^[\=\+\-\@\t\r]/.test(s)) {
       s = `'${s}`;
     }
@@ -3772,6 +3451,7 @@ class ScholarExtensionApp {
   }
 
   private setStatus(msg: string, type: "info" | "success" | "error" | "warning" = "info") {
+    if (!this.statusDiv) return;
     this.statusDiv.innerText = msg;
     const colors = {
       info: "#2563eb",

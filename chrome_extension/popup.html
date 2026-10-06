@@ -2,347 +2,713 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Scholar Extractor - Thu thập & Sàng lọc Đa Nghiên cứu</title>
+    <title>Scholar Extractor - Nền tảng SLR Chuẩn PRISMA 2020</title>
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
+    <!-- Top Header Bar -->
     <header>
       <div class="brand">
         <h1>📚 Scholar Extractor</h1>
         <span id="activeResearchBadge" class="badge badge-blue">SWT302 REST API</span>
+        <span id="protocolVersionBadge" class="badge badge-purple" title="Phiên bản protocol hiện tại">v1.0</span>
       </div>
-      <div id="backendStatusBadge" class="badge badge-yellow">● Đang kiểm tra Backend...</div>
+      <div style="display: flex; align-items: center; gap: 6px">
+        <div id="backendStatusBadge" class="badge badge-yellow">● Đang kiểm tra Backend...</div>
+        <button id="quickHelpBtn" class="btn-icon" title="Hướng dẫn sử dụng nhanh">❓</button>
+        <button id="quickResetBtn" class="btn-icon" title="Làm mới / Xóa sạch phiên làm việc">🗑️</button>
+      </div>
     </header>
 
-    <!-- Section 0: Thanh chon & quan ly Ho so Nghien cuu (Research Profile) -->
-    <div class="section-card" style="padding: 10px 12px; background: #f8fafc; border-left: 4px solid #2563eb">
-      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap">
-        <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 250px">
-          <label
-            for="profileSelect"
-            style="font-weight: 700; font-size: 11px; color: #1e293b; margin-bottom: 0; white-space: nowrap"
-            >🎯 Nghiên cứu:</label
-          >
-          <select
-            id="profileSelect"
-            style="flex: 1; padding: 5px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1"
-          ></select>
-        </div>
-        <div style="display: flex; gap: 4px">
-          <button id="manageProfilesBtn" class="btn-secondary" style="padding: 4px 8px; font-size: 11px">
-            ⚙️ Quản lý Hồ sơ
-          </button>
-          <button
-            id="exportProfileBtn"
-            class="btn-secondary"
-            style="padding: 4px 8px; font-size: 11px"
-            title="Xuất JSON hồ sơ hiện tại"
-          >
-            📤 Xuất JSON
-          </button>
-        </div>
-      </div>
-      <div
-        id="profileSummaryBar"
-        style="font-size: 11px; color: #475569; margin-top: 6px; display: flex; gap: 10px; flex-wrap: wrap"
-      >
-        <span id="profileReviewType">Loại: Systematic Review</span>
-        <span id="profileCriteriaCount">Tiêu chí: 11</span>
-        <span id="profileTargetCount">Mục tiêu Include: 15</span>
-      </div>
+    <!-- Wizard Stepper Navigation (6 Steps) -->
+    <div class="wizard-stepper" id="wizardStepper">
+      <button class="wizard-step-btn active" data-step="SETUP" id="stepBtnSetup">
+        <span class="step-num">0</span>
+        <span class="step-label">Thiết lập</span>
+      </button>
+      <button class="wizard-step-btn" data-step="B1" id="stepBtnB1">
+        <span class="step-num">B1</span>
+        <span class="step-label">Thu thập</span>
+      </button>
+      <button class="wizard-step-btn" data-step="V1" id="stepBtnV1">
+        <span class="step-num">V1</span>
+        <span class="step-label">Bỏ trùng</span>
+      </button>
+      <button class="wizard-step-btn" data-step="V2" id="stepBtnV2">
+        <span class="step-num">V2</span>
+        <span class="step-label">Tiêu đề & Tóm tắt</span>
+      </button>
+      <button class="wizard-step-btn" data-step="V3" id="stepBtnV3">
+        <span class="step-num">V3</span>
+        <span class="step-label">Toàn văn</span>
+      </button>
+      <button class="wizard-step-btn" data-step="FINAL" id="stepBtnFinal">
+        <span class="step-num">✓</span>
+        <span class="step-label">Chốt & Xuất</span>
+      </button>
     </div>
 
-    <!-- Pipeline Stage Navigator (B1 -> V1 -> V2 -> V3 -> FINAL) -->
-    <div class="pipeline-nav" id="pipelineNav">
-      <button class="stage-tab-btn active" data-stage="B1"><b>B1</b> Thu thập</button>
-      <button class="stage-tab-btn" data-stage="V1"><b>V1</b> Bỏ trùng</button>
-      <button class="stage-tab-btn" data-stage="V2"><b>V2</b> Sàng lọc Tiêu đề</button>
-      <button class="stage-tab-btn" data-stage="V3"><b>V3</b> Toàn văn</button>
-      <button class="stage-tab-btn" data-stage="FINAL"><b>Chốt</b> PRISMA & Evidence</button>
+    <!-- Unified Step Header Card (Always Visible for Active Step) -->
+    <div class="step-header-card" id="stepHeaderCard">
+      <div class="step-header-top">
+        <div class="step-title-area">
+          <span id="currentStepBadge" class="step-indicator-badge">BƯỚC B1</span>
+          <h2 id="currentStepTitle" class="step-title">Thu thập bài báo (Identification)</h2>
+        </div>
+        <div class="step-header-actions">
+          <button id="stepGuideBtn" class="btn-guide" title="Xem hướng dẫn chi tiết cho bước này">
+            ℹ️ Hướng dẫn bước này
+          </button>
+          <button id="editProtocolBtn" class="btn-subtle" title="Chỉnh sửa PICO / RQ / Tiêu chí">
+            ⚙️ Chỉnh sửa Protocol
+          </button>
+        </div>
+      </div>
+
+      <!-- Step Goal & I/O Pipeline Flow -->
+      <div class="step-flow-info">
+        <div class="step-goal-row">
+          <span class="info-label">🎯 Mục tiêu:</span>
+          <span id="stepGoalText" class="info-val"
+            >Thu thập toàn bộ bài báo ứng viên từ các nguồn học thuật và nhập file mẫu.</span
+          >
+        </div>
+        <div class="step-io-row">
+          <span class="info-label">🔄 Dữ liệu:</span>
+          <span id="stepIoText" class="info-val">Từ khóa & Cấu hình nguồn ➔ Danh sách bản ghi thô (B1)</span>
+        </div>
+      </div>
+
+      <!-- Step Progress Metrics (Counters: Chưa xử lý / Chờ xác nhận / Đã hoàn tất) -->
+      <div class="step-metrics-bar">
+        <div class="metric-pill pill-pending">
+          <span class="metric-dot dot-yellow"></span>
+          <span class="metric-name">Chưa xử lý:</span>
+          <b id="metricPendingCount">0</b>
+        </div>
+        <div class="metric-pill pill-review">
+          <span class="metric-dot dot-blue"></span>
+          <span class="metric-name">Chờ xác nhận:</span>
+          <b id="metricReviewCount">0</b>
+        </div>
+        <div class="metric-pill pill-completed">
+          <span class="metric-dot dot-green"></span>
+          <span class="metric-name">Đã hoàn tất:</span>
+          <b id="metricCompletedCount">0</b>
+        </div>
+        <div class="metric-pill pill-target" id="metricTargetPill">
+          <span class="metric-dot dot-purple"></span>
+          <span class="metric-name">Mục tiêu Include:</span>
+          <b id="metricTargetCount">0 / 15</b>
+        </div>
+      </div>
+
+      <!-- Primary Action Bar for Current Step -->
+      <div class="step-primary-action-bar">
+        <div class="action-btn-wrap">
+          <button id="stepPrimaryBtn" class="btn-primary-action">
+            <span id="stepPrimaryBtnIcon">🔍</span>
+            <span id="stepPrimaryBtnText">Bắt đầu thu thập bài báo</span>
+          </button>
+        </div>
+        <div class="step-condition-wrap">
+          <div class="step-condition-line">
+            <b>📋 Điều kiện đi tiếp:</b> <span id="stepConditionText">Cần thu thập ít nhất 1 bài báo hợp lệ.</span>
+          </div>
+          <div class="step-next-guide-line">
+            <b>👉 Bước tiếp theo:</b>
+            <span id="stepNextGuideText">Sau khi có kết quả, chuyển sang V1 để khử trùng lặp.</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Background Job Execution Banner -->
-    <div id="jobControlBanner" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-        <div style="display: flex; align-items: center; gap: 6px;">
+    <div id="jobControlBanner" class="job-banner" style="display: none">
+      <div class="job-banner-header">
+        <div style="display: flex; align-items: center; gap: 6px">
           <span id="jobStageBadge" class="badge badge-blue">Job: B1</span>
-          <span id="jobMessage" style="font-size: 11px; font-weight: 600; color: #1e40af;">Đang chạy nền...</span>
+          <span id="jobMessage" class="job-msg">Đang chạy tiến trình nền...</span>
         </div>
-        <div style="display: flex; gap: 4px;">
-          <button id="jobPauseBtn" class="btn-secondary" style="padding: 2px 8px; font-size: 10px;">⏸ Tạm dừng</button>
-          <button id="jobResumeBtn" class="btn-secondary" style="padding: 2px 8px; font-size: 10px; display: none;">▶ Tiếp tục</button>
-          <button id="jobCancelBtn" class="btn-danger" style="padding: 2px 8px; font-size: 10px;">⏹ Hủy</button>
+        <div style="display: flex; gap: 4px">
+          <button id="jobPauseBtn" class="btn-xs btn-secondary">⏸ Tạm dừng</button>
+          <button id="jobResumeBtn" class="btn-xs btn-secondary" style="display: none">▶ Tiếp tục</button>
+          <button id="jobCancelBtn" class="btn-xs btn-danger">⏹ Hủy tác vụ</button>
         </div>
       </div>
-      <div style="width: 100%; height: 6px; background: #dbeafe; border-radius: 3px; overflow: hidden;">
-        <div id="jobProgressBar" style="width: 0%; height: 100%; background: #2563eb; transition: width 0.3s;"></div>
+      <div class="job-progress-track">
+        <div id="jobProgressBar" class="job-progress-fill"></div>
+      </div>
+      <div class="job-note">
+        💡 <i>Tác vụ chạy an toàn trên backend. Tiến trình vẫn tiếp tục khi bạn đổi tab hoặc đóng popup.</i>
       </div>
     </div>
 
-    <!-- Canh bao khong dong bo giua o nhap lieu va ket qua phien dang hien thi -->
-    <div
-      id="queryDesyncAlert"
-      class="warning-banner"
-      style="
-        display: none;
-        background: #fffbeb;
-        border: 1px solid #f59e0b;
-        color: #92400e;
-        padding: 8px 10px;
-        border-radius: 6px;
-        font-size: 11px;
-        margin-bottom: 8px;
-      "
-    >
-      ⚠️ <b>LƯU Ý ĐỒNG BỘ:</b> Chuỗi tìm kiếm trong ô nhập liệu khác với kết quả phiên đang hiển thị. Nhấn
-      <b>"🔍 Lấy trang 1"</b> để bắt đầu phiên mới cho truy vấn này.
+    <!-- Alert Cảnh báo Outdated Decision khi Protocol thay đổi -->
+    <div id="protocolOutdatedAlert" class="warning-banner" style="display: none">
+      ⚠️ <b>CẢNH BÁO PROTOCOL:</b> Tiêu chí nghiên cứu đã thay đổi. Có <b id="outdatedPapersCount">0</b> bài báo có
+      quyết định thuộc phiên bản cũ cần được thẩm định lại trước khi chốt sơ đồ PRISMA.
+      <div style="margin-top: 4px; display: flex; gap: 6px">
+        <button id="btnJumpToOutdatedV2" class="btn-xs btn-warning">Đánh giá lại ở V2</button>
+        <button id="btnJumpToOutdatedV3" class="btn-xs btn-warning">Đánh giá lại ở V3</button>
+      </div>
     </div>
 
-    <!-- Section 1: Thiet lap tim kiem & bo loc -->
-    <div class="section-card">
-      <!-- Nguon thu thap & Phien ban Query -->
-      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
-        <div class="form-group" style="flex: 2; margin-bottom: 0;">
-          <label for="sourceSelect">Nguồn thu thập (Source Adapter):</label>
-          <select id="sourceSelect" style="width: 100%; padding: 5px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1;">
-            <option value="OpenAlex" selected>OpenAlex (Chính - API Key đã cấu hình)</option>
-            <option value="Semantic Scholar">Semantic Scholar (Tùy chọn - Fallback OpenAlex)</option>
-            <option value="Google Scholar">Google Scholar (SerpApi - Paper ứng viên bổ trợ)</option>
-            <option value="ACM Digital Library">ACM Digital Library (Kỷ yếu & TOC)</option>
-            <option value="IEEE Xplore">IEEE Xplore (API Key / File)</option>
-            <option value="File Import">Nhập File Mẫu (CSV / BibTeX / RIS)</option>
-          </select>
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC 0: THIẾT LẬP NGHIÊN CỨU & PICO FRAMEWORK -->
+    <!-- ========================================================================= -->
+    <div id="panelStep0" class="wizard-panel" style="display: none">
+      <!-- Chọn Hành động Khởi đầu: Tạo mới / Tiếp tục / Nhập backup -->
+      <div class="section-card">
+        <div class="section-title">Chọn Chế độ Làm việc:</div>
+        <div class="action-choice-grid">
+          <button id="btnModeNewResearch" class="choice-card active">
+            <div class="choice-icon">➕</div>
+            <div class="choice-title">Tạo nghiên cứu mới</div>
+            <div class="choice-desc">Khai báo RQ, PICO, tiêu chí IC/EC và truy vấn từ đầu</div>
+          </button>
+          <button id="btnModeContinueResearch" class="choice-card">
+            <div class="choice-icon">📁</div>
+            <div class="choice-title">Tiếp tục nghiên cứu</div>
+            <div class="choice-desc">Chọn hồ sơ đề tài đã lưu trên hệ thống</div>
+          </button>
+          <button id="btnModeImportBackup" class="choice-card">
+            <div class="choice-icon">📥</div>
+            <div class="choice-title">Nhập bản sao lưu</div>
+            <div class="choice-desc">Khôi phục từ tệp Session JSON hoặc Research Profile</div>
+          </button>
+          <input type="file" id="backupFileInput" accept=".json" style="display: none" />
         </div>
-        <div class="form-group" style="flex: 1; margin-bottom: 0;">
-          <label for="queryVersionSelect">Phiên bản Query (Protocol):</label>
-          <select id="queryVersionSelect" style="width: 100%; padding: 5px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1;">
-            <option value="Q1" selected>Q1 (Chuỗi ban đầu)</option>
-            <option value="Q2">Q2 (Mở rộng từ đồng nghĩa)</option>
-            <option value="Q3">Q3 (Thu hẹp / Tinh chỉnh)</option>
-          </select>
+
+        <!-- Khung chọn đề tài khi ở chế độ "Tiếp tục nghiên cứu" -->
+        <div
+          id="continueResearchBox"
+          style="
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+          "
+        >
+          <div style="display: flex; gap: 8px; align-items: center">
+            <label for="profileSelect" style="font-weight: 700; white-space: nowrap; margin-bottom: 0"
+              >Hồ sơ đã lưu:</label
+            >
+            <select id="profileSelect" style="flex: 1; padding: 6px; font-size: 12px"></select>
+            <button id="btnLoadSelectedProfile" class="btn-primary" style="padding: 6px 12px; white-space: nowrap">
+              Chọn đề tài này
+            </button>
+          </div>
         </div>
       </div>
-      <div style="display: flex; gap: 8px; margin-bottom: 6px">
-        <div class="form-group" style="flex: 3; margin-bottom: 0">
+
+      <!-- Form Khai báo & Chỉnh sửa Nghiên cứu (PICO Framework) -->
+      <div class="section-card" id="researchFormCard">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px">
+          <div class="section-title" id="formCardHeading">1. Khai báo Đề tài & Câu hỏi Nghiên cứu (RQ)</div>
+          <div style="display: flex; gap: 6px">
+            <button id="btnLoadPresetSwt" class="btn-preset">Mẫu: SWT302 REST API</button>
+            <button id="btnLoadPresetGeneric" class="btn-preset">Mẫu: Generic Review</button>
+            <button id="btnLoadPresetAac" class="btn-preset">Mẫu: Trẻ khiếm thị & AAC</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="setupResearchName">Tên nghiên cứu / Đề tài:</label>
+          <input type="text" id="setupResearchName" placeholder="Ví dụ: Kiểm thử tự động REST API bằng EP và BVA..." />
+        </div>
+
+        <div class="form-group">
+          <label for="setupResearchDesc">Mô tả tóm tắt:</label>
+          <input type="text" id="setupResearchDesc" placeholder="Mục tiêu nghiên cứu, phạm vi môn học..." />
+        </div>
+
+        <div class="form-group">
+          <label for="setupResearchRq">Câu hỏi nghiên cứu (RQ - mỗi dòng 1 câu):</label>
+          <textarea
+            id="setupResearchRq"
+            rows="2"
+            placeholder="RQ1: Các kỹ thuật kiểm thử nào dựa trên EP/BVA cho REST API?&#10;RQ2: Kết quả thực nghiệm định lượng lỗi/coverage ra sao?"
+          ></textarea>
+        </div>
+
+        <!-- Khung Framework PICO / PICOS / SPIDER / Custom -->
+        <div class="sub-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px">
+            <label style="font-weight: 700; color: #1e293b; margin-bottom: 0"
+              >2. Khung Phân tích (Research Framework):</label
+            >
+            <div style="display: flex; gap: 6px">
+              <label class="radio-label"><input type="radio" name="frameworkType" value="PICO" checked /> PICO</label>
+              <label class="radio-label"><input type="radio" name="frameworkType" value="PICOS" /> PICOS</label>
+              <label class="radio-label"><input type="radio" name="frameworkType" value="SPIDER" /> SPIDER</label>
+              <label class="radio-label"><input type="radio" name="frameworkType" value="Custom" /> Custom</label>
+            </div>
+          </div>
+
+          <div id="frameworkFieldsContainer" class="framework-grid">
+            <!-- Dynamic Framework Inputs rendered here -->
+          </div>
+        </div>
+
+        <!-- Khung Tiêu chí Thu nhận (IC) & Loại trừ (EC) -->
+        <div class="sub-card" style="margin-top: 10px">
+          <div class="section-title">3. Tiêu chí Sàng lọc & Bộ lọc Xuất bản</div>
+          <div class="filter-grid">
+            <div class="form-group">
+              <label for="setupYearStart">Từ năm:</label>
+              <input type="number" id="setupYearStart" value="2020" />
+            </div>
+            <div class="form-group">
+              <label for="setupYearEnd">Đến năm:</label>
+              <input type="number" id="setupYearEnd" value="2026" />
+            </div>
+            <div class="form-group">
+              <label for="setupLanguage">Ngôn ngữ:</label>
+              <input type="text" id="setupLanguage" value="English, Tiếng Việt" />
+            </div>
+            <div class="form-group">
+              <label for="setupMinPages">Số trang tối thiểu:</label>
+              <input type="number" id="setupMinPages" value="4" min="1" title="Bài dưới 4 trang bị loại theo EC-S" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="setupInclusionKeywords">Từ khóa bắt buộc có (Inclusion - cách nhau bằng dấu phẩy):</label>
+            <input
+              type="text"
+              id="setupInclusionKeywords"
+              placeholder="Ví dụ: REST API, equivalence partitioning, boundary-value..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="setupExclusionKeywords">Từ khóa loại trừ (Exclusion - nếu có sẽ gợi ý Exclude):</label>
+            <input
+              type="text"
+              id="setupExclusionKeywords"
+              placeholder="Ví dụ: biomedical, animal, hardware, survey only..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="setupTargetCount">Mục tiêu số bài đưa vào Tổng quan (Target Included Papers):</label>
+            <input type="number" id="setupTargetCount" value="15" min="1" style="width: 140px" />
+            <span class="field-hint"
+              >💡
+              <i
+                >Chỉ dùng để theo dõi tiến độ hoàn thành, tuyệt đối không tự ý ép Include/Exclude để đủ chỉ tiêu.</i
+              ></span
+            >
+          </div>
+        </div>
+
+        <!-- Khung Trạng thái Nguồn Tìm kiếm Thực tế -->
+        <div class="sub-card" style="margin-top: 10px">
+          <div class="section-title">4. Trạng thái Nguồn Tìm kiếm Thực tế</div>
+          <div class="sources-status-table" id="sourcesStatusTable">
+            <!-- Rendered dynamically by script -->
+          </div>
+        </div>
+
+        <!-- Khung Xem trước Tổng hợp (Summary Preview) -->
+        <div id="setupSummaryBox" class="summary-preview-box" style="margin-top: 10px">
+          <div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px">📋 Bản Tổng Hợp Thiết Lập:</div>
+          <div id="setupSummaryContent" style="font-size: 11px; color: #334155; line-height: 1.5">
+            Chưa có thông tin.
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px">
+          <button id="btnSaveSetupAndProceed" class="btn-success" style="padding: 8px 16px; font-weight: 700">
+            💾 Lưu thiết lập & Sang thu thập ➔
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC B1: THU THẬP BÀI BÁO (IDENTIFICATION) -->
+    <!-- ========================================================================= -->
+    <div id="panelStepB1" class="wizard-panel" style="display: none">
+      <!-- Khung Cấu hình Trước khi Chạy -->
+      <div class="section-card">
+        <div class="section-title">Cấu hình Truy vấn & Nguồn Thu thập:</div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 8px">
+          <div class="form-group" style="flex: 2; margin-bottom: 0">
+            <label for="sourceSelect">Nguồn thu thập (Source Adapter):</label>
+            <select id="sourceSelect">
+              <option value="OpenAlex" selected>OpenAlex (Miễn phí - Đầy đủ tính năng)</option>
+              <option value="Semantic Scholar">Semantic Scholar (Fallback tùy chọn)</option>
+              <option value="Google Scholar">Google Scholar (SerpApi - Bài ứng viên bổ trợ)</option>
+              <option value="File Import">Nhập tệp ngoại vi (CSV / BibTeX / RIS)</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 1; margin-bottom: 0">
+            <label for="queryVersionSelect">Phiên bản Query:</label>
+            <select id="queryVersionSelect">
+              <option value="Q1" selected>Q1 (Chuỗi ban đầu)</option>
+              <option value="Q2">Q2 (Mở rộng từ đồng nghĩa)</option>
+              <option value="Q3">Q3 (Thu hẹp / Tinh chỉnh)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="queryInput">Chuỗi tìm kiếm nguyên văn (Search String):</label>
           <input type="text" id="queryInput" placeholder="Nhập chuỗi tìm kiếm nguyên văn..." />
         </div>
-        <div class="form-group" style="flex: 1; margin-bottom: 0">
-          <label for="backendUrlInput">Backend URL:</label>
-          <input type="text" id="backendUrlInput" value="http://localhost:3001" placeholder="http://localhost:3001" />
-        </div>
-      </div>
 
-      <!-- Chuoi goi y tu ho so nghien cuu (Dynamic) -->
-      <div
-        id="searchStringsRow"
-        style="
-          margin-bottom: 8px;
-          font-size: 11px;
-          color: #4b5563;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          flex-wrap: wrap;
-        "
-      >
-        <span>Gợi ý chuỗi:</span>
-        <div id="searchStringsContainer" style="display: inline-flex; gap: 4px; flex-wrap: wrap"></div>
-      </div>
-
-      <div class="filter-grid">
-        <div class="form-group">
-          <label for="asYloInput">Từ năm (as_ylo):</label>
-          <input type="text" id="asYloInput" value="2020" placeholder="Trống nếu không giới hạn" />
-        </div>
-        <div class="form-group">
-          <label for="asYhiInput">Đến năm (as_yhi):</label>
-          <input type="text" id="asYhiInput" value="2026" placeholder="Trống nếu không giới hạn" />
-        </div>
-        <div class="form-group">
-          <label for="hlInput">Ngôn ngữ (hl):</label>
-          <input type="text" id="hlInput" value="vi" />
-        </div>
-        <div class="form-group">
-          <label for="maxPagesInput">Giới hạn trang:</label>
-          <input type="number" id="maxPagesInput" value="1" min="1" max="10" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="uiTotalInput">Số kết quả xem trên Web Scholar (để đối chiếu đối soát, tùy chọn):</label>
-        <input type="number" id="uiTotalInput" placeholder="Ví dụ: 18200 (số hiển thị trên Google Scholar thực địa)" />
-      </div>
-
-      <div class="button-group">
-        <button id="runStageBtn" class="btn-primary" style="background: #2563eb;">🚀 Chạy Giai Đoạn Hiện Tại</button>
-        <button id="importFileBtn" class="btn-secondary" style="background: #f1f5f9; color: #1e293b; border-color: #cbd5e1;">📂 Nhập Tệp Mẫu</button>
-        <input type="file" id="importFileInput" accept=".csv,.bib,.ris,.txt" style="display: none;" />
-        <button id="snowballBtn" class="btn-secondary" style="background: #e0f2fe; color: #0284c7; border-color: #bae6fd;">❄️ Snowballing</button>
-        <button id="viewPrismaBtn" class="btn-secondary" style="background: #eff6ff; color: #1e40af; border-color: #93c5fd;">📊 Sơ Đồ PRISMA</button>
-        <button id="searchFirstBtn" class="btn-secondary">🔍 Lấy trang 1 (start=0)</button>
-        <button id="nextBtn" class="btn-secondary" style="display: none">⏩ Lấy trang tiếp (+10)</button>
-        <button id="autoFetchBtn" class="btn-secondary" style="display: none">⚡ Lấy tối đa trang đã đặt</button>
-        <button id="stopBtn" class="btn-danger" style="display: none">⏹ Dừng / Hủy</button>
-        <button
-          id="resetBtn"
-          class="btn-secondary"
-          style="display: none; background: #fee2e2; color: #991b1b; border-color: #fca5a5"
+        <div
+          id="searchStringsRow"
+          style="margin-bottom: 8px; font-size: 11px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap"
         >
-          🗑️ Xóa phiên / Làm mới
+          <span>Gợi ý chuỗi từ protocol:</span>
+          <div id="searchStringsContainer" style="display: inline-flex; gap: 4px; flex-wrap: wrap"></div>
+        </div>
+
+        <div class="filter-grid">
+          <div class="form-group">
+            <label for="asYloInput">Từ năm (as_ylo):</label>
+            <input type="text" id="asYloInput" value="2020" />
+          </div>
+          <div class="form-group">
+            <label for="asYhiInput">Đến năm (as_yhi):</label>
+            <input type="text" id="asYhiInput" value="2026" />
+          </div>
+          <div class="form-group">
+            <label for="hlInput">Ngôn ngữ (hl):</label>
+            <input type="text" id="hlInput" value="vi" />
+          </div>
+          <div class="form-group">
+            <label for="maxPagesInput">Giới hạn trang:</label>
+            <input type="number" id="maxPagesInput" value="1" min="1" max="10" />
+          </div>
+        </div>
+
+        <!-- Các Nút Phương Thức Thu Thập B1 -->
+        <div class="button-group" style="margin-top: 10px">
+          <button id="btnStartCollection" class="btn-primary" style="background: #2563eb; font-weight: 700">
+            🔍 Bắt đầu thu thập bài báo
+          </button>
+          <button id="importFileBtn" class="btn-secondary">📂 Nhập tệp mẫu (CSV/BibTeX/RIS)</button>
+          <input type="file" id="importFileInput" accept=".csv,.bib,.ris,.txt" style="display: none" />
+          <button id="btnOpenSeedModal" class="btn-secondary">🎯 Thêm bài seed / DOI</button>
+          <button
+            id="snowballBtn"
+            class="btn-secondary"
+            style="background: #e0f2fe; color: #0284c7; border-color: #bae6fd"
+          >
+            ❄️ Snowballing
+          </button>
+        </div>
+      </div>
+
+      <!-- Khung Thống kê Thu thập & Kết quả theo Nguồn -->
+      <div id="b1ResultsStatsBox" class="section-card" style="display: none">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px">
+          <div class="section-title">Kết quả Đợt Thu thập B1:</div>
+          <div style="display: flex; gap: 6px">
+            <button id="btnRerunErrors" class="btn-xs btn-warning">🔄 Chạy lại phần lỗi</button>
+            <button id="btnCollectMore" class="btn-xs btn-secondary">➕ Thu thập thêm</button>
+            <button id="btnProceedToV1" class="btn-xs btn-success" style="font-weight: 700">
+              ➡️ Sang kiểm tra trùng lặp (V1)
+            </button>
+          </div>
+        </div>
+        <div id="b1SourceBreakdown" class="source-breakdown-grid"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC V1: KIỂM TRA TRÙNG LẶP (DEDUPLICATION) -->
+    <!-- ========================================================================= -->
+    <div id="panelStepV1" class="wizard-panel" style="display: none">
+      <!-- 4 Thẻ Thống kê Trùng lặp -->
+      <div class="dedup-metrics-grid">
+        <div class="dedup-metric-card">
+          <div class="dedup-val" id="dedupRawCount">0</div>
+          <div class="dedup-lbl">Tổng bản ghi thô</div>
+        </div>
+        <div class="dedup-metric-card">
+          <div class="dedup-val" id="dedupExactCount" style="color: #dc2626">0</div>
+          <div class="dedup-lbl">Trùng chắc chắn (DOI)</div>
+        </div>
+        <div class="dedup-metric-card">
+          <div class="dedup-val" id="dedupSuspectCount" style="color: #d97706">0</div>
+          <div class="dedup-lbl">Nghi trùng cần duyệt</div>
+        </div>
+        <div class="dedup-metric-card">
+          <div class="dedup-val" id="dedupUniqueCount" style="color: #16a34a">0</div>
+          <div class="dedup-lbl">Bản ghi duy nhất</div>
+        </div>
+      </div>
+
+      <!-- Hành động Chính V1 -->
+      <div class="section-card" style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+        <div>
+          <button id="btnRunDedupWorker" class="btn-primary" style="background: #2563eb">
+            ✨ Kiểm tra trùng lặp (Chạy Dedup)
+          </button>
+          <span style="font-size: 11px; color: #64748b; margin-left: 8px">
+            Thuật toán so khớp DOI chính xác & so khớp mờ tiêu đề (> 88%).
+          </span>
+        </div>
+        <button id="btnConfirmDedupAndProceedV2" class="btn-success" style="font-weight: 700">
+          ✓ Xác nhận kết quả bỏ trùng & sang V2 ➔
         </button>
       </div>
 
-      <div id="status">Sẵn sàng thu thập dữ liệu Google Scholar.</div>
-    </div>
-
-    <!-- Section 2: Bang thong ke & metrics & Tien do Target Included -->
-    <div id="statsBox" class="section-card" style="display: none"></div>
-
-    <!-- Thanh tien do Target Included Count (Chi tinh finalDecision === Include) -->
-    <div
-      id="targetProgressContainer"
-      class="section-card"
-      style="display: none; padding: 10px 14px; background: #f0fdf4; border-color: #bbf7d0"
-    >
-      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px">
-        <span>🎯 <b>Tiến độ Bài đưa vào Tổng quan (Target Included Papers):</b></span>
-        <span id="targetProgressText" style="font-weight: 700; color: #166534">0 / 15 bài</span>
-      </div>
-      <div style="background: #e2e8f0; height: 9px; border-radius: 5px; overflow: hidden">
-        <div id="targetProgressBar" style="background: #16a34a; width: 0%; height: 100%; transition: width 0.3s"></div>
+      <!-- Khu vực Xem xét Nhóm Nghi trùng Side-by-Side -->
+      <div class="section-card" id="suspectedDuplicatesSection">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px">
+          <div class="section-title">
+            Danh sách Cặp Nghi Trùng Cần Người Dùng Duyệt (<span id="suspectPairsCounter">0</span> cặp):
+          </div>
+          <span style="font-size: 10.5px; color: #64748b">
+            💡 Giữ nguyên nguồn gốc bản ghi, có thể hoàn tác gộp bất cứ lúc nào.
+          </span>
+        </div>
+        <div id="suspectDuplicatesContainer">
+          <div class="empty-state">Không có cặp nghi trùng nào cần xem xét. Tất cả bản ghi đã được xử lý.</div>
+        </div>
       </div>
     </div>
 
-    <!-- Section 3: Bo loc cuc bo & danh sach bai bao -->
-    <div class="section-card">
-      <!-- Hang 1: O tim kiem loc & Dropdown quyet dinh -->
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC V2: SÀNG LỌC TIÊU ĐỀ & TÓM TẮT (TITLE & ABSTRACT SCREENING) -->
+    <!-- ========================================================================= -->
+    <div id="panelStepV2" class="wizard-panel" style="display: none">
+      <!-- Thanh Điều hướng Lọc V2 & Tác vụ Hàng loạt -->
+      <div class="section-card" style="padding: 8px 12px">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap">
+          <!-- Filter Buttons Pill -->
+          <div class="filter-pills-bar" id="v2FilterPills">
+            <button class="pill-btn active" data-filter="all">Tất cả (<span id="v2CountAll">0</span>)</button>
+            <button class="pill-btn" data-filter="unseen">Chưa xem (<span id="v2CountUnseen">0</span>)</button>
+            <button class="pill-btn" data-filter="PassToFullText">
+              Qua vòng toàn văn (<span id="v2CountPass">0</span>)
+            </button>
+            <button class="pill-btn" data-filter="Exclude">Đã loại (<span id="v2CountExclude">0</span>)</button>
+            <button class="pill-btn" data-filter="Unsure">Chưa rõ (<span id="v2CountUnsure">0</span>)</button>
+          </div>
+
+          <div style="display: flex; gap: 6px">
+            <button
+              id="autoScreenBatchBtn"
+              class="btn-secondary"
+              style="background: #ecfdf5; color: #065f46; border-color: #a7f3d0; font-weight: 700"
+            >
+              ⚡ Tự động quét & Sàng lọc
+            </button>
+            <button id="btnProceedToV3" class="btn-success" style="font-weight: 700">
+              ✓ Xác nhận danh sách sang V3 ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Hộp xử lý nếu còn bài Unsure -->
+        <div id="unsureResolutionBox" class="unsure-box" style="display: none; margin-top: 8px">
+          <span>⚠️ Còn <b id="unsureRemainingCount">0</b> bài ở trạng thái <b>Chưa rõ (Unsure)</b>:</span>
+          <div style="display: flex; gap: 6px; margin-top: 4px">
+            <button id="btnKeepReviewingV2" class="btn-xs btn-secondary">Tiếp tục xem lại ở V2</button>
+            <button id="btnPassUnsureToV3" class="btn-xs btn-warning">
+              Đưa bài Unsure sang V3 để kiểm tra toàn văn
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC V3: TÌM & THẨM ĐỊNH TOÀN VĂN (FULL-TEXT RETRIEVAL & ELIGIBILITY) -->
+    <!-- ========================================================================= -->
+    <div id="panelStepV3" class="wizard-panel" style="display: none">
+      <!-- Phân hệ A: Tìm & Thu thập Toàn văn (Document Retrieval) -->
+      <div class="section-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px">
+          <div class="section-title">Phân hệ A: Thu thập Toàn văn (Full-Text Retrieval)</div>
+          <div style="display: flex; gap: 6px">
+            <button id="btnFindFullTextSelected" class="btn-primary" style="background: #2563eb; font-weight: 700">
+              📑 Tìm toàn văn cho các bài đã chọn
+            </button>
+            <button
+              id="uploadPdfBtn"
+              class="btn-secondary"
+              style="background: #fef3c7; color: #92400e; border-color: #fde68a"
+            >
+              📁 Tải file PDF từ máy
+            </button>
+            <input type="file" id="pdfFileInput" accept="application/pdf,.pdf" style="display: none" />
+            <button id="extractActiveTabBtn" class="btn-secondary">📑 Lấy từ Tab đang mở</button>
+          </div>
+        </div>
+        <div style="font-size: 11px; color: #64748b">
+          💡
+          <i
+            >Hệ thống tự động tra cứu Unpaywall & Open Access. Thiếu toàn văn KHÔNG tự động đồng nghĩa với Exclude!
+            Không suy đoán paywall chỉ từ tên nhà xuất bản.</i
+          >
+        </div>
+      </div>
+
+      <!-- Phân hệ B: Đọc & Đánh giá Tư cách Toàn văn (Eligibility Assessment) -->
+      <div class="section-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px">
+          <div class="section-title">Phân hệ B: Đọc & Thẩm định Toàn văn (Eligibility Assessment)</div>
+          <div style="display: flex; gap: 6px">
+            <button id="btnProceedToFinal" class="btn-success" style="font-weight: 700">
+              ✓ Xác nhận danh sách sang Chốt & Xuất ➔
+            </button>
+          </div>
+        </div>
+        <div style="font-size: 11px; color: #475569">
+          Kiểm tra số trang thực tế ($\ge 4$ trang), trích đoạn bằng chứng phương pháp, và dữ liệu thực nghiệm trong
+          bài.
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PANEL BƯỚC FINAL: CHỐT DANH SÁCH & XUẤT BÁO CÁO PRISMA 2020 -->
+    <!-- ========================================================================= -->
+    <div id="panelStepFinal" class="wizard-panel" style="display: none">
+      <!-- Bảng Đối soát Trạng thái Trước khi Chốt -->
+      <div class="section-card">
+        <div class="section-title">Bảng Đối Soát Tính Toàn Vẹn PRISMA 2020:</div>
+        <div class="audit-status-grid">
+          <div class="audit-status-card audit-ready">
+            <div class="audit-val" id="auditEligibleCount">0</div>
+            <div class="audit-lbl">Đủ điều kiện chốt Include</div>
+          </div>
+          <div class="audit-status-card audit-warning">
+            <div class="audit-val" id="auditPendingDecisionCount">0</div>
+            <div class="audit-lbl">Chưa có quyết định cuối</div>
+          </div>
+          <div class="audit-status-card audit-warning">
+            <div class="audit-val" id="auditMissingFullTextCount">0</div>
+            <div class="audit-lbl">Chưa lấy được toàn văn</div>
+          </div>
+          <div class="audit-status-card audit-warning">
+            <div class="audit-val" id="auditMissingEvidenceCount">0</div>
+            <div class="audit-lbl">Thiếu bằng chứng phương pháp</div>
+          </div>
+          <div class="audit-status-card audit-danger">
+            <div class="audit-val" id="auditOutdatedCount">0</div>
+            <div class="audit-lbl">Quyết định thuộc protocol cũ</div>
+          </div>
+        </div>
+
+        <div
+          id="prismaIntegrityStatusBox"
+          style="margin-top: 10px; padding: 8px 12px; border-radius: 6px; font-size: 11px"
+        ></div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px">
+          <button id="viewPrismaBtn" class="btn-primary" style="background: #1e40af; font-weight: 700">
+            📊 Xem Sơ Đồ Luồng PRISMA 2020 (Đối soát)
+          </button>
+        </div>
+      </div>
+
+      <!-- Danh mục Xuất Dữ liệu 9 Định dạng Chuẩn Học thuật -->
+      <div class="section-card">
+        <div class="section-title">Danh Mục Xuất Dữ Liệu Chuẩn PRISMA 2020 & APA 7th Edition:</div>
+        <div class="export-options-list">
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>1. 01_all_records.csv</b> — Toàn bộ Metadata bản ghi thô (10 cột PRISMA, UTF-8 BOM, an toàn chống CSV
+              Injection).
+            </div>
+            <button id="exportCsvBtn" class="btn-xs btn-secondary">Tải CSV</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>2. 01_duplicate_log.csv</b> — Nhật ký loại trùng lặp chi tiết (Các cặp DOI trùng và các cặp so khớp mờ
+              tiêu đề).
+            </div>
+            <button id="exportDedupLogBtn" class="btn-xs btn-secondary">Tải Duplicate Log</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>3. 02_screening_decisions_full.csv</b> — Kết quả thẩm định toàn diện qua các vòng V1, V2, V3 kèm lý do
+              loại trừ.
+            </div>
+            <button id="exportFullCsvBtn" class="btn-xs btn-secondary">Tải Quyết định</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>4. 03_final_included.csv</b> — Danh sách bài báo chính thức được đưa vào Tổng quan tài liệu.
+            </div>
+            <button id="exportIncludedCsvBtn" class="btn-xs btn-success">Tải Danh sách Chốt</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>5. prisma-flow.md</b> — Mã Mermaid Flowchart PRISMA 2020 và bảng cân bằng số học dán vào báo cáo.
+            </div>
+            <button id="exportPrismaBtn" class="btn-xs btn-secondary">Tải PRISMA Markdown</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>6. evidence-table.md</b> — Bảng trích xuất bằng chứng (Evidence Table) tổng hợp trích đoạn & số trang.
+            </div>
+            <button id="exportEvidenceTableBtn" class="btn-xs btn-secondary">Tải Evidence Table</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>7. 03_references_apa7.txt</b> — Danh mục tài liệu tham khảo định dạng chuẩn APA 7th Edition.
+            </div>
+            <button id="exportApa7Btn" class="btn-xs btn-secondary">Tải APA 7</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>8. search-log.md</b> — Nhật ký tìm kiếm khoa học trung thực & lịch sử thay đổi protocol.
+            </div>
+            <button id="saveLogBtn" class="btn-xs btn-secondary">Ghi search-log.md</button>
+          </div>
+          <div class="export-item">
+            <div class="export-item-info">
+              <b>9. session_backup.json</b> — Sao lưu toàn diện phiên làm việc (Bao gồm provenance, quyết định và
+              evidence).
+            </div>
+            <button id="exportSessionBtn" class="btn-xs btn-primary">Tải Session Backup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- DANH SÁCH BÀI BÁO HIỆN HÀNH (HIỂN THỊ TRÊN CÁC BƯỚC B1, V1, V2, V3) -->
+    <!-- ========================================================================= -->
+    <div class="section-card" id="papersListContainerCard" style="display: none">
+      <!-- Thanh Tìm kiếm Lọc Nhanh & Lọc Quyết định -->
       <div style="display: flex; gap: 8px; margin-bottom: 8px">
         <input
           type="text"
           id="filterInput"
-          placeholder="🔎 Lọc nhanh trong kết quả (tiêu đề, tác giả, snippet)..."
-          style="flex: 2; padding: 6px 10px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1"
+          placeholder="🔎 Lọc nhanh trong kết quả (tiêu đề, tác giả, tóm tắt)..."
+          style="flex: 2; padding: 6px 10px; font-size: 12px"
         />
-        <select
-          id="filterDecisionSelect"
-          style="flex: 1; padding: 6px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1"
-        >
+        <select id="filterDecisionSelect" style="flex: 1; padding: 6px 8px; font-size: 12px">
           <option value="all">Tất cả quyết định</option>
           <option value="Include">Chỉ Include</option>
+          <option value="PassToFullText">Chỉ PassToFullText</option>
           <option value="Exclude">Chỉ Exclude</option>
           <option value="Unsure">Chỉ Unsure</option>
         </select>
       </div>
 
-      <!-- Hang 2: Thanh cong cu thao tac sang loc -->
-      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center">
-        <button
-          id="autoScreenBatchBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #ecfdf5;
-            color: #065f46;
-            border-color: #a7f3d0;
-            padding: 5px 11px;
-            font-size: 11px;
-            font-weight: 700;
-            border-radius: 4px;
-            cursor: pointer;
-          "
-          title="Tự động mở link các bài báo ngầm, cào abstract & sàng lọc theo tiêu chí"
-        >
-          ⚡ Tự động quét & Sàng lọc
-        </button>
-        <button
-          id="stopAutoScreenBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #fef2f2;
-            color: #991b1b;
-            border-color: #fecaca;
-            padding: 5px 11px;
-            font-size: 11px;
-            font-weight: 700;
-            border-radius: 4px;
-            cursor: pointer;
-          "
-        >
-          ⏹️ Dừng quét
-        </button>
-        <button
-          id="rescreenBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #e0e7ff;
-            color: #3730a3;
-            border-color: #c7d2fe;
-            padding: 5px 11px;
-            font-size: 11px;
-            border-radius: 4px;
-            cursor: pointer;
-          "
-        >
-          🔄 Tái sàng lọc
-        </button>
-        <button
-          id="extractActiveTabBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #f8fafc;
-            color: #334155;
-            border-color: #cbd5e1;
-            padding: 5px 11px;
-            font-size: 11px;
-            border-radius: 4px;
-            cursor: pointer;
-          "
-        >
-          📑 Lấy từ Tab Đang Mở
-        </button>
-        <button
-          id="uploadPdfBtn"
-          class="btn-secondary"
-          style="
-            display: none;
-            background: #fef3c7;
-            color: #92400e;
-            border-color: #fde68a;
-            padding: 5px 11px;
-            font-size: 11px;
-            border-radius: 4px;
-            cursor: pointer;
-          "
-        >
-          📁 Tải file PDF
-        </button>
-        <input type="file" id="pdfFileInput" accept="application/pdf,.pdf" style="display: none" />
-      </div>
-
-      <!-- Batch Auto-Screen Progress Banner -->
-      <div id="autoScreenProgressBox" style="display: none; margin-bottom: 8px; padding: 8px 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; font-size: 11px; color: #166534;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span id="autoScreenStatusText"><b>⚡ Đang tự động quét & sàng lọc...</b></span>
-          <span id="autoScreenCounterText" style="font-weight: bold;">0 / 0</span>
-        </div>
-        <div style="width: 100%; height: 6px; background: #dcfce7; border-radius: 3px; overflow: hidden;">
-          <div id="autoScreenProgressBar" style="width: 0%; height: 100%; background: #16a34a; transition: width 0.3s;"></div>
-        </div>
-        <div id="autoScreenCurrentPaper" style="font-size: 10px; color: #15803d; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
-      </div>
-
-      <!-- Thanh phan trang (Pagination Bar) thu gon danh sach bai bao -->
-      <div id="paginationBar" class="pagination-bar" style="display: none;">
-        <div id="paginationInfo" style="color: #475569; font-weight: 600;">Hiển thị 1-10 của 0 bài</div>
+      <!-- Thanh Phân Trang (Pagination Bar) -->
+      <div id="paginationBar" class="pagination-bar" style="display: none">
+        <div id="paginationInfo" style="color: #475569; font-weight: 600">Hiển thị 1-10 của 0 bài</div>
         <div class="pagination-controls">
           <button id="prevPageBtn" class="pagination-btn">◀ Trước</button>
-          <span id="pageIndicator" style="font-weight: 700; color: #2563eb; margin: 0 4px;">1 / 1</span>
+          <span id="pageIndicator" style="font-weight: 700; color: #2563eb; margin: 0 4px">1 / 1</span>
           <button id="nextPageBtn" class="pagination-btn">Sau ▶</button>
-          <select id="pageSizeSelect" class="page-size-select" style="margin-left: 6px;">
+          <select id="pageSizeSelect" class="page-size-select" style="margin-left: 6px">
             <option value="10" selected>10 bài/trang</option>
             <option value="20">20 bài/trang</option>
             <option value="50">50 bài/trang</option>
@@ -350,51 +716,91 @@
         </div>
       </div>
 
+      <!-- Kết quả Bài báo -->
       <div id="resultsContainer">
-        <div class="empty-state">Chưa có dữ liệu. Bấm "Chạy Giai Đoạn Hiện Tại" để bắt đầu thu thập.</div>
-      </div>
-
-      <!-- Thanh cong cu Xuat du lieu gon dep -->
-      <div id="exportToolbar" class="export-toolbar" style="display: none;">
-        <span style="font-weight: 700; font-size: 11px; color: #1e293b; white-space: nowrap;">📥 Xuất kết quả:</span>
-        <select id="exportFormatSelect" style="flex: 1; padding: 4px 8px; font-size: 11px; border-radius: 4px; border: 1px solid #cbd5e1;">
-          <option value="exportCsvBtn">01_all_records.csv (Metadata thô PRISMA)</option>
-          <option value="exportScreeningBtn">02_screening_decisions.csv (Quyết định sàng lọc)</option>
-          <option value="exportFullCsvBtn">screening_full.csv (Đầy đủ tiêu chí & lý do)</option>
-          <option value="exportDedupLogBtn">duplicate-log.csv (Nhật ký trùng lặp)</option>
-          <option value="exportPrismaBtn">prisma-flow.md (Sơ đồ PRISMA 2020)</option>
-          <option value="exportEvidenceTableBtn">evidence-table.md (Bảng bằng chứng)</option>
-          <option value="exportApa7Btn">03_references_apa7.txt (Tài liệu tham khảo APA 7th)</option>
-          <option value="exportSessionBtn">session_backup.json (Tải toàn bộ Session JSON)</option>
-        </select>
-        <button id="executeExportBtn" class="btn-success" style="padding: 4px 10px; font-size: 11px; font-weight: 600; white-space: nowrap;">Tải về</button>
-        <button id="saveLogQuickBtn" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; white-space: nowrap;" title="Ghi vào search-log.md">💾 Ghi Log</button>
-      </div>
-
-      <!-- An cac button export don le goc de tuong thich code cu -->
-      <div class="button-group" style="display: none;">
-        <button id="exportCsvBtn"></button>
-        <button id="exportScreeningBtn"></button>
-        <button id="exportFullCsvBtn"></button>
-        <button id="exportDedupLogBtn"></button>
-        <button id="exportPrismaBtn"></button>
-        <button id="exportEvidenceTableBtn"></button>
-        <button id="exportApa7Btn"></button>
-        <button id="saveLogBtn"></button>
-        <button id="exportSessionBtn"></button>
+        <div class="empty-state">Chưa có bài báo nào. Hãy bắt đầu từ bước Thiết lập hoặc Thu thập.</div>
       </div>
     </div>
 
-    <!-- Modal 1: Xem truoc va Xac nhan trich xuat du lieu tu Tab / PDF -->
+    <!-- Status Bar Cuối Trang -->
+    <div id="status" class="status-bar">Sẵn sàng vận hành pipeline PRISMA 2020.</div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 1: HƯỚNG DẪN BƯỚC NÀY (IN-TOOL STEP GUIDANCE) -->
+    <!-- ========================================================================= -->
+    <div id="stepGuideModal" class="modal-overlay" style="display: none">
+      <div class="modal-content" style="max-width: 520px; max-height: 85vh; overflow-y: auto">
+        <div class="modal-header">
+          <div class="modal-title" id="guideModalTitle">ℹ️ Hướng dẫn bước này</div>
+          <button id="closeStepGuideBtn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body" id="guideModalBody">
+          <!-- Populated dynamically with 6 questions -->
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: flex-end; margin-top: 10px">
+          <button id="closeStepGuideBottomBtn" class="btn-primary">Đã hiểu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 2: CHỈNH SỬA PROTOCOL & QUẢN LÝ THAY ĐỔI (DIFF MODAL) -->
+    <!-- ========================================================================= -->
+    <div id="protocolEditModal" class="modal-overlay" style="display: none">
+      <div class="modal-content" style="max-width: 560px; max-height: 85vh; overflow-y: auto">
+        <div class="modal-header">
+          <div class="modal-title">⚙️ Chỉnh sửa Protocol & Quản trị Thay đổi</div>
+          <button id="closeProtocolEditBtn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="warning-banner" style="margin-bottom: 10px">
+            ⚠️ <b>LƯU Ý LIÊM CHÍNH HỌC THUẬT:</b> Thay đổi phạm vi tiêu chí (năm, số trang, từ khóa, RQ) sau khi đã thu
+            thập bài báo sẽ làm tăng phiên bản protocol (<code>protocolVersion</code>). Các bài báo đã duyệt trước đó sẽ
+            chuyển sang trạng thái <b>"Cần đánh giá lại"</b>.
+          </div>
+
+          <div class="form-group">
+            <label for="protocolChangeReason">Lý do thay đổi Protocol (bắt buộc để ghi audit log):</label>
+            <input
+              type="text"
+              id="protocolChangeReason"
+              placeholder="Ví dụ: Mở rộng khung năm từ 2020 thành 2018 theo phản biện..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer">
+              <input type="checkbox" id="chkIsScopeChange" checked />
+              <span
+                ><b>Thay đổi có ảnh hưởng kết quả sàng lọc (Scope Change)</b> — Yêu cầu đánh giá lại các bài cũ</span
+              >
+            </label>
+          </div>
+
+          <div id="protocolDiffBox" class="diff-box">
+            <div style="font-weight: 700; margin-bottom: 6px">Bản So Sánh Khác Biệt (Diff Preview):</div>
+            <div id="protocolDiffContent" style="font-size: 11px; color: #334155">Đang tải...</div>
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; gap: 8px; margin-top: 10px">
+          <button id="cancelProtocolEditBtn" class="btn-secondary">Hủy bỏ</button>
+          <button id="saveProtocolChangesBtn" class="btn-success" style="font-weight: 700">
+            💾 Xác nhận & Cập nhật Protocol
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 3: XEM TRƯỚC VÀ XÁC NHẬN DỮ LIỆU TỪ TAB / PDF -->
+    <!-- ========================================================================= -->
     <div id="tabExtractModal" class="modal-overlay" style="display: none">
       <div class="modal-content">
         <div class="modal-header">
           <h3 id="modalTitle">📑 Xem trước & Xác nhận Dữ liệu Trích xuất</h3>
           <button id="closeModalBtn" class="btn-close">&times;</button>
         </div>
-        <div id="modalBody" class="modal-body">
-          <!-- Content will be dynamically populated -->
-        </div>
+        <div id="modalBody" class="modal-body"></div>
         <div class="modal-footer">
           <button id="confirmTabExtractBtn" class="btn-success">✓ Xác nhận Cập nhật (Ghi nhận Provenance)</button>
           <button id="cancelTabExtractBtn" class="btn-secondary">✕ Hủy bỏ (Giữ nguyên dữ liệu cũ)</button>
@@ -402,244 +808,80 @@
       </div>
     </div>
 
-    <!-- Modal 2: Quan ly Ho so Nghien cuu (Research Profile Manager) -->
-    <div id="profileModal" class="modal-overlay" style="display: none">
-      <div class="modal-content" style="max-width: 540px">
-        <div class="modal-header">
-          <h3>🎯 Quản lý Hồ sơ Nghiên cứu & Tiêu chí Sàng lọc</h3>
-          <button id="closeProfileModalBtn" class="btn-close">&times;</button>
-        </div>
-        <div class="modal-body" style="max-height: 480px; overflow-y: auto">
-          <!-- Nhom Preset san co -->
-          <div
-            style="
-              margin-bottom: 12px;
-              padding: 10px;
-              background: #f8fafc;
-              border: 1px solid #e2e8f0;
-              border-radius: 6px;
-            "
-          >
-            <div style="font-weight: 600; font-size: 11px; margin-bottom: 6px; color: #334155">
-              NẠP NHANH HỒ SƠ MẪU (PRESETS):
-            </div>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap">
-              <button
-                id="loadPresetSwtBtn"
-                class="btn-secondary"
-                style="font-size: 11px; background: #dbeafe; color: #1e40af"
-              >
-                REST API EP/BVA (SWT302)
-              </button>
-              <button
-                id="loadPresetGenericBtn"
-                class="btn-secondary"
-                style="font-size: 11px; background: #f1f5f9; color: #334155"
-              >
-                Generic Review (Tự do)
-              </button>
-              <button
-                id="loadPresetViBtn"
-                class="btn-secondary"
-                style="font-size: 11px; background: #fef3c7; color: #92400e"
-              >
-                Trẻ khiếm thị & AAC
-              </button>
-            </div>
-          </div>
-
-          <!-- Danh sach ho so hien tai -->
-          <div style="margin-bottom: 12px">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px">
-              <span style="font-weight: 600; font-size: 12px">Danh sách Hồ sơ Nghiên cứu:</span>
-              <div style="display: flex; gap: 4px">
-                <button id="btnNewProfile" class="btn-primary" style="padding: 3px 8px; font-size: 11px">
-                  + Tạo mới
-                </button>
-                <button id="btnImportProfile" class="btn-secondary" style="padding: 3px 8px; font-size: 11px">
-                  📥 Nhập JSON
-                </button>
-                <input type="file" id="profileFileInput" accept=".json" style="display: none" />
-              </div>
-            </div>
-            <div id="profileListContainer" style="display: flex; flex-direction: column; gap: 6px"></div>
-          </div>
-
-          <!-- Form chinh sua ho so nghien cuu -->
-          <div
-            id="profileEditForm"
-            style="display: none; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 10px"
-          >
-            <h4 id="profileFormTitle" style="font-size: 12px; margin-bottom: 8px; color: #2563eb">Chỉnh sửa Hồ sơ</h4>
-
-            <div class="form-group">
-              <label for="editProfileName">Tên nghiên cứu:</label>
-              <input type="text" id="editProfileName" placeholder="Tên nghiên cứu khoa học..." />
-            </div>
-            <div class="form-group">
-              <label for="editProfileDesc">Mô tả / Mục tiêu:</label>
-              <input type="text" id="editProfileDesc" placeholder="Mô tả tóm tắt..." />
-            </div>
-            <div class="form-group">
-              <label for="editProfileRq">Câu hỏi nghiên cứu (RQ - mỗi dòng 1 câu):</label>
-              <textarea
-                id="editProfileRq"
-                style="
-                  width: 100%;
-                  height: 50px;
-                  font-size: 11px;
-                  padding: 6px;
-                  border: 1px solid #cbd5e1;
-                  border-radius: 4px;
-                  font-family: inherit;
-                "
-              ></textarea>
-            </div>
-            <div style="display: flex; gap: 8px">
-              <div class="form-group" style="flex: 1">
-                <label for="editProfileReviewType">Loại tổng quan:</label>
-                <select id="editProfileReviewType">
-                  <option value="systematic_review">Systematic Review (SLR)</option>
-                  <option value="literature_review">Literature Review</option>
-                  <option value="scoping_review">Scoping Review</option>
-                  <option value="custom">Custom Review</option>
-                </select>
-              </div>
-              <div class="form-group" style="flex: 1">
-                <label for="editProfileTargetIncluded">Mục tiêu Include (Bài):</label>
-                <input type="number" id="editProfileTargetIncluded" value="15" min="1" />
-              </div>
-            </div>
-
-            <!-- Tieu chi pho bien -->
-            <div
-              style="
-                background: #f8fafc;
-                padding: 8px;
-                border-radius: 6px;
-                border: 1px solid #e2e8f0;
-                margin-bottom: 10px;
-              "
-            >
-              <div style="font-weight: 600; font-size: 11px; margin-bottom: 6px; color: #1e293b">
-                BỘ TIÊU CHÍ PHỔ BIẾN:
-              </div>
-
-              <div style="margin-bottom: 6px">
-                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; text-transform: none">
-                  <input type="checkbox" id="chkYearRange" /> Giới hạn khoảng năm xuất bản
-                </label>
-                <div id="yearRangeInputs" style="display: flex; gap: 6px; margin-top: 4px; padding-left: 18px">
-                  <input type="number" id="editYearStart" placeholder="Từ năm (vd: 2020)" style="width: 100px" />
-                  <input type="number" id="editYearEnd" placeholder="Đến năm (vd: 2026)" style="width: 100px" />
-                </div>
-              </div>
-
-              <div style="margin-bottom: 6px">
-                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; text-transform: none">
-                  <input type="checkbox" id="chkMinPages" /> Yêu cầu số trang tối thiểu (loại bài ngắn/poster)
-                </label>
-                <div id="minPagesInputs" style="margin-top: 4px; padding-left: 18px">
-                  <input
-                    type="number"
-                    id="editMinPages"
-                    placeholder="Số trang tối thiểu (vd: 4)"
-                    style="width: 120px"
-                    value="4"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group" style="margin-bottom: 0">
-                <label for="editKeywordsInclusion">Từ khóa bắt buộc phù hợp (cách nhau bởi dấu phẩy):</label>
-                <input
-                  type="text"
-                  id="editKeywordsInclusion"
-                  placeholder="Ví dụ: children, visually impaired, AAC, confidence"
-                />
-              </div>
-            </div>
-
-            <div style="display: flex; justify-content: flex-end; gap: 6px">
-              <button id="btnSaveProfile" class="btn-success">Lưu Hồ sơ</button>
-              <button id="btnCancelEditProfile" class="btn-secondary">Hủy</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4: Tuy chon Tu Dong Quet & Sang Loc Hang Loat -->
-    <div id="autoScreenModal" class="modal-overlay" style="display: none">
-      <div class="modal-content" style="max-width: 480px">
-        <div class="modal-header">
-          <div class="modal-title" style="font-weight: 700; font-size: 13px; color: #065f46;">⚡ Tự động truy cập link & Sàng lọc hàng loạt</div>
-          <button id="closeAutoScreenModalBtn" class="btn-close">&times;</button>
-        </div>
-        <div class="modal-body" style="font-size: 12px; line-height: 1.5; color: #374151;">
-          <p style="margin-bottom: 10px;">
-            Hệ thống sẽ <b>tự động mở ngầm các link bài báo</b>, trích xuất Abstract, DOI, Venue và PDF (nếu có), đối chiếu với tiêu chí hồ sơ <b><span id="autoScreenProfileName">hiện tại</span></b> và tự động phân loại <b>Include / Exclude / Unsure</b>.
-          </p>
-          <div style="margin-bottom: 10px; background: #f8fafc; padding: 8px 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            <label style="font-weight: 600; display: block; margin-bottom: 6px; color: #1e293b;">Chọn phạm vi quét:</label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
-              <input type="radio" name="autoScreenScope" value="only_unsure" id="scopeOnlyUnsure" />
-              <span>🔍 <b>Lọc sâu các bài Unsure</b> (Tái thẩm định <b id="autoScreenUnsureCount" style="color: #d97706;">0</b> bài chưa rõ)</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
-              <input type="radio" name="autoScreenScope" value="missing_abstract" checked />
-              <span>Chỉ quét các bài <b>chưa có Abstract / chưa xác minh</b></span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
-              <input type="radio" name="autoScreenScope" value="next_10" />
-              <span>10 bài tiếp theo</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
-              <input type="radio" name="autoScreenScope" value="next_20" />
-              <span>20 bài tiếp theo (Để đạt mục tiêu số bài Include)</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
-              <input type="radio" name="autoScreenScope" value="all" />
-              <span>Toàn bộ danh sách (<span id="autoScreenTotalCount">0</span> bài)</span>
-            </label>
-          </div>
-          <div style="margin-bottom: 10px; padding: 8px 10px; background: #ecfdf5; border-radius: 6px; border: 1px solid #a7f3d0;">
-            <label style="display: flex; align-items: flex-start; gap: 6px; cursor: pointer;">
-              <input type="checkbox" id="autoAcceptIncludeCheckbox" checked style="margin-top: 2px;" />
-              <span style="font-size: 11px; color: #065f46;"><b>Tự động xác nhận (finalDecision = Include)</b> khi bài báo đạt toàn bộ tiêu chí hợp lệ và không vi phạm tiêu chí loại trừ.</span>
-            </label>
-          </div>
-          <div style="font-size: 10.5px; color: #64748b; line-height: 1.4;">
-            💡 <i>Mẹo: Quá trình quét chạy ngầm trên trình duyệt, không chiếm chuột hay màn hình. Bạn có thể bấm <b>⏹️ Dừng quét</b> bất kỳ lúc nào để giữ nguyên các bài đã lọc.</i>
-          </div>
-        </div>
-        <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px;">
-          <button id="cancelAutoScreenBtn" class="btn-secondary">Hủy bỏ</button>
-          <button id="startAutoScreenBtn" class="btn-success" style="font-weight: 600; background: #16a34a;">🚀 Bắt đầu quét tự động</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5: So do PRISMA 2020 & Drill-down -->
+    <!-- ========================================================================= -->
+    <!-- MODAL 4: SƠ ĐỒ PRISMA 2020 & DRILLDOWN -->
+    <!-- ========================================================================= -->
     <div id="prismaModal" class="modal-overlay" style="display: none">
-      <div class="modal-content" style="max-width: 580px; max-height: 85vh; overflow-y: auto;">
+      <div class="modal-content" style="max-width: 580px; max-height: 85vh; overflow-y: auto">
         <div class="modal-header">
-          <div class="modal-title" style="font-weight: 700; font-size: 13px; color: #1e40af;">📊 Sơ Đồ Luồng PRISMA 2020 (Đối soát Cân bằng Số học)</div>
+          <div class="modal-title" style="font-weight: 700; font-size: 13px; color: #1e40af">
+            📊 Sơ Đồ Luồng PRISMA 2020 (Đối soát Cân bằng Số học)
+          </div>
           <button id="closePrismaModalBtn" class="btn-close">&times;</button>
         </div>
-        <div class="modal-body" style="font-size: 12px; color: #334155;">
-          <div id="prismaFlowContainer" style="margin-bottom: 12px;"></div>
-          <div id="prismaDrilldownBox" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px; margin-top: 10px;">
-            <div id="drilldownTitle" style="font-weight: 700; margin-bottom: 6px; color: #1e293b;">Danh sách bài báo:</div>
-            <div id="drilldownPaperList" style="max-height: 160px; overflow-y: auto; font-size: 11px;"></div>
+        <div class="modal-body" style="font-size: 12px; color: #334155">
+          <div id="prismaFlowContainer" style="margin-bottom: 12px"></div>
+          <div
+            id="prismaDrilldownBox"
+            style="
+              display: none;
+              background: #f8fafc;
+              border: 1px solid #cbd5e1;
+              border-radius: 6px;
+              padding: 10px;
+              margin-top: 10px;
+            "
+          >
+            <div id="drilldownTitle" style="font-weight: 700; margin-bottom: 6px; color: #1e293b">
+              Danh sách bài báo:
+            </div>
+            <div id="drilldownPaperList" style="max-height: 160px; overflow-y: auto; font-size: 11px"></div>
           </div>
         </div>
-        <div class="modal-footer" style="display: flex; justify-content: space-between; gap: 8px; margin-top: 10px;">
-          <div style="display: flex; gap: 6px;">
-            <button id="modalExportPrismaMdBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px;">📑 Xuất prisma-flow.md</button>
-            <button id="modalExportEvidenceBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px;">📋 Xuất evidence-table.md</button>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; gap: 8px; margin-top: 10px">
+          <div style="display: flex; gap: 6px">
+            <button id="modalExportPrismaMdBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px">
+              📑 Xuất prisma-flow.md
+            </button>
+            <button id="modalExportEvidenceBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px">
+              📋 Xuất evidence-table.md
+            </button>
           </div>
           <button id="closePrismaModalBottomBtn" class="btn-secondary">Đóng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 5: THÊM BÀI SEED / DOI CHO BƯỚC B1 -->
+    <!-- ========================================================================= -->
+    <div id="seedModal" class="modal-overlay" style="display: none">
+      <div class="modal-content" style="max-width: 480px">
+        <div class="modal-header">
+          <div class="modal-title">🎯 Thêm Bài Seed / DOI vào Nghiên Cứu</div>
+          <button id="closeSeedModalBtn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="seedDoiInput">Nhập DOI (hoặc URL có chứa DOI):</label>
+            <input type="text" id="seedDoiInput" placeholder="Ví dụ: 10.1145/3377811.3380387" />
+          </div>
+          <div class="form-group">
+            <label for="seedTitleInput">Hoặc nhập Tiêu đề bài báo:</label>
+            <input
+              type="text"
+              id="seedTitleInput"
+              placeholder="Ví dụ: RESTest: Automated Black-Box Testing of RESTful APIs"
+            />
+          </div>
+          <div style="font-size: 11px; color: #64748b">
+            Hệ thống sẽ tự động truy vấn Crossref / OpenAlex để lấy metadata đầy đủ và bổ sung vào tập B1 mà không làm
+            mất dữ liệu hiện tại.
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px">
+          <button id="cancelSeedBtn" class="btn-secondary">Hủy</button>
+          <button id="confirmSeedBtn" class="btn-primary">➕ Thêm vào tập B1</button>
         </div>
       </div>
     </div>

@@ -58,12 +58,18 @@ export interface SearchStringConfig {
   isDefault?: boolean;
 }
 
+export type WizardStep = "SETUP" | "B1" | "V1" | "V2" | "V3" | "FINAL";
+
+export type FrameworkType = "PICO" | "PICOS" | "SPIDER" | "Custom";
+
 export interface ResearchProfile {
   id: string;
   name: string;
   description: string;
   researchQuestions: string[];
   reviewType: ReviewType;
+  framework?: FrameworkType;
+  frameworkFields?: Record<string, string>;
   searchStrings: SearchStringConfig[];
   yearRange?: {
     start?: number;
@@ -179,10 +185,61 @@ export interface PaperRecord {
   verificationMethod?: string;
   sourceUrl?: string;
 
+  // Full-text retrieval & assessment status
+  fullTextStatus?:
+    | "finding"
+    | "downloaded"
+    | "not_found"
+    | "paywalled"
+    | "network_error"
+    | "corrupted_file"
+    | "scanned_image_pdf"
+    | "extraction_failed"
+    | "confirmed_unretrievable";
+  fullTextAssessed?: boolean;
+  v3EvidenceMissing?: boolean;
+  mergeHistory?: {
+    mergedFromId: string;
+    mergedAt: string;
+    title: string;
+    source: string;
+  }[];
+
   // Mô hình nghiên cứu & Đóng góp học thuật
   modelContribution?: string[];
   conceptLabels?: string[];
   literatureGroup?: "direct" | "supporting" | "foundational" | string;
+}
+
+export interface SuspectedDuplicatePair {
+  id: string;
+  primaryRecord: PaperRecord;
+  duplicateRecord: PaperRecord;
+  similarity: number;
+  status: "pending" | "merged" | "kept_separate";
+  reason: string;
+}
+
+export interface SourceStatusInfo {
+  name: string;
+  category: "free" | "key_required" | "file_only";
+  status: "ready" | "needs_key" | "not_configured" | "file_supported" | "error_quota";
+  description: string;
+  canSearch: boolean;
+  isFree: boolean;
+  notes?: string;
+}
+
+export interface ProtocolDiff {
+  oldVersion: string;
+  newVersion: string;
+  changeReason: string;
+  isScopeChange: boolean;
+  changes: { field: string; oldValue: any; newValue: any }[];
+  affectedQueriesCount: number;
+  affectedV2Count: number;
+  affectedV3Count: number;
+  reusableAssetsCount: number;
 }
 
 export interface EvidenceSnippet {
