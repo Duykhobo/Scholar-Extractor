@@ -223,7 +223,7 @@ export function evaluateCriterion(
         reason = "Đã xác nhận không thể truy cập hoặc không thể tải toàn văn bài báo.";
       } else if (
         context.fullText &&
-        context.fullText.trim().length > 300 &&
+        context.fullText.trim().length > 100 &&
         context.fullText.trim() !== (record.abstract || "").trim() &&
         ((context.pageCount !== undefined && context.pageCount >= 4) || record.isPdfVerified)
       ) {
@@ -233,7 +233,19 @@ export function evaluateCriterion(
         // Tuyệt đối không suy diễn thiếu abstract thành không tải được full-text và không coi abstract là toàn văn!
         status = "unknown";
         reason =
-          "Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Tuyệt đối không suy diễn abstract thành toàn văn.";
+          "Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.";
+      }
+      break;
+    }
+
+    // 5b. Evaluator: Trùng lặp bản ghi (duplicate)
+    case "duplicate": {
+      if (record.potentialDuplicate) {
+        status = kind === "exclusion" ? "met" : "not_met";
+        reason = `Bài báo trùng lặp với bản ghi đã có (EC-D: ${record.duplicateReason || "Trùng DOI hoặc Tiêu đề"}).`;
+      } else {
+        status = kind === "exclusion" ? "not_met" : "met";
+        reason = "Không phát hiện trùng lặp.";
       }
       break;
     }
@@ -563,7 +575,8 @@ export function evaluateProfileScreening(
   const isRetracted = /\b(retracted|retraction)\b/i.test(`${record.title || ""} ${record.abstract || ""}`);
   if (isRetracted) {
     hasExclusionMet = true;
-    exclusionMetReason = "Bị loại theo tiêu chí loại trừ: Bài báo đã bị rút lại (RETRACTED). Tuyệt đối không đưa vào tổng quan.";
+    exclusionMetReason =
+      "Bị loại theo tiêu chí loại trừ: Bài báo đã bị rút lại (RETRACTED). Tuyệt đối không đưa vào tổng quan.";
   }
 
   // Ra quyết định gợi ý (suggestedDecision)
@@ -585,13 +598,16 @@ export function evaluateProfileScreening(
       context.fullText &&
       context.fullText.trim().length > 300 &&
       context.fullText.trim() !== (record.abstract || "").trim() &&
-      ((context.pageCount !== undefined && context.pageCount >= 4) || record.isPdfVerified || (record.user_verified && record.pdfUrl))
+      ((context.pageCount !== undefined && context.pageCount >= 4) ||
+        record.isPdfVerified ||
+        (record.user_verified && record.pdfUrl)),
     );
     const hasFullTextCriteria = profile.criteria.some((c) => c.stage === "full_text" && c.required);
 
     if (hasFullTextCriteria && !hasFullText) {
       suggestedDecision = "Unsure";
-      screeningReason = "Đạt sơ bộ vòng Tiêu đề & Tóm tắt. Chờ thẩm định toàn văn (Pending Full-Text) để kiểm tra nội dung và số trang.";
+      screeningReason =
+        "Đạt sơ bộ vòng Tiêu đề & Tóm tắt. Chờ thẩm định toàn văn (Pending Full-Text) để kiểm tra nội dung và số trang.";
     } else {
       suggestedDecision = "Include";
       screeningReason = `Đạt toàn bộ ${matchedCriteria.length} tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.`;
@@ -606,7 +622,8 @@ export function evaluateProfileScreening(
   );
 
   // Phân biệt khái niệm & Đóng góp mô hình nghiên cứu
-  const combinedText = `${record.title || ""} ${record.abstract || ""} ${record.snippet || ""} ${context.fullText || ""}`.toLowerCase();
+  const combinedText =
+    `${record.title || ""} ${record.abstract || ""} ${record.snippet || ""} ${context.fullText || ""}`.toLowerCase();
   const conceptLabels: string[] = [];
   if (combinedText.includes("self-confidence") || combinedText.includes("tự tin")) {
     conceptLabels.push("self-confidence (Primary Y)");
@@ -628,8 +645,13 @@ export function evaluateProfileScreening(
   }
 
   const modelContributions: string[] = [];
-  const hasX = /supportive communication|kind communication|positive communication|empathetic communication|compassionate communication|teacher support|peer support|giao tiếp tử tế|giao tiếp hỗ trợ/.test(combinedText);
-  const hasM = /perceived social support|emotional support|social support|cảm nhận được hỗ trợ|hỗ trợ xã hội/.test(combinedText);
+  const hasX =
+    /supportive communication|kind communication|positive communication|empathetic communication|compassionate communication|teacher support|peer support|giao tiếp tử tế|giao tiếp hỗ trợ/.test(
+      combinedText,
+    );
+  const hasM = /perceived social support|emotional support|social support|cảm nhận được hỗ trợ|hỗ trợ xã hội/.test(
+    combinedText,
+  );
   const hasY = conceptLabels.length > 0 || /confidence|tự tin/.test(combinedText);
 
   if (hasX) modelContributions.push("X");
@@ -642,7 +664,10 @@ export function evaluateProfileScreening(
     modelContributions.push("H4");
   }
 
-  const hasViPop = /children with visual impairments|visually impaired children|blind children|students with visual impairments|visual impairment|blind|khiếm thị/.test(combinedText);
+  const hasViPop =
+    /children with visual impairments|visually impaired children|blind children|students with visual impairments|visual impairment|blind|khiếm thị/.test(
+      combinedText,
+    );
   let literatureGroup: "direct" | "supporting" | "foundational" = "foundational";
   if (hasViPop && hasX && hasY) {
     literatureGroup = "direct";

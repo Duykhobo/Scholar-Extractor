@@ -317,6 +317,24 @@ export function extractEvidenceFromPages(
       const anchor = findNearbyAnchor(matchIndex);
       const label = getContextLabel(matchIndex, section, anchor);
 
+      // 1. Kiểm tra ngữ cảnh lịch sử / khảo sát thứ cấp (không phải nghiên cứu tự thực hiện)
+      const isHistoricalOrSurvey =
+        /\b(development\s*of\s*formal\s*test|history\s*of|introduction\s*of\s*unit\s*testing|starting\s*with\s*sunit|traditional\s*testing\s*techniques?|surveys?\s*(?:of|show)|literature\s*(?:shows|highlights|identifies)|among\s*studies|historical\s*development|earlier\s*work)\b/i.test(
+          context,
+        );
+
+      // 2. Kiểm tra đối tượng tham số (Parameter / Input domain target)
+      const hasParamTarget =
+        /\b(parameter|param|request|endpoint|input|query|path|body|header|payload|scalar|variable|schema|boundar(y|ies)|range|values?|classes?)\b/i.test(
+          context,
+        );
+
+      // 3. Kiểm tra hành động áp dụng (Active application action)
+      const hasActiveAction =
+        /\b(appl(y|ied|ying|ication)|generat(e|ed|ing|ion)|test(ing|s|ed)?|partition(ed|ing)?|evaluat(e|ed|ing)|deriv(e|ed|ing)|design(ed|ing)?|sampl(e|ed|ing)|exercis(e|ed|ing)|select(ed|ing)|propos(e|ed|ing)|implement(ed|ing)?|validat(e|ed|ing)|conduct(ed|ing)?|build(s|ing)?)\b/i.test(
+          context,
+        );
+
       if (section === "Related Work" || section === "References") {
         evidence.push({
           type: "IC-I",
@@ -329,7 +347,19 @@ export function extractEvidenceFromPages(
           reason:
             "Chỉ xuất hiện trong phần Tổng quan (Related Work / References) hoặc trích dẫn; không phải phương pháp nghiên cứu áp dụng.",
         });
-      } else {
+      } else if (isHistoricalOrSurvey) {
+        evidence.push({
+          type: "IC-I",
+          term,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
+          section,
+          isValidEvidence: false,
+          reason:
+            "Đoạn văn chỉ thuật lại lịch sử phát triển kỹ thuật kiểm thử hoặc tổng quan tài liệu chung, chưa chứng minh nghiên cứu này trực tiếp áp dụng EP/BVA cho tham số request.",
+        });
+      } else if (hasParamTarget && hasActiveAction) {
         hasValidIci = true;
         evidence.push({
           type: "IC-I",
@@ -339,7 +369,20 @@ export function extractEvidenceFromPages(
           anchor,
           section,
           isValidEvidence: true,
-          reason: "Kỹ thuật EP/BVA được sử dụng trong phương pháp / thực nghiệm.",
+          reason:
+            "Nghiên cứu có mô tả hành động áp dụng/thiết kế kỹ thuật EP/BVA cho tham số/dữ liệu đầu vào kiểm thử.",
+        });
+      } else {
+        evidence.push({
+          type: "IC-I",
+          term,
+          context: `${label} "...${context}..."`,
+          page: isPdf ? pageNum : null,
+          anchor,
+          section,
+          isValidEvidence: false,
+          reason:
+            "Đoạn văn chỉ nhắc đến thuật ngữ EP/BVA lý thuyết đơn thuần, chưa chứng minh hành vi áp dụng cụ thể cho tham số request.",
         });
       }
     }
@@ -569,13 +612,16 @@ export function analyzeTabAgainstRecord(
   // Phân biệt rành mạch giữa văn bản toàn văn thực sự (PDF / HTML body) và đoạn trích abstract
   const hasRealFullText = Boolean(
     (isPdf && tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0) ||
-    (tabData.rawText && tabData.rawText.trim().length > 300 && tabData.rawText.trim() !== (tabData.abstract || "").trim())
+    (tabData.rawText &&
+      tabData.rawText.trim().length > 100 &&
+      tabData.rawText.trim() !== (tabData.abstract || "").trim()) ||
+    (tabData.pageCount && tabData.pageCount > 0 && tabData.rawText && tabData.rawText.trim().length > 50),
   );
 
   const actualFullText = hasRealFullText
-    ? (tabData.pages && tabData.pages.length > 0
-        ? tabData.pages.map((p) => p.text).join("\n")
-        : tabData.rawText)
+    ? tabData.pages && tabData.pages.length > 0
+      ? tabData.pages.map((p) => p.text).join("\n")
+      : tabData.rawText
     : undefined;
 
   const pages =
@@ -643,6 +689,8 @@ export function analyzeTabAgainstRecord(
         fullTextUnavailable: false,
         hasVerifiedEpBva: hasValidIci,
         hasVerifiedTableOrFigure: hasValidIce,
+        publicationType: (tabData as any).publicationType || record.publicationType,
+        sourceEvidence: tabData.venue || record.venue,
       },
     );
     suggestedScreeningUpdate = screening;
@@ -659,6 +707,8 @@ export function analyzeTabAgainstRecord(
         fullTextUnavailable: false,
         hasVerifiedEpBva: hasValidIci,
         hasVerifiedTableOrFigure: hasValidIce,
+        publicationType: (tabData as any).publicationType || record.publicationType,
+        sourceEvidence: tabData.venue || record.venue,
       },
     );
     suggestedScreeningUpdate = screening;
@@ -720,10 +770,31 @@ export function analyzeTabAgainstRecord(
 
     const mandatoryCriteria = ["IC-L", "IC-T", "IC-E", "IC-Y", "IC-P", "IC-I"];
     const allMandatoryMatched = mandatoryCriteria.every((c) => suggestedScreeningUpdate?.matchedCriteria.includes(c));
-    if (suggestedScreeningUpdate && allMandatoryMatched && suggestedScreeningUpdate.unknownCriteria.length === 0) {
+    const hasAnyExclusion = Boolean(suggestedScreeningUpdate?.matchedCriteria.some((c) => c.startsWith("EC-")));
+    const wasAlreadyExcluded = suggestedScreeningUpdate?.suggestedDecision === "Exclude";
+    const isFullTextV2 = Boolean(hasRealFullText && tabData.pageCount && tabData.pageCount >= 4);
+
+    if (
+      suggestedScreeningUpdate &&
+      allMandatoryMatched &&
+      suggestedScreeningUpdate.unknownCriteria.length === 0 &&
+      !hasAnyExclusion &&
+      !wasAlreadyExcluded &&
+      isFullTextV2
+    ) {
+      suggestedScreeningUpdate.stage = "V2";
       suggestedScreeningUpdate.suggestedDecision = "Include";
       suggestedScreeningUpdate.screeningReason =
-        "Thỏa mãn toàn bộ 6 tiêu chí IC ở vòng V2 (Full-text: IC-L, IC-T, IC-Y, IC-P, IC-I, IC-E). Không vi phạm tiêu chí EC nào.";
+        "Thỏa mãn toàn bộ 6 tiêu chí IC ở vòng V2 toàn văn (IC-L, IC-T, IC-Y, IC-P, IC-I, IC-E), có số trang >= 4 và không vi phạm bất kỳ tiêu chí EC nào.";
+    } else if (suggestedScreeningUpdate && suggestedScreeningUpdate.suggestedDecision === "Include") {
+      // Chốt chặn: Nếu thiếu điều kiện toàn văn V2 hoặc có tiêu chí loại trừ thì không được giữ Include
+      if (hasAnyExclusion || wasAlreadyExcluded) {
+        suggestedScreeningUpdate.suggestedDecision = "Exclude";
+      } else {
+        suggestedScreeningUpdate.suggestedDecision = "Unsure";
+        suggestedScreeningUpdate.screeningReason =
+          "Chưa đủ điều kiện xác nhận toàn văn (cần tệp toàn văn >= 4 trang để xác minh V2). Tạm giữ Unsure theo protocol.";
+      }
     }
   }
 

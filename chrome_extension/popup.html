@@ -505,8 +505,12 @@
           <div style="margin-bottom: 10px; background: #f8fafc; padding: 8px 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
             <label style="font-weight: 600; display: block; margin-bottom: 6px; color: #1e293b;">Chọn phạm vi quét:</label>
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
+              <input type="radio" name="autoScreenScope" value="only_unsure" id="scopeOnlyUnsure" />
+              <span>🔍 <b>Lọc sâu các bài Unsure</b> (Tái thẩm định <b id="autoScreenUnsureCount" style="color: #d97706;">0</b> bài chưa rõ)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
               <input type="radio" name="autoScreenScope" value="missing_abstract" checked />
-              <span>Chỉ quét các bài <b>chưa có Abstract / chưa xác minh</b> (Khuyên dùng)</span>
+              <span>Chỉ quét các bài <b>chưa có Abstract / chưa xác minh</b></span>
             </label>
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; cursor: pointer;">
               <input type="radio" name="autoScreenScope" value="next_10" />

@@ -5,9 +5,10 @@ import path from "path";
 import { config } from "./config";
 import { DbRepository, isDbOnline, runMigrations } from "./db";
 import { deduplicateRecords } from "./dedup";
+import { extractDoiFromString, fetchCrossrefMetadata } from "./doiService";
 import { analyzeTabAgainstRecord } from "./evidenceAnalyzer";
 import { exportApa7References, exportFullScreeningCsv, exportScreeningCsv, exportToCsv } from "./exporter";
-import { extractAbstractFromPdfPages, parsePdfBuffer, parsePdfFromUrl } from "./pdfService";
+import { extractAbstractFromPdfPages, extractVenueFromPdfPages, parsePdfBuffer, parsePdfFromUrl } from "./pdfService";
 import {
   BUILTIN_PRESETS,
   PRESET_GENERIC,
@@ -17,7 +18,6 @@ import {
 } from "./profiles";
 import { sanitizeObject, sanitizeString } from "./sanitizer";
 import { fetchScholarFromSerpApi, getApiRequestsCount } from "./scholarService";
-import { evaluateScreeningV1 } from "./screening";
 import { appendSearchLog } from "./searchLogger";
 import { PaperRecord, TabExtractedData } from "./types";
 
@@ -160,90 +160,6 @@ app.post("/api/scholar/search", async (req: Request, res: Response, next: NextFu
 });
 
 /**
- * POST /api/scholar/rescreen
- * Tái đánh giá toàn bộ danh sách paper theo hồ sơ nghiên cứu đã chọn
- */
-app.post("/api/scholar/rescreen", (req: Request, res: Response) => {
-  try {
-    let { records, profile, researchId } = req.body as {
-      records: PaperRecord[];
-      profile?: ResearchProfile;
-      researchId?: string;
-    };
-
-    if (!records || !Array.isArray(records)) {
-      return res.status(400).json({ error: "Danh sách `records` là bắt buộc." });
-    }
-
-    if (!profile && researchId) {
-      profile = BUILTIN_PRESETS.find((p) => p.id === researchId);
-    }
-    const activeEvalProfile = profile || PRESET_GENERIC;
-
-    const updatedRecords = records.map((record) => {
-      let matchedCriteria: string[] = [];
-      let unknownCriteria: string[] = [];
-      let missingEvidence: string[] = [];
-      let suggestedDecision: "Include" | "Exclude" | "Unsure" = "Unsure";
-      let screeningReason = "";
-
-      if (activeEvalProfile.id === "preset_swt302") {
-        const screening = evaluateScreeningV1(
-          record.title,
-          record.snippet || "",
-          record.abstract || "",
-          record.year,
-          record.venue,
-        );
-        matchedCriteria = screening.matchedCriteria;
-        unknownCriteria = screening.unknownCriteria;
-        missingEvidence = screening.missingEvidence;
-        suggestedDecision = screening.suggestedDecision;
-        screeningReason = screening.screeningReason;
-      } else {
-        const pEval = evaluateProfileScreening(
-          activeEvalProfile,
-          {
-            title: record.title,
-            authors: record.authors,
-            year: record.year,
-            venue: record.venue,
-            snippet: record.snippet || "",
-            abstract: record.abstract || "",
-          } as any,
-          { stage: record.abstract ? "title_abstract" : "metadata" },
-        );
-        matchedCriteria = pEval.matchedCriteria;
-        unknownCriteria = pEval.unknownCriteria;
-        missingEvidence = pEval.missingEvidence;
-        suggestedDecision = pEval.suggestedDecision;
-        screeningReason = pEval.screeningReason;
-      }
-
-      return {
-        ...record,
-        researchId: activeEvalProfile.id,
-        profileVersion: activeEvalProfile.profileVersion,
-        matchedCriteria,
-        unknownCriteria,
-        missingEvidence,
-        suggestedDecision,
-        screeningReason,
-      };
-    });
-
-    res.json({
-      success: true,
-      records: updatedRecords,
-      total: updatedRecords.length,
-      profileId: activeEvalProfile.id,
-    });
-  } catch (err: any) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-/**
  * POST /api/scholar/dedup
  * Khử trùng lặp: DOI trùng tuyệt đối thì lọc bỏ; Title trùng nhưng khác DOI thì giữ lại và đánh dấu potentialDuplicate
  */
@@ -316,6 +232,7 @@ app.post("/api/scholar/export", (req: Request, res: Response) => {
       success: true,
       message: `Đã xuất ${records.length} bản ghi metadata ra file CSV thành công.`,
       filePath: exportResult.filePath,
+      csvContent: exportResult.csvContent,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -347,6 +264,7 @@ app.post("/api/scholar/export-screening", (req: Request, res: Response) => {
       success: true,
       message: `Đã xuất ${records.length} bản ghi thẩm định sàng lọc ra file CSV thành công.`,
       filePath: exportResult.filePath,
+      csvContent: exportResult.csvContent,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -437,6 +355,7 @@ app.post("/api/scholar/export-full", (req: Request, res: Response) => {
       success: true,
       message: `Đã xuất ${records.length} bản ghi sàng lọc đầy đủ thành công.`,
       filePath: exportResult.filePath,
+      csvContent: exportResult.csvContent,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -576,6 +495,48 @@ app.post("/api/scholar/analyze-tab", async (req: Request, res: Response) => {
       const extractedAbs = extractAbstractFromPdfPages(tabData.pages);
       if (extractedAbs) {
         tabData.abstract = extractedAbs;
+      }
+    }
+
+    // Tự động nhận diện venue hội nghị/tạp chí từ Header/Running head của PDF (ví dụ SBES '25, ICSE, IEEE Transactions)
+    const isVenueUnverified = !tabData.venue || /^(arxiv|google\s*scholar|n\/a|unknown)\b/i.test(tabData.venue.trim());
+    if (isVenueUnverified && tabData.pages && tabData.pages.length > 0) {
+      const venueExtracted = extractVenueFromPdfPages(tabData.pages);
+      if (venueExtracted) {
+        tabData.venue = venueExtracted.venue;
+        (tabData as any).publicationType = venueExtracted.pubType;
+      }
+    }
+
+    // Tự động tra cứu Crossref DOI để chuẩn hóa Venue (container-title) và publicationType (journal-article/proceedings)
+    let targetDoi = (tabData.doi || record.doi || "").trim();
+    if (!targetDoi) {
+      targetDoi =
+        extractDoiFromString(tabData.sourceUrl || record.url) ||
+        (tabData.pages?.[0]?.text ? extractDoiFromString(tabData.pages[0].text) : "") ||
+        (tabData.rawText ? extractDoiFromString(tabData.rawText) : "") ||
+        "";
+      if (targetDoi) tabData.doi = targetDoi;
+    }
+    if (targetDoi) {
+      try {
+        const crossref = await fetchCrossrefMetadata(targetDoi);
+        if (crossref) {
+          if (crossref.venue && isVenueUnverified) {
+            tabData.venue = crossref.venue;
+          }
+          if (crossref.publicationType && crossref.publicationType !== "unknown") {
+            (tabData as any).publicationType = crossref.publicationType;
+          }
+          if ((!tabData.abstract || tabData.abstract.trim().length === 0) && crossref.abstract) {
+            tabData.abstract = crossref.abstract;
+          }
+          if (!tabData.year && crossref.year) {
+            tabData.year = crossref.year;
+          }
+        }
+      } catch (doiErr) {
+        // bỏ qua lỗi mạng Crossref nếu có
       }
     }
 

@@ -69,9 +69,9 @@ export function exportToCsv(
     }
 
     fs.writeFileSync(outputPath, sanitizedCsv, "utf-8");
-    return { success: true, filePath: outputPath };
+    return { success: true, filePath: outputPath, csvContent: sanitizedCsv };
   } catch (err: any) {
-    return { success: false, filePath: outputPath, error: err.message };
+    return { success: false, filePath: outputPath, error: err.message, csvContent: "" };
   }
 }
 
@@ -140,9 +140,9 @@ export function exportScreeningCsv(
     }
 
     fs.writeFileSync(outputPath, sanitizedCsv, "utf-8");
-    return { success: true, filePath: outputPath };
+    return { success: true, filePath: outputPath, csvContent: sanitizedCsv };
   } catch (err: any) {
-    return { success: false, filePath: outputPath, error: err.message };
+    return { success: false, filePath: outputPath, error: err.message, csvContent: "" };
   }
 }
 
@@ -232,9 +232,9 @@ export function exportFullScreeningCsv(
     }
 
     fs.writeFileSync(outputPath, sanitizedCsv, "utf-8");
-    return { success: true, filePath: outputPath };
+    return { success: true, filePath: outputPath, csvContent: sanitizedCsv };
   } catch (err: any) {
-    return { success: false, filePath: outputPath, error: err.message };
+    return { success: false, filePath: outputPath, error: err.message, csvContent: "" };
   }
 }
 

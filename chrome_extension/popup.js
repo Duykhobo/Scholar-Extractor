@@ -1892,6 +1892,15 @@
       if (this.autoScreenTotalCount) {
         this.autoScreenTotalCount.textContent = String(this.uniqueRecords.length);
       }
+      const unsureCount = this.uniqueRecords.filter(
+        (r) => r.suggestedDecision === "Unsure" || !r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude"
+      ).length;
+      const unsureEl = document.getElementById("autoScreenUnsureCount");
+      if (unsureEl) unsureEl.textContent = String(unsureCount);
+      const scopeOnlyUnsureRadio = document.getElementById("scopeOnlyUnsure");
+      if (scopeOnlyUnsureRadio && unsureCount > 0) {
+        scopeOnlyUnsureRadio.checked = true;
+      }
       if (this.autoScreenModal) {
         this.autoScreenModal.style.display = "flex";
       }
@@ -2042,8 +2051,24 @@
       if (!record.url) {
         return false;
       }
-      const tabData = await this.autoExtractDataForUrl(record.url, record.title);
-      if (!tabData || !tabData.abstract && !tabData.pdfUrl && (!tabData.pages || tabData.pages.length === 0)) {
+      const tabData = await this.autoExtractDataForUrl(record.url, record.title) || {
+        sourceUrl: record.url,
+        method: "T\xE1i th\u1EA9m \u0111\u1ECBnh (Re-screen)",
+        title: record.title
+      };
+      if (record.pdfUrl && !tabData.pdfUrl) {
+        tabData.pdfUrl = record.pdfUrl;
+      }
+      if (record.doi && !tabData.doi) {
+        tabData.doi = record.doi;
+      }
+      if (record.abstract && !tabData.abstract) {
+        tabData.abstract = record.abstract;
+      }
+      if (record.venue && !tabData.venue) {
+        tabData.venue = record.venue;
+      }
+      if (!tabData.abstract && !tabData.pdfUrl && (!tabData.pages || tabData.pages.length === 0)) {
         return false;
       }
       if (tabData.title && isChallengeOrErrorTitle(tabData.title)) {
@@ -2081,11 +2106,15 @@
       record.sourceUrl = tabData.sourceUrl || record.url;
       record.evidence_snippets = analysis.evidence || [];
       if (analysis.suggestedScreeningUpdate) {
+        record.screeningStage = analysis.suggestedScreeningUpdate.stage || (tabData.pageCount ? "V2" : "V1");
         record.suggestedDecision = analysis.suggestedScreeningUpdate.suggestedDecision;
         record.matchedCriteria = analysis.suggestedScreeningUpdate.matchedCriteria;
         record.unknownCriteria = analysis.suggestedScreeningUpdate.unknownCriteria;
         record.missingEvidence = analysis.suggestedScreeningUpdate.missingEvidence;
         record.screeningReason = analysis.suggestedScreeningUpdate.screeningReason;
+      }
+      if (tabData.pageCount) {
+        record.page_count = tabData.pageCount;
       }
       if (autoAcceptInclude && record.suggestedDecision === "Include") {
         record.finalDecision = "Include";
@@ -2139,7 +2168,11 @@
       const scope = scopeRadio ? scopeRadio.value : "missing_abstract";
       const autoAcceptInclude = this.autoAcceptIncludeCheckbox ? this.autoAcceptIncludeCheckbox.checked : true;
       let targets = [];
-      if (scope === "missing_abstract") {
+      if (scope === "only_unsure") {
+        targets = this.uniqueRecords.filter(
+          (r) => r.url && (r.suggestedDecision === "Unsure" || !r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude")
+        );
+      } else if (scope === "missing_abstract") {
         targets = this.uniqueRecords.filter(
           (r) => r.url && (!r.abstract || r.abstract.trim().length === 0 || !r.sourceMetadataVerified)
         );
@@ -2812,13 +2845,16 @@
           })
         });
         if (res.ok) {
-          const text = await res.text();
-          this.downloadFile(text, "02_screening_decisions_full.csv", "text/csv;charset=utf-8;");
-          this.setStatus(
-            "\u2713 \u0110\xE3 t\u1EA3i xu\u1ED1ng file 02_screening_decisions_full.csv (\u0110\u1EA7y \u0111\u1EE7 ti\xEAu ch\xED & provenance).",
-            "success"
-          );
-          return;
+          const data = await res.json();
+          const csvText = data.csvContent || "";
+          if (csvText) {
+            this.downloadFile(csvText, "02_screening_decisions_full.csv", "text/csv;charset=utf-8;");
+            this.setStatus(
+              "\u2713 \u0110\xE3 t\u1EA3i xu\u1ED1ng file 02_screening_decisions_full.csv (\u0110\u1EA7y \u0111\u1EE7 ti\xEAu ch\xED & provenance).",
+              "success"
+            );
+            return;
+          }
         }
       } catch {
       }

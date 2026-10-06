@@ -1,7 +1,7 @@
-import sql from 'mssql';
-import { getDbPool } from './connection';
-import { ResearchProfile } from '../profiles/types';
-import { PaperRecord } from '../types';
+import sql from "mssql";
+import { ResearchProfile } from "../profiles/types";
+import { PaperRecord } from "../types";
+import { getDbPool } from "./connection";
 
 export class DbRepository {
   /**
@@ -13,13 +13,13 @@ export class DbRepository {
 
     try {
       const req = pool.request();
-      req.input('id', sql.VarChar(100), profile.id);
-      req.input('name', sql.NVarChar(255), profile.name);
-      req.input('description', sql.NVarChar(sql.MAX), profile.description || '');
-      req.input('reviewType', sql.VarChar(50), profile.reviewType || 'systematic_review');
-      req.input('targetIncludedCount', sql.Int, profile.targetIncludedCount || 20);
-      req.input('profileVersion', sql.Int, profile.profileVersion || 1);
-      req.input('configJson', sql.NVarChar(sql.MAX), JSON.stringify(profile));
+      req.input("id", sql.VarChar(100), profile.id);
+      req.input("name", sql.NVarChar(255), profile.name);
+      req.input("description", sql.NVarChar(sql.MAX), profile.description || "");
+      req.input("reviewType", sql.VarChar(50), profile.reviewType || "systematic_review");
+      req.input("targetIncludedCount", sql.Int, profile.targetIncludedCount || 20);
+      req.input("profileVersion", sql.Int, profile.profileVersion || 1);
+      req.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify(profile));
 
       await req.query(`
         MERGE INTO ResearchProfiles AS target
@@ -40,7 +40,7 @@ export class DbRepository {
       `);
       return true;
     } catch (err: any) {
-      console.warn('[DB] Loi upsertProfile:', err.message);
+      console.warn("[DB] Loi upsertProfile:", err.message);
       return false;
     }
   }
@@ -65,16 +65,16 @@ export class DbRepository {
 
     try {
       const req = pool.request();
-      req.input('id', sql.VarChar(100), session.id);
-      req.input('researchId', sql.VarChar(100), session.researchId);
-      req.input('query', sql.NVarChar(sql.MAX), session.query || '');
-      req.input('asYlo', sql.VarChar(10), session.asYlo || '');
-      req.input('asYhi', sql.VarChar(10), session.asYhi || '');
-      req.input('hl', sql.VarChar(10), session.hl || 'vi');
-      req.input('totalReported', sql.Int, session.totalReportedResults || 0);
-      req.input('actualRecords', sql.Int, session.actualRecordsCount || 0);
-      req.input('uniqueRecords', sql.Int, session.uniqueRecordsCount || 0);
-      req.input('apiRequests', sql.Int, session.apiRequestsUsed || 0);
+      req.input("id", sql.VarChar(100), session.id);
+      req.input("researchId", sql.VarChar(100), session.researchId);
+      req.input("query", sql.NVarChar(sql.MAX), session.query || "");
+      req.input("asYlo", sql.VarChar(10), session.asYlo || "");
+      req.input("asYhi", sql.VarChar(10), session.asYhi || "");
+      req.input("hl", sql.VarChar(10), session.hl || "vi");
+      req.input("totalReported", sql.Int, session.totalReportedResults || 0);
+      req.input("actualRecords", sql.Int, session.actualRecordsCount || 0);
+      req.input("uniqueRecords", sql.Int, session.uniqueRecordsCount || 0);
+      req.input("apiRequests", sql.Int, session.apiRequestsUsed || 0);
 
       await req.query(`
         MERGE INTO ResearchSessions AS target
@@ -97,7 +97,7 @@ export class DbRepository {
       `);
       return true;
     } catch (err: any) {
-      console.warn('[DB] Loi saveSession:', err.message);
+      console.warn("[DB] Loi saveSession:", err.message);
       return false;
     }
   }
@@ -108,28 +108,28 @@ export class DbRepository {
   static async upsertPapersAndLinks(
     records: PaperRecord[],
     researchId: string,
-    sessionId?: string
+    sessionId?: string,
   ): Promise<{ savedCount: number; error?: string }> {
     const pool = await getDbPool();
-    if (!pool) return { savedCount: 0, error: 'Database offline' };
+    if (!pool) return { savedCount: 0, error: "Database offline" };
 
     let saved = 0;
     for (const record of records) {
       try {
         const req = pool.request();
-        req.input('id', sql.VarChar(100), record.id);
-        req.input('doi', sql.VarChar(255), record.doi || null);
-        req.input('title', sql.NVarChar(1000), (record.title || '').slice(0, 1000));
-        req.input('authors', sql.NVarChar(1000), (record.authors || '').slice(0, 1000));
-        req.input('year', sql.Int, record.year || null);
-        req.input('venue', sql.NVarChar(500), (record.venue || '').slice(0, 500));
-        req.input('abstract', sql.NVarChar(sql.MAX), record.abstract || '');
-        req.input('snippet', sql.NVarChar(sql.MAX), record.snippet || '');
-        req.input('url', sql.NVarChar(2000), (record.url || '').slice(0, 2000));
-        req.input('pdfPath', sql.NVarChar(1000), (record.pdfUrl || '').slice(0, 1000));
-        req.input('isPdfVerified', sql.Bit, record.isPdfVerified ? 1 : 0);
-        req.input('discoverySource', sql.VarChar(100), record.discoverySource || 'Google Scholar');
-        req.input('collectionMethod', sql.VarChar(100), record.collectionMethod || 'SerpApi');
+        req.input("id", sql.VarChar(100), record.id);
+        req.input("doi", sql.VarChar(255), record.doi || null);
+        req.input("title", sql.NVarChar(1000), (record.title || "").slice(0, 1000));
+        req.input("authors", sql.NVarChar(1000), (record.authors || "").slice(0, 1000));
+        req.input("year", sql.Int, record.year || null);
+        req.input("venue", sql.NVarChar(500), (record.venue || "").slice(0, 500));
+        req.input("abstract", sql.NVarChar(sql.MAX), record.abstract || "");
+        req.input("snippet", sql.NVarChar(sql.MAX), record.snippet || "");
+        req.input("url", sql.NVarChar(2000), (record.url || "").slice(0, 2000));
+        req.input("pdfPath", sql.NVarChar(1000), (record.pdfUrl || "").slice(0, 1000));
+        req.input("isPdfVerified", sql.Bit, record.isPdfVerified ? 1 : 0);
+        req.input("discoverySource", sql.VarChar(100), record.discoverySource || "Google Scholar");
+        req.input("collectionMethod", sql.VarChar(100), record.collectionMethod || "SerpApi");
 
         // 1. Upsert master Paper
         await req.query(`
@@ -156,18 +156,18 @@ export class DbRepository {
         // 2. Upsert ResearchPaperLink
         const linkId = `${researchId}__${record.id}`;
         const linkReq = pool.request();
-        linkReq.input('linkId', sql.VarChar(100), linkId);
-        linkReq.input('researchId', sql.VarChar(100), researchId);
-        linkReq.input('paperId', sql.VarChar(100), record.id);
-        linkReq.input('sessionId', sql.VarChar(100), sessionId || record.sessionId || null);
-        linkReq.input('screeningStage', sql.VarChar(20), record.screeningStage || 'V1');
-        linkReq.input('suggestedDecision', sql.VarChar(20), record.suggestedDecision || 'Unsure');
-        linkReq.input('finalDecision', sql.VarChar(20), record.finalDecision || '');
-        linkReq.input('screeningReason', sql.NVarChar(sql.MAX), record.screeningReason || '');
-        linkReq.input('userNotes', sql.NVarChar(sql.MAX), record.userNotes || '');
-        linkReq.input('modelContribution', sql.VarChar(20), record.modelContribution || null);
-        linkReq.input('literatureGroup', sql.VarChar(50), record.literatureGroup || null);
-        linkReq.input('conceptLabels', sql.NVarChar(500), (record.conceptLabels || []).join('; '));
+        linkReq.input("linkId", sql.VarChar(100), linkId);
+        linkReq.input("researchId", sql.VarChar(100), researchId);
+        linkReq.input("paperId", sql.VarChar(100), record.id);
+        linkReq.input("sessionId", sql.VarChar(100), sessionId || record.sessionId || null);
+        linkReq.input("screeningStage", sql.VarChar(20), record.screeningStage || "V1");
+        linkReq.input("suggestedDecision", sql.VarChar(20), record.suggestedDecision || "Unsure");
+        linkReq.input("finalDecision", sql.VarChar(20), record.finalDecision || "");
+        linkReq.input("screeningReason", sql.NVarChar(sql.MAX), record.screeningReason || "");
+        linkReq.input("userNotes", sql.NVarChar(sql.MAX), record.userNotes || "");
+        linkReq.input("modelContribution", sql.VarChar(20), record.modelContribution || null);
+        linkReq.input("literatureGroup", sql.VarChar(50), record.literatureGroup || null);
+        linkReq.input("conceptLabels", sql.NVarChar(500), (record.conceptLabels || []).join("; "));
 
         await linkReq.query(`
           MERGE INTO ResearchPaperLinks AS target
@@ -224,7 +224,7 @@ export class DbRepository {
         connected: true,
         profilesCount: row.profilesCount || 0,
         sessionsCount: row.sessionsCount || 0,
-        papersCount: row.papersCount || 0
+        papersCount: row.papersCount || 0,
       };
     } catch {
       return { connected: true, profilesCount: 0, sessionsCount: 0, papersCount: 0 };
