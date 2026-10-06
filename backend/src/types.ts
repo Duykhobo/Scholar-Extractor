@@ -138,6 +138,7 @@ export interface PaperRecord {
   parentPaperId?: string;
   childPapersCount?: number;
   v2Decision?: V2ScreeningDecision;
+  v3Decision?: "Include" | "Exclude" | "Unsure";
   fullTextStatus?: FullTextStatus;
 
   // Mô hình nghiên cứu & Đóng góp học thuật
@@ -260,6 +261,7 @@ export type V2ScreeningDecision = "PassToFullText" | "Exclude" | "Unsure";
 export type FullTextStatus =
   | "finding"
   | "downloaded"
+  | "not_found"
   | "paywalled"
   | "network_error"
   | "corrupted_file"

@@ -5,6 +5,7 @@ import { analyzeTabAgainstRecord } from "../evidenceAnalyzer";
 import { extractAbstractFromPdfPages, extractVenueFromPdfPages, parsePdfBuffer, parsePdfFromUrl } from "../pdfService";
 import { ResearchProfile } from "../profiles";
 import { CanonicalPaper, FullTextRecordInfo, FullTextStatus, TabExtractedData } from "../types";
+import { UnpaywallService } from "../unpaywallService";
 
 export interface RetrievalV3Result {
   records: CanonicalPaper[];
@@ -169,9 +170,21 @@ export class PipelineV3Retrieval {
         retrievedCount++;
       } else {
         unretrievedCount++;
-        // Không tự gán EC-A chỉ vì tải lỗi; chỉ ghi nhận trạng thái chưa tải được
-        if (status === "finding") {
+        const targetUrl = (record.url || actualUrl || "").toLowerCase();
+        const isPaywalledDomain =
+          /paywalled|ieee|sciencedirect|springer|wiley|acm\.org/i.test(targetUrl) ||
+          record.source === "IEEE" ||
+          /ieee|acm|springer|elsevier/i.test(record.venue || "");
+
+        if (isPaywalledDomain) {
           status = "paywalled";
+        } else if (status === "finding") {
+          // Phân biệt: có URL nhưng lỗi tải vs không tìm thấy OA vs paywall đã xác minh
+          if (!actualUrl) {
+            status = "not_found";
+          } else {
+            status = "extraction_failed";
+          }
         }
       }
 
@@ -198,10 +211,15 @@ export class PipelineV3Retrieval {
       let suggestedDecision = analysis.suggestedScreeningUpdate?.suggestedDecision || "Unsure";
       let screeningReason = analysis.suggestedScreeningUpdate?.screeningReason || "Đang thẩm định toàn văn V3";
 
-      // Kiểm tra chốt số trang < 4 trang -> EC-S
-      if (pageCount && pageCount > 0 && pageCount < 4) {
+      // Kiểm tra chốt số trang < minPages (đọc ngưỡng từ profile, mặc định 4)
+      const minPagesRequired =
+        profile.minPageCount ??
+        profile.criteria?.find((c) => c.id === "EC-LEN" || c.id === "EC-S")?.parameters?.minPages ??
+        4;
+
+      if (pageCount && pageCount > 0 && pageCount < minPagesRequired) {
         suggestedDecision = "Exclude";
-        screeningReason = `EC-S — Toàn văn chỉ có ${pageCount} trang (< 4 trang theo protocol); loại trừ bài ngắn/demo.`;
+        screeningReason = `EC-S — Toàn văn chỉ có ${pageCount} trang (< ${minPagesRequired} trang theo protocol); loại trừ bài ngắn/demo.`;
       }
 
       // Ghi nhận lý do loại trừ chính
@@ -216,6 +234,7 @@ export class PipelineV3Retrieval {
         pipelineStage: "V3",
         screeningStage: "V2", // giữ V2/V3 tương thích
         suggestedDecision,
+        v3Decision: suggestedDecision as "Include" | "Exclude" | "Unsure",
         screeningReason,
         matchedCriteria: analysis.suggestedScreeningUpdate?.matchedCriteria || record.matchedCriteria,
         unknownCriteria: analysis.suggestedScreeningUpdate?.unknownCriteria || record.unknownCriteria,

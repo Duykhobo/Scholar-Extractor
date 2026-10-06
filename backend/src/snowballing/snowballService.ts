@@ -38,85 +38,104 @@ export class SnowballService {
     const openAlexAdapter = SourceAdapterRegistry.getAdapter("OpenAlex");
     const s2Adapter = SourceAdapterRegistry.getAdapter("Semantic Scholar");
 
-    for (const seed of config.seeds) {
-      const seedKey = seed.doi ? seed.doi.toLowerCase() : seed.id;
-      if (visitedSet.has(seedKey)) continue;
-      visitedSet.add(seedKey);
+    const maxIterations = Math.max(1, config.maxIterations || 1);
+    let frontier: Array<{ id: string; doi?: string; title: string }> = [...config.seeds];
 
-      for (const direction of config.directions) {
-        let resultsForSeed: PaperRecord[] = [];
+    for (let iter = 1; iter <= maxIterations; iter++) {
+      if (frontier.length === 0) break;
+      const nextFrontier: Array<{ id: string; doi?: string; title: string }> = [];
 
-        // 1. Thử lấy qua OpenAlex nếu có DOI
-        if (config.useOpenAlex !== false && openAlexAdapter && seed.doi) {
-          try {
-            if (direction === "backward") {
-              const refs = await openAlexAdapter.fetchReferences(seed.doi);
-              resultsForSeed.push(...refs);
-            } else {
-              const cites = await openAlexAdapter.fetchCitations(seed.doi);
-              resultsForSeed.push(...cites);
+      for (const seed of frontier) {
+        const seedKey = seed.doi ? seed.doi.toLowerCase() : seed.id;
+        if (visitedSet.has(seedKey)) continue;
+        visitedSet.add(seedKey);
+
+        for (const direction of config.directions) {
+          let resultsForSeed: PaperRecord[] = [];
+
+          // 1. Thử lấy qua OpenAlex nếu có DOI
+          if (config.useOpenAlex !== false && openAlexAdapter && seed.doi) {
+            try {
+              if (direction === "backward") {
+                const refs = await openAlexAdapter.fetchReferences(seed.doi);
+                resultsForSeed.push(...refs);
+              } else {
+                const cites = await openAlexAdapter.fetchCitations(seed.doi);
+                resultsForSeed.push(...cites);
+              }
+            } catch (err: any) {
+              warnings.push(`[OpenAlex] Vòng ${iter}: Lỗi khi lấy ${direction} cho seed ${seed.doi}: ${err.message}`);
             }
-          } catch (err: any) {
-            warnings.push(`[OpenAlex] Lỗi khi lấy ${direction} cho seed ${seed.doi}: ${err.message}`);
           }
-        }
 
-        // 2. Thử bổ sung qua Semantic Scholar nếu kết quả chưa đạt hạn mức
-        if (
-          config.useSemanticScholar !== false &&
-          s2Adapter &&
-          seed.doi &&
-          resultsForSeed.length < config.maxPapersPerSeed
-        ) {
-          try {
-            if (direction === "backward") {
-              const s2Refs = await s2Adapter.fetchReferences(seed.doi);
-              resultsForSeed.push(...s2Refs);
-            } else {
-              const s2Cites = await s2Adapter.fetchCitations(seed.doi);
-              resultsForSeed.push(...s2Cites);
+          // 2. Thử bổ sung qua Semantic Scholar nếu kết quả chưa đạt hạn mức
+          if (
+            config.useSemanticScholar !== false &&
+            s2Adapter &&
+            seed.doi &&
+            resultsForSeed.length < config.maxPapersPerSeed
+          ) {
+            try {
+              if (direction === "backward") {
+                const s2Refs = await s2Adapter.fetchReferences(seed.doi);
+                resultsForSeed.push(...s2Refs);
+              } else {
+                const s2Cites = await s2Adapter.fetchCitations(seed.doi);
+                resultsForSeed.push(...s2Cites);
+              }
+            } catch (err: any) {
+              warnings.push(`[Semantic Scholar] Vòng ${iter}: Lỗi khi lấy ${direction} cho seed ${seed.doi}: ${err.message}`);
             }
-          } catch (err: any) {
-            warnings.push(`[Semantic Scholar] Lỗi khi lấy ${direction} cho seed ${seed.doi}: ${err.message}`);
           }
-        }
 
-        // 3. Khử trùng sơ bộ trong phiên snowballing & gán provenance
-        const limited = resultsForSeed.slice(0, config.maxPapersPerSeed);
-        for (const paper of limited) {
-          const doiClean = paper.doi ? paper.doi.toLowerCase() : "";
-          if (doiClean && seenDois.has(doiClean)) continue;
-          if (doiClean) seenDois.add(doiClean);
+          // 3. Khử trùng sơ bộ trong phiên snowballing & gán provenance
+          const limited = resultsForSeed.slice(0, config.maxPapersPerSeed);
+          for (const paper of limited) {
+            const doiClean = paper.doi ? paper.doi.toLowerCase() : "";
+            if (doiClean && seenDois.has(doiClean)) continue;
+            if (doiClean) seenDois.add(doiClean);
 
-          paper.pipelineStage = "B1";
-          paper.screeningStage = "V1";
-          paper.screeningReason = `Snowballing ${direction === "backward" ? "lùi (References)" : "tiến (Citations)"} từ seed: ${seed.title.slice(0, 60)}`;
-          paper.provenanceList = [
-            {
-              source: paper.source || "Snowballing",
-              sourceRecordId: paper.id,
-              retrievedAt: new Date().toISOString(),
-              method: direction === "backward" ? "snowball_backward" : "snowball_forward",
+            paper.pipelineStage = "B1";
+            paper.screeningStage = "V1";
+            paper.screeningReason = `Snowballing ${direction === "backward" ? "lùi (References)" : "tiến (Citations)"} vòng ${iter} từ seed: ${seed.title.slice(0, 60)}`;
+            paper.provenanceList = [
+              {
+                source: paper.source || "Snowballing",
+                sourceRecordId: paper.id,
+                retrievedAt: new Date().toISOString(),
+                method: direction === "backward" ? "snowball_backward" : "snowball_forward",
+                parentPaperId: seed.id,
+                url: paper.url,
+              },
+            ];
+
+            discoveredSeeds.push({
+              id: `sb_${Date.now()}_${discoveredSeeds.length}`,
+              paperId: paper.id,
+              doi: paper.doi,
+              title: paper.title,
+              direction,
+              iteration: iter,
+              source: paper.source,
               parentPaperId: seed.id,
-              url: paper.url,
-            },
-          ];
+              discoveredAt: new Date().toISOString(),
+            });
 
-          discoveredSeeds.push({
-            id: `sb_${Date.now()}_${discoveredSeeds.length}`,
-            paperId: paper.id,
-            doi: paper.doi,
-            title: paper.title,
-            direction,
-            iteration: 1,
-            source: paper.source,
-            parentPaperId: seed.id,
-            discoveredAt: new Date().toISOString(),
-          });
+            newPapers.push(paper);
 
-          newPapers.push(paper);
+            // Bổ sung vào frontier cho vòng tiếp theo nếu chưa đạt maxIterations
+            if (iter < maxIterations && (paper.doi || paper.id)) {
+              nextFrontier.push({
+                id: paper.id,
+                doi: paper.doi,
+                title: paper.title,
+              });
+            }
+          }
         }
       }
+
+      frontier = nextFrontier;
     }
 
     return {

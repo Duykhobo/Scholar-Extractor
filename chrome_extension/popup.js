@@ -3226,7 +3226,8 @@
       try {
         const res = await fetch(`${this.backendUrl}/api/jobs/active?researchId=${this.activeProfile.id}`);
         if (res.ok) {
-          const job = await res.json();
+          const data = await res.json();
+          const job = data.activeJob || data.job || data;
           if (job && job.id && (job.status === "running" || job.status === "paused")) {
             this.activeJobId = job.id;
             this.showJobBanner(job);
@@ -3259,7 +3260,8 @@
         try {
           const res = await fetch(`${this.backendUrl}/api/jobs/${jobId}`);
           if (!res.ok) return;
-          const job = await res.json();
+          const data = await res.json();
+          const job = data.job || data;
           this.showJobBanner(job);
           if (job.status === "completed") {
             clearInterval(this.jobPollInterval);

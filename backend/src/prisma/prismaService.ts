@@ -49,15 +49,39 @@ export class PrismaService {
     const containerRecords = canonicalRecords.filter((r) => r.isContainer);
     const containerIds = containerRecords.map((r) => r.id);
 
-    // 3. Sàng lọc Tiêu đề / Tóm tắt (V2)
-    const passedV2Records = canonicalRecords.filter(
-      (r) => !r.isContainer && (r.v2Decision === "PassToFullText" || r.suggestedDecision === "Include"),
+    // 3. Sàng lọc Tiêu đề / Tóm tắt (V2) - Tách biệt với V3
+    const screenedV2All = canonicalRecords.filter(
+      (r) =>
+        r.isContainer ||
+        r.v2Decision !== undefined ||
+        r.pipelineStage === "V2" ||
+        r.pipelineStage === "V3" ||
+        r.pipelineStage === "FINAL",
     );
-    const excludedV2Records = canonicalRecords.filter(
-      (r) => r.isContainer || r.v2Decision === "Exclude" || r.suggestedDecision === "Exclude",
+    const unscreenedV2Records = canonicalRecords.filter((r) => !screenedV2All.includes(r));
+
+    // Excluded tại V2: Container hoặc bị loại rõ ràng ở V2 (KHÔNG dùng suggestedDecision nếu đã qua V3)
+    const excludedV2Records = screenedV2All.filter(
+      (r) =>
+        r.isContainer ||
+        r.v2Decision === "Exclude" ||
+        (r.pipelineStage === "V2" && r.suggestedDecision === "Exclude"),
     );
-    const unsureV2Records = canonicalRecords.filter(
-      (r) => !r.isContainer && r.v2Decision === "Unsure" && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude",
+
+    // Passed tại V2: Đạt điều kiện để chuyển tiếp sang V3
+    const passedV2Records = screenedV2All.filter(
+      (r) =>
+        !r.isContainer &&
+        !excludedV2Records.includes(r) &&
+        (r.v2Decision === "PassToFullText" ||
+          r.pipelineStage === "V3" ||
+          r.pipelineStage === "FINAL" ||
+          (r.pipelineStage === "V2" && r.suggestedDecision === "Include")),
+    );
+
+    // Unsure tại V2: Còn lại trong các bài đã đưa vào V2
+    const unsureV2Records = screenedV2All.filter(
+      (r) => !r.isContainer && !excludedV2Records.includes(r) && !passedV2Records.includes(r),
     );
 
     const excludedByReasonV2: Record<string, PrismaDrilldownCell> = {};
@@ -76,20 +100,31 @@ export class PrismaService {
     // 4. Sàng lọc Toàn văn (V3)
     const soughtForRetrieval = passedV2Records;
     const notRetrievedRecords = soughtForRetrieval.filter(
-      (r) => r.fullTextStatus === "paywalled" || r.fullTextStatus === "confirmed_unretrievable" || r.fullTextStatus === "network_error",
+      (r) =>
+        r.fullTextStatus === "paywalled" ||
+        r.fullTextStatus === "not_found" ||
+        r.fullTextStatus === "confirmed_unretrievable" ||
+        r.fullTextStatus === "network_error" ||
+        r.fullTextStatus === "extraction_failed",
     );
     const assessedEligibility = soughtForRetrieval.filter(
       (r) => r.fullTextStatus === "downloaded" || (r.page_count && r.page_count > 0) || r.isPdfVerified,
     );
+    const pendingV3Retrieval = soughtForRetrieval.filter(
+      (r) => !notRetrievedRecords.includes(r) && !assessedEligibility.includes(r),
+    );
 
     const excludedV3Records = assessedEligibility.filter(
-      (r) => r.pipelineStage === "V3" && r.suggestedDecision === "Exclude",
+      (r) =>
+        r.v3Decision === "Exclude" ||
+        r.finalDecision === "Exclude" ||
+        (r.pipelineStage === "V3" && r.suggestedDecision === "Exclude"),
     );
     const unsureV3Records = assessedEligibility.filter(
-      (r) => r.pipelineStage === "V3" && r.suggestedDecision === "Unsure",
-    );
-    const includedV3Records = assessedEligibility.filter(
-      (r) => r.pipelineStage === "V3" && r.suggestedDecision === "Include",
+      (r) =>
+        (r.v3Decision === "Unsure" || r.suggestedDecision === "Unsure") &&
+        !excludedV3Records.includes(r) &&
+        r.finalDecision !== "Include",
     );
 
     const excludedByReasonV3: Record<string, PrismaDrilldownCell> = {};
@@ -102,12 +137,22 @@ export class PrismaService {
       excludedByReasonV3[reasonKey].paperIds.push(rec.id);
     }
 
-    // 5. Chốt Include (Duyệt theo finalDecision nếu có, nếu chưa duyệt dùng suggestedDecision)
-    const finalIncludedRecords = canonicalRecords.filter(
-      (r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include" && r.pipelineStage === "V3"),
+    // 5. Chốt Include: CHỈ tính các bài người dùng đã chốt finalDecision === "Include"
+    const finalIncludedRecords = canonicalRecords.filter((r) => r.finalDecision === "Include");
+
+    // Pending: Còn bài ở V1 chưa screening, hoặc ở V2/V3 chưa giải quyết, hoặc gợi ý Include nhưng chưa chốt finalDecision
+    const unconfirmedInclude = canonicalRecords.filter(
+      (r) => r.finalDecision === "" && r.suggestedDecision === "Include" && (r.pipelineStage === "V3" || r.pipelineStage === "FINAL"),
     );
 
-    const hasPending = unsureV2Records.length > 0 || unsureV3Records.length > 0 || notRetrievedRecords.length > 0;
+    const hasPending =
+      unscreenedV2Records.length > 0 ||
+      unsureV2Records.length > 0 ||
+      pendingV3Retrieval.length > 0 ||
+      unsureV3Records.length > 0 ||
+      unconfirmedInclude.length > 0;
+
+    const isFinal = Boolean(canonicalRecords.length > 0 && !hasPending && finalIncludedRecords.length > 0);
 
     return {
       databases: dbSources,
@@ -120,7 +165,7 @@ export class PrismaService {
       recordsMarkedContainers: { count: containerRecords.length, paperIds: containerIds },
       recordsAfterDuplicates: { count: canonicalRecords.length, paperIds: canonicalRecords.map((r) => r.id) },
 
-      screenedTitleAbstract: { count: canonicalRecords.length, paperIds: canonicalRecords.map((r) => r.id) },
+      screenedTitleAbstract: { count: screenedV2All.length, paperIds: screenedV2All.map((r) => r.id) },
       excludedTitleAbstract: { count: excludedV2Records.length, paperIds: excludedV2Records.map((r) => r.id) },
       excludedByReasonV2,
       passedToFullText: { count: passedV2Records.length, paperIds: passedV2Records.map((r) => r.id) },
@@ -136,7 +181,7 @@ export class PrismaService {
       studiesIncluded: { count: finalIncludedRecords.length, paperIds: finalIncludedRecords.map((r) => r.id) },
       reportsIncluded: { count: finalIncludedRecords.length, paperIds: finalIncludedRecords.map((r) => r.id) },
 
-      isFinal: !hasPending,
+      isFinal,
       hasPending,
       generatedAt: new Date().toISOString(),
     };
@@ -193,11 +238,31 @@ export class PrismaService {
     lines.push(`| **Tổng số nghiên cứu được đưa vào tổng quan (Studies included)** | **${data.studiesIncluded.count}** |`);
     lines.push(`| Tổng số báo cáo/bài báo tương ứng (Reports included) | **${data.reportsIncluded.count}** |\n`);
 
+    // Thực hiện đối soát số học chính xác
+    const isIdBalanced =
+      data.totalDatabaseRecords.count + data.totalOtherRecords.count === data.totalRawIdentified.count;
+    const isDedupBalanced =
+      data.totalRawIdentified.count - data.duplicatesRemoved.count === data.recordsAfterDuplicates.count;
+    const isV2Balanced =
+      data.passedToFullText.count + data.excludedTitleAbstract.count + data.unsureTitleAbstract.count ===
+      data.screenedTitleAbstract.count;
+    const isV3Balanced =
+      data.reportsAssessedForEligibility.count + data.reportsNotRetrieved.count ===
+      data.reportsSoughtForRetrieval.count;
+
     lines.push("## 5. Đối soát cân bằng toán học (Check balance)");
-    lines.push(`- Cân bằng Identification: ${data.totalDatabaseRecords.count} + ${data.totalOtherRecords.count} = ${data.totalRawIdentified.count} ✓`);
-    lines.push(`- Cân bằng Dedup: ${data.totalRawIdentified.count} - ${data.duplicatesRemoved.count} = ${data.recordsAfterDuplicates.count} ✓`);
-    lines.push(`- Cân bằng Screening V2: ${data.passedToFullText.count} (Pass) + ${data.excludedTitleAbstract.count} (Exclude) + ${data.unsureTitleAbstract.count} (Unsure) = ${data.screenedTitleAbstract.count} ✓`);
-    lines.push(`- Cân bằng Retrieval V3: ${data.reportsAssessedForEligibility.count} (Đọc được) + ${data.reportsNotRetrieved.count} (Không tải được) = ${data.reportsSoughtForRetrieval.count} ✓`);
+    lines.push(
+      `- Cân bằng Identification: ${data.totalDatabaseRecords.count} + ${data.totalOtherRecords.count} = ${data.totalRawIdentified.count} ${isIdBalanced ? "✓ Cân bằng" : "❌ LỆCH"}`,
+    );
+    lines.push(
+      `- Cân bằng Dedup: ${data.totalRawIdentified.count} - ${data.duplicatesRemoved.count} = ${data.recordsAfterDuplicates.count} ${isDedupBalanced ? "✓ Cân bằng" : "❌ LỆCH"}`,
+    );
+    lines.push(
+      `- Cân bằng Screening V2: ${data.passedToFullText.count} (Pass) + ${data.excludedTitleAbstract.count} (Exclude) + ${data.unsureTitleAbstract.count} (Unsure) = ${data.screenedTitleAbstract.count} ${isV2Balanced ? "✓ Cân bằng" : "❌ LỆCH"}`,
+    );
+    lines.push(
+      `- Cân bằng Retrieval V3: ${data.reportsAssessedForEligibility.count} (Đọc được) + ${data.reportsNotRetrieved.count} (Không tải được) = ${data.reportsSoughtForRetrieval.count} ${isV3Balanced ? "✓ Cân bằng" : "❌ LỆCH"}`,
+    );
 
     return lines.join("\n");
   }

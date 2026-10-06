@@ -388,12 +388,16 @@ class ScholarExtensionApp {
     if (this.snowballBtn) this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
     if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
     if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
-    if (this.closePrismaModalBottomBtn) this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
+    if (this.closePrismaModalBottomBtn)
+      this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
     if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
     if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-    if (this.modalExportPrismaMdBtn) this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-    if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
-    if (this.modalExportEvidenceBtn) this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+    if (this.modalExportPrismaMdBtn)
+      this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+    if (this.exportEvidenceTableBtn)
+      this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+    if (this.modalExportEvidenceBtn)
+      this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
 
     if (this.jobPauseBtn) this.jobPauseBtn.addEventListener("click", () => this.handlePauseJob());
     if (this.jobResumeBtn) this.jobResumeBtn.addEventListener("click", () => this.handleResumeJob());
@@ -2041,7 +2045,10 @@ class ScholarExtensionApp {
     let targets: PaperRecord[] = [];
     if (scope === "only_unsure") {
       targets = this.uniqueRecords.filter(
-        (r) => r.url && (r.suggestedDecision === "Unsure" || (!r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude")),
+        (r) =>
+          r.url &&
+          (r.suggestedDecision === "Unsure" ||
+            (!r.finalDecision && r.suggestedDecision !== "Include" && r.suggestedDecision !== "Exclude")),
       );
     } else if (scope === "missing_abstract") {
       targets = this.uniqueRecords.filter(
@@ -3155,7 +3162,8 @@ class ScholarExtensionApp {
     }
 
     const isFinalOrV3 = stage === "FINAL" || stage === "V3";
-    if (this.exportDedupLogBtn) this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
+    if (this.exportDedupLogBtn)
+      this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
     if (this.exportPrismaBtn) this.exportPrismaBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
     if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
 
@@ -3166,7 +3174,8 @@ class ScholarExtensionApp {
     try {
       const res = await fetch(`${this.backendUrl}/api/jobs/active?researchId=${this.activeProfile.id}`);
       if (res.ok) {
-        const job = await res.json();
+        const data = await res.json();
+        const job = data.activeJob || data.job || data;
         if (job && job.id && (job.status === "running" || job.status === "paused")) {
           this.activeJobId = job.id;
           this.showJobBanner(job);
@@ -3202,7 +3211,8 @@ class ScholarExtensionApp {
       try {
         const res = await fetch(`${this.backendUrl}/api/jobs/${jobId}`);
         if (!res.ok) return;
-        const job = await res.json();
+        const data = await res.json();
+        const job = data.job || data;
         this.showJobBanner(job);
 
         if (job.status === "completed") {
@@ -3265,7 +3275,13 @@ class ScholarExtensionApp {
       const data = await res.json();
       if (data.jobId) {
         this.activeJobId = data.jobId;
-        this.showJobBanner({ stage: this.currentStage, status: "running", message: "Đang chạy...", processedItems: 0, totalItems: 1 });
+        this.showJobBanner({
+          stage: this.currentStage,
+          status: "running",
+          message: "Đang chạy...",
+          processedItems: 0,
+          totalItems: 1,
+        });
         this.startJobPolling(data.jobId);
         this.setStatus(`Tác vụ ${this.currentStage} đã được đẩy vào chạy nền.`, "info");
       }
@@ -3308,7 +3324,7 @@ class ScholarExtensionApp {
   private async reloadStageData() {
     try {
       const res = await fetch(
-        `${this.backendUrl}/api/pipeline/stage-data?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        `${this.backendUrl}/api/pipeline/stage-data?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
       if (res.ok) {
         const data = await res.json();
@@ -3421,12 +3437,13 @@ class ScholarExtensionApp {
     if (!this.prismaModal) return;
     this.prismaModal.style.display = "flex";
     if (this.prismaFlowContainer) {
-      this.prismaFlowContainer.innerHTML = '<div style="text-align: center; padding: 20px;">Đang tính toán ma trận PRISMA 2020...</div>';
+      this.prismaFlowContainer.innerHTML =
+        '<div style="text-align: center; padding: 20px;">Đang tính toán ma trận PRISMA 2020...</div>';
     }
 
     try {
       const res = await fetch(
-        `${this.backendUrl}/api/prisma/flow?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        `${this.backendUrl}/api/prisma/flow?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const flow = await res.json();
@@ -3526,7 +3543,8 @@ class ScholarExtensionApp {
     }
 
     if (cellData.paperIds.length === 0) {
-      this.drilldownPaperList.innerHTML = '<div style="color: #94a3b8; font-style: italic;">Không có bài báo nào trong mục này.</div>';
+      this.drilldownPaperList.innerHTML =
+        '<div style="color: #94a3b8; font-style: italic;">Không có bài báo nào trong mục này.</div>';
       return;
     }
 
@@ -3549,7 +3567,7 @@ class ScholarExtensionApp {
     try {
       this.setStatus("Đang xuất sơ đồ PRISMA Markdown...", "info");
       const res = await fetch(
-        `${this.backendUrl}/api/prisma/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        `${this.backendUrl}/api/prisma/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();
@@ -3564,7 +3582,7 @@ class ScholarExtensionApp {
     try {
       this.setStatus("Đang xuất Evidence Table Markdown...", "info");
       const res = await fetch(
-        `${this.backendUrl}/api/evidence-table/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        `${this.backendUrl}/api/evidence-table/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();
@@ -3579,7 +3597,7 @@ class ScholarExtensionApp {
     try {
       this.setStatus("Đang xuất Duplicate Log...", "info");
       const res = await fetch(
-        `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`,
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();

@@ -19,9 +19,6 @@ import {
 } from "./exporter";
 import { BackgroundJobManager } from "./jobs/jobManager";
 import { extractAbstractFromPdfPages, extractVenueFromPdfPages, parsePdfBuffer, parsePdfFromUrl } from "./pdfService";
-import { PipelineV1Dedup } from "./pipeline/dedupV1";
-import { PipelineV3Retrieval } from "./pipeline/retrievalV3";
-import { PipelineV2Screening } from "./pipeline/screeningV2";
 import { PrismaService } from "./prisma/prismaService";
 import {
   BUILTIN_PRESETS,
@@ -700,9 +697,10 @@ app.post("/api/pipeline/import-file", async (req: Request, res: Response) => {
  */
 app.post("/api/pipeline/run-stage", async (req: Request, res: Response) => {
   try {
-    const { stage, researchId, records, profile, options } = req.body as {
+    const { stage, researchId, sessionId, records, profile, options } = req.body as {
       stage: "B1" | "V1" | "V2" | "V3" | "FINAL";
       researchId: string;
+      sessionId?: string;
       records?: PaperRecord[];
       profile?: ResearchProfile;
       options?: Record<string, any>;
@@ -720,44 +718,29 @@ app.post("/api/pipeline/run-stage", async (req: Request, res: Response) => {
 
     const effectiveProfile = profile || BUILTIN_PRESETS.find((p) => p.id === researchId) || PRESET_GENERIC;
 
-    let stageResult: any = {};
-    if (stage === "V1") {
-      const v1Res = PipelineV1Dedup.processV1(store.rawRecords);
-      store.canonicalRecords = v1Res.canonicalRecords;
-      stageResult = v1Res;
-    } else if (stage === "V2") {
-      const v2Res = PipelineV2Screening.processV2(store.canonicalRecords, effectiveProfile, options);
-      store.canonicalRecords = v2Res.records;
-      store.v2Results = v2Res.records;
-      stageResult = v2Res;
-    } else if (stage === "V3") {
-      const candidates = store.canonicalRecords.filter(
-        (r) => r.v2Decision === "PassToFullText" || (options?.includeUnsure !== false && r.v2Decision === "Unsure"),
-      );
-      const v3Res = await PipelineV3Retrieval.processV3(candidates, effectiveProfile, options);
-      for (const updated of v3Res.records) {
-        const idx = store.canonicalRecords.findIndex((c) => c.id === updated.id);
-        if (idx !== -1) store.canonicalRecords[idx] = updated;
-      }
-      store.v3Results = v3Res.records;
-      stageResult = v3Res;
-    } else if (stage === "FINAL") {
-      const included = store.canonicalRecords.filter((r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include"));
-      const evidenceRows = EvidenceTableService.buildEvidenceRows(included);
-      const evidenceMd = EvidenceTableService.generateMarkdown(evidenceRows, effectiveProfile.name);
-      stageResult = {
-        includedCount: included.length,
-        includedRecords: included,
-        evidenceRows,
-        evidenceMarkdown: evidenceMd,
-      };
-    }
+    // Tạo Background Job và khởi chạy nền (asynchronous non-blocking)
+    const job = BackgroundJobManager.createJob({
+      researchId,
+      sessionId,
+      stage,
+      config: {
+        ...req.body,
+        profile: effectiveProfile,
+      },
+      totalItems: stage === "B1" ? 25 : stage === "V1" ? store.rawRecords.length : store.canonicalRecords.length,
+    });
+
+    BackgroundJobManager.startJob(job.id).catch((err) => {
+      console.error(`[JobManager] Lỗi thực thi job ${job.id}:`, err.message);
+    });
 
     res.json({
       success: true,
+      jobId: job.id,
+      job,
       stage,
-      data: stageResult,
-      canonicalRecords: store.canonicalRecords,
+      status: "running",
+      message: `Đã khởi chạy tác vụ chạy nền cho giai đoạn ${stage}.`,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -884,14 +867,17 @@ app.post("/api/jobs/:id/retry", async (req: Request, res: Response) => {
 });
 
 /**
- * GET /api/jobs/:id/status
+ * GET /api/jobs/:id và GET /api/jobs/:id/status
  */
-app.get("/api/jobs/:id/status", (req: Request, res: Response) => {
+const handleGetJob = (req: Request, res: Response) => {
   const jobId = req.params.id;
   const job = BackgroundJobManager.getJob(jobId);
   if (!job) return res.status(404).json({ error: "Không tìm thấy job." });
-  res.json({ success: true, job });
-});
+  res.json({ success: true, job, ...job });
+};
+
+app.get("/api/jobs/:id", handleGetJob);
+app.get("/api/jobs/:id/status", handleGetJob);
 
 /**
  * GET /api/jobs/active
@@ -899,7 +885,10 @@ app.get("/api/jobs/:id/status", (req: Request, res: Response) => {
 app.get("/api/jobs/active", (req: Request, res: Response) => {
   const researchId = (req.query.researchId as string) || "preset_swt302";
   const activeJob = BackgroundJobManager.getActiveJobForResearch(researchId);
-  res.json({ success: true, activeJob });
+  if (!activeJob) {
+    return res.json({ success: true, activeJob: null, job: null });
+  }
+  res.json({ success: true, activeJob, job: activeJob, ...activeJob });
 });
 
 /**
@@ -918,11 +907,84 @@ app.get("/api/prisma/flow", (req: Request, res: Response) => {
       duplicatesRemovedCount: dupCount,
     });
 
-    const markdown = PrismaService.generatePrismaMarkdown(prismaData, researchId);
+    const isIdBalanced =
+      prismaData.totalDatabaseRecords.count + prismaData.totalOtherRecords.count ===
+      prismaData.totalRawIdentified.count;
+    const isDedupBalanced =
+      prismaData.totalRawIdentified.count - prismaData.duplicatesRemoved.count ===
+      prismaData.recordsAfterDuplicates.count;
+    const isV2Balanced =
+      prismaData.passedToFullText.count +
+        prismaData.excludedTitleAbstract.count +
+        prismaData.unsureTitleAbstract.count ===
+      prismaData.screenedTitleAbstract.count;
+    const isV3Balanced =
+      prismaData.reportsAssessedForEligibility.count + prismaData.reportsNotRetrieved.count ===
+      prismaData.reportsSoughtForRetrieval.count;
+    const isMathematicallyBalanced = isIdBalanced && isDedupBalanced && isV2Balanced && isV3Balanced;
+
     res.json({
       success: true,
       data: prismaData,
       markdown,
+      isMathematicallyBalanced,
+      identificationDatabases: prismaData.totalDatabaseRecords.count,
+      identificationOther: prismaData.totalOtherRecords.count,
+      totalIdentification: prismaData.totalRawIdentified.count,
+      duplicatesRemoved: prismaData.duplicatesRemoved.count,
+      screenedV2: prismaData.screenedTitleAbstract.count,
+      excludedV2: prismaData.excludedTitleAbstract.count,
+      soughtFullText: prismaData.reportsSoughtForRetrieval.count,
+      assessedFullText: prismaData.reportsAssessedForEligibility.count,
+      excludedV3: prismaData.excludedFullText.count,
+      includedTotal: prismaData.studiesIncluded.count,
+      drilldown: {
+        identificationDatabases: {
+          cellName: "Cơ sở dữ liệu (Database searches)",
+          count: prismaData.totalDatabaseRecords.count,
+          paperIds: prismaData.totalDatabaseRecords.paperIds,
+        },
+        identificationOther: {
+          cellName: "Nguồn khác / Snowballing",
+          count: prismaData.totalOtherRecords.count,
+          paperIds: prismaData.totalOtherRecords.paperIds,
+        },
+        duplicatesRemoved: {
+          cellName: "Bản ghi trùng lặp đã loại bỏ",
+          count: prismaData.duplicatesRemoved.count,
+          paperIds: prismaData.duplicatesRemoved.paperIds,
+        },
+        screenedV2: {
+          cellName: "Bản ghi đưa vào sàng lọc V2",
+          count: prismaData.screenedTitleAbstract.count,
+          paperIds: prismaData.screenedTitleAbstract.paperIds,
+        },
+        excludedV2: {
+          cellName: "Bị loại tại V2 (Tiêu đề/Tóm tắt)",
+          count: prismaData.excludedTitleAbstract.count,
+          paperIds: prismaData.excludedTitleAbstract.paperIds,
+        },
+        soughtFullText: {
+          cellName: "Báo cáo cần tìm toàn văn (V3)",
+          count: prismaData.reportsSoughtForRetrieval.count,
+          paperIds: prismaData.reportsSoughtForRetrieval.paperIds,
+        },
+        assessedFullText: {
+          cellName: "Báo cáo đọc và thẩm định toàn văn (V3)",
+          count: prismaData.reportsAssessedForEligibility.count,
+          paperIds: prismaData.reportsAssessedForEligibility.paperIds,
+        },
+        excludedV3: {
+          cellName: "Bị loại sau khi đọc toàn văn (V3)",
+          count: prismaData.excludedFullText.count,
+          paperIds: prismaData.excludedFullText.paperIds,
+        },
+        includedTotal: {
+          cellName: "Nghiên cứu chính thức được chọn (Included)",
+          count: prismaData.studiesIncluded.count,
+          paperIds: prismaData.studiesIncluded.paperIds,
+        },
+      },
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -1067,7 +1129,9 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 export { app };
 
 if (require.main === module) {
-  runMigrations().catch((err) => console.log("[DB] Migration note:", err.message));
+  runMigrations()
+    .then(() => BackgroundJobManager.initFromDatabase())
+    .catch((err) => console.log("[DB] Migration/Job note:", err.message));
   app.listen(config.port, () => {
     console.log(`[SLR Backend] Đang chạy tại http://localhost:${config.port}`);
     console.log(

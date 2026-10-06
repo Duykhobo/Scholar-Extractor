@@ -1,6 +1,6 @@
 import sql from "mssql";
 import { ResearchProfile } from "../profiles/types";
-import { PaperRecord } from "../types";
+import { BackgroundJob, PaperRecord } from "../types";
 import { getDbPool } from "./connection";
 
 export class DbRepository {
@@ -228,6 +228,122 @@ export class DbRepository {
       };
     } catch {
       return { connected: true, profilesCount: 0, sessionsCount: 0, papersCount: 0 };
+    }
+  }
+
+  /**
+   * Lưu hoặc cập nhật thông tin Background Job xuống SQL Server
+   */
+  static async saveJob(job: BackgroundJob): Promise<boolean> {
+    const pool = await getDbPool();
+    if (!pool) return false;
+    try {
+      const req = pool.request();
+      req.input("id", sql.VarChar(100), job.id);
+      req.input("researchId", sql.VarChar(100), job.researchId);
+      req.input("sessionId", sql.VarChar(100), job.sessionId || null);
+      req.input("stage", sql.VarChar(20), job.stage);
+      req.input("status", sql.VarChar(30), job.status);
+      req.input("progress", sql.Float, job.progress || 0);
+      req.input("totalItems", sql.Int, job.totalItems || 0);
+      req.input("processedItems", sql.Int, job.processedItems || 0);
+      req.input("failedItems", sql.Int, job.failedItems || 0);
+      req.input("checkpoints", sql.NVarChar(sql.MAX), JSON.stringify(job.checkpoints || {}));
+      req.input("errorLog", sql.NVarChar(sql.MAX), JSON.stringify(job.errorLog || []));
+      req.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify(job.config || {}));
+
+      await req.query(`
+        MERGE INTO BackgroundJobs AS target
+        USING (SELECT @id AS id) AS src
+        ON (target.id = src.id)
+        WHEN MATCHED THEN
+          UPDATE SET
+            status = @status,
+            progress = @progress,
+            totalItems = @totalItems,
+            processedItems = @processedItems,
+            failedItems = @failedItems,
+            checkpoints = @checkpoints,
+            errorLog = @errorLog,
+            configJson = @configJson,
+            updatedAt = SYSUTCDATETIME()
+        WHEN NOT MATCHED THEN
+          INSERT (id, researchId, sessionId, stage, status, progress, totalItems, processedItems, failedItems, checkpoints, errorLog, configJson)
+          VALUES (@id, @researchId, @sessionId, @stage, @status, @progress, @totalItems, @processedItems, @failedItems, @checkpoints, @errorLog, @configJson);
+      `);
+      return true;
+    } catch (err: any) {
+      console.warn(`[DB] Lỗi saveJob ${job.id}:`, err.message);
+      return false;
+    }
+  }
+
+  /**
+   * Lấy thông tin Background Job theo ID
+   */
+  static async getJob(jobId: string): Promise<BackgroundJob | null> {
+    const pool = await getDbPool();
+    if (!pool) return null;
+    try {
+      const res = await pool.request().input("id", sql.VarChar(100), jobId).query(`
+        SELECT * FROM BackgroundJobs WHERE id = @id
+      `);
+      if (res.recordset.length === 0) return null;
+      const row = res.recordset[0];
+      return {
+        id: row.id,
+        researchId: row.researchId,
+        sessionId: row.sessionId || undefined,
+        stage: row.stage,
+        status: row.status,
+        progress: row.progress || 0,
+        totalItems: row.totalItems || 0,
+        processedItems: row.processedItems || 0,
+        failedItems: row.failedItems || 0,
+        checkpoints: row.checkpoints ? JSON.parse(row.checkpoints) : {},
+        errorLog: row.errorLog ? JSON.parse(row.errorLog) : [],
+        config: row.configJson ? JSON.parse(row.configJson) : {},
+        createdAt: row.createdAt ? new Date(row.createdAt).toISOString() : new Date().toISOString(),
+        updatedAt: row.updatedAt ? new Date(row.updatedAt).toISOString() : new Date().toISOString(),
+      };
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * Lấy danh sách các jobs đang hoạt động (pending, running, paused)
+   */
+  static async getActiveJobs(researchId?: string): Promise<BackgroundJob[]> {
+    const pool = await getDbPool();
+    if (!pool) return [];
+    try {
+      const req = pool.request();
+      let query = `SELECT * FROM BackgroundJobs WHERE status IN ('pending', 'running', 'paused')`;
+      if (researchId) {
+        req.input("researchId", sql.VarChar(100), researchId);
+        query += ` AND researchId = @researchId`;
+      }
+      query += ` ORDER BY updatedAt DESC`;
+      const res = await req.query(query);
+      return res.recordset.map((row: any) => ({
+        id: row.id,
+        researchId: row.researchId,
+        sessionId: row.sessionId || undefined,
+        stage: row.stage,
+        status: row.status,
+        progress: row.progress || 0,
+        totalItems: row.totalItems || 0,
+        processedItems: row.processedItems || 0,
+        failedItems: row.failedItems || 0,
+        checkpoints: row.checkpoints ? JSON.parse(row.checkpoints) : {},
+        errorLog: row.errorLog ? JSON.parse(row.errorLog) : [],
+        config: row.configJson ? JSON.parse(row.configJson) : {},
+        createdAt: row.createdAt ? new Date(row.createdAt).toISOString() : new Date().toISOString(),
+        updatedAt: row.updatedAt ? new Date(row.updatedAt).toISOString() : new Date().toISOString(),
+      }));
+    } catch {
+      return [];
     }
   }
 }

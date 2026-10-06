@@ -1,9 +1,9 @@
+import { SourceAdapterRegistry } from "../adapters";
 import { DbRepository } from "../db";
 import { PipelineV1Dedup } from "../pipeline/dedupV1";
 import { PipelineV3Retrieval } from "../pipeline/retrievalV3";
 import { PipelineV2Screening } from "../pipeline/screeningV2";
 import { ResearchProfile } from "../profiles";
-import { SnowballConfig, SnowballService } from "../snowballing/snowballService";
 import { BackgroundJob, CanonicalPaper, PaperRecord, PipelineStage } from "../types";
 
 export interface CreateJobParams {
@@ -59,7 +59,24 @@ export class BackgroundJobManager {
     };
 
     this.jobs.set(jobId, job);
+    DbRepository.saveJob(job).catch((err) => console.warn("[JobManager] Lỗi lưu job vào DB:", err.message));
     return job;
+  }
+
+  static async initFromDatabase(): Promise<void> {
+    try {
+      const activeJobs = await DbRepository.getActiveJobs();
+      for (const job of activeJobs) {
+        if (job.status === "running") {
+          job.status = "paused";
+          job.message = "Đã tạm dừng do server khởi động lại (sẵn sàng tiếp tục)";
+          await DbRepository.saveJob(job);
+        }
+        this.jobs.set(job.id, job);
+      }
+    } catch (e: any) {
+      console.warn("[JobManager] Không thể nạp active jobs từ DB:", e.message);
+    }
   }
 
   static getJob(jobId: string): BackgroundJob | undefined {
@@ -68,7 +85,10 @@ export class BackgroundJobManager {
 
   static getActiveJobForResearch(researchId: string): BackgroundJob | undefined {
     for (const job of this.jobs.values()) {
-      if (job.researchId === researchId && (job.status === "running" || job.status === "pending" || job.status === "paused")) {
+      if (
+        job.researchId === researchId &&
+        (job.status === "running" || job.status === "pending" || job.status === "paused")
+      ) {
         return job;
       }
     }
@@ -89,6 +109,7 @@ export class BackgroundJobManager {
     worker.isPaused = true;
     job.status = "paused";
     job.updatedAt = new Date().toISOString();
+    DbRepository.saveJob(job).catch(() => {});
     return true;
   }
 
@@ -101,6 +122,7 @@ export class BackgroundJobManager {
       worker.isPaused = false;
       job.status = "running";
       job.updatedAt = new Date().toISOString();
+      DbRepository.saveJob(job).catch(() => {});
       return true;
     }
 
@@ -118,6 +140,7 @@ export class BackgroundJobManager {
     if (job) {
       job.status = "cancelled";
       job.updatedAt = new Date().toISOString();
+      DbRepository.saveJob(job).catch(() => {});
       return true;
     }
     return false;
@@ -145,11 +168,15 @@ export class BackgroundJobManager {
     this.activeWorkers.set(jobId, { abortController, isPaused: false });
     job.status = "running";
     job.updatedAt = new Date().toISOString();
+    DbRepository.saveJob(job).catch(() => {});
 
     // Chạy ngầm không block caller
     (async () => {
       try {
         switch (job.stage) {
+          case "B1":
+            await this.runB1Worker(job, abortController);
+            break;
           case "V1":
             await this.runV1Worker(job, abortController);
             break;
@@ -159,9 +186,11 @@ export class BackgroundJobManager {
           case "V3":
             await this.runV3Worker(job, abortController);
             break;
+          case "FINAL":
+            await this.runFinalWorker(job, abortController);
+            break;
           default:
-            job.status = "completed";
-            job.progress = 100;
+            throw new Error(`Giai đoạn pipeline không được hỗ trợ hoặc không hợp lệ: ${job.stage}`);
         }
       } catch (err: any) {
         if (abortController.signal.aborted) {
@@ -174,6 +203,7 @@ export class BackgroundJobManager {
       } finally {
         this.activeWorkers.delete(jobId);
         job.updatedAt = new Date().toISOString();
+        DbRepository.saveJob(job).catch(() => {});
       }
     })();
 
@@ -253,5 +283,49 @@ export class BackgroundJobManager {
 
     job.status = "completed";
     job.progress = 100;
+  }
+
+  private static async runB1Worker(job: BackgroundJob, abortController: AbortController) {
+    const store = this.getResearchStore(job.researchId);
+    const config = job.config || {};
+    const query = (config.query || "").trim();
+    if (!query) {
+      throw new Error("Không có chuỗi tìm kiếm được cung cấp cho giai đoạn B1.");
+    }
+
+    const sourceName = config.source || "OpenAlex";
+    const adapter = SourceAdapterRegistry.getAdapter(sourceName) || SourceAdapterRegistry.getAdapter("OpenAlex");
+    if (!adapter) {
+      throw new Error(`Không tìm thấy adapter cho nguồn: ${sourceName}`);
+    }
+
+    job.message = `Đang thu thập từ ${adapter.sourceName}...`;
+    const searchRes = await adapter.search({
+      query,
+      asYlo: config.asYlo,
+      asYhi: config.asYhi,
+      limit: config.limit || 25,
+      sessionId: job.sessionId,
+      queryVersion: config.queryVersion || "Q1",
+    });
+
+    if (abortController.signal.aborted) return;
+
+    store.rawRecords = [...store.rawRecords, ...searchRes.records];
+    job.totalItems = searchRes.records.length;
+    job.processedItems = searchRes.records.length;
+    job.progress = 100;
+    job.status = "completed";
+    job.message = `Đã thu thập thành công ${searchRes.records.length} bản ghi từ ${adapter.sourceName}.`;
+  }
+
+  private static async runFinalWorker(job: BackgroundJob, abortController: AbortController) {
+    const store = this.getResearchStore(job.researchId);
+    const included = store.canonicalRecords.filter((r) => r.finalDecision === "Include");
+    job.totalItems = store.canonicalRecords.length;
+    job.processedItems = included.length;
+    job.progress = 100;
+    job.status = "completed";
+    job.message = `Đã chốt danh sách với ${included.length} bài Include.`;
   }
 }
