@@ -77,6 +77,7 @@ export class PrismaService {
         !r.isContainer &&
         !excludedV2Records.includes(r) &&
         (r.v2Decision === "PassToFullText" ||
+          (r.v2Decision as string) === "Include" ||
           (r.v2Decision === undefined && (r.suggestedDecision === "Include" || r.pipelineStage === "V3" || r.pipelineStage === "FINAL"))),
     );
 
@@ -108,6 +109,7 @@ export class PrismaService {
         (r.pipelineStage === "V3" ||
           r.pipelineStage === "FINAL" ||
           r.v2Decision === "PassToFullText" ||
+          (r.v2Decision as string) === "Include" ||
           r.fullTextStatus !== undefined ||
           r.pdfUrl !== undefined),
     );
@@ -159,18 +161,23 @@ export class PrismaService {
       excludedByReasonV3[reasonKey].paperIds.push(rec.id);
     }
 
-    // 5. Chốt Include: CHỈ tính các bài người dùng đã chốt finalDecision === "Include"
-    const finalIncludedRecords = canonicalRecords.filter((r) => r.finalDecision === "Include");
+    // 5. Chốt Include: CHỈ tính các bài người dùng đã chốt finalDecision === "Include" VÀ KHÔNG bị outdated
+    const finalIncludedRecords = canonicalRecords.filter(
+      (r) => r.finalDecision === "Include" && !r.isDecisionOutdated,
+    );
+
+    // Quyết định outdated do protocol/PICO version thay đổi: yêu cầu đánh giá lại
+    const outdatedRecords = canonicalRecords.filter((r) => r.isDecisionOutdated === true);
 
     // Pending check: Kiểm tra TOÀN BỘ các bài chưa có finalDecision ở các bước đã tiến hành
     const unconfirmedInPipeline = canonicalRecords.filter(
       (r) =>
         !r.isContainer &&
-        r.finalDecision === "" &&
+        (!r.finalDecision || r.finalDecision === "" || r.finalDecision === "Unsure") &&
         (r.pipelineStage === "V3" ||
           r.pipelineStage === "FINAL" ||
           assessedEligibility.includes(r) ||
-          (r.pipelineStage === "V2" && r.suggestedDecision === "Include")),
+          (r.pipelineStage === "V2" && (r.suggestedDecision === "Include" || r.v2Decision === "PassToFullText" || (r.v2Decision as string) === "Include"))),
     );
 
     const hasPending =
@@ -178,9 +185,10 @@ export class PrismaService {
       unsureV2Records.length > 0 ||
       pendingV3Retrieval.length > 0 ||
       unsureV3Records.length > 0 ||
-      unconfirmedInPipeline.length > 0;
+      unconfirmedInPipeline.length > 0 ||
+      outdatedRecords.length > 0;
 
-    // isFinal = true khi toàn bộ bài đều đã được quyết định và không còn bài pending
+    // isFinal = true khi toàn bộ bài đều đã được quyết định và không còn bài pending / outdated
     // Cho phép hoàn tất ngay cả khi kết quả có 0 bài Include (toàn bộ bị Exclude)
     const isFinal = Boolean(canonicalRecords.length > 0 && !hasPending);
 

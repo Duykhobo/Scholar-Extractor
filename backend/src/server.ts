@@ -29,7 +29,7 @@ import {
 } from "./profiles";
 import { sanitizeObject, sanitizeString } from "./sanitizer";
 import { fetchScholarFromSerpApi, getApiRequestsCount } from "./scholarService";
-import { appendSearchLog } from "./searchLogger";
+import { appendSearchLog, SearchLoggerService } from "./searchLogger";
 import { SnowballService } from "./snowballing/snowballService";
 import { CanonicalPaper, PaperRecord, TabExtractedData } from "./types";
 
@@ -156,6 +156,26 @@ app.post("/api/scholar/search", async (req: Request, res: Response, next: NextFu
       undefined,
       profile,
     );
+
+    // Ghi nhật ký thực thi tìm kiếm thực tế vào SearchLogger
+    try {
+      const activeResearchId = researchId || profile?.id || "preset_swt302";
+      SearchLoggerService.recordSearchExecution({
+        researchId: activeResearchId,
+        queryVersion: "Q1",
+        requestedSource: "Google Scholar",
+        actualSource: "Google Scholar",
+        actualApiQuery: q,
+        filters: { as_ylo, as_yhi, hl },
+        pagesProcessed: 1,
+        reportedResults: result.summary?.totalResults || 0,
+        actualReceivedRecords: result.records?.length || 0,
+        newDiscoveryRecords: result.records?.length || 0,
+        newCanonicalRecords: result.records?.length || 0,
+        status: "success",
+        timestamp: new Date().toISOString(),
+      });
+    } catch {}
 
     // Sanitization layer truoc khi tra response cho client
     const sanitizedResponse = sanitizeObject({
@@ -644,6 +664,26 @@ app.post("/api/sources/search", async (req: Request, res: Response) => {
       researchId,
     });
 
+    // Ghi nhật ký thực thi tìm kiếm thực tế vào SearchLogger
+    try {
+      const activeResearchId = researchId || "preset_swt302";
+      SearchLoggerService.recordSearchExecution({
+        researchId: activeResearchId,
+        queryVersion: queryVersion || "Q1",
+        requestedSource: sourceName,
+        actualSource: adapter.sourceName,
+        actualApiQuery: query,
+        filters: { asYlo, asYhi },
+        pagesProcessed: 1,
+        reportedResults: result.totalReported || 0,
+        actualReceivedRecords: result.records?.length || 0,
+        newDiscoveryRecords: result.records?.length || 0,
+        newCanonicalRecords: result.records?.length || 0,
+        status: "success",
+        timestamp: new Date().toISOString(),
+      });
+    } catch {}
+
     res.json({
       success: true,
       data: result,
@@ -676,10 +716,11 @@ app.post("/api/pipeline/import-file", async (req: Request, res: Response) => {
       preview = UniversalFileImporter.parseCsv(content, fileName || "uploaded.csv");
     }
 
-    // Nếu có researchId, lưu vào store bộ nhớ / database
+    // Nếu có researchId, lưu vào store bộ nhớ / database và lưu snapshot
     if (researchId && preview.validRecords.length > 0) {
       const store = BackgroundJobManager.getResearchStore(researchId);
       store.rawRecords = [...store.rawRecords, ...preview.validRecords];
+      BackgroundJobManager.saveStoreSnapshot(researchId);
     }
 
     res.json({
@@ -799,18 +840,36 @@ app.post("/api/pipeline/decision", (req: Request, res: Response) => {
       return res.status(404).json({ error: "Không tìm thấy bài báo trong pipeline store." });
     }
 
-    if (stage === "V2" || v2Decision) {
-      paper.v2Decision = (v2Decision || decision) as any;
+    // 1. Cập nhật V2 Decision (chuẩn hóa "Include" thành "PassToFullText" cho V2)
+    const rawV2 = v2Decision !== undefined ? v2Decision : (stage === "V2" ? decision : undefined);
+    if (rawV2 !== undefined) {
+      paper.v2Decision = (rawV2 === "Include" ? "PassToFullText" : rawV2) as any;
     }
-    if (stage === "V3" || v3Decision) {
-      paper.v3Decision = (v3Decision || decision) as any;
+
+    // 2. Cập nhật V3 Decision
+    const rawV3 = v3Decision !== undefined ? v3Decision : (stage === "V3" ? decision : undefined);
+    if (rawV3 !== undefined) {
+      paper.v3Decision = rawV3 as any;
     }
-    if (finalDecision !== undefined || stage === "FINAL" || (!v2Decision && !v3Decision)) {
-      paper.finalDecision = (finalDecision !== undefined ? finalDecision : decision) as any;
+
+    // 3. Cập nhật Final Decision: CHỈ cập nhật khi trường được truyền lên thực tế
+    if (finalDecision !== undefined) {
+      paper.finalDecision = finalDecision as any;
+      paper.isDecisionOutdated = false;
+    } else if (stage === "FINAL" && decision !== undefined) {
+      paper.finalDecision = decision as any;
+      paper.isDecisionOutdated = false;
+    } else if (!stage && !v2Decision && !v3Decision && decision !== undefined) {
+      paper.finalDecision = decision as any;
+      paper.isDecisionOutdated = false;
     }
+
     if (userNotes !== undefined) paper.userNotes = userNotes;
-    if (reason) paper.screeningReason = reason;
-    if (protocolVersion) paper.protocolVersion = protocolVersion;
+    if (reason !== undefined) paper.screeningReason = reason;
+    if (protocolVersion !== undefined) {
+      paper.protocolVersion = protocolVersion;
+      paper.isDecisionOutdated = false;
+    }
 
     BackgroundJobManager.saveStoreSnapshot(researchId);
     res.json({ success: true, paper });
@@ -841,6 +900,22 @@ app.post("/api/pipeline/snowball", async (req: Request, res: Response) => {
     if (result.newPapers.length > 0) {
       const store = BackgroundJobManager.getResearchStore(researchId);
       store.rawRecords = [...store.rawRecords, ...result.newPapers];
+      BackgroundJobManager.saveStoreSnapshot(researchId);
+    }
+
+    // Ghi nhật ký Snowballing thực tế vào SearchLogger
+    for (const seed of seeds) {
+      SearchLoggerService.recordSnowballExecution({
+        researchId,
+        seedDoiOrId: seed.doi || seed.title || "seed",
+        iteration: maxIterations || 1,
+        direction: (directions && directions.length === 1 ? directions[0] : "both") as any,
+        source: "OpenAlex",
+        relationsReceived: result.totalFound || 0,
+        newPapersFound: result.newPapers.length || 0,
+        stopCondition: `Hoàn tất sau ${maxIterations || 1} vòng (${result.newPapers.length} bài mới)`,
+        timestamp: new Date().toISOString(),
+      });
     }
 
     res.json({

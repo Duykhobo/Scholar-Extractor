@@ -762,6 +762,19 @@
     drilldownPaperList;
     modalExportPrismaMdBtn;
     modalExportEvidenceBtn;
+    // Pagination & Compact Toolbar Properties
+    currentPage = 1;
+    pageSize = 10;
+    paginationBar;
+    paginationInfo;
+    prevPageBtn;
+    nextPageBtn;
+    pageIndicator;
+    pageSizeSelect;
+    exportToolbar;
+    exportFormatSelect;
+    executeExportBtn;
+    saveLogQuickBtn;
     async init() {
       this.bindDOMElements();
       this.attachEventListeners();
@@ -884,6 +897,16 @@
       this.drilldownPaperList = document.getElementById("drilldownPaperList");
       this.modalExportPrismaMdBtn = document.getElementById("modalExportPrismaMdBtn");
       this.modalExportEvidenceBtn = document.getElementById("modalExportEvidenceBtn");
+      this.paginationBar = document.getElementById("paginationBar");
+      this.paginationInfo = document.getElementById("paginationInfo");
+      this.prevPageBtn = document.getElementById("prevPageBtn");
+      this.nextPageBtn = document.getElementById("nextPageBtn");
+      this.pageIndicator = document.getElementById("pageIndicator");
+      this.pageSizeSelect = document.getElementById("pageSizeSelect");
+      this.exportToolbar = document.getElementById("exportToolbar");
+      this.exportFormatSelect = document.getElementById("exportFormatSelect");
+      this.executeExportBtn = document.getElementById("executeExportBtn");
+      this.saveLogQuickBtn = document.getElementById("saveLogQuickBtn");
     }
     attachEventListeners() {
       this.searchFirstBtn.addEventListener("click", () => this.handleSearchFirstPage());
@@ -945,8 +968,47 @@
         this.profileEditForm.style.display = "none";
       });
       this.queryInput.addEventListener("input", () => this.checkQueryDesync());
-      this.filterInput.addEventListener("input", () => this.renderRecordsList());
-      this.filterDecisionSelect.addEventListener("change", () => this.renderRecordsList());
+      this.filterInput.addEventListener("input", () => {
+        this.currentPage = 1;
+        this.renderRecordsList();
+      });
+      this.filterDecisionSelect.addEventListener("change", () => {
+        this.currentPage = 1;
+        this.renderRecordsList();
+      });
+      if (this.prevPageBtn) {
+        this.prevPageBtn.addEventListener("click", () => {
+          if (this.currentPage > 1) {
+            this.currentPage--;
+            this.renderRecordsList();
+          }
+        });
+      }
+      if (this.nextPageBtn) {
+        this.nextPageBtn.addEventListener("click", () => {
+          this.currentPage++;
+          this.renderRecordsList();
+        });
+      }
+      if (this.pageSizeSelect) {
+        this.pageSizeSelect.addEventListener("change", () => {
+          this.pageSize = Number(this.pageSizeSelect.value) || 10;
+          this.currentPage = 1;
+          this.renderRecordsList();
+        });
+      }
+      if (this.executeExportBtn && this.exportFormatSelect) {
+        this.executeExportBtn.addEventListener("click", () => {
+          const targetBtnId = this.exportFormatSelect.value;
+          const targetBtn = document.getElementById(targetBtnId);
+          if (targetBtn) {
+            targetBtn.click();
+          }
+        });
+      }
+      if (this.saveLogQuickBtn) {
+        this.saveLogQuickBtn.addEventListener("click", () => this.handleSaveLog());
+      }
       if (this.extractActiveTabBtn) {
         this.extractActiveTabBtn.addEventListener("click", () => this.handleExtractFromActiveTab());
       }
@@ -1547,10 +1609,33 @@
         return true;
       });
       if (filtered.length === 0) {
+        if (this.paginationBar) this.paginationBar.style.display = "none";
+        if (this.exportToolbar) this.exportToolbar.style.display = "none";
         this.resultsContainer.innerHTML = '<div class="empty-state">Kh\xF4ng c\xF3 b\xE0i vi\u1EBFt n\xE0o kh\u1EDBp v\u1EDBi b\u1ED9 l\u1ECDc hi\u1EC7n t\u1EA1i.</div>';
         return;
       }
-      this.resultsContainer.innerHTML = filtered.map((r, idx) => {
+      if (this.paginationBar) this.paginationBar.style.display = "flex";
+      if (this.exportToolbar) this.exportToolbar.style.display = "flex";
+      const totalPages = Math.max(1, Math.ceil(filtered.length / this.pageSize));
+      if (this.currentPage > totalPages) this.currentPage = totalPages;
+      if (this.currentPage < 1) this.currentPage = 1;
+      const startIdx = (this.currentPage - 1) * this.pageSize;
+      const endIdx = Math.min(startIdx + this.pageSize, filtered.length);
+      const pageRecords = filtered.slice(startIdx, endIdx);
+      if (this.paginationInfo) {
+        this.paginationInfo.innerText = `Hi\u1EC3n th\u1ECB ${startIdx + 1}-${endIdx} c\u1EE7a ${filtered.length} b\xE0i`;
+      }
+      if (this.pageIndicator) {
+        this.pageIndicator.innerText = `${this.currentPage} / ${totalPages}`;
+      }
+      if (this.prevPageBtn) {
+        this.prevPageBtn.disabled = this.currentPage <= 1;
+      }
+      if (this.nextPageBtn) {
+        this.nextPageBtn.disabled = this.currentPage >= totalPages;
+      }
+      this.resultsContainer.innerHTML = pageRecords.map((r, pageIdx) => {
+        const globalIdx = startIdx + pageIdx;
         const decisionBadge = this.getDecisionBadge(r.suggestedDecision);
         const isInclude = r.finalDecision === "Include";
         const isExclude = r.finalDecision === "Exclude";
@@ -1584,7 +1669,7 @@
           ${dupWarning}
           <div class="paper-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
             <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
-              <span class="paper-index">#${idx + 1}</span>
+              <span class="paper-index">#${globalIdx + 1}</span>
               <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
               ${verifiedBadge}
             </div>

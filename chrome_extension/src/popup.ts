@@ -215,6 +215,21 @@ class ScholarExtensionApp {
   private modalExportPrismaMdBtn!: HTMLButtonElement;
   private modalExportEvidenceBtn!: HTMLButtonElement;
 
+  // Pagination & Compact Toolbar Properties
+  private currentPage: number = 1;
+  private pageSize: number = 10;
+  private paginationBar!: HTMLElement;
+  private paginationInfo!: HTMLElement;
+  private prevPageBtn!: HTMLButtonElement;
+  private nextPageBtn!: HTMLButtonElement;
+  private pageIndicator!: HTMLElement;
+  private pageSizeSelect!: HTMLSelectElement;
+
+  private exportToolbar!: HTMLElement;
+  private exportFormatSelect!: HTMLSelectElement;
+  private executeExportBtn!: HTMLButtonElement;
+  private saveLogQuickBtn!: HTMLButtonElement;
+
   async init() {
     this.bindDOMElements();
     this.attachEventListeners();
@@ -353,6 +368,19 @@ class ScholarExtensionApp {
     this.drilldownPaperList = document.getElementById("drilldownPaperList") as HTMLElement;
     this.modalExportPrismaMdBtn = document.getElementById("modalExportPrismaMdBtn") as HTMLButtonElement;
     this.modalExportEvidenceBtn = document.getElementById("modalExportEvidenceBtn") as HTMLButtonElement;
+
+    // Pagination & Export Toolbar
+    this.paginationBar = document.getElementById("paginationBar") as HTMLElement;
+    this.paginationInfo = document.getElementById("paginationInfo") as HTMLElement;
+    this.prevPageBtn = document.getElementById("prevPageBtn") as HTMLButtonElement;
+    this.nextPageBtn = document.getElementById("nextPageBtn") as HTMLButtonElement;
+    this.pageIndicator = document.getElementById("pageIndicator") as HTMLElement;
+    this.pageSizeSelect = document.getElementById("pageSizeSelect") as HTMLSelectElement;
+
+    this.exportToolbar = document.getElementById("exportToolbar") as HTMLElement;
+    this.exportFormatSelect = document.getElementById("exportFormatSelect") as HTMLSelectElement;
+    this.executeExportBtn = document.getElementById("executeExportBtn") as HTMLButtonElement;
+    this.saveLogQuickBtn = document.getElementById("saveLogQuickBtn") as HTMLButtonElement;
   }
 
   private attachEventListeners() {
@@ -430,9 +458,52 @@ class ScholarExtensionApp {
     // Query Desync Detection
     this.queryInput.addEventListener("input", () => this.checkQueryDesync());
 
-    // Local table filter (purely local, NO api calls)
-    this.filterInput.addEventListener("input", () => this.renderRecordsList());
-    this.filterDecisionSelect.addEventListener("change", () => this.renderRecordsList());
+    // Local table filter (purely local, NO api calls, reset page ve 1)
+    this.filterInput.addEventListener("input", () => {
+      this.currentPage = 1;
+      this.renderRecordsList();
+    });
+    this.filterDecisionSelect.addEventListener("change", () => {
+      this.currentPage = 1;
+      this.renderRecordsList();
+    });
+
+    // Pagination Listeners
+    if (this.prevPageBtn) {
+      this.prevPageBtn.addEventListener("click", () => {
+        if (this.currentPage > 1) {
+          this.currentPage--;
+          this.renderRecordsList();
+        }
+      });
+    }
+    if (this.nextPageBtn) {
+      this.nextPageBtn.addEventListener("click", () => {
+        this.currentPage++;
+        this.renderRecordsList();
+      });
+    }
+    if (this.pageSizeSelect) {
+      this.pageSizeSelect.addEventListener("change", () => {
+        this.pageSize = Number(this.pageSizeSelect.value) || 10;
+        this.currentPage = 1;
+        this.renderRecordsList();
+      });
+    }
+
+    // Export Toolbar
+    if (this.executeExportBtn && this.exportFormatSelect) {
+      this.executeExportBtn.addEventListener("click", () => {
+        const targetBtnId = this.exportFormatSelect.value;
+        const targetBtn = document.getElementById(targetBtnId) as HTMLButtonElement;
+        if (targetBtn) {
+          targetBtn.click();
+        }
+      });
+    }
+    if (this.saveLogQuickBtn) {
+      this.saveLogQuickBtn.addEventListener("click", () => this.handleSaveLog());
+    }
 
     // Tab & PDF extract
     if (this.extractActiveTabBtn) {
@@ -1171,13 +1242,41 @@ class ScholarExtensionApp {
     });
 
     if (filtered.length === 0) {
+      if (this.paginationBar) this.paginationBar.style.display = "none";
+      if (this.exportToolbar) this.exportToolbar.style.display = "none";
       this.resultsContainer.innerHTML =
         '<div class="empty-state">Không có bài viết nào khớp với bộ lọc hiện tại.</div>';
       return;
     }
 
-    this.resultsContainer.innerHTML = filtered
-      .map((r, idx) => {
+    // Tinh toan phan trang
+    if (this.paginationBar) this.paginationBar.style.display = "flex";
+    if (this.exportToolbar) this.exportToolbar.style.display = "flex";
+
+    const totalPages = Math.max(1, Math.ceil(filtered.length / this.pageSize));
+    if (this.currentPage > totalPages) this.currentPage = totalPages;
+    if (this.currentPage < 1) this.currentPage = 1;
+
+    const startIdx = (this.currentPage - 1) * this.pageSize;
+    const endIdx = Math.min(startIdx + this.pageSize, filtered.length);
+    const pageRecords = filtered.slice(startIdx, endIdx);
+
+    if (this.paginationInfo) {
+      this.paginationInfo.innerText = `Hiển thị ${startIdx + 1}-${endIdx} của ${filtered.length} bài`;
+    }
+    if (this.pageIndicator) {
+      this.pageIndicator.innerText = `${this.currentPage} / ${totalPages}`;
+    }
+    if (this.prevPageBtn) {
+      this.prevPageBtn.disabled = this.currentPage <= 1;
+    }
+    if (this.nextPageBtn) {
+      this.nextPageBtn.disabled = this.currentPage >= totalPages;
+    }
+
+    this.resultsContainer.innerHTML = pageRecords
+      .map((r, pageIdx) => {
+        const globalIdx = startIdx + pageIdx;
         const decisionBadge = this.getDecisionBadge(r.suggestedDecision);
         const isInclude = r.finalDecision === "Include";
         const isExclude = r.finalDecision === "Exclude";
@@ -1241,7 +1340,7 @@ class ScholarExtensionApp {
           ${dupWarning}
           <div class="paper-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
             <div style="display: flex; align-items: flex-start; gap: 6px; flex: 1;">
-              <span class="paper-index">#${idx + 1}</span>
+              <span class="paper-index">#${globalIdx + 1}</span>
               <a href="${r.url || "#"}" target="_blank" class="paper-title">${this.escapeHtml(r.title)}</a>
               ${verifiedBadge}
             </div>

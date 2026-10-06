@@ -274,6 +274,8 @@ export class BackgroundJobManager {
     job.processedItems = dedupRes.canonicalRecords.length;
     job.progress = 100;
     job.status = "completed";
+    DbRepository.saveJob(job).catch(() => {});
+    this.saveStoreSnapshot(job.researchId);
   }
 
   private static async runV2Worker(job: BackgroundJob, abortController: AbortController) {
@@ -291,6 +293,8 @@ export class BackgroundJobManager {
     job.processedItems = v2Res.records.length;
     job.progress = 100;
     job.status = "completed";
+    DbRepository.saveJob(job).catch(() => {});
+    this.saveStoreSnapshot(job.researchId);
   }
 
   private static async runV3Worker(job: BackgroundJob, abortController: AbortController) {
@@ -298,10 +302,13 @@ export class BackgroundJobManager {
     const profile: ResearchProfile = job.config?.profile;
     if (!profile) throw new Error("Thiếu cấu hình ResearchProfile cho vòng V3");
 
-    // Chỉ lấy các bài đạt điều kiện từ V2 (PassToFullText và tùy chọn Unsure)
+    // Chỉ lấy các bài đạt điều kiện từ V2 (PassToFullText hoặc Include, và tùy chọn Unsure)
     const includeUnsure = job.config?.includeUnsure !== false;
     const candidates = store.canonicalRecords.filter(
-      (r) => r.v2Decision === "PassToFullText" || (includeUnsure && r.v2Decision === "Unsure"),
+      (r) =>
+        r.v2Decision === "PassToFullText" ||
+        (r.v2Decision as string) === "Include" ||
+        (includeUnsure && r.v2Decision === "Unsure"),
     );
 
     job.totalItems = candidates.length;

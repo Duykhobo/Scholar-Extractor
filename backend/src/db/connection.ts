@@ -13,6 +13,7 @@ export interface DbConfig {
 let pool: sql.ConnectionPool | null = null;
 let isConnected = false;
 let connectionAttempted = false;
+let connectingPromise: Promise<sql.ConnectionPool | null> | null = null;
 
 export function getDbConfig(): DbConfig {
   return {
@@ -33,47 +34,55 @@ export function getDbConfig(): DbConfig {
  */
 export async function getDbPool(): Promise<sql.ConnectionPool | null> {
   if (pool && isConnected) return pool;
+  if (connectingPromise) return connectingPromise;
   if (connectionAttempted && !isConnected) return null;
 
   connectionAttempted = true;
-  const dbConf = getDbConfig();
+  connectingPromise = (async () => {
+    const dbConf = getDbConfig();
 
-  // Neu khong co password va khong co connection string thi khong thu connect de tranh timeout
-  if (!dbConf.connectionString && !dbConf.password && !process.env.DB_SERVER) {
-    console.log("[DB] SQL Server chua duoc cau hinh trong .env. Chay o che do Local Fallback.");
-    return null;
-  }
-
-  try {
-    let sqlConfig: sql.config;
-
-    if (dbConf.connectionString) {
-      pool = await sql.connect(dbConf.connectionString);
-    } else {
-      sqlConfig = {
-        server: dbConf.server,
-        port: dbConf.port,
-        database: dbConf.database,
-        user: dbConf.user || "sa",
-        password: dbConf.password || "",
-        options: {
-          trustServerCertificate: dbConf.trustServerCertificate,
-          enableArithAbort: true,
-          connectTimeout: 5000, // 5 giay timeout de khong lam treo ung dung
-        },
-      };
-      pool = await new sql.ConnectionPool(sqlConfig).connect();
+    // Neu khong co password va khong co connection string thi khong thu connect de tranh timeout
+    if (!dbConf.connectionString && !dbConf.password && !process.env.DB_SERVER) {
+      console.log("[DB] SQL Server chua duoc cau hinh trong .env. Chay o che do Local Fallback.");
+      connectingPromise = null;
+      return null;
     }
 
-    isConnected = true;
-    console.log(`[DB] Ket noi thanh cong toi SQL Server: ${dbConf.server}/${dbConf.database}`);
-    return pool;
-  } catch (err: any) {
-    console.warn(`[DB] Khong the ket noi SQL Server (${err.message}). Tiep tuc chay o che do Memory/File Fallback.`);
-    pool = null;
-    isConnected = false;
-    return null;
-  }
+    try {
+      let sqlConfig: sql.config;
+
+      if (dbConf.connectionString) {
+        pool = await sql.connect(dbConf.connectionString);
+      } else {
+        sqlConfig = {
+          server: dbConf.server,
+          port: dbConf.port,
+          database: dbConf.database,
+          user: dbConf.user || "sa",
+          password: dbConf.password || "",
+          options: {
+            trustServerCertificate: dbConf.trustServerCertificate,
+            enableArithAbort: true,
+            connectTimeout: 5000, // 5 giay timeout de khong lam treo ung dung
+          },
+        };
+        pool = await new sql.ConnectionPool(sqlConfig).connect();
+      }
+
+      isConnected = true;
+      console.log(`[DB] Ket noi thanh cong toi SQL Server: ${dbConf.server}/${dbConf.database}`);
+      connectingPromise = null;
+      return pool;
+    } catch (err: any) {
+      console.warn(`[DB] Khong the ket noi SQL Server (${err.message}). Tiep tuc chay o che do Memory/File Fallback.`);
+      pool = null;
+      isConnected = false;
+      connectingPromise = null;
+      return null;
+    }
+  })();
+
+  return connectingPromise;
 }
 
 export function isDbOnline(): boolean {

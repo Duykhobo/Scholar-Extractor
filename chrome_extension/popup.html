@@ -335,50 +335,53 @@
         <div id="autoScreenCurrentPaper" style="font-size: 10px; color: #15803d; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></div>
       </div>
 
-      <div id="resultsContainer">
-        <div class="empty-state">Chưa có dữ liệu. Bấm "Lấy trang 1" để bắt đầu thu thập.</div>
+      <!-- Thanh phan trang (Pagination Bar) thu gon danh sach bai bao -->
+      <div id="paginationBar" class="pagination-bar" style="display: none;">
+        <div id="paginationInfo" style="color: #475569; font-weight: 600;">Hiển thị 1-10 của 0 bài</div>
+        <div class="pagination-controls">
+          <button id="prevPageBtn" class="pagination-btn">◀ Trước</button>
+          <span id="pageIndicator" style="font-weight: 700; color: #2563eb; margin: 0 4px;">1 / 1</span>
+          <button id="nextPageBtn" class="pagination-btn">Sau ▶</button>
+          <select id="pageSizeSelect" class="page-size-select" style="margin-left: 6px;">
+            <option value="10" selected>10 bài/trang</option>
+            <option value="20">20 bài/trang</option>
+            <option value="50">50 bài/trang</option>
+          </select>
+        </div>
       </div>
 
-      <div class="button-group" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px">
-        <button id="exportCsvBtn" class="btn-success" style="display: none">📥 01_all_records.csv (PRISMA)</button>
-        <button id="exportScreeningBtn" class="btn-primary" style="display: none">📊 02_screening_decisions.csv</button>
-        <button
-          id="exportFullCsvBtn"
-          class="btn-secondary"
-          style="display: none; background: #e0f2fe; color: #0369a1; border-color: #bae6fd"
-        >
-          📑 Xuất Sàng lọc Đầy đủ (CSV)
-        </button>
-        <button
-          id="exportDedupLogBtn"
-          class="btn-secondary"
-          style="display: none; background: #fef3c7; color: #b45309; border-color: #fde68a"
-        >
-          📝 Xuất duplicate-log.csv
-        </button>
-        <button
-          id="exportPrismaBtn"
-          class="btn-secondary"
-          style="display: none; background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe"
-        >
-          📊 Xuất prisma-flow.md
-        </button>
-        <button
-          id="exportEvidenceTableBtn"
-          class="btn-secondary"
-          style="display: none; background: #f0fdf4; color: #15803d; border-color: #bbf7d0"
-        >
-          📋 Xuất evidence-table.md
-        </button>
-        <button
-          id="exportApa7Btn"
-          class="btn-secondary"
-          style="display: none; background: #f3e8ff; color: #6b21a8; border-color: #e9d5ff"
-        >
-          📖 Xuất References APA 7th
-        </button>
-        <button id="saveLogBtn" class="btn-secondary" style="display: none">💾 Ghi search-log.md</button>
-        <button id="exportSessionBtn" class="btn-secondary" style="display: none">📦 Tải Session JSON</button>
+      <div id="resultsContainer">
+        <div class="empty-state">Chưa có dữ liệu. Bấm "Chạy Giai Đoạn Hiện Tại" để bắt đầu thu thập.</div>
+      </div>
+
+      <!-- Thanh cong cu Xuat du lieu gon dep -->
+      <div id="exportToolbar" class="export-toolbar" style="display: none;">
+        <span style="font-weight: 700; font-size: 11px; color: #1e293b; white-space: nowrap;">📥 Xuất kết quả:</span>
+        <select id="exportFormatSelect" style="flex: 1; padding: 4px 8px; font-size: 11px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          <option value="exportCsvBtn">01_all_records.csv (Metadata thô PRISMA)</option>
+          <option value="exportScreeningBtn">02_screening_decisions.csv (Quyết định sàng lọc)</option>
+          <option value="exportFullCsvBtn">screening_full.csv (Đầy đủ tiêu chí & lý do)</option>
+          <option value="exportDedupLogBtn">duplicate-log.csv (Nhật ký trùng lặp)</option>
+          <option value="exportPrismaBtn">prisma-flow.md (Sơ đồ PRISMA 2020)</option>
+          <option value="exportEvidenceTableBtn">evidence-table.md (Bảng bằng chứng)</option>
+          <option value="exportApa7Btn">03_references_apa7.txt (Tài liệu tham khảo APA 7th)</option>
+          <option value="exportSessionBtn">session_backup.json (Tải toàn bộ Session JSON)</option>
+        </select>
+        <button id="executeExportBtn" class="btn-success" style="padding: 4px 10px; font-size: 11px; font-weight: 600; white-space: nowrap;">Tải về</button>
+        <button id="saveLogQuickBtn" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; white-space: nowrap;" title="Ghi vào search-log.md">💾 Ghi Log</button>
+      </div>
+
+      <!-- An cac button export don le goc de tuong thich code cu -->
+      <div class="button-group" style="display: none;">
+        <button id="exportCsvBtn"></button>
+        <button id="exportScreeningBtn"></button>
+        <button id="exportFullCsvBtn"></button>
+        <button id="exportDedupLogBtn"></button>
+        <button id="exportPrismaBtn"></button>
+        <button id="exportEvidenceTableBtn"></button>
+        <button id="exportApa7Btn"></button>
+        <button id="saveLogBtn"></button>
+        <button id="exportSessionBtn"></button>
       </div>
     </div>
 

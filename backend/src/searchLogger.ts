@@ -199,10 +199,10 @@ export function appendSearchLog(
         ? payload.spotChecks
             .slice(0, 5)
             .map((sc, idx) => {
-              return `${idx + 1}. **${sc.title}** | Năm: ${sc.year || "N/A"} | DOI: \`${sc.doi || "N/A"}\` | Venue: ${sc.venue || "N/A"} -> Khớp 100% tài liệu gốc`;
+              return `${idx + 1}. **${sc.title}** | Năm: ${sc.year || "N/A"} | DOI: \`${sc.doi || "N/A"}\` | Venue: ${sc.venue || "N/A"}`;
             })
             .join("\n   ")
-        : "Đã đối chiếu 5 bản ghi mẫu khớp 100% với tài liệu gốc.";
+        : "Chưa đối chiếu mẫu 5 bản ghi ngẫu nhiên (cần kiểm chứng thủ công).";
 
     const logEntry = `
 ---
@@ -217,11 +217,11 @@ export function appendSearchLog(
 ## Tổng hợp
 - Tổng trước dedup: **${payload.collectedCount}** · Sau dedup: **${candidatePapers}** (= số dòng 01_all_records.csv — Số paper ứng viên bổ trợ (Candidate Papers), KHÔNG được tính trực tiếp vào nhánh Identification của sơ đồ PRISMA chính thống)
 
-## Kiểm chứng (chỉ khi tự viết tool lấy metadata)
-- (1) số bản ghi khớp số trang web báo? -> **Có**, SerpApi trả về ${apiTotalStr} kết quả, thu thập đủ ${payload.collectedCount} bản ghi thực tế.
-- (2) 5 bản ghi đối chiếu tiêu đề/năm/DOI? -> **Khớp 100%**:
+## Kiểm chứng (Audit & Verification)
+- (1) Đối soát số lượng: API/UI báo cáo ${apiTotalStr} kết quả; thu thập thực tế được ${payload.collectedCount} bản ghi.
+- (2) Đối chiếu metadata mẫu:
    ${spotCheckSection}
-- (3) chạy lại cùng query ra cùng số? -> **Có**, chạy lại cùng bộ tham số cho kết quả đồng nhất.
+- (3) Tái lập kết quả truy vấn: Kết quả tìm kiếm thực tế phụ thuộc vào thời điểm truy vấn và cache của nhà cung cấp API.
 `;
 
     const sanitizedEntry = sanitizeString(logEntry);

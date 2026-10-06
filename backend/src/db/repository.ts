@@ -6,7 +6,8 @@ import { getDbPool } from "./connection";
 
 export class DbRepository {
   /**
-   * Khoi tao / seed cac preset mac dinh xuong database neu chua co
+   * Khoi tao / seed cac preset mac dinh xuong database neu chua co (INSERT IF NOT EXISTS)
+   * Khong ghi de neu nguoi dung da tuy bien ho so trong database
    */
   static async seedBuiltinProfiles(): Promise<number> {
     const pool = await getDbPool();
@@ -14,8 +15,17 @@ export class DbRepository {
 
     let count = 0;
     for (const preset of BUILTIN_PRESETS) {
-      const ok = await this.upsertProfile(preset);
-      if (ok) count++;
+      try {
+        const checkReq = pool.request();
+        checkReq.input("id", sql.VarChar(100), preset.id);
+        const checkRes = await checkReq.query("SELECT id FROM ResearchProfiles WHERE id = @id;");
+        if (!checkRes.recordset || checkRes.recordset.length === 0) {
+          const ok = await this.upsertProfile(preset);
+          if (ok) count++;
+        }
+      } catch (err: any) {
+        console.warn(`[DB] Khong the seed preset ${preset.id}:`, err.message);
+      }
     }
     return count;
   }
@@ -101,7 +111,7 @@ export class DbRepository {
       req.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify(profile));
 
       await req.query(`
-        MERGE INTO ResearchProfiles AS target
+        MERGE INTO ResearchProfiles WITH (HOLDLOCK) AS target
         USING (SELECT @id AS id) AS src
         ON (target.id = src.id)
         WHEN MATCHED THEN
@@ -159,7 +169,7 @@ export class DbRepository {
       req.input("apiRequests", sql.Int, session.apiRequestsUsed || 0);
 
       await req.query(`
-        MERGE INTO ResearchSessions AS target
+        MERGE INTO ResearchSessions WITH (HOLDLOCK) AS target
         USING (SELECT @id AS id) AS src
         ON (target.id = src.id)
         WHEN MATCHED THEN
@@ -219,7 +229,7 @@ export class DbRepository {
 
         // 1. Upsert master Paper
         await req.query(`
-          MERGE INTO Papers AS target
+          MERGE INTO Papers WITH (HOLDLOCK) AS target
           USING (SELECT @id AS id) AS src
           ON (target.id = src.id)
           WHEN MATCHED THEN
@@ -266,7 +276,7 @@ export class DbRepository {
         linkReq.input("conceptLabels", sql.NVarChar(500), conceptLabelsStr.slice(0, 500));
 
         await linkReq.query(`
-          MERGE INTO ResearchPaperLinks AS target
+          MERGE INTO ResearchPaperLinks WITH (HOLDLOCK) AS target
           USING (SELECT @linkId AS id) AS src
           ON (target.id = src.id)
           WHEN MATCHED THEN
@@ -349,11 +359,9 @@ export class DbRepository {
       req.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify(job.config || {}));
 
       await req.query(`
-        MERGE INTO BackgroundJobs AS target
-        USING (SELECT @id AS id) AS src
-        ON (target.id = src.id)
-        WHEN MATCHED THEN
-          UPDATE SET
+        IF EXISTS (SELECT 1 FROM BackgroundJobs WITH (UPDLOCK, HOLDLOCK) WHERE id = @id)
+        BEGIN
+          UPDATE BackgroundJobs SET
             status = @status,
             progress = @progress,
             totalItems = @totalItems,
@@ -363,13 +371,62 @@ export class DbRepository {
             errorLog = @errorLog,
             configJson = @configJson,
             updatedAt = SYSUTCDATETIME()
-        WHEN NOT MATCHED THEN
-          INSERT (id, researchId, sessionId, stage, status, progress, totalItems, processedItems, failedItems, checkpoints, errorLog, configJson)
-          VALUES (@id, @researchId, @sessionId, @stage, @status, @progress, @totalItems, @processedItems, @failedItems, @checkpoints, @errorLog, @configJson);
+          WHERE id = @id;
+        END
+        ELSE
+        BEGIN
+          BEGIN TRY
+            INSERT INTO BackgroundJobs (id, researchId, sessionId, stage, status, progress, totalItems, processedItems, failedItems, checkpoints, errorLog, configJson)
+            VALUES (@id, @researchId, @sessionId, @stage, @status, @progress, @totalItems, @processedItems, @failedItems, @checkpoints, @errorLog, @configJson);
+          END TRY
+          BEGIN CATCH
+            UPDATE BackgroundJobs SET
+              status = @status,
+              progress = @progress,
+              totalItems = @totalItems,
+              processedItems = @processedItems,
+              failedItems = @failedItems,
+              checkpoints = @checkpoints,
+              errorLog = @errorLog,
+              configJson = @configJson,
+              updatedAt = SYSUTCDATETIME()
+            WHERE id = @id;
+          END CATCH
+        END
       `);
       return true;
     } catch (err: any) {
-      console.warn(`[DB] Lỗi saveJob ${job.id}:`, err.message);
+      if (err.number === 2627 || err.number === 2601 || (err.message && err.message.includes("Violation of PRIMARY KEY"))) {
+        try {
+          const updateReq = pool.request();
+          updateReq.input("id", sql.VarChar(100), job.id);
+          updateReq.input("status", sql.VarChar(30), job.status);
+          updateReq.input("progress", sql.Float, job.progress || 0);
+          updateReq.input("totalItems", sql.Int, job.totalItems || 0);
+          updateReq.input("processedItems", sql.Int, job.processedItems || 0);
+          updateReq.input("failedItems", sql.Int, job.failedItems || 0);
+          updateReq.input("checkpoints", sql.NVarChar(sql.MAX), JSON.stringify(job.checkpoints || {}));
+          updateReq.input("errorLog", sql.NVarChar(sql.MAX), JSON.stringify(job.errorLog || []));
+          updateReq.input("configJson", sql.NVarChar(sql.MAX), JSON.stringify(job.config || {}));
+          await updateReq.query(`
+            UPDATE BackgroundJobs SET
+              status = @status,
+              progress = @progress,
+              totalItems = @totalItems,
+              processedItems = @processedItems,
+              failedItems = @failedItems,
+              checkpoints = @checkpoints,
+              errorLog = @errorLog,
+              configJson = @configJson,
+              updatedAt = SYSUTCDATETIME()
+            WHERE id = @id;
+          `);
+          return true;
+        } catch (innerErr: any) {
+          console.warn("[DB] Inner retry update err:", innerErr.message);
+        }
+      }
+      console.warn(`[DB] Lỗi saveJob ${job.id}: code=${err.number}, msg=${err.message}`);
       return false;
     }
   }
