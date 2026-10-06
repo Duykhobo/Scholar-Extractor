@@ -7,8 +7,8 @@
     "build": "tsc",
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
-    "test": "tsx --test tests/scholar.test.ts tests/profiles.test.ts",
-    "test:unit": "tsx --test tests/scholar.test.ts tests/profiles.test.ts",
+    "test": "tsx --test tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
+    "test:unit": "tsx --test tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
     "test:live": "tsx --test tests/live_integration.test.ts"
   },
   "dependencies": {

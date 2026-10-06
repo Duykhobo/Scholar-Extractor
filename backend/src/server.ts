@@ -2,13 +2,27 @@ import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import fs from "fs";
 import path from "path";
+import { SourceAdapterRegistry, UniversalFileImporter } from "./adapters";
 import { config } from "./config";
 import { DbRepository, isDbOnline, runMigrations } from "./db";
 import { deduplicateRecords } from "./dedup";
 import { extractDoiFromString, fetchCrossrefMetadata } from "./doiService";
 import { analyzeTabAgainstRecord } from "./evidenceAnalyzer";
-import { exportApa7References, exportFullScreeningCsv, exportScreeningCsv, exportToCsv } from "./exporter";
+import { EvidenceTableService } from "./evidenceTable";
+import {
+  exportApa7References,
+  exportDuplicateLogCsv,
+  exportFullScreeningCsv,
+  exportScreeningCsv,
+  exportScreeningV2Csv,
+  exportToCsv,
+} from "./exporter";
+import { BackgroundJobManager } from "./jobs/jobManager";
 import { extractAbstractFromPdfPages, extractVenueFromPdfPages, parsePdfBuffer, parsePdfFromUrl } from "./pdfService";
+import { PipelineV1Dedup } from "./pipeline/dedupV1";
+import { PipelineV3Retrieval } from "./pipeline/retrievalV3";
+import { PipelineV2Screening } from "./pipeline/screeningV2";
+import { PrismaService } from "./prisma/prismaService";
 import {
   BUILTIN_PRESETS,
   PRESET_GENERIC,
@@ -19,7 +33,8 @@ import {
 import { sanitizeObject, sanitizeString } from "./sanitizer";
 import { fetchScholarFromSerpApi, getApiRequestsCount } from "./scholarService";
 import { appendSearchLog } from "./searchLogger";
-import { PaperRecord, TabExtractedData } from "./types";
+import { SnowballService } from "./snowballing/snowballService";
+import { CanonicalPaper, PaperRecord, TabExtractedData } from "./types";
 
 const app = express();
 
@@ -583,6 +598,456 @@ app.post("/api/scholar/parse-pdf", async (req: Request, res: Response) => {
     res.json({
       ...result,
       extractedAbstract,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// =========================================================================
+// PIPELINE DA NGUON, QUAN LY JOBS NEN, SNOWBALLING & PRISMA API
+// =========================================================================
+
+/**
+ * GET /api/sources/capabilities
+ * Danh sách khả năng của tất cả các nguồn (OpenAlex, Semantic Scholar, Google Scholar, ACM DL, IEEE Xplore)
+ */
+app.get("/api/sources/capabilities", (req: Request, res: Response) => {
+  res.json({
+    success: true,
+    capabilities: SourceAdapterRegistry.getAllCapabilities(),
+  });
+});
+
+/**
+ * POST /api/sources/search
+ * Tìm kiếm qua adapter của nguồn cụ thể
+ */
+app.post("/api/sources/search", async (req: Request, res: Response) => {
+  try {
+    const { sourceName, query, queryVersion, asYlo, asYhi, start, limit, cursor, sessionId, researchId } = req.body;
+    if (!sourceName || !query) {
+      return res.status(400).json({ error: "Thiếu `sourceName` hoặc `query`." });
+    }
+
+    const adapter = SourceAdapterRegistry.getAdapter(sourceName);
+    if (!adapter) {
+      return res.status(404).json({ error: `Nguồn '${sourceName}' không tồn tại hoặc chưa được hỗ trợ.` });
+    }
+
+    const result = await adapter.search({
+      query,
+      queryVersion: queryVersion || "Q1",
+      asYlo,
+      asYhi,
+      start,
+      limit,
+      cursor,
+      sessionId,
+      researchId,
+    });
+
+    res.json({
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/pipeline/import-file
+ * Phân tích tệp tải lên (CSV, BibTeX, RIS) hỗ trợ schema tiếng Việt và tệp mẫu
+ */
+app.post("/api/pipeline/import-file", async (req: Request, res: Response) => {
+  try {
+    const { content, fileName, researchId } = req.body as {
+      content: string;
+      fileName: string;
+      researchId?: string;
+    };
+
+    if (!content) {
+      return res.status(400).json({ error: "Nội dung tệp rỗng." });
+    }
+
+    let preview;
+    if (fileName && (fileName.endsWith(".bib") || fileName.endsWith(".bibtex"))) {
+      preview = UniversalFileImporter.parseBibtex(content, fileName);
+    } else {
+      preview = UniversalFileImporter.parseCsv(content, fileName || "uploaded.csv");
+    }
+
+    // Nếu có researchId, lưu vào store bộ nhớ / database
+    if (researchId && preview.validRecords.length > 0) {
+      const store = BackgroundJobManager.getResearchStore(researchId);
+      store.rawRecords = [...store.rawRecords, ...preview.validRecords];
+    }
+
+    res.json({
+      success: true,
+      preview,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/pipeline/run-stage
+ * Chạy đồng bộ một giai đoạn pipeline (B1, V1, V2, V3, FINAL)
+ */
+app.post("/api/pipeline/run-stage", async (req: Request, res: Response) => {
+  try {
+    const { stage, researchId, records, profile, options } = req.body as {
+      stage: "B1" | "V1" | "V2" | "V3" | "FINAL";
+      researchId: string;
+      records?: PaperRecord[];
+      profile?: ResearchProfile;
+      options?: Record<string, any>;
+    };
+
+    if (!stage || !researchId) {
+      return res.status(400).json({ error: "Cần cung cấp `stage` và `researchId`." });
+    }
+
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    if (records && records.length > 0) {
+      if (stage === "V1" || stage === "B1") store.rawRecords = records;
+      else store.canonicalRecords = records as CanonicalPaper[];
+    }
+
+    const effectiveProfile = profile || BUILTIN_PRESETS.find((p) => p.id === researchId) || PRESET_GENERIC;
+
+    let stageResult: any = {};
+    if (stage === "V1") {
+      const v1Res = PipelineV1Dedup.processV1(store.rawRecords);
+      store.canonicalRecords = v1Res.canonicalRecords;
+      stageResult = v1Res;
+    } else if (stage === "V2") {
+      const v2Res = PipelineV2Screening.processV2(store.canonicalRecords, effectiveProfile, options);
+      store.canonicalRecords = v2Res.records;
+      store.v2Results = v2Res.records;
+      stageResult = v2Res;
+    } else if (stage === "V3") {
+      const candidates = store.canonicalRecords.filter(
+        (r) => r.v2Decision === "PassToFullText" || (options?.includeUnsure !== false && r.v2Decision === "Unsure"),
+      );
+      const v3Res = await PipelineV3Retrieval.processV3(candidates, effectiveProfile, options);
+      for (const updated of v3Res.records) {
+        const idx = store.canonicalRecords.findIndex((c) => c.id === updated.id);
+        if (idx !== -1) store.canonicalRecords[idx] = updated;
+      }
+      store.v3Results = v3Res.records;
+      stageResult = v3Res;
+    } else if (stage === "FINAL") {
+      const included = store.canonicalRecords.filter((r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include"));
+      const evidenceRows = EvidenceTableService.buildEvidenceRows(included);
+      const evidenceMd = EvidenceTableService.generateMarkdown(evidenceRows, effectiveProfile.name);
+      stageResult = {
+        includedCount: included.length,
+        includedRecords: included,
+        evidenceRows,
+        evidenceMarkdown: evidenceMd,
+      };
+    }
+
+    res.json({
+      success: true,
+      stage,
+      data: stageResult,
+      canonicalRecords: store.canonicalRecords,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/pipeline/stage-data
+ * Lấy dữ liệu pipeline hiện tại theo researchId
+ */
+app.get("/api/pipeline/stage-data", (req: Request, res: Response) => {
+  const researchId = (req.query.researchId as string) || "preset_swt302";
+  const store = BackgroundJobManager.getResearchStore(researchId);
+  res.json({
+    success: true,
+    researchId,
+    rawCount: store.rawRecords.length,
+    canonicalCount: store.canonicalRecords.length,
+    canonicalRecords: store.canonicalRecords,
+  });
+});
+
+/**
+ * POST /api/pipeline/snowball
+ * Thực thi Snowballing lùi và tiến
+ */
+app.post("/api/pipeline/snowball", async (req: Request, res: Response) => {
+  try {
+    const { researchId, seeds, directions, maxIterations, maxPapersPerSeed } = req.body;
+    if (!researchId || !seeds || seeds.length === 0) {
+      return res.status(400).json({ error: "Thiếu `researchId` hoặc danh sách `seeds`." });
+    }
+
+    const result = await SnowballService.runSnowballing({
+      researchId,
+      seeds,
+      directions: directions || ["backward", "forward"],
+      maxIterations: maxIterations || 1,
+      maxPapersPerSeed: maxPapersPerSeed || 15,
+    });
+
+    if (result.newPapers.length > 0) {
+      const store = BackgroundJobManager.getResearchStore(researchId);
+      store.rawRecords = [...store.rawRecords, ...result.newPapers];
+    }
+
+    res.json({
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/jobs/create
+ * Tạo Background Job mới
+ */
+app.post("/api/jobs/create", (req: Request, res: Response) => {
+  try {
+    const { researchId, sessionId, stage, config, totalItems } = req.body;
+    if (!researchId || !stage) {
+      return res.status(400).json({ error: "Cần `researchId` và `stage`." });
+    }
+
+    const job = BackgroundJobManager.createJob({
+      researchId,
+      sessionId,
+      stage,
+      config,
+      totalItems,
+    });
+
+    res.json({ success: true, job });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/jobs/:id/start
+ */
+app.post("/api/jobs/:id/start", async (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const started = await BackgroundJobManager.startJob(jobId);
+  res.json({ success: started, job: BackgroundJobManager.getJob(jobId) });
+});
+
+/**
+ * POST /api/jobs/:id/pause
+ */
+app.post("/api/jobs/:id/pause", async (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const paused = await BackgroundJobManager.pauseJob(jobId);
+  res.json({ success: paused, job: BackgroundJobManager.getJob(jobId) });
+});
+
+/**
+ * POST /api/jobs/:id/resume
+ */
+app.post("/api/jobs/:id/resume", async (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const resumed = await BackgroundJobManager.resumeJob(jobId);
+  res.json({ success: resumed, job: BackgroundJobManager.getJob(jobId) });
+});
+
+/**
+ * POST /api/jobs/:id/cancel
+ */
+app.post("/api/jobs/:id/cancel", async (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const cancelled = await BackgroundJobManager.cancelJob(jobId);
+  res.json({ success: cancelled, job: BackgroundJobManager.getJob(jobId) });
+});
+
+/**
+ * POST /api/jobs/:id/retry
+ */
+app.post("/api/jobs/:id/retry", async (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const retried = await BackgroundJobManager.retryJob(jobId);
+  res.json({ success: retried, job: BackgroundJobManager.getJob(jobId) });
+});
+
+/**
+ * GET /api/jobs/:id/status
+ */
+app.get("/api/jobs/:id/status", (req: Request, res: Response) => {
+  const jobId = req.params.id;
+  const job = BackgroundJobManager.getJob(jobId);
+  if (!job) return res.status(404).json({ error: "Không tìm thấy job." });
+  res.json({ success: true, job });
+});
+
+/**
+ * GET /api/jobs/active
+ */
+app.get("/api/jobs/active", (req: Request, res: Response) => {
+  const researchId = (req.query.researchId as string) || "preset_swt302";
+  const activeJob = BackgroundJobManager.getActiveJobForResearch(researchId);
+  res.json({ success: true, activeJob });
+});
+
+/**
+ * GET /api/prisma/flow
+ * Tính toán số liệu PRISMA 2020 và sinh Markdown
+ */
+app.get("/api/prisma/flow", (req: Request, res: Response) => {
+  try {
+    const researchId = (req.query.researchId as string) || "preset_swt302";
+    const store = BackgroundJobManager.getResearchStore(researchId);
+
+    const dupCount = Math.max(0, store.rawRecords.length - store.canonicalRecords.length);
+    const prismaData = PrismaService.calculatePrismaFlow({
+      rawRecords: store.rawRecords,
+      canonicalRecords: store.canonicalRecords,
+      duplicatesRemovedCount: dupCount,
+    });
+
+    const markdown = PrismaService.generatePrismaMarkdown(prismaData, researchId);
+    res.json({
+      success: true,
+      data: prismaData,
+      markdown,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/prisma/export
+ * Lưu file prisma-flow.md vào thư mục dự án
+ */
+app.post("/api/prisma/export", async (req: Request, res: Response) => {
+  try {
+    const { researchId, filename } = req.body;
+    const store = BackgroundJobManager.getResearchStore(researchId || "preset_swt302");
+    const dupCount = Math.max(0, store.rawRecords.length - store.canonicalRecords.length);
+    const prismaData = PrismaService.calculatePrismaFlow({
+      rawRecords: store.rawRecords,
+      canonicalRecords: store.canonicalRecords,
+      duplicatesRemovedCount: dupCount,
+    });
+    const markdown = PrismaService.generatePrismaMarkdown(prismaData, researchId);
+
+    const safeFile = getSafeOutputPath(filename, "prisma-flow.md");
+    if (safeFile.error || !safeFile.safePath) {
+      return res.status(400).json({ error: safeFile.error });
+    }
+
+    fs.writeFileSync(safeFile.safePath, markdown, "utf-8");
+    res.json({
+      success: true,
+      filePath: safeFile.safePath,
+      content: markdown,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/evidence-table
+ */
+app.get("/api/evidence-table", (req: Request, res: Response) => {
+  try {
+    const researchId = (req.query.researchId as string) || "preset_swt302";
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    const included = store.canonicalRecords.filter(
+      (r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include"),
+    );
+
+    const rows = EvidenceTableService.buildEvidenceRows(included);
+    const markdown = EvidenceTableService.generateMarkdown(rows, researchId);
+
+    res.json({
+      success: true,
+      rows,
+      markdown,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/evidence-table/export
+ */
+app.post("/api/evidence-table/export", (req: Request, res: Response) => {
+  try {
+    const { researchId, filename } = req.body;
+    const store = BackgroundJobManager.getResearchStore(researchId || "preset_swt302");
+    const included = store.canonicalRecords.filter(
+      (r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include"),
+    );
+    const rows = EvidenceTableService.buildEvidenceRows(included);
+    const markdown = EvidenceTableService.generateMarkdown(rows, researchId);
+
+    const safeFile = getSafeOutputPath(filename, "evidence-table.md");
+    if (safeFile.error || !safeFile.safePath) {
+      return res.status(400).json({ error: safeFile.error });
+    }
+
+    fs.writeFileSync(safeFile.safePath, markdown, "utf-8");
+    res.json({
+      success: true,
+      filePath: safeFile.safePath,
+      content: markdown,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/export-duplicate-log
+ */
+app.post("/api/scholar/export-duplicate-log", (req: Request, res: Response) => {
+  try {
+    const { groups, filename } = req.body;
+    const safeFile = getSafeOutputPath(filename, "01_duplicate_log.csv");
+    if (safeFile.error || !safeFile.safePath) return res.status(400).json({ error: safeFile.error });
+
+    const result = exportDuplicateLogCsv(groups || [], safeFile.safePath);
+    res.json({
+      success: true,
+      filePath: result.filePath,
+      csvContent: result.csvContent,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/export-v2
+ */
+app.post("/api/scholar/export-v2", (req: Request, res: Response) => {
+  try {
+    const { records, filename } = req.body;
+    const safeFile = getSafeOutputPath(filename, "02_screening_v2.csv");
+    if (safeFile.error || !safeFile.safePath) return res.status(400).json({ error: safeFile.error });
+
+    const result = exportScreeningV2Csv(records || [], safeFile.safePath);
+    res.json({
+      success: true,
+      filePath: result.filePath,
+      csvContent: result.csvContent,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });

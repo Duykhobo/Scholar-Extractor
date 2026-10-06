@@ -728,15 +728,46 @@
     closeAutoScreenModalBtn;
     cancelAutoScreenBtn;
     startAutoScreenBtn;
-    autoScreenProfileName;
     autoScreenTotalCount;
     autoAcceptIncludeCheckbox;
+    // Pipeline Stage & Background Job Properties
+    currentStage = "B1";
+    activeJobId = null;
+    jobPollInterval = null;
+    stageTabBtns;
+    jobControlBanner;
+    jobStageBadge;
+    jobMessage;
+    jobPauseBtn;
+    jobResumeBtn;
+    jobCancelBtn;
+    jobProgressBar;
+    sourceSelect;
+    queryVersionSelect;
+    runStageBtn;
+    importFileBtn;
+    importFileInput;
+    snowballBtn;
+    viewPrismaBtn;
+    exportDedupLogBtn;
+    exportPrismaBtn;
+    exportEvidenceTableBtn;
+    prismaModal;
+    closePrismaModalBtn;
+    closePrismaModalBottomBtn;
+    prismaFlowContainer;
+    prismaDrilldownBox;
+    drilldownTitle;
+    drilldownPaperList;
+    modalExportPrismaMdBtn;
+    modalExportEvidenceBtn;
     async init() {
       this.bindDOMElements();
       this.attachEventListeners();
       await this.runStorageMigration();
       await this.loadProfilesAndRestoreActive();
       await this.checkBackendHealth();
+      await this.checkActiveBackgroundJob();
     }
     bindDOMElements() {
       this.activeResearchBadge = document.getElementById("activeResearchBadge");
@@ -825,6 +856,33 @@
       this.editKeywordsInclusion = document.getElementById("editKeywordsInclusion");
       this.btnSaveProfile = document.getElementById("btnSaveProfile");
       this.btnCancelEditProfile = document.getElementById("btnCancelEditProfile");
+      this.stageTabBtns = document.querySelectorAll(".stage-tab-btn");
+      this.jobControlBanner = document.getElementById("jobControlBanner");
+      this.jobStageBadge = document.getElementById("jobStageBadge");
+      this.jobMessage = document.getElementById("jobMessage");
+      this.jobPauseBtn = document.getElementById("jobPauseBtn");
+      this.jobResumeBtn = document.getElementById("jobResumeBtn");
+      this.jobCancelBtn = document.getElementById("jobCancelBtn");
+      this.jobProgressBar = document.getElementById("jobProgressBar");
+      this.sourceSelect = document.getElementById("sourceSelect");
+      this.queryVersionSelect = document.getElementById("queryVersionSelect");
+      this.runStageBtn = document.getElementById("runStageBtn");
+      this.importFileBtn = document.getElementById("importFileBtn");
+      this.importFileInput = document.getElementById("importFileInput");
+      this.snowballBtn = document.getElementById("snowballBtn");
+      this.viewPrismaBtn = document.getElementById("viewPrismaBtn");
+      this.exportDedupLogBtn = document.getElementById("exportDedupLogBtn");
+      this.exportPrismaBtn = document.getElementById("exportPrismaBtn");
+      this.exportEvidenceTableBtn = document.getElementById("exportEvidenceTableBtn");
+      this.prismaModal = document.getElementById("prismaModal");
+      this.closePrismaModalBtn = document.getElementById("closePrismaModalBtn");
+      this.closePrismaModalBottomBtn = document.getElementById("closePrismaModalBottomBtn");
+      this.prismaFlowContainer = document.getElementById("prismaFlowContainer");
+      this.prismaDrilldownBox = document.getElementById("prismaDrilldownBox");
+      this.drilldownTitle = document.getElementById("drilldownTitle");
+      this.drilldownPaperList = document.getElementById("drilldownPaperList");
+      this.modalExportPrismaMdBtn = document.getElementById("modalExportPrismaMdBtn");
+      this.modalExportEvidenceBtn = document.getElementById("modalExportEvidenceBtn");
     }
     attachEventListeners() {
       this.searchFirstBtn.addEventListener("click", () => this.handleSearchFirstPage());
@@ -842,6 +900,29 @@
       }
       this.exportSessionBtn.addEventListener("click", () => this.handleExportSessionJson());
       this.saveLogBtn.addEventListener("click", () => this.handleSaveLog());
+      if (this.stageTabBtns) {
+        this.stageTabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const stage = btn.getAttribute("data-stage") || "B1";
+            this.switchStage(stage);
+          });
+        });
+      }
+      if (this.runStageBtn) this.runStageBtn.addEventListener("click", () => this.handleRunStageJob());
+      if (this.importFileBtn) this.importFileBtn.addEventListener("click", () => this.importFileInput.click());
+      if (this.importFileInput) this.importFileInput.addEventListener("change", (e) => this.handleImportFile(e));
+      if (this.snowballBtn) this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
+      if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
+      if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
+      if (this.closePrismaModalBottomBtn) this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
+      if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
+      if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+      if (this.modalExportPrismaMdBtn) this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+      if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+      if (this.modalExportEvidenceBtn) this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+      if (this.jobPauseBtn) this.jobPauseBtn.addEventListener("click", () => this.handlePauseJob());
+      if (this.jobResumeBtn) this.jobResumeBtn.addEventListener("click", () => this.handleResumeJob());
+      if (this.jobCancelBtn) this.jobCancelBtn.addEventListener("click", () => this.handleCancelJob());
       this.profileSelect.addEventListener("change", () => {
         this.switchActiveProfile(this.profileSelect.value);
       });
@@ -3111,6 +3192,424 @@
         }
       } catch (err) {
         this.setStatus(`L\u1ED7i ghi nh\u1EADt k\xFD: ${err.message}`, "error");
+      }
+    }
+    // ==========================================
+    // PIPELINE STAGE MANAGEMENT & BACKGROUND JOBS
+    // ==========================================
+    switchStage(stage) {
+      this.currentStage = stage;
+      this.stageTabBtns.forEach((btn) => {
+        if (btn.getAttribute("data-stage") === stage) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+      const stageTitles = {
+        B1: "\u{1F680} B1: Thu th\u1EADp \u0110a ngu\u1ED3n (API / Import)",
+        V1: "\u{1F680} V1: Lo\u1EA1i tr\xF9ng & Chu\u1EA9n h\xF3a (Dedup)",
+        V2: "\u{1F680} V2: S\xE0ng l\u1ECDc Ti\xEAu \u0111\u1EC1 & T\xF3m t\u1EAFt",
+        V3: "\u{1F680} V3: T\u1EA3i PDF & Th\u1EA9m \u0111\u1ECBnh To\xE0n v\u0103n",
+        FINAL: "\u{1F4CA} Ch\u1ED1t Quy\u1EBFt \u0111\u1ECBnh & PRISMA 2020"
+      };
+      if (this.runStageBtn) {
+        this.runStageBtn.innerText = stageTitles[stage] || `\u{1F680} Ch\u1EA1y ${stage}`;
+      }
+      const isFinalOrV3 = stage === "FINAL" || stage === "V3";
+      if (this.exportDedupLogBtn) this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
+      if (this.exportPrismaBtn) this.exportPrismaBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
+      if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
+      this.setStatus(`\u0110ang \u1EDF giai \u0111o\u1EA1n [${stage}] c\u1EE7a quy tr\xECnh.`, "info");
+    }
+    async checkActiveBackgroundJob() {
+      try {
+        const res = await fetch(`${this.backendUrl}/api/jobs/active?researchId=${this.activeProfile.id}`);
+        if (res.ok) {
+          const job = await res.json();
+          if (job && job.id && (job.status === "running" || job.status === "paused")) {
+            this.activeJobId = job.id;
+            this.showJobBanner(job);
+            this.startJobPolling(job.id);
+          }
+        }
+      } catch {
+      }
+    }
+    showJobBanner(job) {
+      if (!this.jobControlBanner) return;
+      this.jobControlBanner.style.display = "block";
+      if (this.jobStageBadge) this.jobStageBadge.innerText = `Job: ${job.stage}`;
+      if (this.jobMessage) this.jobMessage.innerText = job.message || "\u0110ang x\u1EED l\xFD...";
+      if (this.jobProgressBar) {
+        const pct = job.totalItems > 0 ? Math.round(job.processedItems / job.totalItems * 100) : 0;
+        this.jobProgressBar.style.width = `${pct}%`;
+      }
+      if (job.status === "paused") {
+        if (this.jobPauseBtn) this.jobPauseBtn.style.display = "none";
+        if (this.jobResumeBtn) this.jobResumeBtn.style.display = "inline-block";
+      } else {
+        if (this.jobPauseBtn) this.jobPauseBtn.style.display = "inline-block";
+        if (this.jobResumeBtn) this.jobResumeBtn.style.display = "none";
+      }
+    }
+    startJobPolling(jobId) {
+      if (this.jobPollInterval) clearInterval(this.jobPollInterval);
+      this.jobPollInterval = setInterval(async () => {
+        try {
+          const res = await fetch(`${this.backendUrl}/api/jobs/${jobId}`);
+          if (!res.ok) return;
+          const job = await res.json();
+          this.showJobBanner(job);
+          if (job.status === "completed") {
+            clearInterval(this.jobPollInterval);
+            this.jobPollInterval = null;
+            this.activeJobId = null;
+            if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+            this.setStatus(`\u2713 Giai \u0111o\u1EA1n ${job.stage} \u0111\xE3 ho\xE0n th\xE0nh xu\u1EA5t s\u1EAFc!`, "success");
+            await this.reloadStageData();
+          } else if (job.status === "failed") {
+            clearInterval(this.jobPollInterval);
+            this.jobPollInterval = null;
+            this.activeJobId = null;
+            if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+            this.setStatus(`\u274C Giai \u0111o\u1EA1n ${job.stage} th\u1EA5t b\u1EA1i: ${job.error || "L\u1ED7i kh\xF4ng x\xE1c \u0111\u1ECBnh"}`, "error");
+          } else if (job.status === "cancelled") {
+            clearInterval(this.jobPollInterval);
+            this.jobPollInterval = null;
+            this.activeJobId = null;
+            if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+            this.setStatus(`\u0110\xE3 h\u1EE7y t\xE1c v\u1EE5 ch\u1EA1y n\u1EC1n ${job.stage}.`, "warning");
+          }
+        } catch (err) {
+          console.warn("Polling job failed:", err);
+        }
+      }, 1200);
+    }
+    async handleRunStageJob() {
+      if (this.currentStage === "FINAL") {
+        this.openPrismaModal();
+        return;
+      }
+      try {
+        this.setStatus(`\u0110ang kh\u1EDFi ch\u1EA1y t\xE1c v\u1EE5 ch\u1EA1y n\u1EC1n cho giai \u0111o\u1EA1n ${this.currentStage}...`, "info");
+        const payload = {
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+          stage: this.currentStage,
+          source: this.sourceSelect ? this.sourceSelect.value : "OpenAlex",
+          queryVersion: this.queryVersionSelect ? this.queryVersionSelect.value : "Q1",
+          query: this.queryInput.value.trim(),
+          asYlo: this.asYloInput.value.trim(),
+          asYhi: this.asYhiInput.value.trim(),
+          records: this.uniqueRecords
+        };
+        const res = await fetch(`${this.backendUrl}/api/pipeline/run-stage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || `HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        if (data.jobId) {
+          this.activeJobId = data.jobId;
+          this.showJobBanner({ stage: this.currentStage, status: "running", message: "\u0110ang ch\u1EA1y...", processedItems: 0, totalItems: 1 });
+          this.startJobPolling(data.jobId);
+          this.setStatus(`T\xE1c v\u1EE5 ${this.currentStage} \u0111\xE3 \u0111\u01B0\u1EE3c \u0111\u1EA9y v\xE0o ch\u1EA1y n\u1EC1n.`, "info");
+        }
+      } catch (e) {
+        this.setStatus(`Kh\xF4ng th\u1EC3 kh\u1EDFi ch\u1EA1y giai \u0111o\u1EA1n: ${e.message}`, "error");
+      }
+    }
+    async handlePauseJob() {
+      if (!this.activeJobId) return;
+      try {
+        await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/pause`, { method: "POST" });
+        this.setStatus("\u0110\xE3 t\u1EA1m d\u1EEBng t\xE1c v\u1EE5.", "warning");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi t\u1EA1m d\u1EEBng: ${e.message}`, "error");
+      }
+    }
+    async handleResumeJob() {
+      if (!this.activeJobId) return;
+      try {
+        await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/resume`, { method: "POST" });
+        this.setStatus("\u0110ang ti\u1EBFp t\u1EE5c t\xE1c v\u1EE5...", "info");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi ti\u1EBFp t\u1EE5c: ${e.message}`, "error");
+      }
+    }
+    async handleCancelJob() {
+      if (!this.activeJobId) return;
+      if (!confirm("B\u1EA1n c\xF3 ch\u1EAFc ch\u1EAFn mu\u1ED1n h\u1EE7y t\xE1c v\u1EE5 \u0111ang ch\u1EA1y?")) return;
+      try {
+        await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/cancel`, { method: "POST" });
+        this.setStatus("\u0110\xE3 g\u1EEDi y\xEAu c\u1EA7u h\u1EE7y t\xE1c v\u1EE5.", "warning");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi h\u1EE7y: ${e.message}`, "error");
+      }
+    }
+    async reloadStageData() {
+      try {
+        const res = await fetch(
+          `${this.backendUrl}/api/pipeline/stage-data?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (data.records && Array.isArray(data.records)) {
+            this.uniqueRecords = data.records;
+            this.allRecords = data.records;
+            if (data.dedupStats) this.dedupStats = data.dedupStats;
+            this.updateStatsDisplay();
+            this.renderRecordsList();
+            await this.saveSessionToStorage();
+          }
+        }
+      } catch (e) {
+        console.warn("Reload stage data failed:", e);
+      }
+    }
+    async handleImportFile(event) {
+      const input = event.target;
+      if (!input.files || input.files.length === 0) return;
+      const file = input.files[0];
+      try {
+        this.setStatus(`\u0110ang \u0111\u1ECDc v\xE0 nh\u1EADp t\u1EC7p "${file.name}"...`, "info");
+        const text = await file.text();
+        const res = await fetch(`${this.backendUrl}/api/pipeline/import-file`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fileName: file.name,
+            content: text,
+            researchId: this.activeProfile.id,
+            sessionId: this.currentSessionId || `session_${Date.now()}`
+          })
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error || `HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        if (data.records && Array.isArray(data.records)) {
+          this.allRecords = [...this.allRecords, ...data.records];
+          this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+          this.updateStatsDisplay();
+          this.renderRecordsList();
+          await this.saveSessionToStorage();
+          let warnMsg = "";
+          if (data.warnings && data.warnings.length > 0) {
+            warnMsg = ` (L\u01B0u \xFD: ${data.warnings.join("; ")})`;
+          }
+          this.setStatus(`\u2713 \u0110\xE3 nh\u1EADp th\xE0nh c\xF4ng ${data.records.length} b\u1EA3n ghi t\u1EEB "${file.name}"!${warnMsg}`, "success");
+        }
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi nh\u1EADp t\u1EC7p: ${e.message}`, "error");
+      } finally {
+        input.value = "";
+      }
+    }
+    async handleSnowballingPrompt() {
+      const selectedRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId);
+      const defaultDoi = selectedRec?.doi || "";
+      const seedDoi = prompt("Nh\u1EADp DOI b\xE0i b\xE1o h\u1EA1t gi\u1ED1ng \u0111\u1EC3 Snowballing:", defaultDoi);
+      if (!seedDoi || !seedDoi.trim()) return;
+      const direction = prompt("H\u01B0\u1EDBng Snowballing: 'backward' (References) ho\u1EB7c 'forward' (Citations):", "backward");
+      const ep = direction === "forward" ? "forward" : "backward";
+      try {
+        this.setStatus(`\u0110ang th\u1EF1c hi\u1EC7n Snowballing ${ep} cho DOI: ${seedDoi}...`, "info");
+        const res = await fetch(`${this.backendUrl}/api/snowball/${ep}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            seedDoi: seedDoi.trim(),
+            seedTitle: selectedRec?.title || "",
+            researchId: this.activeProfile.id,
+            sessionId: this.currentSessionId || `session_${Date.now()}`,
+            maxRecords: 25
+          })
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.error || `HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        if (data.records && Array.isArray(data.records)) {
+          this.allRecords = [...this.allRecords, ...data.records];
+          this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+          this.updateStatsDisplay();
+          this.renderRecordsList();
+          await this.saveSessionToStorage();
+          this.setStatus(`\u2713 Snowballing t\xECm th\u1EA5y th\xEAm ${data.records.length} b\xE0i m\u1EDBi!`, "success");
+        }
+      } catch (e) {
+        this.setStatus(`L\u1ED7i Snowballing: ${e.message}`, "error");
+      }
+    }
+    // ==========================================
+    // PRISMA 2020 FLOW & EVIDENCE TABLE EXPORT
+    // ==========================================
+    async openPrismaModal() {
+      if (!this.prismaModal) return;
+      this.prismaModal.style.display = "flex";
+      if (this.prismaFlowContainer) {
+        this.prismaFlowContainer.innerHTML = '<div style="text-align: center; padding: 20px;">\u0110ang t\xEDnh to\xE1n ma tr\u1EADn PRISMA 2020...</div>';
+      }
+      try {
+        const res = await fetch(
+          `${this.backendUrl}/api/prisma/flow?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const flow = await res.json();
+        let balanceWarning = "";
+        if (!flow.isMathematicallyBalanced) {
+          balanceWarning = `
+          <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; margin-bottom: 8px;">
+            \u26A0\uFE0F <b>C\u1EA2NH B\xC1O L\u1EC6CH S\u1ED0 H\u1ECCC:</b> T\u1ED5ng Identification kh\xF4ng kh\u1EDBp v\u1EDBi (B\u1ECF tr\xF9ng + S\xE0ng l\u1ECDc). H\xE3y ki\u1EC3m tra l\u1EA1i c\xE1c b\u01B0\u1EDBc!
+          </div>
+        `;
+        }
+        this.prismaFlowContainer.innerHTML = `
+        ${balanceWarning}
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="prisma-box header-box">
+            <b>1. Identification (Nh\u1EADn di\u1EC7n b\u1EA3n ghi)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>C\u01A1 s\u1EDF d\u1EEF li\u1EC7u (Database searches):</span>
+              <span class="prisma-stat-clickable" data-cell="identificationDatabases">${flow.identificationDatabases} b\xE0i</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>Ngu\u1ED3n kh\xE1c / Snowballing (Other sources):</span>
+              <span class="prisma-stat-clickable" data-cell="identificationOther">${flow.identificationOther} b\xE0i</span>
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; margin-top: 4px; padding-top: 4px; font-weight: bold; display: flex; justify-content: space-between;">
+              <span>T\u1ED5ng nh\u1EADn di\u1EC7n:</span>
+              <span>${flow.totalIdentification} b\xE0i</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>2. Deduplication (Lo\u1EA1i tr\xF9ng l\u1EB7p - V1)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>B\u1EA3n ghi tr\xF9ng l\u1EB7p \u0111\xE3 lo\u1EA1i b\u1ECF:</span>
+              <span class="prisma-stat-clickable" data-cell="duplicatesRemoved" style="color: #dc2626;">-${flow.duplicatesRemoved} b\xE0i</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>3. Screening (S\xE0ng l\u1ECDc Ti\xEAu \u0111\u1EC1 & T\xF3m t\u1EAFt - V2)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>B\u1EA3n ghi \u0111\u01B0a v\xE0o s\xE0ng l\u1ECDc V2:</span>
+              <span class="prisma-stat-clickable" data-cell="screenedV2">${flow.screenedV2} b\xE0i</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>B\u1ECB lo\u1EA1i t\u1EA1i V2 (Ti\xEAu \u0111\u1EC1/T\xF3m t\u1EAFt kh\xF4ng kh\u1EDBp):</span>
+              <span class="prisma-stat-clickable" data-cell="excludedV2" style="color: #dc2626;">-${flow.excludedV2} b\xE0i</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>4. Eligibility (Th\u1EA9m \u0111\u1ECBnh To\xE0n v\u0103n - V3)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>B\u1EA3n ghi t\xECm ki\u1EBFm to\xE0n v\u0103n:</span>
+              <span class="prisma-stat-clickable" data-cell="soughtFullText">${flow.soughtFullText} b\xE0i</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>B\u1EA3n ghi \u0111\u1ECDc v\xE0 th\u1EA9m \u0111\u1ECBnh to\xE0n v\u0103n:</span>
+              <span class="prisma-stat-clickable" data-cell="assessedFullText">${flow.assessedFullText} b\xE0i</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>B\u1ECB lo\u1EA1i t\u1EA1i V3 (To\xE0n v\u0103n kh\xF4ng \u0111\u1EA1t / < 4 trang):</span>
+              <span class="prisma-stat-clickable" data-cell="excludedV3" style="color: #dc2626;">-${flow.excludedV3} b\xE0i</span>
+            </div>
+          </div>
+
+          <div class="prisma-box header-box" style="background: #f0fdf4; border-color: #86efac; color: #166534;">
+            <b>5. Included (Nghi\xEAn c\u1EE9u \u0111\u01B0a v\xE0o T\u1ED5ng quan - Ch\u1ED1t)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 12px; font-weight: bold;">
+              <span>S\u1ED1 nghi\xEAn c\u1EE9u \u0111\u01B0\u1EE3c ch\u1ECDn (Final Included):</span>
+              <span class="prisma-stat-clickable" data-cell="includedTotal" style="color: #16a34a; font-size: 14px;">${flow.includedTotal} b\xE0i</span>
+            </div>
+          </div>
+        </div>
+      `;
+        this.prismaFlowContainer.querySelectorAll(".prisma-stat-clickable").forEach((el) => {
+          el.addEventListener("click", () => {
+            const cellKey = el.getAttribute("data-cell");
+            if (cellKey && flow.drilldown && flow.drilldown[cellKey]) {
+              this.showPrismaDrilldown(flow.drilldown[cellKey]);
+            }
+          });
+        });
+      } catch (e) {
+        this.prismaFlowContainer.innerHTML = `<div class="error-banner">L\u1ED7i khi t\u1EA3i s\u01A1 \u0111\u1ED3 PRISMA: ${e.message}</div>`;
+      }
+    }
+    showPrismaDrilldown(cellData) {
+      if (!this.prismaDrilldownBox || !this.drilldownPaperList) return;
+      this.prismaDrilldownBox.style.display = "block";
+      if (this.drilldownTitle) {
+        this.drilldownTitle.innerText = `Danh s\xE1ch: ${cellData.cellName} (${cellData.count} b\xE0i)`;
+      }
+      if (cellData.paperIds.length === 0) {
+        this.drilldownPaperList.innerHTML = '<div style="color: #94a3b8; font-style: italic;">Kh\xF4ng c\xF3 b\xE0i b\xE1o n\xE0o trong m\u1EE5c n\xE0y.</div>';
+        return;
+      }
+      const items = cellData.paperIds.map((id) => {
+        const p = this.uniqueRecords.find((r) => r.id === id) || this.allRecords.find((r) => r.id === id);
+        const title = p ? p.title : id;
+        const doi = p?.doi ? ` (DOI: ${p.doi})` : "";
+        return `<li style="margin-bottom: 4px; line-height: 1.3;"><b>${this.escapeHtml(id)}</b>: ${this.escapeHtml(title)}${this.escapeHtml(doi)}</li>`;
+      });
+      this.drilldownPaperList.innerHTML = `<ul style="padding-left: 18px;">${items.join("")}</ul>`;
+    }
+    closePrismaModal() {
+      if (this.prismaModal) this.prismaModal.style.display = "none";
+      if (this.prismaDrilldownBox) this.prismaDrilldownBox.style.display = "none";
+    }
+    async handleExportPrismaMarkdown() {
+      try {
+        this.setStatus("\u0110ang xu\u1EA5t s\u01A1 \u0111\u1ED3 PRISMA Markdown...", "info");
+        const res = await fetch(
+          `${this.backendUrl}/api/prisma/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        this.downloadFile(text, "prisma-flow.md", "text/markdown;charset=utf-8;");
+        this.setStatus("\u2713 \u0110\xE3 t\u1EA3i file prisma-flow.md th\xE0nh c\xF4ng!", "success");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi xu\u1EA5t PRISMA Markdown: ${e.message}`, "error");
+      }
+    }
+    async handleExportEvidenceTable() {
+      try {
+        this.setStatus("\u0110ang xu\u1EA5t Evidence Table Markdown...", "info");
+        const res = await fetch(
+          `${this.backendUrl}/api/evidence-table/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        this.downloadFile(text, "evidence-table.md", "text/markdown;charset=utf-8;");
+        this.setStatus("\u2713 \u0110\xE3 t\u1EA3i file evidence-table.md th\xE0nh c\xF4ng!", "success");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi xu\u1EA5t Evidence Table: ${e.message}`, "error");
+      }
+    }
+    async handleExportDedupLog() {
+      try {
+        this.setStatus("\u0110ang xu\u1EA5t Duplicate Log...", "info");
+        const res = await fetch(
+          `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+        this.downloadFile(text, "duplicate-log.csv", "text/csv;charset=utf-8;");
+        this.setStatus("\u2713 \u0110\xE3 t\u1EA3i file duplicate-log.csv th\xE0nh c\xF4ng!", "success");
+      } catch (e) {
+        this.setStatus(`L\u1ED7i khi xu\u1EA5t Duplicate Log: ${e.message}`, "error");
       }
     }
     // --- Utilities & Sanitization ---

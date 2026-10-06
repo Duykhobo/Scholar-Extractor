@@ -52,6 +52,33 @@
       </div>
     </div>
 
+    <!-- Pipeline Stage Navigator (B1 -> V1 -> V2 -> V3 -> FINAL) -->
+    <div class="pipeline-nav" id="pipelineNav">
+      <button class="stage-tab-btn active" data-stage="B1"><b>B1</b> Thu thập</button>
+      <button class="stage-tab-btn" data-stage="V1"><b>V1</b> Bỏ trùng</button>
+      <button class="stage-tab-btn" data-stage="V2"><b>V2</b> Sàng lọc Tiêu đề</button>
+      <button class="stage-tab-btn" data-stage="V3"><b>V3</b> Toàn văn</button>
+      <button class="stage-tab-btn" data-stage="FINAL"><b>Chốt</b> PRISMA & Evidence</button>
+    </div>
+
+    <!-- Background Job Execution Banner -->
+    <div id="jobControlBanner" style="display: none; background: #eff6ff; border: 1px solid #bfdbfe; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span id="jobStageBadge" class="badge badge-blue">Job: B1</span>
+          <span id="jobMessage" style="font-size: 11px; font-weight: 600; color: #1e40af;">Đang chạy nền...</span>
+        </div>
+        <div style="display: flex; gap: 4px;">
+          <button id="jobPauseBtn" class="btn-secondary" style="padding: 2px 8px; font-size: 10px;">⏸ Tạm dừng</button>
+          <button id="jobResumeBtn" class="btn-secondary" style="padding: 2px 8px; font-size: 10px; display: none;">▶ Tiếp tục</button>
+          <button id="jobCancelBtn" class="btn-danger" style="padding: 2px 8px; font-size: 10px;">⏹ Hủy</button>
+        </div>
+      </div>
+      <div style="width: 100%; height: 6px; background: #dbeafe; border-radius: 3px; overflow: hidden;">
+        <div id="jobProgressBar" style="width: 0%; height: 100%; background: #2563eb; transition: width 0.3s;"></div>
+      </div>
+    </div>
+
     <!-- Canh bao khong dong bo giua o nhap lieu va ket qua phien dang hien thi -->
     <div
       id="queryDesyncAlert"
@@ -73,6 +100,28 @@
 
     <!-- Section 1: Thiet lap tim kiem & bo loc -->
     <div class="section-card">
+      <!-- Nguon thu thap & Phien ban Query -->
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <div class="form-group" style="flex: 2; margin-bottom: 0;">
+          <label for="sourceSelect">Nguồn thu thập (Source Adapter):</label>
+          <select id="sourceSelect" style="width: 100%; padding: 5px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            <option value="OpenAlex" selected>OpenAlex (Chính - API Key đã cấu hình)</option>
+            <option value="Semantic Scholar">Semantic Scholar (Tùy chọn - Fallback OpenAlex)</option>
+            <option value="Google Scholar">Google Scholar (SerpApi - Paper ứng viên bổ trợ)</option>
+            <option value="ACM Digital Library">ACM Digital Library (Kỷ yếu & TOC)</option>
+            <option value="IEEE Xplore">IEEE Xplore (API Key / File)</option>
+            <option value="File Import">Nhập File Mẫu (CSV / BibTeX / RIS)</option>
+          </select>
+        </div>
+        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+          <label for="queryVersionSelect">Phiên bản Query (Protocol):</label>
+          <select id="queryVersionSelect" style="width: 100%; padding: 5px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            <option value="Q1" selected>Q1 (Chuỗi ban đầu)</option>
+            <option value="Q2">Q2 (Mở rộng từ đồng nghĩa)</option>
+            <option value="Q3">Q3 (Thu hẹp / Tinh chỉnh)</option>
+          </select>
+        </div>
+      </div>
       <div style="display: flex; gap: 8px; margin-bottom: 6px">
         <div class="form-group" style="flex: 3; margin-bottom: 0">
           <label for="queryInput">Chuỗi tìm kiếm nguyên văn (Search String):</label>
@@ -126,7 +175,12 @@
       </div>
 
       <div class="button-group">
-        <button id="searchFirstBtn" class="btn-primary">🔍 Lấy trang 1 (start=0)</button>
+        <button id="runStageBtn" class="btn-primary" style="background: #2563eb;">🚀 Chạy Giai Đoạn Hiện Tại</button>
+        <button id="importFileBtn" class="btn-secondary" style="background: #f1f5f9; color: #1e293b; border-color: #cbd5e1;">📂 Nhập Tệp Mẫu</button>
+        <input type="file" id="importFileInput" accept=".csv,.bib,.ris,.txt" style="display: none;" />
+        <button id="snowballBtn" class="btn-secondary" style="background: #e0f2fe; color: #0284c7; border-color: #bae6fd;">❄️ Snowballing</button>
+        <button id="viewPrismaBtn" class="btn-secondary" style="background: #eff6ff; color: #1e40af; border-color: #93c5fd;">📊 Sơ Đồ PRISMA</button>
+        <button id="searchFirstBtn" class="btn-secondary">🔍 Lấy trang 1 (start=0)</button>
         <button id="nextBtn" class="btn-secondary" style="display: none">⏩ Lấy trang tiếp (+10)</button>
         <button id="autoFetchBtn" class="btn-secondary" style="display: none">⚡ Lấy tối đa trang đã đặt</button>
         <button id="stopBtn" class="btn-danger" style="display: none">⏹ Dừng / Hủy</button>
@@ -294,6 +348,27 @@
           style="display: none; background: #e0f2fe; color: #0369a1; border-color: #bae6fd"
         >
           📑 Xuất Sàng lọc Đầy đủ (CSV)
+        </button>
+        <button
+          id="exportDedupLogBtn"
+          class="btn-secondary"
+          style="display: none; background: #fef3c7; color: #b45309; border-color: #fde68a"
+        >
+          📝 Xuất duplicate-log.csv
+        </button>
+        <button
+          id="exportPrismaBtn"
+          class="btn-secondary"
+          style="display: none; background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe"
+        >
+          📊 Xuất prisma-flow.md
+        </button>
+        <button
+          id="exportEvidenceTableBtn"
+          class="btn-secondary"
+          style="display: none; background: #f0fdf4; color: #15803d; border-color: #bbf7d0"
+        >
+          📋 Xuất evidence-table.md
         </button>
         <button
           id="exportApa7Btn"
@@ -538,6 +613,30 @@
         <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px;">
           <button id="cancelAutoScreenBtn" class="btn-secondary">Hủy bỏ</button>
           <button id="startAutoScreenBtn" class="btn-success" style="font-weight: 600; background: #16a34a;">🚀 Bắt đầu quét tự động</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: So do PRISMA 2020 & Drill-down -->
+    <div id="prismaModal" class="modal-overlay" style="display: none">
+      <div class="modal-content" style="max-width: 580px; max-height: 85vh; overflow-y: auto;">
+        <div class="modal-header">
+          <div class="modal-title" style="font-weight: 700; font-size: 13px; color: #1e40af;">📊 Sơ Đồ Luồng PRISMA 2020 (Đối soát Cân bằng Số học)</div>
+          <button id="closePrismaModalBtn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body" style="font-size: 12px; color: #334155;">
+          <div id="prismaFlowContainer" style="margin-bottom: 12px;"></div>
+          <div id="prismaDrilldownBox" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px; margin-top: 10px;">
+            <div id="drilldownTitle" style="font-weight: 700; margin-bottom: 6px; color: #1e293b;">Danh sách bài báo:</div>
+            <div id="drilldownPaperList" style="max-height: 160px; overflow-y: auto; font-size: 11px;"></div>
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; gap: 8px; margin-top: 10px;">
+          <div style="display: flex; gap: 6px;">
+            <button id="modalExportPrismaMdBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px;">📑 Xuất prisma-flow.md</button>
+            <button id="modalExportEvidenceBtn" class="btn-secondary" style="font-size: 11px; padding: 4px 8px;">📋 Xuất evidence-table.md</button>
+          </div>
+          <button id="closePrismaModalBottomBtn" class="btn-secondary">Đóng</button>
         </div>
       </div>
     </div>

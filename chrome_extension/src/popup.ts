@@ -176,9 +176,43 @@ class ScholarExtensionApp {
   private closeAutoScreenModalBtn!: HTMLButtonElement;
   private cancelAutoScreenBtn!: HTMLButtonElement;
   private startAutoScreenBtn!: HTMLButtonElement;
-  private autoScreenProfileName!: HTMLElement;
   private autoScreenTotalCount!: HTMLElement;
   private autoAcceptIncludeCheckbox!: HTMLInputElement;
+
+  // Pipeline Stage & Background Job Properties
+  private currentStage: string = "B1";
+  private activeJobId: string | null = null;
+  private jobPollInterval: any = null;
+
+  private stageTabBtns!: NodeListOf<HTMLButtonElement>;
+  private jobControlBanner!: HTMLElement;
+  private jobStageBadge!: HTMLElement;
+  private jobMessage!: HTMLElement;
+  private jobPauseBtn!: HTMLButtonElement;
+  private jobResumeBtn!: HTMLButtonElement;
+  private jobCancelBtn!: HTMLButtonElement;
+  private jobProgressBar!: HTMLElement;
+
+  private sourceSelect!: HTMLSelectElement;
+  private queryVersionSelect!: HTMLSelectElement;
+  private runStageBtn!: HTMLButtonElement;
+  private importFileBtn!: HTMLButtonElement;
+  private importFileInput!: HTMLInputElement;
+  private snowballBtn!: HTMLButtonElement;
+  private viewPrismaBtn!: HTMLButtonElement;
+  private exportDedupLogBtn!: HTMLButtonElement;
+  private exportPrismaBtn!: HTMLButtonElement;
+  private exportEvidenceTableBtn!: HTMLButtonElement;
+
+  private prismaModal!: HTMLElement;
+  private closePrismaModalBtn!: HTMLButtonElement;
+  private closePrismaModalBottomBtn!: HTMLButtonElement;
+  private prismaFlowContainer!: HTMLElement;
+  private prismaDrilldownBox!: HTMLElement;
+  private drilldownTitle!: HTMLElement;
+  private drilldownPaperList!: HTMLElement;
+  private modalExportPrismaMdBtn!: HTMLButtonElement;
+  private modalExportEvidenceBtn!: HTMLButtonElement;
 
   async init() {
     this.bindDOMElements();
@@ -186,6 +220,7 @@ class ScholarExtensionApp {
     await this.runStorageMigration();
     await this.loadProfilesAndRestoreActive();
     await this.checkBackendHealth();
+    await this.checkActiveBackgroundJob();
   }
 
   private bindDOMElements() {
@@ -286,6 +321,37 @@ class ScholarExtensionApp {
     this.editKeywordsInclusion = document.getElementById("editKeywordsInclusion") as HTMLInputElement;
     this.btnSaveProfile = document.getElementById("btnSaveProfile") as HTMLButtonElement;
     this.btnCancelEditProfile = document.getElementById("btnCancelEditProfile") as HTMLButtonElement;
+
+    // Pipeline & Job Elements
+    this.stageTabBtns = document.querySelectorAll(".stage-tab-btn");
+    this.jobControlBanner = document.getElementById("jobControlBanner") as HTMLElement;
+    this.jobStageBadge = document.getElementById("jobStageBadge") as HTMLElement;
+    this.jobMessage = document.getElementById("jobMessage") as HTMLElement;
+    this.jobPauseBtn = document.getElementById("jobPauseBtn") as HTMLButtonElement;
+    this.jobResumeBtn = document.getElementById("jobResumeBtn") as HTMLButtonElement;
+    this.jobCancelBtn = document.getElementById("jobCancelBtn") as HTMLButtonElement;
+    this.jobProgressBar = document.getElementById("jobProgressBar") as HTMLElement;
+
+    this.sourceSelect = document.getElementById("sourceSelect") as HTMLSelectElement;
+    this.queryVersionSelect = document.getElementById("queryVersionSelect") as HTMLSelectElement;
+    this.runStageBtn = document.getElementById("runStageBtn") as HTMLButtonElement;
+    this.importFileBtn = document.getElementById("importFileBtn") as HTMLButtonElement;
+    this.importFileInput = document.getElementById("importFileInput") as HTMLInputElement;
+    this.snowballBtn = document.getElementById("snowballBtn") as HTMLButtonElement;
+    this.viewPrismaBtn = document.getElementById("viewPrismaBtn") as HTMLButtonElement;
+    this.exportDedupLogBtn = document.getElementById("exportDedupLogBtn") as HTMLButtonElement;
+    this.exportPrismaBtn = document.getElementById("exportPrismaBtn") as HTMLButtonElement;
+    this.exportEvidenceTableBtn = document.getElementById("exportEvidenceTableBtn") as HTMLButtonElement;
+
+    this.prismaModal = document.getElementById("prismaModal") as HTMLElement;
+    this.closePrismaModalBtn = document.getElementById("closePrismaModalBtn") as HTMLButtonElement;
+    this.closePrismaModalBottomBtn = document.getElementById("closePrismaModalBottomBtn") as HTMLButtonElement;
+    this.prismaFlowContainer = document.getElementById("prismaFlowContainer") as HTMLElement;
+    this.prismaDrilldownBox = document.getElementById("prismaDrilldownBox") as HTMLElement;
+    this.drilldownTitle = document.getElementById("drilldownTitle") as HTMLElement;
+    this.drilldownPaperList = document.getElementById("drilldownPaperList") as HTMLElement;
+    this.modalExportPrismaMdBtn = document.getElementById("modalExportPrismaMdBtn") as HTMLButtonElement;
+    this.modalExportEvidenceBtn = document.getElementById("modalExportEvidenceBtn") as HTMLButtonElement;
   }
 
   private attachEventListeners() {
@@ -305,6 +371,33 @@ class ScholarExtensionApp {
     }
     this.exportSessionBtn.addEventListener("click", () => this.handleExportSessionJson());
     this.saveLogBtn.addEventListener("click", () => this.handleSaveLog());
+
+    // Pipeline Stage & PRISMA Event Listeners
+    if (this.stageTabBtns) {
+      this.stageTabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const stage = btn.getAttribute("data-stage") || "B1";
+          this.switchStage(stage);
+        });
+      });
+    }
+
+    if (this.runStageBtn) this.runStageBtn.addEventListener("click", () => this.handleRunStageJob());
+    if (this.importFileBtn) this.importFileBtn.addEventListener("click", () => this.importFileInput.click());
+    if (this.importFileInput) this.importFileInput.addEventListener("change", (e) => this.handleImportFile(e));
+    if (this.snowballBtn) this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
+    if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
+    if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
+    if (this.closePrismaModalBottomBtn) this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
+    if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
+    if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+    if (this.modalExportPrismaMdBtn) this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+    if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+    if (this.modalExportEvidenceBtn) this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+
+    if (this.jobPauseBtn) this.jobPauseBtn.addEventListener("click", () => this.handlePauseJob());
+    if (this.jobResumeBtn) this.jobResumeBtn.addEventListener("click", () => this.handleResumeJob());
+    if (this.jobCancelBtn) this.jobCancelBtn.addEventListener("click", () => this.handleCancelJob());
 
     // Profile Select & Switch
     this.profileSelect.addEventListener("change", () => {
@@ -3032,6 +3125,468 @@ class ScholarExtensionApp {
       }
     } catch (err: any) {
       this.setStatus(`Lỗi ghi nhật ký: ${err.message}`, "error");
+    }
+  }
+
+  // ==========================================
+  // PIPELINE STAGE MANAGEMENT & BACKGROUND JOBS
+  // ==========================================
+
+  private switchStage(stage: string) {
+    this.currentStage = stage;
+    this.stageTabBtns.forEach((btn) => {
+      if (btn.getAttribute("data-stage") === stage) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    const stageTitles: Record<string, string> = {
+      B1: "🚀 B1: Thu thập Đa nguồn (API / Import)",
+      V1: "🚀 V1: Loại trùng & Chuẩn hóa (Dedup)",
+      V2: "🚀 V2: Sàng lọc Tiêu đề & Tóm tắt",
+      V3: "🚀 V3: Tải PDF & Thẩm định Toàn văn",
+      FINAL: "📊 Chốt Quyết định & PRISMA 2020",
+    };
+
+    if (this.runStageBtn) {
+      this.runStageBtn.innerText = stageTitles[stage] || `🚀 Chạy ${stage}`;
+    }
+
+    const isFinalOrV3 = stage === "FINAL" || stage === "V3";
+    if (this.exportDedupLogBtn) this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
+    if (this.exportPrismaBtn) this.exportPrismaBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
+    if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
+
+    this.setStatus(`Đang ở giai đoạn [${stage}] của quy trình.`, "info");
+  }
+
+  private async checkActiveBackgroundJob() {
+    try {
+      const res = await fetch(`${this.backendUrl}/api/jobs/active?researchId=${this.activeProfile.id}`);
+      if (res.ok) {
+        const job = await res.json();
+        if (job && job.id && (job.status === "running" || job.status === "paused")) {
+          this.activeJobId = job.id;
+          this.showJobBanner(job);
+          this.startJobPolling(job.id);
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  private showJobBanner(job: any) {
+    if (!this.jobControlBanner) return;
+    this.jobControlBanner.style.display = "block";
+    if (this.jobStageBadge) this.jobStageBadge.innerText = `Job: ${job.stage}`;
+    if (this.jobMessage) this.jobMessage.innerText = job.message || "Đang xử lý...";
+    if (this.jobProgressBar) {
+      const pct = job.totalItems > 0 ? Math.round((job.processedItems / job.totalItems) * 100) : 0;
+      this.jobProgressBar.style.width = `${pct}%`;
+    }
+    if (job.status === "paused") {
+      if (this.jobPauseBtn) this.jobPauseBtn.style.display = "none";
+      if (this.jobResumeBtn) this.jobResumeBtn.style.display = "inline-block";
+    } else {
+      if (this.jobPauseBtn) this.jobPauseBtn.style.display = "inline-block";
+      if (this.jobResumeBtn) this.jobResumeBtn.style.display = "none";
+    }
+  }
+
+  private startJobPolling(jobId: string) {
+    if (this.jobPollInterval) clearInterval(this.jobPollInterval);
+    this.jobPollInterval = setInterval(async () => {
+      try {
+        const res = await fetch(`${this.backendUrl}/api/jobs/${jobId}`);
+        if (!res.ok) return;
+        const job = await res.json();
+        this.showJobBanner(job);
+
+        if (job.status === "completed") {
+          clearInterval(this.jobPollInterval);
+          this.jobPollInterval = null;
+          this.activeJobId = null;
+          if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+          this.setStatus(`✓ Giai đoạn ${job.stage} đã hoàn thành xuất sắc!`, "success");
+          await this.reloadStageData();
+        } else if (job.status === "failed") {
+          clearInterval(this.jobPollInterval);
+          this.jobPollInterval = null;
+          this.activeJobId = null;
+          if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+          this.setStatus(`❌ Giai đoạn ${job.stage} thất bại: ${job.error || "Lỗi không xác định"}`, "error");
+        } else if (job.status === "cancelled") {
+          clearInterval(this.jobPollInterval);
+          this.jobPollInterval = null;
+          this.activeJobId = null;
+          if (this.jobControlBanner) this.jobControlBanner.style.display = "none";
+          this.setStatus(`Đã hủy tác vụ chạy nền ${job.stage}.`, "warning");
+        }
+      } catch (err) {
+        console.warn("Polling job failed:", err);
+      }
+    }, 1200);
+  }
+
+  private async handleRunStageJob() {
+    if (this.currentStage === "FINAL") {
+      this.openPrismaModal();
+      return;
+    }
+
+    try {
+      this.setStatus(`Đang khởi chạy tác vụ chạy nền cho giai đoạn ${this.currentStage}...`, "info");
+      const payload = {
+        researchId: this.activeProfile.id,
+        sessionId: this.currentSessionId || `session_${Date.now()}`,
+        stage: this.currentStage,
+        source: this.sourceSelect ? this.sourceSelect.value : "OpenAlex",
+        queryVersion: this.queryVersionSelect ? this.queryVersionSelect.value : "Q1",
+        query: this.queryInput.value.trim(),
+        asYlo: this.asYloInput.value.trim(),
+        asYhi: this.asYhiInput.value.trim(),
+        records: this.uniqueRecords,
+      };
+
+      const res = await fetch(`${this.backendUrl}/api/pipeline/run-stage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.jobId) {
+        this.activeJobId = data.jobId;
+        this.showJobBanner({ stage: this.currentStage, status: "running", message: "Đang chạy...", processedItems: 0, totalItems: 1 });
+        this.startJobPolling(data.jobId);
+        this.setStatus(`Tác vụ ${this.currentStage} đã được đẩy vào chạy nền.`, "info");
+      }
+    } catch (e: any) {
+      this.setStatus(`Không thể khởi chạy giai đoạn: ${e.message}`, "error");
+    }
+  }
+
+  private async handlePauseJob() {
+    if (!this.activeJobId) return;
+    try {
+      await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/pause`, { method: "POST" });
+      this.setStatus("Đã tạm dừng tác vụ.", "warning");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi tạm dừng: ${e.message}`, "error");
+    }
+  }
+
+  private async handleResumeJob() {
+    if (!this.activeJobId) return;
+    try {
+      await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/resume`, { method: "POST" });
+      this.setStatus("Đang tiếp tục tác vụ...", "info");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi tiếp tục: ${e.message}`, "error");
+    }
+  }
+
+  private async handleCancelJob() {
+    if (!this.activeJobId) return;
+    if (!confirm("Bạn có chắc chắn muốn hủy tác vụ đang chạy?")) return;
+    try {
+      await fetch(`${this.backendUrl}/api/jobs/${this.activeJobId}/cancel`, { method: "POST" });
+      this.setStatus("Đã gửi yêu cầu hủy tác vụ.", "warning");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi hủy: ${e.message}`, "error");
+    }
+  }
+
+  private async reloadStageData() {
+    try {
+      const res = await fetch(
+        `${this.backendUrl}/api/pipeline/stage-data?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if (data.records && Array.isArray(data.records)) {
+          this.uniqueRecords = data.records;
+          this.allRecords = data.records;
+          if (data.dedupStats) this.dedupStats = data.dedupStats;
+          this.updateStatsDisplay();
+          this.renderRecordsList();
+          await this.saveSessionToStorage();
+        }
+      }
+    } catch (e) {
+      console.warn("Reload stage data failed:", e);
+    }
+  }
+
+  private async handleImportFile(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    try {
+      this.setStatus(`Đang đọc và nhập tệp "${file.name}"...`, "info");
+      const text = await file.text();
+      const res = await fetch(`${this.backendUrl}/api/pipeline/import-file`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          content: text,
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.records && Array.isArray(data.records)) {
+        this.allRecords = [...this.allRecords, ...data.records];
+        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+        this.updateStatsDisplay();
+        this.renderRecordsList();
+        await this.saveSessionToStorage();
+
+        let warnMsg = "";
+        if (data.warnings && data.warnings.length > 0) {
+          warnMsg = ` (Lưu ý: ${data.warnings.join("; ")})`;
+        }
+        this.setStatus(`✓ Đã nhập thành công ${data.records.length} bản ghi từ "${file.name}"!${warnMsg}`, "success");
+      }
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi nhập tệp: ${e.message}`, "error");
+    } finally {
+      input.value = "";
+    }
+  }
+
+  private async handleSnowballingPrompt() {
+    const selectedRec = this.uniqueRecords.find((r) => r.id === this.selectedRecordId);
+    const defaultDoi = selectedRec?.doi || "";
+    const seedDoi = prompt("Nhập DOI bài báo hạt giống để Snowballing:", defaultDoi);
+    if (!seedDoi || !seedDoi.trim()) return;
+
+    const direction = prompt("Hướng Snowballing: 'backward' (References) hoặc 'forward' (Citations):", "backward");
+    const ep = direction === "forward" ? "forward" : "backward";
+
+    try {
+      this.setStatus(`Đang thực hiện Snowballing ${ep} cho DOI: ${seedDoi}...`, "info");
+      const res = await fetch(`${this.backendUrl}/api/snowball/${ep}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          seedDoi: seedDoi.trim(),
+          seedTitle: selectedRec?.title || "",
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId || `session_${Date.now()}`,
+          maxRecords: 25,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.records && Array.isArray(data.records)) {
+        this.allRecords = [...this.allRecords, ...data.records];
+        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+        this.updateStatsDisplay();
+        this.renderRecordsList();
+        await this.saveSessionToStorage();
+        this.setStatus(`✓ Snowballing tìm thấy thêm ${data.records.length} bài mới!`, "success");
+      }
+    } catch (e: any) {
+      this.setStatus(`Lỗi Snowballing: ${e.message}`, "error");
+    }
+  }
+
+  // ==========================================
+  // PRISMA 2020 FLOW & EVIDENCE TABLE EXPORT
+  // ==========================================
+
+  private async openPrismaModal() {
+    if (!this.prismaModal) return;
+    this.prismaModal.style.display = "flex";
+    if (this.prismaFlowContainer) {
+      this.prismaFlowContainer.innerHTML = '<div style="text-align: center; padding: 20px;">Đang tính toán ma trận PRISMA 2020...</div>';
+    }
+
+    try {
+      const res = await fetch(
+        `${this.backendUrl}/api/prisma/flow?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const flow = await res.json();
+
+      let balanceWarning = "";
+      if (!flow.isMathematicallyBalanced) {
+        balanceWarning = `
+          <div class="warning-banner" style="background: #fef2f2; border-color: #fca5a5; color: #991b1b; margin-bottom: 8px;">
+            ⚠️ <b>CẢNH BÁO LỆCH SỐ HỌC:</b> Tổng Identification không khớp với (Bỏ trùng + Sàng lọc). Hãy kiểm tra lại các bước!
+          </div>
+        `;
+      }
+
+      this.prismaFlowContainer.innerHTML = `
+        ${balanceWarning}
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="prisma-box header-box">
+            <b>1. Identification (Nhận diện bản ghi)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>Cơ sở dữ liệu (Database searches):</span>
+              <span class="prisma-stat-clickable" data-cell="identificationDatabases">${flow.identificationDatabases} bài</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>Nguồn khác / Snowballing (Other sources):</span>
+              <span class="prisma-stat-clickable" data-cell="identificationOther">${flow.identificationOther} bài</span>
+            </div>
+            <div style="border-top: 1px dashed #cbd5e1; margin-top: 4px; padding-top: 4px; font-weight: bold; display: flex; justify-content: space-between;">
+              <span>Tổng nhận diện:</span>
+              <span>${flow.totalIdentification} bài</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>2. Deduplication (Loại trùng lặp - V1)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>Bản ghi trùng lặp đã loại bỏ:</span>
+              <span class="prisma-stat-clickable" data-cell="duplicatesRemoved" style="color: #dc2626;">-${flow.duplicatesRemoved} bài</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>3. Screening (Sàng lọc Tiêu đề & Tóm tắt - V2)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>Bản ghi đưa vào sàng lọc V2:</span>
+              <span class="prisma-stat-clickable" data-cell="screenedV2">${flow.screenedV2} bài</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>Bị loại tại V2 (Tiêu đề/Tóm tắt không khớp):</span>
+              <span class="prisma-stat-clickable" data-cell="excludedV2" style="color: #dc2626;">-${flow.excludedV2} bài</span>
+            </div>
+          </div>
+
+          <div class="prisma-box">
+            <b>4. Eligibility (Thẩm định Toàn văn - V3)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 11px;">
+              <span>Bản ghi tìm kiếm toàn văn:</span>
+              <span class="prisma-stat-clickable" data-cell="soughtFullText">${flow.soughtFullText} bài</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>Bản ghi đọc và thẩm định toàn văn:</span>
+              <span class="prisma-stat-clickable" data-cell="assessedFullText">${flow.assessedFullText} bài</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+              <span>Bị loại tại V3 (Toàn văn không đạt / < 4 trang):</span>
+              <span class="prisma-stat-clickable" data-cell="excludedV3" style="color: #dc2626;">-${flow.excludedV3} bài</span>
+            </div>
+          </div>
+
+          <div class="prisma-box header-box" style="background: #f0fdf4; border-color: #86efac; color: #166534;">
+            <b>5. Included (Nghiên cứu đưa vào Tổng quan - Chốt)</b>
+            <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 12px; font-weight: bold;">
+              <span>Số nghiên cứu được chọn (Final Included):</span>
+              <span class="prisma-stat-clickable" data-cell="includedTotal" style="color: #16a34a; font-size: 14px;">${flow.includedTotal} bài</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      this.prismaFlowContainer.querySelectorAll(".prisma-stat-clickable").forEach((el) => {
+        el.addEventListener("click", () => {
+          const cellKey = el.getAttribute("data-cell");
+          if (cellKey && flow.drilldown && flow.drilldown[cellKey]) {
+            this.showPrismaDrilldown(flow.drilldown[cellKey]);
+          }
+        });
+      });
+    } catch (e: any) {
+      this.prismaFlowContainer.innerHTML = `<div class="error-banner">Lỗi khi tải sơ đồ PRISMA: ${e.message}</div>`;
+    }
+  }
+
+  private showPrismaDrilldown(cellData: { cellName: string; count: number; paperIds: string[] }) {
+    if (!this.prismaDrilldownBox || !this.drilldownPaperList) return;
+    this.prismaDrilldownBox.style.display = "block";
+    if (this.drilldownTitle) {
+      this.drilldownTitle.innerText = `Danh sách: ${cellData.cellName} (${cellData.count} bài)`;
+    }
+
+    if (cellData.paperIds.length === 0) {
+      this.drilldownPaperList.innerHTML = '<div style="color: #94a3b8; font-style: italic;">Không có bài báo nào trong mục này.</div>';
+      return;
+    }
+
+    const items = cellData.paperIds.map((id) => {
+      const p = this.uniqueRecords.find((r) => r.id === id) || this.allRecords.find((r) => r.id === id);
+      const title = p ? p.title : id;
+      const doi = p?.doi ? ` (DOI: ${p.doi})` : "";
+      return `<li style="margin-bottom: 4px; line-height: 1.3;"><b>${this.escapeHtml(id)}</b>: ${this.escapeHtml(title)}${this.escapeHtml(doi)}</li>`;
+    });
+
+    this.drilldownPaperList.innerHTML = `<ul style="padding-left: 18px;">${items.join("")}</ul>`;
+  }
+
+  private closePrismaModal() {
+    if (this.prismaModal) this.prismaModal.style.display = "none";
+    if (this.prismaDrilldownBox) this.prismaDrilldownBox.style.display = "none";
+  }
+
+  private async handleExportPrismaMarkdown() {
+    try {
+      this.setStatus("Đang xuất sơ đồ PRISMA Markdown...", "info");
+      const res = await fetch(
+        `${this.backendUrl}/api/prisma/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      this.downloadFile(text, "prisma-flow.md", "text/markdown;charset=utf-8;");
+      this.setStatus("✓ Đã tải file prisma-flow.md thành công!", "success");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi xuất PRISMA Markdown: ${e.message}`, "error");
+    }
+  }
+
+  private async handleExportEvidenceTable() {
+    try {
+      this.setStatus("Đang xuất Evidence Table Markdown...", "info");
+      const res = await fetch(
+        `${this.backendUrl}/api/evidence-table/export-md?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      this.downloadFile(text, "evidence-table.md", "text/markdown;charset=utf-8;");
+      this.setStatus("✓ Đã tải file evidence-table.md thành công!", "success");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi xuất Evidence Table: ${e.message}`, "error");
+    }
+  }
+
+  private async handleExportDedupLog() {
+    try {
+      this.setStatus("Đang xuất Duplicate Log...", "info");
+      const res = await fetch(
+        `${this.backendUrl}/api/export/duplicates?researchId=${this.activeProfile.id}&sessionId=${this.currentSessionId}`
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      this.downloadFile(text, "duplicate-log.csv", "text/csv;charset=utf-8;");
+      this.setStatus("✓ Đã tải file duplicate-log.csv thành công!", "success");
+    } catch (e: any) {
+      this.setStatus(`Lỗi khi xuất Duplicate Log: ${e.message}`, "error");
     }
   }
 

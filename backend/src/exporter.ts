@@ -508,3 +508,88 @@ export function exportApa7References(
     };
   }
 }
+
+/**
+ * Xuất Duplicate Log (V1)
+ */
+export function exportDuplicateLogCsv(
+  groups: any[],
+  outputPath?: string,
+): { success: boolean; filePath?: string; csvContent: string } {
+  const headers = ["group_id", "canonical_id", "duplicate_ids", "reason", "rule", "user_confirmed", "created_at"];
+  let csvContent = "\uFEFF" + headers.join(",") + "\r\n";
+
+  for (const g of groups) {
+    const row = [
+      escapeCsvField(g.id),
+      escapeCsvField(g.canonicalId),
+      escapeCsvField(Array.isArray(g.duplicateIds) ? g.duplicateIds.join("; ") : ""),
+      escapeCsvField(g.reason),
+      escapeCsvField(g.rule),
+      escapeCsvField(g.userConfirmed ? "YES" : "NO"),
+      escapeCsvField(g.createdAt),
+    ];
+    csvContent += row.join(",") + "\r\n";
+  }
+
+  const sanitizedCsv = sanitizeString(csvContent);
+  if (outputPath) {
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(outputPath, sanitizedCsv, "utf-8");
+    return { success: true, filePath: outputPath, csvContent: sanitizedCsv };
+  }
+  return { success: true, csvContent: sanitizedCsv };
+}
+
+/**
+ * Xuất V2 Screening CSV
+ */
+export function exportScreeningV2Csv(
+  records: any[],
+  outputPath?: string,
+): { success: boolean; filePath?: string; csvContent: string } {
+  const headers = [
+    "id",
+    "doi",
+    "title",
+    "authors",
+    "year",
+    "venue",
+    "v2_decision",
+    "matched_criteria",
+    "unknown_criteria",
+    "screening_reason",
+    "final_decision",
+    "user_notes",
+  ];
+  let csvContent = "\uFEFF" + headers.join(",") + "\r\n";
+
+  for (const r of records) {
+    const row = [
+      escapeCsvField(r.id),
+      escapeCsvField(r.doi || ""),
+      escapeCsvField(r.title || ""),
+      escapeCsvField(r.authors || ""),
+      escapeCsvField(r.year || ""),
+      escapeCsvField(r.venue || ""),
+      escapeCsvField(r.v2Decision || r.suggestedDecision || "Unsure"),
+      escapeCsvField((r.matchedCriteria || []).join("; ")),
+      escapeCsvField((r.unknownCriteria || []).join("; ")),
+      escapeCsvField(r.screeningReason || ""),
+      escapeCsvField(r.finalDecision || ""),
+      escapeCsvField(r.userNotes || ""),
+    ];
+    csvContent += row.join(",") + "\r\n";
+  }
+
+  const sanitizedCsv = sanitizeString(csvContent);
+  if (outputPath) {
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(outputPath, sanitizedCsv, "utf-8");
+    return { success: true, filePath: outputPath, csvContent: sanitizedCsv };
+  }
+  return { success: true, csvContent: sanitizedCsv };
+}
+

@@ -580,3 +580,67 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* Pipeline Stage Navigator */
+.pipeline-nav {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.stage-tab-btn {
+  flex: 1;
+  padding: 6px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #475569;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.stage-tab-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.stage-tab-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+
+/* PRISMA flow styling */
+.prisma-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.prisma-box.header-box {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.prisma-stat-clickable {
+  cursor: pointer;
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.prisma-stat-clickable:hover {
+  color: #1d4ed8;
+}

@@ -112,7 +112,9 @@ export interface PaperRecord {
   duplicateReason?: string;
 
   // Screening theo tieu chi IC-L/T/E/Y/P/I va EC-D/A/S/N/O
-  screeningStage: "V1" | "V2";
+  screeningStage: "V1" | "V2" | "V3" | "B1" | string;
+  pipelineStage?: PipelineStage;
+  queryVersion?: string; // Q1, Q2, Q3 hoặc giữ nguyên giá trị gốc khi import
   matchedCriteria: string[];
   unknownCriteria?: string[];
   missingEvidence?: string[];
@@ -121,7 +123,7 @@ export interface PaperRecord {
   finalDecision: ScreeningDecision | "";
   userNotes: string;
 
-  // Provenance & Du lieu bo sung tu tab dang mo / PDF
+  // Provenance & Du lieu bo sung tu tab dang mo / PDF / Nguon
   pdfUrl?: string;
   extracted_url?: string;
   extracted_at?: string;
@@ -129,6 +131,14 @@ export interface PaperRecord {
   evidence_snippets?: EvidenceSnippet[];
   page_count?: number;
   user_verified?: boolean;
+  provenanceList?: SourceProvenance[];
+  publicationType?: "journal-article" | "proceedings-article" | "proceedings" | "book" | "thesis" | "unknown" | string;
+  isContainer?: boolean; // tập kỷ yếu, issue, book
+  containerDoi?: string;
+  parentPaperId?: string;
+  childPapersCount?: number;
+  v2Decision?: V2ScreeningDecision;
+  fullTextStatus?: FullTextStatus;
 
   // Mô hình nghiên cứu & Đóng góp học thuật
   researchId?: string;
@@ -244,3 +254,178 @@ export interface SearchLogPayload {
   retrievalDate: string;
   notes?: string;
 }
+
+export type PipelineStage = "B1" | "V1" | "V2" | "V3" | "FINAL";
+export type V2ScreeningDecision = "PassToFullText" | "Exclude" | "Unsure";
+export type FullTextStatus =
+  | "finding"
+  | "downloaded"
+  | "paywalled"
+  | "network_error"
+  | "corrupted_file"
+  | "scanned_image_pdf"
+  | "extraction_failed"
+  | "confirmed_unretrievable";
+
+export interface SourceProvenance {
+  source: string;
+  sourceRecordId?: string;
+  queryId?: string;
+  queryVersion?: string; // Q1, Q2, Q3, etc.
+  retrievedAt: string;
+  method: string; // "api" | "serpapi" | "import_csv" | "import_bibtex" | "import_ris" | "active_tab" | "snowball_backward" | "snowball_forward" | "toc_expansion"
+  url?: string;
+  rawQuery?: string;
+  actualQuery?: string;
+  isEnrichmentOnly?: boolean;
+  containerDoi?: string;
+  parentPaperId?: string;
+}
+
+export interface SourceAdapterCapability {
+  sourceName: string;
+  canSearch: boolean;
+  paginationType: "offset" | "cursor" | "page" | "none";
+  canFilterYear: boolean;
+  canEnrich: boolean;
+  canFetchCitations: boolean;
+  canFetchReferences: boolean;
+  canDiscoverFullText: boolean;
+  canImport: boolean;
+  supportedImportFormats: ("csv" | "bibtex" | "ris")[];
+  rateLimitPerMinute: number;
+  requiresApiKey: boolean;
+  isApiKeyConfigured: boolean;
+  notes: string;
+}
+
+export interface DuplicateGroup {
+  id: string;
+  canonicalId: string;
+  duplicateIds: string[];
+  reason: string;
+  rule: "exact_doi" | "title_exact" | "title_fuzzy" | "manual_group";
+  userConfirmed?: boolean;
+  createdAt: string;
+}
+
+export interface CanonicalPaper extends PaperRecord {
+  allSources: string[];
+  provenanceList: SourceProvenance[];
+  mergedRecordIds: string[];
+}
+
+export interface FullTextRecordInfo {
+  paperId: string;
+  status: FullTextStatus;
+  officialVenue?: string;
+  officialVersion?: string;
+  actualFullTextUrl?: string;
+  actualVersionRead?: string;
+  pdfChecksum?: string;
+  pageCount?: number;
+  downloadedAt?: string;
+  extractionMethod?: string;
+  ocrStatus?: "not_needed" | "performed" | "failed" | "unsupported";
+  metadataMatchConfidence?: number;
+  isPaywalled?: boolean;
+  retrievalAttempts?: Array<{
+    url: string;
+    source: string;
+    timestamp: string;
+    success: boolean;
+    error?: string;
+  }>;
+}
+
+export interface BackgroundJob {
+  id: string;
+  researchId: string;
+  sessionId?: string;
+  stage: PipelineStage;
+  status: "pending" | "running" | "paused" | "completed" | "failed" | "cancelled";
+  progress: number; // 0 to 100
+  totalItems: number;
+  processedItems: number;
+  failedItems: number;
+  checkpoints?: Record<string, any>;
+  errorLog?: string[];
+  createdAt: string;
+  updatedAt: string;
+  config?: Record<string, any>;
+}
+
+export interface SnowballSeed {
+  id: string;
+  paperId: string;
+  doi?: string;
+  title: string;
+  direction: "backward" | "forward";
+  iteration: number;
+  source: string;
+  parentPaperId?: string;
+  discoveredAt: string;
+}
+
+export interface PrismaDrilldownCell {
+  count: number;
+  paperIds: string[];
+  notes?: string;
+}
+
+export interface PrismaData {
+  // Identification
+  databases: Record<string, PrismaDrilldownCell>;
+  totalDatabaseRecords: PrismaDrilldownCell;
+  otherMethods: Record<string, PrismaDrilldownCell>;
+  totalOtherRecords: PrismaDrilldownCell;
+  totalRawIdentified: PrismaDrilldownCell;
+
+  // Duplicate & Pre-screening
+  duplicatesRemoved: PrismaDrilldownCell;
+  recordsMarkedContainers: PrismaDrilldownCell;
+  recordsAfterDuplicates: PrismaDrilldownCell; // V1 output
+
+  // Title/Abstract Screening (V2)
+  screenedTitleAbstract: PrismaDrilldownCell;
+  excludedTitleAbstract: PrismaDrilldownCell;
+  excludedByReasonV2: Record<string, PrismaDrilldownCell>;
+  passedToFullText: PrismaDrilldownCell;
+  unsureTitleAbstract: PrismaDrilldownCell;
+
+  // Full-Text Retrieval & Eligibility (V3)
+  reportsSoughtForRetrieval: PrismaDrilldownCell;
+  reportsNotRetrieved: PrismaDrilldownCell;
+  reportsAssessedForEligibility: PrismaDrilldownCell;
+  excludedFullText: PrismaDrilldownCell;
+  excludedByReasonV3: Record<string, PrismaDrilldownCell>;
+  unsureFullText: PrismaDrilldownCell;
+
+  // Included
+  studiesIncluded: PrismaDrilldownCell;
+  reportsIncluded: PrismaDrilldownCell;
+
+  // Metadata
+  isFinal: boolean;
+  hasPending: boolean;
+  generatedAt: string;
+}
+
+export interface EvidenceTableRow {
+  id: string;
+  index: number;
+  paperText: string;
+  title: string;
+  year: number | string;
+  venue: string;
+  doi: string;
+  toolOrModel: string;
+  dataset: string;
+  metric: string;
+  result: string;
+  codeUrl: string;
+  limitations: string;
+  nearRq: string;
+  provenance: string;
+}
+

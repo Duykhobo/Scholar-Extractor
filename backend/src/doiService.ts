@@ -23,7 +23,7 @@ export async function fetchCrossrefMetadata(doi: string): Promise<CrossrefMetada
     const resp = await fetch(`https://api.crossref.org/works/${encodeURIComponent(cleanDoi)}`, {
       signal: controller.signal,
       headers: {
-        "User-Agent": "Scholar-Extractor-Bot/2.0 (mailto:scholar-extractor@research.local)",
+        "User-Agent": `Scholar-Extractor/2.0 (mailto:${process.env.RESEARCH_EMAIL || "swt302-research@fpt.edu.vn"})`,
         Accept: "application/json",
       },
     });
