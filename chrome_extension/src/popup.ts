@@ -966,7 +966,7 @@ class ScholarExtensionApp {
 
       // Late response protection: Discard if user already initiated a new search session
       if (this.currentSessionId !== expectedSessionId) {
-        console.warn(`Bỏ qua kết quả trả về muộn của session cũ (${expectedSessionId})`);
+        console.log(`[SessionGuard] Bỏ qua kết quả trả về muộn của session cũ (${expectedSessionId})`);
         return false;
       }
 

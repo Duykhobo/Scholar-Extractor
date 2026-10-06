@@ -1374,7 +1374,7 @@
           throw new Error(data.error || "L\u1ED7i kh\xF4ng x\xE1c \u0111\u1ECBnh t\u1EEB backend.");
         }
         if (this.currentSessionId !== expectedSessionId) {
-          console.warn(`B\u1ECF qua k\u1EBFt qu\u1EA3 tr\u1EA3 v\u1EC1 mu\u1ED9n c\u1EE7a session c\u0169 (${expectedSessionId})`);
+          console.log(`[SessionGuard] B\u1ECF qua k\u1EBFt qu\u1EA3 tr\u1EA3 v\u1EC1 mu\u1ED9n c\u1EE7a session c\u0169 (${expectedSessionId})`);
           return false;
         }
         const newRecords = (data.records || []).map((r) => ({
