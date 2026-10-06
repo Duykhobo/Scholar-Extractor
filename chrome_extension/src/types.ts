@@ -79,6 +79,7 @@ export interface ResearchProfile {
   sourcePolicies: Record<string, SourcePolicy>;
   schemaVersion: string;
   profileVersion: number;
+  protocolVersion?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -98,7 +99,7 @@ export interface ProfileScreeningEvaluation {
   isDecisionOutdated?: boolean;
   modelContributions?: string[];
   conceptLabels?: string[];
-  literatureGroup?: 'direct' | 'supporting' | 'foundational' | string;
+  literatureGroup?: "direct" | "supporting" | "foundational" | string;
 }
 
 export interface ResearchSession {
@@ -160,6 +161,10 @@ export interface PaperRecord {
   // Cờ báo hiệu quyết định thủ công được đưa ra theo phiên bản tiêu chí cũ
   isDecisionOutdated?: boolean;
   criterionResults?: CriterionEvaluationResult[];
+  protocolVersion?: string;
+  isPaywalled?: boolean;
+  v2Decision?: "PassToFullText" | "Exclude" | "Unsure";
+  v3Decision?: "Include" | "Exclude" | "Unsure";
 
   // Provenance & Du lieu bo sung tu tab dang mo / PDF
   pdfUrl?: string;
@@ -169,6 +174,10 @@ export interface PaperRecord {
   evidence_snippets?: EvidenceSnippet[];
   page_count?: number;
   user_verified?: boolean;
+
+  sourceMetadataVerified?: boolean;
+  verificationMethod?: string;
+  sourceUrl?: string;
 
   // Mô hình nghiên cứu & Đóng góp học thuật
   modelContribution?: string[];

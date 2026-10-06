@@ -1,3 +1,5 @@
+import { PicoStructure, ProtocolChangeRecord } from "../types";
+
 export type ReviewType = "literature_review" | "systematic_review" | "scoping_review" | "custom";
 
 export type CriterionKind = "inclusion" | "exclusion";
@@ -79,6 +81,9 @@ export interface ResearchProfile {
   sourcePolicies: Record<string, SourcePolicy>;
   schemaVersion: string; // ví dụ "2.0.0"
   profileVersion: number; // số nguyên tăng dần mỗi khi sửa tiêu chí
+  protocolVersion?: string; // ví dụ "1.0", "1.1"
+  pico?: PicoStructure;
+  protocolHistory?: ProtocolChangeRecord[];
   createdAt: string;
   updatedAt: string;
 }

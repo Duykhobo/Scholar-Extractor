@@ -140,11 +140,14 @@ export interface PaperRecord {
   v2Decision?: V2ScreeningDecision;
   v3Decision?: "Include" | "Exclude" | "Unsure";
   fullTextStatus?: FullTextStatus;
+  isPaywalled?: boolean;
 
-  // Mô hình nghiên cứu & Đóng góp học thuật
+  // Mô hình nghiên cứu, Protocol & Đóng góp học thuật
   researchId?: string;
   sessionId?: string;
   profileVersion?: number;
+  protocolVersion?: string;
+  isDecisionOutdated?: boolean;
   isPdfVerified?: boolean;
   modelContribution?: string[]; // e.g. ['X', 'M', 'Y', 'H1', 'H2', 'H3', 'H4']
   conceptLabels?: string[]; // e.g. ['self-confidence (Primary Y)', 'self-esteem', 'self-efficacy']
@@ -350,6 +353,7 @@ export interface BackgroundJob {
   totalItems: number;
   processedItems: number;
   failedItems: number;
+  message?: string;
   checkpoints?: Record<string, any>;
   errorLog?: string[];
   createdAt: string;
@@ -399,6 +403,7 @@ export interface PrismaData {
   reportsSoughtForRetrieval: PrismaDrilldownCell;
   reportsNotRetrieved: PrismaDrilldownCell;
   reportsAssessedForEligibility: PrismaDrilldownCell;
+  reportsPendingRetrieval?: PrismaDrilldownCell;
   excludedFullText: PrismaDrilldownCell;
   excludedByReasonV3: Record<string, PrismaDrilldownCell>;
   unsureFullText: PrismaDrilldownCell;
@@ -429,5 +434,72 @@ export interface EvidenceTableRow {
   limitations: string;
   nearRq: string;
   provenance: string;
+}
+
+export interface PicoStructure {
+  population?: string;
+  intervention?: string;
+  comparator?: string; // Optional / N/A
+  outcome?: string;
+  framework?: "PICO" | "PICOS" | "SPIDER" | "CUSTOM";
+}
+
+export interface ProtocolChangeRecord {
+  id: string;
+  protocolVersion: string;
+  previousVersion?: string;
+  changedBy: string;
+  timestamp: string;
+  reason: string;
+  changeType: "wording" | "scope_change";
+  impactScope: Array<"RQ" | "query" | "filter" | "IC_EC" | "screening" | "evidence_extraction">;
+  diffSummary: string;
+  requiresRerun: boolean;
+  status: "approved" | "pending_review";
+}
+
+export interface SearchExecutionRecord {
+  searchRunId: string;
+  researchId: string;
+  sessionId?: string;
+  jobId?: string;
+  protocolVersion?: string;
+  queryVersion: string; // Q1, Q2, Q3
+  requestedSource: string;
+  actualSource: string;
+  fallbackReason?: string;
+  literalQuery: string;
+  actualApiQuery: string;
+  searchFields: string;
+  filters: Record<string, any>;
+  syntaxNotes?: string;
+  startTime: string;
+  endTime?: string;
+  timezone: string;
+  pagesProcessed: number;
+  stopCondition: string;
+  reportedResults: number;
+  actualReceivedRecords: number;
+  newDiscoveryRecords: number;
+  newCanonicalRecords: number;
+  status: "completed" | "partial" | "failed" | "cancelled";
+  errors?: string[];
+  retryCount?: number;
+  dataSnapshotId?: string;
+}
+
+export interface SnowballExecutionRecord {
+  runId: string;
+  researchId: string;
+  seedDoiOrId: string;
+  seedTitle: string;
+  direction: "backward" | "forward";
+  iteration: number;
+  source: string;
+  relationsReceived: number;
+  newPapersFound: number;
+  stopCondition: string;
+  errors?: string[];
+  timestamp: string;
 }
 

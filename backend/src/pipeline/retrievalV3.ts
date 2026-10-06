@@ -171,15 +171,16 @@ export class PipelineV3Retrieval {
       } else {
         unretrievedCount++;
         const targetUrl = (record.url || actualUrl || "").toLowerCase();
-        const isPaywalledDomain =
-          /paywalled|ieee|sciencedirect|springer|wiley|acm\.org/i.test(targetUrl) ||
-          record.source === "IEEE" ||
-          /ieee|acm|springer|elsevier/i.test(record.venue || "");
+        const isVerifiedPaywall =
+          record.isPaywalled === true ||
+          targetUrl.includes("paywalled") ||
+          /oa_status.*closed/i.test(record.screeningReason || "") ||
+          /purchase.*article|access denied|subscription required|paywall/i.test(record.screeningReason || "");
 
-        if (isPaywalledDomain) {
+        if (isVerifiedPaywall) {
           status = "paywalled";
         } else if (status === "finding") {
-          // Phân biệt: có URL nhưng lỗi tải vs không tìm thấy OA vs paywall đã xác minh
+          // Phân biệt: không tìm thấy link OA vs lỗi tải/đọc PDF
           if (!actualUrl) {
             status = "not_found";
           } else {

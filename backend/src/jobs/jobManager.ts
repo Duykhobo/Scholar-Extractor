@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { SourceAdapterRegistry } from "../adapters";
 import { DbRepository } from "../db";
 import { PipelineV1Dedup } from "../pipeline/dedupV1";
@@ -29,7 +31,46 @@ export class BackgroundJobManager {
     }
   > = new Map();
 
+  static saveStoreSnapshot(researchId: string): void {
+    const store = this.researchData.get(researchId);
+    if (!store) return;
+    try {
+      const snapDir = path.join(process.cwd(), "data", "snapshots");
+      if (!fs.existsSync(snapDir)) fs.mkdirSync(snapDir, { recursive: true });
+      const snapPath = path.join(snapDir, `${researchId}.json`);
+      fs.writeFileSync(snapPath, JSON.stringify(store), "utf-8");
+      DbRepository.upsertPapersAndLinks(store.canonicalRecords, researchId).catch(() => {});
+    } catch (e: any) {
+      console.warn(`[JobManager] Không thể lưu store snapshot:`, e.message);
+    }
+  }
+
+  static loadStoreSnapshot(researchId: string): boolean {
+    try {
+      const snapPath = path.join(process.cwd(), "data", "snapshots", `${researchId}.json`);
+      if (fs.existsSync(snapPath)) {
+        const raw = fs.readFileSync(snapPath, "utf-8");
+        const parsed = JSON.parse(raw);
+        if (parsed && (parsed.rawRecords || parsed.canonicalRecords)) {
+          this.researchData.set(researchId, {
+            rawRecords: parsed.rawRecords || [],
+            canonicalRecords: parsed.canonicalRecords || [],
+            v2Results: parsed.v2Results,
+            v3Results: parsed.v3Results,
+          });
+          return true;
+        }
+      }
+    } catch (e: any) {
+      console.warn(`[JobManager] Không thể nạp store snapshot:`, e.message);
+    }
+    return false;
+  }
+
   static getResearchStore(researchId: string) {
+    if (!this.researchData.has(researchId)) {
+      this.loadStoreSnapshot(researchId);
+    }
     if (!this.researchData.has(researchId)) {
       this.researchData.set(researchId, {
         rawRecords: [],
@@ -65,6 +106,18 @@ export class BackgroundJobManager {
 
   static async initFromDatabase(): Promise<void> {
     try {
+      // Phục hồi dữ liệu snapshots từ đĩa
+      const snapDir = path.join(process.cwd(), "data", "snapshots");
+      if (fs.existsSync(snapDir)) {
+        const files = fs.readdirSync(snapDir);
+        for (const file of files) {
+          if (file.endsWith(".json")) {
+            const rId = file.replace(/\.json$/, "");
+            this.loadStoreSnapshot(rId);
+          }
+        }
+      }
+
       const activeJobs = await DbRepository.getActiveJobs();
       for (const job of activeJobs) {
         if (job.status === "running") {
@@ -279,10 +332,15 @@ export class BackgroundJobManager {
       job.checkpoints = { lastIndex: job.processedItems };
       job.progress = Math.round((job.processedItems / job.totalItems) * 100);
       job.updatedAt = new Date().toISOString();
+      DbRepository.saveJob(job).catch(() => {});
+      this.saveStoreSnapshot(job.researchId);
     }
 
     job.status = "completed";
     job.progress = 100;
+    job.message = `Đã hoàn tất thẩm định toàn văn V3 cho ${candidates.length} bài.`;
+    DbRepository.saveJob(job).catch(() => {});
+    this.saveStoreSnapshot(job.researchId);
   }
 
   private static async runB1Worker(job: BackgroundJob, abortController: AbortController) {
@@ -299,24 +357,72 @@ export class BackgroundJobManager {
       throw new Error(`Không tìm thấy adapter cho nguồn: ${sourceName}`);
     }
 
-    job.message = `Đang thu thập từ ${adapter.sourceName}...`;
-    const searchRes = await adapter.search({
-      query,
-      asYlo: config.asYlo,
-      asYhi: config.asYhi,
-      limit: config.limit || 25,
-      sessionId: job.sessionId,
-      queryVersion: config.queryVersion || "Q1",
-    });
+    const maxPages = config.maxPages ? Number(config.maxPages) : 3;
+    const pageSize = config.limit ? Number(config.limit) : 25;
+    let cursor = (job.checkpoints?.cursor as string) || "*";
+    let start = (job.checkpoints?.start as number) || 0;
+    let pageCount = (job.checkpoints?.pageCount as number) || 0;
+    job.totalItems = maxPages * pageSize;
 
-    if (abortController.signal.aborted) return;
+    while (pageCount < maxPages && !abortController.signal.aborted) {
+      const workerState = this.activeWorkers.get(job.id);
+      while (workerState && workerState.isPaused) {
+        if (abortController.signal.aborted) return;
+        await new Promise((r) => setTimeout(r, 1000));
+      }
 
-    store.rawRecords = [...store.rawRecords, ...searchRes.records];
-    job.totalItems = searchRes.records.length;
-    job.processedItems = searchRes.records.length;
+      pageCount++;
+      job.message = `Đang thu thập trang ${pageCount}/${maxPages} từ ${adapter.sourceName}...`;
+      const searchRes = await adapter.search({
+        query,
+        asYlo: config.asYlo,
+        asYhi: config.asYhi,
+        limit: pageSize,
+        cursor,
+        start,
+        sessionId: job.sessionId,
+        queryVersion: config.queryVersion || "Q1",
+      });
+
+      if (abortController.signal.aborted) return;
+
+      if (searchRes.records && searchRes.records.length > 0) {
+        for (const rec of searchRes.records) {
+          rec.pipelineStage = "B1";
+          rec.screeningStage = "V1";
+        }
+        store.rawRecords = [...store.rawRecords, ...searchRes.records];
+      }
+
+      job.processedItems = store.rawRecords.length;
+      job.progress = Math.min(100, Math.round((pageCount / maxPages) * 100));
+      job.checkpoints = {
+        pageCount,
+        cursor: searchRes.nextCursor,
+        start: start + (searchRes.records?.length || 0),
+        lastIndex: store.rawRecords.length,
+      };
+      job.updatedAt = new Date().toISOString();
+      DbRepository.saveJob(job).catch(() => {});
+      this.saveStoreSnapshot(job.researchId);
+
+      if (!searchRes.hasMore || !searchRes.records || searchRes.records.length === 0) {
+        break;
+      }
+
+      if (searchRes.nextCursor) {
+        cursor = searchRes.nextCursor;
+      }
+      start += searchRes.records.length;
+    }
+
+    job.totalItems = store.rawRecords.length;
+    job.processedItems = store.rawRecords.length;
     job.progress = 100;
     job.status = "completed";
-    job.message = `Đã thu thập thành công ${searchRes.records.length} bản ghi từ ${adapter.sourceName}.`;
+    job.message = `Đã thu thập thành công ${store.rawRecords.length} bản ghi qua ${pageCount} trang từ ${adapter.sourceName}.`;
+    DbRepository.saveJob(job).catch(() => {});
+    this.saveStoreSnapshot(job.researchId);
   }
 
   private static async runFinalWorker(job: BackgroundJob, abortController: AbortController) {
@@ -327,5 +433,7 @@ export class BackgroundJobManager {
     job.progress = 100;
     job.status = "completed";
     job.message = `Đã chốt danh sách với ${included.length} bài Include.`;
+    DbRepository.saveJob(job).catch(() => {});
+    this.saveStoreSnapshot(job.researchId);
   }
 }

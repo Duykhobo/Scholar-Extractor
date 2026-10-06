@@ -121,13 +121,14 @@ export class DbRepository {
         req.input("doi", sql.VarChar(255), record.doi || null);
         req.input("title", sql.NVarChar(1000), (record.title || "").slice(0, 1000));
         req.input("authors", sql.NVarChar(1000), (record.authors || "").slice(0, 1000));
-        req.input("year", sql.Int, record.year || null);
+        const parsedYear = record.year ? parseInt(String(record.year).trim(), 10) : null;
+        req.input("year", sql.Int, isNaN(parsedYear as number) ? null : parsedYear);
         req.input("venue", sql.NVarChar(500), (record.venue || "").slice(0, 500));
         req.input("abstract", sql.NVarChar(sql.MAX), record.abstract || "");
         req.input("snippet", sql.NVarChar(sql.MAX), record.snippet || "");
         req.input("url", sql.NVarChar(2000), (record.url || "").slice(0, 2000));
         req.input("pdfPath", sql.NVarChar(1000), (record.pdfUrl || "").slice(0, 1000));
-        req.input("isPdfVerified", sql.Bit, record.isPdfVerified ? 1 : 0);
+        req.input("isPdfVerified", sql.Bit, (record as any).isPdfVerified ? 1 : 0);
         req.input("discoverySource", sql.VarChar(100), record.discoverySource || "Google Scholar");
         req.input("collectionMethod", sql.VarChar(100), record.collectionMethod || "SerpApi");
 
@@ -165,9 +166,19 @@ export class DbRepository {
         linkReq.input("finalDecision", sql.VarChar(20), record.finalDecision || "");
         linkReq.input("screeningReason", sql.NVarChar(sql.MAX), record.screeningReason || "");
         linkReq.input("userNotes", sql.NVarChar(sql.MAX), record.userNotes || "");
-        linkReq.input("modelContribution", sql.VarChar(20), record.modelContribution || null);
-        linkReq.input("literatureGroup", sql.VarChar(50), record.literatureGroup || null);
-        linkReq.input("conceptLabels", sql.NVarChar(500), (record.conceptLabels || []).join("; "));
+
+        const modelContribStr = Array.isArray(record.modelContribution)
+          ? record.modelContribution.join(", ")
+          : record.modelContribution ? String(record.modelContribution) : null;
+        linkReq.input("modelContribution", sql.VarChar(100), modelContribStr ? modelContribStr.slice(0, 100) : null);
+
+        const litGroupStr = record.literatureGroup ? String(record.literatureGroup).slice(0, 50) : null;
+        linkReq.input("literatureGroup", sql.VarChar(50), litGroupStr);
+
+        const conceptLabelsStr = Array.isArray(record.conceptLabels)
+          ? record.conceptLabels.join("; ")
+          : (record.conceptLabels ? String(record.conceptLabels) : "");
+        linkReq.input("conceptLabels", sql.NVarChar(500), conceptLabelsStr.slice(0, 500));
 
         await linkReq.query(`
           MERGE INTO ResearchPaperLinks AS target

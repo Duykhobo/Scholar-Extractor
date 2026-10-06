@@ -1,5 +1,7 @@
 -- Migration 001: Schema khoi tao co so du lieu cho Scholar Extractor
 -- Ho tro quan he: Nghien cuu (Profiles) -> Phien tim kiem (Sessions) -> Bai bao (Papers) -> Danh gia & Bang chung
+SET ANSI_NULLS ON;
+SET QUOTED_IDENTIFIER ON;
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'ResearchProfiles')
 BEGIN
@@ -68,7 +70,7 @@ BEGIN
         finalDecision VARCHAR(20) DEFAULT '',
         screeningReason NVARCHAR(MAX),
         userNotes NVARCHAR(MAX),
-        modelContribution VARCHAR(20),
+        modelContribution VARCHAR(100),
         literatureGroup VARCHAR(50),
         conceptLabels NVARCHAR(500),
         updatedAt DATETIME2 DEFAULT SYSUTCDATETIME(),

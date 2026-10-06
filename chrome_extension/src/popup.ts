@@ -1,4 +1,4 @@
-import { BUILTIN_PRESETS, PRESET_GENERIC, PRESET_SWT302 } from "./presets";
+import { BUILTIN_PRESETS, PRESET_GENERIC, PRESET_SWT302, PRESET_VISUALLY_IMPAIRED_AAC } from "./presets";
 import {
   Criterion,
   DedupStats,
@@ -178,6 +178,7 @@ class ScholarExtensionApp {
   private startAutoScreenBtn!: HTMLButtonElement;
   private autoScreenTotalCount!: HTMLElement;
   private autoAcceptIncludeCheckbox!: HTMLInputElement;
+  private autoScreenProfileName: HTMLElement | null = null;
 
   // Pipeline Stage & Background Job Properties
   private currentStage: string = "B1";
@@ -1377,6 +1378,20 @@ class ScholarExtensionApp {
       uniqueRecord.isDecisionOutdated = false;
     }
 
+    // Đồng bộ ngay lập tức lên backend pipeline store
+    fetch(`${this.backendUrl}/api/pipeline/decision`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researchId: this.activeProfile.id,
+        paperId,
+        stage: this.currentStage,
+        decision,
+        finalDecision: decision,
+        protocolVersion: this.activeProfile.protocolVersion,
+      }),
+    }).catch((err) => console.warn("Sync decision to backend failed:", err));
+
     await this.saveSessionToStorage();
     this.updateStatsDisplay();
     this.renderRecordsList();
@@ -1388,6 +1403,16 @@ class ScholarExtensionApp {
 
     const uniqueRecord = this.uniqueRecords.find((r) => r.id === paperId);
     if (uniqueRecord) uniqueRecord.userNotes = notes;
+
+    fetch(`${this.backendUrl}/api/pipeline/decision`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        researchId: this.activeProfile.id,
+        paperId,
+        userNotes: notes,
+      }),
+    }).catch((err) => console.warn("Sync notes to backend failed:", err));
 
     await this.saveSessionToStorage();
   }
@@ -3253,6 +3278,7 @@ class ScholarExtensionApp {
         researchId: this.activeProfile.id,
         sessionId: this.currentSessionId || `session_${Date.now()}`,
         stage: this.currentStage,
+        profile: this.activeProfile,
         source: this.sourceSelect ? this.sourceSelect.value : "OpenAlex",
         queryVersion: this.queryVersionSelect ? this.queryVersionSelect.value : "Q1",
         query: this.queryInput.value.trim(),
@@ -3328,9 +3354,13 @@ class ScholarExtensionApp {
       );
       if (res.ok) {
         const data = await res.json();
-        if (data.records && Array.isArray(data.records)) {
-          this.uniqueRecords = data.records;
-          this.allRecords = data.records;
+        const stageRecords =
+          this.currentStage === "B1" && data.rawRecords && data.rawRecords.length > 0
+            ? data.rawRecords
+            : data.canonicalRecords || data.records || [];
+        if (stageRecords && Array.isArray(stageRecords) && stageRecords.length > 0) {
+          this.uniqueRecords = stageRecords;
+          this.allRecords = stageRecords;
           if (data.dedupStats) this.dedupStats = data.dedupStats;
           this.updateStatsDisplay();
           this.renderRecordsList();

@@ -55,6 +55,41 @@ export class PipelineV1Dedup {
   }
 
   /**
+   * Tính toán độ tương đồng giữa hai tiêu đề (0.0 - 1.0)
+   */
+  static calculateTitleSimilarity(t1: string, t2: string): number {
+    const s1 = this.normalizeTitle(t1);
+    const s2 = this.normalizeTitle(t2);
+    if (!s1 || !s2) return 0;
+    if (s1 === s2) return 1.0;
+
+    const words1 = s1.split(" ").filter(Boolean);
+    const words2 = s2.split(" ").filter(Boolean);
+    const set1 = new Set(words1);
+    const set2 = new Set(words2);
+    let intersection = 0;
+    for (const w of set1) {
+      if (set2.has(w)) intersection++;
+    }
+    const jaccard = intersection / (set1.size + set2.size - intersection || 1);
+
+    const getBigrams = (str: string) => {
+      const b = new Set<string>();
+      for (let i = 0; i < str.length - 1; i++) b.add(str.slice(i, i + 2));
+      return b;
+    };
+    const b1 = getBigrams(s1);
+    const b2 = getBigrams(s2);
+    let bInter = 0;
+    for (const bg of b1) {
+      if (b2.has(bg)) bInter++;
+    }
+    const dice = (2 * bInter) / (b1.size + b2.size || 1);
+
+    return Math.max(jaccard, dice);
+  }
+
+  /**
    * Thực hiện V1: Chuẩn hóa, gom nhóm trùng lặp và tạo Canonical Records
    */
   static processV1(
@@ -85,13 +120,11 @@ export class PipelineV1Dedup {
     let candidateDupCount = 0;
     let containersCount = 0;
 
-    // 2. Xử lý nhóm theo DOI
+    // 2. Xử lý nhóm theo DOI (Trùng tuyệt đối)
     for (const [doi, groupRecords] of doiMap.entries()) {
-      // Sắp xếp chọn record phong phú nhất làm canonical
       groupRecords.sort((a, b) => this.scoreRichness(b) - this.scoreRichness(a));
       const canonicalBase = groupRecords[0];
 
-      // Gộp provenance từ tất cả các nguồn phát hiện
       const allSourcesSet = new Set<string>();
       const combinedProvenance: SourceProvenance[] = [];
       const mergedIds: string[] = [];
@@ -141,14 +174,21 @@ export class PipelineV1Dedup {
       canonicalList.push(canonical);
     }
 
-    // 3. Xử lý các bài không có DOI: nhóm theo Title chuẩn hóa
+    // 3. Xử lý các bài không có DOI: nhóm theo Title chuẩn hóa và Fuzzy similarity > 88%
     for (const record of recordsWithoutDoi) {
       const normTitle = this.normalizeTitle(record.title);
       if (normTitle) {
-        if (!titleMap.has(normTitle)) titleMap.set(normTitle, []);
-        titleMap.get(normTitle)!.push(record);
+        let matchedKey: string | null = null;
+        for (const existingKey of titleMap.keys()) {
+          if (existingKey === normTitle || this.calculateTitleSimilarity(existingKey, normTitle) >= 0.88) {
+            matchedKey = existingKey;
+            break;
+          }
+        }
+        const keyToUse = matchedKey || normTitle;
+        if (!titleMap.has(keyToUse)) titleMap.set(keyToUse, []);
+        titleMap.get(keyToUse)!.push(record);
       } else {
-        // Bài không có cả DOI lẫn Title chuẩn
         const canonical: CanonicalPaper = {
           ...record,
           pipelineStage: "V1",
@@ -160,7 +200,7 @@ export class PipelineV1Dedup {
       }
     }
 
-    for (const [normTitle, groupRecords] of titleMap.entries()) {
+    for (const [, groupRecords] of titleMap.entries()) {
       groupRecords.sort((a, b) => this.scoreRichness(b) - this.scoreRichness(a));
       const canonicalBase = groupRecords[0];
 
@@ -174,31 +214,55 @@ export class PipelineV1Dedup {
         if (rec.id !== canonicalBase.id) mergedIds.push(rec.id);
       }
 
+      const isUserConfirmed = Boolean(
+        existingGroups?.find((g) => g.canonicalId === canonicalBase.id && g.userConfirmed),
+      );
+
       if (groupRecords.length > 1) {
-        // Khi không có DOI, tạo candidate group để người dùng có thể xác nhận hoặc hoàn tác
         candidateDupCount += groupRecords.length - 1;
         titleExactDupCount += groupRecords.length - 1;
         candidateGroups.push({
           id: `dg_title_${canonicalBase.id}`,
           canonicalId: canonicalBase.id,
           duplicateIds: mergedIds,
-          reason: `Trùng khớp chính xác tiêu đề (chưa có DOI): "${canonicalBase.title}"`,
-          rule: "title_exact",
-          userConfirmed: false,
+          reason: `Trùng khớp tiêu đề (>88%) chưa có DOI: "${canonicalBase.title}"`,
+          rule: "title_fuzzy",
+          userConfirmed: isUserConfirmed,
           createdAt: new Date().toISOString(),
         });
       }
 
-      const canonical: CanonicalPaper = {
-        ...canonicalBase,
-        pipelineStage: "V1",
-        allSources: Array.from(allSourcesSet),
-        provenanceList: combinedProvenance,
-        mergedRecordIds: mergedIds,
-      };
-
-      if (canonical.isContainer) containersCount++;
-      canonicalList.push(canonical);
+      if (isUserConfirmed || groupRecords.length === 1) {
+        // Đã được người dùng xác nhận gộp, hoặc nhóm đơn chiếc
+        const canonical: CanonicalPaper = {
+          ...canonicalBase,
+          pipelineStage: "V1",
+          allSources: Array.from(allSourcesSet),
+          provenanceList: combinedProvenance,
+          mergedRecordIds: mergedIds,
+        };
+        if (canonical.isContainer) containersCount++;
+        canonicalList.push(canonical);
+      } else {
+        // Chưa được người dùng xác nhận gộp: GIỮ NGUYÊN các bản ghi trong canonical list,
+        // gắn cờ potentialDuplicate để không tự ý xóa bỏ bản ghi khi chưa đối soát
+        for (let idx = 0; idx < groupRecords.length; idx++) {
+          const rec = groupRecords[idx];
+          const isBase = idx === 0;
+          const canonical: CanonicalPaper = {
+            ...rec,
+            pipelineStage: "V1",
+            allSources: [rec.source],
+            provenanceList: rec.provenanceList || [],
+            mergedRecordIds: [],
+            potentialDuplicate: !isBase,
+            duplicateOfId: !isBase ? canonicalBase.id : undefined,
+            duplicateReason: !isBase ? `Nghi vấn trùng tiêu đề (>88%) với "${canonicalBase.title}"` : undefined,
+          };
+          if (canonical.isContainer) containersCount++;
+          canonicalList.push(canonical);
+        }
+      }
     }
 
     return {

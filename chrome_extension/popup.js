@@ -257,7 +257,7 @@
     createdAt: "2026-10-05T00:00:00.000Z",
     updatedAt: "2026-10-05T00:00:00.000Z"
   };
-  var PRESET_VISUALLY_IMPAIRED_AAC2 = {
+  var PRESET_VISUALLY_IMPAIRED_AAC = {
     id: "preset_visually_impaired_aac",
     name: "Giao ti\u1EBFp t\u1EED t\u1EBF & S\u1EF1 t\u1EF1 tin c\u1EE7a tr\u1EBB khi\u1EBFm th\u1ECB",
     description: "Nghi\xEAn c\u1EE9u t\xECm hi\u1EC3u m\u1ED1i li\xEAn h\u1EC7 gi\u1EEFa giao ti\u1EBFp t\u1EED t\u1EBF (X), c\u1EA3m nh\u1EADn \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (M) v\xE0 s\u1EF1 t\u1EF1 tin (Y) c\u1EE7a tr\u1EBB em khi\u1EBFm th\u1ECB trong m\xF4i tr\u01B0\u1EDDng gi\xE1o d\u1EE5c (The Role of Kind and Supportive Communication in Supporting Self-Confidence among Children with Visual Impairments in Educational Settings).",
@@ -602,7 +602,7 @@
     createdAt: "2026-10-05T00:00:00.000Z",
     updatedAt: "2026-10-05T00:00:00.000Z"
   };
-  var BUILTIN_PRESETS = [PRESET_SWT302, PRESET_GENERIC, PRESET_VISUALLY_IMPAIRED_AAC2];
+  var BUILTIN_PRESETS = [PRESET_SWT302, PRESET_GENERIC, PRESET_VISUALLY_IMPAIRED_AAC];
 
   // src/popup.ts
   var DEFAULT_BACKEND_URL = "http://localhost:3001";
@@ -730,6 +730,7 @@
     startAutoScreenBtn;
     autoScreenTotalCount;
     autoAcceptIncludeCheckbox;
+    autoScreenProfileName = null;
     // Pipeline Stage & Background Job Properties
     currentStage = "B1";
     activeJobId = null;
@@ -914,12 +915,16 @@
       if (this.snowballBtn) this.snowballBtn.addEventListener("click", () => this.handleSnowballingPrompt());
       if (this.viewPrismaBtn) this.viewPrismaBtn.addEventListener("click", () => this.openPrismaModal());
       if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
-      if (this.closePrismaModalBottomBtn) this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
+      if (this.closePrismaModalBottomBtn)
+        this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
       if (this.exportDedupLogBtn) this.exportDedupLogBtn.addEventListener("click", () => this.handleExportDedupLog());
       if (this.exportPrismaBtn) this.exportPrismaBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-      if (this.modalExportPrismaMdBtn) this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
-      if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
-      if (this.modalExportEvidenceBtn) this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+      if (this.modalExportPrismaMdBtn)
+        this.modalExportPrismaMdBtn.addEventListener("click", () => this.handleExportPrismaMarkdown());
+      if (this.exportEvidenceTableBtn)
+        this.exportEvidenceTableBtn.addEventListener("click", () => this.handleExportEvidenceTable());
+      if (this.modalExportEvidenceBtn)
+        this.modalExportEvidenceBtn.addEventListener("click", () => this.handleExportEvidenceTable());
       if (this.jobPauseBtn) this.jobPauseBtn.addEventListener("click", () => this.handlePauseJob());
       if (this.jobResumeBtn) this.jobResumeBtn.addEventListener("click", () => this.handleResumeJob());
       if (this.jobCancelBtn) this.jobCancelBtn.addEventListener("click", () => this.handleCancelJob());
@@ -1701,6 +1706,18 @@
         uniqueRecord.profileVersion = this.activeProfile.profileVersion;
         uniqueRecord.isDecisionOutdated = false;
       }
+      fetch(`${this.backendUrl}/api/pipeline/decision`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researchId: this.activeProfile.id,
+          paperId,
+          stage: this.currentStage,
+          decision,
+          finalDecision: decision,
+          protocolVersion: this.activeProfile.protocolVersion
+        })
+      }).catch((err) => console.warn("Sync decision to backend failed:", err));
       await this.saveSessionToStorage();
       this.updateStatsDisplay();
       this.renderRecordsList();
@@ -1710,6 +1727,15 @@
       if (record) record.userNotes = notes;
       const uniqueRecord = this.uniqueRecords.find((r) => r.id === paperId);
       if (uniqueRecord) uniqueRecord.userNotes = notes;
+      fetch(`${this.backendUrl}/api/pipeline/decision`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researchId: this.activeProfile.id,
+          paperId,
+          userNotes: notes
+        })
+      }).catch((err) => console.warn("Sync notes to backend failed:", err));
       await this.saveSessionToStorage();
     }
     getDecisionBadge(decision) {
@@ -3217,7 +3243,8 @@
         this.runStageBtn.innerText = stageTitles[stage] || `\u{1F680} Ch\u1EA1y ${stage}`;
       }
       const isFinalOrV3 = stage === "FINAL" || stage === "V3";
-      if (this.exportDedupLogBtn) this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
+      if (this.exportDedupLogBtn)
+        this.exportDedupLogBtn.style.display = stage === "V1" || isFinalOrV3 ? "inline-block" : "none";
       if (this.exportPrismaBtn) this.exportPrismaBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
       if (this.exportEvidenceTableBtn) this.exportEvidenceTableBtn.style.display = isFinalOrV3 ? "inline-block" : "none";
       this.setStatus(`\u0110ang \u1EDF giai \u0111o\u1EA1n [${stage}] c\u1EE7a quy tr\xECnh.`, "info");
@@ -3299,6 +3326,7 @@
           researchId: this.activeProfile.id,
           sessionId: this.currentSessionId || `session_${Date.now()}`,
           stage: this.currentStage,
+          profile: this.activeProfile,
           source: this.sourceSelect ? this.sourceSelect.value : "OpenAlex",
           queryVersion: this.queryVersionSelect ? this.queryVersionSelect.value : "Q1",
           query: this.queryInput.value.trim(),
@@ -3318,7 +3346,13 @@
         const data = await res.json();
         if (data.jobId) {
           this.activeJobId = data.jobId;
-          this.showJobBanner({ stage: this.currentStage, status: "running", message: "\u0110ang ch\u1EA1y...", processedItems: 0, totalItems: 1 });
+          this.showJobBanner({
+            stage: this.currentStage,
+            status: "running",
+            message: "\u0110ang ch\u1EA1y...",
+            processedItems: 0,
+            totalItems: 1
+          });
           this.startJobPolling(data.jobId);
           this.setStatus(`T\xE1c v\u1EE5 ${this.currentStage} \u0111\xE3 \u0111\u01B0\u1EE3c \u0111\u1EA9y v\xE0o ch\u1EA1y n\u1EC1n.`, "info");
         }
@@ -3361,9 +3395,10 @@
         );
         if (res.ok) {
           const data = await res.json();
-          if (data.records && Array.isArray(data.records)) {
-            this.uniqueRecords = data.records;
-            this.allRecords = data.records;
+          const stageRecords = this.currentStage === "B1" && data.rawRecords && data.rawRecords.length > 0 ? data.rawRecords : data.canonicalRecords || data.records || [];
+          if (stageRecords && Array.isArray(stageRecords) && stageRecords.length > 0) {
+            this.uniqueRecords = stageRecords;
+            this.allRecords = stageRecords;
             if (data.dedupStats) this.dedupStats = data.dedupStats;
             this.updateStatsDisplay();
             this.renderRecordsList();

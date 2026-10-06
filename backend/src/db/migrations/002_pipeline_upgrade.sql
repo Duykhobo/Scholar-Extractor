@@ -1,4 +1,6 @@
 -- Migration 002: Pipeline da vong (B1, V1, V2, V3, FINAL), Background Jobs, Multi-source Provenance, Duplicate Groups & Snowballing
+SET ANSI_NULLS ON;
+SET QUOTED_IDENTIFIER ON;
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'BackgroundJobs')
 BEGIN

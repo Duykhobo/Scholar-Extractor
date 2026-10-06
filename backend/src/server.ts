@@ -760,7 +760,63 @@ app.get("/api/pipeline/stage-data", (req: Request, res: Response) => {
     rawCount: store.rawRecords.length,
     canonicalCount: store.canonicalRecords.length,
     canonicalRecords: store.canonicalRecords,
+    records: store.canonicalRecords,
+    rawRecords: store.rawRecords,
   });
+});
+
+/**
+ * POST /api/pipeline/decision
+ * Đồng bộ quyết định sàng lọc theo từng vòng từ UI vào backend pipeline store
+ */
+app.post("/api/pipeline/decision", (req: Request, res: Response) => {
+  try {
+    const {
+      researchId,
+      paperId,
+      stage,
+      decision,
+      v2Decision,
+      v3Decision,
+      finalDecision,
+      userNotes,
+      reason,
+      protocolVersion,
+    } = req.body;
+
+    if (!researchId || !paperId) {
+      return res.status(400).json({ error: "Cần `researchId` và `paperId`." });
+    }
+
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    let paper = store.canonicalRecords.find((r) => r.id === paperId);
+    if (!paper) {
+      const rawMatch = store.rawRecords.find((r) => r.id === paperId);
+      if (rawMatch) paper = rawMatch as any;
+    }
+
+    if (!paper) {
+      return res.status(404).json({ error: "Không tìm thấy bài báo trong pipeline store." });
+    }
+
+    if (stage === "V2" || v2Decision) {
+      paper.v2Decision = (v2Decision || decision) as any;
+    }
+    if (stage === "V3" || v3Decision) {
+      paper.v3Decision = (v3Decision || decision) as any;
+    }
+    if (finalDecision !== undefined || stage === "FINAL" || (!v2Decision && !v3Decision)) {
+      paper.finalDecision = (finalDecision !== undefined ? finalDecision : decision) as any;
+    }
+    if (userNotes !== undefined) paper.userNotes = userNotes;
+    if (reason) paper.screeningReason = reason;
+    if (protocolVersion) paper.protocolVersion = protocolVersion;
+
+    BackgroundJobManager.saveStoreSnapshot(researchId);
+    res.json({ success: true, paper });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 /**
@@ -825,7 +881,7 @@ app.post("/api/jobs/create", (req: Request, res: Response) => {
  * POST /api/jobs/:id/start
  */
 app.post("/api/jobs/:id/start", async (req: Request, res: Response) => {
-  const jobId = req.params.id;
+  const jobId = String(req.params.id);
   const started = await BackgroundJobManager.startJob(jobId);
   res.json({ success: started, job: BackgroundJobManager.getJob(jobId) });
 });
@@ -834,7 +890,7 @@ app.post("/api/jobs/:id/start", async (req: Request, res: Response) => {
  * POST /api/jobs/:id/pause
  */
 app.post("/api/jobs/:id/pause", async (req: Request, res: Response) => {
-  const jobId = req.params.id;
+  const jobId = String(req.params.id);
   const paused = await BackgroundJobManager.pauseJob(jobId);
   res.json({ success: paused, job: BackgroundJobManager.getJob(jobId) });
 });
@@ -843,7 +899,7 @@ app.post("/api/jobs/:id/pause", async (req: Request, res: Response) => {
  * POST /api/jobs/:id/resume
  */
 app.post("/api/jobs/:id/resume", async (req: Request, res: Response) => {
-  const jobId = req.params.id;
+  const jobId = String(req.params.id);
   const resumed = await BackgroundJobManager.resumeJob(jobId);
   res.json({ success: resumed, job: BackgroundJobManager.getJob(jobId) });
 });
@@ -852,7 +908,7 @@ app.post("/api/jobs/:id/resume", async (req: Request, res: Response) => {
  * POST /api/jobs/:id/cancel
  */
 app.post("/api/jobs/:id/cancel", async (req: Request, res: Response) => {
-  const jobId = req.params.id;
+  const jobId = String(req.params.id);
   const cancelled = await BackgroundJobManager.cancelJob(jobId);
   res.json({ success: cancelled, job: BackgroundJobManager.getJob(jobId) });
 });
@@ -861,26 +917,14 @@ app.post("/api/jobs/:id/cancel", async (req: Request, res: Response) => {
  * POST /api/jobs/:id/retry
  */
 app.post("/api/jobs/:id/retry", async (req: Request, res: Response) => {
-  const jobId = req.params.id;
+  const jobId = String(req.params.id);
   const retried = await BackgroundJobManager.retryJob(jobId);
   res.json({ success: retried, job: BackgroundJobManager.getJob(jobId) });
 });
 
 /**
- * GET /api/jobs/:id và GET /api/jobs/:id/status
- */
-const handleGetJob = (req: Request, res: Response) => {
-  const jobId = req.params.id;
-  const job = BackgroundJobManager.getJob(jobId);
-  if (!job) return res.status(404).json({ error: "Không tìm thấy job." });
-  res.json({ success: true, job, ...job });
-};
-
-app.get("/api/jobs/:id", handleGetJob);
-app.get("/api/jobs/:id/status", handleGetJob);
-
-/**
  * GET /api/jobs/active
+ * ĐẶT TRƯỚC /api/jobs/:id để Express không nuốt nhầm "active" thành job ID
  */
 app.get("/api/jobs/active", (req: Request, res: Response) => {
   const researchId = (req.query.researchId as string) || "preset_swt302";
@@ -890,6 +934,19 @@ app.get("/api/jobs/active", (req: Request, res: Response) => {
   }
   res.json({ success: true, activeJob, job: activeJob, ...activeJob });
 });
+
+/**
+ * GET /api/jobs/:id và GET /api/jobs/:id/status
+ */
+const handleGetJob = (req: Request, res: Response) => {
+  const jobId = String(req.params.id);
+  const job = BackgroundJobManager.getJob(jobId);
+  if (!job) return res.status(404).json({ error: "Không tìm thấy job." });
+  res.json({ success: true, job, ...job });
+};
+
+app.get("/api/jobs/:id", handleGetJob);
+app.get("/api/jobs/:id/status", handleGetJob);
 
 /**
  * GET /api/prisma/flow
@@ -919,9 +976,13 @@ app.get("/api/prisma/flow", (req: Request, res: Response) => {
         prismaData.unsureTitleAbstract.count ===
       prismaData.screenedTitleAbstract.count;
     const isV3Balanced =
-      prismaData.reportsAssessedForEligibility.count + prismaData.reportsNotRetrieved.count ===
+      prismaData.reportsAssessedForEligibility.count +
+        prismaData.reportsNotRetrieved.count +
+        (prismaData.reportsPendingRetrieval ? prismaData.reportsPendingRetrieval.count : 0) ===
       prismaData.reportsSoughtForRetrieval.count;
     const isMathematicallyBalanced = isIdBalanced && isDedupBalanced && isV2Balanced && isV3Balanced;
+
+    const markdown = PrismaService.generatePrismaMarkdown(prismaData, researchId);
 
     res.json({
       success: true,

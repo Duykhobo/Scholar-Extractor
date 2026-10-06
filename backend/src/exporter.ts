@@ -28,7 +28,7 @@ export function escapeCsvField(field: unknown): string {
 export function exportToCsv(
   records: PaperRecord[],
   outputPath: string,
-): { success: boolean; filePath: string; error?: string } {
+): { success: boolean; filePath: string; error?: string; csvContent?: string } {
   try {
     const headers = [
       "source",
@@ -81,7 +81,7 @@ export function exportToCsv(
 export function exportScreeningCsv(
   records: PaperRecord[],
   outputPath: string,
-): { success: boolean; filePath: string; error?: string } {
+): { success: boolean; filePath: string; error?: string; csvContent?: string } {
   try {
     const headers = [
       "id",
@@ -154,7 +154,7 @@ export function exportFullScreeningCsv(
   records: PaperRecord[],
   outputPath: string,
   extraMeta?: { researchId?: string; profileVersion?: number; sessionId?: string },
-): { success: boolean; filePath: string; error?: string } {
+): { success: boolean; filePath: string; error?: string; csvContent?: string } {
   try {
     const headers = [
       "id",
