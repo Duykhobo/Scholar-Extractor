@@ -566,6 +566,18 @@ export function analyzeTabAgainstRecord(
     (tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0),
   );
 
+  // Phân biệt rành mạch giữa văn bản toàn văn thực sự (PDF / HTML body) và đoạn trích abstract
+  const hasRealFullText = Boolean(
+    (isPdf && tabData.pages && tabData.pages.length > 0 && tabData.pageCount && tabData.pageCount > 0) ||
+    (tabData.rawText && tabData.rawText.trim().length > 300 && tabData.rawText.trim() !== (tabData.abstract || "").trim())
+  );
+
+  const actualFullText = hasRealFullText
+    ? (tabData.pages && tabData.pages.length > 0
+        ? tabData.pages.map((p) => p.text).join("\n")
+        : tabData.rawText)
+    : undefined;
+
   const pages =
     isPdf && tabData.pages
       ? tabData.pages
@@ -589,10 +601,11 @@ export function analyzeTabAgainstRecord(
 
   // D. Gợi ý screening cập nhật
   let suggestedScreeningUpdate: TabAnalysisResult["suggestedScreeningUpdate"];
-  const fullTextToScan = pages.map((p) => p.text).join("\n") || tabData.rawText || tabData.abstract || "";
+  const fullTextToScan = actualFullText || "";
 
   if (profile && profile.id !== "preset_swt302") {
-    const isV2 = Boolean(fullTextToScan.trim().length > 100 && tabData.pageCount);
+    // Chỉ chuyển sang vòng V2 (full_text) khi THỰC SỰ có toàn văn số và số trang xác minh
+    const isV2 = Boolean(hasRealFullText && tabData.pageCount && tabData.pageCount > 0);
     const effectiveRecord: PaperRecord = {
       ...record,
       title: tabData.title || record.title,
@@ -600,10 +613,11 @@ export function analyzeTabAgainstRecord(
       year: tabData.year || record.year,
       venue: tabData.venue || record.venue,
       doi: tabData.doi || record.doi,
+      page_count: tabData.pageCount ?? record.page_count,
     };
     const profileEval = evaluateProfileScreening(profile, effectiveRecord, {
       stage: isV2 ? "full_text" : "title_abstract",
-      fullText: fullTextToScan,
+      fullText: actualFullText, // Tuyệt đối không truyền abstract vào làm fullText
       pageCount: tabData.pageCount,
       isImagePdf: tabData.isImagePdf,
       tables: tabData.tables,

@@ -221,23 +221,29 @@ export function evaluateCriterion(
       if (context.fullTextUnavailable === true) {
         status = kind === "exclusion" ? "met" : "not_met";
         reason = "Đã xác nhận không thể truy cập hoặc không thể tải toàn văn bài báo.";
-      } else if (context.fullText && context.fullText.trim().length > 100) {
+      } else if (
+        context.fullText &&
+        context.fullText.trim().length > 300 &&
+        context.fullText.trim() !== (record.abstract || "").trim() &&
+        ((context.pageCount !== undefined && context.pageCount >= 4) || record.isPdfVerified)
+      ) {
         status = kind === "exclusion" ? "not_met" : "met";
-        reason = "Toàn văn bài báo đã được tải và sẵn sàng để thẩm định.";
+        reason = "Toàn văn bài báo (PDF/toàn văn số >= 4 trang) đã được tải và sẵn sàng để thẩm định.";
       } else {
-        // Tuyệt đối không suy diễn thiếu abstract thành không tải được full-text!
+        // Tuyệt đối không suy diễn thiếu abstract thành không tải được full-text và không coi abstract là toàn văn!
         status = "unknown";
         reason =
-          "Chưa kiểm tra việc tải toàn văn bài báo. Không suy diễn việc thiếu abstract thành lỗi không tải được full-text.";
+          "Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Tuyệt đối không suy diễn abstract thành toàn văn.";
       }
       break;
     }
 
-    // 6. Evaluator: Nhóm từ khóa với matchMode: 'any' | 'all'
+    // 6. Evaluator: Nhóm từ khóa với matchMode: 'any' | 'all' | compoundGroups
     case "keyword_group": {
       const keywords: string[] = parameters.keywords || [];
       const matchMode: "any" | "all" = parameters.matchMode || "any";
       const fields: string[] = parameters.fields || ["title", "abstract"];
+      const compoundGroups: string[][] = parameters.compoundGroups || [];
 
       let searchBody = "";
       if (fields.includes("title")) searchBody += ` ${record.title || ""}`;
@@ -245,6 +251,40 @@ export function evaluateCriterion(
       if (fields.includes("snippet")) searchBody += ` ${record.snippet || ""}`;
       if ((fields.includes("full_text") || fields.includes("abstract")) && context.fullText) {
         searchBody += ` ${context.fullText}`;
+      }
+
+      // Xử lý nhóm từ khóa phối hợp (Compound Groups): Yêu cầu mỗi nhóm con phải có ít nhất 1 từ xuất hiện
+      if (compoundGroups.length > 0) {
+        let allGroupsMatched = true;
+        const compoundFound: string[] = [];
+
+        for (const grp of compoundGroups) {
+          const gRes = findKeywordsInText(searchBody, grp, parameters.caseSensitive);
+          evidence.push(...gRes.snippets);
+          if (gRes.found.length > 0) {
+            compoundFound.push(...gRes.found);
+          } else {
+            allGroupsMatched = false;
+          }
+        }
+
+        const directRes = findKeywordsInText(searchBody, keywords, parameters.caseSensitive);
+        evidence.push(...directRes.snippets);
+
+        if (directRes.found.length > 0 || allGroupsMatched) {
+          status = "met";
+          const allFound = [...new Set([...directRes.found, ...compoundFound])];
+          reason = `Thỏa mãn tiêu chí phối hợp: tìm thấy (${allFound.slice(0, 4).join(", ")}).`;
+        } else {
+          if (fields.includes("abstract") && !record.abstract && !context.fullText) {
+            status = "unknown";
+            reason = "Chưa có abstract hoặc toàn văn để quét từ khóa. Cần thẩm định toàn văn.";
+          } else {
+            status = "not_met";
+            reason = "Không thỏa mãn đồng thời các điều kiện phối hợp bắt buộc.";
+          }
+        }
+        break;
       }
 
       const { found, snippets } = findKeywordsInText(searchBody, keywords, parameters.caseSensitive);
@@ -283,19 +323,28 @@ export function evaluateCriterion(
 
     // 7. Evaluator: Kiểm tra trùng lặp (duplicate)
     case "duplicate": {
-      const isDup = Boolean(record.potentialDuplicate);
+      const isConfirmedDup = Boolean((record as any).confirmedDuplicate);
+      const isPotentialDup = Boolean(record.potentialDuplicate);
+
       if (kind === "exclusion") {
-        if (isDup) {
+        if (isConfirmedDup) {
           status = "met";
-          reason = `Phát hiện đề xuất trùng lặp: ${record.duplicateReason || "Trùng DOI hoặc tiêu đề"}.`;
+          reason = `Xác nhận trùng lặp bài viết: ${record.duplicateReason || "Trùng DOI hoặc tiêu đề đã đối soát"}.`;
+        } else if (isPotentialDup) {
+          // Chỉ nghi trùng -> GIỮ UNKNOWN, KHÔNG LOẠI BỎ (EXCLUDE)
+          status = "unknown";
+          reason = `Nghi vấn trùng lặp (${record.duplicateReason || "Trùng tiêu đề"}). Cần người thẩm định đối soát thủ công, không tự ý loại trừ.`;
         } else {
           status = "not_met";
           reason = "Không phát hiện trùng lặp với các bài báo khác trong tập dữ liệu.";
         }
       } else {
-        if (isDup) {
+        if (isConfirmedDup) {
           status = "not_met";
-          reason = "Bài báo bị trùng lặp với bản ghi khác.";
+          reason = "Bài báo đã xác nhận trùng lặp với bản ghi khác.";
+        } else if (isPotentialDup) {
+          status = "unknown";
+          reason = "Nghi vấn trùng lặp, cần đối soát thủ công.";
         } else {
           status = "met";
           reason = "Bản ghi duy nhất, không trùng lặp.";
@@ -532,7 +581,12 @@ export function evaluateProfileScreening(
     screeningReason = `Còn ${unknownCriteria.length} tiêu chí bắt buộc chưa được xác minh đầy đủ (${unknownCriteria.join(", ")}). Chờ thẩm định toàn văn (Pending Full-Text).`;
   } else {
     // Toàn bộ tiêu chí metadata/title_abstract đã đạt. Kiểm tra xem đã có toàn văn thực tế chưa
-    const hasFullText = Boolean(context.fullText || record.page_count || (record.user_verified && record.pdfUrl));
+    const hasFullText = Boolean(
+      context.fullText &&
+      context.fullText.trim().length > 300 &&
+      context.fullText.trim() !== (record.abstract || "").trim() &&
+      ((context.pageCount !== undefined && context.pageCount >= 4) || record.isPdfVerified || (record.user_verified && record.pdfUrl))
+    );
     const hasFullTextCriteria = profile.criteria.some((c) => c.stage === "full_text" && c.required);
 
     if (hasFullTextCriteria && !hasFullText) {
