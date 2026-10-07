@@ -1,0 +1,42 @@
+[
+  {
+    "id": "run_1791354015318",
+    "collectionId": "proj_1791353440132_b83br",
+    "source": "Google Scholar",
+    "userQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "actualQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "status": "completed",
+    "itemsReceived": 10,
+    "itemsSaved": 10,
+    "itemsError": 0,
+    "searchUrl": "",
+    "totalFoundSource": 10,
+    "importedCount": 10,
+    "executedAt": "2026-10-07T06:20:15.318Z",
+    "executedBy": "Reviewer",
+    "startedAt": "2026-10-07T06:20:15.318Z",
+    "completedAt": "2026-10-07T06:20:15.318Z",
+    "errorLog": []
+  },
+  {
+    "id": "run_1791354016277",
+    "collectionId": "proj_1791353440132_b83br",
+    "source": "Google Scholar",
+    "userQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "actualQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "status": "completed",
+    "itemsReceived": 10,
+    "itemsSaved": 10,
+    "itemsError": 0,
+    "searchUrl": "",
+    "totalFoundSource": 10,
+    "importedCount": 10,
+    "executedAt": "2026-10-07T06:20:16.277Z",
+    "executedBy": "Reviewer",
+    "startedAt": "2026-10-07T06:20:16.277Z",
+    "completedAt": "2026-10-07T06:20:16.277Z",
+    "errorLog": []
+  }
+]

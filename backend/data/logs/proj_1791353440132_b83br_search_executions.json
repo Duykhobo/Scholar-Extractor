@@ -1,0 +1,32 @@
+[
+  {
+    "researchId": "proj_1791353440132_b83br",
+    "queryVersion": "Q1",
+    "requestedSource": "Google Scholar",
+    "actualSource": "Google Scholar",
+    "actualApiQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "pagesProcessed": 1,
+    "reportedResults": 25,
+    "actualReceivedRecords": 10,
+    "newDiscoveryRecords": 10,
+    "newCanonicalRecords": 10,
+    "status": "completed",
+    "timestamp": "2026-10-07T06:20:15.310Z"
+  },
+  {
+    "researchId": "proj_1791353440132_b83br",
+    "queryVersion": "Q1",
+    "requestedSource": "Google Scholar",
+    "actualSource": "Google Scholar",
+    "actualApiQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "pagesProcessed": 1,
+    "reportedResults": 25,
+    "actualReceivedRecords": 10,
+    "newDiscoveryRecords": 10,
+    "newCanonicalRecords": 10,
+    "status": "completed",
+    "timestamp": "2026-10-07T06:20:16.269Z"
+  }
+]

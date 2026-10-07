@@ -1,0 +1,42 @@
+[
+  {
+    "id": "run_1791353878801",
+    "collectionId": "sample_swt302_lam",
+    "source": "Google Scholar",
+    "userQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "actualQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "status": "completed",
+    "itemsReceived": 10,
+    "itemsSaved": 10,
+    "itemsError": 0,
+    "searchUrl": "",
+    "totalFoundSource": 10,
+    "importedCount": 10,
+    "executedAt": "2026-10-07T06:17:58.801Z",
+    "executedBy": "Reviewer",
+    "startedAt": "2026-10-07T06:17:58.801Z",
+    "completedAt": "2026-10-07T06:17:58.801Z",
+    "errorLog": []
+  },
+  {
+    "id": "run_1791353914103",
+    "collectionId": "sample_swt302_lam",
+    "source": "Google Scholar",
+    "userQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "actualQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")​",
+    "filters": {},
+    "status": "completed",
+    "itemsReceived": 10,
+    "itemsSaved": 10,
+    "itemsError": 0,
+    "searchUrl": "",
+    "totalFoundSource": 10,
+    "importedCount": 10,
+    "executedAt": "2026-10-07T06:18:34.103Z",
+    "executedBy": "Reviewer",
+    "startedAt": "2026-10-07T06:18:34.103Z",
+    "completedAt": "2026-10-07T06:18:34.103Z",
+    "errorLog": []
+  }
+]

@@ -261,8 +261,45 @@
         if (stage) switchStage(stage);
       });
     });
-    $("btnRunSearch")?.addEventListener("click", () => {
-      showToast("T\xEDnh n\u0103ng API t\u1EF1 \u0111\u1ED9ng \u0111ang g\u1ECDi. Vui l\xF2ng xem \u1EDF tab IMPORT \u0111\u1EC3 nh\u1EADp th\u1EE7 c\xF4ng n\u1EBFu kh\xF4ng c\xF3 API key.");
+    $("btnRunSearch")?.addEventListener("click", async () => {
+      if (!activeProjectId) return alert("Vui l\xF2ng t\u1EA1o ho\u1EB7c ch\u1ECDn D\u1EF1 \xE1n tr\u01B0\u1EDBc!");
+      const query = $("searchQuery").value;
+      if (!query) return alert("Vui l\xF2ng nh\u1EADp Boolean Query!");
+      const useScholar = $("srcGoogleScholar").checked;
+      if (!useScholar) {
+        showToast("Hi\u1EC7n t\u1EA1i giao di\u1EC7n demo API t\u1EF1 \u0111\u1ED9ng ch\u1EC9 h\u1ED7 tr\u1EE3 Google Scholar.");
+        return;
+      }
+      showToast("\u0110ang g\u1ECDi Google Scholar (SerpApi)... Vui l\xF2ng \u0111\u1EE3i.");
+      try {
+        const searchRes = await fetch(`${BACKEND_URL}/api/scholar/search`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ q: query, researchId: activeProjectId, num: 10 })
+        });
+        const searchData = await searchRes.json();
+        if (!searchRes.ok || !searchData.records) {
+          showToast("L\u1ED7i t\xECm ki\u1EBFm: " + (searchData.error || "Kh\xF4ng c\xF3 d\u1EEF li\u1EC7u"), true);
+          return;
+        }
+        const records = searchData.records;
+        const importRes = await fetch(`${BACKEND_URL}/api/projects/${activeProjectId}/records/import`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            content: records.map((r) => `${r.id},"${r.title.replace(/"/g, '""')}","${r.authors}","${r.year}","${r.doi}","${r.abstract}","${r.venue}"`).join("\n"),
+            defaultSource: "Google Scholar"
+          })
+        });
+        await fetch(`${BACKEND_URL}/api/projects/${activeProjectId}/runs`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ source: "Google Scholar", userQuery: query, itemsSaved: records.length, itemsReceived: records.length })
+        });
+        showToast(`\u0110\xE3 t\xECm th\u1EA5y & l\u01B0u ${records.length} b\u1EA3n ghi!`);
+      } catch (err) {
+        showToast("L\u1ED7i k\u1EBFt n\u1ED1i khi t\xECm ki\u1EBFm: " + err.message, true);
+      }
     });
     $("btnImportCsv")?.addEventListener("click", async () => {
       if (!activeProjectId) return alert("Ch\u1ECDn D\u1EF1 \xE1n tr\u01B0\u1EDBc!");

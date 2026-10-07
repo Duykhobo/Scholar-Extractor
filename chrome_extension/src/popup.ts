@@ -317,8 +317,54 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  $("btnRunSearch")?.addEventListener("click", () => {
-    showToast("Tính năng API tự động đang gọi. Vui lòng xem ở tab IMPORT để nhập thủ công nếu không có API key.");
+  $("btnRunSearch")?.addEventListener("click", async () => {
+    if (!activeProjectId) return alert("Vui lòng tạo hoặc chọn Dự án trước!");
+    const query = ($("searchQuery") as HTMLInputElement).value;
+    if (!query) return alert("Vui lòng nhập Boolean Query!");
+    
+    const useScholar = ($("srcGoogleScholar") as HTMLInputElement).checked;
+    if (!useScholar) {
+      showToast("Hiện tại giao diện demo API tự động chỉ hỗ trợ Google Scholar.");
+      return;
+    }
+    
+    showToast("Đang gọi Google Scholar (SerpApi)... Vui lòng đợi.");
+    try {
+      const searchRes = await fetch(`${BACKEND_URL}/api/scholar/search`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ q: query, researchId: activeProjectId, num: 10 })
+      });
+      
+      const searchData = await searchRes.json();
+      if (!searchRes.ok || !searchData.records) {
+        showToast("Lỗi tìm kiếm: " + (searchData.error || "Không có dữ liệu"), true);
+        return;
+      }
+      
+      const records = searchData.records;
+      
+      // Save records via import API
+      const importRes = await fetch(`${BACKEND_URL}/api/projects/${activeProjectId}/records/import`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          content: records.map((r:any) => `${r.id},"${r.title.replace(/"/g, '""')}","${r.authors}","${r.year}","${r.doi}","${r.abstract}","${r.venue}"`).join("\n"),
+          defaultSource: "Google Scholar"
+        })
+      });
+      
+      // Save run log
+      await fetch(`${BACKEND_URL}/api/projects/${activeProjectId}/runs`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "Google Scholar", userQuery: query, itemsSaved: records.length, itemsReceived: records.length })
+      });
+      
+      showToast(`Đã tìm thấy & lưu ${records.length} bản ghi!`);
+    } catch (err: any) {
+      showToast("Lỗi kết nối khi tìm kiếm: " + err.message, true);
+    }
   });
   
   $("btnImportCsv")?.addEventListener("click", async () => {
