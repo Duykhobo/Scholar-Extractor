@@ -22,6 +22,7 @@ export class CollectorRunner {
       abortController: AbortController;
       isPaused: boolean;
       shouldStop: boolean;
+      loopActive: boolean;
     }
   > = new Map();
 
@@ -57,6 +58,7 @@ export class CollectorRunner {
       abortController,
       isPaused: false,
       shouldStop: false,
+      loopActive: true,
     });
 
     // Chạy bất đồng bộ trong background không đợi phản hồi HTTP
@@ -104,6 +106,7 @@ export class CollectorRunner {
         abortController: new AbortController(),
         isPaused: false,
         shouldStop: false,
+        loopActive: true,
       };
       this.activeJobs.set(runId, job);
     } else {
@@ -114,9 +117,12 @@ export class CollectorRunner {
     run.status = "running";
     CollectionStore.saveRun(run);
 
-    this.executeRunLoop(runId).catch((err) => {
-      console.error(`[CollectorRunner] Lỗi ngoại lệ khi resume run ${runId}:`, err);
-    });
+    if (!job.loopActive) {
+      job.loopActive = true;
+      this.executeRunLoop(runId).catch((err) => {
+        console.error(`[CollectorRunner] Lỗi ngoại lệ khi resume run ${runId}:`, err);
+      });
+    }
 
     return true;
   }
@@ -129,7 +135,6 @@ export class CollectorRunner {
     if (job) {
       job.shouldStop = true;
       job.abortController.abort();
-      this.activeJobs.delete(runId);
     }
 
     const run = CollectionStore.getRun(runId);
@@ -189,7 +194,7 @@ export class CollectorRunner {
           cursor,
           asYlo: run.filters.yearStart,
           asYhi: run.filters.yearEnd,
-        });
+        }, job.abortController.signal);
 
         if (searchResult.totalReported !== undefined) {
           run.totalReported = searchResult.totalReported;
@@ -209,10 +214,12 @@ export class CollectorRunner {
           title: r.title,
           authors: r.authors,
           year: r.year,
-          publicationDate: r.retrieval_date,
+          publicationDate: r.publicationDate || (r.year ? r.year.toString() : "UNKNOWN"),
           abstract: r.abstract || r.snippet || "",
           doi: r.doi,
           venue: r.venue,
+          documentType: r.publicationType || r.documentType,
+          language: r.language,
           source: r.source,
           sourceRecordId: r.id,
           landingPageUrl: r.url,
@@ -266,7 +273,7 @@ export class CollectorRunner {
     const finalJob = this.activeJobs.get(runId);
     if (finalJob?.isPaused) {
       run.status = "paused";
-    } else if (finalJob?.shouldStop) {
+    } else if (finalJob?.shouldStop || run.status === "cancelled") {
       run.status = "cancelled";
     } else if (run.itemsError > 0 && run.itemsSaved > 0) {
       run.status = "completed_with_errors";
@@ -279,7 +286,12 @@ export class CollectorRunner {
 
     run.completedAt = new Date().toISOString();
     CollectionStore.saveRun(run);
-    this.activeJobs.delete(runId);
+    if (finalJob) {
+      finalJob.loopActive = false;
+      if (run.status !== "paused") {
+        this.activeJobs.delete(runId);
+      }
+    }
   }
 
   /**

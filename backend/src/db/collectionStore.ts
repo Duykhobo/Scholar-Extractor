@@ -344,7 +344,7 @@ export class CollectionStore {
       rec.searchRunId = searchRunId;
 
       const existingId = this.findExistingRecordId(collectionId, rec);
-      const targetId = existingId || rec.id;
+      const targetId = existingId || `col_${collectionId}_${rec.id}`;
       rec.id = targetId;
 
       const event: RetrievalEvent = {
@@ -393,6 +393,11 @@ export class CollectionStore {
         this.atomicWriteJson(recFile, rec);
         savedCount++;
       }
+    }
+
+    if (savedCount > 0 || duplicateCount > 0) {
+      this.canonicalRecords.delete(collectionId);
+      this.suspectedDuplicates.delete(collectionId);
     }
 
     return { savedCount, duplicateCount };

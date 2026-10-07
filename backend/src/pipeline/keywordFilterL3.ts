@@ -136,7 +136,18 @@ export class KeywordFilterL3 {
     config: KeywordFilterConfig,
     titleText: string
   ): KeywordEvaluationResult {
-    // Thử kiểm tra trên title
+    // ALWAYS check exclusion terms on available text (title) first - P2 fix
+    const exclusionMatches: string[] = [];
+    for (const exTerm of config.exclusionTerms || []) {
+      if (!exTerm.trim()) continue;
+      const regex = this.createTermRegex(exTerm);
+      if (regex.test(titleText)) {
+        exclusionMatches.push(exTerm.trim());
+      }
+    }
+    const hasExclusionHit = exclusionMatches.length > 0;
+
+    // Thử kiểm tra các nhóm bắt buộc trên title
     let allGroupsInTitle = true;
     const matchedTerms: string[] = [];
     const snippets: string[] = [];
@@ -156,15 +167,15 @@ export class KeywordFilterL3 {
     }
 
     if (allGroupsInTitle && config.groups.length > 0) {
-      // Đủ từ khóa ngay trên tiêu đề -> MATCH
+      // Đủ từ khóa ngay trên tiêu đề -> MATCH (nhưng vẫn trả đúng hasExclusionHit)
       return {
         recordId: record.id,
         status: "MATCH",
-        hasExclusionHit: false,
+        hasExclusionHit,
         matchedTerms,
         matchedFields: ["title"],
         snippets,
-        exclusionMatches: [],
+        exclusionMatches,
       };
     }
 
@@ -172,11 +183,11 @@ export class KeywordFilterL3 {
     return {
       recordId: record.id,
       status: "INSUFFICIENT_DATA",
-      hasExclusionHit: false,
+      hasExclusionHit,
       matchedTerms,
       matchedFields: matchedTerms.length > 0 ? ["title"] : [],
       snippets: ["Thiếu abstract để đối soát trọn vẹn các nhóm từ khóa bắt buộc."],
-      exclusionMatches: [],
+      exclusionMatches,
     };
   }
 

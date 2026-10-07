@@ -2,235 +2,208 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Scholar Extractor - 8 Bước SLR Chuẩn PRISMA</title>
+    <title>Scholar Extractor - Literature Review</title>
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <!-- Top Header Bar -->
+    <!-- Header -->
     <header>
       <div class="brand">
         <h1>📚 Scholar Extractor</h1>
-        <span class="badge badge-blue" id="scopeBadge">SLR Pipeline 8 Bước</span>
+        <span class="badge badge-blue">PRISMA Pipeline</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px">
-        <div id="backendStatusBadge" class="badge badge-yellow">● Đang kết nối Backend...</div>
-      </div>
+      <div id="backendStatusBadge" class="badge badge-yellow">● Đang kết nối...</div>
     </header>
 
-    <!-- Project Selection Bar -->
+    <!-- Collection Selection Bar -->
     <div class="collection-bar">
-      <div style="display: flex; align-items: center; gap: 8px; flex: 1">
-        <label for="activeProjectSelect" style="margin: 0; white-space: nowrap">📁 Dự án:</label>
-        <select id="activeProjectSelect" style="flex: 1; padding: 5px 8px; font-weight: 600">
-          <option value="">-- Đang tải danh sách Dự án --</option>
+      <div style="display:flex;align-items:center;gap:8px;flex:1">
+        <label for="activeCollectionSelect" style="margin:0;white-space:nowrap">📁 Collection:</label>
+        <select id="activeCollectionSelect" style="flex:1;padding:5px 8px;font-weight:600">
+          <option value="">-- Đang tải... --</option>
         </select>
       </div>
-      <button id="btnOpenNewProjectModal" class="btn-sm btn-secondary" title="Tạo dự án SLR mới">➕ Tạo mới</button>
+      <button id="btnNewCollection" class="btn-sm btn-secondary" title="Tạo collection mới">➕ Tạo mới</button>
     </div>
 
-    <!-- 8-Stage Stepper Navigation -->
+    <!-- Stage Tabs -->
     <div class="wizard-stepper" id="wizardStepper">
-      <button class="wizard-step-btn active" data-stage="PROJECT" id="stepBtnProject">
-        <span class="step-num">1</span>
-        <span class="step-label">Dự án & Protocol</span>
+      <button class="wizard-step-btn active" data-stage="COLLECT" id="stepBtnCollect">
+        <span class="step-num">1</span><span class="step-label">Thu thập</span>
       </button>
-      <button class="wizard-step-btn" data-stage="SEARCH" id="stepBtnSearch">
-        <span class="step-num">2</span>
-        <span class="step-label">Tìm kiếm</span>
+      <button class="wizard-step-btn" data-stage="DEDUP" id="stepBtnDedup">
+        <span class="step-num">2</span><span class="step-label">Bỏ trùng</span>
       </button>
-      <button class="wizard-step-btn" data-stage="IMPORT" id="stepBtnImport">
-        <span class="step-num">3</span>
-        <span class="step-label">Nhập & Bỏ trùng</span>
-      </button>
-      <button class="wizard-step-btn" data-stage="V1" id="stepBtnV1">
-        <span class="step-num">4</span>
-        <span class="step-label">Sàng lọc V1</span>
-      </button>
-      <button class="wizard-step-btn" data-stage="V2" id="stepBtnV2">
-        <span class="step-num">5</span>
-        <span class="step-label">Sàng lọc V2</span>
-      </button>
-      <button class="wizard-step-btn" data-stage="EVIDENCE" id="stepBtnEvidence">
-        <span class="step-num">6</span>
-        <span class="step-label">Bằng chứng</span>
-      </button>
-      <button class="wizard-step-btn" data-stage="PRISMA" id="stepBtnPrisma">
-        <span class="step-num">7</span>
-        <span class="step-label">PRISMA</span>
+      <button class="wizard-step-btn" data-stage="FILTER" id="stepBtnFilter">
+        <span class="step-num">3</span><span class="step-label">Lọc L2/L3</span>
       </button>
       <button class="wizard-step-btn" data-stage="EXPORT" id="stepBtnExport">
-        <span class="step-num">8</span>
-        <span class="step-label">Xuất báo cáo</span>
+        <span class="step-num">4</span><span class="step-label">Xuất báo cáo</span>
       </button>
     </div>
 
-    <!-- Metrics Summary Bar -->
+    <!-- Metrics -->
     <div class="metrics-summary-card" id="metricsSummaryCard">
       <div class="metric-col">
-        <span class="metric-title">📦 Nguồn (V0)</span>
-        <span class="metric-val" id="metricTotalRecords">0</span>
+        <span class="metric-title">📦 Thô (Raw)</span>
+        <span class="metric-val" id="metricRaw">0</span>
       </div>
       <div class="metric-col">
-        <span class="metric-title">🔍 Qua V1</span>
-        <span class="metric-val highlight" id="metricPassV1">0</span>
+        <span class="metric-title">✨ Canonical</span>
+        <span class="metric-val highlight" id="metricCanonical">0</span>
       </div>
       <div class="metric-col">
-        <span class="metric-title">🎯 Qua V2</span>
-        <span class="metric-val success" id="metricPassV2">0</span>
+        <span class="metric-title">🔁 Trùng lặp</span>
+        <span class="metric-val warning" id="metricDup">0</span>
       </div>
       <div class="metric-col">
-        <span class="metric-title">📋 Bằng chứng</span>
-        <span class="metric-val warning" id="metricEvidence">0</span>
+        <span class="metric-title">✅ Qua lọc</span>
+        <span class="metric-val success" id="metricPass">0</span>
       </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 1: PROJECT & PROTOCOL -->
-    <!-- ============================================================ -->
-    <section id="panelProject" class="stage-panel active">
+    <!-- =================================================== -->
+    <!-- STAGE 1: COLLECT -->
+    <!-- =================================================== -->
+    <section id="panelCollect" class="stage-panel active">
+      <!-- Create Collection (shown only when no collection selected) -->
+      <div id="createCollectionForm" class="section-card" style="display:none">
+        <h3 class="section-title">➕ Tạo Collection mới</h3>
+        <div class="form-group full-width">
+          <label for="newColName">Tên Collection *</label>
+          <input type="text" id="newColName" placeholder="Ví dụ: SLR REST API Testing 2026" />
+        </div>
+        <div class="form-group full-width">
+          <label for="newColDesc">Mô tả</label>
+          <input type="text" id="newColDesc" placeholder="Ghi chú thêm..." />
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-top:8px;gap:8px">
+          <button id="btnCancelNewCol" class="btn btn-secondary">Hủy</button>
+          <button id="btnCreateCollection" class="btn btn-primary">Tạo Collection</button>
+        </div>
+      </div>
+
+      <!-- Search / Import -->
       <div class="section-card">
-        <h3 class="section-title">📁 Khởi tạo Dự án & Protocol</h3>
-        <p class="section-desc">Khai báo cấu trúc đề tài nghiên cứu SLR của bạn.</p>
-        
-        <div class="form-grid">
-          <div class="form-group full-width">
-            <label for="newProjName">Tên Dự án *</label>
-            <input type="text" id="newProjName" placeholder="Ví dụ: SLR về Kiểm thử phần mềm 2026" />
+        <h3 class="section-title">🔍 Thu thập bài báo</h3>
+        <p class="section-desc">Gửi truy vấn Boolean lên nguồn. Kết quả được chuẩn hoá và lưu vào Collection.</p>
+
+        <div class="form-group full-width">
+          <label for="searchQueryInput">Boolean Query *</label>
+          <textarea id="searchQueryInput" rows="3" placeholder='("REST API" OR "RESTful") AND ("equivalence partitioning" OR "boundary value")'></textarea>
+        </div>
+
+        <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
+          <div class="form-group">
+            <label for="yearStartInput">Năm bắt đầu</label>
+            <input type="number" id="yearStartInput" placeholder="2020" min="1990" max="2030" />
           </div>
           <div class="form-group">
-            <label for="newProjRqCode">Mã RQ</label>
-            <input type="text" id="newProjRqCode" placeholder="Ví dụ: RQ1, RQ2" />
+            <label for="yearEndInput">Năm kết thúc</label>
+            <input type="number" id="yearEndInput" placeholder="2026" min="1990" max="2030" />
           </div>
-          <div class="form-group full-width">
-            <label for="newProjRq">Câu hỏi nghiên cứu chính (RQ)</label>
-            <textarea id="newProjRq" rows="2" placeholder="Ghi chú RQ..."></textarea>
-          </div>
-          <div class="form-group full-width">
-            <label for="newProjPico">PICO (Dân số - Can thiệp - So sánh - Kết quả)</label>
-            <textarea id="newProjPico" rows="2" placeholder="P: ..., I: ..., C: ..., O: ..."></textarea>
+          <div class="form-group">
+            <label for="maxResultsInput">Số lượng tối đa</label>
+            <input type="number" id="maxResultsInput" value="50" min="1" max="500" />
           </div>
         </div>
-        <div style="margin-top: 10px; display: flex; justify-content: flex-end">
-          <button id="btnCreateProject" class="btn btn-primary">➕ Khởi tạo Dự án trống</button>
+
+        <div style="margin-top:10px">
+          <label style="font-weight:600;font-size:13px">Nguồn thu thập:</label>
+          <div class="sources-grid" style="margin-top:6px">
+            <label class="checkbox-card"><input type="radio" name="srcRadio" id="srcGoogleScholar" value="Google Scholar" /> <b>Google Scholar</b> <small>(SerpApi)</small></label>
+            <label class="checkbox-card"><input type="radio" name="srcRadio" id="srcOpenAlex" value="OpenAlex" checked /> <b>OpenAlex</b> <small>(miễn phí)</small></label>
+            <label class="checkbox-card"><input type="radio" name="srcRadio" id="srcCrossref" value="Crossref" /> <b>Crossref</b> <small>(miễn phí)</small></label>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button id="btnStartSearch" class="btn btn-primary" style="flex:1">🚀 Bắt đầu thu thập</button>
+          <button id="btnPauseSearch" class="btn btn-secondary" style="display:none">⏸ Tạm dừng</button>
+          <button id="btnResumeSearch" class="btn btn-secondary" style="display:none">▶ Tiếp tục</button>
+          <button id="btnCancelSearch" class="btn btn-danger" style="display:none">⏹ Huỷ</button>
+        </div>
+
+        <div id="runProgress" style="display:none;margin-top:12px">
+          <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+            <span id="runStatusLabel">Đang chạy...</span>
+            <span id="runCountLabel">0 / 0</span>
+          </div>
+          <div style="background:#e5e7eb;border-radius:4px;height:6px">
+            <div id="runProgressBar" style="background:#6366f1;height:6px;border-radius:4px;width:0%;transition:width 0.3s"></div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 2: SEARCH -->
-    <!-- ============================================================ -->
-    <section id="panelSearch" class="stage-panel" style="display: none">
+      <!-- Tab/PDF Import -->
       <div class="section-card">
-        <h3 class="section-title">⚙️ Thiết lập Tìm kiếm Đa nguồn</h3>
-        <p class="section-desc">Thực hiện truy vấn qua API hoặc ghi log tìm kiếm thủ công.</p>
+        <h3 class="section-title">📥 Nhập từ Tab hiện tại / File CSV</h3>
+        <p class="section-desc">Nhập bằng tay từ các nguồn không có API mở (IEEE, ACM, Scopus, Zotero export).</p>
         <div class="form-group full-width">
-          <label for="searchQuery">Boolean Query *</label>
-          <input type="text" id="searchQuery" placeholder="Ví dụ: (A OR B) AND C" />
+          <label for="importCsvContent">Dán CSV (dòng 1 là header: title,authors,year,doi,abstract,venue,source)</label>
+          <textarea id="importCsvContent" rows="4" placeholder="title,authors,year,doi,abstract,venue,source&#10;My Paper,Author A,2024,10.1/abc,Abstract text...,ICSE 2024,ACM"></textarea>
         </div>
-        <div class="form-group full-width" style="margin-top: 10px;">
-          <label>Nguồn hỗ trợ tự động (API):</label>
-          <div class="sources-grid">
-            <label class="checkbox-card"><input type="checkbox" id="srcGoogleScholar" /> <b>Google Scholar (SerpApi)</b></label>
-            <label class="checkbox-card"><input type="checkbox" id="srcOpenAlex" checked /> <b>OpenAlex</b></label>
-            <label class="checkbox-card"><input type="checkbox" id="srcCrossref" checked /> <b>Crossref</b></label>
-          </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button id="btnImportCsv" class="btn btn-primary">📤 Nhập CSV</button>
+          <button id="btnImportTab" class="btn btn-secondary">🌐 Nhập Tab hiện tại</button>
         </div>
-        <div style="margin-top: 10px; display: flex; justify-content: flex-end">
-          <button id="btnRunSearch" class="btn btn-primary">🔍 Bắt đầu chạy Tìm kiếm</button>
-        </div>
+        <div id="importResult" style="margin-top:8px;font-size:13px"></div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 3: IMPORT & DEDUP -->
-    <!-- ============================================================ -->
-    <section id="panelImport" class="stage-panel" style="display: none">
+    <!-- =================================================== -->
+    <!-- STAGE 2: DEDUP & CANONICAL -->
+    <!-- =================================================== -->
+    <section id="panelDedup" class="stage-panel" style="display:none">
       <div class="section-card">
-        <h3 class="section-title">📥 Nhập dữ liệu ngoại vi & Bỏ trùng</h3>
-        <p class="section-desc">Nhập file CSV/RIS từ các nguồn thủ công (IEEE, ACM, Scopus) và gộp bản ghi trùng.</p>
-        <div class="form-group full-width">
-          <label for="importCsvContent">Dán nội dung CSV hoặc chọn file</label>
-          <textarea id="importCsvContent" rows="4" placeholder="ma,title,authors,year,doi,abstract,venue..."></textarea>
+        <h3 class="section-title">🔁 Phát hiện & Xử lý Trùng lặp (L0-L1)</h3>
+        <p class="section-desc">Hệ thống tự động tính canonical records sau mỗi batch. Nhấn "Làm mới" để cập nhật.</p>
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <button id="btnRefreshCanonical" class="btn btn-primary">🔄 Làm mới danh sách</button>
         </div>
-        <div style="margin-top: 10px; display: flex; gap: 8px;">
-          <button id="btnImportCsv" class="btn btn-primary">Tải lên CSV</button>
-          <button id="btnRunDedup" class="btn btn-secondary">✨ Quét và Bỏ trùng</button>
+        <div id="dupGroupsContainer" class="list-container" style="max-height:400px;overflow-y:auto">
+          <div class="empty-state">Nhấn "Làm mới" để tải danh sách bản ghi trùng.</div>
         </div>
-        <div id="dedupResults" style="margin-top: 15px;"></div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 4: V1 SCREENING -->
-    <!-- ============================================================ -->
-    <section id="panelV1" class="stage-panel" style="display: none">
+    <!-- =================================================== -->
+    <!-- STAGE 3: FILTER L2/L3 -->
+    <!-- =================================================== -->
+    <section id="panelFilter" class="stage-panel" style="display:none">
       <div class="section-card">
-        <h3 class="section-title">📑 Sàng lọc V1 (Title / Abstract)</h3>
-        <div id="v1ListContainer" class="list-container" style="max-height: 400px; overflow-y: auto;">
-          <!-- Records will be injected here -->
+        <h3 class="section-title">🎯 Lọc Metadata L2 & Từ khóa L3</h3>
+        <p class="section-desc">Kết quả lọc được tính từ danh sách canonical. Cấu hình lọc được đọc từ profile của collection.</p>
+        <div id="canonicalListContainer" class="list-container" style="max-height:450px;overflow-y:auto">
+          <div class="empty-state">Chưa có dữ liệu. Hãy hoàn tất Bỏ trùng trước.</div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button id="btnLoadCanonical" class="btn btn-primary">🔄 Tải danh sách Canonical</button>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 5: V2 SCREENING -->
-    <!-- ============================================================ -->
-    <section id="panelV2" class="stage-panel" style="display: none">
+    <!-- =================================================== -->
+    <!-- STAGE 4: EXPORT -->
+    <!-- =================================================== -->
+    <section id="panelExport" class="stage-panel" style="display:none">
       <div class="section-card">
-        <h3 class="section-title">📄 Sàng lọc V2 (Full Text)</h3>
-        <div id="v2ListContainer" class="list-container" style="max-height: 400px; overflow-y: auto;">
-          <!-- Records will be injected here -->
+        <h3 class="section-title">📦 Xuất báo cáo</h3>
+        <p class="section-desc">Tải xuống toàn bộ dữ liệu dưới dạng file CSV / RIS / Markdown theo chuẩn PRISMA.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+          <a id="lnkExportPassCsv" href="#" class="btn btn-secondary" download>📄 CSV Qua lọc (pass)</a>
+          <a id="lnkExportAllCsv" href="#" class="btn btn-secondary" download>📄 CSV Tất cả</a>
+          <a id="lnkExportRis" href="#" class="btn btn-secondary" download>📑 RIS Export</a>
+          <a id="lnkExportBib" href="#" class="btn btn-secondary" download>📑 BibTeX Export</a>
+          <a id="lnkExportSearchLog" href="#" class="btn btn-secondary" download>🗒 Search Log CSV</a>
+          <a id="lnkExportFilterLog" href="#" class="btn btn-secondary" download>🗒 Filter Log CSV</a>
+          <a id="lnkExportDupMap" href="#" class="btn btn-secondary" download>🗒 Duplicate Mapping</a>
+          <a id="lnkExportGuide" href="#" class="btn btn-secondary" target="_blank">📖 Rayyan/CADIMA Guide</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- STAGE 6: EVIDENCE -->
-    <!-- ============================================================ -->
-    <section id="panelEvidence" class="stage-panel" style="display: none">
-      <div class="section-card">
-        <h3 class="section-title">📝 Trích xuất Bằng chứng (Evidence)</h3>
-        <p class="section-desc">Nhập 8 cột PRISMA cho các bài đã INCLUDE ở vòng V2.</p>
-        <div id="evidenceListContainer" class="list-container" style="max-height: 400px; overflow-y: auto;">
-          <!-- Records will be injected here -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- STAGE 7: PRISMA -->
-    <!-- ============================================================ -->
-    <section id="panelPrisma" class="stage-panel" style="display: none">
-      <div class="section-card">
-        <h3 class="section-title">📊 Validation & PRISMA</h3>
-        <p class="section-desc">Kiểm tra tính toàn vẹn và tạo báo cáo PRISMA.</p>
-        <div id="prismaContainer" style="white-space: pre-wrap; font-family: monospace; background: var(--bg-light); padding: 10px; border-radius: 4px;">
-          <!-- PRISMA Markdown will be loaded here -->
-        </div>
-        <div style="margin-top: 10px;">
-          <button id="btnLoadPrisma" class="btn btn-secondary">🔄 Tải lại dữ liệu PRISMA</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- STAGE 8: EXPORT -->
-    <!-- ============================================================ -->
-    <section id="panelExport" class="stage-panel" style="display: none">
-      <div class="section-card text-center" style="padding: 40px 20px">
-        <h3 class="section-title" style="font-size: 20px">🎉 Hoàn thành Quy trình SLR</h3>
-        <p class="section-desc">Bạn đã sẵn sàng xuất toàn bộ 9 file báo cáo (01_all_records.csv, 02_after_screening.csv, 03_final.csv, evidence-table.md, prisma-flow.md...) theo chuẩn PRISMA.</p>
-        
-        <button id="btnExportZip" class="btn btn-primary" style="font-size: 16px; padding: 12px 24px; margin-top: 20px">
-          📦 Tải xuống Gói ZIP Hoàn chỉnh
-        </button>
-        
-        <p style="margin-top: 12px; font-size: 12px; color: var(--text-muted)">
-          Hệ thống sẽ tạo 1 file .zip chứa toàn bộ dữ liệu, quyết định và log tìm kiếm.
-        </p>
-      </div>
-    </section>
-    
     <script src="popup.js"></script>
   </body>
 </html>
