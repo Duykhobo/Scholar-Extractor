@@ -1,0 +1,84 @@
+{
+  "id": "6ac5191595a694a0951a0e02_0_2",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Social support for students with visual impairments in educational institutions: An integrative literature review",
+  "authors": "I Manitsa; M Doikou",
+  "year": "2022",
+  "publicationDate": "2026-10-06",
+  "abstract": "… These students actively seek social support from staff … , whereas peers’ social support enhances their self-esteem and social … to the social support that children with visual impairments …",
+  "doi": "",
+  "venue": "British Journal of Visual Impairment",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac5191595a694a0951a0e02_0_2",
+  "landingPageUrl": "https://journals.sagepub.com/doi/abs/10.1177/0264619620941885",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "I Manitsa; M Doikou",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac50183f479a3bb880fa8af_0_2",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Social support for students with visual impairments in educational institutions: An integrative literature review\"",
+    "finalDecision": "",
+    "id": "6ac5191595a694a0951a0e02_0_2",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB",
+      "VI-EC-DUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Social support for students with visual impairments in educational institutions: An integrative literature review\").",
+    "screeningStage": "V2",
+    "search_id": "6ac5191595a694a0951a0e02",
+    "sessionId": "",
+    "snippet": "… These students actively seek social support from staff … , whereas peers’ social support enhances their self-esteem and social … to the social support that children with visual impairments …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Social support for students with visual impairments in educational institutions: An integrative literature review",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619620941885",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "British Journal of Visual Impairment",
+    "year": "2022"
+  }
+}

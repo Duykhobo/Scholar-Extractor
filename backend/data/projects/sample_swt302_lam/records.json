@@ -1,0 +1,2703 @@
+[
+  {
+    "id": "rec_r01",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786155",
+    "title": "Proceedings of the 19th ACM/IEEE International Workshop on Search-Based and Fuzz Testing",
+    "normalizedTitle": "proceedings of the 19th acm ieee international workshop on search based and fuzz testing",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786155",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786155",
+    "url": "https://doi.org/10.1145/3786155",
+    "displayId": "R01",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R01"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r02",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3793654",
+    "title": "Proceedings of the 7th ACM/IEEE International Conference on Automation of Software Test",
+    "normalizedTitle": "proceedings of the 7th acm ieee international conference on automation of software test",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3793654",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3793654",
+    "url": "https://doi.org/10.1145/3793654",
+    "displayId": "R02",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R02"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r03",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3796563",
+    "title": "Proceedings of the 19th Innovations in Software Engineering Conference",
+    "normalizedTitle": "proceedings of the 19th innovations in software engineering conference",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3796563",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3796563",
+    "url": "https://doi.org/10.1145/3796563",
+    "displayId": "R03",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R03"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r04",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3801619",
+    "title": "Proceedings of the 2026 15th International Conference on Software and Computer Applications",
+    "normalizedTitle": "proceedings of the 2026 15th international conference on software and computer applications",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3801619",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3801619",
+    "url": "https://doi.org/10.1145/3801619",
+    "displayId": "R04",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R04"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r05",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916",
+    "title": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "normalizedTitle": "proceedings of the 2026 ieee acm 48th international conference on software engineering",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916",
+    "url": "https://doi.org/10.1145/3744916",
+    "displayId": "R05",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R05"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r06",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3795154",
+    "title": "Proceedings of the 2025 6th International Conference on Computer Science and Management Technology",
+    "normalizedTitle": "proceedings of the 2025 6th international conference on computer science and management technology",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3795154",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3795154",
+    "url": "https://doi.org/10.1145/3795154",
+    "displayId": "R06",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R06"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r07",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3795154.3795362",
+    "title": "A Multi-Agent Coding Assistant for Cloud-Native Development: From Requirements to Deployable Microservices",
+    "normalizedTitle": "a multi agent coding assistant for cloud native development  from requirements to deployable microservices",
+    "authors": "Guan Tian",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3795154.3795362",
+    "venue": "Proceedings of the 2025 6th International Conference on Computer Science and Management Technology",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3795154.3795362",
+    "url": "https://doi.org/10.1145/3795154.3795362",
+    "displayId": "R07",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R07"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r08",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3842390",
+    "title": "KGMACG: Knowledge-Guided Multi-Agent Orchestration for Scalable Application-Level Code Generation",
+    "normalizedTitle": "kgmacg  knowledge guided multi agent orchestration for scalable application level code generation",
+    "authors": "Yang Bo; Zhang Xiao; Sun Weisong; Ma Guohao; Liu Han; Yang Xiaowei",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3842390",
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3842390",
+    "url": "https://doi.org/10.1145/3842390",
+    "displayId": "R08",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R08"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r09",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3830906",
+    "title": "ExReg: Using Automated Example Generation to Guide Candidate Disambiguation and Validation in Regular Expression Construction",
+    "normalizedTitle": "exreg  using automated example generation to guide candidate disambiguation and validation in regular expression construction",
+    "authors": "Muchtar Hadar; Shevrin Ilia; Maoz Shahar",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3830906",
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3830906",
+    "url": "https://doi.org/10.1145/3830906",
+    "displayId": "R09",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R09"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r10",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3639474",
+    "title": "Proceedings of the 46th International Conference on Software Engineering: Software Engineering Education and Training",
+    "normalizedTitle": "proceedings of the 46th international conference on software engineering  software engineering education and training",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3639474",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3639474",
+    "url": "https://doi.org/10.1145/3639474",
+    "displayId": "R10",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R10"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r11",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3698062.3698065",
+    "title": "Generating RESTful API Test Scripts with Database Constraints using OpenAPI Specification",
+    "normalizedTitle": "generating restful api test scripts with database constraints using openapi specification",
+    "authors": "Nuntipat Yuncharoen; Taratip Suwannasart",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3698062.3698065",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3698062.3698065",
+    "url": "https://doi.org/10.1145/3698062.3698065",
+    "displayId": "R11",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R11"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r12",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3748522.3780013",
+    "title": "Req2Test: An Approach for the Automatic Generation of Unit Tests from User Stories Using LLMs",
+    "normalizedTitle": "req2test  an approach for the automatic generation of unit tests from user stories using llms",
+    "authors": "Mattheus França; Fabiane Barreto Vavassori Benitti",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3748522.3780013",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3748522.3780013",
+    "url": "https://doi.org/10.1145/3748522.3780013",
+    "displayId": "R12",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R12"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r13",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3624032",
+    "title": "8th Brazilian Symposium on Systematic and Automated Software Testing",
+    "normalizedTitle": "8th brazilian symposium on systematic and automated software testing",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.1145/3624032",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3624032",
+    "url": "https://doi.org/10.1145/3624032",
+    "displayId": "R13",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R13"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r14",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3702138.3702139",
+    "title": "Generating a Robot Framework Test Script for Web Application Based on Database Constraints",
+    "normalizedTitle": "generating a robot framework test script for web application based on database constraints",
+    "authors": "Rattasan Aekaukkharachawakit; Taratip Suwannasart",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3702138.3702139",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3702138.3702139",
+    "url": "https://doi.org/10.1145/3702138.3702139",
+    "displayId": "R14",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R14"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r15",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3808707.3808798",
+    "title": "Design of a Digital and Intelligent Financial Management System Based on Business-Finance Integration",
+    "normalizedTitle": "design of a digital and intelligent financial management system based on business finance integration",
+    "authors": "Zhe Huang; Qiqi Huang",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3808707.3808798",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3808707.3808798",
+    "url": "https://doi.org/10.1145/3808707.3808798",
+    "displayId": "R15",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R15"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r16",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3650212",
+    "title": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
+    "normalizedTitle": "proceedings of the 33rd acm sigsoft international symposium on software testing and analysis",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3650212",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3650212",
+    "url": "https://doi.org/10.1145/3650212",
+    "displayId": "R16",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R16"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r17",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3756681",
+    "title": "Proceedings of the 29th International Conference on Evaluation and Assessment in Software Engineering",
+    "normalizedTitle": "proceedings of the 29th international conference on evaluation and assessment in software engineering",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3756681",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3756681",
+    "url": "https://doi.org/10.1145/3756681",
+    "displayId": "R17",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R17"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r18",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3698062",
+    "title": "Proceedings of the 2024 The 6th World Symposium on Software Engineering (WSSE)",
+    "normalizedTitle": "proceedings of the 2024 the 6th world symposium on software engineering  wsse",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3698062",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3698062",
+    "url": "https://doi.org/10.1145/3698062",
+    "displayId": "R18",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R18"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r19",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3639478",
+    "title": "Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings",
+    "normalizedTitle": "proceedings of the 2024 ieee acm 46th international conference on software engineering  companion proceedings",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3639478",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3639478",
+    "url": "https://doi.org/10.1145/3639478",
+    "displayId": "R19",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R19"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r20",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3643794",
+    "title": "Proceedings of the ACM/IEEE 6th International Workshop on Software Engineering Research & Practices for the Internet of Things",
+    "normalizedTitle": "proceedings of the acm ieee 6th international workshop on software engineering research   practices for the internet of things",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3643794",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3643794",
+    "url": "https://doi.org/10.1145/3643794",
+    "displayId": "R20",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R20"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r21",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3712005",
+    "title": "The Current Challenges of Software Engineering in the Era of Large Language Models",
+    "normalizedTitle": "the current challenges of software engineering in the era of large language models",
+    "authors": "Cuiyun Gao; Xing Hu; Shan Gao; Xin Xia; Zhi Gang Jin",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3712005",
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3712005",
+    "url": "https://doi.org/10.1145/3712005",
+    "displayId": "R21",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R21"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r22",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3822455",
+    "title": "Proceedings of the ACM/IEEE 29th International Conference on Model Driven Engineering Languages and Systems",
+    "normalizedTitle": "proceedings of the acm ieee 29th international conference on model driven engineering languages and systems",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3822455",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3822455",
+    "url": "https://doi.org/10.1145/3822455",
+    "displayId": "R22",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R22"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r23",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3551349",
+    "title": "Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering",
+    "normalizedTitle": "proceedings of the 37th ieee acm international conference on automated software engineering",
+    "authors": "Association for Computing Machinery 1948 -",
+    "year": "2022",
+    "publicationDate": "2022-01-01",
+    "abstract": "",
+    "doi": "10.1145/3551349",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3551349",
+    "url": "https://doi.org/10.1145/3551349",
+    "displayId": "R23",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R23"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r24",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3597503",
+    "title": "Proceedings of the IEEE/ACM 46th International Conference on Software Engineering",
+    "normalizedTitle": "proceedings of the ieee acm 46th international conference on software engineering",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3597503",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3597503",
+    "url": "https://doi.org/10.1145/3597503",
+    "displayId": "R24",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R24"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r25",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786792",
+    "title": "Care-Aware Decision Layer: Embedding Ethics of Care into AI-Supported Clinical Discharge Decisions",
+    "normalizedTitle": "care aware decision layer  embedding ethics of care into ai supported clinical discharge decisions",
+    "authors": "Mohamed S. Hefny; Ana-Maria Herman",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786792",
+    "venue": "ACM Journal on Responsible Computing",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786792",
+    "url": "https://doi.org/10.1145/3786792",
+    "displayId": "R25",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R25"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r26",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3448977",
+    "title": "A Systematic Review on Software Robustness Assessment",
+    "normalizedTitle": "a systematic review on software robustness assessment",
+    "authors": "Nuno Laranjeiro; João Agnelo; Jorge Bernardino",
+    "year": "2021",
+    "publicationDate": "2021-01-01",
+    "abstract": "",
+    "doi": "10.1145/3448977",
+    "venue": "ACM Computing Surveys",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3448977",
+    "url": "https://doi.org/10.1145/3448977",
+    "displayId": "R26",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R26"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r27",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3624007",
+    "title": "Proceedings of the 22nd ACM SIGPLAN International Conference on Generative Programming: Concepts and Experiences",
+    "normalizedTitle": "proceedings of the 22nd acm sigplan international conference on generative programming  concepts and experiences",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.1145/3624007",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3624007",
+    "url": "https://doi.org/10.1145/3624007",
+    "displayId": "R27",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R27"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r28",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3674829.3675090",
+    "title": "The Devil is in the deployment: Lessons learned while deploying an AI and IoT-enabled hydroponics grow tent with rural subsistence farmers in South Africa",
+    "normalizedTitle": "the devil is in the deployment  lessons learned while deploying an ai and iot enabled hydroponics grow tent with rural subsistence farmers in south africa",
+    "authors": "Taryn Wilson; Hafeni Mthoko; Yusra Adnan; Sarina C. Till",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3674829.3675090",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3674829.3675090",
+    "url": "https://doi.org/10.1145/3674829.3675090",
+    "displayId": "R28",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R28"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r29",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3324884.3421843",
+    "title": "Lightweight MBT testing for national e-health portal in Norway",
+    "normalizedTitle": "lightweight mbt testing for national e health portal in norway",
+    "authors": "Davrondzhon Gafurov; Margrete Sunde Grovan; Arne Erik Hurum",
+    "year": "2020",
+    "publicationDate": "2020-01-01",
+    "abstract": "",
+    "doi": "10.1145/3324884.3421843",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3324884.3421843",
+    "url": "https://doi.org/10.1145/3324884.3421843",
+    "displayId": "R29",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R29"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r30",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3702138",
+    "title": "Proceeding of the 2024 5th Asia Service Sciences and Software Engineering Conference",
+    "normalizedTitle": "proceeding of the 2024 5th asia service sciences and software engineering conference",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3702138",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3702138",
+    "url": "https://doi.org/10.1145/3702138",
+    "displayId": "R30",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R30"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r31",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3637792",
+    "title": "2023 5th International Conference on Software Engineering and Development (ICSED)",
+    "normalizedTitle": "2023 5th international conference on software engineering and development  icsed",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.1145/3637792",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3637792",
+    "url": "https://doi.org/10.1145/3637792",
+    "displayId": "R31",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R31"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r32",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3769694",
+    "title": "Proceedings of the 26th ACM Annual Conference on Cybersecurity &amp; Information Technology Education",
+    "normalizedTitle": "proceedings of the 26th acm annual conference on cybersecurity  amp  information technology education",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3769694",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3769694",
+    "url": "https://doi.org/10.1145/3769694",
+    "displayId": "R32",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R32"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r33",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3829641",
+    "title": "Proceedings of the 2nd International Conference on Software Engineering and Computer Applications",
+    "normalizedTitle": "proceedings of the 2nd international conference on software engineering and computer applications",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3829641",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3829641",
+    "url": "https://doi.org/10.1145/3829641",
+    "displayId": "R33",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R33"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r34",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3803291",
+    "title": "Proceedings of the 2026 9th International Conference on Information and Computer Technologies",
+    "normalizedTitle": "proceedings of the 2026 9th international conference on information and computer technologies",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3803291",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3803291",
+    "url": "https://doi.org/10.1145/3803291",
+    "displayId": "R34",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R34"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r35",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786580",
+    "title": "Proceedings of the IEEE/ACM 48th International Conference on Software Engineering",
+    "normalizedTitle": "proceedings of the ieee acm 48th international conference on software engineering",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786580",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786580",
+    "url": "https://doi.org/10.1145/3786580",
+    "displayId": "R35",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R35"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r36",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3803730",
+    "title": "Proceedings of the 2026 2nd International Conference on Generative Artificial Intelligence and Digital Media",
+    "normalizedTitle": "proceedings of the 2026 2nd international conference on generative artificial intelligence and digital media",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3803730",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3803730",
+    "url": "https://doi.org/10.1145/3803730",
+    "displayId": "R36",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R36"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r37",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3799457",
+    "title": "Proceedings of the 2025 3rd International Conference on Information Education and Artificial Intelligence",
+    "normalizedTitle": "proceedings of the 2025 3rd international conference on information education and artificial intelligence",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3799457",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3799457",
+    "url": "https://doi.org/10.1145/3799457",
+    "displayId": "R37",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R37"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r38",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3593434",
+    "title": "Proceedings of the 27th International Conference on Evaluation and Assessment in Software Engineering",
+    "normalizedTitle": "proceedings of the 27th international conference on evaluation and assessment in software engineering",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.1145/3593434",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3593434",
+    "url": "https://doi.org/10.1145/3593434",
+    "displayId": "R38",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R38"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r39",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3724504",
+    "title": "Proceedings of the 2024 2nd International Conference on Information Education and Artificial Intelligence",
+    "normalizedTitle": "proceedings of the 2024 2nd international conference on information education and artificial intelligence",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3724504",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3724504",
+    "url": "https://doi.org/10.1145/3724504",
+    "displayId": "R39",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R39"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r40",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3801438",
+    "title": "Proceedings of the 3rd International Conference on Machine Intelligence and Digital Applications",
+    "normalizedTitle": "proceedings of the 3rd international conference on machine intelligence and digital applications",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3801438",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3801438",
+    "url": "https://doi.org/10.1145/3801438",
+    "displayId": "R40",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R40"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r41",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3813822",
+    "title": "Proceedings of the 2026 7th International Conference on Computer Information and Big Data Applications",
+    "normalizedTitle": "proceedings of the 2026 7th international conference on computer information and big data applications",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3813822",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3813822",
+    "url": "https://doi.org/10.1145/3813822",
+    "displayId": "R41",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R41"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r42",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3775073",
+    "title": "Proceedings of the 2025 2nd International Symposium on Artificial Intelligence for Education",
+    "normalizedTitle": "proceedings of the 2025 2nd international symposium on artificial intelligence for education",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3775073",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3775073",
+    "url": "https://doi.org/10.1145/3775073",
+    "displayId": "R42",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R42"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r43",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3719027",
+    "title": "Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security",
+    "normalizedTitle": "proceedings of the 2025 acm sigsac conference on computer and communications security",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3719027",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3719027",
+    "url": "https://doi.org/10.1145/3719027",
+    "displayId": "R43",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R43"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r44",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.5555/3623295",
+    "title": "Proceedings of the 45th International Conference on Software Engineering: Software Engineering Education and Training (ICSE-SEET '23)",
+    "normalizedTitle": "proceedings of the 45th international conference on software engineering  software engineering education and training  icse seet  23",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.5555/3623295",
+    "venue": "ICSE-SEET '23",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://dl.acm.org/doi/10.5555/3623295",
+    "url": "https://dl.acm.org/doi/10.5555/3623295",
+    "displayId": "R44",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R44"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r45",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3555776",
+    "title": "Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing",
+    "normalizedTitle": "proceedings of the 38th acm sigapp symposium on applied computing",
+    "authors": "",
+    "year": "2023",
+    "publicationDate": "2023-01-01",
+    "abstract": "",
+    "doi": "10.1145/3555776",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3555776",
+    "url": "https://doi.org/10.1145/3555776",
+    "displayId": "R45",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R45"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r46",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3802133",
+    "title": "Proceedings of the 2026 3rd International Conference on Informatics Education and Computer Technology Applications",
+    "normalizedTitle": "proceedings of the 2026 3rd international conference on informatics education and computer technology applications",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3802133",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3802133",
+    "url": "https://doi.org/10.1145/3802133",
+    "displayId": "R46",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R46"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r47",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3776734",
+    "title": "Companion Proceedings of the 21st ACM/IEEE International Conference on Human-Robot Interaction",
+    "normalizedTitle": "companion proceedings of the 21st acm ieee international conference on human robot interaction",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3776734",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3776734",
+    "url": "https://doi.org/10.1145/3776734",
+    "displayId": "R47",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R47"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r48",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3714334",
+    "title": "Proceedings of the 2024 2nd International Conference on Artificial Intelligence, Systems and Network Security",
+    "normalizedTitle": "proceedings of the 2024 2nd international conference on artificial intelligence  systems and network security",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3714334",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3714334",
+    "url": "https://doi.org/10.1145/3714334",
+    "displayId": "R48",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R48"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r49",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3805689",
+    "title": "Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency",
+    "normalizedTitle": "proceedings of the 2026 acm conference on fairness  accountability  and transparency",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3805689",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3805689",
+    "url": "https://doi.org/10.1145/3805689",
+    "displayId": "R49",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R49"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r50",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3748336",
+    "title": "Proceedings of the 12th International Conference on Digital Libraries for Musicology",
+    "normalizedTitle": "proceedings of the 12th international conference on digital libraries for musicology",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3748336",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3748336",
+    "url": "https://doi.org/10.1145/3748336",
+    "displayId": "R50",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R50"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r51",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3674829",
+    "title": "Proceedings of the 7th ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies",
+    "normalizedTitle": "proceedings of the 7th acm sigcas sigchi conference on computing and sustainable societies",
+    "authors": "",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3674829",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3674829",
+    "url": "https://doi.org/10.1145/3674829",
+    "displayId": "R51",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R51"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r52",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3808707",
+    "title": "Proceedings of the 2nd International Conference on Digital Management and Information Technology",
+    "normalizedTitle": "proceedings of the 2nd international conference on digital management and information technology",
+    "authors": "",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3808707",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3808707",
+    "url": "https://doi.org/10.1145/3808707",
+    "displayId": "R52",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R52"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r53",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3411764",
+    "title": "Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems",
+    "normalizedTitle": "proceedings of the 2021 chi conference on human factors in computing systems",
+    "authors": "",
+    "year": "2021",
+    "publicationDate": "2021-01-01",
+    "abstract": "",
+    "doi": "10.1145/3411764",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3411764",
+    "url": "https://doi.org/10.1145/3411764",
+    "displayId": "R53",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R53"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r54",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3746469",
+    "title": "Proceedings of the 2nd Guangdong-Hong Kong-Macao Greater Bay Area Education Digitalization and Computer Science International Conference",
+    "normalizedTitle": "proceedings of the 2nd guangdong hong kong macao greater bay area education digitalization and computer science international conference",
+    "authors": "",
+    "year": "2025",
+    "publicationDate": "2025-01-01",
+    "abstract": "",
+    "doi": "10.1145/3746469",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3746469",
+    "url": "https://doi.org/10.1145/3746469",
+    "displayId": "R54",
+    "version": "1",
+    "docType": "proceedings",
+    "isContainer": true,
+    "documentType": "proceedings",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R54"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r55",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3491038",
+    "title": "On the Faults Found in REST APIs by Automated Test Generation",
+    "normalizedTitle": "on the faults found in rest apis by automated test generation",
+    "authors": "Marculescu Bogdan; Zhang Man; Arcuri Andrea",
+    "year": "2022",
+    "publicationDate": "2022-01-01",
+    "abstract": "",
+    "doi": "10.1145/3491038",
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3491038",
+    "url": "https://doi.org/10.1145/3491038",
+    "displayId": "R55",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R55"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r56",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3540250.3549144",
+    "title": "Online testing of RESTful APIs: promises and challenges",
+    "normalizedTitle": "online testing of restful apis  promises and challenges",
+    "authors": "Martin-Lopez Alberto; Segura Sergio; Ruiz-Cortés Antonio",
+    "year": "2022",
+    "publicationDate": "2022-01-01",
+    "abstract": "",
+    "doi": "10.1145/3540250.3549144",
+    "venue": "Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3540250.3549144",
+    "url": "https://doi.org/10.1145/3540250.3549144",
+    "displayId": "R56",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R56"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r57",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3540250.3559080",
+    "title": "Automated generation of test oracles for RESTful APIs",
+    "normalizedTitle": "automated generation of test oracles for restful apis",
+    "authors": "Alonso Juan C.",
+    "year": "2022",
+    "publicationDate": "2022-01-01",
+    "abstract": "",
+    "doi": "10.1145/3540250.3559080",
+    "venue": "Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3540250.3559080",
+    "url": "https://doi.org/10.1145/3540250.3559080",
+    "displayId": "R57",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R57"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r58",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3793654.3793747",
+    "title": "Search-Based Fuzzing For RESTful APIs That Use MongoDB",
+    "normalizedTitle": "search based fuzzing for restful apis that use mongodb",
+    "authors": "Ghianni Hernan; Zhang Man; Galeotti Juan P.; Arcuri Andrea",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3793654.3793747",
+    "venue": "Proceedings of the 7th ACM/IEEE International Conference on Automation of Software Test",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3793654.3793747",
+    "url": "https://doi.org/10.1145/3793654.3793747",
+    "displayId": "R58",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R58"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r59",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3793654.3793746",
+    "title": "REST-at: An LLM-Based Tool for Automating Traceability between Requirements and Test Cases",
+    "normalizedTitle": "rest at  an llm based tool for automating traceability between requirements and test cases",
+    "authors": "Leon-Quinstedt Nicole; Lindgren Bao; Yurdakul Mert; Neto Francisco Gomes de Oliveira",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3793654.3793746",
+    "venue": "Proceedings of the 7th ACM/IEEE International Conference on Automation of Software Test",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3793654.3793746",
+    "url": "https://doi.org/10.1145/3793654.3793746",
+    "displayId": "R59",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R59"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r60",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3793654.3793743",
+    "title": "APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs",
+    "normalizedTitle": "apitestgenie  generating web api tests from requirements and api specifications with llms",
+    "authors": "Pereira André; Lima Bruno; Faria João Pascoal",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3793654.3793743",
+    "venue": "Proceedings of the 7th ACM/IEEE International Conference on Automation of Software Test",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3793654.3793743",
+    "url": "https://doi.org/10.1145/3793654.3793743",
+    "displayId": "R60",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R60"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r61",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3793654.3793754",
+    "title": "Understanding on the Edge: LLM-generated Boundary Test Explanations",
+    "normalizedTitle": "understanding on the edge  llm generated boundary test explanations",
+    "authors": "Akbarova Sabinakhon; Dobslaw Felix; Feldt Robert",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3793654.3793754",
+    "venue": "Proceedings of the 7th ACM/IEEE International Conference on Automation of Software Test",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3793654.3793754",
+    "url": "https://doi.org/10.1145/3793654.3793754",
+    "displayId": "R61",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R61"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r62",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3597503.3608133",
+    "title": "EDEFuzz: A Web API Fuzzer for Excessive Data Exposures",
+    "normalizedTitle": "edefuzz  a web api fuzzer for excessive data exposures",
+    "authors": "Pan Lianglu; Cohney Shaanan; Murray Toby; Pham Van-Thuan",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3597503.3608133",
+    "venue": "Proceedings of the IEEE/ACM 46th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3597503.3608133",
+    "url": "https://doi.org/10.1145/3597503.3608133",
+    "displayId": "R62",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R62"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r63",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3597503.3639137",
+    "title": "Generating REST API Specifications through Static Analysis",
+    "normalizedTitle": "generating rest api specifications through static analysis",
+    "authors": "Huang Ruikai; Motwani Manish; Martinez Idel; Orso Alessandro",
+    "year": "2024",
+    "publicationDate": "2024-01-01",
+    "abstract": "",
+    "doi": "10.1145/3597503.3639137",
+    "venue": "Proceedings of the IEEE/ACM 46th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3597503.3639137",
+    "url": "https://doi.org/10.1145/3597503.3639137",
+    "displayId": "R63",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R63"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r64",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3773228",
+    "title": "MioHint: LLM-Assisted Request Mutation for Whitebox REST API Testing",
+    "normalizedTitle": "miohint  llm assisted request mutation for whitebox rest api testing",
+    "authors": "Li Jia; Shen Jiacheng; Su Yuxin; Lyu Michael R.",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3773228",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3773228",
+    "url": "https://doi.org/10.1145/3744916.3773228",
+    "displayId": "R64",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R64"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r65",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3787775",
+    "title": "RBCTest: Leveraging LLMs to Mine and Verify Oracles of API Response Bodies for RESTful API Testing",
+    "normalizedTitle": "rbctest  leveraging llms to mine and verify oracles of api response bodies for restful api testing",
+    "authors": "Huynh Hieu; Le Quoc-Tri; Nguyen Tu; Nguyen Viet; Nguyen Vu; Nguyen Tien N.",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3787775",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3787775",
+    "url": "https://doi.org/10.1145/3744916.3787775",
+    "displayId": "R65",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R65"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r66",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3787787",
+    "title": "Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs",
+    "normalizedTitle": "defects4rest  a benchmark of real world defects to enable controlled testing and debugging studies for rest apis",
+    "authors": "Mehta Rahil; Katkhede Pushpak; Motwani Manish",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3787787",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3787787",
+    "url": "https://doi.org/10.1145/3744916.3787787",
+    "displayId": "R66",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R66"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r67",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3787826",
+    "title": "CRUDinfer: Automated CRUD Semantics Inference for REST APIs Through Black-box Testing",
+    "normalizedTitle": "crudinfer  automated crud semantics inference for rest apis through black box testing",
+    "authors": "Pasqua Michele; Corradini Davide; Perlotto Michele; Ceccato Mariano",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3787826",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3787826",
+    "url": "https://doi.org/10.1145/3744916.3787826",
+    "displayId": "R67",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R67"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r68",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3773160",
+    "title": "MINES: Explainable Anomaly Detection through Web API Invariant Inference",
+    "normalizedTitle": "mines  explainable anomaly detection through web api invariant inference",
+    "authors": "Zhang Wenjie; Lin Yun; Kwok Chun Fung Amos; Teoh Xiwen; Xie Xiaofei; Liauw Frank",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3773160",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3773160",
+    "url": "https://doi.org/10.1145/3744916.3773160",
+    "displayId": "R68",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R68"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r69",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3744916.3773185",
+    "title": "SAINT: Service-level Integration Test Generation with Program Analysis and LLM-based Agents",
+    "normalizedTitle": "saint  service level integration test generation with program analysis and llm based agents",
+    "authors": "Pan Rangeet; Pavuluri Raju; Huang Ruikai; Stennett Tyler; Krishna Rahul; Orso Alessandro",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3744916.3773185",
+    "venue": "Proceedings of the 2026 IEEE/ACM 48th International Conference on Software Engineering",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3744916.3773185",
+    "url": "https://doi.org/10.1145/3744916.3773185",
+    "displayId": "R69",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R69"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r70",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786155.3795700",
+    "title": "RESTest at the REST League 2026 Tool Competition",
+    "normalizedTitle": "restest at the rest league 2026 tool competition",
+    "authors": "Mimbrero Alberto; Valenzuela Juan Carlos Alonso; Martin-Lopez Alberto; Segura Sergio",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786155.3795700",
+    "venue": "Proceedings of the 19th ACM/IEEE International Workshop on Search-Based and Fuzz Testing",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786155.3795700",
+    "url": "https://doi.org/10.1145/3786155.3795700",
+    "displayId": "R70",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R70"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r71",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786155.3788581",
+    "title": "Detecting Server-Side Request Forgery (SSRF) Vulnerabilities In REST API Fuzz Testing",
+    "normalizedTitle": "detecting server side request forgery  ssrf  vulnerabilities in rest api fuzz testing",
+    "authors": "Seran Susruthan; Bhandari Guru; Arcuri Andrea",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786155.3788581",
+    "venue": "Proceedings of the 19th ACM/IEEE International Workshop on Search-Based and Fuzz Testing",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786155.3788581",
+    "url": "https://doi.org/10.1145/3786155.3788581",
+    "displayId": "R71",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R71"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r72",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786155.3795704",
+    "title": "SBFT Tool Competition 2026: REST League",
+    "normalizedTitle": "sbft tool competition 2026  rest league",
+    "authors": "Pasqua Michele; Corradini Davide; Mari Sofia; Ceccato Mariano",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786155.3795704",
+    "venue": "Proceedings of the 19th ACM/IEEE International Workshop on Search-Based and Fuzz Testing",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786155.3795704",
+    "url": "https://doi.org/10.1145/3786155.3795704",
+    "displayId": "R72",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R72"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  },
+  {
+    "id": "rec_r73",
+    "collectionId": "sample_swt302_lam",
+    "searchRunId": "run_acm_initial",
+    "sourceRecordId": "10.1145/3786155.3795705",
+    "title": "EvoMaster at REST League 2026 Tool Competition",
+    "normalizedTitle": "evomaster at rest league 2026 tool competition",
+    "authors": "Andrea Arcuri; Man Zhang; Susruthan Seran; Juan Pablo Galeotti; Amid Golmohammadi; Philip Garrett",
+    "year": "2026",
+    "publicationDate": "2026-01-01",
+    "abstract": "",
+    "doi": "10.1145/3786155.3795705",
+    "venue": "",
+    "source": "ACM Digital Library",
+    "landingPageUrl": "https://doi.org/10.1145/3786155.3795705",
+    "url": "https://doi.org/10.1145/3786155.3795705",
+    "displayId": "R73",
+    "version": "1",
+    "docType": "article",
+    "isContainer": false,
+    "documentType": "proceedings-article",
+    "retrievedAt": "2026-10-04T00:00:00Z",
+    "mergedRecordIds": [
+      "R73"
+    ],
+    "sourcesList": [
+      "ACM Digital Library"
+    ],
+    "qualityFlags": {
+      "missing_title": false,
+      "missing_abstract": true,
+      "missing_year": false,
+      "missing_doi": false,
+      "missing_fulltext": false,
+      "needs_data_review": false
+    }
+  }
+]

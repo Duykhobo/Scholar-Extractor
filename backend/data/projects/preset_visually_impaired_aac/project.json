@@ -1,0 +1,35 @@
+{
+  "id": "preset_visually_impaired_aac",
+  "name": "Giao tiếp tử tế & Sự tự tin của trẻ khiếm thị (Visually Impaired AAC)",
+  "rqCode": "AAC-VI-2026",
+  "teamName": "Nhóm Nghiên cứu Giáo dục Hòa nhập",
+  "rq": "Ứng dụng các thiết bị và phần mềm giao tiếp hỗ trợ (AAC) nâng cao sự tự tin và kỹ năng giao tiếp hòa nhập của trẻ khiếm thị như thế nào?",
+  "framework": "PICO",
+  "pico": {
+    "population": "Trẻ em khiếm thị (visually impaired children, blind students)",
+    "intervention": "Thiết bị, phần mềm giao tiếp tăng cường và thay thế (AAC, assistive tech)",
+    "comparison": "Phương pháp giáo dục truyền thống không có công cụ hỗ trợ giao tiếp",
+    "outcome": "Mức độ tự tin, khả năng biểu đạt cảm xúc, kỹ năng tương tác xã hội"
+  },
+  "members": [
+    {
+      "id": "mem_giaovien",
+      "name": "Thanh Duy",
+      "role": "Chủ nhiệm đề tài",
+      "assignedSources": [
+        "PubMed",
+        "OpenAlex",
+        "Crossref"
+      ],
+      "isReviewer": true,
+      "isExtractor": true,
+      "plannedAuthorOrder": 1,
+      "confirmedFinalDraft": true
+    }
+  ],
+  "reportLanguage": "vi",
+  "activeProtocolVersion": "v1.0",
+  "activeStage": "SEARCH",
+  "createdAt": "2026-10-07T03:27:49.193Z",
+  "updatedAt": "2026-10-07T03:27:49.199Z"
+}

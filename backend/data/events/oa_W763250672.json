@@ -1,0 +1,876 @@
+[
+  {
+    "id": "evt_1791335617297_w4bxc",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.297Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Latisha Mary",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "finalDecision": "",
+      "id": "oa_W763250672",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://hdl.handle.net/10036/106655",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "year": "2010"
+    }
+  },
+  {
+    "id": "evt_1791335617300_imx6p",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.300Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Latisha Mary",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "finalDecision": "",
+      "id": "oa_W763250672",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://hdl.handle.net/10036/106655",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "year": "2010"
+    }
+  },
+  {
+    "id": "evt_1791335617303_f2dct",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.303Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Latisha Mary",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "finalDecision": "",
+      "id": "oa_W763250672",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://hdl.handle.net/10036/106655",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "year": "2010"
+    }
+  },
+  {
+    "id": "evt_1791335617307_03gv9",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.307Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Latisha Mary",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "finalDecision": "",
+      "id": "oa_W763250672",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://hdl.handle.net/10036/106655",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "year": "2010"
+    }
+  },
+  {
+    "id": "evt_1791335617313_gw9q5",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.313Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Latisha Mary",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "finalDecision": "",
+      "id": "oa_W763250672",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://hdl.handle.net/10036/106655",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "year": "2010"
+    }
+  },
+  {
+    "id": "evt_1791335621445_mr3s0",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.445Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W763250672",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "authors": "Latisha Mary",
+      "year": "2010",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "doi": "",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "url": "http://hdl.handle.net/10036/106655",
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": false,
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621449_yatfj",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.449Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W763250672",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "authors": "Latisha Mary",
+      "year": "2010",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "doi": "",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "url": "http://hdl.handle.net/10036/106655",
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621453_bmzg8",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.453Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W763250672",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "authors": "Latisha Mary",
+      "year": "2010",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "doi": "",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "url": "http://hdl.handle.net/10036/106655",
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621458_9pkiy",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.458Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W763250672",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "authors": "Latisha Mary",
+      "year": "2010",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "doi": "",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "url": "http://hdl.handle.net/10036/106655",
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621463_804nl",
+    "recordId": "oa_W763250672",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.463Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W763250672",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.",
+      "authors": "Latisha Mary",
+      "year": "2010",
+      "venue": "Open Research Exeter (University of Exeter)",
+      "doi": "",
+      "snippet": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a m",
+      "abstract": "The aim of this study was to investigate the role of personal, social and citizenship education (PSCE) in fostering positive self-esteem in two instrumental case studies which took place in two classrooms of 7-10 year old children (N=40) in France during the 2007-2008 school year. The study used a mixture of quantitative and qualitative methodologies including a self-esteem survey administered to pupils in the two case-study classrooms as well as to students in two control classrooms (N=47) at the beginning and end of the school year. Throughout the course of the year a series of semi-structured interviews was also conducted with six focus children selected from each class (2 high, 2 medium and 2 low self-esteem children) as well as with the two class teachers and the parents/step-parents of the focus children. In addition, the study included non-participant observation which focussed on the participation and behaviour of the focus children during PSCE lessons and other lessons through the use of three separate observation schedules. The study found evidence of the important influence of significant others, in particular, parents, peers and teachers, on the focus children’s self-esteem. Although the quantitative analysis of the self-esteem questionnaires showed no statistically significant increase in self-esteem at the group level over time, the qualitative findings indicate that teachers’ relationship with their students, their promotion of responsibility and self-efficacy, and their careful implementation of PSCE practices contributed to increases in individual children’s self-esteem. There was also evidence that the implementation of PSCE activities contributed to improvements in children’s peer relations.",
+      "url": "http://hdl.handle.net/10036/106655",
+      "pdfUrl": "http://hdl.handle.net/10036/106655",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.769Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W763250672",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W763250672"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W763250672",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Fostering self-esteem in the French primary classroom through the use of personal social and citizenship education.\"",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Open Research Exeter (University of Exeter)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  }
+]

@@ -1,0 +1,368 @@
+[
+  {
+    "id": "evt_1791335614963_fvlr9",
+    "recordId": "doi_10_3389_fpsyg_2016_00487",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.963Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lower on material well-being than the normative sample, although these differences did not reach statistical significance. They also scored higher on job satisfaction and family satisfaction than the general population. A negative correlation was found between state-anxiety and material well-being (r = - 0.62, p = 0.001) and between state-anxiety and family satisfaction (r = - 0.57, p = 0.001). A positive correlation was found between material well-being and job satisfaction (r = 0.40, p = 0.001), and between material well-being and family satisfaction (r = 0.41, p = 0.001). Higher levels of material well-being, job satisfaction, and family satisfaction were associated with lower levels of anxiety in these families. However, no statistically significant correlation was found between family satisfaction and job satisfaction. Our results suggest that the family experience of having a disabled child is evolving, and this implies achieving greater job and family satisfaction than the normative samples, although anxiety scores continue to be higher and material well-being scores remain lower. On the whole, our results confirm that it is necessary to provide these families with more economic resources, which would have a positive impact on their subjective psychological well-being, decreasing their state-anxiety, and increasing their satisfaction with life.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Juan Jesús Sola-Carmona; Remedios López‐Liria; David Padilla-Góngora; María Teresa Daza; José M. Aguilar-Parra",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2016.00487",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2016_00487",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00487/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.293Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.293Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lowe",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Subjective Psychological Well-Being in Families with Blind Children: How Can We Improve It?",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2016.00487",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2016"
+    }
+  },
+  {
+    "id": "evt_1791335618720_6iyko",
+    "recordId": "doi_10_3389_fpsyg_2016_00487",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.720Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lower on material well-being than the normative sample, although these differences did not reach statistical significance. They also scored higher on job satisfaction and family satisfaction than the general population. A negative correlation was found between state-anxiety and material well-being (r = - 0.62, p = 0.001) and between state-anxiety and family satisfaction (r = - 0.57, p = 0.001). A positive correlation was found between material well-being and job satisfaction (r = 0.40, p = 0.001), and between material well-being and family satisfaction (r = 0.41, p = 0.001). Higher levels of material well-being, job satisfaction, and family satisfaction were associated with lower levels of anxiety in these families. However, no statistically significant correlation was found between family satisfaction and job satisfaction. Our results suggest that the family experience of having a disabled child is evolving, and this implies achieving greater job and family satisfaction than the normative samples, although anxiety scores continue to be higher and material well-being scores remain lower. On the whole, our results confirm that it is necessary to provide these families with more economic resources, which would have a positive impact on their subjective psychological well-being, decreasing their state-anxiety, and increasing their satisfaction with life.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Juan Jesús Sola-Carmona; Remedios López‐Liria; David Padilla-Góngora; María Teresa Daza; José M. Aguilar-Parra",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2016.00487",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2016_00487",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00487/pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.293Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.293Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lowe",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Subjective Psychological Well-Being in Families with Blind Children: How Can We Improve It?",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2016.00487",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2016",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624051_tqxc3",
+    "recordId": "doi_10_3389_fpsyg_2016_00487",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.051Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lower on material well-being than the normative sample, although these differences did not reach statistical significance. They also scored higher on job satisfaction and family satisfaction than the general population. A negative correlation was found between state-anxiety and material well-being (r = - 0.62, p = 0.001) and between state-anxiety and family satisfaction (r = - 0.57, p = 0.001). A positive correlation was found between material well-being and job satisfaction (r = 0.40, p = 0.001), and between material well-being and family satisfaction (r = 0.41, p = 0.001). Higher levels of material well-being, job satisfaction, and family satisfaction were associated with lower levels of anxiety in these families. However, no statistically significant correlation was found between family satisfaction and job satisfaction. Our results suggest that the family experience of having a disabled child is evolving, and this implies achieving greater job and family satisfaction than the normative samples, although anxiety scores continue to be higher and material well-being scores remain lower. On the whole, our results confirm that it is necessary to provide these families with more economic resources, which would have a positive impact on their subjective psychological well-being, decreasing their state-anxiety, and increasing their satisfaction with life.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Juan Jesús Sola-Carmona; Remedios López‐Liria; David Padilla-Góngora; María Teresa Daza; José M. Aguilar-Parra",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2016.00487",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2016_00487",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00487/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.293Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2342060425",
+          "url": "https://doi.org/10.3389/fpsyg.2016.00487"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.293Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of this work was to examine family well-being in a sample of Spanish families with blind children. Sixty-one participants reported their perceived economic status, the level of job satisfaction, and state-anxiety symptoms. The participants of our study scored higher on state-anxiety and lowe",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Subjective Psychological Well-Being in Families with Blind Children: How Can We Improve It?",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2016.00487",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2016"
+    }
+  }
+]

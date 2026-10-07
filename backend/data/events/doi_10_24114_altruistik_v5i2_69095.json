@@ -1,0 +1,386 @@
+[
+  {
+    "id": "evt_1791335614887_fzkwv",
+    "recordId": "doi_10_24114_altruistik_v5i2_69095",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.887Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and social processes underlying self-esteem. Three participants with high self-esteem were selected using the Coopersmith Self-Esteem Inventory (CSEI). Data were collected through in-depth interviews, observations, and documentation, then analyzed thematically. The results show that high self-esteem is formed dynamically through the interaction of internal and external factors. Coopersmith's four factors : acceptance, control, expectations and standards, and rewarding of competence interact with aspects of self-esteem : significance, competence, virtue, and power through self-acceptance, realistic expectations, independence, and appreciation of self-competence. Social support from family, teachers, and peers strengthens this process, resulting in independence, optimism, and resilience in the face of stigma and obstacles. This study emphasizes the importance of unconditional acceptance from family, an inclusive and supportive learning environment, and a culture of appreciation to support the development of positive self-esteem in visually impaired adolescents",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Karina Agustina; Sulastri Sulastri; Tansri Adzlan Syah",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.24114/altruistik.v5i2.69095",
+      "finalDecision": "",
+      "id": "doi_10_24114_altruistik_v5i2_69095",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jurnal.unimed.ac.id/2012/index.php/altruistik/article/download/69095/29111",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and socia",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "A Qualitative Case Study on The Formation of High Self-Esteem in Visually Impaired Adolescents Based on Coopersmith’s Theory",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.24114/altruistik.v5i2.69095",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan",
+      "year": "2026"
+    }
+  },
+  {
+    "id": "evt_1791335618596_8movg",
+    "recordId": "doi_10_24114_altruistik_v5i2_69095",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.596Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and social processes underlying self-esteem. Three participants with high self-esteem were selected using the Coopersmith Self-Esteem Inventory (CSEI). Data were collected through in-depth interviews, observations, and documentation, then analyzed thematically. The results show that high self-esteem is formed dynamically through the interaction of internal and external factors. Coopersmith's four factors : acceptance, control, expectations and standards, and rewarding of competence interact with aspects of self-esteem : significance, competence, virtue, and power through self-acceptance, realistic expectations, independence, and appreciation of self-competence. Social support from family, teachers, and peers strengthens this process, resulting in independence, optimism, and resilience in the face of stigma and obstacles. This study emphasizes the importance of unconditional acceptance from family, an inclusive and supportive learning environment, and a culture of appreciation to support the development of positive self-esteem in visually impaired adolescents",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Karina Agustina; Sulastri Sulastri; Tansri Adzlan Syah",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.24114/altruistik.v5i2.69095",
+      "finalDecision": "",
+      "id": "doi_10_24114_altruistik_v5i2_69095",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jurnal.unimed.ac.id/2012/index.php/altruistik/article/download/69095/29111",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and socia",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "A Qualitative Case Study on The Formation of High Self-Esteem in Visually Impaired Adolescents Based on Coopersmith’s Theory",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.24114/altruistik.v5i2.69095",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan",
+      "year": "2026",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623957_kr7x6",
+    "recordId": "doi_10_24114_altruistik_v5i2_69095",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.957Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and social processes underlying self-esteem. Three participants with high self-esteem were selected using the Coopersmith Self-Esteem Inventory (CSEI). Data were collected through in-depth interviews, observations, and documentation, then analyzed thematically. The results show that high self-esteem is formed dynamically through the interaction of internal and external factors. Coopersmith's four factors : acceptance, control, expectations and standards, and rewarding of competence interact with aspects of self-esteem : significance, competence, virtue, and power through self-acceptance, realistic expectations, independence, and appreciation of self-competence. Social support from family, teachers, and peers strengthens this process, resulting in independence, optimism, and resilience in the face of stigma and obstacles. This study emphasizes the importance of unconditional acceptance from family, an inclusive and supportive learning environment, and a culture of appreciation to support the development of positive self-esteem in visually impaired adolescents",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Karina Agustina; Sulastri Sulastri; Tansri Adzlan Syah",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.24114/altruistik.v5i2.69095",
+      "finalDecision": "",
+      "id": "doi_10_24114_altruistik_v5i2_69095",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jurnal.unimed.ac.id/2012/index.php/altruistik/article/download/69095/29111",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7216072052",
+          "url": "https://doi.org/10.24114/altruistik.v5i2.69095"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the process of developing high self-esteem among visually impaired adolescents at SLB A Bina Insani, Bandar Lampung, based on Coopersmith's Self-Esteem Theory (1967). A qualitative approach with a multiple case study design was used to explore in depth the psychological and socia",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "A Qualitative Case Study on The Formation of High Self-Esteem in Visually Impaired Adolescents Based on Coopersmith’s Theory",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.24114/altruistik.v5i2.69095",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "ALTRUISTIK Jurnal Konseling dan Psikologi Pendidikan",
+      "year": "2026"
+    }
+  }
+]

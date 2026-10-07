@@ -7,11 +7,12 @@
     "build": "tsc",
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
-    "test": "tsx --test tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
-    "test:unit": "tsx --test tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
+    "test": "tsx --test tests/collector_pipeline.test.ts tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
+    "test:unit": "tsx --test tests/collector_pipeline.test.ts tests/scholar.test.ts tests/profiles.test.ts tests/pipeline.test.ts",
     "test:live": "tsx --test tests/live_integration.test.ts"
   },
   "dependencies": {
+    "adm-zip": "^0.6.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -19,6 +20,7 @@
     "pdfjs-dist": "^6.3.289"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/mssql": "^12.3.0",

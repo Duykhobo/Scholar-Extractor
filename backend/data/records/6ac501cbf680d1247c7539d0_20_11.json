@@ -1,0 +1,98 @@
+{
+  "id": "6ac501cbf680d1247c7539d0_20_11",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Exploring the Nexus of Visual Impairment, Social Interaction and Relationships among Higher Education Students",
+  "authors": "S Ashra; K Iqbal; A Niazi",
+  "year": "2024",
+  "publicationDate": "2026-10-06",
+  "abstract": "… In terms of academics, teachers of visually impaired children … The essential components of social support for students who … While peers' social support boosts students' self-esteem and …",
+  "doi": "",
+  "venue": "Journal of Business and Social Review …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac501cbf680d1247c7539d0_20_11",
+  "landingPageUrl": "https://nja.pastic.gov.pk/journals/index.php/JBSEE/article/view/12210",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "S Ashra; K Iqbal; A Niazi",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "social participation (Related)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac5018cd3982c756374c1ff_30_1",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Exploring the Nexus of Visual Impairment, Social Interaction and Relationships among Higher Education Students\"",
+    "finalDecision": "",
+    "id": "6ac501cbf680d1247c7539d0_20_11",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB",
+      "VI-EC-DUP",
+      "VI-EC-ADULT"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791296958728",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:18.926Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac501cbf680d1247c7539d0_20_11",
+        "url": "https://nja.pastic.gov.pk/journals/index.php/JBSEE/article/view/12210"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Exploring the Nexus of Visual Impairment, Social Interaction and Relationships among Higher Education Students\").",
+    "screeningStage": "V2",
+    "search_id": "6ac501cbf680d1247c7539d0",
+    "snippet": "… In terms of academics, teachers of visually impaired children … The essential components of social support for students who … While peers' social support boosts students' self-esteem and …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Exploring the Nexus of Visual Impairment, Social Interaction and Relationships among Higher Education Students",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://nja.pastic.gov.pk/journals/index.php/JBSEE/article/view/12210",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Journal of Business and Social Review …",
+    "year": "2024"
+  }
+}

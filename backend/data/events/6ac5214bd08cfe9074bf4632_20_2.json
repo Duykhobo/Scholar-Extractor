@@ -1,0 +1,176 @@
+[
+  {
+    "id": "evt_1791335618023_mpx52",
+    "recordId": "6ac5214bd08cfe9074bf4632_20_2",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.023Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "PSP Agnes; MK Singh",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac51934c83b3f830ae1732f_20_2",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls\"",
+      "finalDecision": "",
+      "id": "6ac5214bd08cfe9074bf4632_20_2",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T16:26:58.608Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac5214bd08cfe9074bf4632_20_2",
+          "url": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls\").",
+      "screeningStage": "V2",
+      "search_id": "6ac5214bd08cfe9074bf4632",
+      "snippet": "… or losing peer support, are strongly linked to drops and changes in self-esteem during this period… Children with visual impairments play a vital role in society; however, these children are …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Indo-Bhutan Social Science Conference …",
+      "year": "2026"
+    }
+  },
+  {
+    "id": "evt_1791335622358_tqf3n",
+    "recordId": "6ac5214bd08cfe9074bf4632_20_2",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:42.358Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac5214bd08cfe9074bf4632_20_2",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls",
+      "authors": "PSP Agnes; MK Singh",
+      "year": "2026",
+      "venue": "Indo-Bhutan Social Science Conference …",
+      "doi": "",
+      "snippet": "… or losing peer support, are strongly linked to drops and changes in self-esteem during this period… Children with visual impairments play a vital role in society; however, these children are …",
+      "abstract": "",
+      "url": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac5214bd08cfe9074bf4632",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac5214bd08cfe9074bf4632_20_2",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T16:26:58.608Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac51934c83b3f830ae1732f_20_2",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls\"",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "literatureGroup": "direct",
+      "v2Decision": "Exclude"
+    }
+  }
+]

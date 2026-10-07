@@ -1,0 +1,617 @@
+{
+  "id": "doi_10_1016_j_ijedudev_2014_07_002",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Identifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi",
+  "authors": "Paul J. Lynch; Patricia M. Lund; Bonface Massah",
+  "year": "2014",
+  "publicationDate": "2026-10-06T14:12:16.642Z",
+  "abstract": "",
+  "doi": "10.1016/j.ijedudev.2014.07.002",
+  "venue": "International Journal of Educational Development",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_1016_j_ijedudev_2014_07_002",
+  "landingPageUrl": "https://doi.org/10.1016/j.ijedudev.2014.07.002",
+  "openAccessPdfUrl": "https://pure.coventry.ac.uk/ws/files/3928052/Identifying%20strategies.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.642Z",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Paul J. Lynch; Patricia M. Lund; Bonface Massah",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.1016/j.ijedudev.2014.07.002",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Unknown] \"...ntifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi Lynch, P. , Lund, P. and Massah, B. Author post-print (...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...ntifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi. International Journal of Educational Development, volu...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ntifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi Paul Lynch(a), Patricia Lund(b) and Bonface Massah(c) (...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...i Paul Lynch(a), Patricia Lund(b) and Bonface Massah(c) (a) School of Education, University of Birmingham, UK (b) Faculty of Health and Life Scien...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...rint they remained in these educational establishments with blind children and did not have the opportunity to attend their local mainstream school. Studi...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...searchers carried out a study to collect primary data about school children’s experiences living with the condition in different educational setti...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...d not have the opportunity to attend their local mainstream school. Studies (Lund and Gaigher, 2002) at a special school for children with albinis...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...t this school were all taught using print, none were taught Braille although this training was available for the totally blind . The school’s aim w...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...particularly at primary level, due to increasing numbers of school enrolment of all children without adequate funding and management. Specific tar...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Methodology] \"..., 2012). The creation of a small Ministry of Disability and Elderly Affairs was considered to be a major breakthrough particularly in making ‘disab...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Methodology",
+        "term": "Elderly",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...overnment organisations (INGOs) to support the education of blind children in specialist curriculum areas such as Braille literacy, Braille maths and dail...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Evaluation] \"...with the Ministry of Education and FEDOMA to develop pilot inclusive education in 150 primary schools in three districts. Additionally, UNICEF has also been s...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Evaluation] \"...s not led to systemic changes in educational policy towards inclusive education of children with disabilities (Grimes, et al., 2013). In spite of these key don...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Evaluation] \"...2013). In spite of these key donors’ interest in supporting inclusive education, the Ministry of Education still continues to support the policy of educating c...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...to their local mainstream schools, rather than to a special school or resource centre extensive distances from their home (Lynch, et al, 2011). Fo...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"....g. small telescopes or hand-held magnifiers) to use in the classroom but no follow-up evaluation of their use was undertaken and subsequent field vi...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...on of blind children in specialist curriculum areas such as Braille literacy, Braille maths and daily living skills (Lynch and McCall, 2007), but t...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...en in specialist curriculum areas such as Braille literacy, Braille maths and daily living skills (Lynch and McCall, 2007), but their intake has ex...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...red primary data in central and southern Malawi, from young school children with albinism, their families and educational professionals supporting...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...albinism; 3. the use of different learning media (print or Braille) by this group; 4. the health care issues associated with albinism and being at...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...one near Lake Malawi and a second near Blantyre City) and a school for the blind. Additional interviews were carried out with families in Mchinji...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...airment may affect a student’s performance, for example, at school. Qualified teachers of visually impaired students assess such visual functions...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...ul data about how all the children used their vision in the classroom. Although the planned 1 Muti is a term for traditional medicine in Southern Afr...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...from the well, playing football with friends, or walking to school. The younger children were more interested in doing art activities, using glue...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...tbooks…almost all the children [with albinism] are learning Braille. May be we could bring them back to using print, may be they could manage (a te...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...9 and filters through to school teaching staff including head teachers, resource teachers and district educatio...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...nterviewed at the resource centres showed a strong sense of self-efficacy, spirituality, agency and resilience when narrating their personal experiences....\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-efficacy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...are aging they might end up with blindness, they can learn Braille instead of large print’. Part of this belief is promulgated by eye clinicians w...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...ced so….and it is very common in our village, especially to elderly women when talking or giving advice to pregnant women, (mother of a young boy w...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "elderly",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...redible challenges, the mother raised her son with love and compassion and ensured he went to his local school. 3.6 Information about albinism for chi...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "compassion",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...n with love and compassion and ensured he went to his local school. 3.6 Information about albinism for children with albinism Parents of the inter...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...binism. They felt that teachers played an important role in caring for the children, helping them to choose a friend in the classroom who can aid...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "caring",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...es they faced in deciding whether to send their children to school because of the negative advice they receive from others in their own communitie...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ng for the children, helping them to choose a friend in the classroom who can aid them with their school work; preferably someone who had clear handw...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...es were huge in terms of the teaching approaches used (i.e. Braille as the principal teaching medium) as well as the impact of living away from the...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...wear protective clothing, even if it is not the regulation school uniform. When interviewed, four teachers at one of the three resource centres e...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...hers (ITs) and strategies to support children in mainstream school Evidence from focus group discussions indicate that ITs play an important role...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...d participating in all activities inside and outside of the classroom. They also considered their role to be one of supporting and advising the class...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...how teachers can help to support children with albinism at school. The lecturers also shared some of the challenges they faced in getting up-to-d...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...ut albinism, for example, how to help these children in the classroom but it tended to be dispersed across other module areas (e.g. low vision). The...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 16 - Unknown] \"...sectors of Malawi and is resulting in children being taught Braille when they do not require it. In some countries those with albinism are legally...\"",
+        "isValidEvidence": true,
+        "page": 16,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \"...the resource centres were originally established to educate blind children in the late ninety-sixties, children with albinism now take up to a quarter of...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \"...sing a very obvious device such as a telescope in a crowded classroom could make the child a target for mockery. The class teacher has a key role in...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 17 - Methodology] \"...urce centres has been the misguided policy of teaching them Braille beside their blind peers when they should be given useful LVDs and printed text...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Methodology",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 18 - Unknown] \"...s and schools as well as ‘greater cross-pollination between special education and other disciplines during initial training’ (Avramidis and Norwich, 2002) in...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 18 - Unknown] \"...s with low cost solutions to make children’s experiences at school more enjoyable and rewarding. The research team responded to this gap in knowle...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 19 - Unknown] \"...18 birth and throughout their school careers. Sometimes, the final choice is based on important factors such as pove...\"",
+        "isValidEvidence": true,
+        "page": 19,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 20 - Methodology] \"...ervention Programme for Children with Albinism at a Special School in South Africa'. Health Education Research 17 (3), 365-372....\"",
+        "isValidEvidence": true,
+        "page": 20,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 21 - Unknown] \"...eflective writing and photography. International Journal of Inclusive Education, 15 (10), 1073-1102. Ministry of Education, Science and Technology 2008. Nation...\"",
+        "isValidEvidence": true,
+        "page": 21,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Inclusive Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 21 - Unknown] \"...a study to investigate how children learn to read and write Braille. Commissioned report for Sightsavers. Lynch, P., and McCall, S., 2010. ‘Impact...\"",
+        "isValidEvidence": true,
+        "page": 21,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 22 - Methodology] \"...ightsavers, 2012. ‘Situational Analysis of the Education of Children with Visual Impairments and Other Disabled Children in Malawi.’ Unpublished final report, Sightsavers,...\"",
+        "isValidEvidence": true,
+        "page": 22,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "Children with Visual Impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 22 - Methodology] \"...ability that Others do Not Understand' . British Journal of Special Education 31 (1), 31-32. Muthukrishna, N., and Ebrahim, H., 2014. ‘Motherhood and the dis...\"",
+        "isValidEvidence": true,
+        "page": 22,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 22 - Methodology] \"...blems among children with oculocutaneous albinism attending special education schools in the Northern Province of South Africa. Unpublished Master’s thesis....\"",
+        "isValidEvidence": true,
+        "page": 22,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_1016_j_ijedudev_2014_07_002",
+    "isPdfVerified": true,
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+      "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [],
+    "page_count": 22,
+    "pdfUrl": "https://pure.coventry.ac.uk/ws/files/3928052/Identifying%20strategies.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.642Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2000265902",
+        "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.690Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2000265902",
+        "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.300Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2000265902",
+        "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.795Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2000265902",
+        "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.313Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2000265902",
+        "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.642Z",
+    "screeningReason": "Còn 6 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-COMM, VI-IC-CONF, VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "Identifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.1016/j.ijedudev.2014.07.002",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Include",
+    "venue": "International Journal of Educational Development",
+    "year": "2014"
+  }
+}

@@ -1,0 +1,532 @@
+[
+  {
+    "id": "evt_1791335617032_nazmo",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.032Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "P Datta",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "Y"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Self-concept and vision impairment: A review",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "British Journal of Visual Impairment",
+      "year": "2014"
+    }
+  },
+  {
+    "id": "evt_1791335617036_silkv",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.036Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "P Datta",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "Y"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Self-concept and vision impairment: A review",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "British Journal of Visual Impairment",
+      "year": "2014"
+    }
+  },
+  {
+    "id": "evt_1791335617041_c3e2k",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.041Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "P Datta",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "Y"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Self-concept and vision impairment: A review",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "British Journal of Visual Impairment",
+      "year": "2014"
+    }
+  },
+  {
+    "id": "evt_1791335621190_73d3r",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.190Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Self-concept and vision impairment: A review",
+      "authors": "P Datta",
+      "year": "2014",
+      "venue": "British Journal of Visual Impairment",
+      "doi": "",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "abstract": "",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621195_0f4ep",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.195Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Self-concept and vision impairment: A review",
+      "authors": "P Datta",
+      "year": "2014",
+      "venue": "British Journal of Visual Impairment",
+      "doi": "",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "abstract": "",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621198_9yp27",
+    "recordId": "6ac510cc03610a6783c688d9_20_9",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.198Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_9",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Self-concept and vision impairment: A review",
+      "authors": "P Datta",
+      "year": "2014",
+      "venue": "British Journal of Visual Impairment",
+      "doi": "",
+      "snippet": "… A comparative study of self-concept and self-confidence of sighted and visually impaired children. EXCEL International Journal of Multidisciplinary Management Studies, 2, 148–157. …",
+      "abstract": "",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_9",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://journals.sagepub.com/doi/abs/10.1177/0264619614542661"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_8",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Self-concept and vision impairment: A review\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-concept (Secondary)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude"
+    }
+  }
+]

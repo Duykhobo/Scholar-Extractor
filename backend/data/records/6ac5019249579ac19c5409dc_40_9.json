@@ -1,0 +1,86 @@
+{
+  "id": "6ac5019249579ac19c5409dc_40_9",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Visual impairment and psychosocial development",
+  "authors": "R Dawn",
+  "year": "2017",
+  "publicationDate": "2026-10-06",
+  "abstract": "… Social support has also been found to be one of the significant elements in the … the visually impaired children were found to have scored slightly higher than the sighted in self-esteem …",
+  "doi": "",
+  "venue": "… Achievement and Psychosocial Transition in Visually …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac5019249579ac19c5409dc_40_9",
+  "landingPageUrl": "https://link.springer.com/chapter/10.1007/978-981-10-6644-3_2",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "R Dawn",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "evidence_snippets": [],
+    "finalDecision": "",
+    "fullTextStatus": "not_found",
+    "id": "6ac5019249579ac19c5409dc_40_9",
+    "isPdfVerified": false,
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"… Achievement and Psychosocial Transition in Visually …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-PUB, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "6ac5019249579ac19c5409dc",
+    "sessionId": "sess_1791295876431_294pe",
+    "snippet": "… Social support has also been found to be one of the significant elements in the … the visually impaired children were found to have scored slightly higher than the sighted in self-esteem …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "Visual impairment and psychosocial development",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://link.springer.com/chapter/10.1007/978-981-10-6644-3_2",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Unsure",
+    "venue": "… Achievement and Psychosocial Transition in Visually …",
+    "year": "2017"
+  }
+}

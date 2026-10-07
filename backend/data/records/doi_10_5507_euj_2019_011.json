@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_5507_euj_2019_011",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "The Impact of a Summer Sports Camp for Children with Visual Impairments on the Self-Efficacy of Physical Education Pre-Service Teachers: A Pilot Study",
+  "authors": "John Thomas Foley; Sara Santarossa; Daniel W.S. Tindall; Lauren J. Lieberman",
+  "year": "2020",
+  "publicationDate": "2026-10-06T14:12:16.640Z",
+  "abstract": "Training and self-confidence of the instructor are important components in the success of any inclusive physical education (PE) or recreation program. The purpose of this study was to determine if the self-efficacy toward teaching students with intellectual disabilities, physical disabilities or visual impairment in PE would increase in PE pre-service teachers working at a one-week intensive sports camp for youth with visual impairments. PE pre-service teachers (n=18) filled out the Self-Efficacy Scale for Physical Education Teacher Education Majors towards Children with Disabilities (SE-PETE-D) pre- and post-camp. SE-PETE-D measured participants’ self-efficacy toward including students with disabilities. Participant’s self-efficacy for teaching youth with a visual impairment scores significantly increased during camp, t(17) = 3.75, p = .002, d = 0.88. A similar pattern was observed in self-efficacy for teaching youth with an intellectual disability and physical disability, with scores also significantly increasing, t(17) = 5.32, p < .001, d = 1.25 and, t(17) = 3.83, p = .001, d = .90, respectively. Results from this study suggest teaching and learning experiences that are both practical and disability-orientated can be quite effective in increasing PE pre-service teacher’s confidence working with youth with disabilities",
+  "doi": "10.5507/euj.2019.011",
+  "venue": "European Journal of Adapted Physical Activity",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_5507_euj_2019_011",
+  "landingPageUrl": "https://doi.org/10.5507/euj.2019.011",
+  "openAccessPdfUrl": "http://eujapa.upol.cz/doi/10.5507/euj.2019.011.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.640Z",
+  "rawPayload": {
+    "abstract": "Training and self-confidence of the instructor are important components in the success of any inclusive physical education (PE) or recreation program. The purpose of this study was to determine if the self-efficacy toward teaching students with intellectual disabilities, physical disabilities or visual impairment in PE would increase in PE pre-service teachers working at a one-week intensive sports camp for youth with visual impairments. PE pre-service teachers (n=18) filled out the Self-Efficacy Scale for Physical Education Teacher Education Majors towards Children with Disabilities (SE-PETE-D) pre- and post-camp. SE-PETE-D measured participants’ self-efficacy toward including students with disabilities. Participant’s self-efficacy for teaching youth with a visual impairment scores significantly increased during camp, t(17) = 3.75, p = .002, d = 0.88. A similar pattern was observed in self-efficacy for teaching youth with an intellectual disability and physical disability, with scores also significantly increasing, t(17) = 5.32, p < .001, d = 1.25 and, t(17) = 3.83, p = .001, d = .90, respectively. Results from this study suggest teaching and learning experiences that are both practical and disability-orientated can be quite effective in increasing PE pre-service teacher’s confidence working with youth with disabilities",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "John Thomas Foley; Sara Santarossa; Daniel W.S. Tindall; Lauren J. Lieberman",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-confidence (Primary Y)",
+      "self-efficacy (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.5507/euj.2019.011",
+    "finalDecision": "",
+    "id": "doi_10_5507_euj_2019_011",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "http://eujapa.upol.cz/doi/10.5507/euj.2019.011.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.640Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W3018613244",
+        "url": "https://doi.org/10.5507/euj.2019.011"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.689Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W3018613244",
+        "url": "https://doi.org/10.5507/euj.2019.011"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.298Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W3018613244",
+        "url": "https://doi.org/10.5507/euj.2019.011"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.794Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W3018613244",
+        "url": "https://doi.org/10.5507/euj.2019.011"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.311Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W3018613244",
+        "url": "https://doi.org/10.5507/euj.2019.011"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.640Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Training and self-confidence of the instructor are important components in the success of any inclusive physical education (PE) or recreation program. The purpose of this study was to determine if the self-efficacy toward teaching students with intellectual disabilities, physical disabilities or vis",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "The Impact of a Summer Sports Camp for Children with Visual Impairments on the Self-Efficacy of Physical Education Pre-Service Teachers: A Pilot Study",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.5507/euj.2019.011",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "European Journal of Adapted Physical Activity",
+    "year": "2020"
+  }
+}

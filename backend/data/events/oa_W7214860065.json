@@ -1,0 +1,846 @@
+[
+  {
+    "id": "evt_1791335617385_9wqts",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.385Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mevlyde Syla",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "finalDecision": "",
+      "id": "oa_W7214860065",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335617390_a50qj",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.390Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mevlyde Syla",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "finalDecision": "",
+      "id": "oa_W7214860065",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335617392_jj1ny",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.392Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mevlyde Syla",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "finalDecision": "",
+      "id": "oa_W7214860065",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335617397_b453e",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.397Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mevlyde Syla",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "finalDecision": "",
+      "id": "oa_W7214860065",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335617400_r3ge9",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.400Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mevlyde Syla",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "finalDecision": "",
+      "id": "oa_W7214860065",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335621542_ni9d2",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.542Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7214860065",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "authors": "Mevlyde Syla",
+      "year": "2023",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "doi": "",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "article",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": false,
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621547_4h8go",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.547Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7214860065",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "authors": "Mevlyde Syla",
+      "year": "2023",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "doi": "",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "article",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621555_lmrk6",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.555Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7214860065",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "authors": "Mevlyde Syla",
+      "year": "2023",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "doi": "",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "article",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621558_zzl3a",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.558Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7214860065",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "authors": "Mevlyde Syla",
+      "year": "2023",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "doi": "",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "article",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621563_s3scv",
+    "recordId": "oa_W7214860065",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.563Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7214860065",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS",
+      "authors": "Mevlyde Syla",
+      "year": "2023",
+      "venue": "Turkish International Journal of Special Education and Guidance & Counselling (TIJSEG)",
+      "doi": "",
+      "snippet": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quant",
+      "abstract": "One of the most widespread challenges in education in recent years is the role of peers in the inclusion of students with special needs, in order to achieve socialization and academic achievements. With a descriptive character, this research has collected quantitative and qualitative data, the quantitative data were collected through the questionnaire instrument carried out with 128 students of the eighth and ninth grades of those classes where there were students with special educational needs. For the collection of these data, we stopped at the Inclusion Index manual by the authors Tony Both and Mel Aincow, adapted and adapted in the Albanian language Zabeli and Behluli (2014) and a semi-structured interview was conducted with 5 support teachers and 5 assistants of students with special educational needs. The research was carried out in Kosovo, in four primary schools in the city of Gjilan. These schools were randomly selected, while the classes were purposively selected. The results show that peers positively affect the socialization of students with special needs as well as educational development. The results show that girls have more positive attitudes than boys towards peers with special educational needs. Keywords: Peers, education, attitudes, inclusive education. Ethics and Conflict of Interest Declare that I have acted in accordance with ethical rules throughout the research and that there is no conflict of interest. REFERENCES Bandura, A. (1986). The social foundations of thought and action. Englewood Qiffs, NJ: Prentice-Hall. Pearson. Beckett, A. (2009). Challenging disabling attitudes, building an inclusive society: Considering the Role of education in encouraging non-disabled children to develop positive attitudes towards disabled people. British Journal of Sociology of Education, 323. Booth, T., & Ainscow, M. (2011). Index for incluzion. Bristol: Centre for studies on Incluzive education. CSIE. Bossaert, G. (2015). Social participation of students with special educational needs in different educational. Irish Educational Studies. Gjelaj-Zhitija, M. (2014). Efektet e edukimit parashkollor në përgatitjen e fëmijëve për klasë të parë. Kërkime Pedagogjike. Tiranë: Universiteti i Tiranes. Godeau, E., Vignes, C., & Sentenac, M., Ehlinger, . (2010). Improving attitudes towards children with disabilities in a school context: A clusterrandomized intervention study. Developmental Medicine & Child Neuro. Iarskaia Smirnova, E. (2002). Creating Future Together: Problems and Perspectives of Inclusive Education in Russia. CPSI nternational Policy Fellowship Program 2001/2002). Krajewski, J. H. (2002). Teen Attitudes Toward Individuals with Mental Retardation from 1987 to 1998: Impact of Respondent Gender and School Variables. Education and Training in Mental Retardation and Developmental Disabili. Manset, G., & Semmel, M. (1997). Are inclusive programs for students with mild disabilities successful. Journal of Special Education, 155-180. MASHT. (2010). Plani Strategjik për Organizimin e Arsimit Gjithëpërfshirës. Prishtinë: MASHT. Meijer, C., Jan Pijl, S., & Hegarty, S. (1994). New Perspectives in Special Education. A Six-Country Study of Integration. New York: London and New York: Routledge. Newcomer, K., Hatry, H., & Wholey, J. (2015). Handbook of practical program evaluation. Washington: JOSSEY-BASS. Nikolaraizi, M., & De Reybekiel, N. (2001). A comparative study of children's attitudes towards deaf children, children in wheelchairs and blind children in Greece and in the UK. European Journal of Special Needs Education. Payne, M. (2005). Modern Social Work Theory (3-rd ed). Chicago: Lyceum Books. Rafftery, Y., Piscitelli, V., & Boettcher, C. (2003). The impact of inclusion on language Development and social competence among preschoolers with disabilities. Councilfor Eweprionnl Children., 468. Reçica, S. H. (2016). Qëndrimet e mësimdhënësve për zbatimin e filozofisë së gjithëpërfshirjes në institucionet arsimire në Kosovë. Prishtine: Instituti Pedagogjik i Kosoves. Rieser, R. (2006). Rieser, R. (2006b) Making it Happen: Implementing the Duty to promote Disability Equality in Secondary Schools and Local Authorities. Disability Equality in Education: Course Book. Stangvik, G. (1997). Integration in a policy perspective. In S. J. Beyond Schooling, 32-50. Staniland, L. (2009). Public Perceptions of Disabled People-Evidence from the British Social Attitudes Survey. Office for Disability Issues. Syla, M. (2002). Ndikimi i bashkemoshatareve ne socializimin dhe zhvillimin edukativ te nxenesve me nevoja te vecanta. Prishtine: Lena. Townsend, M. A., Wilton, K. M., & Vakilirad, T. (1993). Children's attitudes toward peers with intellectual disability. Journal of Intellectual Disability Research. UNESKO. (2015). EFA Global Monitoring Report: Education for All 2000-2015. . United Nations Educational. UNICEF, M. &. (2014). Situational Analysis of Children with Disabilities in Albania. Shqiperi: UNICEF. Zabeli, N. (2010). Edukimi Inkluziv. Dispensë për student. Prishtinë: Wus Aurstia dhe Universiteti i Prishtinës. Zabeli, N., & Behluli, L. (2014). Indeksi per gjitheperfshirje. Prishtine: Save the Children.",
+      "url": "https://tijseg.org/index.php/tijseg/article/view/103",
+      "pdfUrl": "https://tijseg.org/index.php/tijseg/article/download/103/138",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:50.312Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "article",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7214860065",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7214860065"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7214860065",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"THE ROLE OF PEERS IN THE INCLUSIVE EDUCATION OF STUDENTS WITH SPECIAL NEEDS\"",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "Y"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  }
+]

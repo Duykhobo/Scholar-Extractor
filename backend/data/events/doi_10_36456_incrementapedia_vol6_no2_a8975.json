@@ -1,0 +1,377 @@
+[
+  {
+    "id": "evt_1791335614923_een67",
+    "recordId": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.923Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the obstacles in shaping independence in children with visual impairments, as well as the supporting factors faced by parents in an effort to form independence for children with visual impairments. In this study using qualitative methods obtained from the results of interviews and documentation with informants of parents of children with visual impairments. In an effort to build and shape their independence can be done by providing a supportive environment, providing positive support, providing opportunities for children to learn, and forming children's habits can help shape independence in children with multiple visual impairments.There are several inhibiting factors in teaching independence to children with multiple visual impairments related to intense motor skills such as eating, drinking with a glass, writing, reading, and lack of social interaction. Basically, blind children with multiple disabilities can be taught independence by using democratic parenting like previous studies that used democratic parenting but the level of independence is different from children with ordinary blindness.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Dinda Dewi; Sri puji Lestari; Anisa Arwah Lia; Zulfa Fahmy; Irma Masfia",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.36456/incrementapedia.vol6.no2.a8975",
+      "finalDecision": "",
+      "id": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Incrementapedia Jurnal Pendidikan Anak Usia Dini\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://jurnal.unipasby.ac.id/index.php/incrementapedia/article/download/8975/6111",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.282Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.281Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "POLA ASUH ORANG TUA DALAM MEMBENTUK KEMANDIRIAN PADA ANAK PENYANDANG TUNANETRA GANDA",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Incrementapedia Jurnal Pendidikan Anak Usia Dini",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335618659_ktldw",
+    "recordId": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.659Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the obstacles in shaping independence in children with visual impairments, as well as the supporting factors faced by parents in an effort to form independence for children with visual impairments. In this study using qualitative methods obtained from the results of interviews and documentation with informants of parents of children with visual impairments. In an effort to build and shape their independence can be done by providing a supportive environment, providing positive support, providing opportunities for children to learn, and forming children's habits can help shape independence in children with multiple visual impairments.There are several inhibiting factors in teaching independence to children with multiple visual impairments related to intense motor skills such as eating, drinking with a glass, writing, reading, and lack of social interaction. Basically, blind children with multiple disabilities can be taught independence by using democratic parenting like previous studies that used democratic parenting but the level of independence is different from children with ordinary blindness.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Dinda Dewi; Sri puji Lestari; Anisa Arwah Lia; Zulfa Fahmy; Irma Masfia",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.36456/incrementapedia.vol6.no2.a8975",
+      "finalDecision": "",
+      "id": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Incrementapedia Jurnal Pendidikan Anak Usia Dini\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://jurnal.unipasby.ac.id/index.php/incrementapedia/article/download/8975/6111",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.282Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.281Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "POLA ASUH ORANG TUA DALAM MEMBENTUK KEMANDIRIAN PADA ANAK PENYANDANG TUNANETRA GANDA",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Incrementapedia Jurnal Pendidikan Anak Usia Dini",
+      "year": "2024",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624016_6u0v6",
+    "recordId": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.016Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the obstacles in shaping independence in children with visual impairments, as well as the supporting factors faced by parents in an effort to form independence for children with visual impairments. In this study using qualitative methods obtained from the results of interviews and documentation with informants of parents of children with visual impairments. In an effort to build and shape their independence can be done by providing a supportive environment, providing positive support, providing opportunities for children to learn, and forming children's habits can help shape independence in children with multiple visual impairments.There are several inhibiting factors in teaching independence to children with multiple visual impairments related to intense motor skills such as eating, drinking with a glass, writing, reading, and lack of social interaction. Basically, blind children with multiple disabilities can be taught independence by using democratic parenting like previous studies that used democratic parenting but the level of independence is different from children with ordinary blindness.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Dinda Dewi; Sri puji Lestari; Anisa Arwah Lia; Zulfa Fahmy; Irma Masfia",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.36456/incrementapedia.vol6.no2.a8975",
+      "finalDecision": "",
+      "id": "doi_10_36456_incrementapedia_vol6_no2_a8975",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Incrementapedia Jurnal Pendidikan Anak Usia Dini\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://jurnal.unipasby.ac.id/index.php/incrementapedia/article/download/8975/6111",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.282Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409819737",
+          "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.281Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Independence is an important thing and must be owned by everyone especially for children with multiple visual impairments, this can provide many benefits for blind children. The purpose of this study was to determine the description of parenting patterns in children with visual impairments and the o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "POLA ASUH ORANG TUA DALAM MEMBENTUK KEMANDIRIAN PADA ANAK PENYANDANG TUNANETRA GANDA",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.36456/incrementapedia.vol6.no2.a8975",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Incrementapedia Jurnal Pendidikan Anak Usia Dini",
+      "year": "2024"
+    }
+  }
+]

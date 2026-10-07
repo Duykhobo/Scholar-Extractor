@@ -1,0 +1,52 @@
+[
+  {
+    "version": "v1.0",
+    "projectId": "preset_visually_impaired_aac",
+    "title": "Protocol nghiên cứu: AAC cho trẻ khiếm thị",
+    "createdAt": "2026-10-07T03:27:49.195Z",
+    "criteria": [
+      {
+        "id": "crit_aac_01",
+        "code": "IC-01",
+        "name": "Đối tượng trẻ em khiếm thị",
+        "description": "Nghiên cứu trên trẻ em hoặc học sinh khiếm thị, suy giảm thị lực.",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_aac_02",
+        "code": "IC-02",
+        "name": "Can thiệp công nghệ AAC",
+        "description": "Áp dụng công nghệ, thiết bị hoặc phương pháp giao tiếp tăng cường (AAC).",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_aac_03",
+        "code": "IC-03",
+        "name": "Đo lường sự tự tin / giao tiếp",
+        "description": "Có chỉ số hoặc đánh giá thực nghiệm về giao tiếp hoặc sự tự tin.",
+        "kind": "inclusion",
+        "stage": "v2",
+        "evaluationMethod": "manual",
+        "isActive": true
+      }
+    ],
+    "sourcePolicies": {
+      "PubMed": {
+        "role": "primary"
+      },
+      "OpenAlex": {
+        "role": "primary"
+      },
+      "Crossref": {
+        "role": "supplementary"
+      }
+    },
+    "reasonForChange": "Cập nhật protocol nghiên cứu"
+  }
+]

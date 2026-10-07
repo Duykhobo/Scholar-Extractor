@@ -1,0 +1,377 @@
+[
+  {
+    "id": "evt_1791335615071_z3goq",
+    "recordId": "doi_10_56663_rop_v14i1_92",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.071Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participants martial arts rank (belt level) and their self-perception. The study included 10 adult participants aged between 19 and 65 years (M = 43.70, SD = 14.39), consisting of 5 men (50%) and 5 women (50%). The research employed a cross-sectional, descriptive, and correlational design, representing a micro-study. The instruments used were the Rosenberg Self-Esteem Scale and the Self-Perception Profile for Adolescents. The results indicated a positive association between self-esteem and self-perception, particularly in the dimensions of social competence and romantic appeal. Moreover, the martial arts rank was positively correlated with the level of self-perception. The implications of these findings were discussed in relation to the promotion of martial arts as a means of supporting the personal and social development of individuals with visual impairments, as well as possible intervention directions for specialists and practitioners in the field of special education and rehabilitation.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mara-Antonia Băețica",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56663/rop.v14i1.92",
+      "finalDecision": "",
+      "id": "doi_10_56663_rop_v14i1_92",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://psychopedagogy.unibuc.ro/index.php/RoP/article/download/92/75",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Specific elements of self-esteem in blind adults who practice martial arts",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56663/rop.v14i1.92",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Review of Psychopedagogy",
+      "year": "2025"
+    }
+  },
+  {
+    "id": "evt_1791335618840_c0spy",
+    "recordId": "doi_10_56663_rop_v14i1_92",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.840Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participants martial arts rank (belt level) and their self-perception. The study included 10 adult participants aged between 19 and 65 years (M = 43.70, SD = 14.39), consisting of 5 men (50%) and 5 women (50%). The research employed a cross-sectional, descriptive, and correlational design, representing a micro-study. The instruments used were the Rosenberg Self-Esteem Scale and the Self-Perception Profile for Adolescents. The results indicated a positive association between self-esteem and self-perception, particularly in the dimensions of social competence and romantic appeal. Moreover, the martial arts rank was positively correlated with the level of self-perception. The implications of these findings were discussed in relation to the promotion of martial arts as a means of supporting the personal and social development of individuals with visual impairments, as well as possible intervention directions for specialists and practitioners in the field of special education and rehabilitation.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mara-Antonia Băețica",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56663/rop.v14i1.92",
+      "finalDecision": "",
+      "id": "doi_10_56663_rop_v14i1_92",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://psychopedagogy.unibuc.ro/index.php/RoP/article/download/92/75",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Specific elements of self-esteem in blind adults who practice martial arts",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56663/rop.v14i1.92",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Review of Psychopedagogy",
+      "year": "2025",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624183_6egvl",
+    "recordId": "doi_10_56663_rop_v14i1_92",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.183Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participants martial arts rank (belt level) and their self-perception. The study included 10 adult participants aged between 19 and 65 years (M = 43.70, SD = 14.39), consisting of 5 men (50%) and 5 women (50%). The research employed a cross-sectional, descriptive, and correlational design, representing a micro-study. The instruments used were the Rosenberg Self-Esteem Scale and the Self-Perception Profile for Adolescents. The results indicated a positive association between self-esteem and self-perception, particularly in the dimensions of social competence and romantic appeal. Moreover, the martial arts rank was positively correlated with the level of self-perception. The implications of these findings were discussed in relation to the promotion of martial arts as a means of supporting the personal and social development of individuals with visual impairments, as well as possible intervention directions for specialists and practitioners in the field of special education and rehabilitation.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mara-Antonia Băețica",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56663/rop.v14i1.92",
+      "finalDecision": "",
+      "id": "doi_10_56663_rop_v14i1_92",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://psychopedagogy.unibuc.ro/index.php/RoP/article/download/92/75",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7117421324",
+          "url": "https://doi.org/10.56663/rop.v14i1.92"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The aim of the present study is to analyze the level of self-esteem among blind adults who practice martial arts (ju-jitsu), by examining the relationships between self-esteem and self-perception as interconnected aspects. Additionally, the study investigated the relationship between the participant",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Specific elements of self-esteem in blind adults who practice martial arts",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56663/rop.v14i1.92",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Review of Psychopedagogy",
+      "year": "2025"
+    }
+  }
+]

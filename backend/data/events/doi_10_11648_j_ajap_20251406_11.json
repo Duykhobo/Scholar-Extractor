@@ -1,0 +1,1290 @@
+[
+  {
+    "id": "evt_1791335614975_va3dq",
+    "recordId": "doi_10_11648_j_ajap_20251406_11",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.975Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this field has advanced significantly in the social and medical sciences. It has been noted that awareness of the issue of physical and mental disability is increasing quickly. Such rapid growth in interest is involving more and more researchers doing studies on mental retardation which is in terms of producing a large accumulation of data on the general condition with which individuals with special educational needs are associated. The results show that there was a significant difference between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there is a statistically significant difference between the two groups in the domains of family burden. There is a difference between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with conditions like cerebral palsy or Down’s syndrome need to be assisted in feeding. Children with mental health issues cannot comprehend the messages. At the same time, Children with disabilities have a higher risk of conditions such as diabetes and hypertension which are high-risk factors for COVID-19 mortality. Therefore, study observes that children with disabilities need much more support than the rest of the population in the face of a pandemic. It can be concluded from the study that the parental psychosocial problems are found to be much severe during the outbreak of the corona virus pandemic.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tania Ghosh; Sribas Goswami",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11648/j.ajap.20251406.11",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...ther psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with con...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...break of the corona virus pandemic. Keywords Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...to sick persons. The outcome of stressors on family members caring for n sick person in the family has been referred to as...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...nce between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...rds Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction Physical and mental disabilities are a...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...any studies have investigated the links between measures of social support and health and other studies have examined marital processes and health, virtua...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...l, psy- cho-emotional, financial and social consequences of caring for impaired members of the family specially during the pandemic situation. Fam...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...particularly of intellectual differently abled children and blind children are not so clear as research activities in this area have not undertaken suffic...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...2016 have helped create a comprehensive legal framework for inclusive education. However, there are a few ambiguities about where children with disabilities (C...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "inclusive education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...education of satisfactory and equitable quality in a formal school which satisfies certain essential norms and standards. Article 21A and the RTE...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...an a child who has been admitted by his or her parents to a school which is not supported by the appropriate Gov- ernment, shall be liable to pay...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...ith intellectual disabilities. 5) To assess and compare the self-esteem of parents of children with intellectual disabilities. 6) To correlate socio-de...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 3 - Methodology] \"...indings from the study are statistically analyzed. Table 1. Social support during the outbreak of Pandemic. Area of Measurement Mean + SD of ID Mean + SD...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Methodology",
+          "term": "Social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \".../www.sciencepg.com/journal/ajap 171 life, social stigma and self-esteem parents of children with intellectual disability and children with blindness. 3...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...dness group in the marital quality of life domain. Table 4. Self-esteem situation. Area of Measurement Mean + SD of ID Mean + SD of Blind Mean Rank U Z...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...able 7. Correlation between Socio-demographic variables and Social Support, Marital Quality of Life, Social Stigma and Self-Esteem. Socio- demographic var...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...the comparison between the ID group and the Blind group on Self-esteem. The result shows that there was no statistically significant difference betwee...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...age, education, marital status, number of family member and social support domain [13]. There was no statistically significant correlation between other s...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...c variables SSQN SSQS Marital Quality of life Social stigma Self-esteem No. of family member 0.086 0.106 0.008 0.13 0.016 Income .277* .263* 0.025 0.00...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...e Level of Mental Retardation, Level of Blindness and other Social Support Questionnaire domain. There was no statistically significant correlation betwee...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...only provide practical help and personal care but also give emotional support to their relatives with mental disorder and chronic illness. The effects of str...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "emotional support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...nic illness. The effects of stressors on the family members caring for physically and mentally ill persons have been referred to as caregiver’s bu...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...t first recognition. In the present study, the blindness of blind children was being detected as early as 4 months of age and intellectually disability of...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...(60%) family disruption as compared to 26.6% of parents in blind children group. Maes studied care giving burden of families looking after persons with i...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...75 Clinical variables SSQN SSQS Marital scale Social stigma Self-esteem Age at first recognised 0.248 -.265* -0.03 .398** -0.075 **. Correlation is sig...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...th intellectual disability and children with blind- ness on social support showed that there was no statistically significant difference between parents o...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...y significant difference between two groups in the areas of social support, marital quality of life, social stigma and self-esteem. It is found that...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...level of marital discord in these families. Feelings of low self-esteem, helplessness, resentment over excessive demands on time and the burden of fina...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 10 - Unknown] \"...ference between two groups in family burden. Family burden, social support & social stigma is high in intellectual disability group compare to the blind g...\"",
+          "isValidEvidence": true,
+          "page": 10,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 10 - References] \"...ew York: Appleton Publication. [5] Greaheart, B. R. (1980), Special Education for the 80’s. St. Louis: The C. V. Morbey Company. [6] Green, W. A. (1957), Con...\"",
+          "isValidEvidence": false,
+          "page": 10,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "Special Education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 10 - References] \"...rill Publishing Company. [12] Kolstoe & Frey (1965), A high school study programme for mentally subnormal students. Southern Illinois University P...\"",
+          "isValidEvidence": false,
+          "page": 10,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 10 - Unknown] \"...oup compare to the blind group. Marital quality of life and self-esteem is high in the blind group compare to intellectual disability group. Indeed, pa...\"",
+          "isValidEvidence": true,
+          "page": 10,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_11648_j_ajap_20251406_11",
+      "isPdfVerified": true,
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 10,
+      "pdfUrl": "http://article.sciencepg.com/pdf/j.ajap.20251406.11",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.793Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "Children with Disabilities in India: An Unfolded Story",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.11648/j.ajap.20251406.11",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "American Journal of Applied Psychology",
+      "year": "2025"
+    }
+  },
+  {
+    "id": "evt_1791335618736_eav17",
+    "recordId": "doi_10_11648_j_ajap_20251406_11",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.736Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this field has advanced significantly in the social and medical sciences. It has been noted that awareness of the issue of physical and mental disability is increasing quickly. Such rapid growth in interest is involving more and more researchers doing studies on mental retardation which is in terms of producing a large accumulation of data on the general condition with which individuals with special educational needs are associated. The results show that there was a significant difference between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there is a statistically significant difference between the two groups in the domains of family burden. There is a difference between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with conditions like cerebral palsy or Down’s syndrome need to be assisted in feeding. Children with mental health issues cannot comprehend the messages. At the same time, Children with disabilities have a higher risk of conditions such as diabetes and hypertension which are high-risk factors for COVID-19 mortality. Therefore, study observes that children with disabilities need much more support than the rest of the population in the face of a pandemic. It can be concluded from the study that the parental psychosocial problems are found to be much severe during the outbreak of the corona virus pandemic.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tania Ghosh; Sribas Goswami",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11648/j.ajap.20251406.11",
+      "evidence_snippets": [
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 1 - Unknown] \"...ther psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with con...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 1 - Unknown] \"...break of the corona virus pandemic. Keywords Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "caring",
+          "context": "[Trang 1 - Unknown] \"...to sick persons. The outcome of stressors on family members caring for n sick person in the family has been referred to as...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 1 - Unknown] \"...nce between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 1 - Unknown] \"...between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 1 - Unknown] \"...rds Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction Physical and mental disabilities are a...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 2 - Unknown] \"...any studies have investigated the links between measures of social support and health and other studies have examined marital processes and health, virtua...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "caring",
+          "context": "[Trang 2 - Unknown] \"...l, psy- cho-emotional, financial and social consequences of caring for impaired members of the family specially during the pandemic situation. Fam...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind children",
+          "context": "[Trang 2 - Unknown] \"...particularly of intellectual differently abled children and blind children are not so clear as research activities in this area have not undertaken suffic...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "inclusive education",
+          "context": "[Trang 2 - Unknown] \"...2016 have helped create a comprehensive legal framework for inclusive education. However, there are a few ambiguities about where children with disabilities (C...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 2 - Unknown] \"...education of satisfactory and equitable quality in a formal school which satisfies certain essential norms and standards. Article 21A and the RTE...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 2 - Unknown] \"...an a child who has been admitted by his or her parents to a school which is not supported by the appropriate Gov- ernment, shall be liable to pay...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 2 - Unknown] \"...ith intellectual disabilities. 5) To assess and compare the self-esteem of parents of children with intellectual disabilities. 6) To correlate socio-de...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social support",
+          "context": "[Trang 3 - Methodology] \"...indings from the study are statistically analyzed. Table 1. Social support during the outbreak of Pandemic. Area of Measurement Mean + SD of ID Mean + SD...\"",
+          "page": 3,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 3 - Unknown] \".../www.sciencepg.com/journal/ajap 171 life, social stigma and self-esteem parents of children with intellectual disability and children with blindness. 3...\"",
+          "page": 3,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 4 - Unknown] \"...dness group in the marital quality of life domain. Table 4. Self-esteem situation. Area of Measurement Mean + SD of ID Mean + SD of Blind Mean Rank U Z...\"",
+          "page": 4,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 5 - Unknown] \"...able 7. Correlation between Socio-demographic variables and Social Support, Marital Quality of Life, Social Stigma and Self-Esteem. Socio- demographic var...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 5 - Unknown] \"...the comparison between the ID group and the Blind group on Self-esteem. The result shows that there was no statistically significant difference betwee...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 6 - Unknown] \"...age, education, marital status, number of family member and social support domain [13]. There was no statistically significant correlation between other s...\"",
+          "page": 6,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 6 - Unknown] \"...c variables SSQN SSQS Marital Quality of life Social stigma Self-esteem No. of family member 0.086 0.106 0.008 0.13 0.016 Income .277* .263* 0.025 0.00...\"",
+          "page": 6,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 7 - Unknown] \"...e Level of Mental Retardation, Level of Blindness and other Social Support Questionnaire domain. There was no statistically significant correlation betwee...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "emotional support",
+          "context": "[Trang 7 - Unknown] \"...only provide practical help and personal care but also give emotional support to their relatives with mental disorder and chronic illness. The effects of str...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "caring",
+          "context": "[Trang 7 - Unknown] \"...nic illness. The effects of stressors on the family members caring for physically and mentally ill persons have been referred to as caregiver’s bu...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind children",
+          "context": "[Trang 7 - Unknown] \"...t first recognition. In the present study, the blindness of blind children was being detected as early as 4 months of age and intellectually disability of...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind children",
+          "context": "[Trang 7 - Unknown] \"...(60%) family disruption as compared to 26.6% of parents in blind children group. Maes studied care giving burden of families looking after persons with i...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 7 - Unknown] \"...75 Clinical variables SSQN SSQS Marital scale Social stigma Self-esteem Age at first recognised 0.248 -.265* -0.03 .398** -0.075 **. Correlation is sig...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 8 - Unknown] \"...th intellectual disability and children with blind- ness on social support showed that there was no statistically significant difference between parents o...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 9 - Unknown] \"...y significant difference between two groups in the areas of social support, marital quality of life, social stigma and self-esteem. It is found that...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 9 - Unknown] \"...level of marital discord in these families. Feelings of low self-esteem, helplessness, resentment over excessive demands on time and the burden of fina...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 10 - Unknown] \"...ference between two groups in family burden. Family burden, social support & social stigma is high in intellectual disability group compare to the blind g...\"",
+          "page": 10,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "Special Education",
+          "context": "[Trang 10 - References] \"...ew York: Appleton Publication. [5] Greaheart, B. R. (1980), Special Education for the 80’s. St. Louis: The C. V. Morbey Company. [6] Green, W. A. (1957), Con...\"",
+          "page": 10,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 10 - References] \"...rill Publishing Company. [12] Kolstoe & Frey (1965), A high school study programme for mentally subnormal students. Southern Illinois University P...\"",
+          "page": 10,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 10 - Unknown] \"...oup compare to the blind group. Marital quality of life and self-esteem is high in the blind group compare to intellectual disability group. Indeed, pa...\"",
+          "page": 10,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_11648_j_ajap_20251406_11",
+      "isPdfVerified": true,
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 10,
+      "pdfUrl": "http://article.sciencepg.com/pdf/j.ajap.20251406.11",
+      "pipelineStage": "V3",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.793Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Đạt toàn bộ 5 tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Include",
+      "title": "Children with Disabilities in India: An Unfolded Story",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [],
+      "url": "https://doi.org/10.11648/j.ajap.20251406.11",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "American Journal of Applied Psychology",
+      "year": "2025",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624074_wrkvh",
+    "recordId": "doi_10_11648_j_ajap_20251406_11",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.074Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this field has advanced significantly in the social and medical sciences. It has been noted that awareness of the issue of physical and mental disability is increasing quickly. Such rapid growth in interest is involving more and more researchers doing studies on mental retardation which is in terms of producing a large accumulation of data on the general condition with which individuals with special educational needs are associated. The results show that there was a significant difference between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there is a statistically significant difference between the two groups in the domains of family burden. There is a difference between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with conditions like cerebral palsy or Down’s syndrome need to be assisted in feeding. Children with mental health issues cannot comprehend the messages. At the same time, Children with disabilities have a higher risk of conditions such as diabetes and hypertension which are high-risk factors for COVID-19 mortality. Therefore, study observes that children with disabilities need much more support than the rest of the population in the face of a pandemic. It can be concluded from the study that the parental psychosocial problems are found to be much severe during the outbreak of the corona virus pandemic.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tania Ghosh; Sribas Goswami",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11648/j.ajap.20251406.11",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...ther psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically significant. Children with con...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...break of the corona virus pandemic. Keywords Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...to sick persons. The outcome of stressors on family members caring for n sick person in the family has been referred to as...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...nce between the two groups with regard to class and type of school and shows that age at first recognized, among the psychosocial variables there...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...between the two groups in other psychosocial variables like self-esteem, marital life, social support and social stigma but they are not statistically...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...rds Family Burden, Social Support, Pandemic, Social Stigma, Self-esteem, Intellectual Disability 1. Introduction Physical and mental disabilities are a...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...any studies have investigated the links between measures of social support and health and other studies have examined marital processes and health, virtua...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...l, psy- cho-emotional, financial and social consequences of caring for impaired members of the family specially during the pandemic situation. Fam...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...particularly of intellectual differently abled children and blind children are not so clear as research activities in this area have not undertaken suffic...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...2016 have helped create a comprehensive legal framework for inclusive education. However, there are a few ambiguities about where children with disabilities (C...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "inclusive education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...education of satisfactory and equitable quality in a formal school which satisfies certain essential norms and standards. Article 21A and the RTE...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...an a child who has been admitted by his or her parents to a school which is not supported by the appropriate Gov- ernment, shall be liable to pay...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...ith intellectual disabilities. 5) To assess and compare the self-esteem of parents of children with intellectual disabilities. 6) To correlate socio-de...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 3 - Methodology] \"...indings from the study are statistically analyzed. Table 1. Social support during the outbreak of Pandemic. Area of Measurement Mean + SD of ID Mean + SD...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Methodology",
+          "term": "Social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \".../www.sciencepg.com/journal/ajap 171 life, social stigma and self-esteem parents of children with intellectual disability and children with blindness. 3...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...dness group in the marital quality of life domain. Table 4. Self-esteem situation. Area of Measurement Mean + SD of ID Mean + SD of Blind Mean Rank U Z...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...able 7. Correlation between Socio-demographic variables and Social Support, Marital Quality of Life, Social Stigma and Self-Esteem. Socio- demographic var...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...the comparison between the ID group and the Blind group on Self-esteem. The result shows that there was no statistically significant difference betwee...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...age, education, marital status, number of family member and social support domain [13]. There was no statistically significant correlation between other s...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...c variables SSQN SSQS Marital Quality of life Social stigma Self-esteem No. of family member 0.086 0.106 0.008 0.13 0.016 Income .277* .263* 0.025 0.00...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...e Level of Mental Retardation, Level of Blindness and other Social Support Questionnaire domain. There was no statistically significant correlation betwee...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...only provide practical help and personal care but also give emotional support to their relatives with mental disorder and chronic illness. The effects of str...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "emotional support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...nic illness. The effects of stressors on the family members caring for physically and mentally ill persons have been referred to as caregiver’s bu...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "caring",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...t first recognition. In the present study, the blindness of blind children was being detected as early as 4 months of age and intellectually disability of...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...(60%) family disruption as compared to 26.6% of parents in blind children group. Maes studied care giving burden of families looking after persons with i...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...75 Clinical variables SSQN SSQS Marital scale Social stigma Self-esteem Age at first recognised 0.248 -.265* -0.03 .398** -0.075 **. Correlation is sig...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...th intellectual disability and children with blind- ness on social support showed that there was no statistically significant difference between parents o...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...y significant difference between two groups in the areas of social support, marital quality of life, social stigma and self-esteem. It is found that...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...level of marital discord in these families. Feelings of low self-esteem, helplessness, resentment over excessive demands on time and the burden of fina...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 10 - Unknown] \"...ference between two groups in family burden. Family burden, social support & social stigma is high in intellectual disability group compare to the blind g...\"",
+          "isValidEvidence": true,
+          "page": 10,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 10 - References] \"...ew York: Appleton Publication. [5] Greaheart, B. R. (1980), Special Education for the 80’s. St. Louis: The C. V. Morbey Company. [6] Green, W. A. (1957), Con...\"",
+          "isValidEvidence": false,
+          "page": 10,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "Special Education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 10 - References] \"...rill Publishing Company. [12] Kolstoe & Frey (1965), A high school study programme for mentally subnormal students. Southern Illinois University P...\"",
+          "isValidEvidence": false,
+          "page": 10,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 10 - Unknown] \"...oup compare to the blind group. Marital quality of life and self-esteem is high in the blind group compare to intellectual disability group. Indeed, pa...\"",
+          "isValidEvidence": true,
+          "page": 10,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_11648_j_ajap_20251406_11",
+      "isPdfVerified": true,
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 10,
+      "pdfUrl": "http://article.sciencepg.com/pdf/j.ajap.20251406.11",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.793Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4417226111",
+          "url": "https://doi.org/10.11648/j.ajap.20251406.11"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Over the past four decades, Indian society has been more concerned with children's physical and mental disabilities as one of the main societal issues. Nonetheless, most individuals in this nation are still unable to distinguish between mental illness and special educational needs. Research in this ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "Children with Disabilities in India: An Unfolded Story",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.11648/j.ajap.20251406.11",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "American Journal of Applied Psychology",
+      "year": "2025"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "id": "migrated_run_profile_1791333936106",
+  "collectionId": "profile_1791333936106",
+  "source": "Legacy Import",
+  "userQuery": "Legacy Snapshot Data",
+  "actualQuery": "Legacy Snapshot Data",
+  "filters": {},
+  "status": "completed",
+  "itemsReceived": 120,
+  "itemsSaved": 120,
+  "itemsError": 0,
+  "startedAt": "2026-10-07T01:13:45.705Z",
+  "completedAt": "2026-10-07T01:13:45.705Z",
+  "errorLog": []
+}

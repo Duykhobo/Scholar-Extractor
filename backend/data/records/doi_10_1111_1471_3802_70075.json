@@ -1,0 +1,173 @@
+{
+  "id": "doi_10_1111_1471_3802_70075",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Teaching and learning challenges for children with visual impairments in Ghana: A qualitative study of teachers' experiences",
+  "authors": "Frank Kyei‐Arthur; Amanda Kyei‐Gyamfi; Sylvester Kyei‐Gyamfi",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:13.346Z",
+  "abstract": "Abstract Education serves not merely as an individual benefit but as a significant instrument for societal transformation. For individuals with disabilities, including children with visual impairments (VIs), special education is essential in creating equal opportunities. This study aimed to examine teachers' perspectives on the barriers to teaching and learning for children with VIs and the coping strategies employed by teachers in teaching children with VIs in Ghana. This study used secondary qualitative data from the Ministry of Gender, Children and Social Protection, which involved 36 teachers across seven special schools in seven districts. The qualitative data were analysed thematically, following Braun and Clarke's six‐step reflexive thematic analysis approach. The findings reveal substantial obstacles to children with VIs education, including inadequate infrastructure, limited learning materials, limited specialised training and support, social stigma and low self‐esteem and confidence. These barriers restrict accessibility, inclusivity and quality of education for children with VIs, highlighting the need for strengthened policies and resources. Teachers employed peer support and orientation‐based support strategies to address the challenges of children with VIs. A holistic, collaborative approach involving all stakeholders is essential for fostering an inclusive educational environment where children with VIs can thrive both academically and socially.",
+  "doi": "10.1111/1471-3802.70075",
+  "venue": "Journal of Research in Special Educational Needs",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_1111_1471_3802_70075",
+  "landingPageUrl": "https://doi.org/10.1111/1471-3802.70075",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06T14:12:13.346Z",
+  "rawPayload": {
+    "abstract": "Abstract Education serves not merely as an individual benefit but as a significant instrument for societal transformation. For individuals with disabilities, including children with visual impairments (VIs), special education is essential in creating equal opportunities. This study aimed to examine teachers' perspectives on the barriers to teaching and learning for children with VIs and the coping strategies employed by teachers in teaching children with VIs in Ghana. This study used secondary qualitative data from the Ministry of Gender, Children and Social Protection, which involved 36 teachers across seven special schools in seven districts. The qualitative data were analysed thematically, following Braun and Clarke's six‐step reflexive thematic analysis approach. The findings reveal substantial obstacles to children with VIs education, including inadequate infrastructure, limited learning materials, limited specialised training and support, social stigma and low self‐esteem and confidence. These barriers restrict accessibility, inclusivity and quality of education for children with VIs, highlighting the need for strengthened policies and resources. Teachers employed peer support and orientation‐based support strategies to address the challenges of children with VIs. A holistic, collaborative approach involving all stakeholders is essential for fostering an inclusive educational environment where children with VIs can thrive both academically and socially.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Frank Kyei‐Arthur; Amanda Kyei‐Gyamfi; Sylvester Kyei‐Gyamfi",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.1111/1471-3802.70075",
+    "evidence_snippets": [
+      {
+        "context": "[Section: Unknown] \"...for strengthened policies and resources. Teachers employed peer support and orientation‐based support strategies to address the challenges of children...\"",
+        "isValidEvidence": true,
+        "page": null,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Section: Unknown] \"...ransformation. For individuals with disabilities, including children with visual impairments (VIs), special education is essential in creating equal opportunities. This stu...\"",
+        "isValidEvidence": true,
+        "page": null,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "children with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Section: Unknown] \"...bilities, including children with visual impairments (VIs), special education is essential in creating equal opportunities. This study aimed to examine teach...\"",
+        "isValidEvidence": true,
+        "page": null,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Section: Unknown] \"...training and support, social stigma and low self‐esteem and confidence. These barriers restrict accessibility, inclusivity and quality of education fo...\"",
+        "isValidEvidence": true,
+        "page": null,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "not_found",
+    "id": "doi_10_1111_1471_3802_70075",
+    "isPdfVerified": false,
+    "literatureGroup": "direct",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "X",
+      "Y",
+      "H3"
+    ],
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.346Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7134178674",
+        "url": "https://doi.org/10.1111/1471-3802.70075"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.632Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7134178674",
+        "url": "https://doi.org/10.1111/1471-3802.70075"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7134178674",
+        "url": "https://doi.org/10.1111/1471-3802.70075"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.165Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7134178674",
+        "url": "https://doi.org/10.1111/1471-3802.70075"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.767Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7134178674",
+        "url": "https://doi.org/10.1111/1471-3802.70075"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.346Z",
+    "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Abstract Education serves not merely as an individual benefit but as a significant instrument for societal transformation. For individuals with disabilities, including children with visual impairments (VIs), special education is essential in creating equal opportunities. This study aimed to examine ",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "Teaching and learning challenges for children with visual impairments in Ghana: A qualitative study of teachers' experiences",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.1111/1471-3802.70075",
+    "userNotes": "",
+    "v2Decision": "PassToFullText",
+    "v3Decision": "Unsure",
+    "venue": "Journal of Research in Special Educational Needs",
+    "year": "2026"
+  }
+}

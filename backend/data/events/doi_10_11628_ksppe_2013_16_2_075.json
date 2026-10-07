@@ -1,0 +1,383 @@
+[
+  {
+    "id": "evt_1791335614856_sej1u",
+    "recordId": "doi_10_11628_ksppe_2013_16_2_075",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.856Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for high-quality parenting is to reassure him for their own.To evaluate the effect of horticultural therapy programs, parenting stress, coping, self-esteem and social support scale for pre-and post-tests were conducted twice.Horticultural Therapy Checklist rating for each session, the subjects evaluation, activities evaluation, and therapist evaluation, the assistant therapist evaluation.Study has shown parenting stress levels of the experimental findings, average 14.9(t = 8.24) point reduction, self-esteem were measured 3.5(t = -8.04)point increases ,stress coping were measured 9.55(t = -6.48)point increased and social support in the experimental group were average score is 18.2(t = -12.82)point increased statistically significant was recognized.Therefore, it was revealed that parenting stress positive impact on the horticultural therapy program faced by parents with children with disabilities.Also it can be activities from each session, the participants planned deliverable within their ability for successful accomplishment and satisfaction feel and thus led to a reduction of parenting stress, improved self-esteem, increased Stress coping and social support.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mi Ae Han; Kyung Hee Han; Jeung Keun Suh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11628/ksppe.2013.16.2.075",
+      "finalDecision": "",
+      "id": "doi_10_11628_ksppe_2013_16_2_075",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jppe.ppe.or.kr/upload/pdf/JPPE-16-2-75.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.348Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.168Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.348Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for hig",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Effect of Horticultural Therapy on the Psychological State of the Parents of a Child with a Disability - Focus on Parenting Stress, Self-Esteem, Coping, and Social Support",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.11628/ksppe.2013.16.2.075",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of people, plants, and environment",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335618558_jyn7p",
+    "recordId": "doi_10_11628_ksppe_2013_16_2_075",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.558Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for high-quality parenting is to reassure him for their own.To evaluate the effect of horticultural therapy programs, parenting stress, coping, self-esteem and social support scale for pre-and post-tests were conducted twice.Horticultural Therapy Checklist rating for each session, the subjects evaluation, activities evaluation, and therapist evaluation, the assistant therapist evaluation.Study has shown parenting stress levels of the experimental findings, average 14.9(t = 8.24) point reduction, self-esteem were measured 3.5(t = -8.04)point increases ,stress coping were measured 9.55(t = -6.48)point increased and social support in the experimental group were average score is 18.2(t = -12.82)point increased statistically significant was recognized.Therefore, it was revealed that parenting stress positive impact on the horticultural therapy program faced by parents with children with disabilities.Also it can be activities from each session, the participants planned deliverable within their ability for successful accomplishment and satisfaction feel and thus led to a reduction of parenting stress, improved self-esteem, increased Stress coping and social support.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mi Ae Han; Kyung Hee Han; Jeung Keun Suh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11628/ksppe.2013.16.2.075",
+      "finalDecision": "",
+      "id": "doi_10_11628_ksppe_2013_16_2_075",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jppe.ppe.or.kr/upload/pdf/JPPE-16-2-75.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.348Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:35.168Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:13.348Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for hig",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Effect of Horticultural Therapy on the Psychological State of the Parents of a Child with a Disability - Focus on Parenting Stress, Self-Esteem, Coping, and Social Support",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.11628/ksppe.2013.16.2.075",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of people, plants, and environment",
+      "year": "2013",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623924_rpsfi",
+    "recordId": "doi_10_11628_ksppe_2013_16_2_075",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.924Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for high-quality parenting is to reassure him for their own.To evaluate the effect of horticultural therapy programs, parenting stress, coping, self-esteem and social support scale for pre-and post-tests were conducted twice.Horticultural Therapy Checklist rating for each session, the subjects evaluation, activities evaluation, and therapist evaluation, the assistant therapist evaluation.Study has shown parenting stress levels of the experimental findings, average 14.9(t = 8.24) point reduction, self-esteem were measured 3.5(t = -8.04)point increases ,stress coping were measured 9.55(t = -6.48)point increased and social support in the experimental group were average score is 18.2(t = -12.82)point increased statistically significant was recognized.Therefore, it was revealed that parenting stress positive impact on the horticultural therapy program faced by parents with children with disabilities.Also it can be activities from each session, the participants planned deliverable within their ability for successful accomplishment and satisfaction feel and thus led to a reduction of parenting stress, improved self-esteem, increased Stress coping and social support.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Mi Ae Han; Kyung Hee Han; Jeung Keun Suh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.11628/ksppe.2013.16.2.075",
+      "finalDecision": "",
+      "id": "doi_10_11628_ksppe_2013_16_2_075",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://jppe.ppe.or.kr/upload/pdf/JPPE-16-2-75.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.348Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.168Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2323864691",
+          "url": "https://doi.org/10.11628/ksppe.2013.16.2.075"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.348Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The purpose of this study to investigate the effect of horticultural therapy program that can have a positive impact on parenting stress of parents with disability children.Horticultural therapy is using plants may change the dynamism and sense of responsibility life for the new requirements for hig",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Effect of Horticultural Therapy on the Psychological State of the Parents of a Child with a Disability - Focus on Parenting Stress, Self-Esteem, Coping, and Social Support",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.11628/ksppe.2013.16.2.075",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of people, plants, and environment",
+      "year": "2013"
+    }
+  }
+]

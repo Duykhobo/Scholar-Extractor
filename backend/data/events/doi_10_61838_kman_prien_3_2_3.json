@@ -1,0 +1,389 @@
+[
+  {
+    "id": "evt_1791335614953_iicww",
+    "recordId": "doi_10_61838_kman_prien_3_2_3",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.953Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturation guided data collection, and NVivo software was used for thematic analysis. The study examined participants’ emotional responses, psychological adaptation, and the social and educational impacts of assistive technology use. The results revealed that while assistive technologies enhanced empowerment, independence, and self-esteem, they also introduced challenges such as frustration, technological overwhelm, and social stigma. Many participants reported emotional attachment to their assistive devices, highlighting their role in fostering confidence and reducing dependence. However, rapid technological advancements contributed to anxiety and stress, particularly when transitioning to new tools. Psychological adaptation strategies included trial-and-error learning, seeking technical support, and developing resilience. Social support from parents, teachers, and peers played a crucial role in shaping participants’ experiences, with inadequate support leading to increased frustration. The digital divide further influenced participants’ emotional well-being, as access to advanced assistive technologies varied across socioeconomic backgrounds, impacting academic performance and social inclusion. Assistive technologies significantly shape the emotional and psychological well-being of adolescents with visual impairments by promoting independence and confidence while also posing adaptation challenges. The findings highlight the need for better accessibility training for educators, increased social support, and user-centered technological designs to reduce cognitive load and frustration. Bridging the digital divide is essential to ensure equitable access to advanced assistive technologies, fostering positive developmental outcomes for visually impaired adolescents.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Nayelli Muñoz; Bridget Abalorio",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61838/kman.prien.3.2.3",
+      "finalDecision": "",
+      "id": "doi_10_61838_kman_prien_3_2_3",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"The Psychological Research in Individuals with Exceptional Needs\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://journals.kmanpub.com/index.php/prien/article/download/3783/6187",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.292Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.292Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturat",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Explaining the Emotional and Psychological Impact of Assistive Technologies on Adolescents with Visual Impairments",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61838/kman.prien.3.2.3",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "The Psychological Research in Individuals with Exceptional Needs",
+      "year": "2025"
+    }
+  },
+  {
+    "id": "evt_1791335618708_3ui02",
+    "recordId": "doi_10_61838_kman_prien_3_2_3",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.708Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturation guided data collection, and NVivo software was used for thematic analysis. The study examined participants’ emotional responses, psychological adaptation, and the social and educational impacts of assistive technology use. The results revealed that while assistive technologies enhanced empowerment, independence, and self-esteem, they also introduced challenges such as frustration, technological overwhelm, and social stigma. Many participants reported emotional attachment to their assistive devices, highlighting their role in fostering confidence and reducing dependence. However, rapid technological advancements contributed to anxiety and stress, particularly when transitioning to new tools. Psychological adaptation strategies included trial-and-error learning, seeking technical support, and developing resilience. Social support from parents, teachers, and peers played a crucial role in shaping participants’ experiences, with inadequate support leading to increased frustration. The digital divide further influenced participants’ emotional well-being, as access to advanced assistive technologies varied across socioeconomic backgrounds, impacting academic performance and social inclusion. Assistive technologies significantly shape the emotional and psychological well-being of adolescents with visual impairments by promoting independence and confidence while also posing adaptation challenges. The findings highlight the need for better accessibility training for educators, increased social support, and user-centered technological designs to reduce cognitive load and frustration. Bridging the digital divide is essential to ensure equitable access to advanced assistive technologies, fostering positive developmental outcomes for visually impaired adolescents.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Nayelli Muñoz; Bridget Abalorio",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61838/kman.prien.3.2.3",
+      "finalDecision": "",
+      "id": "doi_10_61838_kman_prien_3_2_3",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"The Psychological Research in Individuals with Exceptional Needs\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://journals.kmanpub.com/index.php/prien/article/download/3783/6187",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.292Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.292Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturat",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Explaining the Emotional and Psychological Impact of Assistive Technologies on Adolescents with Visual Impairments",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61838/kman.prien.3.2.3",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "The Psychological Research in Individuals with Exceptional Needs",
+      "year": "2025",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624044_x6zzp",
+    "recordId": "doi_10_61838_kman_prien_3_2_3",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.044Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturation guided data collection, and NVivo software was used for thematic analysis. The study examined participants’ emotional responses, psychological adaptation, and the social and educational impacts of assistive technology use. The results revealed that while assistive technologies enhanced empowerment, independence, and self-esteem, they also introduced challenges such as frustration, technological overwhelm, and social stigma. Many participants reported emotional attachment to their assistive devices, highlighting their role in fostering confidence and reducing dependence. However, rapid technological advancements contributed to anxiety and stress, particularly when transitioning to new tools. Psychological adaptation strategies included trial-and-error learning, seeking technical support, and developing resilience. Social support from parents, teachers, and peers played a crucial role in shaping participants’ experiences, with inadequate support leading to increased frustration. The digital divide further influenced participants’ emotional well-being, as access to advanced assistive technologies varied across socioeconomic backgrounds, impacting academic performance and social inclusion. Assistive technologies significantly shape the emotional and psychological well-being of adolescents with visual impairments by promoting independence and confidence while also posing adaptation challenges. The findings highlight the need for better accessibility training for educators, increased social support, and user-centered technological designs to reduce cognitive load and frustration. Bridging the digital divide is essential to ensure equitable access to advanced assistive technologies, fostering positive developmental outcomes for visually impaired adolescents.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Nayelli Muñoz; Bridget Abalorio",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61838/kman.prien.3.2.3",
+      "finalDecision": "",
+      "id": "doi_10_61838_kman_prien_3_2_3",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"The Psychological Research in Individuals with Exceptional Needs\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "https://journals.kmanpub.com/index.php/prien/article/download/3783/6187",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.292Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.427Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.089Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4409012958",
+          "url": "https://doi.org/10.61838/kman.prien.3.2.3"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.292Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This study explores the emotional and psychological impact of assistive technologies on adolescents with visual impairments. A qualitative research design was employed using semi-structured interviews with 20 adolescents with visual impairments recruited through online platforms. Theoretical saturat",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Explaining the Emotional and Psychological Impact of Assistive Technologies on Adolescents with Visual Impairments",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61838/kman.prien.3.2.3",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "The Psychological Research in Individuals with Exceptional Needs",
+      "year": "2025"
+    }
+  }
+]

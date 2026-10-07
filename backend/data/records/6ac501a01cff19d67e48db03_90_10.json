@@ -1,0 +1,86 @@
+{
+  "id": "6ac501a01cff19d67e48db03_90_10",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "The Effect Of Climbing And Swimming Activities On Self-Esteem Of Visually Impaired Children",
+  "authors": "M Emese-Agnesa; M Dragos-Adrianb; G Vlad-Teodorc",
+  "year": "",
+  "publicationDate": "2026-10-06",
+  "abstract": "… and swimming on self-esteem in visually impaired children. 30 visually impaired children aged … Social support and self-esteem among adolescents with visual impairments. Journal of …",
+  "doi": "",
+  "venue": "researchgate.net",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac501a01cff19d67e48db03_90_10",
+  "landingPageUrl": "https://www.researchgate.net/profile/Emilia-Grosu-2/publication/361902812_The_Effect_Of_Climbing_And_Swimming_Activities_On_Self-Esteem_Of_Visually_Impaired_Children_ICU_Conference_2021_ISBN_978-88-87729-73-3/links/62cbdd98cab7ba7426e4b1da/The-Effect-Of-Climbing-And-Swimming-Activities-On-Self-Esteem-Of-Visually-Impaired-Children-ICU-Conference-2021-ISBN-978-88-87729-73-3.pdf",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "M Emese-Agnesa; M Dragos-Adrianb; G Vlad-Teodorc",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "evidence_snippets": [],
+    "finalDecision": "",
+    "fullTextStatus": "not_found",
+    "id": "6ac501a01cff19d67e48db03_90_10",
+    "isPdfVerified": false,
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"researchgate.net\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-PUB, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "6ac501a01cff19d67e48db03",
+    "sessionId": "sess_1791295876431_294pe",
+    "snippet": "… and swimming on self-esteem in visually impaired children. 30 visually impaired children aged … Social support and self-esteem among adolescents with visual impairments. Journal of …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "The Effect Of Climbing And Swimming Activities On Self-Esteem Of Visually Impaired Children",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": true,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.researchgate.net/profile/Emilia-Grosu-2/publication/361902812_The_Effect_Of_Climbing_And_Swimming_Activities_On_Self-Esteem_Of_Visually_Impaired_Children_ICU_Conference_2021_ISBN_978-88-87729-73-3/links/62cbdd98cab7ba7426e4b1da/The-Effect-Of-Climbing-And-Swimming-Activities-On-Self-Esteem-Of-Visually-Impaired-Children-ICU-Conference-2021-ISBN-978-88-87729-73-3.pdf",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Unsure",
+    "venue": "researchgate.net",
+    "year": ""
+  }
+}

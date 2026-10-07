@@ -1,0 +1,1429 @@
+[
+  {
+    "id": "evt_1791335614874_2u2kx",
+    "recordId": "doi_10_32598_rj_22_4_3261_1",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.874Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression, anxiety, decreased life expentancy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about themselves, which in turn reduces self-esteem in students with visual impaiments. Using appropriate therapeutic intervention with the aim of ensuring mental health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and commitment therapy (ACT) is one of the third wave approaches to behavioral therapy that aims to control effectively the pain, suffering and stress that a person faces in the life. The acceptance and commitment therapy helps the person increases her psychological relations with herself and her feelings, trying to adapt to the environment and community instead of changing her cognition. The present study aimed to determine the effectiveness of the acceptance and commitment group therapy on self-esteem of students with visual impairment in Tehran City. Materials & Methods The present study was a quasi-experimental study in which a pretest-posttest design with a control group used along with a two-month follow-up. The sample was consisted of twenty-eight 14-20 year old female students who was selected from the population of students with visual impairment studying in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected according to the probability of sample’s dropout. At first, 50 students completed the Cooper Smith Self-Esteem Questionnaire (CSSEQ) and after scoring the CSSEQ, twenty-eigth students selected according to receiving a score of 23 or lower in the CSSEQ. All subjects matched based on their age and grade, then randomly assigned to the experimental and the control group. The experimental group (two subgroups consisted of seven people in each) participated in eight therapeutic sessions (twice a week and 75 minutes for per session) and received the acceptance and commitment group therapy while the control group participated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again and the experimental group completed CSSEQ after two months follow-up.The multiple analysis of covariance (MANCOVA) used for analyzing the obtained data. Furthermore, for comparing the posttest and follow-up situations in the experimental group the related t-test used. Results The results of multiple analysis of covariance for the data obtained from the self-esteem questionnaire showed that the participation of female students with visual impairment in the acceptance and commitment group therapy sessions led to significant increase (P<0.001) in self-esteem (general, family, social, and educational) of them. In fact, according to Eta quotient, 71%, 78%, 78%, and 72% of variation in self-esteem (general, family, social, and educational respectively) of the experimental group can be explained by participating in the acceptance and commitment group therapy sessions. The results of the related t-test for comparing the self-esteem of the experimental group in post test and follow-up situations showed that the effectiveness of group therapy based on acceptance and commitment has been lasted on the self-esteem (general, family, social, and educational) of the experimental group after two months follow-up later (P>0.05). Conclusion We conclude according to the findings of the present study that the acceptance and commitment group therapy can use for planning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas in students with visual impaiments. Additionally, the ACT recommend improving self-esteem and positive performance of students with visual impairment in social, educational and family areas along side the routin instructional couses. However, the acceptance and commitment group therapy helps the students with visual impairment know how to control their thoughts and feelings in order to prevent problems from getting worse. This therapeutic method helpls them to accept their behavioral changes through accepting the unpleasant thoughts and feelings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Fatemeh Mirmohammadi; Masoume Pourmohamadreza‐Tajrishi; Behrooz Dolatshahi; Enayatollah Bakhshi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.32598/rj.22.4.3261.1",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...cy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about thems...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...2* , Behrooz Dolatshahi 3 , Enayatollah Bakhshi 4 Objective Students with visual impairments have built negative attitudes towards their abilities due to dif - ficulties in...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to the probability of sample’...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind students",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ool for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...roup partici - pated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ctiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment 1. Department of Psychology and Exceptional Chi...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ce and real feeling about themselves, which in turn reduces self-esteem in stu - dents with visual impaiments. Using appropriate therapeutic interventi...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...h the aim of ensuring men - tal health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and com...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...raille to learn [2]. The prevalence of visual impairment in school-age children is 1 in 10 [3]. Currently, 217 million people worldwide and 180000...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...ucational, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...onal, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...463 January 2022. V ol 22. Num 4 of variation in self-esteem (general, family, social, and educational respectively) of the experimental gro...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...erson is among the impor - tant factors in the formation of self-concept and self-esteem [9]. The coincidence of adolescence with puberty causes various...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...n in one or both eyes of 20/200 (1.10) or less [1] and uses Braille to learn [2]. The prevalence of visual impairment in school-age children is 1 i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+          "section": "Methodology",
+          "term": "Braille",
+          "type": "VI-IC-AAC-SUP"
+        },
+        {
+          "context": "[Trang 3 - Methodology] \"...mit, the research objectives were explained to the boarding school officials for the blind females. After obtaining their written consent, 50 fema...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...naire is ≤23 [18]. People who get higher scores have higher self-esteem. Studies in Iran indicate that the test has acceptable reliability and validity...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...Num 4 To test the hypothesis of whether group ACT increases self-esteem in female students with visual impairment, we employed a univariate analysis of...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...V ol 22. Num 4 To determine the stability of the ACT on the self-esteem of students with visual impairment, a correlated t test was used (Table 3). The...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...ales with visual impairments seem to have a weaker sense of self-concept than males, have fewer opportuni - ties to make friends, and experience greater...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 6 - References] \"...ounselors, and students of the Narges Blind Girls’ Boarding School, who helped us in this research. Mirmohammadi F, et al. Effectiveness of Accept...\"",
+          "isValidEvidence": false,
+          "page": 6,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "School",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 6 - Methodology] \"...dren can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas i...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...ی که 1. World Health Organization (WHO) 2. Psychosomatic 3. self-esteem های بینایی نیست، کنند ناشی از محدودیت افراد نابینا تجربه می بلکه پیشداوری و درک...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...A humanistic and futuristic approach to sex educa- tion for blind children. Journal of Visual Impairment & Blind- ness. 1974; 68(5):210-5. [DOI:10.1177/01...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...ementation of a curriculum to develop social competence for students with visual impairments in Germany. Journal of Visual Impairment & Blindness. 2004; 98(11):703-10. [DOI...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...rment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080/13603116.2015.1111441] [12] Nacar E. Investig...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "Inclusive Education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Evaluation] \"...teachers of urban eighth-grade at-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Evaluation",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Evaluation] \"...t-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk student motivation to excel academi...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Evaluation",
+          "term": "classroom",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"....1080/13603116.2015.1111441] [12] Nacar E. Investigation of self-esteem levels of blind athletes. International Journal of Sport Studies. 2013; 3(2):16...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...Talukdar J. The impact of vision impairment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - References] \"...Association between visual impairment and depression in the elderly: A systematic review. Arquivos Brasileiros de Oftalmologia. 2015; 78(3):197-201...\"",
+          "isValidEvidence": false,
+          "page": 18,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "elderly",
+          "type": "VI-EC-ADULT"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...nuary 2022. V ol 22. Num 4 [27] Bat-Chava Y. Antecedents of self-esteem in deaf people: A meta- analytic review. Rehabilitation Psychology. 1993; 38(4)...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...:10.30486/JSRP.2019.573628.1443] [36] Augestad LB, Elmer S. Self-concept and self-esteem among children and young adults with visual impairment: A syste...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...of the accept - ance and commitment therapy on individual’s psychological well-being in people with epilepsy in Imam Hossein Hospital in the autumn and winter (Pers...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "psychological well-being",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...effectiveness of Acceptance and Commitment Therapy (act) on psychological well-being and resil- ience of mothers with a deaf daughter in the city of Isfahan (Persia...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "psychological well-being",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...ictive influence of irra - tional beliefs on self-esteem of university students with late blindness. Journal of Rational-Emotive Cognitive-Behavioral Therapy....\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+          "section": "Unknown",
+          "term": "university students",
+          "type": "VI-EC-ADULT"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_32598_rj_22_4_3261_1",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 20,
+      "pdfUrl": "http://rehabilitationj.uswr.ac.ir/files/site1/user_files_581925/fatemehmirmohammadi-A-10-3261-1-e6a23f2.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.350Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.378Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.170Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.350Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "The Effectiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.32598/rj.22.4.3261.1",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Journal of Rehabilitation",
+      "year": "2022"
+    }
+  },
+  {
+    "id": "evt_1791335618580_v9hkr",
+    "recordId": "doi_10_32598_rj_22_4_3261_1",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.580Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression, anxiety, decreased life expentancy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about themselves, which in turn reduces self-esteem in students with visual impaiments. Using appropriate therapeutic intervention with the aim of ensuring mental health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and commitment therapy (ACT) is one of the third wave approaches to behavioral therapy that aims to control effectively the pain, suffering and stress that a person faces in the life. The acceptance and commitment therapy helps the person increases her psychological relations with herself and her feelings, trying to adapt to the environment and community instead of changing her cognition. The present study aimed to determine the effectiveness of the acceptance and commitment group therapy on self-esteem of students with visual impairment in Tehran City. Materials & Methods The present study was a quasi-experimental study in which a pretest-posttest design with a control group used along with a two-month follow-up. The sample was consisted of twenty-eight 14-20 year old female students who was selected from the population of students with visual impairment studying in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected according to the probability of sample’s dropout. At first, 50 students completed the Cooper Smith Self-Esteem Questionnaire (CSSEQ) and after scoring the CSSEQ, twenty-eigth students selected according to receiving a score of 23 or lower in the CSSEQ. All subjects matched based on their age and grade, then randomly assigned to the experimental and the control group. The experimental group (two subgroups consisted of seven people in each) participated in eight therapeutic sessions (twice a week and 75 minutes for per session) and received the acceptance and commitment group therapy while the control group participated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again and the experimental group completed CSSEQ after two months follow-up.The multiple analysis of covariance (MANCOVA) used for analyzing the obtained data. Furthermore, for comparing the posttest and follow-up situations in the experimental group the related t-test used. Results The results of multiple analysis of covariance for the data obtained from the self-esteem questionnaire showed that the participation of female students with visual impairment in the acceptance and commitment group therapy sessions led to significant increase (P<0.001) in self-esteem (general, family, social, and educational) of them. In fact, according to Eta quotient, 71%, 78%, 78%, and 72% of variation in self-esteem (general, family, social, and educational respectively) of the experimental group can be explained by participating in the acceptance and commitment group therapy sessions. The results of the related t-test for comparing the self-esteem of the experimental group in post test and follow-up situations showed that the effectiveness of group therapy based on acceptance and commitment has been lasted on the self-esteem (general, family, social, and educational) of the experimental group after two months follow-up later (P>0.05). Conclusion We conclude according to the findings of the present study that the acceptance and commitment group therapy can use for planning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas in students with visual impaiments. Additionally, the ACT recommend improving self-esteem and positive performance of students with visual impairment in social, educational and family areas along side the routin instructional couses. However, the acceptance and commitment group therapy helps the students with visual impairment know how to control their thoughts and feelings in order to prevent problems from getting worse. This therapeutic method helpls them to accept their behavioral changes through accepting the unpleasant thoughts and feelings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Fatemeh Mirmohammadi; Masoume Pourmohamadreza‐Tajrishi; Behrooz Dolatshahi; Enayatollah Bakhshi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.32598/rj.22.4.3261.1",
+      "evidence_snippets": [
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 1 - Unknown] \"...cy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about thems...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "Students with visual impairments",
+          "context": "[Trang 1 - Unknown] \"...2* , Behrooz Dolatshahi 3 , Enayatollah Bakhshi 4 Objective Students with visual impairments have built negative attitudes towards their abilities due to dif - ficulties in...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind students",
+          "context": "[Trang 1 - Unknown] \"...individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to the probability of sample’...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 1 - Unknown] \"...in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 1 - Unknown] \"...ool for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 1 - Unknown] \"...roup partici - pated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-esteem",
+          "context": "[Trang 1 - Unknown] \"...ctiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment 1. Department of Psychology and Exceptional Chi...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 1 - Unknown] \"...ce and real feeling about themselves, which in turn reduces self-esteem in stu - dents with visual impaiments. Using appropriate therapeutic interventi...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 1 - Unknown] \"...h the aim of ensuring men - tal health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and com...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "students with visual impairments",
+          "context": "[Trang 2 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 2 - Methodology] \"...raille to learn [2]. The prevalence of visual impairment in school-age children is 1 in 10 [3]. Currently, 217 million people worldwide and 180000...\"",
+          "page": 2,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-confidence",
+          "context": "[Trang 2 - Methodology] \"...ucational, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "page": 2,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "confidence",
+          "context": "[Trang 2 - Methodology] \"...onal, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "page": 2,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 2 - Unknown] \"...463 January 2022. V ol 22. Num 4 of variation in self-esteem (general, family, social, and educational respectively) of the experimental gro...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-concept",
+          "context": "[Trang 2 - Methodology] \"...erson is among the impor - tant factors in the formation of self-concept and self-esteem [9]. The coincidence of adolescence with puberty causes various...\"",
+          "page": 2,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-AAC-SUP",
+          "term": "Braille",
+          "context": "[Trang 2 - Methodology] \"...n in one or both eyes of 20/200 (1.10) or less [1] and uses Braille to learn [2]. The prevalence of visual impairment in school-age children is 1 i...\"",
+          "page": 2,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 3 - Methodology] \"...mit, the research objectives were explained to the boarding school officials for the blind females. After obtaining their written consent, 50 fema...\"",
+          "page": 3,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 3 - Unknown] \"...naire is ≤23 [18]. People who get higher scores have higher self-esteem. Studies in Iran indicate that the test has acceptable reliability and validity...\"",
+          "page": 3,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 4 - Unknown] \"...Num 4 To test the hypothesis of whether group ACT increases self-esteem in female students with visual impairment, we employed a univariate analysis of...\"",
+          "page": 4,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 5 - Unknown] \"...V ol 22. Num 4 To determine the stability of the ACT on the self-esteem of students with visual impairment, a correlated t test was used (Table 3). The...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-concept",
+          "context": "[Trang 5 - Unknown] \"...ales with visual impairments seem to have a weaker sense of self-concept than males, have fewer opportuni - ties to make friends, and experience greater...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "students with visual impairments",
+          "context": "[Trang 6 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "page": 6,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "School",
+          "context": "[Trang 6 - References] \"...ounselors, and students of the Narges Blind Girls’ Boarding School, who helped us in this research. Mirmohammadi F, et al. Effectiveness of Accept...\"",
+          "page": 6,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 6 - Methodology] \"...dren can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas i...\"",
+          "page": 6,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 9 - Unknown] \"...ی که 1. World Health Organization (WHO) 2. Psychosomatic 3. self-esteem های بینایی نیست، کنند ناشی از محدودیت افراد نابینا تجربه می بلکه پیشداوری و درک...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind children",
+          "context": "[Trang 18 - Methodology] \"...A humanistic and futuristic approach to sex educa- tion for blind children. Journal of Visual Impairment & Blind- ness. 1974; 68(5):210-5. [DOI:10.1177/01...\"",
+          "page": 18,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "students with visual impairments",
+          "context": "[Trang 18 - Methodology] \"...ementation of a curriculum to develop social competence for students with visual impairments in Germany. Journal of Visual Impairment & Blindness. 2004; 98(11):703-10. [DOI...\"",
+          "page": 18,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "Inclusive Education",
+          "context": "[Trang 18 - Methodology] \"...rment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080/13603116.2015.1111441] [12] Nacar E. Investig...\"",
+          "page": 18,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 18 - Evaluation] \"...teachers of urban eighth-grade at-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk...\"",
+          "page": 18,
+          "section": "Evaluation",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "classroom",
+          "context": "[Trang 18 - Evaluation] \"...t-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk student motivation to excel academi...\"",
+          "page": 18,
+          "section": "Evaluation",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 18 - Methodology] \"....1080/13603116.2015.1111441] [12] Nacar E. Investigation of self-esteem levels of blind athletes. International Journal of Sport Studies. 2013; 3(2):16...\"",
+          "page": 18,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-concept",
+          "context": "[Trang 18 - Methodology] \"...Talukdar J. The impact of vision impairment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080...\"",
+          "page": 18,
+          "section": "Methodology",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-EC-ADULT",
+          "term": "elderly",
+          "context": "[Trang 18 - References] \"...Association between visual impairment and depression in the elderly: A systematic review. Arquivos Brasileiros de Oftalmologia. 2015; 78(3):197-201...\"",
+          "page": 18,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-esteem",
+          "context": "[Trang 19 - Unknown] \"...nuary 2022. V ol 22. Num 4 [27] Bat-Chava Y. Antecedents of self-esteem in deaf people: A meta- analytic review. Rehabilitation Psychology. 1993; 38(4)...\"",
+          "page": 19,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-concept",
+          "context": "[Trang 19 - Unknown] \"...:10.30486/JSRP.2019.573628.1443] [36] Augestad LB, Elmer S. Self-concept and self-esteem among children and young adults with visual impairment: A syste...\"",
+          "page": 19,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "psychological well-being",
+          "context": "[Trang 19 - Unknown] \"...of the accept - ance and commitment therapy on individual’s psychological well-being in people with epilepsy in Imam Hossein Hospital in the autumn and winter (Pers...\"",
+          "page": 19,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "psychological well-being",
+          "context": "[Trang 19 - Unknown] \"...effectiveness of Acceptance and Commitment Therapy (act) on psychological well-being and resil- ience of mothers with a deaf daughter in the city of Isfahan (Persia...\"",
+          "page": 19,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-EC-ADULT",
+          "term": "university students",
+          "context": "[Trang 19 - Unknown] \"...ictive influence of irra - tional beliefs on self-esteem of university students with late blindness. Journal of Rational-Emotive Cognitive-Behavioral Therapy....\"",
+          "page": 19,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)]."
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_32598_rj_22_4_3261_1",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 20,
+      "pdfUrl": "http://rehabilitationj.uswr.ac.ir/files/site1/user_files_581925/fatemehmirmohammadi-A-10-3261-1-e6a23f2.pdf",
+      "pipelineStage": "V3",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.350Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.378Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:35.170Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:13.350Z",
+      "screeningReason": "Đạt toàn bộ 6 tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression",
+      "source": "OpenAlex",
+      "suggestedDecision": "Include",
+      "title": "The Effectiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [],
+      "url": "https://doi.org/10.32598/rj.22.4.3261.1",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Journal of Rehabilitation",
+      "year": "2022",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623940_qs8f1",
+    "recordId": "doi_10_32598_rj_22_4_3261_1",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.940Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression, anxiety, decreased life expentancy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about themselves, which in turn reduces self-esteem in students with visual impaiments. Using appropriate therapeutic intervention with the aim of ensuring mental health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and commitment therapy (ACT) is one of the third wave approaches to behavioral therapy that aims to control effectively the pain, suffering and stress that a person faces in the life. The acceptance and commitment therapy helps the person increases her psychological relations with herself and her feelings, trying to adapt to the environment and community instead of changing her cognition. The present study aimed to determine the effectiveness of the acceptance and commitment group therapy on self-esteem of students with visual impairment in Tehran City. Materials & Methods The present study was a quasi-experimental study in which a pretest-posttest design with a control group used along with a two-month follow-up. The sample was consisted of twenty-eight 14-20 year old female students who was selected from the population of students with visual impairment studying in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected according to the probability of sample’s dropout. At first, 50 students completed the Cooper Smith Self-Esteem Questionnaire (CSSEQ) and after scoring the CSSEQ, twenty-eigth students selected according to receiving a score of 23 or lower in the CSSEQ. All subjects matched based on their age and grade, then randomly assigned to the experimental and the control group. The experimental group (two subgroups consisted of seven people in each) participated in eight therapeutic sessions (twice a week and 75 minutes for per session) and received the acceptance and commitment group therapy while the control group participated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again and the experimental group completed CSSEQ after two months follow-up.The multiple analysis of covariance (MANCOVA) used for analyzing the obtained data. Furthermore, for comparing the posttest and follow-up situations in the experimental group the related t-test used. Results The results of multiple analysis of covariance for the data obtained from the self-esteem questionnaire showed that the participation of female students with visual impairment in the acceptance and commitment group therapy sessions led to significant increase (P<0.001) in self-esteem (general, family, social, and educational) of them. In fact, according to Eta quotient, 71%, 78%, 78%, and 72% of variation in self-esteem (general, family, social, and educational respectively) of the experimental group can be explained by participating in the acceptance and commitment group therapy sessions. The results of the related t-test for comparing the self-esteem of the experimental group in post test and follow-up situations showed that the effectiveness of group therapy based on acceptance and commitment has been lasted on the self-esteem (general, family, social, and educational) of the experimental group after two months follow-up later (P>0.05). Conclusion We conclude according to the findings of the present study that the acceptance and commitment group therapy can use for planning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas in students with visual impaiments. Additionally, the ACT recommend improving self-esteem and positive performance of students with visual impairment in social, educational and family areas along side the routin instructional couses. However, the acceptance and commitment group therapy helps the students with visual impairment know how to control their thoughts and feelings in order to prevent problems from getting worse. This therapeutic method helpls them to accept their behavioral changes through accepting the unpleasant thoughts and feelings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Fatemeh Mirmohammadi; Masoume Pourmohamadreza‐Tajrishi; Behrooz Dolatshahi; Enayatollah Bakhshi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.32598/rj.22.4.3261.1",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...cy, no participation in group activities, and low levels of social support. Lack or no social skill reduces social acceptance and real feeling about thems...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...2* , Behrooz Dolatshahi 3 , Enayatollah Bakhshi 4 Objective Students with visual impairments have built negative attitudes towards their abilities due to dif - ficulties in...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to the probability of sample’...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind students",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...in the schooling year of 2019-2020 in Narjes day-and-night school for the blind individuals. In Tehran, there is only one school for female blind...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ool for the blind individuals. In Tehran, there is only one school for female blind students and the sample purposefully selected accord - ing to...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...roup partici - pated only in the mainstream programs at the school. At the end of the therapeutic sessions all subjects completed the CSSEQ again...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ctiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment 1. Department of Psychology and Exceptional Chi...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ce and real feeling about themselves, which in turn reduces self-esteem in stu - dents with visual impaiments. Using appropriate therapeutic interventi...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...h the aim of ensuring men - tal health as well as promoting self-esteem can prevent many psychological problems in these people. The acceptance and com...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...raille to learn [2]. The prevalence of visual impairment in school-age children is 1 in 10 [3]. Currently, 217 million people worldwide and 180000...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...ucational, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...onal, and self-esteem [10] . High self-esteem leads to self-confidence and adaptation to difficult situations [11]. One of the effective methods for i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...463 January 2022. V ol 22. Num 4 of variation in self-esteem (general, family, social, and educational respectively) of the experimental gro...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...erson is among the impor - tant factors in the formation of self-concept and self-esteem [9]. The coincidence of adolescence with puberty causes various...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Methodology] \"...n in one or both eyes of 20/200 (1.10) or less [1] and uses Braille to learn [2]. The prevalence of visual impairment in school-age children is 1 i...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+          "section": "Methodology",
+          "term": "Braille",
+          "type": "VI-IC-AAC-SUP"
+        },
+        {
+          "context": "[Trang 3 - Methodology] \"...mit, the research objectives were explained to the boarding school officials for the blind females. After obtaining their written consent, 50 fema...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...naire is ≤23 [18]. People who get higher scores have higher self-esteem. Studies in Iran indicate that the test has acceptable reliability and validity...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...Num 4 To test the hypothesis of whether group ACT increases self-esteem in female students with visual impairment, we employed a univariate analysis of...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...V ol 22. Num 4 To determine the stability of the ACT on the self-esteem of students with visual impairment, a correlated t test was used (Table 3). The...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...ales with visual impairments seem to have a weaker sense of self-concept than males, have fewer opportuni - ties to make friends, and experience greater...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...anning and policy making instructional courses suitable for students with visual impairments. Furthermore, the specialists who are working with these children can use the A...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 6 - References] \"...ounselors, and students of the Narges Blind Girls’ Boarding School, who helped us in this research. Mirmohammadi F, et al. Effectiveness of Accept...\"",
+          "isValidEvidence": false,
+          "page": 6,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "School",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 6 - Methodology] \"...dren can use the ACT as a practical technique for improving self-esteem and the adaptation in many areas such as family, social and educational areas i...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...ی که 1. World Health Organization (WHO) 2. Psychosomatic 3. self-esteem های بینایی نیست، کنند ناشی از محدودیت افراد نابینا تجربه می بلکه پیشداوری و درک...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...A humanistic and futuristic approach to sex educa- tion for blind children. Journal of Visual Impairment & Blind- ness. 1974; 68(5):210-5. [DOI:10.1177/01...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...ementation of a curriculum to develop social competence for students with visual impairments in Germany. Journal of Visual Impairment & Blindness. 2004; 98(11):703-10. [DOI...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "students with visual impairments",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...rment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080/13603116.2015.1111441] [12] Nacar E. Investig...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Methodology",
+          "term": "Inclusive Education",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Evaluation] \"...teachers of urban eighth-grade at-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Evaluation",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Evaluation] \"...t-risk students, in one NJ school district, regard- ing the classroom factors that facilitate and inhibit at-risk student motivation to excel academi...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Evaluation",
+          "term": "classroom",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"....1080/13603116.2015.1111441] [12] Nacar E. Investigation of self-esteem levels of blind athletes. International Journal of Sport Studies. 2013; 3(2):16...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - Methodology] \"...Talukdar J. The impact of vision impairment on stu- dents’ self-concept. International Journal of Inclusive Education. 2016; 20(6):659-72. [DOI:10.1080...\"",
+          "isValidEvidence": true,
+          "page": 18,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Methodology",
+          "term": "self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 18 - References] \"...Association between visual impairment and depression in the elderly: A systematic review. Arquivos Brasileiros de Oftalmologia. 2015; 78(3):197-201...\"",
+          "isValidEvidence": false,
+          "page": 18,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "elderly",
+          "type": "VI-EC-ADULT"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...nuary 2022. V ol 22. Num 4 [27] Bat-Chava Y. Antecedents of self-esteem in deaf people: A meta- analytic review. Rehabilitation Psychology. 1993; 38(4)...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-esteem",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...:10.30486/JSRP.2019.573628.1443] [36] Augestad LB, Elmer S. Self-concept and self-esteem among children and young adults with visual impairment: A syste...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...of the accept - ance and commitment therapy on individual’s psychological well-being in people with epilepsy in Imam Hossein Hospital in the autumn and winter (Pers...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "psychological well-being",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...effectiveness of Acceptance and Commitment Therapy (act) on psychological well-being and resil- ience of mothers with a deaf daughter in the city of Isfahan (Persia...\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "psychological well-being",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 19 - Unknown] \"...ictive influence of irra - tional beliefs on self-esteem of university students with late blindness. Journal of Rational-Emotive Cognitive-Behavioral Therapy....\"",
+          "isValidEvidence": true,
+          "page": 19,
+          "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+          "section": "Unknown",
+          "term": "university students",
+          "type": "VI-EC-ADULT"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_32598_rj_22_4_3261_1",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 20,
+      "pdfUrl": "http://rehabilitationj.uswr.ac.ir/files/site1/user_files_581925/fatemehmirmohammadi-A-10-3261-1-e6a23f2.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.350Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.634Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.378Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.170Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.769Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4220734339",
+          "url": "https://doi.org/10.32598/rj.22.4.3261.1"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.350Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective Students with visual impairments have built negative attitudes towards their abilities due to difficulties in achieving social skills, orientation, and independent mobility. Their negative attitude towards blindness puts them at high-risk developing loneliness, social isolation, depression",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "The Effectiveness of Acceptance and Commitment Group Therapy on the Self-esteem of Girls With Visual Impairment",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.32598/rj.22.4.3261.1",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Journal of Rehabilitation",
+      "year": "2022"
+    }
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "id": "6ac5214a3c40067763fe1ed5_0_14",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Effectiveness of a serious game on the self-concept of children with visual impairments: A randomized controlled trial",
+  "authors": "MAP Lievense; MAVS Vacaru; MAY Kruithof",
+  "year": "2021",
+  "publicationDate": "2026-10-06",
+  "abstract": "Background Young children with visual impairments (VIs) are at high risk for mental disorders, due to victimization and subsequent social withdrawal. Children with VIs have been …",
+  "doi": "",
+  "venue": "Disability and Health …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac5214a3c40067763fe1ed5_0_14",
+  "landingPageUrl": "https://www.sciencedirect.com/science/article/pii/S1936657420301497",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "MAP Lievense; MAVS Vacaru; MAY Kruithof",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-concept (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_4",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Effectiveness of a serious game on the self-concept of children with visual impairments: A randomized controlled trial\"",
+    "finalDecision": "",
+    "id": "6ac5214a3c40067763fe1ed5_0_14",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-EC-DUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Disability and Health …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "Y"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791304011417",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T16:26:52.782Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac5214a3c40067763fe1ed5_0_14",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1936657420301497"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Effectiveness of a serious game on the self-concept of children with visual impairments: A randomized controlled trial\").",
+    "screeningStage": "V2",
+    "search_id": "6ac5214a3c40067763fe1ed5",
+    "snippet": "Background Young children with visual impairments (VIs) are at high risk for mental disorders, due to victimization and subsequent social withdrawal. Children with VIs have been …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Effectiveness of a serious game on the self-concept of children with visual impairments: A randomized controlled trial",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.sciencedirect.com/science/article/pii/S1936657420301497",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Disability and Health …",
+    "year": "2021"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "doi_10_35882_ijahst_v5i4_520",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Development of Smart Toothbrush (VIT-Brush) To Improve Toothbrushing Behavior of Visually Impaired Children",
+  "authors": "Aprilinda Pipit Ruswita; Suharyo Hadisaputro; Ari Suwondo",
+  "year": "2025",
+  "publicationDate": "2026-10-06T14:12:13.348Z",
+  "abstract": "Children with visual impairments are a group that requires special services related to motor skills. Sensory impairments in children with visual impairments can affect their ability to imitate movements, causing difficulties in understanding and mastering dental and oral hygiene techniques. Therefore, a smart toothbrush (VIT-Brush) with a multisensory approach based on movement, vibration, and audio was developed as an alternative. Developing a Smart Toothbrush (VIT-Brush) that is feasible and effective in improving tooth brushing behavior and reducing debris index scores in visually impaired children. Research and Development (R&D) method using the application of quasi experiment pre-post test with control group design. The research subjects were 32 parents and blind children and 24 teachers, divided into intervention groups using Smart Toothbrush (VIT-Brush) and control groups using conventional toothbrushes, for 21 days. Independent variable Smart Toothbrush (VIT-Brush), intermediate variable of parents' and teachers' tooth brushing behavior, dependent variable of tooth brushing behavior, and debris index score of visually impaired children. Feasibility test analysis using Aiken's V and ICC, effectiveness test using paired t-test, Wilcoxon, independent t-test, Mann-Whitney, and linear regression. A smart toothbrush (VIT-Brush) has been developed based on the characteristics and inclusiveness of visually impaired children that is validated and feasible to implement with a V value = 0.941 very high validity category and high reliability with a value of 0.776 (p=0.000). The results of the application of smart toothbrush (VIT-Brush) are more effective in increasing knowledge (p=0.000), attitudes (p=0.000) and tooth brushing actions (p=0.000) and reducing the debris index score with a value of (p=0.000) compared to the use of conventional toothbrushes. Produced a Smart Toothbrush (VIT-Brush) that is feasible and effective in improving tooth brushing behavior as measured by knowledge, attitudes and actions and reducing the debris index score of visually impaired children.",
+  "doi": "10.35882/ijahst.v5i4.520",
+  "venue": "International Journal of Advanced Health Science and Technology",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_35882_ijahst_v5i4_520",
+  "landingPageUrl": "https://doi.org/10.35882/ijahst.v5i4.520",
+  "openAccessPdfUrl": "https://ijahst.org/index.php/ijahst/article/download/520/255",
+  "retrievedAt": "2026-10-06T14:12:13.348Z",
+  "rawPayload": {
+    "abstract": "Children with visual impairments are a group that requires special services related to motor skills. Sensory impairments in children with visual impairments can affect their ability to imitate movements, causing difficulties in understanding and mastering dental and oral hygiene techniques. Therefore, a smart toothbrush (VIT-Brush) with a multisensory approach based on movement, vibration, and audio was developed as an alternative. Developing a Smart Toothbrush (VIT-Brush) that is feasible and effective in improving tooth brushing behavior and reducing debris index scores in visually impaired children. Research and Development (R&D) method using the application of quasi experiment pre-post test with control group design. The research subjects were 32 parents and blind children and 24 teachers, divided into intervention groups using Smart Toothbrush (VIT-Brush) and control groups using conventional toothbrushes, for 21 days. Independent variable Smart Toothbrush (VIT-Brush), intermediate variable of parents' and teachers' tooth brushing behavior, dependent variable of tooth brushing behavior, and debris index score of visually impaired children. Feasibility test analysis using Aiken's V and ICC, effectiveness test using paired t-test, Wilcoxon, independent t-test, Mann-Whitney, and linear regression. A smart toothbrush (VIT-Brush) has been developed based on the characteristics and inclusiveness of visually impaired children that is validated and feasible to implement with a V value = 0.941 very high validity category and high reliability with a value of 0.776 (p=0.000). The results of the application of smart toothbrush (VIT-Brush) are more effective in increasing knowledge (p=0.000), attitudes (p=0.000) and tooth brushing actions (p=0.000) and reducing the debris index score with a value of (p=0.000) compared to the use of conventional toothbrushes. Produced a Smart Toothbrush (VIT-Brush) that is feasible and effective in improving tooth brushing behavior as measured by knowledge, attitudes and actions and reducing the debris index score of visually impaired children.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Aprilinda Pipit Ruswita; Suharyo Hadisaputro; Ari Suwondo",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.35882/ijahst.v5i4.520",
+    "finalDecision": "",
+    "id": "doi_10_35882_ijahst_v5i4_520",
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [],
+    "pdfUrl": "https://ijahst.org/index.php/ijahst/article/download/520/255",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.348Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4417221735",
+        "url": "https://doi.org/10.35882/ijahst.v5i4.520"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.634Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4417221735",
+        "url": "https://doi.org/10.35882/ijahst.v5i4.520"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4417221735",
+        "url": "https://doi.org/10.35882/ijahst.v5i4.520"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.168Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4417221735",
+        "url": "https://doi.org/10.35882/ijahst.v5i4.520"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.768Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4417221735",
+        "url": "https://doi.org/10.35882/ijahst.v5i4.520"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.348Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Children with visual impairments are a group that requires special services related to motor skills. Sensory impairments in children with visual impairments can affect their ability to imitate movements, causing difficulties in understanding and mastering dental and oral hygiene techniques. Therefor",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Development of Smart Toothbrush (VIT-Brush) To Improve Toothbrushing Behavior of Visually Impaired Children",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.35882/ijahst.v5i4.520",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "International Journal of Advanced Health Science and Technology",
+    "year": "2025"
+  }
+}

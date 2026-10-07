@@ -1,0 +1,562 @@
+[
+  {
+    "id": "evt_1791335616168_73s41",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:36.168Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "… Conference on Healthy …",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335616173_43cpk",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:36.173Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "… Conference on Healthy …",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335616177_s2r6f",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:36.177Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "… Conference on Healthy …",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335620292_1595e",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:40.292Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "year": "2024",
+      "venue": "… Conference on Healthy …",
+      "doi": "",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "abstract": "",
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335620296_49mg4",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:40.296Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "year": "2024",
+      "venue": "… Conference on Healthy …",
+      "doi": "",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "abstract": "",
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335620300_ne5pj",
+    "recordId": "6ac510cc03610a6783c688d9_20_17",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:40.300Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_17",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Conceptualizing social support in families of children with special needs",
+      "authors": "N Janah; I Solihah; AM Iqbal",
+      "year": "2024",
+      "venue": "… Conference on Healthy …",
+      "doi": "",
+      "snippet": "… of social support systems as a conceptual framework, we review research related to classroom practice, children's social interactions, parental beliefs, teacher support … self-efficacy is the …",
+      "abstract": "",
+      "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_17",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.researchgate.net/profile/Iis-Solihah/publication/385379450_Conceptualizing_social_support_in_families_of_children_with_special_needs/links/67223a1b77b63d1220cdab5b/Conceptualizing-social-support-in-families-of-children-with-special-needs.pdf"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50189f2593a3414e7eeba_20_7",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Conceptualizing social support in families of children with special needs\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "X",
+        "M",
+        "Y",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude"
+    }
+  }
+]

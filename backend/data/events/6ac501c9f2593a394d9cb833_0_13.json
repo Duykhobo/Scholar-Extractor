@@ -1,0 +1,1658 @@
+[
+  {
+    "id": "evt_1791335615790_2pfe8",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.790Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335615793_l4f71",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.793Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335615799_1bhep",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.799Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335615802_1qxpb",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.802Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335615808_v45ei",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.808Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335615814_u7b35",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.814Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335619790_vsbyc",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.790Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619795_ruwi8",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.795Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619800_b9evw",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.800Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619803_ormor",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.803Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619807_ghb46",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.807Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619817_sa8gl",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.817Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335625301_zgkyz",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.301Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335625308_2hfef",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.308Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335625317_64u0j",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.317Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335625321_awc9z",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.321Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335625325_ukyug",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.325Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335625330_z774d",
+    "recordId": "6ac501c9f2593a394d9cb833_0_13",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.330Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "S Bakhshi; N Montazeri; B Nazari; A Ziapour",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)",
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50186f9aa733fe499e0cd_10_3",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\"",
+      "finalDecision": "",
+      "id": "6ac501c9f2593a394d9cb833_0_13",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"World Family Medicine …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791296958728",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:18.838Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac501c9f2593a394d9cb833_0_13",
+          "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City\").",
+      "screeningStage": "V2",
+      "search_id": "6ac501c9f2593a394d9cb833",
+      "snippet": "… , self-esteem and social support. There was also a significant relationship between their self-concept and social support. … and self-confidence of sighted and visually impaired children. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Comparing the self-esteem and resiliency between blind and sighted children and adolescents in Kermanshah City",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "http://www.mejfm.com/September2017/Self%20Esteem.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "World Family Medicine …",
+      "year": "2017"
+    }
+  }
+]

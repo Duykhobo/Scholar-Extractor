@@ -1,0 +1,380 @@
+[
+  {
+    "id": "evt_1791335615113_ttjhb",
+    "recordId": "doi_10_26717_bjstr_2019_19_003363",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.113Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority questionnaire was completed by children and their parents and used to assess the perceived parental style of both groups.The short form of the Tennessee Self-Concept Scale (sort form) [TSCS-2] completed by 125 children and 250 parents of visually impaired school and public schools in Riyadh Central province of Saudi Arabia.Of the students who responded (39/125, 31.2%),21 were males and 18 females and their age ranged from 13 to 18 years (mean age, 15 years).Of the parents who responded (119/250, 47.6%), 58 were males and 61 females and their age ranged from 19 to 36 years (mean = 27).Results: Parental Authority Questionnaire showed that more than one-half of the adolescents perceived parenting as authoritative (57%) and the remaining perceived parenting as either authoritarian (28%) or permissive (15%) but the differences was not significant (ANOVA: P< 0.80) and remained unaffected by the students' gender (P>0.05).The associations between the Tennessee Self Concept Score (TSCS) and the parenting styles was at borderline significance only for authoritative parenting style (P=0.08,r=0.28).The levels of self-esteem were higher in males than female (69%vs 31%) students.There was no difference in responses between students who attended public schools and those in the visually impaired school. Conclusion:The majority of visually impaired adolescents perceived parents as authoritative, had higher self-esteem than the fewer students with either authoritarians or permissive parents and had lower self-esteem.Further testing to elicit separate responses for mothers and fathers parenting styles could help reinforce these findings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Uchechukwu Levi Osuagwu",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.26717/bjstr.2019.19.003363",
+      "finalDecision": "",
+      "id": "doi_10_26717_bjstr_2019_19_003363",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://biomedres.us/pdfs/BJSTR.MS.ID.003363.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Influence of Parenting Style on the Visually Impaired Adolescents and Their Self-Esteem - Analysis Based on A Saudi Population",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.26717/bjstr.2019.19.003363",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Biomedical Journal of Scientific & Technical Research",
+      "year": "2019"
+    }
+  },
+  {
+    "id": "evt_1791335618892_0da72",
+    "recordId": "doi_10_26717_bjstr_2019_19_003363",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.892Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority questionnaire was completed by children and their parents and used to assess the perceived parental style of both groups.The short form of the Tennessee Self-Concept Scale (sort form) [TSCS-2] completed by 125 children and 250 parents of visually impaired school and public schools in Riyadh Central province of Saudi Arabia.Of the students who responded (39/125, 31.2%),21 were males and 18 females and their age ranged from 13 to 18 years (mean age, 15 years).Of the parents who responded (119/250, 47.6%), 58 were males and 61 females and their age ranged from 19 to 36 years (mean = 27).Results: Parental Authority Questionnaire showed that more than one-half of the adolescents perceived parenting as authoritative (57%) and the remaining perceived parenting as either authoritarian (28%) or permissive (15%) but the differences was not significant (ANOVA: P< 0.80) and remained unaffected by the students' gender (P>0.05).The associations between the Tennessee Self Concept Score (TSCS) and the parenting styles was at borderline significance only for authoritative parenting style (P=0.08,r=0.28).The levels of self-esteem were higher in males than female (69%vs 31%) students.There was no difference in responses between students who attended public schools and those in the visually impaired school. Conclusion:The majority of visually impaired adolescents perceived parents as authoritative, had higher self-esteem than the fewer students with either authoritarians or permissive parents and had lower self-esteem.Further testing to elicit separate responses for mothers and fathers parenting styles could help reinforce these findings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Uchechukwu Levi Osuagwu",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.26717/bjstr.2019.19.003363",
+      "finalDecision": "",
+      "id": "doi_10_26717_bjstr_2019_19_003363",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://biomedres.us/pdfs/BJSTR.MS.ID.003363.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Influence of Parenting Style on the Visually Impaired Adolescents and Their Self-Esteem - Analysis Based on A Saudi Population",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.26717/bjstr.2019.19.003363",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Biomedical Journal of Scientific & Technical Research",
+      "year": "2019",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624197_hvx1c",
+    "recordId": "doi_10_26717_bjstr_2019_19_003363",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.197Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority questionnaire was completed by children and their parents and used to assess the perceived parental style of both groups.The short form of the Tennessee Self-Concept Scale (sort form) [TSCS-2] completed by 125 children and 250 parents of visually impaired school and public schools in Riyadh Central province of Saudi Arabia.Of the students who responded (39/125, 31.2%),21 were males and 18 females and their age ranged from 13 to 18 years (mean age, 15 years).Of the parents who responded (119/250, 47.6%), 58 were males and 61 females and their age ranged from 19 to 36 years (mean = 27).Results: Parental Authority Questionnaire showed that more than one-half of the adolescents perceived parenting as authoritative (57%) and the remaining perceived parenting as either authoritarian (28%) or permissive (15%) but the differences was not significant (ANOVA: P< 0.80) and remained unaffected by the students' gender (P>0.05).The associations between the Tennessee Self Concept Score (TSCS) and the parenting styles was at borderline significance only for authoritative parenting style (P=0.08,r=0.28).The levels of self-esteem were higher in males than female (69%vs 31%) students.There was no difference in responses between students who attended public schools and those in the visually impaired school. Conclusion:The majority of visually impaired adolescents perceived parents as authoritative, had higher self-esteem than the fewer students with either authoritarians or permissive parents and had lower self-esteem.Further testing to elicit separate responses for mothers and fathers parenting styles could help reinforce these findings.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Uchechukwu Levi Osuagwu",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "self-concept (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.26717/bjstr.2019.19.003363",
+      "finalDecision": "",
+      "id": "doi_10_26717_bjstr_2019_19_003363",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://biomedres.us/pdfs/BJSTR.MS.ID.003363.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2970373302",
+          "url": "https://doi.org/10.26717/bjstr.2019.19.003363"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Purpose: To investigate the attitude of visually impaired adolescents, towards parents and examine the parents' attitudes toward the visually impaired child.We also assessed the effects of the parenting styles on the self-esteem of the visually impaired adolescent.Methods: Buri's parental authority ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Influence of Parenting Style on the Visually Impaired Adolescents and Their Self-Esteem - Analysis Based on A Saudi Population",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.26717/bjstr.2019.19.003363",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Biomedical Journal of Scientific & Technical Research",
+      "year": "2019"
+    }
+  }
+]

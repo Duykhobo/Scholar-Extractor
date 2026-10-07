@@ -1,0 +1,365 @@
+[
+  {
+    "id": "evt_1791335614804_n1yti",
+    "recordId": "doi_10_1016_j_neubiorev_2016_06_043",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.804Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of existing sensory substitution devices? The goal of this review is to create a link between neuroscientists and engineers by opening a discussion about the direction that the development of technological devices for visually impaired people is taking. Firstly, we review works on spatial and social skills in children with visual impairments, showing that lack of vision is associated with other sensory and motor delays. Secondly, we present some of the technological solutions developed to date for visually impaired people. Doing this, we highlight the core features of these systems and discuss their limits. We also discuss the possible reasons behind the low adaptability in children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Monica Gori; Giulia Cappagli; Alessia Tonelli; Gabriel Baud‐Bovy; Sara Finocchietti",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.neubiorev.2016.06.043",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_neubiorev_2016_06_043",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Neuroscience & Biobehavioral Reviews\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0149763415302864/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.347Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.633Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.166Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.347Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of ex",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Devices for visually impaired people: High technological devices with low user acceptance and no adaptability for children",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Neuroscience & Biobehavioral Reviews",
+      "year": "2016"
+    }
+  },
+  {
+    "id": "evt_1791335618523_eqpgk",
+    "recordId": "doi_10_1016_j_neubiorev_2016_06_043",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.524Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of existing sensory substitution devices? The goal of this review is to create a link between neuroscientists and engineers by opening a discussion about the direction that the development of technological devices for visually impaired people is taking. Firstly, we review works on spatial and social skills in children with visual impairments, showing that lack of vision is associated with other sensory and motor delays. Secondly, we present some of the technological solutions developed to date for visually impaired people. Doing this, we highlight the core features of these systems and discuss their limits. We also discuss the possible reasons behind the low adaptability in children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Monica Gori; Giulia Cappagli; Alessia Tonelli; Gabriel Baud‐Bovy; Sara Finocchietti",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.neubiorev.2016.06.043",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_neubiorev_2016_06_043",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Neuroscience & Biobehavioral Reviews\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0149763415302864/pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.347Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.633Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:35.166Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:13.347Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of ex",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Devices for visually impaired people: High technological devices with low user acceptance and no adaptability for children",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Neuroscience & Biobehavioral Reviews",
+      "year": "2016",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623891_cgez6",
+    "recordId": "doi_10_1016_j_neubiorev_2016_06_043",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.891Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of existing sensory substitution devices? The goal of this review is to create a link between neuroscientists and engineers by opening a discussion about the direction that the development of technological devices for visually impaired people is taking. Firstly, we review works on spatial and social skills in children with visual impairments, showing that lack of vision is associated with other sensory and motor delays. Secondly, we present some of the technological solutions developed to date for visually impaired people. Doing this, we highlight the core features of these systems and discuss their limits. We also discuss the possible reasons behind the low adaptability in children.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Monica Gori; Giulia Cappagli; Alessia Tonelli; Gabriel Baud‐Bovy; Sara Finocchietti",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.neubiorev.2016.06.043",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_neubiorev_2016_06_043",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Neuroscience & Biobehavioral Reviews\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0149763415302864/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.347Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.633Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.166Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2497106986",
+          "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.347Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Considering that cortical plasticity is maximal in the child, why are the majority of technological devices available for visually impaired users meant for adults and not for children? Moreover, despite high technological advancements in recent years, why is there still no full user acceptance of ex",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Devices for visually impaired people: High technological devices with low user acceptance and no adaptability for children",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.neubiorev.2016.06.043",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Neuroscience & Biobehavioral Reviews",
+      "year": "2016"
+    }
+  }
+]

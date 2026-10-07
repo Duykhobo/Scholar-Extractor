@@ -1,0 +1,538 @@
+[
+  {
+    "id": "evt_1791335617048_fpzxs",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.048Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "CT Thompson",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Google Scholar",
+      "year": "2021"
+    }
+  },
+  {
+    "id": "evt_1791335617053_a72br",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.053Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "CT Thompson",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Google Scholar",
+      "year": "2021"
+    }
+  },
+  {
+    "id": "evt_1791335617058_bck6p",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.058Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "CT Thompson",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "finalDecision": "",
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Google Scholar",
+      "year": "2021"
+    }
+  },
+  {
+    "id": "evt_1791335621207_oklpg",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.207Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "authors": "CT Thompson",
+      "year": "2021",
+      "venue": "Google Scholar",
+      "doi": "",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "abstract": "",
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "literatureGroup": "direct",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621212_4kxg0",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.212Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "authors": "CT Thompson",
+      "year": "2021",
+      "venue": "Google Scholar",
+      "doi": "",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "abstract": "",
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:11.696Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "literatureGroup": "direct",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621215_b81ud",
+    "recordId": "6ac510cc03610a6783c688d9_20_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.215Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510cc03610a6783c688d9_20_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities",
+      "authors": "CT Thompson",
+      "year": "2021",
+      "venue": "Google Scholar",
+      "doi": "",
+      "snippet": "… self-efficacy of teachers for visually impaired students (TVIs) who supported children with visual impairments … pertinent need for teacher support to elevate levels of self-efficacy. Existing …",
+      "abstract": "",
+      "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510cc03610a6783c688d9",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Google Scholar\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510cc03610a6783c688d9_20_10",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:53:26.869Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholarworks.calstate.edu/downloads/zg64ts29z"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50198fbbeb5edebc8e262_70_9",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Measuring Teacher Self-Efficacy for Students with Visual Impairments and Additional Disabilities\"",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "literatureGroup": "direct",
+      "v2Decision": "Exclude"
+    }
+  }
+]

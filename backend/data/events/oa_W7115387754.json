@@ -1,0 +1,794 @@
+[
+  {
+    "id": "evt_1791335617339_89ars",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.339Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Košir, Breda",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "finalDecision": "",
+      "id": "oa_W7115387754",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335617342_tnxuk",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.342Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Košir, Breda",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "finalDecision": "",
+      "id": "oa_W7115387754",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335617347_1089c",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.347Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Košir, Breda",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "finalDecision": "",
+      "id": "oa_W7115387754",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335617351_8t5d6",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.351Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Košir, Breda",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "finalDecision": "",
+      "id": "oa_W7115387754",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335617356_0v0ne",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.356Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Košir, Breda",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "finalDecision": "",
+      "id": "oa_W7115387754",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "year": "2024"
+    }
+  },
+  {
+    "id": "evt_1791335621489_9cpzl",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.489Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7115387754",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "authors": "Košir, Breda",
+      "year": "2024",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "doi": "",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": false,
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621493_51ipr",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.493Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7115387754",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "authors": "Košir, Breda",
+      "year": "2024",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "doi": "",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621497_g0sf4",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.497Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7115387754",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "authors": "Košir, Breda",
+      "year": "2024",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "doi": "",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621506_68f0j",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.506Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7115387754",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "authors": "Košir, Breda",
+      "year": "2024",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "doi": "",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621512_nd75e",
+    "recordId": "oa_W7115387754",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.512Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W7115387754",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula",
+      "authors": "Košir, Breda",
+      "year": "2024",
+      "venue": "Repository of the University of Primorsk (University of Primorska)",
+      "doi": "",
+      "snippet": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raz",
+      "abstract": "Ob zaključku svojega magistrskega študija bi se najprej želela iskreno zahvalit mentorici izr.prof.dr.Mojci Kukanji Gabrijelčič in somentorici asist.dr.Mateji Maljevac,Posebna zahvala gre učencem in učenkam, ki ste sodelovali na skupinskih aktivnostih socialnih veščin.Brez vaše pomoči ne bi bilo raziskave in vseh odličnih delavnic, ki smo jih preživeli skupaj.Hvala tudi vsem učiteljicam Centra IRIS, ki ste si vzele čas in kljub polnemu urniku odgovarjale na moja vprašanja.Zahvala gre tudi ravnateljici Centra IRIS, gospe Romani Kolar, ki mi je omogočila izvedbo delavnic socialnih spretnosti v prostorih Centra IRIS.Hvala tudi moji celi družini, fantu in prijateljem za vso podporo, potrpljenje in vzpodbudo, ki ste mi jo nudili skozi celoten študij.Usklajevati službo, študij in faks še zdaleč ni bilo enostavno in vaša podpora je bila ključna, da sem vztrajala.",
+      "url": "https://repozitorij.upr.si/IzpisGradiva.php?id=20924",
+      "pdfUrl": "https://repozitorij.upr.si/Dokument.php?lang=slv&id=30042&dn=",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:48.442Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7115387754",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W7115387754"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W7115387754",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Krepitev socialnih veščin otrok s slepoto in slabovidnostjo s pomočjo skupinskih aktivnosti razširjenega kurikula\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Repository of the University of Primorsk (University of Primorska)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  }
+]

@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_51267_icpesk2020bp07",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "STUDY ON THE LEVEL OF SELF-ESTEEM IN VISUALLY IMPAIRED STUDENTS",
+  "authors": "",
+  "year": "2020",
+  "publicationDate": "2026-10-06T14:12:15.278Z",
+  "abstract": "The purpose of the research was to investigate the level of self-esteem in visually impaired children in order to determine, together with investigations on other levels (health, psychomotor ability, physical development), the level of their quality of life compared to children of the same age without impairments. The self-esteem level was investigated using the Coopersmith Self-Esteem Inventory on a sample of 30 participants from the Special Secondary School for Visually Impaired Students in Bucharest, with an average age of 11 years. The applied test represents a modern psychometric instrument, which has been validated in a variety of research programs. It helps to better understand the students evaluated regarding their self-esteem by measuring the evaluative attitudes of the self in various planes of their existence. The standard form for students contains five subscales: general perception of self, social self-peers, home-parents, school-academic experience and distortion scale. Following the application of the test, it has been noted that the level of self-esteem of the visually impaired is higher, on average, than that of the average population of Romanian students without visual impairments. Considering the results, some decisions will be made regarding the approach to teaching dancesport to the visually impaired and, at the same time, we will be able to observe how practicing this sport can influence the evolution of self-esteem in the visually impaired, as an element of their quality of life.",
+  "doi": "10.51267/icpesk2020bp07",
+  "venue": "",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_51267_icpesk2020bp07",
+  "landingPageUrl": "https://doi.org/10.51267/icpesk2020bp07",
+  "openAccessPdfUrl": "https://doi.org/10.51267/icpesk2020bp07",
+  "retrievedAt": "2026-10-06T14:12:15.278Z",
+  "rawPayload": {
+    "abstract": "The purpose of the research was to investigate the level of self-esteem in visually impaired children in order to determine, together with investigations on other levels (health, psychomotor ability, physical development), the level of their quality of life compared to children of the same age without impairments. The self-esteem level was investigated using the Coopersmith Self-Esteem Inventory on a sample of 30 participants from the Special Secondary School for Visually Impaired Students in Bucharest, with an average age of 11 years. The applied test represents a modern psychometric instrument, which has been validated in a variety of research programs. It helps to better understand the students evaluated regarding their self-esteem by measuring the evaluative attitudes of the self in various planes of their existence. The standard form for students contains five subscales: general perception of self, social self-peers, home-parents, school-academic experience and distortion scale. Following the application of the test, it has been noted that the level of self-esteem of the visually impaired is higher, on average, than that of the average population of Romanian students without visual impairments. Considering the results, some decisions will be made regarding the approach to teaching dancesport to the visually impaired and, at the same time, we will be able to observe how practicing this sport can influence the evolution of self-esteem in the visually impaired, as an element of their quality of life.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.51267/icpesk2020bp07",
+    "finalDecision": "",
+    "id": "doi_10_51267_icpesk2020bp07",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Chưa có thông tin venue xuất bản để xác minh loại hình công bố.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://doi.org/10.51267/icpesk2020bp07",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:15.278Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4250064882",
+        "url": "https://doi.org/10.51267/icpesk2020bp07"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:37.551Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4250064882",
+        "url": "https://doi.org/10.51267/icpesk2020bp07"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:59.426Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4250064882",
+        "url": "https://doi.org/10.51267/icpesk2020bp07"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:36.088Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4250064882",
+        "url": "https://doi.org/10.51267/icpesk2020bp07"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:48.442Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4250064882",
+        "url": "https://doi.org/10.51267/icpesk2020bp07"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:15.278Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "The purpose of the research was to investigate the level of self-esteem in visually impaired children in order to determine, together with investigations on other levels (health, psychomotor ability, physical development), the level of their quality of life compared to children of the same age witho",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "STUDY ON THE LEVEL OF SELF-ESTEEM IN VISUALLY IMPAIRED STUDENTS",
+    "uncertain_authors": true,
+    "uncertain_doi": false,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.51267/icpesk2020bp07",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "",
+    "year": "2020"
+  }
+}

@@ -1,0 +1,1024 @@
+{
+  "id": "doi_10_47772_ijriss_2026_100500839",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "An Analysis of Mild And Severe Vision Impairment on Children’s Self Worth and Self Esteem In Uganda: A Case Study of Blind Students at Hornby High School, Kabale District.",
+  "authors": "Bwengye Ismail; Habaasa Ivan Akatwijuka Akatwijuka; Prof. Osward Ndoleriire; Prof. Emmanuel Karoro; Tushemereirwe Justine; Kansiime Abel",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:16.640Z",
+  "abstract": "Visual impairment (VI) among children remains a major global public health and educational concern, with profound implications for psychological well-being, social participation, and academic achievement. Globally, more than 19 million children under the age of 15 are estimated to live with visual impairment, including approximately 1.4 million who are blind and 17.5 million with low vision, the majority residing in low-income settings (WHO, 2023). Despite the growing burden, limited empirical attention has been given to the relationship between the severity of visual impairment and children’s self-esteem and self-worth, particularly within the Ugandan context. This study examined differences in self-esteem among children with moderate and severe visual impairment at Hornby High School for the Blind in Kabale District, Uganda. A mixed-methods case study design was employed involving 45 learners, comprising 27 pupils with moderate visual impairment and 18 pupils with severe visual impairment or blindness. Quantitative and qualitative data were collected to explore psychosocial experiences and factors influencing self-worth. Findings revealed that learners with severe visual impairment exhibited comparatively lower levels of self-esteem and self-worth than their counterparts with moderate impairment. The study further identified social stigma, barriers to participation, limited adaptive learning support, and inadequate psychosocial interventions as key contributors to diminished self-perception among severely impaired learners. The study concludes that the degree of visual impairment significantly shapes learners’ psychological well-being and social confidence. It recommends the strengthening of inclusive educational practices, provision of adaptive learning resources, and implementation of targeted psychosocial support programmes aimed at enhancing resilience, self-esteem, and social inclusion among visually impaired children in Uganda.",
+  "doi": "10.47772/ijriss.2026.100500839",
+  "venue": "International Journal of Research and Innovation in Social Science",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_47772_ijriss_2026_100500839",
+  "landingPageUrl": "https://doi.org/10.47772/ijriss.2026.100500839",
+  "openAccessPdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss5-pg12398-12409-202606_pdf.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.640Z",
+  "rawPayload": {
+    "abstract": "Visual impairment (VI) among children remains a major global public health and educational concern, with profound implications for psychological well-being, social participation, and academic achievement. Globally, more than 19 million children under the age of 15 are estimated to live with visual impairment, including approximately 1.4 million who are blind and 17.5 million with low vision, the majority residing in low-income settings (WHO, 2023). Despite the growing burden, limited empirical attention has been given to the relationship between the severity of visual impairment and children’s self-esteem and self-worth, particularly within the Ugandan context. This study examined differences in self-esteem among children with moderate and severe visual impairment at Hornby High School for the Blind in Kabale District, Uganda. A mixed-methods case study design was employed involving 45 learners, comprising 27 pupils with moderate visual impairment and 18 pupils with severe visual impairment or blindness. Quantitative and qualitative data were collected to explore psychosocial experiences and factors influencing self-worth. Findings revealed that learners with severe visual impairment exhibited comparatively lower levels of self-esteem and self-worth than their counterparts with moderate impairment. The study further identified social stigma, barriers to participation, limited adaptive learning support, and inadequate psychosocial interventions as key contributors to diminished self-perception among severely impaired learners. The study concludes that the degree of visual impairment significantly shapes learners’ psychological well-being and social confidence. It recommends the strengthening of inclusive educational practices, provision of adaptive learning resources, and implementation of targeted psychosocial support programmes aimed at enhancing resilience, self-esteem, and social inclusion among visually impaired children in Uganda.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Bwengye Ismail; Habaasa Ivan Akatwijuka Akatwijuka; Prof. Osward Ndoleriire; Prof. Emmanuel Karoro; Tushemereirwe Justine; Kansiime Abel",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "social participation (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.47772/ijriss.2026.100500839",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Methodology] \"...hancing resilience, self-esteem, and social inclusion among visually impaired children in Uganda. Keywords: VisualImpairment,Self-Esteem,Self-Worth INTRODUCTION Visio...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...n’s Self-Worth a nd Self-Esteem In Uganda: A Case Study o f Blind Students a t Hornby High School, Kabale District. Bwengye Ismail 1 , Dr. Habaasa Ivan Ak...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "Blind Students",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...In Uganda: A Case Study o f Blind Students a t Hornby High School, Kabale District. Bwengye Ismail 1 , Dr. Habaasa Ivan Akatwijuka 2 , Prof. Oswa...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...n with moderate and severe visual impairment at Hornby High School for the Blind in Kabale District, Uganda. A mixed-methods case study design was...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...antly shapes learners’ psychological well -being and social confidence. It recommends the strengthening of inclusive educational practices, provision...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...And Severe Vision Impairment o n Children’s Self-Worth a nd Self-Esteem In Uganda: A Case Study o f Blind Students a t Hornby High School, Kabale Distr...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-Esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...hin the Ugandan context. This study examined differences in self-esteem among children with moderate and severe visual impairment at Hornby High School...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...e visual impairment exhibited comparatively lower levels of self-esteem and self-worth than their counterparts with moderate impairment. The study furt...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...n, with profound implications for psychological well-being, social participation, and academic achievement. Globally, more than 19 million children under the ag...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "social participation",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Evaluation] \"...lth and educational concern, with profound implications for psychological well-being, social participation, and academic achievement. Globally, more than 19 million...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...nt. According to Mokgethi et al. (2023), peer interactions, teacher support, and participation possibilities are all strongly associated with self-worth am...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ment reported decreased levels of self-esteem and perceived social support (Magakwe et al., 2025). According to UNESCO (2023), inclusive teaching methods...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ual impairment reported decreased levels of self-esteem and perceived social support (Magakwe et al., 2025). According to UNESCO (2023), inclusive teaching methods...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...tween the degree of visual impairment and self-esteem among visually impaired children in Kabale District. Specifically, the study aimed to analyze variations in self...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...s, caregivers, and other stakeholders involved in promoting inclusive education and child welfare. Overall, vision impairment has a significant impact on the s...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...al impairment and psychosocial results in Ugandan secondary school settings, despite the fact that these conditions may negatively impact self-est...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...hosocial phases, especially those pertaining to competence, confidence, and social belonging (Habaasa, 2024). Children with VI in Uganda encounter par...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...e is a crucial time for identity formation, self-worth, and self-esteem, according to Erikson's Psychosocial Theory (Erikson, 2021). Studying self-este...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...to UNESCO (2023), inclusive teaching methods and the use of assistive technology can mitigate these psychological difficulties by fostering resilience, competen...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 3 - Methodology] \"...e study's goals, especially in specialized populations like students with visual impairments, purposeful sampling was judged suitable (Guest et al., 2020). Furthermore, the...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...ay 2026 www.rsisinternational.org Page 12400 blindness, the school was purposefully chosen as a specialist secondary institution. Kabale District'...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Methodology] \"...a crucial developmental time for identity construction and self-esteem (Sawyer et al., 2022). RESULTS AND DISCUSSION Results Objective One: Comparison...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...ependability of the difference are further supported by the confidence interval. According to the results, kids' self-esteem is greatly impacted by th...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...– 1.16 The findings indicate that the two groups' levels of self-esteem differ statistically significantly (t(43) = 4.63, p < 0.001). This suggests tha...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...research highlighting the value of inclusive education and social support (Daramusseng et al., 2023; Liu et al., 2024; UNESCO, 2023). Objective Three: St...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...consistent with previous research highlighting the value of inclusive education and social support (Daramusseng et al., 2023; Liu et al., 2024; UNESCO, 2023)....\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...4.12 0.62 Very strong Family Relationship 3.98 0.71 Strong School Environment 3.76 0.68 Strong Copying Skills 3.54 0.74 Moderate Socio-Economic S...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...nt. One parent stated, \"If we don't support them, they lose confidence,\" acknowledging their responsibility as well. Peer relationships were also very...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...icating strong agreement on their significance in enhancing psychological well-being. Counselling services were the most highly rated of them (Mean = 4.25), suggest...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ich strengthens their sense of independence and competence. Peer support programs were also shown to be crucial (Mean = 4.10), suggesting that kids' sel...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...as proof of this. Another important issue that surfaced was peer support. Students reported feeling more confident and like they belonged when they had...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ortant,\" said one respondent. There is a need for organized peer support programs, nevertheless, as some students also reported feeling excluded . \"Some...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"..., highlighting the significance of family encouragement and emotional support. Despite having a somewhat lower ranking (Mean = 3.95), teacher training still...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...significant factor, highlighting the significance of family encouragement and emotional support. Despite having a somewhat lower ranking (Mean = 3.95), t...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "encouragement",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ed, highlighting the need to improve counselling inside the school. These viewpoints emphasize how crucial it is for educational institutions to i...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...chievement. \"Some students are very quiet because they lack confidence, and counselling helps them open up and participate,\" the Teacher clarified. \"W...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ating the importance of functional independence in boosting self-esteem. Students who have access to resources like screen readers, mobility aids, and...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...dence,\" said another. These results show that by increasing autonomy, assistive devices are important contributors to psychological well-being in ad...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "autonomy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...g autonomy, assistive devices are important contributors to psychological well-being in addition to being educational aids. However, there weren't many helpful gadg...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ing a good self- concept. Additionally, the availability of assistive technology received a high rating (Mean = 4.18), indicating the importance of functional i...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...access to resources like screen readers, mobility aids, and Braille materials can engage more fully in social and academic activities, which streng...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ance and self-assurance . \"I can study on my own when I use Braille books, and it makes me feel capable,\" said one learner. \"I depend on others wit...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...component affecting psychosocial well-being was found to be peer support. Good peer relationships boost a sense of belonging, encourage social inclusion...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Evaluation",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...a sense of belonging, encourage social inclusion, and offer emotional support. The existence of stigma and exclusion, however, emphasizes the necessity of or...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Evaluation",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...by supportive parenting techniques, such as acceptance and encouragement. On the other hand, stigma and unfavourable attitudes within the family might d...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "encouragement",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...rsisinternational.org Page 12404 In order to properly serve visually impaired children, teachers also stressed the importance of professional training. \"We need more...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...or lowering anxiety, depression, and internalized stigma in students with visual impairments (Cheng et al., 2025; Liu et al., 2024; UNESCO, 2023). The significance of assis...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...f they are not properly trained. Calls for more funding for inclusive education methods and teacher training are supported by this finding (UNESCO, 2023; Kozaa...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...cial wellbeing of visually impaired students at Hornby High School...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...s may not fully support these students, which affects their confidence,\" the headteacher continued. ‘’We don’t have enough special needs teachers to t...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...ense of competence and autonomy — two essential elements of self-esteem — when they are able to complete activities on their own. This result aligns wi...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...functional freedom. Students gain a sense of competence and autonomy — two essential elements of self-esteem — when they are able to complete activi...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "autonomy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...s also greatly influenced by parental involvement. Positive self-concept and emotional stability are facilitated by supportive parenting techniques, suc...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Evaluation] \"...2025; Liu et al., 2024; UNESCO, 2023). The significance of assistive technology highlights the connection between psychological health and functional freedom....\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Evaluation",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...pment (Mean = 4.18) and counselling services (Mean = 4.25). Peer support programs (Mean = 4.10), parental participation (Mean = 4.05), and teacher train...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...that highlights the significance of inclusive education and social support networks in influencing psychological outcomes (Daramusseng et al., 2023; Worle...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...monstrating the importance of family support as a source of emotional support and identity validation. On the other hand, poor self-worth was linked to stigm...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...with previous research that highlights the significance of inclusive education and social support networks in influencing psychological outcomes (Daramusseng...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...lived experiences of visually impaired learners within the school context. Regarding Objective One, the study discovered that pupils with modest...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...05 in Kabale District, with a particular focus on comparing self-esteem levels between students with mild and severe visual impairment, identifying fac...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...viewpoints that link functional ability to the formation of self-concept (Erikson, 2021; Magakwe et al., 2025; Kozaala et al., 2024) by confirming that...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...m and inclusive friendships boosting it. Students' academic self-concept and general well- being have been proven to be greatly impacted by the school e...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...es reported having less access to educational materials and assistive technology, which had an impact on their independence and involvement in class. Their self...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...mproving the quality of life and educational experiences of visually impaired children in Uganda and similar contexts. RECOMMENDATIONS Based on the findings and concl...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...y impaired learners. Strategies such as teacher training in inclusive education, counselling and psychosocial support services, peer mentorship programmes, and...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...environmental factors. Family support, peer relationships, school climate, and socioeconomic conditions emerged as critical determinants of learn...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...Supportive and inclusive environments were found to enhance confidence and resilience even among students with severe impairments, whereas negative so...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...nts in overcoming emotional difficulties and boosting their self-esteem. According to students, counselling offered a secure setting for coping strateg...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...city and social interaction play a critical role in shaping self-concept, identity formation, and psychological development among children with disabili...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Methodology] \"...ld also assess how well particular interventions, including peer support programs and counselling programs, improve psychological outcomes. In order to...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...ort and encouragement. Parents should provide emotional and social support to their visually impaired children by encouraging independence and promoting p...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...have a positive attitude toward them and offer support and encouragement. Parents should provide emotional and social support to their visually impaired...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "encouragement",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Methodology] \"...ng courses, and awareness campaigns. Supporting families of children with visual impairments and encouraging inclusive attitudes should be the main goals of community-based...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "children with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...arents should provide emotional and social support to their visually impaired children by encouraging independence and promoting positive self-image. They should avoi...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...ese students confront. Additionally, schools should support inclusive education by implementing instructional practices that support all students' involvement...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...t aside funds for the provision of assistive technology and special education teacher training. Effective implementation and oversight of inclusive education...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Methodology] \"...elf- esteem is also necessary, as is the effect of boarding school environments on psychosocial development. Future research should also assess ho...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...ing programs. In order to boost visually impaired students' confidence and involvement, educators should also have a positive attitude toward them and...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...l aspects. Although the degree of visual impairment affects self-esteem, supportive peer, family, and educational environments can lessen its effects....\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...rofessional training in special needs education. The use of assistive technology, inclusive teaching methods, and techniques for creating a positive learning en...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...g resources like screen readers, magnification devices, and Braille books. To enhance their ability to assist visually impaired students, teachers...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...ucational Review, 20(1), 78-94. 13. Liu, X., et al. (2024). Social support, self-concept and resilience as protectors against school maladjustment during...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...Quality of Life (CVF-QoL) instrument for rural school-going children with visual impairments. Diagnostics, 15(3), 331. 15. Magakwe, T., Manitsa, T., & Barlow-Brown, F. (202...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "children with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...Tumwesigye, N. (2024). Barriers to inclusive education for visually impaired children in rural Uganda. African Educational Review, 20(1), 78-94. 13. Liu, X., et al....\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...sing assistive technologies to manage the learning needs of students with visual impairments at Makerere and Kyambogo Universities. 17. Mokgethi, et al. (2023). Vision-rela...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...a, P., Nkurunziza, F., & Tumwesigye, N. (2024). Barriers to inclusive education for visually impaired children in rural Uganda. African Educational Review, 20(...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...cial schools in Jinja District, Uganda. European Journal of Special Education Research. 12. Kozaala, P., Nkurunziza, F., & Tumwesigye, N. (2024). Barriers to...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...support, self-concept and resilience as protectors against school maladjustment during adolescence. School Mental Health. 14. Magakwe, T. S. S.,...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Related Work] \"...icine, 16(1), e4556. 27. Smith, E. R., & Mackie, D. (2022). Self-esteem (concept overview). In Social Psychology (APA). 28. Smith, J., & Doe, A. (2024)...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Related Work",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"..., 20(1), 78-94. 13. Liu, X., et al. (2024). Social support, self-concept and resilience as protectors against school maladjustment during adolescence. S...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Related Work] \"...jaya. 23. Peter, T., & Tumwesigye, K. (2025). The impact of assistive technology on learners with visual impairment in Uganda. Asian Journal of Education and So...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Related Work",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...an Akatwijuka (2024). Social economic factors and Access to Higher education in Uganda. A case of public higher institutions in Kigezi sub-sector. 11. Kozaa...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "Higher education",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...rley, P., et al. (2023). The relationship between perceived peer support and academic adjustment. Frontiers in Psychology....\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...X Issue V May 2026 www.rsisinternational.org Page 12409 29. Social support for students with visual impairments in educational institutions (2023). Journa...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...www.rsisinternational.org Page 12409 29. Social support for students with visual impairments in educational institutions (2023). Journal of Intellectual Disability – Diagno...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ually impaired learners in Uganda. International Journal of Inclusive Education, 29(2), 110-128. 33. Tuliwangula, P., & Tumwesigye, K. (2025). The impact of as...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Inclusive Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ganization. 37. Wasosa, H. (2024). The relationship between self-concept and social adaptability of people with blindness in Harare Metropolitan Provinc...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...33. Tuliwangula, P., & Tumwesigye, K. (2025). The impact of assistive technology on learners with visual impairment in Uganda. Asian Journal of Education and So...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "assistive technology",
+        "type": "VI-IC-AAC-SUP"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_47772_ijriss_2026_100500839",
+    "isPdfVerified": true,
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "page_count": 12,
+    "pdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss5-pg12398-12409-202606_pdf.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.640Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7164892506",
+        "url": "https://doi.org/10.47772/ijriss.2026.100500839"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.689Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7164892506",
+        "url": "https://doi.org/10.47772/ijriss.2026.100500839"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.298Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7164892506",
+        "url": "https://doi.org/10.47772/ijriss.2026.100500839"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.794Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7164892506",
+        "url": "https://doi.org/10.47772/ijriss.2026.100500839"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.311Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7164892506",
+        "url": "https://doi.org/10.47772/ijriss.2026.100500839"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.640Z",
+    "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Visual impairment (VI) among children remains a major global public health and educational concern, with profound implications for psychological well-being, social participation, and academic achievement. Globally, more than 19 million children under the age of 15 are estimated to live with visual i",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "An Analysis of Mild And Severe Vision Impairment on Children’s Self Worth and Self Esteem In Uganda: A Case Study of Blind Students at Hornby High School, Kabale District.",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.47772/ijriss.2026.100500839",
+    "userNotes": "",
+    "v2Decision": "PassToFullText",
+    "v3Decision": "Include",
+    "venue": "International Journal of Research and Innovation in Social Science",
+    "year": "2026"
+  }
+}

@@ -1,0 +1,797 @@
+[
+  {
+    "id": "evt_1791335615388_mo2ul",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.388Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335615391_o8axa",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.391Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335615400_i73si",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.400Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:53:26.758Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335619184_1g05l",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.184Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "authors": "H Jenaabadi",
+      "year": "2013",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "doi": "",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "abstract": "",
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510ca526c488ba268757f",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619188_4ti1t",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.188Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "authors": "H Jenaabadi",
+      "year": "2013",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "doi": "",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "abstract": "",
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510ca526c488ba268757f",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335619200_trs6e",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.200Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "authors": "H Jenaabadi",
+      "year": "2013",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "doi": "",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "abstract": "",
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac510ca526c488ba268757f",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:53:26.758Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude"
+    }
+  },
+  {
+    "id": "evt_1791335624645_xwtbs",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:44.645Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335624650_q1gv8",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:44.650Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791301742963",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:49:07.592Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335624659_vj8u5",
+    "recordId": "6ac510ca526c488ba268757f_0_4",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:44.659Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50183f479a3bb880fa8af_0_4",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\"",
+      "finalDecision": "",
+      "id": "6ac510ca526c488ba268757f_0_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791302006516",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:53:26.758Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac510ca526c488ba268757f_0_4",
+          "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.\").",
+      "screeningStage": "V2",
+      "search_id": "6ac510ca526c488ba268757f",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  }
+]

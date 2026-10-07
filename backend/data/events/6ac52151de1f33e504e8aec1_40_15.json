@@ -1,0 +1,174 @@
+[
+  {
+    "id": "evt_1791335618218_ga1if",
+    "recordId": "6ac52151de1f33e504e8aec1_40_15",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.218Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "Y Wang; C Li; H Zhang; Y Ma",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac52151de1f33e504e8aec1_40_15",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T16:26:59.804Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac52151de1f33e504e8aec1_40_15",
+          "url": "https://link.springer.com/article/10.1186/s12939-026-02854-7"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "6ac52151de1f33e504e8aec1",
+      "snippet": "… students, 682 children with visual impairments were assigned … networks, migrant children often experience low self-esteem, … differ according to teacher support for wearing eyeglasses, …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "The impact of vision care program on the mental health of migrant children in Eastern China: evidence from a cluster-randomized controlled trial",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://link.springer.com/article/10.1186/s12939-026-02854-7",
+      "userNotes": "",
+      "v2Decision": "Unsure",
+      "venue": "International Journal for Equity in Health",
+      "year": "2026"
+    }
+  },
+  {
+    "id": "evt_1791335622497_4sfqf",
+    "recordId": "6ac52151de1f33e504e8aec1_40_15",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:42.497Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac52151de1f33e504e8aec1_40_15",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "The impact of vision care program on the mental health of migrant children in Eastern China: evidence from a cluster-randomized controlled trial",
+      "authors": "Y Wang; C Li; H Zhang; Y Ma",
+      "year": "2026",
+      "venue": "International Journal for Equity in Health",
+      "doi": "",
+      "snippet": "… students, 682 children with visual impairments were assigned … networks, migrant children often experience low self-esteem, … differ according to teacher support for wearing eyeglasses, …",
+      "abstract": "",
+      "url": "https://link.springer.com/article/10.1186/s12939-026-02854-7",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac52151de1f33e504e8aec1",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V3",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac52151de1f33e504e8aec1_40_15",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T16:26:59.804Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://link.springer.com/article/10.1186/s12939-026-02854-7"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "literatureGroup": "direct",
+      "v2Decision": "Unsure",
+      "v3Decision": "Unsure",
+      "evidence_snippets": [],
+      "isPdfVerified": false,
+      "fullTextStatus": "not_found"
+    }
+  }
+]

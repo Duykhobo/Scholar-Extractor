@@ -1,0 +1,28 @@
+[
+  {
+    "id": "suspect_1791335626197_kiw40",
+    "collectionId": "profile_1791333936106",
+    "title": "Self-concept and self-esteem among children and young adults with visual impairment: A systematic review",
+    "year": "2017",
+    "similarity": 0.92,
+    "recordIds": [
+      "6ac59618d3c512f204a3aefa_0_1",
+      "6ac59618d3c512f204a3aefa_0_5"
+    ],
+    "canonicalRecordId": "6ac59618d3c512f204a3aefa_0_1",
+    "resolution": "unresolved"
+  },
+  {
+    "id": "suspect_1791335626198_c625i",
+    "collectionId": "profile_1791333936106",
+    "title": "The influence of parental attitude on the self-esteem of students with visual impairment in selected middle schools of Dessie city, Ethiopia",
+    "year": "2026",
+    "similarity": 1,
+    "recordIds": [
+      "6ac59618d3c512f204a3aefa_0_11",
+      "6ac59618d3c512f204a3aefa_0_17"
+    ],
+    "canonicalRecordId": "6ac59618d3c512f204a3aefa_0_11",
+    "resolution": "unresolved"
+  }
+]

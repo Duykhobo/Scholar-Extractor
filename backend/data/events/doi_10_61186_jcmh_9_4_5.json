@@ -1,0 +1,377 @@
+[
+  {
+    "id": "evt_1791335614895_w6bk1",
+    "recordId": "doi_10_61186_jcmh_9_4_5",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.895Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characterized by impulsive, hyperactive, and attention deficit behaviors.The current investigation aimed to assess the efficacy of self-compassion training on the self-esteem and perceived stress of mothers of children with ADHD.Method: The present study employed a quasi-experimental methodology utilizing a pre-test-posttest design with a control group.The statistical population consisted of mothers of 5-11 year old boys and girls diagnosed with ADHD in Rasht City during the 2020-2021 academic year.The research sample consisted of 28 mothers who were selected from the aforementioned statistical population using the convenience sampling method.These participants were then randomly assigned to either the experimental or control groups The experimental group underwent an 8-weekly session of the compassion training program, while the control group did not receive any intervention during this period of time.The control group was only engaged in meetings where they were asked questions that were not related to the domain of compassion.The study involved the assessment of two groups using Sorensen's Self-Esteem Questionnaire (2006) and Cohen et al.'s Perceived Stress Questionnaire (1983) during the pre-test and post-test stages.The data analysis was also analyzed by independent t-test with differential scores and SPSS 26 software.Results: The post-test stage of the compassion training intervention showed that the experimental group's self-esteem scores significantly increased (t=-11.571,P<0.001) and its perceived stress levels were reduced (t=-9.642,P<0.001). Conclusion:The results showed that compassion training, emphasizing components such as selfkindness during stress and hardships, human commonality, mindfulness, and being present at the moment, as well as being in peer groups, leads to improved levels of self-esteem and decreased perceived stress of mothers of children with ADHD.Therefore, it can be implemented as one of the parent education axes by professionals in various fields.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Alireza Mohammadi Sangachin Doost; Abbas Ali Hosseinkhanzadeh; Maryam Kousha; Ashkan Naseh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61186/jcmh.9.4.5",
+      "finalDecision": "",
+      "id": "doi_10_61186_jcmh_9_4_5",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://childmentalhealth.ir/files/site1/user_files_43c9e4/alirmi-A-10-1768-1-c64b736.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characteri",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Effect of Self-Compassion Training on the Self-Esteem and Perceived Stress of Mothers of Children with Attention Deficit / Hyperactivity Disorder",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61186/jcmh.9.4.5",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Quarterly Journal of Child Mental Health",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335618613_l48mq",
+    "recordId": "doi_10_61186_jcmh_9_4_5",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.613Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characterized by impulsive, hyperactive, and attention deficit behaviors.The current investigation aimed to assess the efficacy of self-compassion training on the self-esteem and perceived stress of mothers of children with ADHD.Method: The present study employed a quasi-experimental methodology utilizing a pre-test-posttest design with a control group.The statistical population consisted of mothers of 5-11 year old boys and girls diagnosed with ADHD in Rasht City during the 2020-2021 academic year.The research sample consisted of 28 mothers who were selected from the aforementioned statistical population using the convenience sampling method.These participants were then randomly assigned to either the experimental or control groups The experimental group underwent an 8-weekly session of the compassion training program, while the control group did not receive any intervention during this period of time.The control group was only engaged in meetings where they were asked questions that were not related to the domain of compassion.The study involved the assessment of two groups using Sorensen's Self-Esteem Questionnaire (2006) and Cohen et al.'s Perceived Stress Questionnaire (1983) during the pre-test and post-test stages.The data analysis was also analyzed by independent t-test with differential scores and SPSS 26 software.Results: The post-test stage of the compassion training intervention showed that the experimental group's self-esteem scores significantly increased (t=-11.571,P<0.001) and its perceived stress levels were reduced (t=-9.642,P<0.001). Conclusion:The results showed that compassion training, emphasizing components such as selfkindness during stress and hardships, human commonality, mindfulness, and being present at the moment, as well as being in peer groups, leads to improved levels of self-esteem and decreased perceived stress of mothers of children with ADHD.Therefore, it can be implemented as one of the parent education axes by professionals in various fields.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Alireza Mohammadi Sangachin Doost; Abbas Ali Hosseinkhanzadeh; Maryam Kousha; Ashkan Naseh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61186/jcmh.9.4.5",
+      "finalDecision": "",
+      "id": "doi_10_61186_jcmh_9_4_5",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://childmentalhealth.ir/files/site1/user_files_43c9e4/alirmi-A-10-1768-1-c64b736.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characteri",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Effect of Self-Compassion Training on the Self-Esteem and Perceived Stress of Mothers of Children with Attention Deficit / Hyperactivity Disorder",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61186/jcmh.9.4.5",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Quarterly Journal of Child Mental Health",
+      "year": "2023",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623966_9orfa",
+    "recordId": "doi_10_61186_jcmh_9_4_5",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.966Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characterized by impulsive, hyperactive, and attention deficit behaviors.The current investigation aimed to assess the efficacy of self-compassion training on the self-esteem and perceived stress of mothers of children with ADHD.Method: The present study employed a quasi-experimental methodology utilizing a pre-test-posttest design with a control group.The statistical population consisted of mothers of 5-11 year old boys and girls diagnosed with ADHD in Rasht City during the 2020-2021 academic year.The research sample consisted of 28 mothers who were selected from the aforementioned statistical population using the convenience sampling method.These participants were then randomly assigned to either the experimental or control groups The experimental group underwent an 8-weekly session of the compassion training program, while the control group did not receive any intervention during this period of time.The control group was only engaged in meetings where they were asked questions that were not related to the domain of compassion.The study involved the assessment of two groups using Sorensen's Self-Esteem Questionnaire (2006) and Cohen et al.'s Perceived Stress Questionnaire (1983) during the pre-test and post-test stages.The data analysis was also analyzed by independent t-test with differential scores and SPSS 26 software.Results: The post-test stage of the compassion training intervention showed that the experimental group's self-esteem scores significantly increased (t=-11.571,P<0.001) and its perceived stress levels were reduced (t=-9.642,P<0.001). Conclusion:The results showed that compassion training, emphasizing components such as selfkindness during stress and hardships, human commonality, mindfulness, and being present at the moment, as well as being in peer groups, leads to improved levels of self-esteem and decreased perceived stress of mothers of children with ADHD.Therefore, it can be implemented as one of the parent education axes by professionals in various fields.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Alireza Mohammadi Sangachin Doost; Abbas Ali Hosseinkhanzadeh; Maryam Kousha; Ashkan Naseh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.61186/jcmh.9.4.5",
+      "finalDecision": "",
+      "id": "doi_10_61186_jcmh_9_4_5",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://childmentalhealth.ir/files/site1/user_files_43c9e4/alirmi-A-10-1768-1-c64b736.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4389993172",
+          "url": "https://doi.org/10.61186/jcmh.9.4.5"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background and Purpose: Attention deficit/hyperactivity disorder (ADHD) is a prevalent childhood disorder that can result in a range of difficulties for the individual, as well as their peers, teachers, and parents, across various educational, social, and familial settings.The disorder is characteri",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Effect of Self-Compassion Training on the Self-Esteem and Perceived Stress of Mothers of Children with Attention Deficit / Hyperactivity Disorder",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.61186/jcmh.9.4.5",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Quarterly Journal of Child Mental Health",
+      "year": "2023"
+    }
+  }
+]

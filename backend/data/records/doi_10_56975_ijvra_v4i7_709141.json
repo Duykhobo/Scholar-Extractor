@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_56975_ijvra_v4i7_709141",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "SELF-ESTEEM AND SOCIAL INTERACTION ANXIETY AMONG SIGHTED ADOLESCENTS AND ADOLESCENTS WITH VISUAL IMPAIRMENT",
+  "authors": "Dr. A. Sajitha Qadir; Shanmuga Priya. K",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:16.642Z",
+  "abstract": "Self-esteem and social interaction anxiety are important psychological constructs that influence adolescents' emotional well-being, interpersonal relationships, and overall adjustment. Adolescents with visual impairment may encounter additional challenges in social participation because of limitations in visual communication and environmental interactions, making it important to examine these constructs in comparison with their sighted peers. The present investigation aimed to study self-esteem and social interaction anxiety among sighted adolescents and adolescents with visual impairment. A random sample of 120 adolescents aged 15–17 years was selected from special and regular schools, comprising 60 sighted and 60 adolescents with visual impairment. A pilot study was conducted with 20 participants before the main investigation. Ethical clearance was obtained from the Institutional Human Ethics Committee, and informed consent was obtained from all participants. Self-esteem was assessed using the Sorensen Self-Esteem Scale (Marilyn J. Sorensen, 2006), and social interaction anxiety was measured using the Social Interaction Anxiety Scale (Mattick & Clarke, 1998). The data were analysed using the mean, standard deviation, t-test, and Karl Pearson's correlation coefficient. The findings revealed no significant differences in self-esteem based on gender or visual status. Similarly, no significant differences in social interaction anxiety were observed based on gender or visual status, except that sighted boys demonstrated significantly higher social interaction anxiety than sighted girls and visually impaired boys. A significant relationship between self-esteem and social interaction anxiety was observed among sighted adolescents, adolescents with visual impairment, sighted boys, and visually impaired girls, whereas no significant relationship was found among visually impaired boys and sighted girls. The findings highlight the importance of promoting positive self-esteem and addressing social interaction anxiety through targeted psychological and educational interventions for adolescents.",
+  "doi": "10.56975/ijvra.v4i7.709141",
+  "venue": "International Journal of Versatile Research and Analysis",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_56975_ijvra_v4i7_709141",
+  "landingPageUrl": "https://doi.org/10.56975/ijvra.v4i7.709141",
+  "openAccessPdfUrl": "https://ijpub.org/ijvra/papers/IJVRA2607342.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.642Z",
+  "rawPayload": {
+    "abstract": "Self-esteem and social interaction anxiety are important psychological constructs that influence adolescents' emotional well-being, interpersonal relationships, and overall adjustment. Adolescents with visual impairment may encounter additional challenges in social participation because of limitations in visual communication and environmental interactions, making it important to examine these constructs in comparison with their sighted peers. The present investigation aimed to study self-esteem and social interaction anxiety among sighted adolescents and adolescents with visual impairment. A random sample of 120 adolescents aged 15–17 years was selected from special and regular schools, comprising 60 sighted and 60 adolescents with visual impairment. A pilot study was conducted with 20 participants before the main investigation. Ethical clearance was obtained from the Institutional Human Ethics Committee, and informed consent was obtained from all participants. Self-esteem was assessed using the Sorensen Self-Esteem Scale (Marilyn J. Sorensen, 2006), and social interaction anxiety was measured using the Social Interaction Anxiety Scale (Mattick & Clarke, 1998). The data were analysed using the mean, standard deviation, t-test, and Karl Pearson's correlation coefficient. The findings revealed no significant differences in self-esteem based on gender or visual status. Similarly, no significant differences in social interaction anxiety were observed based on gender or visual status, except that sighted boys demonstrated significantly higher social interaction anxiety than sighted girls and visually impaired boys. A significant relationship between self-esteem and social interaction anxiety was observed among sighted adolescents, adolescents with visual impairment, sighted boys, and visually impaired girls, whereas no significant relationship was found among visually impaired boys and sighted girls. The findings highlight the importance of promoting positive self-esteem and addressing social interaction anxiety through targeted psychological and educational interventions for adolescents.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Dr. A. Sajitha Qadir; Shanmuga Priya. K",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "social participation (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.56975/ijvra.v4i7.709141",
+    "finalDecision": "",
+    "id": "doi_10_56975_ijvra_v4i7_709141",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://ijpub.org/ijvra/papers/IJVRA2607342.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.642Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7169674583",
+        "url": "https://doi.org/10.56975/ijvra.v4i7.709141"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.690Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7169674583",
+        "url": "https://doi.org/10.56975/ijvra.v4i7.709141"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.300Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7169674583",
+        "url": "https://doi.org/10.56975/ijvra.v4i7.709141"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.795Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7169674583",
+        "url": "https://doi.org/10.56975/ijvra.v4i7.709141"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.313Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7169674583",
+        "url": "https://doi.org/10.56975/ijvra.v4i7.709141"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.642Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Self-esteem and social interaction anxiety are important psychological constructs that influence adolescents' emotional well-being, interpersonal relationships, and overall adjustment. Adolescents with visual impairment may encounter additional challenges in social participation because of limitatio",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "SELF-ESTEEM AND SOCIAL INTERACTION ANXIETY AMONG SIGHTED ADOLESCENTS AND ADOLESCENTS WITH VISUAL IMPAIRMENT",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.56975/ijvra.v4i7.709141",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "International Journal of Versatile Research and Analysis",
+    "year": "2026"
+  }
+}

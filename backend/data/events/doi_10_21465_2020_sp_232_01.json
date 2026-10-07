@@ -1,0 +1,371 @@
+[
+  {
+    "id": "evt_1791335614916_ivzxi",
+    "recordId": "doi_10_21465_2020_sp_232_01",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.916Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, and social support factors determine the choice of WISC-IV for intellectual assessment of this population in educational/vocational guidance, (2) to analyze basic findings of the conducted assessments at each WISC-IV subtest. The study was conducted on 102 blind and partially sighted children (51 girls, 34 blind) aged 12 to 16, as part of the regular assessment at Center Vinko Bek. Partially sighted and blind with residual functional vision were tested by all subtests, while the rest of the blind participants were tested only by verbal comprehension (VC) and working memory (WM) subtests. The favorable ratio of blind and partially sighted participants, the fact that the blind with residual functional vision manage to solve all subtests, and mostly quality social support suggest the use of WISC-IV for intellectual assessment of this population. Unfavorable circumstances are the dominant presence of visual impairment from birth, additional health difficulties and late professional help. In the VC subtests both groups show significantly lower values than the norms with moderate deviation (the weakest performance on the Comprehension subtest), while on the WM subtests they achieve a result equal (Digit Span) or moderately lower than the norms (Letter-Number Sequencing). In perceptual reasoning and processing speed subtests the blind show significantly lower while the partially sighted moderately lower scores than the norm. Only the performance of the partially sighted in the Block Design subtest statistically equals that of the sighted population. The findings are interpreted in the context of previous research and developmental, health and social support specifics. Keywords: blind and partially sighted children, WISC-IV, developmental and medical specifics, social support",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ida Poljan; Mislav Stjepan Žebec; Lucija Manzoni; RH Rosclar, Ático, Carrer de Muntaner 239, 08021 Barcelona, Spain",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.21465/2020-sp-232-01",
+      "finalDecision": "",
+      "id": "doi_10_21465_2020_sp_232_01",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Suvremena psihologija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "http://suvremena.nakladaslap.com/public/pdf/23-2-1.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.275Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.275Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, a",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Intellectual Status of Blind and Partially Sighted Children in Croatia Assessed by WISC-IV During Educational and Vocational Guidance: Basic Findings and Relevant Factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.21465/2020-sp-232-01",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Suvremena psihologija",
+      "year": "2020"
+    }
+  },
+  {
+    "id": "evt_1791335618643_v4pje",
+    "recordId": "doi_10_21465_2020_sp_232_01",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.643Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, and social support factors determine the choice of WISC-IV for intellectual assessment of this population in educational/vocational guidance, (2) to analyze basic findings of the conducted assessments at each WISC-IV subtest. The study was conducted on 102 blind and partially sighted children (51 girls, 34 blind) aged 12 to 16, as part of the regular assessment at Center Vinko Bek. Partially sighted and blind with residual functional vision were tested by all subtests, while the rest of the blind participants were tested only by verbal comprehension (VC) and working memory (WM) subtests. The favorable ratio of blind and partially sighted participants, the fact that the blind with residual functional vision manage to solve all subtests, and mostly quality social support suggest the use of WISC-IV for intellectual assessment of this population. Unfavorable circumstances are the dominant presence of visual impairment from birth, additional health difficulties and late professional help. In the VC subtests both groups show significantly lower values than the norms with moderate deviation (the weakest performance on the Comprehension subtest), while on the WM subtests they achieve a result equal (Digit Span) or moderately lower than the norms (Letter-Number Sequencing). In perceptual reasoning and processing speed subtests the blind show significantly lower while the partially sighted moderately lower scores than the norm. Only the performance of the partially sighted in the Block Design subtest statistically equals that of the sighted population. The findings are interpreted in the context of previous research and developmental, health and social support specifics. Keywords: blind and partially sighted children, WISC-IV, developmental and medical specifics, social support",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ida Poljan; Mislav Stjepan Žebec; Lucija Manzoni; RH Rosclar, Ático, Carrer de Muntaner 239, 08021 Barcelona, Spain",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.21465/2020-sp-232-01",
+      "finalDecision": "",
+      "id": "doi_10_21465_2020_sp_232_01",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Suvremena psihologija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "http://suvremena.nakladaslap.com/public/pdf/23-2-1.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.275Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.275Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, a",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Intellectual Status of Blind and Partially Sighted Children in Croatia Assessed by WISC-IV During Educational and Vocational Guidance: Basic Findings and Relevant Factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.21465/2020-sp-232-01",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Suvremena psihologija",
+      "year": "2020",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623990_fla9l",
+    "recordId": "doi_10_21465_2020_sp_232_01",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.990Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, and social support factors determine the choice of WISC-IV for intellectual assessment of this population in educational/vocational guidance, (2) to analyze basic findings of the conducted assessments at each WISC-IV subtest. The study was conducted on 102 blind and partially sighted children (51 girls, 34 blind) aged 12 to 16, as part of the regular assessment at Center Vinko Bek. Partially sighted and blind with residual functional vision were tested by all subtests, while the rest of the blind participants were tested only by verbal comprehension (VC) and working memory (WM) subtests. The favorable ratio of blind and partially sighted participants, the fact that the blind with residual functional vision manage to solve all subtests, and mostly quality social support suggest the use of WISC-IV for intellectual assessment of this population. Unfavorable circumstances are the dominant presence of visual impairment from birth, additional health difficulties and late professional help. In the VC subtests both groups show significantly lower values than the norms with moderate deviation (the weakest performance on the Comprehension subtest), while on the WM subtests they achieve a result equal (Digit Span) or moderately lower than the norms (Letter-Number Sequencing). In perceptual reasoning and processing speed subtests the blind show significantly lower while the partially sighted moderately lower scores than the norm. Only the performance of the partially sighted in the Block Design subtest statistically equals that of the sighted population. The findings are interpreted in the context of previous research and developmental, health and social support specifics. Keywords: blind and partially sighted children, WISC-IV, developmental and medical specifics, social support",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ida Poljan; Mislav Stjepan Žebec; Lucija Manzoni; RH Rosclar, Ático, Carrer de Muntaner 239, 08021 Barcelona, Spain",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.21465/2020-sp-232-01",
+      "finalDecision": "",
+      "id": "doi_10_21465_2020_sp_232_01",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Suvremena psihologija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "http://suvremena.nakladaslap.com/public/pdf/23-2-1.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.275Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.551Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4313134579",
+          "url": "https://doi.org/10.21465/2020-sp-232-01"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.275Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "The intellectual status of blind and partially sighted children in Croatia has not been systematically researched for almost three decades, despite the change in assessment instruments and institutional support forms. The aim of the research was twofold: (1) to elucidate how developmental, health, a",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Intellectual Status of Blind and Partially Sighted Children in Croatia Assessed by WISC-IV During Educational and Vocational Guidance: Basic Findings and Relevant Factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.21465/2020-sp-232-01",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Suvremena psihologija",
+      "year": "2020"
+    }
+  }
+]

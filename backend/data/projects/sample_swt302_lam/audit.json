@@ -1,0 +1,55 @@
+[
+  {
+    "id": "audit_1791343669140_zlqq5",
+    "projectId": "sample_swt302_lam",
+    "timestamp": "2026-10-07T03:27:49.140Z",
+    "eventType": "PROJECT_SAVE",
+    "userId": "Current User",
+    "details": {
+      "name": "Tự động sinh ca kiểm thử REST API áp dụng EP & BVA"
+    }
+  },
+  {
+    "id": "audit_1791343669152_5s4pz",
+    "projectId": "sample_swt302_lam",
+    "timestamp": "2026-10-07T03:27:49.152Z",
+    "eventType": "PROJECT_SAVE",
+    "userId": "Current User",
+    "details": {
+      "name": "Tự động sinh ca kiểm thử REST API áp dụng EP & BVA"
+    }
+  },
+  {
+    "id": "audit_1791343669153_kc6uc",
+    "projectId": "sample_swt302_lam",
+    "timestamp": "2026-10-07T03:27:49.153Z",
+    "eventType": "PROTOCOL_CHANGE",
+    "userId": "Current User",
+    "details": {
+      "version": "v1.0",
+      "affectedDecisionsCount": 0
+    }
+  },
+  {
+    "id": "audit_1791343669222_r2nol",
+    "projectId": "sample_swt302_lam",
+    "timestamp": "2026-10-07T03:27:49.222Z",
+    "eventType": "PROJECT_SAVE",
+    "userId": "Current User",
+    "details": {
+      "name": "Tự động sinh ca kiểm thử REST API áp dụng EP & BVA"
+    }
+  },
+  {
+    "id": "audit_1791343669226_9rpni",
+    "projectId": "sample_swt302_lam",
+    "timestamp": "2026-10-07T03:27:49.226Z",
+    "eventType": "PROTOCOL_CHANGE",
+    "userId": "Current User",
+    "details": {
+      "version": "2.0",
+      "reason": "Thử nghiệm cập nhật tiêu chí sau phản biện",
+      "affectedDecisionsCount": 90
+    }
+  }
+]

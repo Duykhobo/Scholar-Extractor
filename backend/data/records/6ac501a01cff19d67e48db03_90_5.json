@@ -1,0 +1,86 @@
+{
+  "id": "6ac501a01cff19d67e48db03_90_5",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Construction of Humanistic Care System for Visually Impaired Children Based on Social Capital Theory",
+  "authors": "X Luo; H Cui",
+  "year": "2024",
+  "publicationDate": "2026-10-06",
+  "abstract": "… help them better form their self-esteem and self-image … social support system for visually impaired children, pointed out the difficulties in meeting the needs of visually impaired children …",
+  "doi": "",
+  "venue": "8th International Seminar on Education …, 2024",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac501a01cff19d67e48db03_90_5",
+  "landingPageUrl": "https://www.atlantis-press.com/proceedings/isemss-24/126004609",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "X Luo; H Cui",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "evidence_snippets": [],
+    "finalDecision": "",
+    "fullTextStatus": "not_found",
+    "id": "6ac501a01cff19d67e48db03_90_5",
+    "isPdfVerified": false,
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"8th International Seminar on Education …, 2024\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-PUB, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "6ac501a01cff19d67e48db03",
+    "sessionId": "sess_1791295876431_294pe",
+    "snippet": "… help them better form their self-esteem and self-image … social support system for visually impaired children, pointed out the difficulties in meeting the needs of visually impaired children …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "Construction of Humanistic Care System for Visually Impaired Children Based on Social Capital Theory",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.atlantis-press.com/proceedings/isemss-24/126004609",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Unsure",
+    "venue": "8th International Seminar on Education …, 2024",
+    "year": "2024"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "doi_10_31219_osf_io_j45ub_v1",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Mental health and quality of life in children and young people with vision impairment: A systematic review",
+  "authors": "Yiyuan Cheng; Siqi Wang; Georgia Pavlopoulou; Jessica Hayton; Vassilis Sideropoulos",
+  "year": "2024",
+  "publicationDate": "2026-10-06T14:12:15.284Z",
+  "abstract": "A systematic review was conducted to understand mental health, including emotional problems and well-being, self-perception, self- esteem, and quality of life (QoL), in children and young people with vision impairment (CYPVI) aged 6-25 years. Following PRISMA guidelines, of 6623 search results, 21 studies were included in our analysis, meeting inclusion criteria: a) sample had an age of 6-25 years, b) quantitative and qualitative studies; c) age-matched typically sighted control group or age-matched control group who have undergone successful vision treatment. Our data represented samples from 12 countries. Our review found that overall children and young people with vision impairment often experience worse mental health and psychosocial development. The decline in mental health among CYPVI is frequently linked to the inaccessibility they encounter across various life contexts. The findings highlighted the importance of social support from friends and families for CYPVI enabling them to thrive in school and social contexts.",
+  "doi": "10.31219/osf.io/j45ub_v1",
+  "venue": "",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_31219_osf_io_j45ub_v1",
+  "landingPageUrl": "https://doi.org/10.31219/osf.io/j45ub_v1",
+  "openAccessPdfUrl": "https://osf.io/j45ub_v1/download",
+  "retrievedAt": "2026-10-06T14:12:15.284Z",
+  "rawPayload": {
+    "abstract": "A systematic review was conducted to understand mental health, including emotional problems and well-being, self-perception, self- esteem, and quality of life (QoL), in children and young people with vision impairment (CYPVI) aged 6-25 years. Following PRISMA guidelines, of 6623 search results, 21 studies were included in our analysis, meeting inclusion criteria: a) sample had an age of 6-25 years, b) quantitative and qualitative studies; c) age-matched typically sighted control group or age-matched control group who have undergone successful vision treatment. Our data represented samples from 12 countries. Our review found that overall children and young people with vision impairment often experience worse mental health and psychosocial development. The decline in mental health among CYPVI is frequently linked to the inaccessibility they encounter across various life contexts. The findings highlighted the importance of social support from friends and families for CYPVI enabling them to thrive in school and social contexts.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Yiyuan Cheng; Siqi Wang; Georgia Pavlopoulou; Jessica Hayton; Vassilis Sideropoulos",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.31219/osf.io/j45ub_v1",
+    "finalDecision": "",
+    "id": "doi_10_31219_osf_io_j45ub_v1",
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Chưa có thông tin venue xuất bản để xác minh loại hình công bố.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M"
+    ],
+    "pdfUrl": "https://osf.io/j45ub_v1/download",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:15.284Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4409371241",
+        "url": "https://doi.org/10.31219/osf.io/j45ub_v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:37.551Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4409371241",
+        "url": "https://doi.org/10.31219/osf.io/j45ub_v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:59.427Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4409371241",
+        "url": "https://doi.org/10.31219/osf.io/j45ub_v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:36.089Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4409371241",
+        "url": "https://doi.org/10.31219/osf.io/j45ub_v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:48.442Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4409371241",
+        "url": "https://doi.org/10.31219/osf.io/j45ub_v1"
+      }
+    ],
+    "publicationType": "preprint",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:15.284Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "A systematic review was conducted to understand mental health, including emotional problems and well-being, self-perception, self- esteem, and quality of life (QoL), in children and young people with vision impairment (CYPVI) aged 6-25 years. Following PRISMA guidelines, of 6623 search results, 21 s",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Mental health and quality of life in children and young people with vision impairment: A systematic review",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.31219/osf.io/j45ub_v1",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "",
+    "year": "2024"
+  }
+}

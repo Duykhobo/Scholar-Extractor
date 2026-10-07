@@ -1,8 +1,8 @@
-import { ScreeningDecision } from "./types";
+import { LegacyScreeningDecision } from "./types";
 
 export interface ScreeningEvaluation {
   stage: "V1" | "V2";
-  suggestedDecision: ScreeningDecision;
+  suggestedDecision: LegacyScreeningDecision;
   matchedCriteria: string[];
   unknownCriteria: string[];
   missingEvidence: string[];

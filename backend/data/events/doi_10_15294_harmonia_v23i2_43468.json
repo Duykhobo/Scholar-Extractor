@@ -1,0 +1,362 @@
+[
+  {
+    "id": "evt_1791335614983_kypk6",
+    "recordId": "doi_10_15294_harmonia_v23i2_43468",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.983Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On the basis of the PERMA (positive emotion, engagement, relationships, meaning, accomplishment) framework, this study attempts to identify the positive psychology of blind children’s piano learning among teachers, blind students, and parents. This study aims to to fill the research gap of piano learning among blind children. Interviews were conducted with piano teachers, blind students, and their parents (N=56) using a qualitative research methodology through PERMA framework. The data identified that piano teachers’ instruction was influenced by their preparation of teaching and personal attitudes. Findings also revealed that the positive emotion, sense of engagement, and positive relationships, impacted the accomplishment and achievement of all participants. This study demonstrates that teachers’ preparation experience and positive attitudes, engagement, and building rapport with blind children and their parents are crucial to promoting their piano learning. This study offers readers the chance to get insight into the field of piano instruction for the blind as well as illumination from thought and empirical support for piano teachers and music educators in inclusive music education in China.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jiang Xin; Chiew Hwa Poon; Shelly C. Cooper; Cheong Ku Wing",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.15294/harmonia.v23i2.43468",
+      "finalDecision": "",
+      "id": "doi_10_15294_harmonia_v23i2_43468",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://journal.unnes.ac.id/nju/index.php/harmonia/article/download/43468/15343",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Teaching Piano to Blind Children: An Analysis of Positive Perceptions Based on Perma Framework in Qingdao, China",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.15294/harmonia.v23i2.43468",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Harmonia Journal of Arts Research and Education",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335618753_c6n34",
+    "recordId": "doi_10_15294_harmonia_v23i2_43468",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.753Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On the basis of the PERMA (positive emotion, engagement, relationships, meaning, accomplishment) framework, this study attempts to identify the positive psychology of blind children’s piano learning among teachers, blind students, and parents. This study aims to to fill the research gap of piano learning among blind children. Interviews were conducted with piano teachers, blind students, and their parents (N=56) using a qualitative research methodology through PERMA framework. The data identified that piano teachers’ instruction was influenced by their preparation of teaching and personal attitudes. Findings also revealed that the positive emotion, sense of engagement, and positive relationships, impacted the accomplishment and achievement of all participants. This study demonstrates that teachers’ preparation experience and positive attitudes, engagement, and building rapport with blind children and their parents are crucial to promoting their piano learning. This study offers readers the chance to get insight into the field of piano instruction for the blind as well as illumination from thought and empirical support for piano teachers and music educators in inclusive music education in China.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jiang Xin; Chiew Hwa Poon; Shelly C. Cooper; Cheong Ku Wing",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.15294/harmonia.v23i2.43468",
+      "finalDecision": "",
+      "id": "doi_10_15294_harmonia_v23i2_43468",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://journal.unnes.ac.id/nju/index.php/harmonia/article/download/43468/15343",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Teaching Piano to Blind Children: An Analysis of Positive Perceptions Based on Perma Framework in Qingdao, China",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.15294/harmonia.v23i2.43468",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Harmonia Journal of Arts Research and Education",
+      "year": "2023",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624098_u2931",
+    "recordId": "doi_10_15294_harmonia_v23i2_43468",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.098Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On the basis of the PERMA (positive emotion, engagement, relationships, meaning, accomplishment) framework, this study attempts to identify the positive psychology of blind children’s piano learning among teachers, blind students, and parents. This study aims to to fill the research gap of piano learning among blind children. Interviews were conducted with piano teachers, blind students, and their parents (N=56) using a qualitative research methodology through PERMA framework. The data identified that piano teachers’ instruction was influenced by their preparation of teaching and personal attitudes. Findings also revealed that the positive emotion, sense of engagement, and positive relationships, impacted the accomplishment and achievement of all participants. This study demonstrates that teachers’ preparation experience and positive attitudes, engagement, and building rapport with blind children and their parents are crucial to promoting their piano learning. This study offers readers the chance to get insight into the field of piano instruction for the blind as well as illumination from thought and empirical support for piano teachers and music educators in inclusive music education in China.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jiang Xin; Chiew Hwa Poon; Shelly C. Cooper; Cheong Ku Wing",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.15294/harmonia.v23i2.43468",
+      "finalDecision": "",
+      "id": "doi_10_15294_harmonia_v23i2_43468",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://journal.unnes.ac.id/nju/index.php/harmonia/article/download/43468/15343",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.311Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4390439888",
+          "url": "https://doi.org/10.15294/harmonia.v23i2.43468"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Blind children can benefit from music education as it enhances their musical skills and auditory abilities. However, blind children in China face challenges in pursuing music education due to issues such as social stigma and lack of qualified teachers. Moreover, research in this area is lacking. On ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Teaching Piano to Blind Children: An Analysis of Positive Perceptions Based on Perma Framework in Qingdao, China",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.15294/harmonia.v23i2.43468",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Harmonia Journal of Arts Research and Education",
+      "year": "2023"
+    }
+  }
+]

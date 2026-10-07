@@ -1,0 +1,25 @@
+{
+  "id": "import_1791352982284",
+  "collectionId": "col_1791352883298_1x8f7",
+  "source": "File Import: 01_all_records.csv",
+  "userQuery": "01_all_records.csv",
+  "actualQuery": "01_all_records.csv",
+  "filters": {},
+  "status": "completed",
+  "itemsReceived": 0,
+  "itemsSaved": 0,
+  "itemsError": 9,
+  "startedAt": "2026-10-07T06:03:02.284Z",
+  "completedAt": "2026-10-07T06:03:02.284Z",
+  "errorLog": [
+    "Row 2: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 3: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 4: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 5: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 6: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 7: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 8: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 9: Dòng thiếu cả tiêu đề và DOI.",
+    "Row 10: Dòng thiếu cả tiêu đề và DOI."
+  ]
+}

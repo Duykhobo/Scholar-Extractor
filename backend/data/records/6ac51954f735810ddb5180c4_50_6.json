@@ -1,0 +1,87 @@
+{
+  "id": "6ac51954f735810ddb5180c4_50_6",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Analysis of the Levels of Self-Concept of People with Blindness in Harare Metropolitan Province, Zimbabwe.",
+  "authors": "H Wasosa; S Mutisya; V Munywoki",
+  "year": "",
+  "publicationDate": "2026-10-06",
+  "abstract": "… lower levels of self-esteem and self-efficacy compared to sighted … to counseling, mentoring, and peer support programs, which are … of social skills of children with visual impairments: self-…",
+  "doi": "",
+  "venue": "academia.edu",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac51954f735810ddb5180c4_50_6",
+  "landingPageUrl": "https://www.academia.edu/download/121995780/732_758.pdf",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "H Wasosa; S Mutisya; V Munywoki",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "self-efficacy (Secondary)",
+      "self-concept (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac50193fbbebbaad520627c_50_6",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Analysis of the Levels of Self-Concept of People with Blindness in Harare Metropolitan Province, Zimbabwe.\"",
+    "finalDecision": "",
+    "id": "6ac51954f735810ddb5180c4_50_6",
+    "literatureGroup": "direct",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-EC-DUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"academia.edu\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "X",
+      "Y",
+      "H3"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Analysis of the Levels of Self-Concept of People with Blindness in Harare Metropolitan Province, Zimbabwe.\").",
+    "screeningStage": "V2",
+    "search_id": "6ac51954f735810ddb5180c4",
+    "sessionId": "",
+    "snippet": "… lower levels of self-esteem and self-efficacy compared to sighted … to counseling, mentoring, and peer support programs, which are … of social skills of children with visual impairments: self-…",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Analysis of the Levels of Self-Concept of People with Blindness in Harare Metropolitan Province, Zimbabwe.",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": true,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.academia.edu/download/121995780/732_758.pdf",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "academia.edu",
+    "year": ""
+  }
+}

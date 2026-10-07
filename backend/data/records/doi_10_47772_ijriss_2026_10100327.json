@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_47772_ijriss_2026_10100327",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "The Eyes of Me: How Congenitally Blind Children Construct Reality",
+  "authors": "Marithel Kate Cabungcag; Riza Mae Nobleza; Nikkie Oyanguren; June Rey A. Villegas",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:15.283Z",
+  "abstract": "This case study explores how congenitally blind children construct, perceive, and give meaning to reality in the absence of sight. Motivated by the scarcity of Philippine-based research on childhood congenital blindness, the study focuses on the lived experiences of congenitally blind children from Zapatera Elementary School, examining the challenges they encounter, the impact of blindness on their well-being and quality of life, and the sensory, communicative, and social processes through which they understand their world. Using a qualitative case study design, data were gathered through validated semi-structured interviews with the children, their guardians, and their teachers, supported by reflexive thematic analysis. Findings reveal that the children face significant challenges in mobility, environmental navigation, access to visual learning, and social participation. Despite these, they demonstrate strong adaptive strategies, reliance on auditory and tactile cues, heightened curiosity through questioning, and trust in verbal descriptions provided by caregivers and teachers. Congenital blindness was shown to influence their emotional landscape, shaping experiences of dependence, occasional social isolation, and the development of selfconfidence and resilience. The study also highlights how reality construction among congenitally blind children emerges through non-visual sensory experience, consistent environmental structure, language-based meaning-making, and social interaction. This research contributes to inclusive psychological understanding, informing educators, caregivers, and policymakers on more responsive and empowering approaches to supporting blind children’s development, learning, and social well-being.",
+  "doi": "10.47772/ijriss.2026.10100327",
+  "venue": "International Journal of Research and Innovation in Social Science",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_47772_ijriss_2026_10100327",
+  "landingPageUrl": "https://doi.org/10.47772/ijriss.2026.10100327",
+  "openAccessPdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss1-pg4227-4240-202602_pdf.pdf",
+  "retrievedAt": "2026-10-06T14:12:15.283Z",
+  "rawPayload": {
+    "abstract": "This case study explores how congenitally blind children construct, perceive, and give meaning to reality in the absence of sight. Motivated by the scarcity of Philippine-based research on childhood congenital blindness, the study focuses on the lived experiences of congenitally blind children from Zapatera Elementary School, examining the challenges they encounter, the impact of blindness on their well-being and quality of life, and the sensory, communicative, and social processes through which they understand their world. Using a qualitative case study design, data were gathered through validated semi-structured interviews with the children, their guardians, and their teachers, supported by reflexive thematic analysis. Findings reveal that the children face significant challenges in mobility, environmental navigation, access to visual learning, and social participation. Despite these, they demonstrate strong adaptive strategies, reliance on auditory and tactile cues, heightened curiosity through questioning, and trust in verbal descriptions provided by caregivers and teachers. Congenital blindness was shown to influence their emotional landscape, shaping experiences of dependence, occasional social isolation, and the development of selfconfidence and resilience. The study also highlights how reality construction among congenitally blind children emerges through non-visual sensory experience, consistent environmental structure, language-based meaning-making, and social interaction. This research contributes to inclusive psychological understanding, informing educators, caregivers, and policymakers on more responsive and empowering approaches to supporting blind children’s development, learning, and social well-being.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Marithel Kate Cabungcag; Riza Mae Nobleza; Nikkie Oyanguren; June Rey A. Villegas",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "social participation (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.47772/ijriss.2026.10100327",
+    "finalDecision": "",
+    "id": "doi_10_47772_ijriss_2026_10100327",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss1-pg4227-4240-202602_pdf.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:15.283Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7127892996",
+        "url": "https://doi.org/10.47772/ijriss.2026.10100327"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:37.551Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7127892996",
+        "url": "https://doi.org/10.47772/ijriss.2026.10100327"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:59.427Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7127892996",
+        "url": "https://doi.org/10.47772/ijriss.2026.10100327"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:36.088Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7127892996",
+        "url": "https://doi.org/10.47772/ijriss.2026.10100327"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:48.442Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7127892996",
+        "url": "https://doi.org/10.47772/ijriss.2026.10100327"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:15.283Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "This case study explores how congenitally blind children construct, perceive, and give meaning to reality in the absence of sight. Motivated by the scarcity of Philippine-based research on childhood congenital blindness, the study focuses on the lived experiences of congenitally blind children from ",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "The Eyes of Me: How Congenitally Blind Children Construct Reality",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.47772/ijriss.2026.10100327",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "International Journal of Research and Innovation in Social Science",
+    "year": "2026"
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "evt_1791335626208_97evj",
+    "recordId": "p1",
+    "collectionId": "test_research_001",
+    "searchRunId": "migrated_run_test_research_001",
+    "source": "S1",
+    "retrievedAt": "2026-10-07T01:13:46.208Z",
+    "rawQuery": "",
+    "actualQuery": "",
+    "rawData": {
+      "id": "p1",
+      "source": "S1",
+      "discoverySource": "S1",
+      "collectionMethod": "api",
+      "title": "Paper 1",
+      "authors": "A",
+      "year": "2024",
+      "venue": "V",
+      "doi": "10.1/1",
+      "snippet": "",
+      "abstract": "",
+      "url": "",
+      "query": "",
+      "retrieval_date": "",
+      "search_id": "",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": false,
+      "missing_abstract": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "",
+      "finalDecision": "",
+      "userNotes": ""
+    }
+  },
+  {
+    "id": "evt_1791335626216_sqncj",
+    "recordId": "p1",
+    "collectionId": "test_research_001",
+    "searchRunId": "migrated_run_test_research_001",
+    "source": "S1",
+    "retrievedAt": "2026-10-07T01:13:46.216Z",
+    "rawQuery": "",
+    "actualQuery": "",
+    "rawData": {
+      "id": "p1",
+      "source": "S1",
+      "discoverySource": "S1",
+      "collectionMethod": "api",
+      "title": "Paper 1",
+      "authors": "A",
+      "year": "2024",
+      "venue": "V",
+      "doi": "10.1/1",
+      "snippet": "",
+      "abstract": "",
+      "url": "",
+      "query": "",
+      "retrieval_date": "",
+      "search_id": "",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": false,
+      "missing_abstract": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V1",
+      "allSources": [
+        "S1"
+      ],
+      "provenanceList": [
+        {
+          "source": "S1",
+          "sourceRecordId": "p1",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:30:56.890Z",
+          "method": "api",
+          "url": ""
+        }
+      ],
+      "mergedRecordIds": []
+    }
+  }
+]

@@ -1,0 +1,465 @@
+[
+  {
+    "id": "evt_1791335618403_yz82a",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.403Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791307786904",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:13.771Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335625745_pv08k",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.745Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335625839_1z62c",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.839Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_10",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_10], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335625908_0n0j7",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.908Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_10",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_10], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335625985_mpst6",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.985Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335626068_3akx7",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.068Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_10",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_10], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335626142_640rr",
+    "recordId": "6ac59618d3c512f204a3aefa_0_10",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.142Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Promoting the social adjustment of visually impaired students: A perception of teachers in inclusive set-up",
+      "authors": "K Iqbal; M Maqsood; G Fatima",
+      "year": "2023",
+      "venue": "Global Social Sciences Review",
+      "doi": "",
+      "snippet": "… students must be socially adjusted to receive peer support and a supportive environment. In … a significant impact on how well visually impaired children adjust socially. The influence of …",
+      "abstract": "",
+      "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_10",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.gssrjournal.com/article/promoting-the-social-adjustment-of-visually-impaired-students-a-perception-of-teachers-in-inclusive-setup"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_10",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_10], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  }
+]

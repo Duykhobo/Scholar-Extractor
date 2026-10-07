@@ -1,0 +1,168 @@
+[
+  {
+    "id": "evt_1791335618164_az1os",
+    "recordId": "6ac52151de1f33e504e8aec1_40_6",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.164Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "I Hess",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac52151de1f33e504e8aec1_40_6",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T16:26:59.804Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac52151de1f33e504e8aec1_40_6",
+          "url": "https://www.academia.edu/download/108090275/ijamh.2011.05320231130-1-wm6j1e.pdf"
+        }
+      ],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-CONF, VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "6ac52151de1f33e504e8aec1",
+      "snippet": "… Social support and self esteem among adolescence with visual impairment. J Vis Impair assistance from the system workers and the peers to students Blind 1999;93:26–37. with special …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "Students with visual impairments in Israel: quality of life as a subjective experience",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.academia.edu/download/108090275/ijamh.2011.05320231130-1-wm6j1e.pdf",
+      "userNotes": "",
+      "v2Decision": "Unsure",
+      "venue": "International journal of adolescent medicine and health",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335622467_e15cb",
+    "recordId": "6ac52151de1f33e504e8aec1_40_6",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:42.467Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac52151de1f33e504e8aec1_40_6",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Students with visual impairments in Israel: quality of life as a subjective experience",
+      "authors": "I Hess",
+      "year": "2011",
+      "venue": "International journal of adolescent medicine and health",
+      "doi": "",
+      "snippet": "… Social support and self esteem among adolescence with visual impairment. J Vis Impair assistance from the system workers and the peers to students Blind 1999;93:26–37. with special …",
+      "abstract": "",
+      "url": "https://www.academia.edu/download/108090275/ijamh.2011.05320231130-1-wm6j1e.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac52151de1f33e504e8aec1",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-PUB"
+      ],
+      "unknownCriteria": [
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-CONF, VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "V3",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac52151de1f33e504e8aec1_40_6",
+          "queryId": "session_1791304011417",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T16:26:59.804Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.academia.edu/download/108090275/ijamh.2011.05320231130-1-wm6j1e.pdf"
+        }
+      ],
+      "allSources": [
+        "Google Scholar"
+      ],
+      "mergedRecordIds": [],
+      "conceptLabels": [],
+      "modelContribution": [
+        "M"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Unsure",
+      "v3Decision": "Unsure",
+      "evidence_snippets": [],
+      "isPdfVerified": false,
+      "fullTextStatus": "not_found"
+    }
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "id": "6ac510cc03610a6783c688d9_20_18",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Students' perception of Classroom Environment in China and its relationship to Creativity of Students who have visual impairments",
+  "authors": "Y Zhang; S Rosen; M Chen; J Du; L Cheng",
+  "year": "2021",
+  "publicationDate": "2026-10-06",
+  "abstract": "… from five dimensions: teacher leadership, teacher support, student relationship, student … Two students specifically focused on children with visual impairments, and the other two …",
+  "doi": "",
+  "venue": "Journal of Developmental …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac510cc03610a6783c688d9_20_18",
+  "landingPageUrl": "https://link.springer.com/article/10.1007/s10882-020-09733-1",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "Y Zhang; S Rosen; M Chen; J Du; L Cheng",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "finalDecision": "",
+    "id": "6ac510cc03610a6783c688d9_20_18",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "X"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791301742963",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:49:11.696Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac510cc03610a6783c688d9_20_18",
+        "url": "https://link.springer.com/article/10.1007/s10882-020-09733-1"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-CONF, VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "6ac510cc03610a6783c688d9",
+    "snippet": "… from five dimensions: teacher leadership, teacher support, student relationship, student … Two students specifically focused on children with visual impairments, and the other two …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "Students' perception of Classroom Environment in China and its relationship to Creativity of Students who have visual impairments",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://link.springer.com/article/10.1007/s10882-020-09733-1",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "venue": "Journal of Developmental …",
+    "year": "2021"
+  }
+}

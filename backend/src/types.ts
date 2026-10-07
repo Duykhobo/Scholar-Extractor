@@ -80,7 +80,7 @@ export interface SerpApiRawResponse {
   error?: string;
 }
 
-export type ScreeningDecision = "Include" | "Exclude" | "Unsure";
+export type LegacyScreeningDecision = "Include" | "Exclude" | "Unsure";
 
 export interface PaperRecord {
   id: string; // generated unique id
@@ -118,9 +118,9 @@ export interface PaperRecord {
   matchedCriteria: string[];
   unknownCriteria?: string[];
   missingEvidence?: string[];
-  suggestedDecision: ScreeningDecision;
+  suggestedDecision: LegacyScreeningDecision;
   screeningReason: string;
-  finalDecision: ScreeningDecision | "";
+  finalDecision: LegacyScreeningDecision | "";
   userNotes: string;
 
   // Provenance & Du lieu bo sung tu tab dang mo / PDF / Nguon
@@ -206,7 +206,7 @@ export interface TabAnalysisResult {
   evidence: EvidenceSnippet[];
   suggestedScreeningUpdate?: {
     stage: "V1" | "V2";
-    suggestedDecision: ScreeningDecision;
+    suggestedDecision: LegacyScreeningDecision;
     matchedCriteria: string[];
     unknownCriteria: string[];
     missingEvidence: string[];
@@ -503,4 +503,482 @@ export interface SnowballExecutionRecord {
   errors?: string[];
   timestamp: string;
 }
+
+// ==========================================
+// MÔ HÌNH DỮ LIỆU CÔNG CỤ CHỈ THU THẬP (COLLECTOR-ONLY)
+// ==========================================
+
+export interface Collection {
+  id: string;
+  name: string;
+  description?: string;
+  notes?: string; // Ghi chú tùy chọn (RQ, PICO, bối cảnh nghiên cứu)
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type SearchRunStatus =
+  | "queued"
+  | "running"
+  | "paused"
+  | "completed"
+  | "completed_with_errors"
+  | "failed"
+  | "cancelled";
+
+export interface SearchRun {
+  id: string;
+  collectionId: string;
+  source: string;
+  userQuery: string;
+  actualQuery: string;
+  filters: {
+    yearStart?: number;
+    yearEnd?: number;
+    documentType?: string;
+    maxResults?: number;
+    [key: string]: any;
+  };
+  status: SearchRunStatus;
+  progressPercent?: number;
+  totalReported?: number;
+  itemsReceived: number;
+  itemsSaved: number;
+  itemsError: number;
+  checkpoint?: {
+    cursor?: string;
+    offset?: number;
+    page?: number;
+    lastProcessedId?: string;
+  };
+  startedAt: string;
+  completedAt?: string;
+  errorLog: string[];
+  searchUrl?: string;
+  totalFoundSource?: number;
+  importedCount?: number;
+  failedCount?: number;
+  executedAt?: string;
+  executedBy?: string;
+}
+
+export interface NormalizedRecord {
+  id: string;
+  collectionId?: string;
+  searchRunId?: string;
+  title: string;
+  authors: string;
+  year: string;
+  publicationDate?: string;
+  abstract: string;
+  doi: string;
+  venue: string;
+  publisher?: string;
+  documentType?: string;
+  language?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  source: string;
+  sourceRecordId: string;
+  landingPageUrl: string;
+  openAccessPdfUrl?: string;
+  citationCount?: number;
+  retrievedAt: string;
+  rawPayload?: any; // Giữ nguyên payload gốc
+}
+
+export interface RetrievalEvent {
+  id: string;
+  recordId: string;
+  collectionId: string;
+  searchRunId: string;
+  source: string;
+  retrievedAt: string;
+  rawQuery: string;
+  actualQuery: string;
+  rawData?: any;
+}
+
+export interface SnowballConfig {
+  seeds: string[]; // DOI, URL, hoặc ID
+  direction: "backward" | "forward" | "both";
+  maxDepth: number;
+  maxPapersPerSeed: number;
+  source?: string;
+}
+
+// ==========================================
+// CÁC CẤP ĐỘ LỌC SƠ BỘ DỮ LIỆU (L0 - L3)
+// ==========================================
+
+// L0: Chuẩn hóa & Gắn cờ chất lượng dữ liệu
+export interface DataQualityFlags {
+  missing_title: boolean;
+  missing_abstract: boolean;
+  missing_year: boolean;
+  missing_doi: boolean;
+  missing_fulltext: boolean;
+  needs_data_review: boolean; // Không tiêu đề và không định danh
+}
+
+// L1: Nhóm trùng nghi ngờ (chờ người dùng xác nhận Merge hoặc Keep separate)
+export interface SuspectedDuplicateGroup {
+  id: string;
+  collectionId: string;
+  title: string;
+  year?: string;
+  similarity: number;
+  recordIds: string[];
+  canonicalRecordId?: string;
+  resolution: "unresolved" | "merged" | "separated";
+  resolvedAt?: string;
+}
+
+// L1: Canonical Record (đại diện cho bài báo sau khi gộp trùng chắc chắn hoặc người dùng merge)
+export interface CanonicalRecord extends NormalizedRecord {
+  displayId?: string;
+  normalizedTitle?: string;
+  version?: string;
+  docType?: string;
+  url?: string;
+  searchOccurrences?: SearchOccurrence[];
+  isContainer?: boolean;
+  containerId?: string;
+  childRecordIds?: string[];
+  createdAt?: string;
+  mergedRecordIds: string[];
+  duplicateGroupId?: string;
+  sourcesList: string[];
+  qualityFlags: DataQualityFlags;
+  // Kết quả lọc L2 & L3 mới nhất
+  latestFilterResult?: {
+    filterRunId: string;
+    metadataStatus: "PASS" | "FAIL" | "UNKNOWN";
+    metadataReasons: string[];
+    keywordStatus?: "MATCH" | "NO_MATCH" | "INSUFFICIENT_DATA";
+    hasExclusionHit?: boolean;
+    matchedTerms?: string[];
+    matchedFields?: string[];
+  };
+}
+
+// L2: Cấu hình lọc điều kiện khách quan
+export interface MetadataFilterConfig {
+  yearRange?: {
+    enabled: boolean;
+    start?: number;
+    end?: number;
+  };
+  language?: {
+    enabled: boolean;
+    allowedLanguages: string[]; // e.g. ["en", "english"]
+  };
+  documentType?: {
+    enabled: boolean;
+    allowedTypes: string[]; // e.g. ["journal-article", "proceedings-article", "review", "preprint", "thesis"]
+  };
+}
+
+export type MetadataConditionStatus = "PASS" | "FAIL" | "UNKNOWN";
+
+export interface MetadataEvaluationResult {
+  recordId: string;
+  overallStatus: "PASS" | "FAIL" | "UNKNOWN";
+  reasons: string[];
+  details: {
+    yearStatus?: MetadataConditionStatus;
+    languageStatus?: MetadataConditionStatus;
+    typeStatus?: MetadataConditionStatus;
+  };
+}
+
+// L3: Cấu hình kiểm tra từ khóa trên title / abstract
+export interface KeywordGroup {
+  id: string;
+  name: string;
+  terms: string[]; // Nối bằng OR trong cùng nhóm
+}
+
+export interface KeywordFilterConfig {
+  version: string;
+  groups: KeywordGroup[]; // Các nhóm nối bằng AND
+  exclusionTerms: string[];
+  scope: "title" | "title_abstract";
+}
+
+export type KeywordStatus = "MATCH" | "NO_MATCH" | "INSUFFICIENT_DATA";
+
+export interface KeywordEvaluationResult {
+  recordId: string;
+  status: KeywordStatus;
+  hasExclusionHit: boolean;
+  matchedTerms: string[];
+  matchedFields: string[];
+  snippets: string[];
+  exclusionMatches: string[];
+}
+
+// Bản ghi lưu tiến trình và snapshot mỗi lần chạy L2 / L3
+export interface FilterRun {
+  id: string;
+  collectionId: string;
+  version: string;
+  timestamp: string;
+  filterType: "L2_metadata" | "L3_keyword" | "combined";
+  metadataConfig?: MetadataFilterConfig;
+  keywordConfig?: KeywordFilterConfig;
+  totalEvaluated: number;
+  counts: {
+    pass?: number;
+    fail?: number;
+    unknown?: number;
+    keywordMatch?: number;
+    keywordNoMatch?: number;
+    keywordInsufficient?: number;
+    exclusionHit?: number;
+  };
+  recordResults: Record<
+    string,
+    {
+      metadataStatus?: "PASS" | "FAIL" | "UNKNOWN";
+      metadataReasons?: string[];
+      keywordStatus?: KeywordStatus;
+      hasExclusionHit?: boolean;
+      matchedTerms?: string[];
+    }
+  >;
+}
+
+// ==========================================
+// MÔ HÌNH DỮ LIỆU ĐA DỰ ÁN LITERATURE REVIEW (PROJECT -> EXPORT)
+// ==========================================
+
+export type FrameworkType = "PICO" | "PICOS" | "SPIDER" | "Custom" | "None";
+
+export interface PicoConfig {
+  population?: string;
+  intervention?: string;
+  comparison?: string;
+  outcome?: string;
+  customFields?: Record<string, string>;
+}
+
+export interface Member {
+  id: string;
+  name: string;
+  email?: string;
+  role: string; // e.g. "Lead Reviewer", "Reviewer", "Data Extractor"
+  assignedSources: string[]; // e.g. ["ACM Digital Library", "IEEE Xplore"]
+  isReviewer: boolean;
+  isExtractor: boolean;
+  plannedAuthorOrder?: number;
+  confirmedFinalDraft?: boolean;
+}
+
+export interface Criterion {
+  id: string;
+  code: string; // e.g. "IC-L", "IC-T", "IC-E", "IC-Y", "IC-P", "IC-I", "EC-D", "EC-A", "EC-S", "EC-N", "EC-O"
+  name: string;
+  description: string;
+  kind: "inclusion" | "exclusion";
+  stage: "v1" | "v2" | "both";
+  evidenceRequirements?: string;
+  evaluationMethod: "auto" | "suggested" | "manual";
+  isActive: boolean;
+}
+
+export interface ProtocolVersion {
+  version: string; // "v1.0", "v1.1", "v2.0"
+  projectId: string;
+  title: string;
+  description?: string;
+  reasonForChange?: string;
+  changeReason?: string;
+  createdBy?: string;
+  createdAt: string;
+  criteria: Criterion[];
+  sourcePolicies: Record<string, { role: "primary" | "supplementary" | "excluded"; notes?: string }>;
+}
+
+export interface QueryBlock {
+  block: "P" | "I" | "C" | "O" | "custom";
+  blockName?: string;
+  keywords: string[];
+  synonyms: Record<string, string[]>;
+}
+
+export interface QueryVersion {
+  id: string;
+  projectId: string;
+  versionTag: string; // "V1", "V2", "V3"
+  rawQuery: string;
+  targetDatabase: string;
+  searchFields?: string; // e.g. "AllField", "Title/Abstract"
+  filtersApplied?: Record<string, any>;
+  expansionRuleApplied?: string; // e.g. "<20 kết quả: bỏ khối O"
+  createdAt: string;
+}
+
+export interface SearchOccurrence {
+  id: string;
+  canonicalId: string;
+  searchRunId: string;
+  source: string;
+  sourceRecordId?: string;
+  queryVersionTag?: string;
+  rawPayload?: any;
+  retrievedAt: string;
+}
+
+export interface DuplicateCandidate {
+  id: string;
+  projectId: string;
+  recordIdA: string;
+  recordIdB: string;
+  similarity: number;
+  reason: string;
+  status: "unresolved" | "merged" | "separated";
+  resolvedBy?: string;
+  resolvedAt?: string;
+}
+
+export interface ScreeningDecision {
+  recordId: string;
+  projectId: string;
+  protocolVersion: string;
+  stage: "v1" | "v2";
+  decision: "PENDING" | "INCLUDE" | "EXCLUDE" | "UNSURE";
+  primaryReason?: string;
+  primaryReasonCode?: string;
+  secondaryReasons?: string[];
+  reasonText?: string;
+  notes?: string;
+  decidedBy?: string;
+  decidedAt?: string;
+  isOutdated?: boolean; // Đánh dấu khi protocol thay đổi
+}
+
+export interface FullTextAttempt {
+  id: string;
+  recordId: string;
+  projectId: string;
+  status: "NOT_ATTEMPTED" | "FOUND" | "UNAVAILABLE";
+  url?: string;
+  source?: string;
+  version?: string; // "Published", "Author Preprint", "Repository"
+  pageCount?: number;
+  isImagePdf?: boolean;
+  notes?: string;
+  attemptedAt: string;
+  attemptedBy?: string;
+}
+
+export interface EvidenceCitation {
+  field: string;
+  sourceUrl?: string;
+  page?: string;
+  section?: string;
+  tableOrFigure?: string;
+  snippet?: string;
+  verifiedStatus: "unverified" | "verified" | "insufficient_evidence";
+}
+
+export interface EvidenceEntry {
+  id: string;
+  recordId: string; // Liên kết canonical displayId (ví dụ "R55")
+  projectId: string;
+  paperDisplay: string; // Tên + năm + venue + DOI
+  toolOrLlm: string; // Tool/LLM
+  dataset: string; // Dataset
+  metric: string; // Metric
+  result: string; // Kết quả (số THẬT đọc từ bài)
+  code: string; // Link code / replication
+  limitations: string; // Hạn chế
+  nearRq: string; // Gần RQ (e.g. "2/4 — P,O")
+  nearRqBreakdown?: {
+    p: boolean;
+    i: boolean;
+    c: boolean;
+    o: boolean;
+    explanation?: string;
+  };
+  citations: EvidenceCitation[];
+  enteredBy?: string;
+  enteredAt?: string;
+}
+
+export interface SnowballingLink {
+  id: string;
+  projectId: string;
+  seedRecordId: string;
+  direction: "backward" | "forward";
+  round: number;
+  source: string;
+  discoveredRecordId: string;
+  citationRelation: string;
+  performedBy?: string;
+  performedAt: string;
+}
+
+export interface AuditEvent {
+  id: string;
+  projectId: string;
+  timestamp: string;
+  eventType: string; // "PROTOCOL_CHANGE", "DECISION_UPDATE", "MERGE_RECORD", "IMPORT_CSV", etc.
+  userId?: string;
+  details: Record<string, any>;
+}
+
+export interface ValidationReport {
+  projectId: string;
+  timestamp: string;
+  isBalanced: boolean;
+  prismaNumbers: {
+    totalRawOccurrences: number;
+    duplicatesRemoved: number;
+    recordsScreenedV1: number;
+    excludedV1: number;
+    passedV1: number; // INCLUDE + UNSURE
+    reportsSought: number;
+    reportsNotRetrieved: number;
+    reportsAssessedV2: number;
+    excludedV2: number;
+    includedFinal: number;
+  };
+  blockingIssues: string[]; // Các lỗi chặn xuất bản FINAL
+  warnings: string[];
+  pendingCounts: {
+    v1Pending: number;
+    v2Pending: number;
+    fullTextPending: number;
+    unresolvedDuplicates: number;
+    outdatedDecisions: number;
+  };
+  status: "DRAFT" | "FINAL";
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  rqCode?: string;
+  teamName?: string;
+  rq?: string;
+  h0?: string;
+  h1?: string;
+  framework: FrameworkType;
+  pico?: PicoConfig;
+  members: Member[];
+  searchPeriod?: {
+    startDate?: string;
+    endDate?: string;
+    timezone?: string;
+  };
+  reportLanguage: "vi" | "en";
+  activeProtocolVersion: string;
+  activeStage?: "PROJECT" | "PROTOCOL" | "SEARCH" | "RECORDS" | "SCREENING_V1" | "SCREENING_V2" | "EVIDENCE" | "VALIDATION" | "EXPORT";
+  createdAt: string;
+  updatedAt: string;
+}
+
 

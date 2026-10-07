@@ -1,0 +1,42 @@
+[
+  {
+    "version": "1.0",
+    "projectId": "proj_1791353440132_b83br",
+    "title": "Protocol khởi tạo",
+    "reasonForChange": "Cập nhật protocol nghiên cứu",
+    "createdAt": "2026-10-07T06:10:40.158Z",
+    "criteria": [
+      {
+        "id": "crit_ic_1791353440157_1",
+        "code": "IC-1",
+        "name": "Phù hợp chủ đề nghiên cứu",
+        "description": "Bài báo đề cập trực tiếp đến câu hỏi nghiên cứu.",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "manual",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_1791353440157_1",
+        "code": "EC-1",
+        "name": "Không có thực nghiệm",
+        "description": "Chỉ là tài liệu tổng quan ngắn hoặc ý tưởng chưa đánh giá.",
+        "kind": "exclusion",
+        "stage": "v1",
+        "evaluationMethod": "manual",
+        "isActive": true
+      }
+    ],
+    "sourcePolicies": {
+      "IEEE Xplore": {
+        "role": "primary"
+      },
+      "ACM Digital Library": {
+        "role": "primary"
+      },
+      "Google Scholar": {
+        "role": "supplementary"
+      }
+    }
+  }
+]

@@ -324,3 +324,150 @@ export interface SearchExecutionSummary {
   executedParams: Record<string, any>;
   timestamp: string;
 }
+
+// -------------------------------------------------------------
+// Collector & Preliminary Filtering (L0 - L3) Scope Types
+// -------------------------------------------------------------
+
+export type CollectorStage = "COLLECTIONS" | "SEARCH" | "COLLECTOR" | "FILTERING" | "EXPORT";
+
+export interface CollectionSummary {
+  id: string;
+  name: string;
+  description?: string;
+  researchQuestions?: string[];
+  picoNotes?: string;
+  createdAt: string;
+  updatedAt: string;
+  rawRecordCount?: number;
+  uniqueRecordCount?: number;
+  suspectedDuplicateGroupCount?: number;
+  filterRunCount?: number;
+  searchRunCount?: number;
+}
+
+export interface DataQualityFlags {
+  missing_title: boolean;
+  missing_abstract: boolean;
+  missing_year: boolean;
+  missing_doi: boolean;
+  missing_fulltext: boolean;
+  needs_data_review: boolean;
+}
+
+export interface RetrievalEvent {
+  eventId: string;
+  source: string;
+  sourceRecordId?: string;
+  query: string;
+  retrievedAt: string;
+  collectionMethod: "api" | "import_csv" | "import_ris" | "import_bibtex" | "snowballing";
+}
+
+export interface NormalizedRecord {
+  id: string;
+  collectionId: string;
+  source: string;
+  sourceRecordId?: string;
+  title: string;
+  normalizedTitle: string;
+  authors?: string;
+  year?: string;
+  publicationDate?: string;
+  venue?: string;
+  publisher?: string;
+  doi?: string;
+  abstract?: string;
+  landingPageUrl?: string;
+  openAccessPdfUrl?: string;
+  documentType?: string;
+  language?: string;
+  rawPayload?: Record<string, unknown>;
+  retrievalEvents: RetrievalEvent[];
+  qualityFlags: DataQualityFlags;
+  canonicalRecordId?: string;
+  duplicateGroupId?: string;
+}
+
+export interface CanonicalRecord {
+  id: string;
+  collectionId: string;
+  primaryDoi?: string;
+  title: string;
+  normalizedTitle: string;
+  authors?: string;
+  year?: string;
+  publicationDate?: string;
+  venue?: string;
+  publisher?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  doi?: string;
+  abstract?: string;
+  landingPageUrl?: string;
+  openAccessPdfUrl?: string;
+  documentType?: string;
+  language?: string;
+  mergedRecordIds: string[];
+  sources: string[];
+  retrievalEvents: RetrievalEvent[];
+  qualityFlags: DataQualityFlags;
+  metadataFilterStatus?: "PASS" | "FAIL" | "UNKNOWN";
+  filterReasons?: string[];
+  keywordStatus?: "MATCH" | "NO_MATCH" | "INSUFFICIENT_DATA" | "EXCLUSION_TERM_HIT";
+  matchedTerms?: string[];
+  matchedSnippets?: Array<{ term: string; field: "title" | "abstract"; snippet: string }>;
+  isPreprint?: boolean;
+}
+
+export interface SuspectedDuplicateGroup {
+  id: string;
+  collectionId: string;
+  canonicalTitle: string;
+  recordIds: string[];
+  similarityScore: number;
+  status: "pending_review" | "merged" | "kept_separate";
+  reviewedAt?: string;
+  records?: NormalizedRecord[];
+}
+
+export interface MetadataFilterConfig {
+  yearRange?: { start?: number; end?: number; enabled: boolean };
+  languages?: { allowed: string[]; enabled: boolean };
+  documentTypes?: { allowed: string[]; enabled: boolean };
+}
+
+export interface KeywordFilterConfig {
+  mandatoryGroups: Array<{ id: string; terms: string[] }>;
+  exclusionTerms: string[];
+  scope: "title_only" | "title_abstract";
+}
+
+export interface FilterRun {
+  id: string;
+  collectionId: string;
+  createdAt: string;
+  metadataConfig?: MetadataFilterConfig;
+  keywordConfig?: KeywordFilterConfig;
+  version: number;
+  totalRecordsEvaluated: number;
+  passesCount: number;
+  failsCount: number;
+  unknownsCount: number;
+  keywordMatchesCount: number;
+  keywordExclusionsCount: number;
+  recordsSummary?: Record<string, any>;
+}
+
+export interface CollectorJobProgress {
+  jobId: string;
+  collectionId: string;
+  status: "queued" | "running" | "paused" | "completed" | "completed_with_errors" | "failed" | "cancelled";
+  currentSource?: string;
+  totalCollected: number;
+  sourcesCompleted: string[];
+  errors: Array<{ source: string; message: string; timestamp: string }>;
+  sourcesStatus?: Record<string, { collected: number; error?: string; status: string }>;
+}
+

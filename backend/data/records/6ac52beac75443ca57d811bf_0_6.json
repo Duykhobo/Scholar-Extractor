@@ -1,0 +1,72 @@
+{
+  "id": "6ac52beac75443ca57d811bf_0_6",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Identifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi",
+  "authors": "P Lynch; P Lund; B Massah",
+  "year": "2014",
+  "publicationDate": "2026-10-06",
+  "abstract": "… professionals, children with albinism and their … visual impairment associated with albinism. These were captured in two information booklets in English and vernacular, one for children …",
+  "doi": "",
+  "venue": "International Journal of Educational …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac52beac75443ca57d811bf_0_6",
+  "landingPageUrl": "https://www.sciencedirect.com/science/article/pii/S0738059314000595",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "authors": "P Lynch; P Lund; B Massah",
+    "collectionMethod": "SerpApi",
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "finalDecision": "",
+    "id": "6ac52beac75443ca57d811bf_0_6",
+    "matchedCriteria": [
+      "GEN-IC-PUB",
+      "GEN-IC-LANG"
+    ],
+    "missingEvidence": [
+      "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+    ],
+    "missing_abstract": true,
+    "pipelineStage": "B1",
+    "potentialDuplicate": false,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791307711991",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T17:28:32.220Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac52beac75443ca57d811bf_0_6",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0738059314000595"
+      }
+    ],
+    "query": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V1",
+    "search_id": "6ac52beac75443ca57d811bf",
+    "snippet": "… professionals, children with albinism and their … visual impairment associated with albinism. These were captured in two information booklets in English and vernacular, one for children …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "Identifying strategies to enhance the educational inclusion of visually impaired children with albinism in Malawi",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "GEN-EC-ACC",
+      "GEN-IC-REL"
+    ],
+    "url": "https://www.sciencedirect.com/science/article/pii/S0738059314000595",
+    "userNotes": "",
+    "venue": "International Journal of Educational …",
+    "year": "2014"
+  }
+}

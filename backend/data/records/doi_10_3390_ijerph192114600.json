@@ -1,0 +1,130 @@
+{
+  "id": "doi_10_3390_ijerph192114600",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Loneliness and Social Support among the Middle-Aged and Elderly People with Visual Impairment",
+  "authors": "Hui-Ying Chu; Hui‐Shan Chan",
+  "year": "2022",
+  "publicationDate": "2026-10-06T14:12:16.642Z",
+  "abstract": "Loneliness is associated with depression, sleep disturbance, and an increased risk of cardiovascular disease, and it is a global public health problem. Since physical and mental health have a great impact on loneliness, middle-aged and elderly people who are blind or visually impaired may be more affected by loneliness. Previous research has confirmed that effective social support can enhance physical and mental health and alleviate the negative effects of life stress. Therefore, in this study, we applied a cross-sectional design where data were collected using questionnaires completed in person, by phone, or online for a total of 456 middle-aged and elderly people with visual impairment. We found that the enrolled participants who were unemployed, lacked a stable source of income, lived alone, or were unable to move independently were prone to experiencing high levels of loneliness and low social support, which highlights the necessity of interventions such as counseling to alleviate the sense of loneliness in such groups. During the COVID-19 pandemic, social support measures to reduce the sense of loneliness should be highly encouraged to ensure that middle-aged and elderly people with visual impairment can continue to live independently, and social support seems to be an important factor.",
+  "doi": "10.3390/ijerph192114600",
+  "venue": "International Journal of Environmental Research and Public Health",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_3390_ijerph192114600",
+  "landingPageUrl": "https://doi.org/10.3390/ijerph192114600",
+  "openAccessPdfUrl": "https://www.mdpi.com/1660-4601/19/21/14600/pdf?version=1667815820",
+  "retrievedAt": "2026-10-06T14:12:16.642Z",
+  "rawPayload": {
+    "abstract": "Loneliness is associated with depression, sleep disturbance, and an increased risk of cardiovascular disease, and it is a global public health problem. Since physical and mental health have a great impact on loneliness, middle-aged and elderly people who are blind or visually impaired may be more affected by loneliness. Previous research has confirmed that effective social support can enhance physical and mental health and alleviate the negative effects of life stress. Therefore, in this study, we applied a cross-sectional design where data were collected using questionnaires completed in person, by phone, or online for a total of 456 middle-aged and elderly people with visual impairment. We found that the enrolled participants who were unemployed, lacked a stable source of income, lived alone, or were unable to move independently were prone to experiencing high levels of loneliness and low social support, which highlights the necessity of interventions such as counseling to alleviate the sense of loneliness in such groups. During the COVID-19 pandemic, social support measures to reduce the sense of loneliness should be highly encouraged to ensure that middle-aged and elderly people with visual impairment can continue to live independently, and social support seems to be an important factor.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Hui-Ying Chu; Hui‐Shan Chan",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.3390/ijerph192114600",
+    "finalDecision": "",
+    "id": "doi_10_3390_ijerph192114600",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-PUB",
+      "VI-EC-ADULT"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M"
+    ],
+    "pdfUrl": "https://www.mdpi.com/1660-4601/19/21/14600/pdf?version=1667815820",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.642Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4308579677",
+        "url": "https://doi.org/10.3390/ijerph192114600"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.690Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4308579677",
+        "url": "https://doi.org/10.3390/ijerph192114600"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.300Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4308579677",
+        "url": "https://doi.org/10.3390/ijerph192114600"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.795Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4308579677",
+        "url": "https://doi.org/10.3390/ijerph192114600"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.312Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4308579677",
+        "url": "https://doi.org/10.3390/ijerph192114600"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.642Z",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)]: Tìm thấy từ khóa liên quan (elderly). [Lưu ý: Trùng từ khóa chỉ là tín hiệu liên quan, không tự chứng minh chất lượng hay quan hệ nhân quả].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Loneliness is associated with depression, sleep disturbance, and an increased risk of cardiovascular disease, and it is a global public health problem. Since physical and mental health have a great impact on loneliness, middle-aged and elderly people who are blind or visually impaired may be more af",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Loneliness and Social Support among the Middle-Aged and Elderly People with Visual Impairment",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.3390/ijerph192114600",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "International Journal of Environmental Research and Public Health",
+    "year": "2022"
+  }
+}

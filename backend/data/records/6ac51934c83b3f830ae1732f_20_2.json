@@ -1,0 +1,81 @@
+{
+  "id": "6ac51934c83b3f830ae1732f_20_2",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls",
+  "authors": "PSP Agnes; MK Singh",
+  "year": "2026",
+  "publicationDate": "2026-10-06",
+  "abstract": "… or losing peer support, are strongly linked to drops and changes in self-esteem during this period… Children with visual impairments play a vital role in society; however, these children are …",
+  "doi": "",
+  "venue": "Indo-Bhutan Social Science Conference …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac51934c83b3f830ae1732f_20_2",
+  "landingPageUrl": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "PSP Agnes; MK Singh",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "finalDecision": "",
+    "id": "6ac51934c83b3f830ae1732f_20_2",
+    "literatureGroup": "direct",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "X",
+      "Y",
+      "H3"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "6ac51934c83b3f830ae1732f",
+    "sessionId": "",
+    "snippet": "… or losing peer support, are strongly linked to drops and changes in self-esteem during this period… Children with visual impairments play a vital role in society; however, these children are …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Unsure",
+    "title": "Social Work Intervention to Build Self-Esteem Through Informed Understanding on Developmental Needs Among the Visually Impaired Adolescent Girls",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.atlantis-press.com/proceedings/ibssc-25/126023164",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "venue": "Indo-Bhutan Social Science Conference …",
+    "year": "2026"
+  }
+}

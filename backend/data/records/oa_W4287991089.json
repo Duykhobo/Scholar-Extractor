@@ -1,0 +1,90 @@
+{
+  "id": "oa_W4287991089",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "An Investigation Of Relationship Between The Self-Esteem And Social Skills In Students With Visual Impairments",
+  "authors": "Mustafa Doğuş; Pınar Şafak",
+  "year": "2019",
+  "publicationDate": "2026-10-06T15:15:50.312Z",
+  "abstract": "Bu araştırmada görme yetersizliği olan öğrencilerin sosyal becerileri ile benlik saygıları arasındaki ilişkinin belirlenmesi amaçlanmıştır. Bu amaç doğrultusunda ilişkisel tarama modelinde tasarlanan araştırmanın çalışma grubunu, 2015‑2016 eğitim ve öğretim yılında Ankara ilinde özel eğitim okullarında veya kaynaştırma yoluyla öğrenimlerine devam eden görme yetersizliği olan 87 ortaokul öğrencisi oluşturmuştur. Görme yetersizliği olan öğrencilerin sosyal becerilerini değerlendirmek için Matson Çocuklarda Sosyal Becerileri Değerlendirme Ölçeği, benlik saygılarını değerlendirmek için ise Rosenberg Benlik Saygısı Ölçeği uygulanmıştır. Matson Çocuklarda Sosyal Becerileri Değerlendirme Ölçeği, olumlu sosyal davranışlar ve olumsuz sosyal davranışlar olmak üzere iki karşıt alt boyuttan oluşmaktadır. Bu araştırmada benlik saygısını değerlendirmek amacıyla Rosenberg Benlik Saygısı Ölçeği’nin Benlik Saygısı alt ölçeği kullanılmıştır. Ayrıca öğrencilerin demografik özellikleriyle ilgili veri toplamak amacıyla Kişisel Bilgi Formu kullanılmıştır. Bu araçlarla elde edilen veriler IBM SPSS v21 uygulaması kullanılarak analiz edilmiştir. Betimsel ve istatistiksel yöntemler ile yapılan analizler sonucunda elde edilen bulgulara göre görme yetersizliği olan öğrencilerin sosyal becerilerinin benlik saygılarına göre anlamlı farklılık gösterdiği belirlenmiştir. Buna göre öğrencilerin benlik saygıları yükseldikçe sosyal becerilerinin de olumlu yönde arttığı tespit edilmiştir. Görme yetersizliği olan öğrencilerin kendini değerlendirme türünde olan her iki ölçekten aldıkları puanlara göre benlik saygıları ve sosyal becerilerinin yüksek düzeyde olduğu bulunmuştur. Elde edilen bulgular ilgili alanyazın incelenerek tartışılmış ve önerilerde bulunulmuştur.",
+  "doi": "",
+  "venue": "DergiPark (Istanbul University)",
+  "source": "OpenAlex",
+  "sourceRecordId": "oa_W4287991089",
+  "landingPageUrl": "https://dergipark.org.tr/tr/pub/cije/issue/50809/550622",
+  "openAccessPdfUrl": "https://dergipark.org.tr/tr/pub/cije/issue/50809/550622",
+  "retrievedAt": "2026-10-06T15:15:50.312Z",
+  "rawPayload": {
+    "abstract": "Bu araştırmada görme yetersizliği olan öğrencilerin sosyal becerileri ile benlik saygıları arasındaki ilişkinin belirlenmesi amaçlanmıştır. Bu amaç doğrultusunda ilişkisel tarama modelinde tasarlanan araştırmanın çalışma grubunu, 2015‑2016 eğitim ve öğretim yılında Ankara ilinde özel eğitim okullarında veya kaynaştırma yoluyla öğrenimlerine devam eden görme yetersizliği olan 87 ortaokul öğrencisi oluşturmuştur. Görme yetersizliği olan öğrencilerin sosyal becerilerini değerlendirmek için Matson Çocuklarda Sosyal Becerileri Değerlendirme Ölçeği, benlik saygılarını değerlendirmek için ise Rosenberg Benlik Saygısı Ölçeği uygulanmıştır. Matson Çocuklarda Sosyal Becerileri Değerlendirme Ölçeği, olumlu sosyal davranışlar ve olumsuz sosyal davranışlar olmak üzere iki karşıt alt boyuttan oluşmaktadır. Bu araştırmada benlik saygısını değerlendirmek amacıyla Rosenberg Benlik Saygısı Ölçeği’nin Benlik Saygısı alt ölçeği kullanılmıştır. Ayrıca öğrencilerin demografik özellikleriyle ilgili veri toplamak amacıyla Kişisel Bilgi Formu kullanılmıştır. Bu araçlarla elde edilen veriler IBM SPSS v21 uygulaması kullanılarak analiz edilmiştir. Betimsel ve istatistiksel yöntemler ile yapılan analizler sonucunda elde edilen bulgulara göre görme yetersizliği olan öğrencilerin sosyal becerilerinin benlik saygılarına göre anlamlı farklılık gösterdiği belirlenmiştir. Buna göre öğrencilerin benlik saygıları yükseldikçe sosyal becerilerinin de olumlu yönde arttığı tespit edilmiştir. Görme yetersizliği olan öğrencilerin kendini değerlendirme türünde olan her iki ölçekten aldıkları puanlara göre benlik saygıları ve sosyal becerilerinin yüksek düzeyde olduğu bulunmuştur. Elde edilen bulgular ilgili alanyazın incelenerek tartışılmış ve önerilerde bulunulmuştur.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Mustafa Doğuş; Pınar Şafak",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "",
+    "finalDecision": "",
+    "id": "oa_W4287991089",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"DergiPark (Istanbul University)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://dergipark.org.tr/tr/pub/cije/issue/50809/550622",
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.312Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4287991089",
+        "url": "https://openalex.org/W4287991089"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T15:15:50.312Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "session_1791299744175",
+    "snippet": "Bu araştırmada görme yetersizliği olan öğrencilerin sosyal becerileri ile benlik saygıları arasındaki ilişkinin belirlenmesi amaçlanmıştır. Bu amaç doğrultusunda ilişkisel tarama modelinde tasarlanan araştırmanın çalışma grubunu, 2015‑2016 eğitim ve öğretim yılında Ankara ilinde özel eğitim okulları",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "An Investigation Of Relationship Between The Self-Esteem And Social Skills In Students With Visual Impairments",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://dergipark.org.tr/tr/pub/cije/issue/50809/550622",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "DergiPark (Istanbul University)",
+    "year": "2019"
+  }
+}

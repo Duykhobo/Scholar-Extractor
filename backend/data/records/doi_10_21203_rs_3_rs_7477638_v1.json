@@ -1,0 +1,584 @@
+{
+  "id": "doi_10_21203_rs_3_rs_7477638_v1",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "The Influence of Parental Attitude on the Self-Esteem of Students with Visual Impairment in Selected Middle Schools of Dessie City, Ethiopia",
+  "authors": "Mengistu Awlachew",
+  "year": "2025",
+  "publicationDate": "2026-10-06T14:12:16.640Z",
+  "abstract": "",
+  "doi": "10.21203/rs.3.rs-7477638/v1",
+  "venue": "Springer Science and Business Media LLC",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_21203_rs_3_rs_7477638_v1",
+  "landingPageUrl": "https://doi.org/10.21203/rs.3.rs-7477638/v1",
+  "openAccessPdfUrl": "https://www.researchsquare.com/article/rs-7477638/latest.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.640Z",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Mengistu Awlachew",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.21203/rs.3.rs-7477638/v1",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Unknown] \"...: self-esteem, parental attitude, visual impairment, middle school Posted Date: September 9th, 2025 DOI: https://doi.org/10.21203/rs.3.rs-7477638/...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...sie college of Teacher Education Research Article Keywords: self-esteem, parental attitude, visual impairment, middle school Posted Date: September 9th...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...se \u0000 ndings stress the vital role that parental conduct and emotional support play in determining the psychological health of students with visually impairme...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...udents with visual impairments need to develop positive and caring relationship with their parents, friends and signi \u0000 cant others which promote...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "caring",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...t in selected middle schools of Dessie city administration. Students with visual impairments often face compounded psychosocial challenges. Therefore, supportive parenting...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...iptive survey design The sample consisted of a total of 306 students with visual impairments and their parents, selected using purposive and comprehensive sampling strategi...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...rental attitude positively and signi \u0000 cantly correlated to students with visual impairments self esteem (r = .505, p < .01). In addition,parental attitude had a positive l...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...was to examine the in \u0000 uence of parental attitudes on the self-esteem of students with visual impairment in selected middle schools of Dessie city ad...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...s indicated that parental attitude signi \u0000 cantly predicted self-esteem, accounting for 25.5% of its variance The study recommends students with visual...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...In other terms, it represents one's self-consciousness and psychological well-being and can re \u0000 ect one's overall emotional assessment of one's value and sense of...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...he various factors that hinder the effective development of blind children are the perspectives of their parents regarding themselves and their blind chil...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...erspectives of their parents regarding themselves and their blind children. Parental attitudes generally range from acceptance to outright rejection, acco...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...e to use. Several factors in \u0000 uence how parents view their blind children, including societal attitudes towards disability and blindness, as well as reli...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "blind children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...). According to Orth & Robins,(2022), individuals with high self-esteem possess the skills and resources that help shield them from stress. The concept...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...ildren encounter within their family life prior to starting school, as well as what they are currently facing outside the academic environment (Ch...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Evaluation] \".... Sometimes, a teenager's academic success and abilities in school during their high school years can predict higher self-esteem ( Orth, 2017). Th...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...emic environment (Cherry, 2023) The Concept of Self –Esteem Self-esteem is de \u0000 ned as how an individual views themselves, involving a self-evaluation...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Evaluation] \"...venture outward. Simply put, this pertains to the degree of autonomy they experience. This scenario underscores a key element of adolescence: the fo...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Evaluation",
+        "term": "autonomy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...ibuted to changes that occur during puberty, transitions in school environments, and growing self-awareness, while the rise in young adulthood is...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...Page 5/18 According to Dennissen et al. (208), global self-esteem refers to an individual's overall subjective assessment of their self-worth, wh...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...and discovered that self-esteem was positively related with social support, including from parents, albeit their regression coe \u0000 cients were not expressl...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...mpairment According to research by Al-Zeraid et al. (2019), students with visual impairments' self-esteem and parental style do not signi \u0000 cantly correlate. Furthermore, C...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...rly, parental support had very little explanatory power for pupils with visual impairments' self-esteem, according to Huurre et al. (2001). According to Kef and Dekovic (...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "pupils with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...Page 6/18 The Relationship between Parental Attitude and Self-Esteem of Students with Visual Impairment According to research by Al-Zeraid et al. (2...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-Esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...aregivers and are more directly involved in the daily care, emotional support, and...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...ampling Technique The population of this study consisted of students with visual impairments who attended their education in 2024 at Dessie City Administration middle schoo...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...wo levels: negative and positive. The dependent variable is self-esteem. Self-esteem has two levels: high and low. It is hypothesized that parents' att...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Methodology] \"...rom Rosenberg (1986), was used to assess the self-esteem of students with visual impairments. The questionnaire has 10 items and uses a Likert scale with four response opti...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...paired students and parent responders from Yekatite primary school in Kombolcha city. After scoring all questions, Cronbach alpha was used in SPSS...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Methodology] \"...res ranged from 25 to 125. The Self- Esteem Questionnaire A self-esteem questionnaire, adapted from Rosenberg (1986), was used to assess the self-estee...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...tems. The internal consistency of the parental attitude and self-esteem scores was 0.919 and 0.843, respectively. Ethical Considerations Approval for t...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...association between parental attitudes and self- esteem of students with visual impairments. To accomplish this, a bivariate correlational analysis with the Pearson's Prod...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...To \u0000 nd out the relationship between parental attitude and self-esteem of students with visual impairment, the researcher \u0000 rst computed the range, me...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...Page 11/18 Self-esteem Parental attitude SS Pearson Correlation 1 .505 ** Sig. (2-tailed) .000 N 153 1...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ctors: (Constant), parental attitude b. Dependent Variable: self-esteem The result of regression analysis in table 5 above showed that there were signi...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 13 - Evaluation] \"...t and discovered that self-esteem was positively related to social support, including from parents, although their regression coe \u0000 cients were not explic...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Evaluation",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...ationship between parental attitudes and the self-esteem of students with visual impairments. The results revealed a signi \u0000 cant positive correlation between parental atti...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...stigate the relationship between parental attitudes and the self-esteem of students with visual impairments. The results revealed a signi \u0000 cant positi...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...p between parental attitude and self-esteem, especially for students with visual impairments in Ethiopian middle schools, it has limitations regarding generalisability and...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...that parental support had very little explanatory power for pupils with visual impairments' self-esteem. The difference between this study and the previous study may be t...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "pupils with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...ittle explanatory power for pupils with visual impairments' self-esteem. The difference between this study and the previous study may be the previous s...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 15 - Methodology] \"...ike to thank student with visual impairment, their parents, school directors and reviewers of the research instruments. Con \u0000 ict of Interests The...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 16 - References] \"...enting style on the visually impaired adolescents and their self-esteem: Analysis based on a Saudi population. Biomedical Journal of Scienti \u0000 c & Tech...\"",
+        "isValidEvidence": false,
+        "page": 16,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \".... Kef, S., & Dekovi ć , M. (2004). The role of parental and peer support in adolescents’ well-being: A comparison of adolescents with and without a visu...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \"...030006005 11. Huurre, T., & Aro, H. (1999). Self-esteem and social support among Finnish adolescents with visual impairment. Scandinavian Journal of Disab...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \"....1177/0022022199030006005 11. Huurre, T., & Aro, H. (1999). Self-esteem and social support among Finnish adolescents with visual impairment. Scandinavi...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 18 - Unknown] \"...y, stigma, and educational access. International Journal of Inclusive Education , 23(5), 521–536 27. Yudha, E. S., Suryana, D., & Nabella, Y. (2020). Dimension...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Inclusive Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 18 - Unknown] \"...dha, E. S., Suryana, D., & Nabella, Y. (2020). Dimension of self-esteem based on guidance and counseling perspective. International Journal of Scienti...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 18 - Unknown] \"...Page 18/18 25. Rosenberg, M (1986) Social psychology of the self-concept Arlington Heights; Harlan Davison.INC 2 \u0000 . Tirussew, T., Savolainen, H., Agdew...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_21203_rs_3_rs_7477638_v1",
+    "isPdfVerified": true,
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "Y"
+    ],
+    "page_count": 18,
+    "pdfUrl": "https://www.researchsquare.com/article/rs-7477638/latest.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.640Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4414211147",
+        "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.689Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4414211147",
+        "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.298Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4414211147",
+        "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.794Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4414211147",
+        "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.311Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4414211147",
+        "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1"
+      }
+    ],
+    "publicationType": "preprint",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.640Z",
+    "screeningReason": "Còn 5 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-COMM, VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "The Influence of Parental Attitude on the Self-Esteem of Students with Visual Impairment in Selected Middle Schools of Dessie City, Ethiopia",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-AAC-SUP",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.21203/rs.3.rs-7477638/v1",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Include",
+    "venue": "Springer Science and Business Media LLC",
+    "year": "2025"
+  }
+}

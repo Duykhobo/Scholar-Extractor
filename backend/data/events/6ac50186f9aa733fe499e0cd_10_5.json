@@ -1,0 +1,227 @@
+[
+  {
+    "id": "evt_1791335615884_yd6x3",
+    "recordId": "6ac50186f9aa733fe499e0cd_10_5",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.884Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "HR Athaya; M Supratiwi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac50186f9aa733fe499e0cd_10_5",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-ADULT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)]: Tìm thấy từ khóa liên quan (higher education). [Lưu ý: Trùng từ khóa chỉ là tín hiệu liên quan, không tự chứng minh chất lượng hay quan hệ nhân quả].",
+      "screeningStage": "V2",
+      "search_id": "6ac50186f9aa733fe499e0cd",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… These challenges can lead to a lack of confidence in blind children… Thus, peer support creates a sense of belonging with a … encouragement and building self-confidence in students with …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN SUPPORTING THE LEARNING OF STUDENTS WITH VISION DISABILITIES IN INCLUSIVE CLASSROOMS IN HIGHER EDUCATION",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": true,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://jurnal.uns.ac.id/disability/article/view/106073",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Disability",
+      "year": ""
+    }
+  },
+  {
+    "id": "evt_1791335619911_s98wk",
+    "recordId": "6ac50186f9aa733fe499e0cd_10_5",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.911Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "HR Athaya; M Supratiwi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac50186f9aa733fe499e0cd_10_5",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-ADULT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)]: Tìm thấy từ khóa liên quan (higher education). [Lưu ý: Trùng từ khóa chỉ là tín hiệu liên quan, không tự chứng minh chất lượng hay quan hệ nhân quả].",
+      "screeningStage": "V2",
+      "search_id": "6ac50186f9aa733fe499e0cd",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… These challenges can lead to a lack of confidence in blind children… Thus, peer support creates a sense of belonging with a … encouragement and building self-confidence in students with …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN SUPPORTING THE LEARNING OF STUDENTS WITH VISION DISABILITIES IN INCLUSIVE CLASSROOMS IN HIGHER EDUCATION",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": true,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://jurnal.uns.ac.id/disability/article/view/106073",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Disability",
+      "year": ""
+    }
+  },
+  {
+    "id": "evt_1791335625436_5dhi0",
+    "recordId": "6ac50186f9aa733fe499e0cd_10_5",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.436Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "HR Athaya; M Supratiwi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac50186f9aa733fe499e0cd_10_5",
+      "literatureGroup": "direct",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-ADULT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "X",
+        "Y",
+        "H3"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)]: Tìm thấy từ khóa liên quan (higher education). [Lưu ý: Trùng từ khóa chỉ là tín hiệu liên quan, không tự chứng minh chất lượng hay quan hệ nhân quả].",
+      "screeningStage": "V2",
+      "search_id": "6ac50186f9aa733fe499e0cd",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… These challenges can lead to a lack of confidence in blind children… Thus, peer support creates a sense of belonging with a … encouragement and building self-confidence in students with …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "THE ROLE OF PEERS IN SUPPORTING THE LEARNING OF STUDENTS WITH VISION DISABILITIES IN INCLUSIVE CLASSROOMS IN HIGHER EDUCATION",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": true,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://jurnal.uns.ac.id/disability/article/view/106073",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal of Disability",
+      "year": ""
+    }
+  }
+]

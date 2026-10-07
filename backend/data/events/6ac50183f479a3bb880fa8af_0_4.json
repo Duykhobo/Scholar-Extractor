@@ -1,0 +1,236 @@
+[
+  {
+    "id": "evt_1791335615361_sfjfa",
+    "recordId": "6ac50183f479a3bb880fa8af_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:35.361Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "evidence_snippets": [],
+      "finalDecision": "",
+      "fullTextStatus": "not_found",
+      "id": "6ac50183f479a3bb880fa8af_0_4",
+      "isPdfVerified": false,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "6ac50183f479a3bb880fa8af",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Unsure",
+      "v3Decision": "Unsure",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335619160_8zrfd",
+    "recordId": "6ac50183f479a3bb880fa8af_0_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:39.160Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "evidence_snippets": [],
+      "finalDecision": "",
+      "fullTextStatus": "not_found",
+      "id": "6ac50183f479a3bb880fa8af_0_4",
+      "isPdfVerified": false,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V3",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "6ac50183f479a3bb880fa8af",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Unsure",
+      "v3Decision": "Unsure",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335624594_qzbj4",
+    "recordId": "6ac50183f479a3bb880fa8af_0_4",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:44.594Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "H Jenaabadi",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-confidence (Primary Y)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "evidence_snippets": [],
+      "finalDecision": "",
+      "fullTextStatus": "not_found",
+      "id": "6ac50183f479a3bb880fa8af_0_4",
+      "isPdfVerified": false,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 4 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-AAC-SUP, VI-IC-FULLTEXT, VI-EC-RETRACTED, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "6ac50183f479a3bb880fa8af",
+      "sessionId": "sess_1791295876431_294pe",
+      "snippet": "… Generally, visually impaired children are classified into two major groups: blind and low vision. Although in the past, for defining blind children only the degree of vision was taken into …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "ON THE RELATIONSHIP BETWEEN PERCEIVED SOCIAL SUPPORT AND BLIND AND LOWVISION STUDENTS'LIFE SATISFACTION AND SELF-CONFIDENCE.",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://openurl.ebsco.com/contentitem/gcd:90547107?sid=ebsco:plink:crawler-gcd&id=ebsco:gcd:90547107&crl=c&jrnl=21467463",
+      "userNotes": "",
+      "v2Decision": "Unsure",
+      "v3Decision": "Unsure",
+      "venue": "Journal of Educational & Instructional Studies in …",
+      "year": "2013"
+    }
+  }
+]

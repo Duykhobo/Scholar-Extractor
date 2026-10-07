@@ -1,0 +1,920 @@
+{
+  "id": "doi_10_3389_fpsyg_2022_1054857",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Linking perceived social support to self-esteem and social integration among adolescents with visual impairment: A cross-lagged study",
+  "authors": "Wei Yuan; Zhengli Xie; Ping Dong; Yuqin Yang",
+  "year": "2023",
+  "publicationDate": "2026-10-06T14:12:13.347Z",
+  "abstract": "This study examines the relationship between perceived social support and self-esteem and between perceived social support and social integration among adolescents with visual impairments. Adolescents with visual impairments (Ntime1 = 311, Ntime2 = 170) from four special education schools in eastern China participated in this study within a 1-year interval. The Child and Adolescent Social Support Scale, Rosenberg Self-esteem Questionnaire, and Interpersonal Adaptation Scale were used to collect data. The results from cross-lagged panel modeling showed reciprocal positive relationships between parental support and self-esteem. Self-esteem at T1 positively predicted three other sources of perceived social support at T2: teacher support, classmate support, and close-friend support. Social integration at T1 positively predicted close-friend support at T2. This study extends understanding of the relationships among perceived social support, self-esteem, and social integration, and provides practical implications for parents, schools, and communities to improve psychosocial outcomes in adolescents with visual impairment.",
+  "doi": "10.3389/fpsyg.2022.1054857",
+  "venue": "Frontiers in Psychology",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_3389_fpsyg_2022_1054857",
+  "landingPageUrl": "https://doi.org/10.3389/fpsyg.2022.1054857",
+  "openAccessPdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1054857/pdf",
+  "retrievedAt": "2026-10-06T14:12:13.347Z",
+  "rawPayload": {
+    "abstract": "This study examines the relationship between perceived social support and self-esteem and between perceived social support and social integration among adolescents with visual impairments. Adolescents with visual impairments (Ntime1 = 311, Ntime2 = 170) from four special education schools in eastern China participated in this study within a 1-year interval. The Child and Adolescent Social Support Scale, Rosenberg Self-esteem Questionnaire, and Interpersonal Adaptation Scale were used to collect data. The results from cross-lagged panel modeling showed reciprocal positive relationships between parental support and self-esteem. Self-esteem at T1 positively predicted three other sources of perceived social support at T2: teacher support, classmate support, and close-friend support. Social integration at T1 positively predicted close-friend support at T2. This study extends understanding of the relationships among perceived social support, self-esteem, and social integration, and provides practical implications for parents, schools, and communities to improve psychosocial outcomes in adolescents with visual impairment.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Wei Yuan; Zhengli Xie; Ping Dong; Yuqin Yang",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.3389/fpsyg.2022.1054857",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Unknown] \"...cted three other sources of perceived social support at T2: teacher support, classmate support, and close-friend support. Social integration at T1 positive...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...rontiers in Psychology 01 frontiersin.org Linking perceived social support to self-esteem and social integration among adolescents with visual impairment:...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...hina This study examines the relationship between perceived social support and self- esteem and between perceived social support and social integration am...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...eived social support and self- esteem and between perceived social support and social integration among adolescents with visual impairments. Adolescents w...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...Frontiers in Psychology 01 frontiersin.org Linking perceived social support to self-esteem and social integration among adolescents with visual impairment:...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"..., Wuhan, China This study examines the relationship between perceived social support and self- esteem and between perceived social support and social integration am...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...tween perceived social support and self- esteem and between perceived social support and social integration among adolescents with visual impairments. Adolescents w...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...visual impairments ( N time1 =311, N time2 =170) from four special education schools in eastern China participated in this study within a 1-year interval. T...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...i Yuan 1 , Zhengli Xie 2 , Ping Dong 3 and Yuqin Yang 4 * 1 School of Education, Central China Normal University, Wuhan, China, 2 Faculty of Educa...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...ng, Pokfulam, Hong Kong SAR, China, 3 Southampton Education School, University of Southampton, Southampton, United Kingdom, 4 Faculty of Artificia...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...logy 01 frontiersin.org Linking perceived social support to self-esteem and social integration among adolescents with visual impairment: A cross-lagged...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...l. The Child and Adolescent Social Support Scale, Rosenberg Self-esteem Questionnaire, and Interpersonal Adaptation Scale were used to collect data. Th...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...iprocal positive relationships between parental support and self-esteem. Self-esteem at T1 positively predicted three other sources of perceived social...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Related Work] \"...ssed the contribution of perceived close-friend support and teacher support among adolescents with visual impairment. It has only been reported that their...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Related Work",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Related Work] \"...impairment. It has only been reported that their perceived teacher support is significantly lower than parental and peer support, and that adolescents wit...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Related Work",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Related Work] \"...nt in the Chinese context. Studies outside China found that peer support had greater significant predictive effect on mental health and loneliness of ad...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Related Work",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ed teacher support is significantly lower than parental and peer support, and that adolescents with visual impairment perceived higher levels of teacher...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...l impairment. It has been documented in the literature that social support contributed to socioemotional development of students with visual impairment (s...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ursues a longitudinal design to address the linkage between perceived social support and self-esteem and that between perceived social support and social integratio...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...adolescents’ psychosocial adaptation to visual impairment. Self-esteem and social integration are the two key indicators of psychosocial adaptation in...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...ated empirical evidence from Europe suggests that perceived social support significantly predicts self-esteem among adolescents with visual impairment ( H...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...2005 ). Dated empirical evidence from Europe suggests that perceived social support significantly predicts self-esteem among adolescents with visual impairment ( H...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...19 ). There are a few qualitative studies on experiences of students with visual impairments in secondary mainstream schools ( West et al., 2004 ) or universities ( Bodaghi...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Evaluation] \"...ably predicted perceived social support across time in high school students, but not vice versa. As such, the relationships between self-esteem an...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...57 Frontiers in Psychology 03 frontiersin.org antecedent of self-esteem. According to sociometer theory, the motivation of individuals seeking to incre...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...r subscales: parental support (“My parents understand me”), teacher support (“My teachers explain things that I do not understand”), classmate support (“My...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...04 frontiersin.org Hypothesis 3 : Four sources of perceived social support at T1 would positively predict social integration at T2. Hypothesis 4 : Social...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...sychology 04 frontiersin.org Hypothesis 3 : Four sources of perceived social support at T1 would positively predict social integration at T2. Hypothesis 4 : Social...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...ls (three for the visually impaired and one general special school accommodating students with visual impairment and also those with other types o...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...wed no significant differences in perceived social support, self-esteem, and social integration between participants at T1 and T2. Measures Child and a...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...e participants responded in their preferred writing medium (Braille or print). The questionnaire included a demographic sheet, and measurements of...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...rt. The internal consistency of each dimension of perceived social support was 0.88 (Parent), 0.87 (Teacher), 0.87 (Classmate), and 0.91 (Close friend) at...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...ived support. The internal consistency of each dimension of perceived social support was 0.88 (Parent), 0.87 (Teacher), 0.87 (Classmate), and 0.91 (Close friend) at...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"..., a nine-item subscale of the Social Adaptability of Second School Students Scale ( Chen and Huang, 2004 ) consisting of two dimensions: willingne...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...0.86 (Classmate), and 0.90 (Close friend) at T2. Rosenberg self-esteem questionnaire The Rosenberg self-esteem questionnaire (RSE; Rosenberg, 1965 ) w...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...rs of students with visual impairment who are proficient in Braille were hired to transcribe responses into Excel file, which was then imported int...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "Braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...port and self-esteem. Self-esteem also positively predicted teacher support, classmate support, and close- friend support; however, these three sources of...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...ed panel analysis. Reciprocal relationships among perceived social support, self-esteem, and social integration A cross-lagged panel model was constructed...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...cross-lagged panel analysis. Reciprocal relationships among perceived social support, self-esteem, and social integration A cross-lagged panel model was constructed...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...s. Reciprocal relationships among perceived social support, self-esteem, and social integration A cross-lagged panel model was constructed to examine t...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...2 3 4 5 6 7 8 9 10 11 12 1. T1 parental support 1.00 2. T1 teacher support 0.46 *** 1.00 3. T1 classmate support 0.51 *** 0.58 *** 1.00 4. T1 close-friend...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...tive statistics and zero-order correlations among perceived social support, self-esteem, and social integration. 1 2 3 4 5 6 7 8 9 10 11 12 1. T1 parental...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...3 Descriptive statistics and zero-order correlations among perceived social support, self-esteem, and social integration. 1 2 3 4 5 6 7 8 9 10 11 12 1. T1 parental...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...and zero-order correlations among perceived social support, self-esteem, and social integration. 1 2 3 4 5 6 7 8 9 10 11 12 1. T1 parental support 1.00...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...the results aligned with previous findings that teacher and peer support did not predict adolescents’ self-esteem ( Rueger et al., 2010 ). However, the...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...sociometer theory ( Leary, 2005 ) concerning the view that social support is an important source of self-esteem. The findings confirmed Asendorpf and van...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...drawn at present with respect to the longitudinal effect of perceived social support on self-esteem. Ongoing investigations are necessary to test the results reveal...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \".... In the present study, however, the participants were from special education schools and their peer relationships resembled those among non-disabled adolesc...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...nly parental support significantly and positively predicted self-esteem. The findings support the sociometer theory ( Leary, 2005 ) concerning the view...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...; such peer relationships could affect their development of self-concept and thus their levels of self-esteem. In the present study, however, the partic...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...al., 2014 ). Although neither teacher nor the two types of peer support significantly predicted self-esteem, parental support did. In turn, self-esteem...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...ose relationships, which, in turn, improves their perceived social support ( Marshall et al., 2014 ). Although neither teacher nor the two types of peer s...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...develop close relationships, which, in turn, improves their perceived social support ( Marshall et al., 2014 ). Although neither teacher nor the two types of peer s...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...rn countries. This study, however, was conducted in Chinese special education schools. For students with visual impairment attending special schools in China...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...attending special schools in China, most of them resided at school, they only went home during public holidays, and they were rarely allowed to go...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...ontiers in Psychology 09 frontiersin.org boost adolescents’ confidence in relationship management, and thus they become more inclined to develop close...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...r nor the two types of peer support significantly predicted self-esteem, parental support did. In turn, self-esteem significantly positively predicted...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...self- esteem and perceived social support among first-year college students ( Lee et al., 2014 ), and further reveals the differences in such relationships...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "college students",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...adolescents with visual impairments through enhancing their social support. Specifically, the importance of parental support on visually impaired adolesce...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...se-friend support, benefiting their friendship development. Perceived social support from parents, teachers, classmates, and close friend all failed to contribute t...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...red adolescents’ self-esteem should be paid more attention. Special education schools could strengthen their collaborations with adolescents’ parents by init...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...collaborations with adolescents’ parents by initiating home-school activities to enhance the communication between visually impaired adolescents a...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...Psychology 10 frontiersin.org programs concerning improving self-esteem among adolescents with visual impairments through enhancing their social suppor...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...4 Kef, S., and Deković, M. (2004). The role of parental and peer support in adolescents well-being: a comparison of adolescents with and without a visua...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - References] \"...1908.2017.1319652 Barger, S. D. (2013). Social integration, social support and mortality in the US National Health Interview Survey. Psychosom. Med. 75, 5...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - References] \"...the short-and long-term reciprocal effects of interactions, perceived social support, and depression among international students. J. Comput.-Mediat. Commun. 24, 73...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - References] \"...nd Riahikia, M. (2017). Friendly librarians: the culture of caring and inclusion experiences of visually impaired students in an academic library....\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "caring",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 11 - Evaluation] \"...eived parenting style with anxiety levels and loneliness in visually impaired children and adolescents. Arch. Clin. Psychiatr. 43, 112–115. doi: 10.1590/0101-60830000...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...lusion in and out of the classroom: a longitudinal study of students with visual impairments in inclusive education. Br. J. Vis. Impair. 34, 130–140. doi: 10.1177/026461961...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...d Hancock, N. (2017). The social experiences of high school students with visual impairments. J. Vis. Impair. Blind. 111, 5–19. doi: 10.1177/0145482x1711100102 Kapinga, O....\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...a longitudinal study of students with visual impairments in inclusive education. Br. J. Vis. Impair. 34, 130–140. doi: 10.1177/0264619615625428 Deng, H. H., Ch...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...W., and Huang, X. T. (2004). Social adaptability of second school students: theoretical construct and scale development. Psychol. Sci. 27, 182–18...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"..., 2022). de Verdier, K. (2016). Inclusion in and out of the classroom: a longitudinal study of students with visual impairments in inclusive educatio...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - References] \".../1467-6494.7104005 Augestad, L. B. (2017). Self-concept and self-esteem among children and young adults with visual impairment: a systematic review. Co...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - References] \"...666. doi: 10.1111/1467-6494.7104005 Augestad, L. B. (2017). Self-concept and self-esteem among children and young adults with visual impairment: a syste...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "Self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...711 Eguavoen, E. O., and Eniola, M. S. (2016). Influence of self-concept and social acceptance on academic achievement of students with visual impairmen...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - References] \"...perceived social support, social-emotional experiences, and psychological well-being of international students. J. Exp. Educ. 89, 95–111. doi: 10.1080/00220973.2019...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Evaluation] \"...aptability, self-esteem, and social support among Hong Kong university students. Career Dev. Q. 66, 94–106. doi: 10.1002/cdq.12118 Huurre, T. M., Komulainen, E...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Evaluation",
+        "term": "university students",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...un, G., and Cheng, Z. (2018). How social support influences university students’ academic achievement and emotional exhaustion: the mediating role of self-este...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "university students",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...(2010). Relationship between multiple sources of perceived social support and psychological and academic adjustment in early adolescence: comparisons acr...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ray, M. K. (2010). Relationship between multiple sources of perceived social support and psychological and academic adjustment in early adolescence: comparisons acr...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ill, M. M., and Hill, E. (1990). “The social functioning of children with visual impairments” in Social competence of young children with disabilities: Issues and strategie...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "children with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...Xiao, S. H. (2020). Review of research on mental health of children with visual impairments. Chin. J. Spec. Educ. 2, 15–20. doi: 10.3969/j. issn.1007-3728.2020.02.004 Zinn...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "children with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...022). A cross-lagged study of psychosocial adaptation among students with visual impairments: coping, self-esteem, and social integration. Res. Dev. Disabil. 128:104292. do...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...Ling, P. K. (2004). The perspectives of Singapore secondary school students with vision impairments towards their inclusion in mainstream educatio...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...0.1177/0022146510395592 Tołczyk, S., and Pisula, E. (2019). Self-esteem and coping styles in polish youths with and without visual impairments. J. Vis....\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_3389_fpsyg_2022_1054857",
+    "isPdfVerified": true,
+    "literatureGroup": "direct",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "X",
+      "M",
+      "Y",
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "page_count": 12,
+    "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.1054857/pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.347Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4313891636",
+        "url": "https://doi.org/10.3389/fpsyg.2022.1054857"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.632Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4313891636",
+        "url": "https://doi.org/10.3389/fpsyg.2022.1054857"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4313891636",
+        "url": "https://doi.org/10.3389/fpsyg.2022.1054857"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.165Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4313891636",
+        "url": "https://doi.org/10.3389/fpsyg.2022.1054857"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.767Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4313891636",
+        "url": "https://doi.org/10.3389/fpsyg.2022.1054857"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.347Z",
+    "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-PUB, VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "This study examines the relationship between perceived social support and self-esteem and between perceived social support and social integration among adolescents with visual impairments. Adolescents with visual impairments (Ntime1 = 311, Ntime2 = 170) from four special education schools in eastern",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "Linking perceived social support to self-esteem and social integration among adolescents with visual impairment: A cross-lagged study",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.3389/fpsyg.2022.1054857",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Unsure",
+    "venue": "Frontiers in Psychology",
+    "year": "2023"
+  }
+}

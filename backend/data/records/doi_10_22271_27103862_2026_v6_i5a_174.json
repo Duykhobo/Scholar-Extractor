@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_22271_27103862_2026_v6_i5a_174",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Self-confidence among visually impaired girls",
+  "authors": "Kanwar J",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:16.640Z",
+  "abstract": "Self-confidence is an important psychological characteristic that influences students’ personal development, social adjustment, and academic participation. Students with visual impairment often face various challenges in their daily lives, which may affect the development of their self-confidence. The present study aimed to examine and compare the level of self-confidence among visually impaired girls and girls with normal eyesight. A comparative descriptive research design was adopted for the study. The sample consisted of 100 girl students, including 50 visually impaired girls and 50 sighted girls, selected from special schools and general schools of Jaipur city. The age of the participants ranged from 12 to 18 years. A purposive sampling technique was used for selecting visually impaired students. Self-confidence was measured using the Self-Confidence Inventory developed by Rekha Gupta (1989). The data were analysed using mean, standard deviation, and independent sample t-test. The findings suggest that visual impairment does not necessarily reduce self-confidence among students. With supportive family environments, inclusive educational settings, and opportunities for social participation, visually impaired girls can develop levels of self-confidence comparable to their sighted peers. The study highlights the importance of inclusive educational practices and supportive social environments in promoting the psychological development of visually impaired students.",
+  "doi": "10.22271/27103862.2026.v6.i5a.174",
+  "venue": "International Journal of Research in Special Education",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_22271_27103862_2026_v6_i5a_174",
+  "landingPageUrl": "https://doi.org/10.22271/27103862.2026.v6.i5a.174",
+  "openAccessPdfUrl": "https://www.rehabilitationjournals.com/special-education-journal/article/174/6-4-15-775.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.640Z",
+  "rawPayload": {
+    "abstract": "Self-confidence is an important psychological characteristic that influences students’ personal development, social adjustment, and academic participation. Students with visual impairment often face various challenges in their daily lives, which may affect the development of their self-confidence. The present study aimed to examine and compare the level of self-confidence among visually impaired girls and girls with normal eyesight. A comparative descriptive research design was adopted for the study. The sample consisted of 100 girl students, including 50 visually impaired girls and 50 sighted girls, selected from special schools and general schools of Jaipur city. The age of the participants ranged from 12 to 18 years. A purposive sampling technique was used for selecting visually impaired students. Self-confidence was measured using the Self-Confidence Inventory developed by Rekha Gupta (1989). The data were analysed using mean, standard deviation, and independent sample t-test. The findings suggest that visual impairment does not necessarily reduce self-confidence among students. With supportive family environments, inclusive educational settings, and opportunities for social participation, visually impaired girls can develop levels of self-confidence comparable to their sighted peers. The study highlights the importance of inclusive educational practices and supportive social environments in promoting the psychological development of visually impaired students.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Kanwar J",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-confidence (Primary Y)",
+      "social participation (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.22271/27103862.2026.v6.i5a.174",
+    "finalDecision": "",
+    "id": "doi_10_22271_27103862_2026_v6_i5a_174",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://www.rehabilitationjournals.com/special-education-journal/article/174/6-4-15-775.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.640Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7160497187",
+        "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.689Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7160497187",
+        "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.298Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7160497187",
+        "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.794Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7160497187",
+        "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.311Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7160497187",
+        "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.640Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Self-confidence is an important psychological characteristic that influences students’ personal development, social adjustment, and academic participation. Students with visual impairment often face various challenges in their daily lives, which may affect the development of their self-confidence. T",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Self-confidence among visually impaired girls",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.22271/27103862.2026.v6.i5a.174",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "International Journal of Research in Special Education",
+    "year": "2026"
+  }
+}

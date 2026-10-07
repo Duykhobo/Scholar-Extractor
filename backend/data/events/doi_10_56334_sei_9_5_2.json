@@ -1,0 +1,377 @@
+[
+  {
+    "id": "evt_1791335614913_h0y2x",
+    "recordId": "doi_10_56334_sei_9_5_2",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.913Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Center (IRC) professionals in supporting such inclusion; and (3) the behavioral characteristics of blind children in play, communication, and learning, and their influence on peer relationships within the classroom environment. Particular attention is given to key success factors, including effective collaboration between parents and school staff, teachers’ readiness to understand the unique circumstances of families raising children with visual impairments, and the importance of empathy, sensitivity, and professional tact in communication with parents. Another critical prerequisite for successful inclusion is the preparation of sighted students for the arrival of a blind peer, fostering a supportive and inclusive classroom culture. The study emphasizes that IRC specialists should not position themselves as absolute authorities in the education and rehabilitation of blind children. Instead, through continuous collaboration with schools, they can enhance their professional competence, deepen their understanding of children’s behavioral patterns across various activities, and provide context-sensitive support when necessary. Furthermore, the article addresses specific behavioral responses of blind children in unfamiliar environments, strategies for creating comfortable and inclusive educational conditions for both visually impaired and sighted students, and the developmental benefits that blind children gain from meaningful inclusion characterized by real-life interaction and peer communication.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vera Remazhevskaya",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56334/sei/9.5.2",
+      "finalDecision": "",
+      "id": "doi_10_56334_sei_9_5_2",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Science Education and Innovations in the Context of Modern Problems\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://doi.org/10.56334/sei/9.5.2",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Cent",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Role of Primary Education in the Socialization of Blind Children: A Qualitative Study of Pedagogical Strategies, Behavioral Adaptation, and Inclusive Support Systems",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56334/sei/9.5.2",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Science Education and Innovations in the Context of Modern Problems",
+      "year": "2026"
+    }
+  },
+  {
+    "id": "evt_1791335618639_bz6ni",
+    "recordId": "doi_10_56334_sei_9_5_2",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.639Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Center (IRC) professionals in supporting such inclusion; and (3) the behavioral characteristics of blind children in play, communication, and learning, and their influence on peer relationships within the classroom environment. Particular attention is given to key success factors, including effective collaboration between parents and school staff, teachers’ readiness to understand the unique circumstances of families raising children with visual impairments, and the importance of empathy, sensitivity, and professional tact in communication with parents. Another critical prerequisite for successful inclusion is the preparation of sighted students for the arrival of a blind peer, fostering a supportive and inclusive classroom culture. The study emphasizes that IRC specialists should not position themselves as absolute authorities in the education and rehabilitation of blind children. Instead, through continuous collaboration with schools, they can enhance their professional competence, deepen their understanding of children’s behavioral patterns across various activities, and provide context-sensitive support when necessary. Furthermore, the article addresses specific behavioral responses of blind children in unfamiliar environments, strategies for creating comfortable and inclusive educational conditions for both visually impaired and sighted students, and the developmental benefits that blind children gain from meaningful inclusion characterized by real-life interaction and peer communication.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vera Remazhevskaya",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56334/sei/9.5.2",
+      "finalDecision": "",
+      "id": "doi_10_56334_sei_9_5_2",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Science Education and Innovations in the Context of Modern Problems\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://doi.org/10.56334/sei/9.5.2",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Cent",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Role of Primary Education in the Socialization of Blind Children: A Qualitative Study of Pedagogical Strategies, Behavioral Adaptation, and Inclusive Support Systems",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56334/sei/9.5.2",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Science Education and Innovations in the Context of Modern Problems",
+      "year": "2026",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623986_8imhz",
+    "recordId": "doi_10_56334_sei_9_5_2",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.986Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Center (IRC) professionals in supporting such inclusion; and (3) the behavioral characteristics of blind children in play, communication, and learning, and their influence on peer relationships within the classroom environment. Particular attention is given to key success factors, including effective collaboration between parents and school staff, teachers’ readiness to understand the unique circumstances of families raising children with visual impairments, and the importance of empathy, sensitivity, and professional tact in communication with parents. Another critical prerequisite for successful inclusion is the preparation of sighted students for the arrival of a blind peer, fostering a supportive and inclusive classroom culture. The study emphasizes that IRC specialists should not position themselves as absolute authorities in the education and rehabilitation of blind children. Instead, through continuous collaboration with schools, they can enhance their professional competence, deepen their understanding of children’s behavioral patterns across various activities, and provide context-sensitive support when necessary. Furthermore, the article addresses specific behavioral responses of blind children in unfamiliar environments, strategies for creating comfortable and inclusive educational conditions for both visually impaired and sighted students, and the developmental benefits that blind children gain from meaningful inclusion characterized by real-life interaction and peer communication.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vera Remazhevskaya",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.56334/sei/9.5.2",
+      "finalDecision": "",
+      "id": "doi_10_56334_sei_9_5_2",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Science Education and Innovations in the Context of Modern Problems\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://doi.org/10.56334/sei/9.5.2",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.088Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.442Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W7153712148",
+          "url": "https://doi.org/10.56334/sei/9.5.2"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "This article examines the inclusion of children with visual impairments in primary education through three interrelated dimensions: (1) the essential conditions required for successful school participation of a visually impaired child; (2) the specific roles and activities of Inclusive Resource Cent",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Role of Primary Education in the Socialization of Blind Children: A Qualitative Study of Pedagogical Strategies, Behavioral Adaptation, and Inclusive Support Systems",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.56334/sei/9.5.2",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Science Education and Innovations in the Context of Modern Problems",
+      "year": "2026"
+    }
+  }
+]

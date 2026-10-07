@@ -3,7 +3,7 @@ import { AcmDlAdapter } from "./acmdl";
 
 export interface ImportPreviewResult {
   fileName: string;
-  fileType: "csv" | "bibtex" | "ris" | "unknown";
+  fileType: "csv" | "bibtex" | "ris";
   totalRowsParsed: number;
   validRecords: PaperRecord[];
   containersCount: number;
@@ -69,7 +69,7 @@ export class UniversalFileImporter {
   }
 
   /**
-   * Import file CSV và tự động map theo schema tiếng Việt hoặc quốc tế
+   * Import file CSV và tự động map theo schema tiếng Việt, Zotero CSV, hoặc quốc tế
    */
   static parseCsv(csvContent: string, fileName: string = "uploaded.csv"): ImportPreviewResult {
     const rows = this.parseCsvRows(csvContent);
@@ -91,19 +91,20 @@ export class UniversalFileImporter {
     const header = rows[0].map((h) => h.toLowerCase().trim());
     const dataRows = rows.slice(1);
 
-    // Phát hiện các cột
+    // Phát hiện các cột đa dạng (hỗ trợ Zotero, Mendeley, Scopus, WoS)
     const colIndex = {
-      id: header.findIndex((h) => h === "ma" || h === "id" || h === "paper_id"),
-      source: header.findIndex((h) => h === "nguon" || h === "source"),
+      id: header.findIndex((h) => h === "ma" || h === "id" || h === "paper_id" || h === "key"),
+      source: header.findIndex((h) => h === "nguon" || h === "source" || h === "library catalog" || h === "archive"),
       phien_ban: header.findIndex((h) => h === "phien_ban" || h === "query_version" || h === "version"),
-      loai: header.findIndex((h) => h === "loai" || h === "type" || h === "publication_type"),
+      loai: header.findIndex((h) => h === "loai" || h === "type" || h === "publication_type" || h === "item type"),
       doi: header.findIndex((h) => h === "doi"),
       title: header.findIndex((h) => h === "title" || h === "tieu_de"),
       authors: header.findIndex((h) => h === "authors" || h === "tac_gia" || h === "author"),
-      year: header.findIndex((h) => h === "year" || h === "nam"),
-      venue: header.findIndex((h) => h === "venue" || h === "noi_xuat_ban" || h === "journal"),
+      year: header.findIndex((h) => h === "year" || h === "nam" || h === "publication year" || h === "date"),
+      venue: header.findIndex((h) => h === "venue" || h === "noi_xuat_ban" || h === "journal" || h === "publication title"),
       url: header.findIndex((h) => h === "url" || h === "link"),
-      abstract: header.findIndex((h) => h === "abstract" || h === "tom_tat"),
+      abstract: header.findIndex((h) => h === "abstract" || h === "tom_tat" || h === "abstract note"),
+      file_attachment: header.findIndex((h) => h === "file attachments" || h === "link attachments" || h === "pdf_path" || h === "attachments"),
       // Vòng screening cũ
       v1_decision: header.findIndex((h) => h === "v1_decision" || h === "decision_v1"),
       v1_reason: header.findIndex((h) => h === "v1_reason" || h === "reason_v1"),
@@ -120,13 +121,13 @@ export class UniversalFileImporter {
     let containersCount = 0;
     let articlesCount = 0;
 
-    let isFile01 = fileName.includes("01_") || (colIndex.loai >= 0 && colIndex.v1_decision < 0);
-    let isFile02 = fileName.includes("02_") || colIndex.v1_decision >= 0;
-    let isFile03 = fileName.includes("03_") || colIndex.v2_status >= 0;
+    const isFile01 = fileName.includes("01_") || (colIndex.loai >= 0 && colIndex.v1_decision < 0);
+    const isFile02 = fileName.includes("02_") || colIndex.v1_decision >= 0;
+    const isFile03 = fileName.includes("03_") || colIndex.v2_status >= 0;
 
     if (isFile03) {
       warnings.push(
-        "Phát hiện file danh sách ứng viên (03_final_included): Chứa cả đề xuất GIỮ và đề xuất LOẠI (EC-S/EC-A). Không tự động gán toàn bộ thành Include cuối cùng.",
+        "Phát hiện file danh sách ứng viên (03_final_included): Chứa cả đề xuất GIỮ và đề xuất LOẠI (EC-S/EC-A). Không tự động gán toàn bộ thành Include cuối cùng."
       );
     }
 
@@ -148,19 +149,30 @@ export class UniversalFileImporter {
       }
 
       const rawAuthors = getVal(colIndex.authors);
-      const rawYear = getVal(colIndex.year);
+      let rawYear = getVal(colIndex.year);
+      const yearMatch = rawYear.match(/\b(19\d\d|20\d\d)\b/);
+      if (yearMatch) {
+        rawYear = yearMatch[1];
+      }
+
       const rawVenue = getVal(colIndex.venue);
       const rawUrl = getVal(colIndex.url);
       const rawAbstract = getVal(colIndex.abstract);
-      const rawSource = getVal(colIndex.source) || "Imported File";
-      const rawLoai = getVal(colIndex.loai);
+      const rawFileAttachment = getVal(colIndex.file_attachment);
       const rawPhienBan = getVal(colIndex.phien_ban);
       const rawV1Decision = getVal(colIndex.v1_decision);
       const rawV1Reason = getVal(colIndex.v1_reason);
       const rawV2Status = getVal(colIndex.v2_status);
       const rawV2Note = getVal(colIndex.v2_note);
 
-      // Nhận diện Container vs Bài báo
+      let rawSource = getVal(colIndex.source);
+      if (!rawSource) {
+        rawSource = "Imported CSV";
+      } else if (header.includes("library catalog") || header.includes("item type")) {
+        rawSource = `Zotero (${rawSource})`;
+      }
+
+      const rawLoai = getVal(colIndex.loai);
       const isContainer = AcmDlAdapter.isContainerRecord(rawTitle, rawAuthors, rawDoi, rawLoai);
       if (isContainer) {
         containersCount++;
@@ -168,10 +180,18 @@ export class UniversalFileImporter {
         articlesCount++;
       }
 
-      // Thống kê
       if (rawDoi) withDoi++;
       if (rawAbstract) withAbstract++;
       sourcesCount[rawSource] = (sourcesCount[rawSource] || 0) + 1;
+
+      let publicationType: "journal-article" | "proceedings-article" | "proceedings" | "book" | "thesis" | "unknown" =
+        isContainer ? "proceedings" : "proceedings-article";
+      if (!isContainer && rawLoai) {
+        const loaiLower = rawLoai.toLowerCase();
+        if (loaiLower.includes("journal")) publicationType = "journal-article";
+        else if (loaiLower.includes("thesis") || loaiLower.includes("dissertation")) publicationType = "thesis";
+        else if (loaiLower.includes("book") || loaiLower.includes("chapter")) publicationType = "book";
+      }
 
       // Chuẩn hóa Query Version: V1;V2;V3 -> Q1;Q2;Q3, giữ nguyên giá trị gốc
       let normalizedQueryVersion = rawPhienBan;
@@ -182,21 +202,16 @@ export class UniversalFileImporter {
           .join(";");
       }
 
-      // Khởi tạo PaperRecord
-      const paperId = rawId || (rawDoi ? `doi_${rawDoi.replace(/[^a-zA-Z0-9]/g, "_")}` : `imp_${Date.now()}_${idx}`);
-
-      // Ánh xạ quyết định vòng
+      // Ánh xạ quyết định vòng cho tương thích ngược
       let suggestedDecision: "Include" | "Exclude" | "Unsure" = "Unsure";
       let screeningReason = "Nhập từ tệp CSV";
       let screeningStage = "V1";
-      let finalDecision: "Include" | "Exclude" | "Unsure" | "" = "";
 
       if (isContainer) {
         suggestedDecision = "Exclude";
         screeningReason = "EC-N — tập kỷ yếu (container), không phải bài thực nghiệm";
         screeningStage = "V2";
       } else if (rawV1Decision) {
-        // Map vòng Title/Abstract cũ sang V2 chuẩn
         screeningStage = "V2";
         if (/include/i.test(rawV1Decision)) {
           suggestedDecision = "Include";
@@ -210,14 +225,18 @@ export class UniversalFileImporter {
 
       if (rawV2Status) {
         screeningStage = "V3";
-        if (/loại/i.test(rawV2Status) || /đề xuất loại/i.test(rawV2Status)) {
+        if (/loại/i.test(rawV2Status) || /đề xuất loại/i.test(rawV2Status) || /exclude/i.test(rawV2Status)) {
           suggestedDecision = "Exclude";
           screeningReason = `${rawV2Status}: ${rawV2Note}`;
-        } else if (/giữ/i.test(rawV2Status)) {
+        } else if (/giữ/i.test(rawV2Status) || /include/i.test(rawV2Status)) {
           suggestedDecision = "Include";
           screeningReason = `${rawV2Status}: ${rawV2Note}`;
         }
       }
+
+      const paperId = rawId || (rawDoi ? `doi_${rawDoi.replace(/[^a-zA-Z0-9]/g, "_")}` : `imp_${Date.now()}_${idx}`);
+      const landingPageUrl = rawUrl || (rawDoi ? `https://doi.org/${rawDoi}` : "");
+      let pdfUrl = rawFileAttachment || undefined;
 
       const provenance: SourceProvenance = {
         source: rawSource,
@@ -225,8 +244,7 @@ export class UniversalFileImporter {
         queryVersion: normalizedQueryVersion || "Q1",
         retrievedAt: new Date().toISOString(),
         method: "import_csv",
-        url: rawUrl,
-        rawQuery: rawPhienBan,
+        url: landingPageUrl,
       };
 
       const record: PaperRecord = {
@@ -241,7 +259,7 @@ export class UniversalFileImporter {
         doi: rawDoi,
         snippet: rawAbstract ? rawAbstract.slice(0, 300) : "",
         abstract: rawAbstract,
-        url: rawUrl || (rawDoi ? `https://doi.org/${rawDoi}` : ""),
+        url: landingPageUrl,
         query: rawPhienBan || "",
         retrieval_date: new Date().toISOString(),
         search_id: "",
@@ -251,24 +269,26 @@ export class UniversalFileImporter {
         uncertain_doi: !rawDoi,
         missing_abstract: !rawAbstract,
         screeningStage,
-        pipelineStage: isFile03 ? "V3" : isFile02 ? "V2" : "V1",
+        pipelineStage: isFile03 ? "V3" : isFile02 ? "V2" : isFile01 ? "V1" : "B1",
         queryVersion: normalizedQueryVersion,
         matchedCriteria: [],
         suggestedDecision,
         screeningReason,
-        finalDecision,
+        finalDecision: "",
         userNotes: rawV2Note || rawV1Reason || "",
-        publicationType: isContainer ? "proceedings" : "proceedings-article",
+        publicationType,
         isContainer,
+        pdfUrl,
         provenanceList: [provenance],
       };
 
       validRecords.push(record);
     });
 
-    let suggestedStage: "B1" | "V1" | "V2" | "V3" = "V1";
-    if (isFile03) suggestedStage = "V3";
-    else if (isFile02) suggestedStage = "V2";
+    let suggestedPipelineStage: "B1" | "V1" | "V2" | "V3" = "B1";
+    if (isFile03) suggestedPipelineStage = "V3";
+    else if (isFile02) suggestedPipelineStage = "V2";
+    else if (isFile01) suggestedPipelineStage = "V1";
 
     return {
       fileName,
@@ -279,7 +299,7 @@ export class UniversalFileImporter {
       articlesCount,
       rowErrors,
       warnings,
-      suggestedPipelineStage: suggestedStage,
+      suggestedPipelineStage,
       metadataSummary: {
         sources: sourcesCount,
         withDoi,
@@ -289,12 +309,132 @@ export class UniversalFileImporter {
   }
 
   /**
-   * Parse BibTeX format
+   * Import file RIS chuẩn (EndNote, Zotero, Mendeley, Rayyan, CADIMA)
+   */
+  static parseRis(risContent: string, fileName: string = "uploaded.ris"): ImportPreviewResult {
+    const lines = risContent.split(/\r?\n/);
+    const validRecords: PaperRecord[] = [];
+    const rowErrors: Array<{ row: number; error: string; rawSnippet?: string }> = [];
+
+    let currentFields: Record<string, string[]> = {};
+    let recordIndex = 0;
+
+    const flushRecord = () => {
+      if (Object.keys(currentFields).length === 0) return;
+      recordIndex++;
+
+      const getFirst = (tag: string) => currentFields[tag]?.[0] || "";
+      const getAll = (tag: string) => currentFields[tag] || [];
+
+      const title = getFirst("TI") || getFirst("T1") || getFirst("CT") || "Untitled";
+      const authors = getAll("AU").concat(getAll("A1")).join("; ");
+      const rawYear = getFirst("PY") || getFirst("Y1") || getFirst("DA") || "";
+      const yearMatch = rawYear.match(/\b(19\d\d|20\d\d)\b/);
+      const year = yearMatch ? yearMatch[1] : rawYear;
+
+      const venue = getFirst("JO") || getFirst("JF") || getFirst("T2") || getFirst("JA") || "";
+      const doi = getFirst("DO").replace(/^https?:\/\/doi\.org\//i, "");
+      const abstract = getFirst("AB") || getFirst("N2") || "";
+      const url = getFirst("UR") || getFirst("L1") || (doi ? `https://doi.org/${doi}` : "");
+      const pdfUrl = getFirst("L1") || undefined;
+      const type = getFirst("TY").toLowerCase();
+
+      if (!title && !doi) {
+        rowErrors.push({ row: recordIndex, error: "Bản ghi RIS thiếu cả Tiêu đề và DOI." });
+        currentFields = {};
+        return;
+      }
+
+      const id = doi ? `doi_${doi.replace(/[^a-zA-Z0-9]/g, "_")}` : `ris_${Date.now()}_${recordIndex}`;
+
+      validRecords.push({
+        id,
+        source: "RIS Import",
+        discoverySource: "RIS Import",
+        collectionMethod: "import_ris",
+        title,
+        authors,
+        year,
+        venue,
+        doi,
+        snippet: abstract.slice(0, 300),
+        abstract,
+        url,
+        query: "",
+        retrieval_date: new Date().toISOString(),
+        search_id: "",
+        uncertain_authors: !authors,
+        uncertain_year: !year,
+        uncertain_venue: !venue,
+        uncertain_doi: !doi,
+        missing_abstract: !abstract,
+        screeningStage: "B1",
+        pipelineStage: "B1",
+        matchedCriteria: [],
+        suggestedDecision: "Unsure",
+        screeningReason: "Nhập từ tệp RIS",
+        finalDecision: "",
+        userNotes: "",
+        pdfUrl,
+        publicationType: type === "jour" ? "journal-article" : "proceedings-article",
+        provenanceList: [
+          {
+            source: "RIS Import",
+            sourceRecordId: id,
+            retrievedAt: new Date().toISOString(),
+            method: "import_ris",
+            url,
+          },
+        ],
+      });
+
+      currentFields = {};
+    };
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (!line) continue;
+
+      const match = line.match(/^([A-Z0-9]{2})\s*-\s*(.*)$/);
+      if (match) {
+        const tag = match[1];
+        const val = match[2].trim();
+
+        if (tag === "ER") {
+          flushRecord();
+        } else {
+          if (!currentFields[tag]) currentFields[tag] = [];
+          currentFields[tag].push(val);
+        }
+      }
+    }
+    flushRecord();
+
+    return {
+      fileName,
+      fileType: "ris",
+      totalRowsParsed: validRecords.length,
+      validRecords,
+      containersCount: 0,
+      articlesCount: validRecords.length,
+      rowErrors,
+      warnings: [],
+      suggestedPipelineStage: "B1",
+      metadataSummary: {
+        sources: { "RIS Import": validRecords.length },
+        withDoi: validRecords.filter((r) => r.doi).length,
+        withAbstract: validRecords.filter((r) => r.abstract).length,
+      },
+    };
+  }
+
+  /**
+   * Import file BibTeX chuẩn
    */
   static parseBibtex(bibContent: string, fileName: string = "uploaded.bib"): ImportPreviewResult {
     const entries = bibContent.split(/@(?=[a-zA-Z]+\s*\{)/);
     const validRecords: PaperRecord[] = [];
-    const rowErrors: Array<{ row: number; error: string }> = [];
+    const rowErrors: Array<{ row: number; error: string; rawSnippet?: string }> = [];
 
     entries.forEach((entry, idx) => {
       const trimmed = entry.trim();
@@ -347,12 +487,11 @@ export class UniversalFileImporter {
         uncertain_venue: !venue,
         uncertain_doi: !doi,
         missing_abstract: !abstract,
-        screeningStage: "V1",
+        screeningStage: "B1",
         pipelineStage: "B1",
-        queryVersion: "Q1",
         matchedCriteria: [],
-        suggestedDecision: isContainer ? "Exclude" : "Unsure",
-        screeningReason: isContainer ? "EC-N (container)" : "Nhập từ tệp BibTeX",
+        suggestedDecision: "Unsure",
+        screeningReason: "Nhập từ tệp BibTeX",
         finalDecision: "",
         userNotes: "",
         isContainer,

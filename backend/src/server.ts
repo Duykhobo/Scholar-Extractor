@@ -31,14 +31,30 @@ import { sanitizeObject, sanitizeString } from "./sanitizer";
 import { fetchScholarFromSerpApi, getApiRequestsCount } from "./scholarService";
 import { appendSearchLog, SearchLoggerService } from "./searchLogger";
 import { SnowballService } from "./snowballing/snowballService";
-import { CanonicalPaper, PaperRecord, TabExtractedData } from "./types";
+import { CanonicalPaper, PaperRecord, TabExtractedData, Collection, MetadataFilterConfig, KeywordFilterConfig, SearchRun, NormalizedRecord } from "./types";
 import { UnpaywallService } from "./unpaywallService";
+import { CollectionStore } from "./db/collectionStore";
+import { CollectorRunner } from "./jobs/collectorRunner";
+import {
+  generateCanonicalCsv,
+  generateDuplicateMappingCsv,
+  generateFilterLogCsv,
+  generateRis,
+  generateBibtex,
+  generateSearchLogCsv,
+  getCadimaRayyanGuideMarkdown,
+} from "./exporter";
+import slrProjectRouter from "./routes/slrProjectRoutes";
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
+app.use(express.text({ limit: "50mb", type: ["text/*", "application/x-research-info-systems", "application/x-bibtex"] }));
+
+// SLR Multi-Project Literature Review API
+app.use("/api/projects", slrProjectRouter);
 
 // Health check endpoint - Khong bao gio tra ve gia tri key
 app.get("/api/health", (req: Request, res: Response) => {
@@ -48,6 +64,14 @@ app.get("/api/health", (req: Request, res: Response) => {
     isKeyConfigured: config.isKeyConfigured(),
     totalApiRequestsUsed: getApiRequestsCount(),
     dbConnected: isDbOnline(),
+    timestamp: new Date().toISOString(),
+  });
+});
+
+app.get("/api/status", (req: Request, res: Response) => {
+  res.json({
+    status: "ok",
+    service: "Scholar Extractor Collector Backend",
     timestamp: new Date().toISOString(),
   });
 });
@@ -1686,7 +1710,504 @@ app.post("/api/scholar/export-v2", (req: Request, res: Response) => {
   }
 });
 
-// Error handling middleware - dam bao khong tra ve key trong bat ky thong bao loi nao
+// ==========================================
+// CÁC ENDPOINT REST API MỚI CHO THU THẬP & LỌC SƠ BỘ (L0 - L3)
+// ==========================================
+
+// 1. Quản lý Collection
+app.get("/api/collections", (req: Request, res: Response) => {
+  const list = CollectionStore.getAllCollections();
+  if (req.query.format === "object") {
+    return res.json({ success: true, collections: list });
+  }
+  res.json(list);
+});
+
+app.post("/api/collections", (req: Request, res: Response) => {
+  try {
+    const { id, name, description, notes, picoNotes } = req.body;
+    if (!name) return res.status(400).json({ error: "Tên collection là bắt buộc." });
+    const col: Collection = {
+      id: id || `col_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      name: name.trim(),
+      description: description || "",
+      notes: notes || picoNotes || "",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    const saved = CollectionStore.saveCollection(col);
+    res.json({ success: true, ...saved, collection: saved });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Import file thủ công (CSV / RIS / BibTeX) vào Collection
+app.post("/api/collections/:id/import-file", express.raw({ type: "*/*", limit: "50mb" }), async (req: Request, res: Response) => {
+  try {
+    const colId = req.params.id as string;
+    const col = CollectionStore.getCollection(colId);
+    if (!col) return res.status(404).json({ error: "Không tìm thấy collection." });
+
+    let rawText = "";
+    let fileName = (req.query.fileName as string) || "imported_file";
+
+    if (typeof req.body === "string") {
+      rawText = req.body;
+    } else if (Buffer.isBuffer(req.body)) {
+      const str = req.body.toString("utf-8");
+      const contentType = req.headers["content-type"] || "";
+      if (contentType.includes("multipart/form-data")) {
+        const matchName = str.match(/filename="([^"]+)"/i);
+        if (matchName) fileName = matchName[1];
+        const bodyStart = str.indexOf("\r\n\r\n");
+        const bodyEnd = str.lastIndexOf("\r\n--");
+        if (bodyStart !== -1 && bodyEnd !== -1) {
+          rawText = str.slice(bodyStart + 4, bodyEnd);
+        } else {
+          rawText = str;
+        }
+      } else {
+        rawText = str;
+      }
+    } else if (req.body && typeof req.body === "object") {
+      rawText = req.body.content || "";
+      if (req.body.fileName) fileName = req.body.fileName;
+    }
+
+    if (!rawText.trim()) {
+      return res.status(400).json({ error: "Nội dung tệp rỗng." });
+    }
+
+    let parsedResult;
+    const lowerName = fileName.toLowerCase();
+    if (lowerName.endsWith(".ris") || rawText.includes("TY  -")) {
+      parsedResult = UniversalFileImporter.parseRis(rawText, fileName);
+    } else if (lowerName.endsWith(".bib") || /@\w+\s*\{/i.test(rawText)) {
+      parsedResult = UniversalFileImporter.parseBibtex(rawText, fileName);
+    } else {
+      parsedResult = UniversalFileImporter.parseCsv(rawText, fileName);
+    }
+
+    const runId = `import_${Date.now()}`;
+    const run: SearchRun = {
+      id: runId,
+      collectionId: colId,
+      source: `File Import: ${fileName}`,
+      userQuery: fileName,
+      actualQuery: fileName,
+      filters: {},
+      status: "completed",
+      itemsReceived: parsedResult.validRecords.length,
+      itemsSaved: parsedResult.validRecords.length,
+      itemsError: parsedResult.rowErrors.length,
+      startedAt: new Date().toISOString(),
+      completedAt: new Date().toISOString(),
+      errorLog: parsedResult.rowErrors.map((e) => `Row ${e.row}: ${e.error}`),
+    };
+    CollectionStore.saveRun(run);
+
+    const normalizedRecords: NormalizedRecord[] = parsedResult.validRecords.map((r, idx) => ({
+      id: r.id || `imp_${Date.now()}_${idx}`,
+      collectionId: colId,
+      searchRunId: runId,
+      source: r.source || `Import: ${fileName}`,
+      sourceRecordId: r.id || r.doi || "",
+      title: r.title || "Untitled",
+      authors: r.authors || "",
+      year: String(r.year || ""),
+      publicationDate: r.retrieval_date,
+      venue: r.venue || "",
+      doi: r.doi || "",
+      abstract: r.abstract || r.snippet || "",
+      landingPageUrl: r.url || "",
+      openAccessPdfUrl: r.pdfUrl || "",
+      documentType: r.publicationType || "unknown",
+      retrievedAt: new Date().toISOString(),
+      rawPayload: r as any,
+    }));
+
+    const saveStats = CollectionStore.saveBatchRecords(colId, runId, normalizedRecords);
+    res.json({
+      success: true,
+      importedCount: saveStats.savedCount,
+      totalParsed: parsedResult.totalRowsParsed,
+      runId,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/collections/:id/suspected-duplicates", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const list = CollectionStore.getSuspectedDuplicates(collectionId);
+  res.json(list);
+});
+
+app.get("/api/collections/:id/canonical-records", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const list = CollectionStore.getCanonicalRecords(collectionId);
+  res.json(list);
+});
+
+app.get("/api/collections/:id", (req: Request, res: Response) => {
+  const colId = req.params.id as string;
+  const col = CollectionStore.getCollection(colId);
+  if (!col) return res.status(404).json({ error: "Không tìm thấy collection." });
+
+  const rawRecords = CollectionStore.getRecordsByCollection(colId);
+  const canonicalRecords = CollectionStore.getCanonicalRecords(colId);
+  const suspectedGroups = CollectionStore.getSuspectedDuplicates(colId);
+  const filterRuns = CollectionStore.getFilterRuns(colId);
+  const searchRuns = CollectionStore.getRunsByCollection(colId);
+
+  // Thống kê metadata và từ khóa từ kết quả mới nhất
+  let passCount = 0;
+  let failCount = 0;
+  let unknownCount = 0;
+  let matchCount = 0;
+  let noMatchCount = 0;
+  let insufficientCount = 0;
+  let exclusionHitCount = 0;
+
+  for (const c of canonicalRecords) {
+    const fRes = c.latestFilterResult;
+    if (fRes) {
+      if (fRes.metadataStatus === "PASS") passCount++;
+      else if (fRes.metadataStatus === "FAIL") failCount++;
+      else unknownCount++;
+
+      if (fRes.keywordStatus === "MATCH") matchCount++;
+      else if (fRes.keywordStatus === "NO_MATCH") noMatchCount++;
+      else if (fRes.keywordStatus === "INSUFFICIENT_DATA") insufficientCount++;
+
+      if (fRes.hasExclusionHit) exclusionHitCount++;
+    } else {
+      unknownCount++;
+    }
+  }
+
+  res.json({
+    success: true,
+    collection: col,
+    stats: {
+      rawCount: rawRecords.length,
+      canonicalCount: canonicalRecords.length,
+      suspectedGroupsCount: suspectedGroups.filter((g) => g.resolution === "unresolved").length,
+      runsCount: searchRuns.length,
+      metadata: { passCount, failCount, unknownCount },
+      keyword: { matchCount, noMatchCount, insufficientCount, exclusionHitCount },
+    },
+    latestFilterRun: filterRuns[0] || null,
+  });
+});
+
+app.delete("/api/collections/:id", (req: Request, res: Response) => {
+  const ok = CollectionStore.deleteCollection(req.params.id as string);
+  res.json({ success: ok });
+});
+
+// 2. Search Runs & Collector Control
+app.get("/api/collections/:id/runs", (req: Request, res: Response) => {
+  const runs = CollectionStore.getRunsByCollection(req.params.id as string);
+  res.json({ success: true, runs });
+});
+
+app.post("/api/collector/start", async (req: Request, res: Response) => {
+  try {
+    const { collectionId, source, query, filters } = req.body;
+    if (!collectionId || !source || !query) {
+      return res.status(400).json({ error: "Cần collectionId, source và query." });
+    }
+    const run = await CollectorRunner.startRun({ collectionId, source, query, filters });
+    res.json({ success: true, run });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post("/api/collector/pause", (req: Request, res: Response) => {
+  const { runId } = req.body;
+  const ok = CollectorRunner.pauseRun(runId);
+  res.json({ success: ok });
+});
+
+app.post("/api/collector/resume", (req: Request, res: Response) => {
+  const { runId } = req.body;
+  const ok = CollectorRunner.resumeRun(runId);
+  res.json({ success: ok });
+});
+
+app.post("/api/collector/cancel", (req: Request, res: Response) => {
+  const { runId } = req.body;
+  const ok = CollectorRunner.cancelRun(runId);
+  res.json({ success: ok });
+});
+
+app.get("/api/collector/status/:runId", (req: Request, res: Response) => {
+  const run = CollectionStore.getRun(req.params.runId as string);
+  if (!run) return res.status(404).json({ error: "Không tìm thấy run." });
+  res.json({ success: true, run });
+});
+
+app.post("/api/collector/snowball", async (req: Request, res: Response) => {
+  try {
+    const { collectionId, seeds, direction, maxDepth, maxPapersPerSeed, source } = req.body;
+    if (!collectionId || !seeds || seeds.length === 0) {
+      return res.status(400).json({ error: "Cần collectionId và danh sách seeds." });
+    }
+    const run = await CollectorRunner.startSnowballing(collectionId, {
+      seeds,
+      direction: direction || "both",
+      maxDepth: maxDepth || 1,
+      maxPapersPerSeed: maxPapersPerSeed || 20,
+      source: source || "OpenAlex",
+    });
+    res.json({ success: true, run });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 3. Pipeline L0 - L1 (Deduplication)
+app.post("/api/pipeline/l0-l1/run", (req: Request, res: Response) => {
+  try {
+    const { collectionId } = req.body;
+    if (!collectionId) return res.status(400).json({ error: "Cần collectionId." });
+    const result = CollectionStore.runL0L1Pipeline(collectionId);
+    res.json({ success: true, ...result });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/pipeline/l1/suspected", (req: Request, res: Response) => {
+  const collectionId = (req.query.collectionId as string) || "";
+  if (!collectionId) return res.status(400).json({ error: "Cần collectionId." });
+  const list = CollectionStore.getSuspectedDuplicates(collectionId);
+  res.json({ success: true, groups: list });
+});
+
+app.post("/api/pipeline/l1/resolve-suspected", (req: Request, res: Response) => {
+  try {
+    const { collectionId, groupId, resolution, targetCanonicalId } = req.body;
+    if (!collectionId || !groupId || !resolution) {
+      return res.status(400).json({ error: "Thiếu tham số resolution." });
+    }
+    const ok = CollectionStore.resolveSuspectedDuplicate(
+      collectionId,
+      groupId,
+      resolution,
+      targetCanonicalId
+    );
+    res.json({ success: ok });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 4. Pipeline L2 (Metadata Filter)
+app.post("/api/pipeline/l2/run", (req: Request, res: Response) => {
+  try {
+    const { collectionId, config: filterConfig } = req.body as {
+      collectionId: string;
+      config: MetadataFilterConfig;
+    };
+    if (!collectionId || !filterConfig) {
+      return res.status(400).json({ error: "Cần collectionId và config." });
+    }
+    const run = CollectionStore.runL2Pipeline(collectionId, filterConfig);
+    res.json({ success: true, filterRun: run });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 5. Pipeline L3 (Keyword Filter)
+app.post("/api/pipeline/l3/run", (req: Request, res: Response) => {
+  try {
+    const { collectionId, config: keywordConfig } = req.body as {
+      collectionId: string;
+      config: KeywordFilterConfig;
+    };
+    if (!collectionId || !keywordConfig) {
+      return res.status(400).json({ error: "Cần collectionId và config." });
+    }
+    const run = CollectionStore.runL3Pipeline(collectionId, keywordConfig);
+    res.json({ success: true, filterRun: run });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/pipeline/filter-runs", (req: Request, res: Response) => {
+  const collectionId = (req.query.collectionId as string) || "";
+  if (!collectionId) return res.status(400).json({ error: "Cần collectionId." });
+  const runs = CollectionStore.getFilterRuns(collectionId);
+  res.json({ success: true, filterRuns: runs });
+});
+
+// 6. Data Inspection & Records List
+app.get("/api/collections/:id/records", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const { type, metadataFilter, keywordFilter, search, missingFlag } = req.query as Record<
+    string,
+    string
+  >;
+
+  let list: any[] =
+    type === "raw"
+      ? CollectionStore.getRecordsByCollection(collectionId)
+      : CollectionStore.getCanonicalRecords(collectionId);
+
+  // Lọc theo metadataFilter: all | PASS | FAIL | UNKNOWN | PASS_AND_UNKNOWN
+  if (metadataFilter && metadataFilter !== "all") {
+    if (metadataFilter === "PASS_AND_UNKNOWN") {
+      list = list.filter((r) => {
+        const s = r.latestFilterResult?.metadataStatus || "UNKNOWN";
+        return s === "PASS" || s === "UNKNOWN";
+      });
+    } else {
+      list = list.filter((r) => (r.latestFilterResult?.metadataStatus || "UNKNOWN") === metadataFilter);
+    }
+  }
+
+  // Lọc theo keywordFilter: all | MATCH | NO_MATCH | INSUFFICIENT_DATA | EXCLUSION_HIT
+  if (keywordFilter && keywordFilter !== "all") {
+    if (keywordFilter === "EXCLUSION_HIT") {
+      list = list.filter((r) => r.latestFilterResult?.hasExclusionHit);
+    } else {
+      list = list.filter((r) => r.latestFilterResult?.keywordStatus === keywordFilter);
+    }
+  }
+
+  // Lọc theo missing flag
+  if (missingFlag && missingFlag !== "all") {
+    list = list.filter((r) => r.qualityFlags?.[missingFlag]);
+  }
+
+  // Lọc theo từ khóa tìm kiếm
+  if (search && search.trim()) {
+    const q = search.trim().toLowerCase();
+    list = list.filter(
+      (r) =>
+        (r.title && r.title.toLowerCase().includes(q)) ||
+        (r.authors && r.authors.toLowerCase().includes(q)) ||
+        (r.doi && r.doi.toLowerCase().includes(q)) ||
+        (r.venue && r.venue.toLowerCase().includes(q))
+    );
+  }
+
+  res.json({ success: true, total: list.length, records: list });
+});
+
+// 7. Export APIs
+app.get("/api/collections/:id/export", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const col = CollectionStore.getCollection(collectionId);
+  const format = (req.query.format as string) || "csv";
+  const subset = (req.query.subset as string) || "pass_and_unknown";
+
+  const canonicals = CollectionStore.getCanonicalRecords(collectionId);
+  const rawList = CollectionStore.getRecordsByCollection(collectionId);
+
+  let targetRecords: any[] = canonicals;
+
+  if (subset === "all_raw") {
+    targetRecords = rawList;
+  } else if (subset === "unique") {
+    targetRecords = canonicals;
+  } else if (subset === "pass_and_unknown") {
+    targetRecords = canonicals.filter((r) => {
+      const s = r.latestFilterResult?.metadataStatus || "UNKNOWN";
+      return s === "PASS" || s === "UNKNOWN";
+    });
+  } else if (subset === "pass_only") {
+    targetRecords = canonicals.filter((r) => r.latestFilterResult?.metadataStatus === "PASS");
+  } else if (subset === "fail_only") {
+    targetRecords = canonicals.filter((r) => r.latestFilterResult?.metadataStatus === "FAIL");
+  } else if (subset === "keyword_match") {
+    targetRecords = canonicals.filter((r) => r.latestFilterResult?.keywordStatus === "MATCH");
+  } else if (subset === "keyword_exclusion") {
+    targetRecords = canonicals.filter((r) => r.latestFilterResult?.hasExclusionHit);
+  }
+
+  const baseFileName = `collection_${collectionId}_${subset}`;
+
+  if (format === "ris") {
+    const risContent = generateRis(targetRecords);
+    res.setHeader("Content-Type", "application/x-research-info-systems; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="${baseFileName}.ris"`);
+    return res.send(risContent);
+  }
+
+  if (format === "bibtex" || format === "bib") {
+    const bibContent = generateBibtex(targetRecords);
+    res.setHeader("Content-Type", "application/x-bibtex; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="${baseFileName}.bib"`);
+    return res.send(bibContent);
+  }
+
+  if (format === "json") {
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="${baseFileName}.json"`);
+    return res.json({
+      collection: col,
+      subset,
+      totalRecords: targetRecords.length,
+      records: targetRecords,
+    });
+  }
+
+  // Mặc định CSV
+  const csvContent = generateCanonicalCsv(targetRecords);
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", `attachment; filename="${baseFileName}.csv"`);
+  return res.send(csvContent);
+});
+
+app.get("/api/collections/:id/export/search-log", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const runs = CollectionStore.getRunsByCollection(collectionId);
+  const format = req.query.format || "csv";
+
+  if (format === "json") {
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="search-log_${collectionId}.json"`);
+    return res.json({ collectionId, totalRuns: runs.length, runs });
+  }
+
+  const csv = generateSearchLogCsv(runs);
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", `attachment; filename="search-log_${collectionId}.csv"`);
+  return res.send(csv);
+});
+
+app.get("/api/collections/:id/export/filter-log", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const fRuns = CollectionStore.getFilterRuns(collectionId);
+  const csv = generateFilterLogCsv(fRuns);
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", `attachment; filename="filter-log_${collectionId}.csv"`);
+  return res.send(csv);
+});
+
+app.get("/api/collections/:id/export/duplicate-mapping", (req: Request, res: Response) => {
+  const collectionId = req.params.id as string;
+  const canonicals = CollectionStore.getCanonicalRecords(collectionId);
+  const suspected = CollectionStore.getSuspectedDuplicates(collectionId);
+  const csv = generateDuplicateMappingCsv(canonicals, suspected);
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", `attachment; filename="duplicate-mapping_${collectionId}.csv"`);
+  return res.send(csv);
+});
+
+app.get("/api/guide/cadima-rayyan", (req: Request, res: Response) => {
+  const md = getCadimaRayyanGuideMarkdown();
+  res.setHeader("Content-Type", "text/markdown; charset=utf-8");
+  res.send(md);
+});
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   const cleanErrMsg = sanitizeString(err.message || "Lỗi máy chủ nội bộ");
   console.error("[Backend Error]", cleanErrMsg);

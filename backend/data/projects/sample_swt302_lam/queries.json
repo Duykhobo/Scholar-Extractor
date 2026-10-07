@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q_v1",
+    "projectId": "sample_swt302_lam",
+    "versionTag": "V1",
+    "rawQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\") AND (\"fault detection\" OR \"mutant detection\" OR \"bugs found\")",
+    "targetDatabase": "ACM Digital Library",
+    "searchFields": "AllField",
+    "expansionRuleApplied": "<20 kết quả: cần nới lỏng ở V2",
+    "createdAt": "2026-10-04T08:00:00Z"
+  },
+  {
+    "id": "q_v2",
+    "projectId": "sample_swt302_lam",
+    "versionTag": "V2",
+    "rawQuery": "(\"REST API testing\" OR \"natural language requirement\" OR \"RESTestBench\") AND (\"equivalence partitioning\" OR \"boundary-value analysis\" OR \"boundary testing\")",
+    "targetDatabase": "ACM Digital Library",
+    "searchFields": "AllField",
+    "expansionRuleApplied": "Bỏ khối O để nới lỏng query",
+    "createdAt": "2026-10-04T08:30:00Z"
+  },
+  {
+    "id": "q_v3",
+    "projectId": "sample_swt302_lam",
+    "versionTag": "V3",
+    "rawQuery": "(\"REST API\" OR \"RESTful API\" OR \"REST API testing\" OR RESTest OR RESTestBench) AND (\"equivalence partitioning\" OR \"equivalence class partitioning\" OR \"boundary value analysis\" OR \"boundary value testing\" OR \"boundary testing\") AND (\"fault detection\" OR \"faults found\" OR \"bug detection\" OR \"bugs found\" OR defects OR failures OR \"mutation testing\" OR \"mutation score\" OR \"mutant detection\")",
+    "targetDatabase": "ACM Digital Library",
+    "searchFields": "AllField",
+    "expansionRuleApplied": "Mở rộng từ đồng nghĩa đa dạng (chuỗi chính)",
+    "createdAt": "2026-10-04T09:00:00Z"
+  }
+]

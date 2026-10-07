@@ -1,0 +1,15 @@
+{
+  "id": "migrated_run_preset_visually_impaired_aac",
+  "collectionId": "preset_visually_impaired_aac",
+  "source": "Legacy Import",
+  "userQuery": "Legacy Snapshot Data",
+  "actualQuery": "Legacy Snapshot Data",
+  "filters": {},
+  "status": "completed",
+  "itemsReceived": 1606,
+  "itemsSaved": 1606,
+  "itemsError": 0,
+  "startedAt": "2026-10-07T01:13:34.747Z",
+  "completedAt": "2026-10-07T01:13:34.747Z",
+  "errorLog": []
+}

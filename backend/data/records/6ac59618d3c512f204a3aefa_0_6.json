@@ -1,0 +1,72 @@
+{
+  "id": "6ac59618d3c512f204a3aefa_0_6",
+  "collectionId": "profile_1791333936106",
+  "searchRunId": "migrated_run_profile_1791333936106",
+  "title": "Evaluating the role of social inclusion in the self-esteem and academic inclusion of adolescents with vision impairment",
+  "authors": "I Manitsa; F Barlow-Brown",
+  "year": "2024",
+  "publicationDate": "2026-10-07",
+  "abstract": "… The relationship between school belonging and self-esteem and the relationship between close relationships at school and academic inclusion were also examined. Both studies …",
+  "doi": "",
+  "venue": "British Journal of Visual …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac59618d3c512f204a3aefa_0_6",
+  "landingPageUrl": "https://journals.sagepub.com/doi/abs/10.1177/02646196231183888",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-07",
+  "rawPayload": {
+    "id": "6ac59618d3c512f204a3aefa_0_6",
+    "source": "Google Scholar",
+    "discoverySource": "Google Scholar",
+    "collectionMethod": "SerpApi",
+    "title": "Evaluating the role of social inclusion in the self-esteem and academic inclusion of adolescents with vision impairment",
+    "authors": "I Manitsa; F Barlow-Brown",
+    "year": "2024",
+    "venue": "British Journal of Visual …",
+    "doi": "",
+    "snippet": "… The relationship between school belonging and self-esteem and the relationship between close relationships at school and academic inclusion were also examined. Both studies …",
+    "abstract": "",
+    "url": "https://journals.sagepub.com/doi/abs/10.1177/02646196231183888",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "retrieval_date": "2026-10-07",
+    "search_id": "6ac59618d3c512f204a3aefa",
+    "uncertain_authors": false,
+    "uncertain_year": false,
+    "uncertain_venue": true,
+    "uncertain_doi": true,
+    "missing_abstract": true,
+    "potentialDuplicate": false,
+    "screeningStage": "V1",
+    "matchedCriteria": [
+      "GEN-IC-PUB",
+      "GEN-IC-LANG"
+    ],
+    "unknownCriteria": [
+      "GEN-EC-ACC",
+      "GEN-IC-REL"
+    ],
+    "missingEvidence": [
+      "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+    ],
+    "suggestedDecision": "Unsure",
+    "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "finalDecision": "",
+    "userNotes": "",
+    "pipelineStage": "B1",
+    "queryVersion": "Q1",
+    "provenanceList": [
+      {
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac59618d3c512f204a3aefa_0_6",
+        "queryId": "session_1791333930132",
+        "queryVersion": "Q1",
+        "retrievedAt": "2026-10-07T00:45:43.267Z",
+        "method": "serpapi",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "url": "https://journals.sagepub.com/doi/abs/10.1177/02646196231183888"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "doi_10_63363_aijfr_2026_v07i01_3105",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Inclusive Education for Visually Impaired Children: Drivers, Challenges, and Implications in India",
+  "authors": "Himadri Sinha; Kajal Sitlani; Parvinder Sharma; Intesar Alam",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:16.640Z",
+  "abstract": "Inclusive education supports children with visual disabilities through equitable learning opportunities and involvement in social settings. This study helps to understand the facilitators and inhibitors in the context of inclusive education in India for children with visual impairment (CVI’s). It was conducted in selected districts of West Bengal, Bihar and Rajasthan with a focus on perception of teachers, availability of resources, integration of ICT as well as participation of the students. The study highlighted that the positive attitude of teachers, accessibility of learning material, support from government and involvement of parents have a significant effect on inclusion of CVI’s. On the other hand, large class size, limited specialized training as well as ICT understanding and low community engagement acted as inhibiting factors. Schools will be able to address these factors through proper integration of inclusive education, improve the academic outcome and social engagement through integration of ICT, community involvement, timely accessibility of resources and professional skill development.",
+  "doi": "10.63363/aijfr.2026.v07i01.3105",
+  "venue": "Advanced International Journal for Research",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_63363_aijfr_2026_v07i01_3105",
+  "landingPageUrl": "https://doi.org/10.63363/aijfr.2026.v07i01.3105",
+  "openAccessPdfUrl": "https://aijfr.com/papers/2026/1/3105.pdf",
+  "retrievedAt": "2026-10-06T14:12:16.640Z",
+  "rawPayload": {
+    "abstract": "Inclusive education supports children with visual disabilities through equitable learning opportunities and involvement in social settings. This study helps to understand the facilitators and inhibitors in the context of inclusive education in India for children with visual impairment (CVI’s). It was conducted in selected districts of West Bengal, Bihar and Rajasthan with a focus on perception of teachers, availability of resources, integration of ICT as well as participation of the students. The study highlighted that the positive attitude of teachers, accessibility of learning material, support from government and involvement of parents have a significant effect on inclusion of CVI’s. On the other hand, large class size, limited specialized training as well as ICT understanding and low community engagement acted as inhibiting factors. Schools will be able to address these factors through proper integration of inclusive education, improve the academic outcome and social engagement through integration of ICT, community involvement, timely accessibility of resources and professional skill development.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Himadri Sinha; Kajal Sitlani; Parvinder Sharma; Intesar Alam",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "social participation (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.63363/aijfr.2026.v07i01.3105",
+    "finalDecision": "",
+    "id": "doi_10_63363_aijfr_2026_v07i01_3105",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://aijfr.com/papers/2026/1/3105.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.640Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7133120056",
+        "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.689Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7133120056",
+        "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.298Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7133120056",
+        "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.794Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7133120056",
+        "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.311Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7133120056",
+        "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.640Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Inclusive education supports children with visual disabilities through equitable learning opportunities and involvement in social settings. This study helps to understand the facilitators and inhibitors in the context of inclusive education in India for children with visual impairment (CVI’s). It wa",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Inclusive Education for Visually Impaired Children: Drivers, Challenges, and Implications in India",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.63363/aijfr.2026.v07i01.3105",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Advanced International Journal for Research",
+    "year": "2026"
+  }
+}

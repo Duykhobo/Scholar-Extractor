@@ -1,0 +1,806 @@
+[
+  {
+    "id": "evt_1791335617228_yckxr",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.228Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susan Pavey",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "finalDecision": "",
+      "id": "oa_W141029132",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335617231_kqedj",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.231Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susan Pavey",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "finalDecision": "",
+      "id": "oa_W141029132",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335617235_dwb0b",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.235Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susan Pavey",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "finalDecision": "",
+      "id": "oa_W141029132",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335617241_0kcfq",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.241Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susan Pavey",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "finalDecision": "",
+      "id": "oa_W141029132",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335617247_8o81n",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:37.247Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susan Pavey",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "",
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "finalDecision": "",
+      "id": "oa_W141029132",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "publicationType": "dissertation",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "screeningStage": "V2",
+      "search_id": "session_1791299744175",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "year": "2011"
+    }
+  },
+  {
+    "id": "evt_1791335621362_svz9v",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.362Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W141029132",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "authors": "Susan Pavey",
+      "year": "2011",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "doi": "",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": false,
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621369_3y3ya",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.369Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W141029132",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "authors": "Susan Pavey",
+      "year": "2011",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "doi": "",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621374_ohwwf",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.374Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W141029132",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "authors": "Susan Pavey",
+      "year": "2011",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "doi": "",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621379_64mde",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.379Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W141029132",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "authors": "Susan Pavey",
+      "year": "2011",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "doi": "",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335621383_yi6tt",
+    "recordId": "oa_W141029132",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:41.383Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "oa_W141029132",
+      "source": "OpenAlex",
+      "discoverySource": "OpenAlex",
+      "collectionMethod": "api",
+      "title": "The provision of mobility and independence education to children with visual impairment in mainstream schools",
+      "authors": "Susan Pavey",
+      "year": "2011",
+      "venue": "University of Birmingham Institutional Research Archive (University of Birmingham)",
+      "doi": "",
+      "snippet": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to o",
+      "abstract": "This two-phase study investigates the provision of mobility and independence (M&I) education for children with visual impairment in mainstream schools in the United Kingdom (UK). Phase I collected data (through questionnaires and interviews) from professionals involved in M&I education in order to obtain a UK-wide picture of provision and service delivery. The analysis particularly noted that many different professionals and agencies were found to be involved in M&I education and the scope and organisation of services differed across the country. It is argued that this complexity resulted in an inconsistent and patchy level of provision across the UK. Given the range of professionals involved in M&I education, Phase II explored whether distinct ideologies were observable when different professionals described their practice. Techniques of discourse analysis were applied to transcripts from interviews with six participants from a range of professional backgrounds. Findings include evidence of administrative, charitable/philanthropic, rights, professional and educational discourses, as well as discourses linked to the social and individualistic models of disability, and diverse categorisation of children. The key finding that different professionals have different ways of talking about what they do has implications for the type and nature of services that children receive.",
+      "url": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "pdfUrl": "http://etheses.bham.ac.uk/3021/1/Pavey11PhD.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06T15:15:46.768Z",
+      "search_id": "session_1791299744175",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": false,
+      "uncertain_doi": true,
+      "missing_abstract": false,
+      "screeningStage": "V2",
+      "pipelineStage": "V2",
+      "queryVersion": "Q1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-EC-DUP"
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "publicationType": "dissertation",
+      "provenanceList": [
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W141029132",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.768Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://openalex.org/W141029132"
+        }
+      ],
+      "allSources": [
+        "OpenAlex"
+      ],
+      "mergedRecordIds": [],
+      "potentialDuplicate": true,
+      "duplicateOfId": "oa_W141029132",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"The provision of mobility and independence education to children with visual impairment in mainstream schools\"",
+      "conceptLabels": [],
+      "modelContribution": [],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude",
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"University of Birmingham Institutional Research Archive (University of Birmingham)\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  }
+]

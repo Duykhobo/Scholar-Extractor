@@ -1,0 +1,148 @@
+[
+  {
+    "id": "evt_1791335618040_r0e95",
+    "recordId": "6ac51934c83b3f830ae1732f_20_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.040Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "MMA Raj; K Anbu",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac51934c83b3f830ae1732f_20_4",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": false,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-PUB: Thông tin xuất bản đủ chuẩn trích dẫn APA 7]: Tài liệu dạng luận văn / luận án / báo cáo nội bộ, không phải bài báo hội nghị/tạp chí peer-reviewed.",
+      "screeningStage": "V2",
+      "search_id": "6ac51934c83b3f830ae1732f",
+      "sessionId": "",
+      "snippet": "… visually impaired children and normal children (t=6.34). It was also found that the parents of both male and female visually impaired children … resilience, self-esteem and social support. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Resilience among the students with visual impairment in the special schools of Tamil Nadu",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.researchgate.net/profile/M-Maria-Raj/publication/353015201_Resilience_among_the_Students_with_Visual_Impairment_in_the_Special_Schools_of_Tamil_Nadu/links/60ee44dafb568a7098a9dc6d/Resilience-among-the-Students-with-Visual-Impairment-in-the-Special-Schools-of-Tamil-Nadu.pdf",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Unpublished Ph. D Dissertation, School of …",
+      "year": "2016"
+    }
+  },
+  {
+    "id": "evt_1791335622368_6xwbw",
+    "recordId": "6ac51934c83b3f830ae1732f_20_4",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:42.368Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac51934c83b3f830ae1732f_20_4",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Resilience among the students with visual impairment in the special schools of Tamil Nadu",
+      "authors": "MMA Raj; K Anbu",
+      "year": "2016",
+      "venue": "Unpublished Ph. D Dissertation, School of …",
+      "doi": "",
+      "snippet": "… visually impaired children and normal children (t=6.34). It was also found that the parents of both male and female visually impaired children … resilience, self-esteem and social support. …",
+      "abstract": "",
+      "url": "https://www.researchgate.net/profile/M-Maria-Raj/publication/353015201_Resilience_among_the_Students_with_Visual_Impairment_in_the_Special_Schools_of_Tamil_Nadu/links/60ee44dafb568a7098a9dc6d/Resilience-among-the-Students-with-Visual-Impairment-in-the-Special-Schools-of-Tamil-Nadu.pdf",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac51934c83b3f830ae1732f",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-PUB: Thông tin xuất bản đủ chuẩn trích dẫn APA 7]: Tài liệu dạng luận văn / luận án / báo cáo nội bộ, không phải bài báo hội nghị/tạp chí peer-reviewed.",
+      "finalDecision": "",
+      "userNotes": "",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2,
+      "sessionId": "",
+      "pipelineStage": "V2",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "provenanceList": [],
+      "mergedRecordIds": [],
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude"
+    }
+  }
+]

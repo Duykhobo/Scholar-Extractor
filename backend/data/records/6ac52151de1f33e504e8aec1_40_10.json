@@ -1,0 +1,95 @@
+{
+  "id": "6ac52151de1f33e504e8aec1_40_10",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Adversarial Growth in Persons With Vision Impairment",
+  "authors": "BM Sztonyk",
+  "year": "2023",
+  "publicationDate": "2026-10-06",
+  "abstract": "… Social isolation, lower perceived social support, lower feelings of self-efficacy, and ex… to one of the few boarding schools for blind children. A year after graduating from the university at …",
+  "doi": "",
+  "venue": "The Routledge International Handbook of …",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac52151de1f33e504e8aec1_40_10",
+  "landingPageUrl": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781032208688-42&type=chapterpdf",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "BM Sztonyk",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-efficacy (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac501cbf680d1247c7539d0_20_7",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Adversarial Growth in Persons With Vision Impairment\"",
+    "finalDecision": "",
+    "id": "6ac52151de1f33e504e8aec1_40_10",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-EC-DUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"The Routledge International Handbook of …\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791304011417",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T16:26:59.804Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac52151de1f33e504e8aec1_40_10",
+        "url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781032208688-42&type=chapterpdf"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Adversarial Growth in Persons With Vision Impairment\").",
+    "screeningStage": "V2",
+    "search_id": "6ac52151de1f33e504e8aec1",
+    "snippet": "… Social isolation, lower perceived social support, lower feelings of self-efficacy, and ex… to one of the few boarding schools for blind children. A year after graduating from the university at …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Adversarial Growth in Persons With Vision Impairment",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781032208688-42&type=chapterpdf",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "The Routledge International Handbook of …",
+    "year": "2023"
+  }
+}

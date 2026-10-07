@@ -1,0 +1,160 @@
+[
+  {
+    "id": "evt_1791335616874_a1ddx",
+    "recordId": "6ac51954f735810ddb5180c4_50_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:36.874Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "YT Yeshanew; T Xu; W Yuan",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac50193fbbebbaad520627c_50_10",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments\"",
+      "finalDecision": "",
+      "id": "6ac51954f735810ddb5180c4_50_10",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Healthcare\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments\").",
+      "screeningStage": "V2",
+      "search_id": "6ac51954f735810ddb5180c4",
+      "sessionId": "",
+      "snippet": "… Support, particularly from peers, is crucial for enhancing self-esteem and social acceptance [78]. As social support and relationships are more valued in a collectivist cultural context [46,…",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://www.mdpi.com/2227-9032/11/4/605",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Healthcare",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335621059_66cxb",
+    "recordId": "6ac51954f735810ddb5180c4_50_10",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:41.059Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac51954f735810ddb5180c4_50_10",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments",
+      "authors": "YT Yeshanew; T Xu; W Yuan",
+      "year": "2023",
+      "venue": "Healthcare",
+      "doi": "",
+      "snippet": "… Support, particularly from peers, is crucial for enhancing self-esteem and social acceptance [78]. As social support and relationships are more valued in a collectivist cultural context [46,…",
+      "abstract": "",
+      "url": "https://www.mdpi.com/2227-9032/11/4/605",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac51954f735810ddb5180c4",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Healthcare\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2,
+      "sessionId": "",
+      "duplicateOfId": "6ac50193fbbebbaad520627c_50_10",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Perceptions on their own social participation: A qualitative exploration of Ethiopian secondary students with visual impairments\"",
+      "pipelineStage": "V2",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "provenanceList": [],
+      "mergedRecordIds": [],
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "supporting",
+      "v2Decision": "Exclude"
+    }
+  }
+]

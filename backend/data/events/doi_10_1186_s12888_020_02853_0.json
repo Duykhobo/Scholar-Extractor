@@ -1,0 +1,377 @@
+[
+  {
+    "id": "evt_1791335615035_1noh4",
+    "recordId": "doi_10_1186_s12888_020_02853_0",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.035Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with visual impairment have only marginally been investigated. Therefore, this study aimed to determine the influence of mastery and self-esteem on the relationship between visual acuity and mental health. METHODS: A longitudinal cohort study was performed using data from the Longitudinal Aging Study Amsterdam (LASA), collected between 2001 and 2012. A community-based population of 2599 older adults were included, who were randomly selected from population registers. Outcomes of interest were the Pearlin Mastery Scale, Rosenberg Self-Esteem Scale, Center for Epidemiologic Studies - Depression scale and the Hospital Anxiety Depression Scale - Anxiety subscale. Linear mixed models were used to establish the association between visual acuity and mental health over time. RESULTS: Mean age was 72 years, 56% was female and 1.2% qualified as having low vision. Visual impairment was associated with a lower sense of mastery (β = - 0.477, p < 0.001), lower self-esteem (β = - 0.166, p = 0.008) and more depression (β = 0.235, p < 0.001). No significant association between visual acuity and anxiety was found. The relationship between visual acuity and depression was mediated by self-esteem (25%) and sense of mastery (79%). CONCLUSIONS: Vision loss was associated with depression. This association was mediated by self-esteem and sense of mastery. This provides us with new possibilities to identify, support and treat those at risk for developing depression by aiming to increase their self-esteem and sense of mastery.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ivar M Maaswinkel; Hilde P. A. van der Aa; Ger H. M. B. van Rens; Aartjan T.F. Beekman; Jos W. R. Twisk; Ruth M. A. van Nispen",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1186/s12888-020-02853-0",
+      "finalDecision": "",
+      "id": "doi_10_1186_s12888_020_02853_0",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"BMC Psychiatry\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://bmcpsychiatry.biomedcentral.com/counter/pdf/10.1186/s12888-020-02853-0",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with vi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Mastery and self-esteem mediate the association between visual acuity and mental health: a population-based longitudinal cohort study",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1186/s12888-020-02853-0",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "BMC Psychiatry",
+      "year": "2020"
+    }
+  },
+  {
+    "id": "evt_1791335618808_80798",
+    "recordId": "doi_10_1186_s12888_020_02853_0",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.808Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with visual impairment have only marginally been investigated. Therefore, this study aimed to determine the influence of mastery and self-esteem on the relationship between visual acuity and mental health. METHODS: A longitudinal cohort study was performed using data from the Longitudinal Aging Study Amsterdam (LASA), collected between 2001 and 2012. A community-based population of 2599 older adults were included, who were randomly selected from population registers. Outcomes of interest were the Pearlin Mastery Scale, Rosenberg Self-Esteem Scale, Center for Epidemiologic Studies - Depression scale and the Hospital Anxiety Depression Scale - Anxiety subscale. Linear mixed models were used to establish the association between visual acuity and mental health over time. RESULTS: Mean age was 72 years, 56% was female and 1.2% qualified as having low vision. Visual impairment was associated with a lower sense of mastery (β = - 0.477, p < 0.001), lower self-esteem (β = - 0.166, p = 0.008) and more depression (β = 0.235, p < 0.001). No significant association between visual acuity and anxiety was found. The relationship between visual acuity and depression was mediated by self-esteem (25%) and sense of mastery (79%). CONCLUSIONS: Vision loss was associated with depression. This association was mediated by self-esteem and sense of mastery. This provides us with new possibilities to identify, support and treat those at risk for developing depression by aiming to increase their self-esteem and sense of mastery.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ivar M Maaswinkel; Hilde P. A. van der Aa; Ger H. M. B. van Rens; Aartjan T.F. Beekman; Jos W. R. Twisk; Ruth M. A. van Nispen",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1186/s12888-020-02853-0",
+      "finalDecision": "",
+      "id": "doi_10_1186_s12888_020_02853_0",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"BMC Psychiatry\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://bmcpsychiatry.biomedcentral.com/counter/pdf/10.1186/s12888-020-02853-0",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with vi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Mastery and self-esteem mediate the association between visual acuity and mental health: a population-based longitudinal cohort study",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1186/s12888-020-02853-0",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "BMC Psychiatry",
+      "year": "2020",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624145_6c79v",
+    "recordId": "doi_10_1186_s12888_020_02853_0",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.145Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with visual impairment have only marginally been investigated. Therefore, this study aimed to determine the influence of mastery and self-esteem on the relationship between visual acuity and mental health. METHODS: A longitudinal cohort study was performed using data from the Longitudinal Aging Study Amsterdam (LASA), collected between 2001 and 2012. A community-based population of 2599 older adults were included, who were randomly selected from population registers. Outcomes of interest were the Pearlin Mastery Scale, Rosenberg Self-Esteem Scale, Center for Epidemiologic Studies - Depression scale and the Hospital Anxiety Depression Scale - Anxiety subscale. Linear mixed models were used to establish the association between visual acuity and mental health over time. RESULTS: Mean age was 72 years, 56% was female and 1.2% qualified as having low vision. Visual impairment was associated with a lower sense of mastery (β = - 0.477, p < 0.001), lower self-esteem (β = - 0.166, p = 0.008) and more depression (β = 0.235, p < 0.001). No significant association between visual acuity and anxiety was found. The relationship between visual acuity and depression was mediated by self-esteem (25%) and sense of mastery (79%). CONCLUSIONS: Vision loss was associated with depression. This association was mediated by self-esteem and sense of mastery. This provides us with new possibilities to identify, support and treat those at risk for developing depression by aiming to increase their self-esteem and sense of mastery.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Ivar M Maaswinkel; Hilde P. A. van der Aa; Ger H. M. B. van Rens; Aartjan T.F. Beekman; Jos W. R. Twisk; Ruth M. A. van Nispen",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1186/s12888-020-02853-0",
+      "finalDecision": "",
+      "id": "doi_10_1186_s12888_020_02853_0",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"BMC Psychiatry\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://bmcpsychiatry.biomedcentral.com/counter/pdf/10.1186/s12888-020-02853-0",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3088741318",
+          "url": "https://doi.org/10.1186/s12888-020-02853-0"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: With deteriorating eyesight, people often become dependent on others for many aspects of their daily lives. As a result, they feel less 'in control' and experience lower self-esteem. Lower sense of mastery and self-esteem are known to predict depression, but their roles in people with vi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Mastery and self-esteem mediate the association between visual acuity and mental health: a population-based longitudinal cohort study",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1186/s12888-020-02853-0",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "BMC Psychiatry",
+      "year": "2020"
+    }
+  }
+]

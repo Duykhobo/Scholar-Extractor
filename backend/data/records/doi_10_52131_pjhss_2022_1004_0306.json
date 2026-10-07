@@ -1,0 +1,133 @@
+{
+  "id": "doi_10_52131_pjhss_2022_1004_0306",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Identifying Factors Impacting the Self-concept (SC) and Self-esteem (SE) of Visually Impaired Persons",
+  "authors": "Iqra Fatima; Samina Ashraf; Musarrat Jahan",
+  "year": "2022",
+  "publicationDate": "2026-10-06T14:12:16.642Z",
+  "abstract": "The current study was aimed at identifying the factors impacting the self-concept and self-esteem of persons with visual impairment. A factorial research design was followed to carry out the study. 75 visually impaired persons were selected as the sample of study from the public and private special schools of Lahore. Robson SCQ and Rosenberg SES were used as assessment tools to measure SC and SE respectively. Data were analyzed through SPSS version 21. From the results of the study, no difference on the basis of gender or type of disability was revealed. However, a statistically significant difference was observed in the SC and SE of visually impaired persons based on age, academic grade, residential area, and support and affection provided by the family. Results of regression analysis showed that all the demographics predict the SC and SE Age, family support, residential area, and academic grade were concluded as the major factors of SC and SE among visually challenged people. The study recommended qualitative research on the study variables to investigate the underlying reasons for the impact of explored factors and to discover more factors impacting the SC and SE of visually impaired persons.",
+  "doi": "10.52131/pjhss.2022.1004.0306",
+  "venue": "Pakistan Journal of Humanities and Social Sciences",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_52131_pjhss_2022_1004_0306",
+  "landingPageUrl": "https://doi.org/10.52131/pjhss.2022.1004.0306",
+  "openAccessPdfUrl": "https://journals.internationalrasd.org/index.php/pjhss/article/download/1040/632",
+  "retrievedAt": "2026-10-06T14:12:16.642Z",
+  "rawPayload": {
+    "abstract": "The current study was aimed at identifying the factors impacting the self-concept and self-esteem of persons with visual impairment. A factorial research design was followed to carry out the study. 75 visually impaired persons were selected as the sample of study from the public and private special schools of Lahore. Robson SCQ and Rosenberg SES were used as assessment tools to measure SC and SE respectively. Data were analyzed through SPSS version 21. From the results of the study, no difference on the basis of gender or type of disability was revealed. However, a statistically significant difference was observed in the SC and SE of visually impaired persons based on age, academic grade, residential area, and support and affection provided by the family. Results of regression analysis showed that all the demographics predict the SC and SE Age, family support, residential area, and academic grade were concluded as the major factors of SC and SE among visually challenged people. The study recommended qualitative research on the study variables to investigate the underlying reasons for the impact of explored factors and to discover more factors impacting the SC and SE of visually impaired persons.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Iqra Fatima; Samina Ashraf; Musarrat Jahan",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "self-concept (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.52131/pjhss.2022.1004.0306",
+    "finalDecision": "",
+    "id": "doi_10_52131_pjhss_2022_1004_0306",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://journals.internationalrasd.org/index.php/pjhss/article/download/1040/632",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.642Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4320016826",
+        "url": "https://doi.org/10.52131/pjhss.2022.1004.0306"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.690Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4320016826",
+        "url": "https://doi.org/10.52131/pjhss.2022.1004.0306"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.299Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4320016826",
+        "url": "https://doi.org/10.52131/pjhss.2022.1004.0306"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.795Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4320016826",
+        "url": "https://doi.org/10.52131/pjhss.2022.1004.0306"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.312Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4320016826",
+        "url": "https://doi.org/10.52131/pjhss.2022.1004.0306"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.642Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "The current study was aimed at identifying the factors impacting the self-concept and self-esteem of persons with visual impairment. A factorial research design was followed to carry out the study. 75 visually impaired persons were selected as the sample of study from the public and private special ",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Identifying Factors Impacting the Self-concept (SC) and Self-esteem (SE) of Visually Impaired Persons",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.52131/pjhss.2022.1004.0306",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Pakistan Journal of Humanities and Social Sciences",
+    "year": "2022"
+  }
+}

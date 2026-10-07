@@ -1,0 +1,146 @@
+[
+  {
+    "version": "v1.0",
+    "projectId": "sample_swt302_lam",
+    "title": "Protocol nghiên cứu tổng quan có hệ thống: REST API Testing EP/BVA",
+    "description": "Quy trình SLR chuẩn PRISMA 2020 cho đề tài SWT302 FA26-EXT-12",
+    "createdAt": "2026-10-07T03:27:49.146Z",
+    "criteria": [
+      {
+        "id": "crit_ic_l",
+        "code": "IC-L",
+        "name": "Ngôn ngữ tiếng Anh",
+        "description": "Paper viết bằng tiếng Anh, có bằng chứng ngôn ngữ riêng.",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_ic_t",
+        "code": "IC-T",
+        "name": "Conference hoặc Journal khoa học",
+        "description": "Đăng trên conference hoặc journal khoa học (không phải blog, thesis, dissertation).",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "auto",
+        "isActive": true
+      },
+      {
+        "id": "crit_ic_e",
+        "code": "IC-E",
+        "name": "Kết quả thực nghiệm định lượng",
+        "description": "Có ít nhất 1 con số kết quả thực nghiệm trong Table hoặc Figure.",
+        "kind": "inclusion",
+        "stage": "v2",
+        "evidenceRequirements": "Table/Figure số liệu thực nghiệm",
+        "evaluationMethod": "manual",
+        "isActive": true
+      },
+      {
+        "id": "crit_ic_y",
+        "code": "IC-Y",
+        "name": "Năm xuất bản 2020 trở đi",
+        "description": "Xuất bản từ năm 2020 đến 2026.",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "auto",
+        "isActive": true
+      },
+      {
+        "id": "crit_ic_p",
+        "code": "IC-P",
+        "name": "Phạm vi REST API Testing",
+        "description": "Kiểm thử ở mức request cho dịch vụ HTTP (OpenAPI, Swagger, RAML hoặc yêu cầu NL). GraphQL riêng lẻ không đạt.",
+        "kind": "inclusion",
+        "stage": "v1",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_ic_i",
+        "code": "IC-I",
+        "name": "Kỹ thuật kiểm thử EP / BVA",
+        "description": "Áp dụng Phân hoạch tương đương (EP) và/hoặc Phân tích giá trị biên (BVA) cho tham số request.",
+        "kind": "inclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_d",
+        "code": "EC-D",
+        "name": "Trùng lặp (Duplicate)",
+        "description": "Trùng lặp với paper đã có trong hệ thống.",
+        "kind": "exclusion",
+        "stage": "both",
+        "evaluationMethod": "auto",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_a",
+        "code": "EC-A",
+        "name": "Không thể tải toàn văn",
+        "description": "Không thể truy cập full-text sau khi tìm kiếm mọi nguồn mở/tác giả hợp lệ.",
+        "kind": "exclusion",
+        "stage": "v2",
+        "evaluationMethod": "manual",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_s",
+        "code": "EC-S",
+        "name": "Dưới 4 trang (< 4 trang)",
+        "description": "Số trang toàn văn dưới 4 trang (abstract ngắn, poster, workshop summary 2-3 trang).",
+        "kind": "exclusion",
+        "stage": "v2",
+        "evaluationMethod": "auto",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_n",
+        "code": "EC-N",
+        "name": "Không có thực nghiệm",
+        "description": "Vision paper, tutorial, position paper hoặc tập kỷ yếu (container) không phải bài thực nghiệm.",
+        "kind": "exclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      },
+      {
+        "id": "crit_ec_o",
+        "code": "EC-O",
+        "name": "Ngoài phạm vi (Out of Scope)",
+        "description": "UI/E2E testing (Selenium), unit testing nội bộ (JUnit), fault localization thuần, hoặc phi phần mềm.",
+        "kind": "exclusion",
+        "stage": "both",
+        "evaluationMethod": "suggested",
+        "isActive": true
+      }
+    ],
+    "sourcePolicies": {
+      "ACM Digital Library": {
+        "role": "primary",
+        "notes": "Nguồn chính"
+      },
+      "IEEE Xplore": {
+        "role": "primary",
+        "notes": "Nguồn chính"
+      },
+      "Google Scholar": {
+        "role": "supplementary",
+        "notes": "Nguồn bài ứng viên bổ trợ"
+      }
+    },
+    "reasonForChange": "Cập nhật protocol nghiên cứu"
+  },
+  {
+    "version": "2.0",
+    "projectId": "sample_swt302_lam",
+    "title": "Protocol v2.0 Mở rộng",
+    "createdAt": "2026-10-07T03:27:49.218Z",
+    "criteria": [],
+    "sourcePolicies": {},
+    "reasonForChange": "Thử nghiệm cập nhật tiêu chí sau phản biện"
+  }
+]

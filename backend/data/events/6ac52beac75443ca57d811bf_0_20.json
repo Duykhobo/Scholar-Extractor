@@ -1,0 +1,67 @@
+[
+  {
+    "id": "evt_1791335618345_ulsb9",
+    "recordId": "6ac52beac75443ca57d811bf_0_20",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.345Z",
+    "rawQuery": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "authors": "I Eligi; K Mwantimwa",
+      "collectionMethod": "SerpApi",
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "finalDecision": "",
+      "id": "6ac52beac75443ca57d811bf_0_20",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "missing_abstract": true,
+      "pipelineStage": "B1",
+      "potentialDuplicate": false,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "serpapi",
+          "queryId": "session_1791307711991",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T17:28:32.220Z",
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac52beac75443ca57d811bf_0_20",
+          "url": "https://www.learntechlib.org/p/180638/"
+        }
+      ],
+      "query": "(\"visual impairment\" OR \"visually impaired\" OR blindness OR \"low vision\") AND (child OR children OR adolescent OR adolescents OR student OR students) AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\" OR empathy OR \"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V1",
+      "search_id": "6ac52beac75443ca57d811bf",
+      "snippet": "… limits their prospect of being independent learners, and this situation can lower their confidence and self-esteem, which in turn might finally make them fail to acquire the required skills …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Unsure",
+      "title": "ICT accessibility and usability to support learning of visually-impaired students in Tanzania",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "url": "https://www.learntechlib.org/p/180638/",
+      "userNotes": "",
+      "venue": "… Journal of Education and Development using …",
+      "year": "2017"
+    }
+  }
+]

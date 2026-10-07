@@ -1,0 +1,53 @@
+{
+  "id": "sample_swt302_lam",
+  "name": "Tự động sinh ca kiểm thử REST API áp dụng EP & BVA",
+  "rqCode": "FA26-EXT-12",
+  "teamName": "Nhóm 1 — SaoCungDuoc",
+  "rq": "Kỹ thuật phân hoạch tương đương (EP) và phân tích giá trị biên (BVA) được kết hợp với các mô hình/công cụ sinh ca kiểm thử tự động cho REST API như thế nào nhằm tối ưu hóa tỉ lệ phát hiện lỗi và độ bao phủ?",
+  "h0": "Không có sự khác biệt có ý nghĩa thống kê về hiệu quả phát hiện lỗi giữa phương pháp có áp dụng EP/BVA và phương pháp kiểm thử ngẫu nhiên thuần túy.",
+  "h1": "Áp dụng EP/BVA kết hợp sinh test tự động giúp tăng đáng kể tỷ lệ phát hiện lỗi và độ bao phủ so với kiểm thử ngẫu nhiên.",
+  "framework": "PICO",
+  "pico": {
+    "population": "RESTful APIs HTTP, microservices, OpenAPI/Swagger specifications",
+    "intervention": "Kỹ thuật sinh test tự động áp dụng Phân hoạch tương đương (EP) và Phân tích giá trị biên (BVA)",
+    "comparison": "Random testing, baseline fuzzing, kiểm thử thủ công không áp dụng EP/BVA",
+    "outcome": "Độ bao phủ mã nguồn (Code coverage), số lượng và phân loại lỗi phát hiện (Fault taxonomy, bugs found)"
+  },
+  "members": [
+    {
+      "id": "mem_lam",
+      "name": "Lâm",
+      "role": "Reviewer chính (ACM Digital Library)",
+      "assignedSources": [
+        "ACM Digital Library"
+      ],
+      "isReviewer": true,
+      "isExtractor": true,
+      "plannedAuthorOrder": 1,
+      "confirmedFinalDraft": true
+    },
+    {
+      "id": "mem_duy",
+      "name": "K.Duy",
+      "role": "Reviewer (Snowballing & Đối soát)",
+      "assignedSources": [
+        "Snowballing",
+        "IEEE Xplore"
+      ],
+      "isReviewer": true,
+      "isExtractor": false,
+      "plannedAuthorOrder": 2,
+      "confirmedFinalDraft": true
+    }
+  ],
+  "searchPeriod": {
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-05T23:59:00",
+    "timezone": "Asia/Ho_Chi_Minh (UTC+7)"
+  },
+  "reportLanguage": "vi",
+  "activeProtocolVersion": "2.0",
+  "activeStage": "VALIDATION",
+  "createdAt": "2026-10-01T08:00:00Z",
+  "updatedAt": "2026-10-07T03:27:49.221Z"
+}

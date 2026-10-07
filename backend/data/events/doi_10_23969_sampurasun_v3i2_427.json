@@ -1,0 +1,386 @@
+[
+  {
+    "id": "evt_1791335615029_ui5pu",
+    "recordId": "doi_10_23969_sampurasun_v3i2_427",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.029Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's environment before the implamentation of the model; (2) design and implementation of the family and environmental social support development model; (3) social support received by child with disabity from the family and the environment of the child after the implementation of the model. This action research has involved 21 informants, consists of eight mothers, three fathers, eight children, one aunt and one grandmother. Data collection techniques are through in-depth interviews, focus group discussions, participatory observation and documentation study. The research results show that social support before the implementation of model from family and the environment already exists but is still very minimum. After implementation of the model, social support from the family increased in all aspects of social support, they are: in the aspects of instrumental support, informational support, emotional support, self-esteem support, and support from the surrounding environment. The process of action research involved the active participation of informants to engage in social support development models through social work activities at micro, mezzo and macro scope. Indonesia which has a social capital in the form of a strong sense of kinship, it becomes the basis of model development. Involving the family and the environment directly in developed model, it is result more optimal social support system that can be provided to their children with disabilities.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Rini Hartini",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.23969/sampurasun.v3i2.427",
+      "finalDecision": "",
+      "id": "doi_10_23969_sampurasun_v3i2_427",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "http://journal.unpas.ac.id/index.php/sampurasun/article/download/427/365",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE INCREASING MODEL OF FAMILY’S SOCIAL SUPPORT AND CHILD WITH DISABILITY’S ENVIRONMENT",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.23969/sampurasun.v3i2.427",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal Sampurasun Interdisciplinary Studies for Cultural Heritage",
+      "year": "2017"
+    }
+  },
+  {
+    "id": "evt_1791335618804_l0712",
+    "recordId": "doi_10_23969_sampurasun_v3i2_427",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.804Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's environment before the implamentation of the model; (2) design and implementation of the family and environmental social support development model; (3) social support received by child with disabity from the family and the environment of the child after the implementation of the model. This action research has involved 21 informants, consists of eight mothers, three fathers, eight children, one aunt and one grandmother. Data collection techniques are through in-depth interviews, focus group discussions, participatory observation and documentation study. The research results show that social support before the implementation of model from family and the environment already exists but is still very minimum. After implementation of the model, social support from the family increased in all aspects of social support, they are: in the aspects of instrumental support, informational support, emotional support, self-esteem support, and support from the surrounding environment. The process of action research involved the active participation of informants to engage in social support development models through social work activities at micro, mezzo and macro scope. Indonesia which has a social capital in the form of a strong sense of kinship, it becomes the basis of model development. Involving the family and the environment directly in developed model, it is result more optimal social support system that can be provided to their children with disabilities.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Rini Hartini",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.23969/sampurasun.v3i2.427",
+      "finalDecision": "",
+      "id": "doi_10_23969_sampurasun_v3i2_427",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "http://journal.unpas.ac.id/index.php/sampurasun/article/download/427/365",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE INCREASING MODEL OF FAMILY’S SOCIAL SUPPORT AND CHILD WITH DISABILITY’S ENVIRONMENT",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.23969/sampurasun.v3i2.427",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal Sampurasun Interdisciplinary Studies for Cultural Heritage",
+      "year": "2017",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624141_kvyix",
+    "recordId": "doi_10_23969_sampurasun_v3i2_427",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.141Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's environment before the implamentation of the model; (2) design and implementation of the family and environmental social support development model; (3) social support received by child with disabity from the family and the environment of the child after the implementation of the model. This action research has involved 21 informants, consists of eight mothers, three fathers, eight children, one aunt and one grandmother. Data collection techniques are through in-depth interviews, focus group discussions, participatory observation and documentation study. The research results show that social support before the implementation of model from family and the environment already exists but is still very minimum. After implementation of the model, social support from the family increased in all aspects of social support, they are: in the aspects of instrumental support, informational support, emotional support, self-esteem support, and support from the surrounding environment. The process of action research involved the active participation of informants to engage in social support development models through social work activities at micro, mezzo and macro scope. Indonesia which has a social capital in the form of a strong sense of kinship, it becomes the basis of model development. Involving the family and the environment directly in developed model, it is result more optimal social support system that can be provided to their children with disabilities.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Rini Hartini",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-esteem (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.23969/sampurasun.v3i2.427",
+      "finalDecision": "",
+      "id": "doi_10_23969_sampurasun_v3i2_427",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pdfUrl": "http://journal.unpas.ac.id/index.php/sampurasun/article/download/427/365",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.640Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.689Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.298Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.794Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2781480392",
+          "url": "https://doi.org/10.23969/sampurasun.v3i2.427"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.640Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social support from family and the environment is one of the important variables that can support the development of children with disabilities. The purposes of the research are to know, understand and analyze; (1) social support received by children with disabilities from the family and the child's",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "THE INCREASING MODEL OF FAMILY’S SOCIAL SUPPORT AND CHILD WITH DISABILITY’S ENVIRONMENT",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.23969/sampurasun.v3i2.427",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Journal Sampurasun Interdisciplinary Studies for Cultural Heritage",
+      "year": "2017"
+    }
+  }
+]

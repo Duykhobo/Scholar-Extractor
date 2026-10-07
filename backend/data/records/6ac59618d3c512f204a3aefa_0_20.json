@@ -1,0 +1,73 @@
+{
+  "id": "6ac59618d3c512f204a3aefa_0_20",
+  "collectionId": "profile_1791333936106",
+  "searchRunId": "migrated_run_profile_1791333936106",
+  "title": "Factors associated with the anxiety, subjective psychological well-being and self-esteem of parents of blind children",
+  "authors": "JJ Sola-Carmona; R López-Liria; D Padilla-Góngora",
+  "year": "2016",
+  "publicationDate": "2026-10-07",
+  "abstract": "… -being and self-esteem in a sample of 61 parents of blind children. … to reduced leisure, and self-esteem is lower when labour … , lower anxiety and higher self-esteem, professionals should …",
+  "doi": "",
+  "venue": "PloS one",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac59618d3c512f204a3aefa_0_20",
+  "landingPageUrl": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0162294",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-07",
+  "rawPayload": {
+    "id": "6ac59618d3c512f204a3aefa_0_20",
+    "source": "Google Scholar",
+    "discoverySource": "Google Scholar",
+    "collectionMethod": "SerpApi",
+    "title": "Factors associated with the anxiety, subjective psychological well-being and self-esteem of parents of blind children",
+    "authors": "JJ Sola-Carmona; R López-Liria; D Padilla-Góngora",
+    "year": "2016",
+    "venue": "PloS one",
+    "doi": "",
+    "snippet": "… -being and self-esteem in a sample of 61 parents of blind children. … to reduced leisure, and self-esteem is lower when labour … , lower anxiety and higher self-esteem, professionals should …",
+    "abstract": "",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0162294",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "retrieval_date": "2026-10-07",
+    "search_id": "6ac59618d3c512f204a3aefa",
+    "uncertain_authors": false,
+    "uncertain_year": false,
+    "uncertain_venue": true,
+    "uncertain_doi": true,
+    "missing_abstract": true,
+    "potentialDuplicate": false,
+    "screeningStage": "V1",
+    "matchedCriteria": [
+      "GEN-IC-LANG"
+    ],
+    "unknownCriteria": [
+      "GEN-IC-PUB",
+      "GEN-EC-ACC",
+      "GEN-IC-REL"
+    ],
+    "missingEvidence": [
+      "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"PloS one\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+    ],
+    "suggestedDecision": "Unsure",
+    "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "finalDecision": "",
+    "userNotes": "",
+    "pipelineStage": "B1",
+    "queryVersion": "Q1",
+    "provenanceList": [
+      {
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac59618d3c512f204a3aefa_0_20",
+        "queryId": "session_1791333930132",
+        "queryVersion": "Q1",
+        "retrievedAt": "2026-10-07T00:45:43.267Z",
+        "method": "serpapi",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0162294"
+      }
+    ]
+  }
+}

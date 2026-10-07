@@ -1,0 +1,383 @@
+[
+  {
+    "id": "evt_1791335615042_9jgjy",
+    "recordId": "doi_10_5937_specedreh12_4124",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.042Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective factors on social interaction and related aspects of psychological life in visually impaired and low vision children. Most of the analyzed studies point out visual impairment as a factor which has a negative influence on social development. Together with other negative environmental factors, visual impairment often has a negative influence on social interaction, which is an important factor of development and functioning in other areas. Thus, motor abilities, physical fitness, self-concept, and emotional development are closely related to a child's activity and participation in play activities, which may be hindered by visual impairment and the quality of communication with peers and important adults. Children with visual impairment less frequently initiate and have difficulties in maintaining social interaction. They have fewer friends, which often leads to emotional and behavioral problems. They are not accepted by peers in inclusive classrooms. Sociometric assessments indicate that they are more often in unpopular groups and have fewer opportunities to socialize with visually impaired peers. Therefore, it is important to timely recognize these children's needs and provide professional support and help for them and important people from their environment. This means providing conditions and activities which enable visually impaired children to fulfill their aims and needs in social interaction, and recognize the needs of others, i.e. develop social skills and at the same time allow their peers to get to know them and accept them better.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vesna Vučinić; Dragana Stanimirović; Marija Anđelković; Eškirović Branka",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-concept (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.5937/specedreh12-4124",
+      "finalDecision": "",
+      "id": "doi_10_5937_specedreh12_4124",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Specijalna edukacija i rehabilitacija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://scindeks-clanci.ceon.rs/data/pdf/1452-7367/2013/1452-73671302241V.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Social interaction of children with visual impairment: Risk and protective factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.5937/specedreh12-4124",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Specijalna edukacija i rehabilitacija",
+      "year": "2013"
+    }
+  },
+  {
+    "id": "evt_1791335618821_fkmat",
+    "recordId": "doi_10_5937_specedreh12_4124",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.821Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective factors on social interaction and related aspects of psychological life in visually impaired and low vision children. Most of the analyzed studies point out visual impairment as a factor which has a negative influence on social development. Together with other negative environmental factors, visual impairment often has a negative influence on social interaction, which is an important factor of development and functioning in other areas. Thus, motor abilities, physical fitness, self-concept, and emotional development are closely related to a child's activity and participation in play activities, which may be hindered by visual impairment and the quality of communication with peers and important adults. Children with visual impairment less frequently initiate and have difficulties in maintaining social interaction. They have fewer friends, which often leads to emotional and behavioral problems. They are not accepted by peers in inclusive classrooms. Sociometric assessments indicate that they are more often in unpopular groups and have fewer opportunities to socialize with visually impaired peers. Therefore, it is important to timely recognize these children's needs and provide professional support and help for them and important people from their environment. This means providing conditions and activities which enable visually impaired children to fulfill their aims and needs in social interaction, and recognize the needs of others, i.e. develop social skills and at the same time allow their peers to get to know them and accept them better.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vesna Vučinić; Dragana Stanimirović; Marija Anđelković; Eškirović Branka",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-concept (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.5937/specedreh12-4124",
+      "finalDecision": "",
+      "id": "doi_10_5937_specedreh12_4124",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Specijalna edukacija i rehabilitacija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://scindeks-clanci.ceon.rs/data/pdf/1452-7367/2013/1452-73671302241V.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Social interaction of children with visual impairment: Risk and protective factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.5937/specedreh12-4124",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Specijalna edukacija i rehabilitacija",
+      "year": "2013",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624149_ld38f",
+    "recordId": "doi_10_5937_specedreh12_4124",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.149Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective factors on social interaction and related aspects of psychological life in visually impaired and low vision children. Most of the analyzed studies point out visual impairment as a factor which has a negative influence on social development. Together with other negative environmental factors, visual impairment often has a negative influence on social interaction, which is an important factor of development and functioning in other areas. Thus, motor abilities, physical fitness, self-concept, and emotional development are closely related to a child's activity and participation in play activities, which may be hindered by visual impairment and the quality of communication with peers and important adults. Children with visual impairment less frequently initiate and have difficulties in maintaining social interaction. They have fewer friends, which often leads to emotional and behavioral problems. They are not accepted by peers in inclusive classrooms. Sociometric assessments indicate that they are more often in unpopular groups and have fewer opportunities to socialize with visually impaired peers. Therefore, it is important to timely recognize these children's needs and provide professional support and help for them and important people from their environment. This means providing conditions and activities which enable visually impaired children to fulfill their aims and needs in social interaction, and recognize the needs of others, i.e. develop social skills and at the same time allow their peers to get to know them and accept them better.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Vesna Vučinić; Dragana Stanimirović; Marija Anđelković; Eškirović Branka",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-concept (Secondary)",
+        "social participation (Related)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.5937/specedreh12-4124",
+      "finalDecision": "",
+      "id": "doi_10_5937_specedreh12_4124",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Specijalna edukacija i rehabilitacija\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "https://scindeks-clanci.ceon.rs/data/pdf/1452-7367/2013/1452-73671302241V.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2244188940",
+          "url": "https://doi.org/10.5937/specedreh12-4124"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Social interaction affects emotional, cognitive and other aspects of child development. Visual analyzer plays an important role in establishing and maintaining relationships with others. The aim of this paper is to provide an overview of the effects of visual impairment and other risk and protective",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Social interaction of children with visual impairment: Risk and protective factors",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.5937/specedreh12-4124",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Specijalna edukacija i rehabilitacija",
+      "year": "2013"
+    }
+  }
+]

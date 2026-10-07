@@ -1,0 +1,155 @@
+[
+  {
+    "id": "ft_rec_r11",
+    "recordId": "rec_r11",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3698062.3698065",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r55",
+    "recordId": "rec_r55",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3491038",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r56",
+    "recordId": "rec_r56",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3540250.3549144",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r57",
+    "recordId": "rec_r57",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3540250.3559080",
+    "pageCount": 3,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r58",
+    "recordId": "rec_r58",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3793654.3793747",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r60",
+    "recordId": "rec_r60",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3793654.3793743",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r61",
+    "recordId": "rec_r61",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3793654.3793754",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r62",
+    "recordId": "rec_r62",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3597503.3608133",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r64",
+    "recordId": "rec_r64",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3744916.3773228",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r65",
+    "recordId": "rec_r65",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3744916.3787775",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r66",
+    "recordId": "rec_r66",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3744916.3787787",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r67",
+    "recordId": "rec_r67",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3744916.3787826",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r69",
+    "recordId": "rec_r69",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3744916.3773185",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r70",
+    "recordId": "rec_r70",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3786155.3795700",
+    "pageCount": 3,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r71",
+    "recordId": "rec_r71",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3786155.3788581",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r72",
+    "recordId": "rec_r72",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3786155.3795704",
+    "pageCount": 10,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  },
+  {
+    "id": "ft_rec_r73",
+    "recordId": "rec_r73",
+    "projectId": "sample_swt302_lam",
+    "status": "FOUND",
+    "url": "https://doi.org/10.1145/3786155.3795705",
+    "pageCount": 3,
+    "attemptedAt": "2026-10-04T18:00:00Z"
+  }
+]

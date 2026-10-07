@@ -1,0 +1,472 @@
+[
+  {
+    "id": "evt_1791335618445_g9vfr",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.445Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791307786904",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:13.771Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335625769_k8uig",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.769Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335625859_x3ln2",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.859Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_16",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_16], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335625934_0lq7b",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.934Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_16",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_16], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335626007_yn3q2",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.007Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335626089_r2jqd",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.089Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_16",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_16], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335626171_lcmrd",
+    "recordId": "6ac59618d3c512f204a3aefa_0_16",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.171Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_16",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Perceived social support in adolescents with and without visual impairment",
+      "authors": "M Pinquart; JP Pfeiffer",
+      "year": "2013",
+      "venue": "Research in developmental disabilities",
+      "doi": "",
+      "snippet": "… We searched for clusters that differ in the perceived level of parent support, peer support, and teacher support, and asked whether cluster membership would differ between adolescents …",
+      "abstract": "",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-IC-PUB",
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-IC-PUB (Công bố học thuật hợp lệ): Venue \"Research in developmental disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-IC-PUB, GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_16",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0891422213003466"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_16",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_16], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  }
+]

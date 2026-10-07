@@ -1,0 +1,365 @@
+[
+  {
+    "id": "evt_1791335614902_yinnc",
+    "recordId": "doi_10_3389_fpsyg_2025_1652978",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.902Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brothers and sisters is still quite low. Objective: This systematic review aims to explore this lack by examining the existing literature on the characteristics of the sibling relationship in vision impairment in developmental age. Methods: A systematic search was performed on five databases and a total of 687 records, published between 2000 and 2025, were identified. After a selection process eight articles on the topic were finally highlighted as being eligible for analysis. Results: The characteristics of the sibling relationship mainly concern three aspects: Feelings and Behaviors, Shaped Learning in the sibling bond, and the Roles of sighted siblings in family relationships. These characteristics, reported mostly by sighted siblings, highlight the feeling-oriented and warm nature of the bond between siblings as well as the presence of some elements, which may be considered as potential risk factors for their relationship and their mental health. Overall, there is insufficient evidence to prove this due to the limited number of studies and the heterogeneity of methods applied. Conclusion: This review confirmed the paucity of literature on siblings' relationships in the field of vision impairment, highlighting many positive characteristics and some challenges that call for further research on this topic, especially with regard to the protective and risk factors for the relationship itself.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tiziana Battistin; Alessia Zanatta; Vincenzo Zanardo; Maria Eleonora Reffo; Elena Mercuriali",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2025.1652978",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2025_1652978",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1652978/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        }
+      ],
+      "publicationType": "review",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brot",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Exploring the characteristics of the sibling relationship in vision impairment in developmental age: a systematic review",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2025.1652978",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2025"
+    }
+  },
+  {
+    "id": "evt_1791335618629_s5wdn",
+    "recordId": "doi_10_3389_fpsyg_2025_1652978",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.629Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brothers and sisters is still quite low. Objective: This systematic review aims to explore this lack by examining the existing literature on the characteristics of the sibling relationship in vision impairment in developmental age. Methods: A systematic search was performed on five databases and a total of 687 records, published between 2000 and 2025, were identified. After a selection process eight articles on the topic were finally highlighted as being eligible for analysis. Results: The characteristics of the sibling relationship mainly concern three aspects: Feelings and Behaviors, Shaped Learning in the sibling bond, and the Roles of sighted siblings in family relationships. These characteristics, reported mostly by sighted siblings, highlight the feeling-oriented and warm nature of the bond between siblings as well as the presence of some elements, which may be considered as potential risk factors for their relationship and their mental health. Overall, there is insufficient evidence to prove this due to the limited number of studies and the heterogeneity of methods applied. Conclusion: This review confirmed the paucity of literature on siblings' relationships in the field of vision impairment, highlighting many positive characteristics and some challenges that call for further research on this topic, especially with regard to the protective and risk factors for the relationship itself.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tiziana Battistin; Alessia Zanatta; Vincenzo Zanardo; Maria Eleonora Reffo; Elena Mercuriali",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2025.1652978",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2025_1652978",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1652978/pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        }
+      ],
+      "publicationType": "review",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brot",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Exploring the characteristics of the sibling relationship in vision impairment in developmental age: a systematic review",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2025.1652978",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2025",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623977_9pb7s",
+    "recordId": "doi_10_3389_fpsyg_2025_1652978",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.977Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brothers and sisters is still quite low. Objective: This systematic review aims to explore this lack by examining the existing literature on the characteristics of the sibling relationship in vision impairment in developmental age. Methods: A systematic search was performed on five databases and a total of 687 records, published between 2000 and 2025, were identified. After a selection process eight articles on the topic were finally highlighted as being eligible for analysis. Results: The characteristics of the sibling relationship mainly concern three aspects: Feelings and Behaviors, Shaped Learning in the sibling bond, and the Roles of sighted siblings in family relationships. These characteristics, reported mostly by sighted siblings, highlight the feeling-oriented and warm nature of the bond between siblings as well as the presence of some elements, which may be considered as potential risk factors for their relationship and their mental health. Overall, there is insufficient evidence to prove this due to the limited number of studies and the heterogeneity of methods applied. Conclusion: This review confirmed the paucity of literature on siblings' relationships in the field of vision impairment, highlighting many positive characteristics and some challenges that call for further research on this topic, especially with regard to the protective and risk factors for the relationship itself.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Tiziana Battistin; Alessia Zanatta; Vincenzo Zanardo; Maria Eleonora Reffo; Elena Mercuriali",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2025.1652978",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2025_1652978",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [],
+      "pdfUrl": "https://public-pages-files-2025.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1652978/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.274Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.426Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4415646826",
+          "url": "https://doi.org/10.3389/fpsyg.2025.1652978"
+        }
+      ],
+      "publicationType": "review",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.274Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Vision has a crucial role in the development of social skills in early family and peer interactions. Until now, despite the large amount of literature focused on vision impairment, the number of articles dealing with the relationship between children with vision impairment and their brot",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Exploring the characteristics of the sibling relationship in vision impairment in developmental age: a systematic review",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2025.1652978",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2025"
+    }
+  }
+]

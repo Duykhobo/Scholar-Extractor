@@ -1,0 +1,1533 @@
+[
+  {
+    "id": "evt_1791335614883_klt8b",
+    "recordId": "doi_10_47648_zhswmcj_2023_v0502_02",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.883Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easily as possible.Self-efficacy is considered an important factor for adolescents' healthy physical and mental health to overcome challenges.Methods: This cross-sectional study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the 'Assistance for Blind Children' (ABC) organization and a college during the study period from January to December 2019.'Social Support Questionnaire for Children/Adolescents' and 'General Self-Efficacy Scale' were used to construct the questionnaire.Results: Adolescents had perceived the highest support from parents (26.36±2.32)and the lowest from relatives (14.74±7.48).The mean scores of total SSQC were 106.2±17.5 and the total self-efficacy scale scores were 28.5±5.0 which had average good.The mean of perceived social support was statistically significant with the adolescent's age, gender, father's and mother's education, father's occupation, residence and monthly family income (p<0.05).The mean of self-efficacy was statistically significant with the adolescent's family type, father's and mother's education (p<0.05).There was a positive significant correlation between self-efficacy and PSS (r= +0.523, p=0.000). Conclusion:Resilient social support to the adolescents showed higher levels of self-efficacy.To increase their selfefficacy and help them become self-reliant in the future, they need more technical guidance.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susmita Bhadra; Rowshan Ara; Ummul Khair Alam; Tushar Kanti Bhadra; Mohammad Nurunnabi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.47648/zhswmcj.2023.v0502.02",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ege during the study period from January to December 2019. ‘Social Support Questionnaire for Children/Adolescents’ and ‘General Self-Efficacy Scale’ were...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...rnal of Z H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...nal study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...le scores were 28.5±5.0 which had average good. The mean of perceived social support was statistically significant with the adolescent’s age, gender, father’s and m...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...d adolescents resided in the hostels of the ‘Assistance for Blind Children’ (ABC) organization and a college during the study period from January to Decem...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Blind Children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ins a significant problem globally. An estimated 19 million blind children below the age of 15 will live in blindness for many years. In addition, more th...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...dical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj.2023.v0502.02 Bha...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...g people for their growth to proceed as easily as possible. Self-efficacy is considered an important factor for adolescents’ healthy physical and mental...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘Assistance for Blind...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...der Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...of Z H Sikder Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...em, 6 project offices in 6 districts of the ‘Assistance for Blind Children (ABC)’ organization (Gazipur, Mymensingh, Jamalpur, Sirajganj, Cumilla, and Bra...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Blind Children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...re used to see the associations and correlations with a 95% confidence level were computed and the p-value <0.05 was considered as having a significan...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...a personal level and helps them become more self-reliant. 8 Self-efficacy is the belief in one’s ability to perform at a level that is needed of them; th...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...nges because young adolescents during this time desire more autonomy and different relationships with parents. Peers are crucial to adolescent trans...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "autonomy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n=107) Characterist...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...35 30 25 20 15 40 60 80 100 120 140 Total Score of Pereived Social Support R2 Linear = 0.274 Total Score of General Self-Efficacy Scale y=12.59+0.19x Figu...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...edical College 11 Table 3: Blind adolescents’ perception of self-efficacy (n = 107) Items Not at all true Hardly true Moderately true Exactly true n(%) n...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scores and different v...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...der Women’s Medical College 13 Table 6: Association between self-efficacy scores and different variables (n=107) Variables N General self-efficacy t valu...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers and adults other th...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...ime to their children, which increases their efficiency and autonomy. This study revealed that 84.1% of adolescents were from rural areas and the me...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "autonomy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...4(2):263-8. 10. Kef S, Dekovic M. The role of parental and peer support in adolescents well-being: a comparison of adolescents with and without a visua...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "peer support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...neral self- efficacy. 11 Another study in China showed that social support is an important resource that can help individuals cope with stress, enhance se...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - References] \"...gy. 2009;35(2):227-32. 3. Malecki CK, Demaray MK. Measuring perceived social support: Development of the child and adolescent social support scale (CASSS). Psycholo...\"",
+          "isValidEvidence": false,
+          "page": 8,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...lf-efficacy and self-regulated goal attainment processes on school performance- Do gender and test anxiety matter?. Learning and Individual Differ...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...esource that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...ce that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...eir well-being. To improve their self-development and self- confidence, communication and social mobilization should be strengthened. Thus better perc...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...rent support is the most positively correlated with general self-efficacy. In a study revealed that the importance of parent support is the most positive...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - References] \"...peting interest. References 1. Lifshitz H, Hen I, Weisse I. Self-concept, adjustment to blindness, and quality of friendship among adolescents with visu...\"",
+          "isValidEvidence": false,
+          "page": 8,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "Self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Social networks of vis...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_47648_zhswmcj_2023_v0502_02",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 9,
+      "pdfUrl": "https://www.zhswmcj.com/uploads/jJruxunaL4kL.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "Perceived Social Support and Self-Efficacy among Blind Adolescents",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Z H Sikder Women’s Medical College Journal",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335618592_7jvsp",
+    "recordId": "doi_10_47648_zhswmcj_2023_v0502_02",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.592Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easily as possible.Self-efficacy is considered an important factor for adolescents' healthy physical and mental health to overcome challenges.Methods: This cross-sectional study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the 'Assistance for Blind Children' (ABC) organization and a college during the study period from January to December 2019.'Social Support Questionnaire for Children/Adolescents' and 'General Self-Efficacy Scale' were used to construct the questionnaire.Results: Adolescents had perceived the highest support from parents (26.36±2.32)and the lowest from relatives (14.74±7.48).The mean scores of total SSQC were 106.2±17.5 and the total self-efficacy scale scores were 28.5±5.0 which had average good.The mean of perceived social support was statistically significant with the adolescent's age, gender, father's and mother's education, father's occupation, residence and monthly family income (p<0.05).The mean of self-efficacy was statistically significant with the adolescent's family type, father's and mother's education (p<0.05).There was a positive significant correlation between self-efficacy and PSS (r= +0.523, p=0.000). Conclusion:Resilient social support to the adolescents showed higher levels of self-efficacy.To increase their selfefficacy and help them become self-reliant in the future, they need more technical guidance.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susmita Bhadra; Rowshan Ara; Ummul Khair Alam; Tushar Kanti Bhadra; Mohammad Nurunnabi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.47648/zhswmcj.2023.v0502.02",
+      "evidence_snippets": [
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 1 - Unknown] \"...H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 1 - Unknown] \"...was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 1 - Unknown] \"...ege during the study period from January to December 2019. ‘Social Support Questionnaire for Children/Adolescents’ and ‘General Self-Efficacy Scale’ were...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Perceived Social Support",
+          "context": "[Trang 1 - Unknown] \"...rnal of Z H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "perceived social support",
+          "context": "[Trang 1 - Unknown] \"...nal study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "perceived social support",
+          "context": "[Trang 1 - Unknown] \"...le scores were 28.5±5.0 which had average good. The mean of perceived social support was statistically significant with the adolescent’s age, gender, father’s and m...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "Blind Children",
+          "context": "[Trang 1 - Unknown] \"...d adolescents resided in the hostels of the ‘Assistance for Blind Children’ (ABC) organization and a college during the study period from January to Decem...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "blind children",
+          "context": "[Trang 1 - Unknown] \"...ins a significant problem globally. An estimated 19 million blind children below the age of 15 will live in blindness for many years. In addition, more th...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-Efficacy",
+          "context": "[Trang 1 - Unknown] \"...dical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj.2023.v0502.02 Bha...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-efficacy",
+          "context": "[Trang 1 - Unknown] \"...g people for their growth to proceed as easily as possible. Self-efficacy is considered an important factor for adolescents’ healthy physical and mental...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-efficacy",
+          "context": "[Trang 1 - Unknown] \"...assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘Assistance for Blind...\"",
+          "page": 1,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 2 - Unknown] \"...der Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "perceived social support",
+          "context": "[Trang 2 - Unknown] \"...of Z H Sikder Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "Blind Children",
+          "context": "[Trang 2 - Unknown] \"...em, 6 project offices in 6 districts of the ‘Assistance for Blind Children (ABC)’ organization (Gazipur, Mymensingh, Jamalpur, Sirajganj, Cumilla, and Bra...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "confidence",
+          "context": "[Trang 2 - Unknown] \"...re used to see the associations and correlations with a 95% confidence level were computed and the p-value <0.05 was considered as having a significan...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-efficacy",
+          "context": "[Trang 2 - Unknown] \"...a personal level and helps them become more self-reliant. 8 Self-efficacy is the belief in one’s ability to perform at a level that is needed of them; th...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "autonomy",
+          "context": "[Trang 2 - Unknown] \"...nges because young adolescents during this time desire more autonomy and different relationships with parents. Peers are crucial to adolescent trans...\"",
+          "page": 2,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "page": 3,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Perceived Social Support",
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "page": 3,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-Efficacy",
+          "context": "[Trang 3 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n=107) Characterist...\"",
+          "page": 3,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 4 - Unknown] \"...35 30 25 20 15 40 60 80 100 120 140 Total Score of Pereived Social Support R2 Linear = 0.274 Total Score of General Self-Efficacy Scale y=12.59+0.19x Figu...\"",
+          "page": 4,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-efficacy",
+          "context": "[Trang 4 - Unknown] \"...edical College 11 Table 3: Blind adolescents’ perception of self-efficacy (n = 107) Items Not at all true Hardly true Moderately true Exactly true n(%) n...\"",
+          "page": 4,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Perceived Social Support",
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-Efficacy",
+          "context": "[Trang 5 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scores and different v...\"",
+          "page": 5,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-efficacy",
+          "context": "[Trang 6 - Unknown] \"...der Women’s Medical College 13 Table 6: Association between self-efficacy scores and different variables (n=107) Variables N General self-efficacy t valu...\"",
+          "page": 6,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Perceived Social Support",
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-Efficacy",
+          "context": "[Trang 7 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers and adults other th...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "autonomy",
+          "context": "[Trang 7 - Unknown] \"...ime to their children, which increases their efficiency and autonomy. This study revealed that 84.1% of adolescents were from rural areas and the me...\"",
+          "page": 7,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "peer support",
+          "context": "[Trang 8 - Unknown] \"...4(2):263-8. 10. Kef S, Dekovic M. The role of parental and peer support in adolescents well-being: a comparison of adolescents with and without a visua...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "social support",
+          "context": "[Trang 8 - Unknown] \"...neral self- efficacy. 11 Another study in China showed that social support is an important resource that can help individuals cope with stress, enhance se...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "perceived social support",
+          "context": "[Trang 8 - References] \"...gy. 2009;35(2):227-32. 3. Malecki CK, Demaray MK. Measuring perceived social support: Development of the child and adolescent social support scale (CASSS). Psycholo...\"",
+          "page": 8,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-POP",
+          "term": "school",
+          "context": "[Trang 8 - Unknown] \"...lf-efficacy and self-regulated goal attainment processes on school performance- Do gender and test anxiety matter?. Learning and Individual Differ...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-confidence",
+          "context": "[Trang 8 - Unknown] \"...esource that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "confidence",
+          "context": "[Trang 8 - Unknown] \"...ce that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "confidence",
+          "context": "[Trang 8 - Unknown] \"...eir well-being. To improve their self-development and self- confidence, communication and social mobilization should be strengthened. Thus better perc...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "self-efficacy",
+          "context": "[Trang 8 - Unknown] \"...rent support is the most positively correlated with general self-efficacy. In a study revealed that the importance of parent support is the most positive...\"",
+          "page": 8,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-concept",
+          "context": "[Trang 8 - References] \"...peting interest. References 1. Lifshitz H, Hen I, Weisse I. Self-concept, adjustment to blindness, and quality of friendship among adolescents with visu...\"",
+          "page": 8,
+          "section": "References",
+          "isValidEvidence": false,
+          "reason": "Xuất hiện trong References/Trích dẫn."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Social Support",
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-COMM",
+          "term": "Perceived Social Support",
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]."
+        },
+        {
+          "type": "VI-IC-CONF",
+          "term": "Self-Efficacy",
+          "context": "[Trang 9 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Social networks of vis...\"",
+          "page": 9,
+          "section": "Unknown",
+          "isValidEvidence": true,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]."
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_47648_zhswmcj_2023_v0502_02",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 9,
+      "pdfUrl": "https://www.zhswmcj.com/uploads/jJruxunaL4kL.pdf",
+      "pipelineStage": "V3",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Đạt toàn bộ 5 tiêu chí sàng lọc hợp lệ và không vi phạm bất kỳ tiêu chí loại trừ nào.",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Include",
+      "title": "Perceived Social Support and Self-Efficacy among Blind Adolescents",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [],
+      "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Z H Sikder Women’s Medical College Journal",
+      "year": "2023",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623950_eaomn",
+    "recordId": "doi_10_47648_zhswmcj_2023_v0502_02",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.950Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easily as possible.Self-efficacy is considered an important factor for adolescents' healthy physical and mental health to overcome challenges.Methods: This cross-sectional study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the 'Assistance for Blind Children' (ABC) organization and a college during the study period from January to December 2019.'Social Support Questionnaire for Children/Adolescents' and 'General Self-Efficacy Scale' were used to construct the questionnaire.Results: Adolescents had perceived the highest support from parents (26.36±2.32)and the lowest from relatives (14.74±7.48).The mean scores of total SSQC were 106.2±17.5 and the total self-efficacy scale scores were 28.5±5.0 which had average good.The mean of perceived social support was statistically significant with the adolescent's age, gender, father's and mother's education, father's occupation, residence and monthly family income (p<0.05).The mean of self-efficacy was statistically significant with the adolescent's family type, father's and mother's education (p<0.05).There was a positive significant correlation between self-efficacy and PSS (r= +0.523, p=0.000). Conclusion:Resilient social support to the adolescents showed higher levels of self-efficacy.To increase their selfefficacy and help them become self-reliant in the future, they need more technical guidance.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Susmita Bhadra; Rowshan Ara; Ummul Khair Alam; Tushar Kanti Bhadra; Mohammad Nurunnabi",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.47648/zhswmcj.2023.v0502.02",
+      "evidence_snippets": [
+        {
+          "context": "[Trang 1 - Unknown] \"...H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ege during the study period from January to December 2019. ‘Social Support Questionnaire for Children/Adolescents’ and ‘General Self-Efficacy Scale’ were...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...rnal of Z H Sikder Women’s Medical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...nal study was carried out to assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘As...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...le scores were 28.5±5.0 which had average good. The mean of perceived social support was statistically significant with the adolescent’s age, gender, father’s and m...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...d adolescents resided in the hostels of the ‘Assistance for Blind Children’ (ABC) organization and a college during the study period from January to Decem...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Blind Children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...ins a significant problem globally. An estimated 19 million blind children below the age of 15 will live in blindness for many years. In addition, more th...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "blind children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...dical College Original article Perceived Social Support and Self-Efficacy among Blind Adolescents DOI: https://doi.org/10.47648/zhswmcj.2023.v0502.02 Bha...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...g people for their growth to proceed as easily as possible. Self-efficacy is considered an important factor for adolescents’ healthy physical and mental...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 1 - Unknown] \"...assess the association between perceived social support and self-efficacy among 107 blind adolescents resided in the hostels of the ‘Assistance for Blind...\"",
+          "isValidEvidence": true,
+          "page": 1,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...der Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...of Z H Sikder Women’s Medical College 9 others. Measures of perceived social support take into consideration the fact that not every connection a person makes with...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...em, 6 project offices in 6 districts of the ‘Assistance for Blind Children (ABC)’ organization (Gazipur, Mymensingh, Jamalpur, Sirajganj, Cumilla, and Bra...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "Blind Children",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...re used to see the associations and correlations with a 95% confidence level were computed and the p-value <0.05 was considered as having a significan...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...a personal level and helps them become more self-reliant. 8 Self-efficacy is the belief in one’s ability to perform at a level that is needed of them; th...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 2 - Unknown] \"...nges because young adolescents during this time desire more autonomy and different relationships with parents. Peers are crucial to adolescent trans...\"",
+          "isValidEvidence": true,
+          "page": 2,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "autonomy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...10 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 3 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 1: Socio-demographic profile (n=107) Characterist...\"",
+          "isValidEvidence": true,
+          "page": 3,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...35 30 25 20 15 40 60 80 100 120 140 Total Score of Pereived Social Support R2 Linear = 0.274 Total Score of General Self-Efficacy Scale y=12.59+0.19x Figu...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 4 - Unknown] \"...edical College 11 Table 3: Blind adolescents’ perception of self-efficacy (n = 107) Items Not at all true Hardly true Moderately true Exactly true n(%) n...\"",
+          "isValidEvidence": true,
+          "page": 4,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...12 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scor...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 5 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Table 5: Association between PSS scores and different v...\"",
+          "isValidEvidence": true,
+          "page": 5,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 6 - Unknown] \"...der Women’s Medical College 13 Table 6: Association between self-efficacy scores and different variables (n=107) Variables N General self-efficacy t valu...\"",
+          "isValidEvidence": true,
+          "page": 6,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...14 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers a...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents Discussion Relationships with peers and adults other th...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 7 - Unknown] \"...ime to their children, which increases their efficiency and autonomy. This study revealed that 84.1% of adolescents were from rural areas and the me...\"",
+          "isValidEvidence": true,
+          "page": 7,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "autonomy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...4(2):263-8. 10. Kef S, Dekovic M. The role of parental and peer support in adolescents well-being: a comparison of adolescents with and without a visua...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "peer support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...neral self- efficacy. 11 Another study in China showed that social support is an important resource that can help individuals cope with stress, enhance se...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - References] \"...gy. 2009;35(2):227-32. 3. Malecki CK, Demaray MK. Measuring perceived social support: Development of the child and adolescent social support scale (CASSS). Psycholo...\"",
+          "isValidEvidence": false,
+          "page": 8,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "perceived social support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...lf-efficacy and self-regulated goal attainment processes on school performance- Do gender and test anxiety matter?. Learning and Individual Differ...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+          "section": "Unknown",
+          "term": "school",
+          "type": "VI-IC-POP"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...esource that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...ce that can help individuals cope with stress, enhance self-confidence and improve self-efficacy. 22 Conclusion The present study revealed that blind...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...eir well-being. To improve their self-development and self- confidence, communication and social mobilization should be strengthened. Thus better perc...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "confidence",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - Unknown] \"...rent support is the most positively correlated with general self-efficacy. In a study revealed that the importance of parent support is the most positive...\"",
+          "isValidEvidence": true,
+          "page": 8,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "self-efficacy",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 8 - References] \"...peting interest. References 1. Lifshitz H, Hen I, Weisse I. Self-concept, adjustment to blindness, and quality of friendship among adolescents with visu...\"",
+          "isValidEvidence": false,
+          "page": 8,
+          "reason": "Xuất hiện trong References/Trích dẫn.",
+          "section": "References",
+          "term": "Self-concept",
+          "type": "VI-IC-CONF"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...16 Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Soci...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+          "section": "Unknown",
+          "term": "Perceived Social Support",
+          "type": "VI-IC-COMM"
+        },
+        {
+          "context": "[Trang 9 - Unknown] \"...Volume 5. Number 2. July 2023 Perceived Social Support and Self-Efficacy among Blind Adolescents 17. Kef S, Hox JJ, Habekothe HT. Social networks of vis...\"",
+          "isValidEvidence": true,
+          "page": 9,
+          "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+          "section": "Unknown",
+          "term": "Self-Efficacy",
+          "type": "VI-IC-CONF"
+        }
+      ],
+      "finalDecision": "",
+      "fullTextStatus": "downloaded",
+      "id": "doi_10_47648_zhswmcj_2023_v0502_02",
+      "isPdfVerified": true,
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "page_count": 9,
+      "pdfUrl": "https://www.zhswmcj.com/uploads/jJruxunaL4kL.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:15.273Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:37.550Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:59.425Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:36.087Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:48.441Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4380877982",
+          "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:15.273Z",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Background: Blind adolescents are a vulnerable group of the population and they endure a wide range of challenges during their daily lives, including schooling, family life, workplace and society.It is essential that they feel supported by their surrounding people for their growth to proceed as easi",
+      "source": "OpenAlex",
+      "suggestedDecision": "Unsure",
+      "title": "Perceived Social Support and Self-Efficacy among Blind Adolescents",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.47648/zhswmcj.2023.v0502.02",
+      "userNotes": "",
+      "v2Decision": "PassToFullText",
+      "v3Decision": "Include",
+      "venue": "Z H Sikder Women’s Medical College Journal",
+      "year": "2023"
+    }
+  }
+]

@@ -1,0 +1,983 @@
+{
+  "id": "doi_10_47772_ijriss_2026_100800752",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Strategies for Strengthening Social Integration and Promoting Self-Esteem Among Adolescents with Special Needs in Northern Namibia",
+  "authors": "Linus Mupenda Shipena; Antony Chege; Lornah Irene Ayako",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:13.348Z",
+  "abstract": "In northern Namibia, adolescents with special needs face developmental challenges of adolescence in addition to the stigma associated with disabilities due to local cultural beliefs. This highlights an urgent yet under-explored need for context-specific strategies to enhance their social integration and self-esteem. Current Namibian studies on disability and inclusive education have concentrated primarily on recording policy and implementation deficiencies, resulting in a lack of empirically based, locally developed approaches to enhance the psychosocial welfare of this group. This study addressed that gap by establishing strategies for strengthening social integration and promoting self-esteem among adolescents with special needs in northern Namibia. The study was guided by Social Identity Theory and Rogers’ Self-Concept Theory and adopted a convergent parallel mixed-methods design. Quantitative data were collected from 192 adolescents with special needs using the Multidimensional Scale of Perceived Social Support and the Robson Self-Concept Questionnaire. Qualitative data, which formed the primary basis for this objective, were drawn from semi-structured interviews with six purposively selected participants and analysed using thematic content analysis. Four strategy-oriented themes emerged: strengthening support systems around family, teachers and hostel matrons; expanding co-curricular activities and social opportunities; improving inclusive learning environments through adaptive teaching and specialised materials; and promoting self-acceptance and disability awareness through structured sensitisation and mentorship. These themes closely matched the quantitative results, especially the relatively lower scores noted for trust in peer relationships and for self-worth items reflecting vulnerability (indicative of low self-esteem), suggesting that participants’ recommendations addressed real, assessable deficiencies instead of vague desires. The study concludes that a coordinated, multi-level strategy, combining consistent family and teacher support, structured peer and co-curricular opportunities, inclusive classroom practice and deliberate disability-awareness programming, offers the most promising route to strengthening social integration and self-esteem in this setting. Schools, families and policymakers are encouraged to adopt this coordinated approach, and future research should evaluate the effectiveness of interventions built on these strategies using pre-post or longitudinal designs.",
+  "doi": "10.47772/ijriss.2026.100800752",
+  "venue": "International Journal of Research and Innovation in Social Science",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_47772_ijriss_2026_100800752",
+  "landingPageUrl": "https://doi.org/10.47772/ijriss.2026.100800752",
+  "openAccessPdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss8-pg11080-11095-202609_pdf.pdf",
+  "retrievedAt": "2026-10-06T14:12:13.348Z",
+  "rawPayload": {
+    "abstract": "In northern Namibia, adolescents with special needs face developmental challenges of adolescence in addition to the stigma associated with disabilities due to local cultural beliefs. This highlights an urgent yet under-explored need for context-specific strategies to enhance their social integration and self-esteem. Current Namibian studies on disability and inclusive education have concentrated primarily on recording policy and implementation deficiencies, resulting in a lack of empirically based, locally developed approaches to enhance the psychosocial welfare of this group. This study addressed that gap by establishing strategies for strengthening social integration and promoting self-esteem among adolescents with special needs in northern Namibia. The study was guided by Social Identity Theory and Rogers’ Self-Concept Theory and adopted a convergent parallel mixed-methods design. Quantitative data were collected from 192 adolescents with special needs using the Multidimensional Scale of Perceived Social Support and the Robson Self-Concept Questionnaire. Qualitative data, which formed the primary basis for this objective, were drawn from semi-structured interviews with six purposively selected participants and analysed using thematic content analysis. Four strategy-oriented themes emerged: strengthening support systems around family, teachers and hostel matrons; expanding co-curricular activities and social opportunities; improving inclusive learning environments through adaptive teaching and specialised materials; and promoting self-acceptance and disability awareness through structured sensitisation and mentorship. These themes closely matched the quantitative results, especially the relatively lower scores noted for trust in peer relationships and for self-worth items reflecting vulnerability (indicative of low self-esteem), suggesting that participants’ recommendations addressed real, assessable deficiencies instead of vague desires. The study concludes that a coordinated, multi-level strategy, combining consistent family and teacher support, structured peer and co-curricular opportunities, inclusive classroom practice and deliberate disability-awareness programming, offers the most promising route to strengthening social integration and self-esteem in this setting. Schools, families and policymakers are encouraged to adopt this coordinated approach, and future research should evaluate the effectiveness of interventions built on these strategies using pre-post or longitudinal designs.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Linus Mupenda Shipena; Antony Chege; Lornah Irene Ayako",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "self-concept (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.47772/ijriss.2026.100800752",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Unknown] \"...ated, multi-level strategy, combining consistent family and teacher support, structured peer and co- curricular opportunities, inclusive classroom practice...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Methodology] \"...special needs using the Multidimensional Scale of Perceived Social Support and the Robson Self-Concept Questionnaire. Qualitative data, which formed the p...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Methodology] \"...ents with special needs using the Multidimensional Scale of Perceived Social Support and the Robson Self-Concept Questionnaire. Qualitative data, which formed the p...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "Perceived Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...and self-esteem. Current Namibian studies on disability and inclusive education have concentrated primarily on recording policy and implementation deficiencies...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...structured peer and co- curricular opportunities, inclusive classroom practice and deliberate disability-awareness programming, offers the most promi...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...specific strategies to enhance their social integration and self-esteem. Current Namibian studies on disability and inclusive education have concentrat...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Methodology] \"...rategies for strengthening social integration and promoting self-esteem among adolescents with special needs in northern Namibia. The st udy was guided...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...ost promising route to strengthening social integration and self-esteem in this setting. Schools, families and policymakers are encouraged to adopt thi...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Methodology] \"...imensional Scale of Perceived Social Support and the Robson Self-Concept Questionnaire. Qualitative data, which formed the primary basis for this object...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "Self-Concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...udinal designs. Keywords : Social integration; self-esteem; self-concept; adolescents with disabilities; special needs education; intervention strategie...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...isolated institutions that offer limited opportunities for peer interaction (UNESCO, 2024). These figures indicate that, beyond northern Namibia, the diffi...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer interaction",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ghts instruments and made significant policy commitments to inclusive education, most notably through its Sector Policy on Inclusive Education (2013). Despite...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...lusive education, most notably through its Sector Policy on Inclusive Education (2013). Despite these pledges, disability organizations continue to report obst...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Inclusive Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ith disabilities are 49% more likely never to have attended school, 42% less likely to acquire basic education and numeracy skills and 41% more li...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ikely to report experiencing discrimination (UNICEF, 2021). School admission alone does not resolve this problem. This is seen in the United State...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...attend mainstream schools, 10 – 15% still fail to complete school because of social exclusion, bullying and limited peer relationships (National...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...nce. According to both theories, the social integration and self-esteem of adolescents with disabilities should be measurably improved by intentional s...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...any of whom are deprived of health services, education, and social participation. Relative to peers without disabilities, adolescents with disabilities are 49%...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "social participation",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...ty, whereas Rogers’ (1959) Self -Concept Theory posits that self-concept evolves through connections defined by unconditional positive regard and accept...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...ed, situated against corroborating quantitative findings on social support and self-concept in the same sample. For clarity, this article follows Rogers (...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...rived interventions. Despite Namibia’s national adoption of inclusive education policy, the majority of Namibian research to date has concentrated on recording...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Methodology] \"...terature on strategies for enhancing social integration and self-esteem among adolescents with disabilities comes from Namibia, and none of these strat...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...rom a broader dissertation examining social integration and self-concept among adolescents with special needs in northern Namibia: to establish strategi...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...gnificance of the study The findings are intended to inform school administrators, teachers, counsellors, parents and policymakers as they design,...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...This goes beyond simply placing the adolescent in a group, classroom, team, or hostel. A supplementary, more individual- focused criterion is added...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...here are accordingly discussed as strategies for promoting self-esteem specifically, while the corroborating Robson Self-Concept Questionnaire, severa...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...ional stability and supportive school environments enhanced social participation among children with disabilities in Shanghai, while Nzioka (2024) found that fa...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "social participation",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 4 - Unknown] \"...ng self-esteem specifically, while the corroborating Robson Self-Concept Questionnaire, several of whose items tap this evaluative, self-worth dimension...\"",
+        "isValidEvidence": true,
+        "page": 4,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-Concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...ic review identified independence, supportive parenting and peer support as fundamental to strengthening self-concept among visually impaired children a...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...gel (2020) found, in a twenty-year longitudinal study, that peer support functioned as a protective factor against loneliness among young people with vi...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "peer support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...support as fundamental to strengthening self-concept among visually impaired children and adolescents internationally. Csernák and Gombás (2022) further found that t...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "visually impaired children",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...nd UNICEF (2018) observed that although Namibia has adopted inclusive education policy, implementation challenges, including inadequate resources, communicatio...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...titudes can limit social participation even where family or school support is nominally present, suggesting that the quality and consistency of su...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...A third strand of literature identifies inclusive, adapted classroom practice as a strategy for strengthening both academic participation and the br...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...ctivities as a strategy for building social integration and self-esteem. In Namibia specifically, Nghole (2025) evaluated social inclusion of persons w...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...y reported that participation in social activities enhanced autonomy, self-worth and social interaction among adolescents with physical disabilities...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "autonomy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...nadequate support and negative societal attitudes can limit social participation even where family or school support is nominally present, suggesting that the q...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "social participation",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Methodology] \"...eacher facilitation, were closely linked to more favourable self-concept among students with special educational needs, directly supporting classroom-le...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...onments in Zimbabwean inclusive community settings promoted psychological well-being and social inclusion among adolescents with physical disabilities. However, Abu...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Methodology] \"...he quantitative strand, comprising standardised measures of social support and self-concept administered to the full sample, served a corroborating functi...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 6 - Methodology] \"...’ that were important establishments carrying out Namibia’s inclusive education policy in the northern Namibian regions of Ongwediva town, Oshana Region, and O...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...d in age from 10 to 19 years and had attended their current school for periods ranging from one to ten years, providing perspectives from both new...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 6 - Unknown] \"...riety of strategies linked to better social integration and self-esteem among adolescents with disabilities are documented in the literature reviewed a...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 6 - Methodology] \"...and, comprising standardised measures of social support and self-concept administered to the full sample, served a corroborating function, allowing the...\"",
+        "isValidEvidence": true,
+        "page": 6,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...ere collected using the Multidimensional Scale of Perceived Social Support (MSPSS; Zimet, Dahlem, Zimet, & Farley, 1988), a 12-item instrument assessing p...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...ive data were collected using the Multidimensional Scale of Perceived Social Support (MSPSS; Zimet, Dahlem, Zimet, & Farley, 1988), a 12-item instrument assessing p...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Methodology",
+        "term": "Perceived Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...Page 11086 participant is linked in the text to a specific school, age, grade or disability category. This purposive, cross- school, cross-disabi...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"..., a 30- item instrument assessing dimensions of self-worth, self-confidence, body image, academic self-perception and emotional adjustment. Consistent with...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...istent with the distinction drawn above, the self-worth and self-confidence items of the SCQ were treated as the closest available quantitative indicators...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "self-confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...0- item instrument assessing dimensions of self-worth, self-confidence, body image, academic self-perception and emotional adjustment. Consistent with...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...t with the distinction drawn above, the self-worth and self-confidence items of the SCQ were treated as the closest available quantitative indicators...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...treated as the closest available quantitative indicators of self-esteem specifically, while the body-image, academic self-perception and emotional-adju...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 7 - Methodology] \"...from family, friends and significant others and the Robson Self-Concept Questionnaire (SCQ; Robson, 1989), a 30- item instrument assessing dimensions o...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "Self-Concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...primary special need. Including both mainstream and special-school settings within the same study was a deliberate design choice, allowing the qua...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...rces and forms of support, opportunities for participation, classroom and learning experiences, and self-perception and community attitudes were grou...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...cribing strategies for strengthening social integration and self-esteem among adolescents with special needs: strengthening support systems, expanding...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...Even if there is not enough, she tries to meet my needs for school.” (Respondent Interview, June 3, 2026) Participants also emphasised the role of...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...eadership as enabling interaction, friendship formation and confidence-building. One participant explained the sense of belonging singing provided: “I...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...important strategy for strengthening social integration and self-esteem. Many described activities such as choir, soccer, volleyball, basketball, netba...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...d considerably depending on the specific accommodations and teacher support individual participants received. One participant’s comparison between their cu...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "teacher support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...ting favourably to their current placement: “At my previous school, there was a special class and it was easier to learn.” (Respondent Interview,...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...g materials would help them participate more effectively in classroom activities, and that teachers should receive more training on how to support le...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...corroborated by the quantitative finding that control- and confidence-related self- concept items, such as “I have control over my own life” (M = 4.6...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...identified self-acceptance as a key factor in strengthening self-esteem, with several expressing pride in themselves and emphasising the importance of...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - References] \"...t themes. First, rather than using broad references to “the school” or “the program,” participants consistently framed effective support and strat...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - References] \"...consistently around peer trust, co-curricular variety, and classroom accommodation consistency. Synthesis of Strategy Themes Table 2 synthesises the...\"",
+        "isValidEvidence": false,
+        "page": 11,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...and negative attitudes from others sometimes affected their confidence, and recommended disability-awareness programmes, peer-sensitisation activities...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...elf-worth items reflecting vulnerability, indicative of low self-esteem specifically, including “I don’t care what happens to me” (M = 3.09, SD = 2.41)...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 12 - Evaluation] \"...ing that family support was the most highly rated source of social support is consistent with international evidence that family support is a foundational...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Evaluation",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 12 - Methodology] \"...lects documented implementation challenges facing Namibia’s inclusive education policy, particularly around resources and support services in rural schools (Mc...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...ach programme implemented without accompanying attention to classroom inclusion or community disability-awareness, is likely to address only part of...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "classroom",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Methodology] \"...s and their corroborating quantitative evidence strengthens confidence that the strategies identified are targeted at genuine, measurable gaps rather...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Methodology",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...loped methods for enhancing social integration and boosting self-esteem among northern Namibian adolescents with special needs. The four themes identif...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...wn, the statistical relationship between social support and self-concept was found to be moderate rather than strong. If self-concept is genuinely shape...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...cceptance and disability awareness. Quantitative results on social support and self-concept gathered from the same sample were consistent with these theme...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...in this study are unlikely to be equally feasible for every school in northern Namibia to implement at the same time. Instead of treating the fram...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...ive correlational findings reported elsewhere lends further confidence to the multi-level, ecological account of social integration and self-esteem th...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "confidence",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...e multi-level, ecological account of social integration and self-esteem that this study’s findings support. A practical challenge for schools and minis...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 13 - Unknown] \"...explain a meaningful but partial share of the variation in self-concept, precisely the pattern observed elsewhere in this research programme. This conv...\"",
+        "isValidEvidence": true,
+        "page": 13,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...s. Besides, parents and guardians should provide consistent emotional support and collaborate with teachers. In addition, Ministry of Education should streng...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "emotional support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...on these findings, school administrators should strengthen inclusive education practices, establish peer- support programmes, and expand co-curricular opportu...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...ctually help them. RECOMMENDATIONS Based on these findings, school administrators should strengthen inclusive education practices, establish peer-...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...rategies produce measurable gains in social integration and self-esteem. Future research will also extend similar investigations to other regions of Na...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...sion of sensitive topics relating to social integration and self-concept may also have caused some emotional discomfort to participants despite ethical...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...young adults with a visual impairment: Links with perceived social support in a twenty-year longitudinal study. Research in Developmental Disabilities, 10...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...liness in young adults with a visual impairment: Links with perceived social support in a twenty-year longitudinal study. Research in Developmental Disabilities, 10...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...ckinney, E., Arts, E., & UNICEF. (2018, March 1). Assessing inclusive education in practice in Namibia: Challenges and opportunities in leaving no child behind...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "inclusive education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"....org Page 11094 4. Augestad, L. B. (2017). Self-concept and self-esteem among children and young adults with visual impairment: A systematic review. Co...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...rsisinternational.org Page 11094 4. Augestad, L. B. (2017). Self-concept and self-esteem among children and young adults with visual impairment: A syste...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-concept",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...-481. 21. Mpofu, J., Sefotho, M. M., & Maree, J. G. (2017). Psychological well-being of adolescents with physical disabilities in Zimbabwean inclusive community set...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 16 - Unknown] \"...rley, G. K. (1988). The Multidimensional Scale of Perceived Social Support. Journal of Personality Assessment, 52(1), 30-41....\"",
+        "isValidEvidence": true,
+        "page": 16,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 16 - Unknown] \".... G., & Farley, G. K. (1988). The Multidimensional Scale of Perceived Social Support. Journal of Personality Assessment, 52(1), 30-41....\"",
+        "isValidEvidence": true,
+        "page": 16,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Perceived Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 16 - Unknown] \"...an. 29. Wang, Z., Huang, J.-H., Wang, L., & Liu, C. (2023). Social participation for students with special needs in inclusive schools: A scoping review. Interna...\"",
+        "isValidEvidence": true,
+        "page": 16,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Social participation",
+        "type": "VI-IC-CONF"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_47772_ijriss_2026_100800752",
+    "isPdfVerified": true,
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-PUB"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "X",
+      "M",
+      "Y",
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "page_count": 16,
+    "pdfUrl": "https://rsisinternational.org/journals/ijriss/uploads/vol10-iss8-pg11080-11095-202609_pdf.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.348Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213466788",
+        "url": "https://doi.org/10.47772/ijriss.2026.100800752"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.634Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213466788",
+        "url": "https://doi.org/10.47772/ijriss.2026.100800752"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213466788",
+        "url": "https://doi.org/10.47772/ijriss.2026.100800752"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.168Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213466788",
+        "url": "https://doi.org/10.47772/ijriss.2026.100800752"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.768Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213466788",
+        "url": "https://doi.org/10.47772/ijriss.2026.100800752"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.348Z",
+    "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "In northern Namibia, adolescents with special needs face developmental challenges of adolescence in addition to the stigma associated with disabilities due to local cultural beliefs. This highlights an urgent yet under-explored need for context-specific strategies to enhance their social integration",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "Strategies for Strengthening Social Integration and Promoting Self-Esteem Among Adolescents with Special Needs in Northern Namibia",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.47772/ijriss.2026.100800752",
+    "userNotes": "",
+    "v2Decision": "PassToFullText",
+    "v3Decision": "Include",
+    "venue": "International Journal of Research and Innovation in Social Science",
+    "year": "2026"
+  }
+}

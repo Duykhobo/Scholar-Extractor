@@ -20,7 +20,7 @@ export const PRESET_SWT302: ResearchProfile = {
       id: "swt302_str_a",
       name: "String A (Chính thức theo protocol)",
       query:
-        '("REST API testing" OR "natural language requirement" OR "RESTestBench") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")',
+        '("REST API testing" OR "natural language requirement") AND ("equivalence partitioning" OR "boundary-value analysis" OR "boundary testing") AND ("fault detection" OR "mutant detection" OR "bugs found")',
       isDefault: true,
       source: "google_scholar",
     },

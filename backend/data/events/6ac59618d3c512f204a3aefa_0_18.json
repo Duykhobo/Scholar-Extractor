@@ -1,0 +1,491 @@
+[
+  {
+    "id": "evt_1791335618458_m7w2i",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:38.458Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791307786904",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:13.771Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ]
+    }
+  },
+  {
+    "id": "evt_1791335625780_r3kfd",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.780Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC",
+        "IC-Y",
+        "EC-S"
+      ],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "IC-Y (Khung thời gian xuất bản): Năm xuất bản chưa được xác định từ nguồn tìm kiếm.",
+        "EC-S (Dung lượng bài báo tối thiểu): Chưa xác minh được số trang chính xác từ bản toàn văn (PDF). Không suy đoán số trang từ đoạn trích (snippet)."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định.).",
+      "finalDecision": "",
+      "userNotes": "Tiêu đề / Tóm tắt không liên quan",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "v2Decision": "Exclude"
+    }
+  },
+  {
+    "id": "evt_1791335625867_4t2rq",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.867Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_18",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335625942_9k62t",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:45.942Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_18",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335626014_6ueew",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.014Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": false,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-CONF",
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC",
+        "IC-Y",
+        "EC-S"
+      ],
+      "missingEvidence": [
+        "VI-IC-COMM (Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)): Chưa có abstract hoặc toàn văn để quét từ khóa (supportive communication, kind communication, positive communication...). Cần thẩm định toàn văn.",
+        "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "IC-Y (Khung thời gian xuất bản): Năm xuất bản chưa được xác định từ nguồn tìm kiếm.",
+        "EC-S (Dung lượng bài báo tối thiểu): Chưa xác minh được số trang chính xác từ bản toàn văn (PDF). Không suy đoán số trang từ đoạn trích (snippet)."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định.).",
+      "finalDecision": "",
+      "userNotes": "Tiêu đề / Tóm tắt không liên quan",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:43.267Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "v2Decision": "Exclude"
+    }
+  },
+  {
+    "id": "evt_1791335626096_d11mu",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.096Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:55.264Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_18",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  },
+  {
+    "id": "evt_1791335626179_jbufj",
+    "recordId": "6ac59618d3c512f204a3aefa_0_18",
+    "collectionId": "profile_1791333936106",
+    "searchRunId": "migrated_run_profile_1791333936106",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:46.179Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac59618d3c512f204a3aefa_0_18",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "Social Skills Profile of Children with Visual Impairments",
+      "authors": "AI Sensus; A Qurrotullaini",
+      "year": "",
+      "venue": "Indonesian Journal of Community and Special Needs …",
+      "doi": "",
+      "snippet": "",
+      "abstract": "",
+      "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-07",
+      "search_id": "6ac59618d3c512f204a3aefa",
+      "uncertain_authors": false,
+      "uncertain_year": true,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V1",
+      "matchedCriteria": [
+        "GEN-IC-PUB",
+        "GEN-IC-LANG"
+      ],
+      "unknownCriteria": [
+        "GEN-EC-ACC",
+        "GEN-IC-REL"
+      ],
+      "missingEvidence": [
+        "GEN-EC-ACC (Không thể truy cập toàn văn): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "GEN-IC-REL (Phù hợp mục tiêu nghiên cứu (Relevance)): Xác nhận bài viết có liên quan trực tiếp đến câu hỏi nghiên cứu."
+      ],
+      "suggestedDecision": "Unsure",
+      "screeningReason": "Còn 2 tiêu chí bắt buộc chưa được xác minh đầy đủ (GEN-EC-ACC, GEN-IC-REL). Chờ thẩm định toàn văn (Pending Full-Text).",
+      "finalDecision": "",
+      "userNotes": "",
+      "pipelineStage": "B1",
+      "queryVersion": "Q1",
+      "provenanceList": [
+        {
+          "source": "Google Scholar",
+          "sourceRecordId": "6ac59618d3c512f204a3aefa_0_18",
+          "queryId": "session_1791333930132",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-07T00:45:58.082Z",
+          "method": "serpapi",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://scholar.google.com/scholar?q=%28%22children+with+visual+impairments%22+OR+%22visually+impaired+children%22+OR+%22blind+children%22%29+AND+%28%22supportive+communication%22+OR+%22teacher+support%22+OR+%22peer+support%22+OR+%22social+support%22%29+AND+%28%22self-confidence%22+OR+%22self-esteem%22+OR+%22self-efficacy%22%29&hl=vi&start=0&num=21&as_ylo=2010&as_yhi=2026"
+        }
+      ],
+      "duplicateOfId": "6ac59618d3c512f204a3aefa_0_18",
+      "duplicateReason": "Trùng tiêu đề với [#a_0_18], nguồn: Google Scholar. Giữ lại để người dùng thẩm định."
+    }
+  }
+]

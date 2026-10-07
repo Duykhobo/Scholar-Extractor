@@ -1,0 +1,91 @@
+{
+  "id": "6ac52151de1f33e504e8aec1_40_4",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "RETRACTED: Research on immersive interaction design based on visual and tactile feature analysis of visually impaired children",
+  "authors": "T Zhu; Y Yang",
+  "year": "2024",
+  "publicationDate": "2026-10-06",
+  "abstract": "… the visually impaired children have the opportunity to gain more valuable social support, … Therefore, their psychology is often characterized by low mood, low self-esteem, emotional …",
+  "doi": "",
+  "venue": "Heliyon",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac52151de1f33e504e8aec1_40_4",
+  "landingPageUrl": "https://www.cell.com/heliyon/fulltext/S2405-8440(23)10204-0",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "T Zhu; Y Yang",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "finalDecision": "",
+    "id": "6ac52151de1f33e504e8aec1_40_4",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP",
+      "VI-EC-RETRACTED"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Heliyon\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": false,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791304011417",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T16:26:59.804Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac52151de1f33e504e8aec1_40_4",
+        "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(23)10204-0"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ: Bài báo đã bị rút lại (RETRACTED). Tuyệt đối không đưa vào tổng quan.",
+    "screeningStage": "V2",
+    "search_id": "6ac52151de1f33e504e8aec1",
+    "snippet": "… the visually impaired children have the opportunity to gain more valuable social support, … Therefore, their psychology is often characterized by low mood, low self-esteem, emotional …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "RETRACTED: Research on immersive interaction design based on visual and tactile feature analysis of visually impaired children",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(23)10204-0",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Heliyon",
+    "year": "2024"
+  }
+}

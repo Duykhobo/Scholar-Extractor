@@ -1,0 +1,136 @@
+{
+  "id": "doi_10_1080_23311908_2017_1319652",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Self-concept and self-esteem among children and young adults with visual impairment: A systematic review",
+  "authors": "Liv Berit Augestad",
+  "year": "2017",
+  "publicationDate": "2026-10-06T14:12:13.348Z",
+  "abstract": "The purpose of the study was to summarize current scientific knowledge relating to self-concept and self-esteem among children and young adolescents with visual impairment (VI). A systematic review was conducted of articles published between 1998 and 2016. A total of 26 publications, representing 15 countries, met the inclusion criteria, and 24 of the studies had used a cross-sectional design. Some studies found that the age and degree of vision loss influenced perceived self-esteem. In general, independence in mobility, parenting style, social support, and friendship was reported as important for children with VI to enhance their self-concept and self-esteem. To be able to provide opportunities for a successful development and good self-evaluation, we need more knowledge and further longitudinal observation studies and randomized clinical trials with high quality to increase the possibilities to draw conclusions about cause and effect.",
+  "doi": "10.1080/23311908.2017.1319652",
+  "venue": "Cogent Psychology",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_1080_23311908_2017_1319652",
+  "landingPageUrl": "https://doi.org/10.1080/23311908.2017.1319652",
+  "openAccessPdfUrl": "https://www.tandfonline.com/doi/epdf/10.1080/23311908.2017.1319652?needAccess=true&role=button",
+  "retrievedAt": "2026-10-06T14:12:13.348Z",
+  "rawPayload": {
+    "abstract": "The purpose of the study was to summarize current scientific knowledge relating to self-concept and self-esteem among children and young adolescents with visual impairment (VI). A systematic review was conducted of articles published between 1998 and 2016. A total of 26 publications, representing 15 countries, met the inclusion criteria, and 24 of the studies had used a cross-sectional design. Some studies found that the age and degree of vision loss influenced perceived self-esteem. In general, independence in mobility, parenting style, social support, and friendship was reported as important for children with VI to enhance their self-concept and self-esteem. To be able to provide opportunities for a successful development and good self-evaluation, we need more knowledge and further longitudinal observation studies and randomized clinical trials with high quality to increase the possibilities to draw conclusions about cause and effect.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Liv Berit Augestad",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)",
+      "self-concept (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.1080/23311908.2017.1319652",
+    "finalDecision": "",
+    "id": "doi_10_1080_23311908_2017_1319652",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Cogent Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pdfUrl": "https://www.tandfonline.com/doi/epdf/10.1080/23311908.2017.1319652?needAccess=true&role=button",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.348Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2606328002",
+        "url": "https://doi.org/10.1080/23311908.2017.1319652"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.634Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2606328002",
+        "url": "https://doi.org/10.1080/23311908.2017.1319652"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2606328002",
+        "url": "https://doi.org/10.1080/23311908.2017.1319652"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.168Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2606328002",
+        "url": "https://doi.org/10.1080/23311908.2017.1319652"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.768Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W2606328002",
+        "url": "https://doi.org/10.1080/23311908.2017.1319652"
+      }
+    ],
+    "publicationType": "review",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.348Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "The purpose of the study was to summarize current scientific knowledge relating to self-concept and self-esteem among children and young adolescents with visual impairment (VI). A systematic review was conducted of articles published between 1998 and 2016. A total of 26 publications, representing 15",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Self-concept and self-esteem among children and young adults with visual impairment: A systematic review",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.1080/23311908.2017.1319652",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Cogent Psychology",
+    "year": "2017"
+  }
+}

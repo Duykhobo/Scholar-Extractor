@@ -1,0 +1,371 @@
+[
+  {
+    "id": "evt_1791335615047_sezwg",
+    "recordId": "doi_10_3389_fpsyg_2020_565393",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.047Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of children’s and parent’s mental and behavioral problems during the epidemic were used in the study. We also used the State Anxiety Inventory (S-AI), the Parenting Stress Index—Short Form-15 (PSI-SF-15), the NEO Five-Factor Inventory (NEO-FFI), and the Multidimensional Scale of Perceived Social Support (MSPSS). The data used in the study were pooled from an online survey of parents of special needs children and analyzed by one-way analysis of variance (ANOVA) and multiple linear regression. Results Overall, 1,451 individuals were included, of which 402 were fathers (27.71%) and 1,049 were mothers (72.29%). ANOVA results showed that educational background, family monthly income, and type of their child’s disability made parents’ state anxiety significantly different. The results of multiple linear regression showed that during the epidemic, social support negatively predicted parents’ state anxiety (B = −0.15, p < 0.001), whereas parenting stress (B = 0.07, p = 0.001) and parental mental and behavioral problems (B = 0.37, p < 0.001) positively predicted parents’ state anxiety. Conclusions During the outbreak of COVID-19, parents of special needs children suffered mental and behavioral problems, together with parenting stress and social support, which influenced their state anxiety. These findings can be used to develop relevant psychological interventions to improve the mental health of vulnerable groups during a pandemic like COVID-19.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jie Ren; Xingkai Li; Shudan Chen; Shudan Chen; Suiqing Chen; Suiqing Chen; Yangang Nie",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2020.565393",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2020_565393",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2020.565393/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of child",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Influence of Factors Such as Parenting Stress and Social Support on the State Anxiety in Parents of Special Needs Children During the COVID-19 Epidemic",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2020.565393",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2020"
+    }
+  },
+  {
+    "id": "evt_1791335618834_n5jde",
+    "recordId": "doi_10_3389_fpsyg_2020_565393",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.834Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of children’s and parent’s mental and behavioral problems during the epidemic were used in the study. We also used the State Anxiety Inventory (S-AI), the Parenting Stress Index—Short Form-15 (PSI-SF-15), the NEO Five-Factor Inventory (NEO-FFI), and the Multidimensional Scale of Perceived Social Support (MSPSS). The data used in the study were pooled from an online survey of parents of special needs children and analyzed by one-way analysis of variance (ANOVA) and multiple linear regression. Results Overall, 1,451 individuals were included, of which 402 were fathers (27.71%) and 1,049 were mothers (72.29%). ANOVA results showed that educational background, family monthly income, and type of their child’s disability made parents’ state anxiety significantly different. The results of multiple linear regression showed that during the epidemic, social support negatively predicted parents’ state anxiety (B = −0.15, p < 0.001), whereas parenting stress (B = 0.07, p = 0.001) and parental mental and behavioral problems (B = 0.37, p < 0.001) positively predicted parents’ state anxiety. Conclusions During the outbreak of COVID-19, parents of special needs children suffered mental and behavioral problems, together with parenting stress and social support, which influenced their state anxiety. These findings can be used to develop relevant psychological interventions to improve the mental health of vulnerable groups during a pandemic like COVID-19.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jie Ren; Xingkai Li; Shudan Chen; Shudan Chen; Suiqing Chen; Suiqing Chen; Yangang Nie",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2020.565393",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2020_565393",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2020.565393/pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of child",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Influence of Factors Such as Parenting Stress and Social Support on the State Anxiety in Parents of Special Needs Children During the COVID-19 Epidemic",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2020.565393",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2020",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624158_7ew4f",
+    "recordId": "doi_10_3389_fpsyg_2020_565393",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.158Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of children’s and parent’s mental and behavioral problems during the epidemic were used in the study. We also used the State Anxiety Inventory (S-AI), the Parenting Stress Index—Short Form-15 (PSI-SF-15), the NEO Five-Factor Inventory (NEO-FFI), and the Multidimensional Scale of Perceived Social Support (MSPSS). The data used in the study were pooled from an online survey of parents of special needs children and analyzed by one-way analysis of variance (ANOVA) and multiple linear regression. Results Overall, 1,451 individuals were included, of which 402 were fathers (27.71%) and 1,049 were mothers (72.29%). ANOVA results showed that educational background, family monthly income, and type of their child’s disability made parents’ state anxiety significantly different. The results of multiple linear regression showed that during the epidemic, social support negatively predicted parents’ state anxiety (B = −0.15, p < 0.001), whereas parenting stress (B = 0.07, p = 0.001) and parental mental and behavioral problems (B = 0.37, p < 0.001) positively predicted parents’ state anxiety. Conclusions During the outbreak of COVID-19, parents of special needs children suffered mental and behavioral problems, together with parenting stress and social support, which influenced their state anxiety. These findings can be used to develop relevant psychological interventions to improve the mental health of vulnerable groups during a pandemic like COVID-19.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Jie Ren; Xingkai Li; Shudan Chen; Shudan Chen; Suiqing Chen; Suiqing Chen; Yangang Nie",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.3389/fpsyg.2020.565393",
+      "finalDecision": "",
+      "id": "doi_10_3389_fpsyg_2020_565393",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Frontiers in Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fpsyg.2020.565393/pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.641Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.299Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.312Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W3112512508",
+          "url": "https://doi.org/10.3389/fpsyg.2020.565393"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.641Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objectives The study aims to investigate the state anxiety of parents of special needs children during the 2019 coronavirus disease (COVID-19) epidemic and the influence of parental stress, social support, and other related variables on the anxiety of parents. Methods Bespoke questionnaires of child",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "The Influence of Factors Such as Parenting Stress and Social Support on the State Anxiety in Parents of Special Needs Children During the COVID-19 Epidemic",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.3389/fpsyg.2020.565393",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Frontiers in Psychology",
+      "year": "2020"
+    }
+  }
+]

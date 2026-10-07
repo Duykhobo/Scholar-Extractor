@@ -1,0 +1,92 @@
+{
+  "id": "6ac52151de1f33e504e8aec1_40_20",
+  "collectionId": "preset_visually_impaired_aac",
+  "searchRunId": "migrated_run_preset_visually_impaired_aac",
+  "title": "Condition of Public Primary Schools in Terms of Parental Social Support and Learning Needs of Parents",
+  "authors": "M Örs",
+  "year": "",
+  "publicationDate": "2026-10-06",
+  "abstract": "The Faculty was established to be the first faculty of educational sciences in Turkey so as to fulfill the need for experts in the field of educational sciences. Since its establishment, the …",
+  "doi": "",
+  "venue": "avesis.akdeniz.edu.tr",
+  "source": "Google Scholar",
+  "sourceRecordId": "6ac52151de1f33e504e8aec1_40_20",
+  "landingPageUrl": "https://avesis.akdeniz.edu.tr/yayin/650193c7-6b27-46d0-8d6b-09121fcebf2f/condition-of-public-primary-schools-in-terms-of-parental-social-support-and-learning-needs-of-parents/document.pdf",
+  "openAccessPdfUrl": "",
+  "retrievedAt": "2026-10-06",
+  "rawPayload": {
+    "abstract": "",
+    "allSources": [
+      "Google Scholar"
+    ],
+    "authors": "M Örs",
+    "collectionMethod": "SerpApi",
+    "conceptLabels": [],
+    "discoverySource": "Google Scholar",
+    "doi": "",
+    "duplicateOfId": "6ac5018cd3982c756374c1ff_30_4",
+    "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"Condition of Public Primary Schools in Terms of Parental Social Support and Learning Needs of Parents\"",
+    "finalDecision": "",
+    "id": "6ac52151de1f33e504e8aec1_40_20",
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-EC-DUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-CONF (Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)): Chưa có abstract hoặc toàn văn để quét từ khóa (self-confidence, confidence, self-esteem...). Cần thẩm định toàn văn.",
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"avesis.akdeniz.edu.tr\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": true,
+    "modelContribution": [
+      "M"
+    ],
+    "pipelineStage": "V2",
+    "potentialDuplicate": true,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "serpapi",
+        "queryId": "session_1791304011417",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T16:26:59.804Z",
+        "source": "Google Scholar",
+        "sourceRecordId": "6ac52151de1f33e504e8aec1_40_20",
+        "url": "https://avesis.akdeniz.edu.tr/yayin/650193c7-6b27-46d0-8d6b-09121fcebf2f/condition-of-public-primary-schools-in-terms-of-parental-social-support-and-learning-needs-of-parents/document.pdf"
+      }
+    ],
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "retrieval_date": "2026-10-06",
+    "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"Condition of Public Primary Schools in Terms of Parental Social Support and Learning Needs of Parents\").",
+    "screeningStage": "V2",
+    "search_id": "6ac52151de1f33e504e8aec1",
+    "snippet": "The Faculty was established to be the first faculty of educational sciences in Turkey so as to fulfill the need for experts in the field of educational sciences. Since its establishment, the …",
+    "source": "Google Scholar",
+    "suggestedDecision": "Exclude",
+    "title": "Condition of Public Primary Schools in Terms of Parental Social Support and Learning Needs of Parents",
+    "uncertain_authors": false,
+    "uncertain_doi": true,
+    "uncertain_venue": true,
+    "uncertain_year": true,
+    "unknownCriteria": [
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP",
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-RETRACTED",
+      "VI-EC-ACC"
+    ],
+    "url": "https://avesis.akdeniz.edu.tr/yayin/650193c7-6b27-46d0-8d6b-09121fcebf2f/condition-of-public-primary-schools-in-terms-of-parental-social-support-and-learning-needs-of-parents/document.pdf",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "avesis.akdeniz.edu.tr",
+    "year": ""
+  }
+}

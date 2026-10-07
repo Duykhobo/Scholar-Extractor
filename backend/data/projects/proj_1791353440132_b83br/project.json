@@ -1,0 +1,37 @@
+{
+  "id": "proj_1791353440132_b83br",
+  "name": "Tổng quan tài liệu về phân hoạch tương đương và phân tích giá trị biên trong kiểm thử REST API",
+  "rqCode": "FA26-EXT-12",
+  "teamName": "Nhóm nghiên cứu",
+  "rq": "Trên 45 yêu cầu của RESTestBench, phân hoạch tương đương kết hợp phân tích giá trị biên, so với sinh dữ liệu ngẫu nhiên đồng đều cùng ngân sách, khác nhau thế nào về số mutant riêng biệt bị phát hiện theo từng dạng yêu cầu?",
+  "h0": "",
+  "h1": "",
+  "framework": "PICO",
+  "pico": {
+    "population": "P — Population/Problem: 45 yêu cầu RESTestBench, gồm 15 yêu cầu trên mỗi dịch vụ trong 3 dịch vụ REST API; kiểm thử ở mức HTTP request.\n\nI — Intervention: Phân hoạch tương đương (EP) kết hợp phân tích giá trị biên (BVA) cho tham số request.\n\nC — Comparison: Sinh dữ liệu ngẫu nhiên đồng đều, sử dụng cùng ngân sách HTTP request.\n\nO — Outcome: Số mutant riêng biệt bị phát hiện và được oracle xác nhận, phân tích theo từng dạng yêu cầu.",
+    "intervention": "",
+    "comparison": "",
+    "outcome": ""
+  },
+  "members": [
+    {
+      "id": "mem_1791353440132",
+      "name": "Reviewer 1",
+      "role": "Trưởng nhóm nghiên cứu",
+      "assignedSources": [],
+      "isReviewer": true,
+      "isExtractor": true,
+      "plannedAuthorOrder": 1,
+      "confirmedFinalDraft": false
+    }
+  ],
+  "searchPeriod": {
+    "startDate": "2026-10-07",
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "reportLanguage": "vi",
+  "activeProtocolVersion": "1.0",
+  "activeStage": "PROJECT",
+  "createdAt": "2026-10-07T06:10:40.132Z",
+  "updatedAt": "2026-10-07T06:10:40.166Z"
+}

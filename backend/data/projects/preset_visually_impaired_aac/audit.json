@@ -1,0 +1,33 @@
+[
+  {
+    "id": "audit_1791343669194_o32fm",
+    "projectId": "preset_visually_impaired_aac",
+    "timestamp": "2026-10-07T03:27:49.194Z",
+    "eventType": "PROJECT_SAVE",
+    "userId": "Current User",
+    "details": {
+      "name": "Giao tiếp tử tế & Sự tự tin của trẻ khiếm thị (Visually Impaired AAC)"
+    }
+  },
+  {
+    "id": "audit_1791343669201_0h56o",
+    "projectId": "preset_visually_impaired_aac",
+    "timestamp": "2026-10-07T03:27:49.201Z",
+    "eventType": "PROJECT_SAVE",
+    "userId": "Current User",
+    "details": {
+      "name": "Giao tiếp tử tế & Sự tự tin của trẻ khiếm thị (Visually Impaired AAC)"
+    }
+  },
+  {
+    "id": "audit_1791343669206_qkxgx",
+    "projectId": "preset_visually_impaired_aac",
+    "timestamp": "2026-10-07T03:27:49.206Z",
+    "eventType": "PROTOCOL_CHANGE",
+    "userId": "Current User",
+    "details": {
+      "version": "v1.0",
+      "affectedDecisionsCount": 0
+    }
+  }
+]

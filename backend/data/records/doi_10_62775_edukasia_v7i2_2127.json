@@ -1,0 +1,135 @@
+{
+  "id": "doi_10_62775_edukasia_v7i2_2127",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Empowering Blind Children through Future Technology: Protective Factors Associated with AI-Based Audio and Braille Dictionaries in English Learning",
+  "authors": "Yuli Nuranawati; Urai Salam; Venny Karolina; Aunnurrahman Aunnurrahman; Eka Ariyati",
+  "year": "2026",
+  "publicationDate": "2026-10-06T14:12:16.642Z",
+  "abstract": "This study investigates how an AI-integrated Braille and audio dictionary supports academic resilience among blind students learning English. Employing a qualitative phenomenological design, the study involved seven blind tenth-grade students from two special schools in West Kalimantan, Indonesia, along with parents, English teachers, and school principals. Data were gathered through in-depth interviews, focus group discussions, classroom observations, and documentation, then analyzed thematically using Masten’s resilience theory, Ungar’s resource negotiation perspective, and Bronfenbrenner’s Ecological Systems Theory. Findings reveal three interrelated themes: (1) AI-supported audio features fostered individual protective factors, including persistence, self-efficacy, and adaptive problem-solving; (2) the Braille-audio integration functioned as a protective technological resource by enhancing multisensory learning, autonomy, and pronunciation accuracy; and (3) resilience was strengthened through teacher and parental environmental support. The study proposes a Digital Resilience Framework highlighting how internal capacities, accessible technology, and ecological support interact to sustain blind learners’ engagement in English learning. These findings contribute to inclusive education literature by demonstrating that assistive AI technologies serve not only as learning tools but as resilience-enhancing resources for students with visual impairments.",
+  "doi": "10.62775/edukasia.v7i2.2127",
+  "venue": "EDUKASIA Jurnal Pendidikan dan Pembelajaran",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_62775_edukasia_v7i2_2127",
+  "landingPageUrl": "https://doi.org/10.62775/edukasia.v7i2.2127",
+  "openAccessPdfUrl": "https://jurnaledukasia.org/index.php/edukasia/article/download/2127/1036",
+  "retrievedAt": "2026-10-06T14:12:16.642Z",
+  "rawPayload": {
+    "abstract": "This study investigates how an AI-integrated Braille and audio dictionary supports academic resilience among blind students learning English. Employing a qualitative phenomenological design, the study involved seven blind tenth-grade students from two special schools in West Kalimantan, Indonesia, along with parents, English teachers, and school principals. Data were gathered through in-depth interviews, focus group discussions, classroom observations, and documentation, then analyzed thematically using Masten’s resilience theory, Ungar’s resource negotiation perspective, and Bronfenbrenner’s Ecological Systems Theory. Findings reveal three interrelated themes: (1) AI-supported audio features fostered individual protective factors, including persistence, self-efficacy, and adaptive problem-solving; (2) the Braille-audio integration functioned as a protective technological resource by enhancing multisensory learning, autonomy, and pronunciation accuracy; and (3) resilience was strengthened through teacher and parental environmental support. The study proposes a Digital Resilience Framework highlighting how internal capacities, accessible technology, and ecological support interact to sustain blind learners’ engagement in English learning. These findings contribute to inclusive education literature by demonstrating that assistive AI technologies serve not only as learning tools but as resilience-enhancing resources for students with visual impairments.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Yuli Nuranawati; Urai Salam; Venny Karolina; Aunnurrahman Aunnurrahman; Eka Ariyati",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-efficacy (Secondary)",
+      "autonomy (Related)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.62775/edukasia.v7i2.2127",
+    "finalDecision": "",
+    "id": "doi_10_62775_edukasia_v7i2_2127",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-POP",
+      "VI-IC-CONF",
+      "VI-IC-AAC-SUP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"EDUKASIA Jurnal Pendidikan dan Pembelajaran\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "Y"
+    ],
+    "pdfUrl": "https://jurnaledukasia.org/index.php/edukasia/article/download/2127/1036",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:16.642Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213774125",
+        "url": "https://doi.org/10.62775/edukasia.v7i2.2127"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:39.690Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213774125",
+        "url": "https://doi.org/10.62775/edukasia.v7i2.2127"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:29:01.299Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213774125",
+        "url": "https://doi.org/10.62775/edukasia.v7i2.2127"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:37.795Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213774125",
+        "url": "https://doi.org/10.62775/edukasia.v7i2.2127"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:50.312Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W7213774125",
+        "url": "https://doi.org/10.62775/edukasia.v7i2.2127"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:16.642Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "This study investigates how an AI-integrated Braille and audio dictionary supports academic resilience among blind students learning English. Employing a qualitative phenomenological design, the study involved seven blind tenth-grade students from two special schools in West Kalimantan, Indonesia, a",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Empowering Blind Children through Future Technology: Protective Factors Associated with AI-Based Audio and Braille Dictionaries in English Learning",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.62775/edukasia.v7i2.2127",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "EDUKASIA Jurnal Pendidikan dan Pembelajaran",
+    "year": "2026"
+  }
+}

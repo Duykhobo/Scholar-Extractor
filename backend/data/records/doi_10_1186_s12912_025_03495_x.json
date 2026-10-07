@@ -1,0 +1,131 @@
+{
+  "id": "doi_10_1186_s12912_025_03495_x",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "A qualitative study of the family caregiver burden for caregivers of children with congenital cataracts from a social ecosystem theory perspective",
+  "authors": "Yuchen Du; Aixiao Wang; Chunjie Wang; Yanyan Chen; Yaoyao Lin",
+  "year": "2025",
+  "publicationDate": "2026-10-06T14:12:13.348Z",
+  "abstract": "BACKGROUND: Congenital cataracts are one of the leading causes of visual impairment and blindness in children, and treatment and rehabilitation are highly dependent on family caregivers. However, research on the caregiver burden experience for children with congenital cataracts in China is limited. In particular, a systematic exploration from the perspective of social ecosystem theory is lacking. This study aimed to gain insight into the burden on family caregivers of children with congenital cataracts in China and to provide a theoretical basis for the development of systematic intervention strategies. METHODS: On the basis of social ecosystem theory and a phenomenological research design, this study recruited family caregivers of children with congenital cataracts for semistructured interviews from December 2024 to January 2025 at a tertiary eye hospital in Hangzhou, China. Colaizzi's 7-step analysis method was used to analyse the interview data. RESULTS: Three themes and nine subthemes emerged from the analyses: (1) micro system: emotional stress and adaptive challenges (subthemes: emotional fluctuations under disease uncertainty, perceived and experienced stigma of illness, challenges of lacking care skills); (2) mezzo system: family life difficulties under disease shocks (subthemes: the personal cost in social and professional sacrifices, conflicts experienced in tense family relationships, family financial burdens); and (3) macro system: weakness of the support system (subthemes: anxiety and endeavors amidst healthcare resource scarcity, active exploration and confusion under information insufficiency, active search for help and limited school support). CONCLUSIONS: This study is the first to systematically reveal the multiple challenges faced by family caregivers of children with congenital cataracts in China in the micro, mezzo and macro systems from the perspective of social ecosystem theory. Future research should pay attention to the mental health of family caregivers, actively construct family-centred intervention strategies, and comprehensively consider the role of the social support system to better meet the needs of children with congenital cataracts and their family caregivers. CLINICAL TRIAL NUMBER: Not applicable.",
+  "doi": "10.1186/s12912-025-03495-x",
+  "venue": "BMC Nursing",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_1186_s12912_025_03495_x",
+  "landingPageUrl": "https://doi.org/10.1186/s12912-025-03495-x",
+  "openAccessPdfUrl": "https://bmcnurs.biomedcentral.com/counter/pdf/10.1186/s12912-025-03495-x",
+  "retrievedAt": "2026-10-06T14:12:13.348Z",
+  "rawPayload": {
+    "abstract": "BACKGROUND: Congenital cataracts are one of the leading causes of visual impairment and blindness in children, and treatment and rehabilitation are highly dependent on family caregivers. However, research on the caregiver burden experience for children with congenital cataracts in China is limited. In particular, a systematic exploration from the perspective of social ecosystem theory is lacking. This study aimed to gain insight into the burden on family caregivers of children with congenital cataracts in China and to provide a theoretical basis for the development of systematic intervention strategies. METHODS: On the basis of social ecosystem theory and a phenomenological research design, this study recruited family caregivers of children with congenital cataracts for semistructured interviews from December 2024 to January 2025 at a tertiary eye hospital in Hangzhou, China. Colaizzi's 7-step analysis method was used to analyse the interview data. RESULTS: Three themes and nine subthemes emerged from the analyses: (1) micro system: emotional stress and adaptive challenges (subthemes: emotional fluctuations under disease uncertainty, perceived and experienced stigma of illness, challenges of lacking care skills); (2) mezzo system: family life difficulties under disease shocks (subthemes: the personal cost in social and professional sacrifices, conflicts experienced in tense family relationships, family financial burdens); and (3) macro system: weakness of the support system (subthemes: anxiety and endeavors amidst healthcare resource scarcity, active exploration and confusion under information insufficiency, active search for help and limited school support). CONCLUSIONS: This study is the first to systematically reveal the multiple challenges faced by family caregivers of children with congenital cataracts in China in the micro, mezzo and macro systems from the perspective of social ecosystem theory. Future research should pay attention to the mental health of family caregivers, actively construct family-centred intervention strategies, and comprehensively consider the role of the social support system to better meet the needs of children with congenital cataracts and their family caregivers. CLINICAL TRIAL NUMBER: Not applicable.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Yuchen Du; Aixiao Wang; Chunjie Wang; Yanyan Chen; Yaoyao Lin",
+    "collectionMethod": "api",
+    "conceptLabels": [],
+    "discoverySource": "OpenAlex",
+    "doi": "10.1186/s12912-025-03495-x",
+    "finalDecision": "",
+    "id": "doi_10_1186_s12912_025_03495_x",
+    "literatureGroup": "supporting",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"BMC Nursing\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M"
+    ],
+    "pdfUrl": "https://bmcnurs.biomedcentral.com/counter/pdf/10.1186/s12912-025-03495-x",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.348Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4411974335",
+        "url": "https://doi.org/10.1186/s12912-025-03495-x"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.633Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4411974335",
+        "url": "https://doi.org/10.1186/s12912-025-03495-x"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.377Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4411974335",
+        "url": "https://doi.org/10.1186/s12912-025-03495-x"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.167Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4411974335",
+        "url": "https://doi.org/10.1186/s12912-025-03495-x"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.768Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4411974335",
+        "url": "https://doi.org/10.1186/s12912-025-03495-x"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.348Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "BACKGROUND: Congenital cataracts are one of the leading causes of visual impairment and blindness in children, and treatment and rehabilitation are highly dependent on family caregivers. However, research on the caregiver burden experience for children with congenital cataracts in China is limited. ",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "A qualitative study of the family caregiver burden for caregivers of children with congenital cataracts from a social ecosystem theory perspective",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.1186/s12912-025-03495-x",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "BMC Nursing",
+    "year": "2025"
+  }
+}

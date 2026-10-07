@@ -1,0 +1,135 @@
+{
+  "id": "doi_10_17951_lrp_2022_41_2_195_210",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Psychosocial Resources of People with Low Vision",
+  "authors": "Beata Szabała",
+  "year": "2022",
+  "publicationDate": "2026-10-06T14:12:15.284Z",
+  "abstract": "Introduction: The development of coping strategies as well as the support tailored to the needs of people with low vision allow for minimizing the existing limitations. In this context, recognizing one’s developmental situation is of key importance, identifying factors helpful in developing one’s potential in particular. These factors undoubtedly include the resources at the disposal of people suffering from low vision. Research Aim: The aim of the research is to diagnose the psychosocial resources of people with low vision. Method: The study involved 110 low vision people and 110 sighted people at the age of 18–83, selected in terms of sex, age and education. The tools used in the research measured: basic hope, self-esteem and social support. Relevant calculations were made using the Student t-test for independent data. Results: The research showed that the low vision participants are characterized by a significantly lower intensity of basic hope. Moreover, they assess considerably less positively the properties that make up the family self and indicate that they receive significantly lower social support, both general and emotional as well as affirmative and practical. Conclusions: The obtained results indicate the necessity to undertake various actions aimed at improving the psychosocial functioning of people with low vision by optimizing their resources.",
+  "doi": "10.17951/lrp.2022.41.2.195-210",
+  "venue": "Lubelski Rocznik Pedagogiczny",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_17951_lrp_2022_41_2_195_210",
+  "landingPageUrl": "https://doi.org/10.17951/lrp.2022.41.2.195-210",
+  "openAccessPdfUrl": "https://journals.umcs.pl/lrp/article/download/12822/9916",
+  "retrievedAt": "2026-10-06T14:12:15.284Z",
+  "rawPayload": {
+    "abstract": "Introduction: The development of coping strategies as well as the support tailored to the needs of people with low vision allow for minimizing the existing limitations. In this context, recognizing one’s developmental situation is of key importance, identifying factors helpful in developing one’s potential in particular. These factors undoubtedly include the resources at the disposal of people suffering from low vision. Research Aim: The aim of the research is to diagnose the psychosocial resources of people with low vision. Method: The study involved 110 low vision people and 110 sighted people at the age of 18–83, selected in terms of sex, age and education. The tools used in the research measured: basic hope, self-esteem and social support. Relevant calculations were made using the Student t-test for independent data. Results: The research showed that the low vision participants are characterized by a significantly lower intensity of basic hope. Moreover, they assess considerably less positively the properties that make up the family self and indicate that they receive significantly lower social support, both general and emotional as well as affirmative and practical. Conclusions: The obtained results indicate the necessity to undertake various actions aimed at improving the psychosocial functioning of people with low vision by optimizing their resources.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Beata Szabała",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-esteem (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.17951/lrp.2022.41.2.195-210",
+    "finalDecision": "",
+    "id": "doi_10_17951_lrp_2022_41_2_195_210",
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Lubelski Rocznik Pedagogiczny\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "pdfUrl": "https://journals.umcs.pl/lrp/article/download/12822/9916",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:15.284Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4296242439",
+        "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:37.551Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4296242439",
+        "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:59.427Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4296242439",
+        "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:36.089Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4296242439",
+        "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:48.442Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4296242439",
+        "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210"
+      }
+    ],
+    "publicationType": "article",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:15.284Z",
+    "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Introduction: The development of coping strategies as well as the support tailored to the needs of people with low vision allow for minimizing the existing limitations. In this context, recognizing one’s developmental situation is of key importance, identifying factors helpful in developing one’s po",
+    "source": "OpenAlex",
+    "suggestedDecision": "Exclude",
+    "title": "Psychosocial Resources of People with Low Vision",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.17951/lrp.2022.41.2.195-210",
+    "userNotes": "",
+    "v2Decision": "Exclude",
+    "venue": "Lubelski Rocznik Pedagogiczny",
+    "year": "2022"
+  }
+}

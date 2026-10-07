@@ -1,0 +1,371 @@
+[
+  {
+    "id": "evt_1791335614764_khre8",
+    "recordId": "doi_10_1016_j_ridd_2023_104538",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:34.764Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of caregivers in Catalonia (Spain). METHODS: An observational study was designed in which nine parents of children with VI (6 mothers) were recruited following an intentional sampling scheme. In-depth interviews were conducted, and a thematic analysis was performed to identify main themes and subthemes. The QoL domains defined in the questionnaire WHOQoL-BREF guided data interpretation. RESULTS: An overarching theme was defined (the weight on one's shoulders), as well as two main themes (obstacles race and emotional impact) and seven subthemes. QoL was negatively affected by a general lack of knowledge and understanding regarding VI in children and its implications for children and caregivers, whereas social support, gaining knowledge, or cognitive reappraisal had a positive effect. CONCLUSIONS: Caregiving for children with VI affects all QoL domains, resulting in persistent psychological distress. Both administrations and health care providers are encouraged to develop strategies to assist caregivers in their demanding roles.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Marta Lupón; Manuel Armayones; Genı́s Cardona",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.ridd.2023.104538",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_ridd_2023_104538",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Research in Developmental Disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.346Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.632Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.165Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.767Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.346Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Quality of life of caregivers of children with visual impairment: A qualitative approach",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Research in Developmental Disabilities",
+      "year": "2023"
+    }
+  },
+  {
+    "id": "evt_1791335618480_3hzdc",
+    "recordId": "doi_10_1016_j_ridd_2023_104538",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.480Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of caregivers in Catalonia (Spain). METHODS: An observational study was designed in which nine parents of children with VI (6 mothers) were recruited following an intentional sampling scheme. In-depth interviews were conducted, and a thematic analysis was performed to identify main themes and subthemes. The QoL domains defined in the questionnaire WHOQoL-BREF guided data interpretation. RESULTS: An overarching theme was defined (the weight on one's shoulders), as well as two main themes (obstacles race and emotional impact) and seven subthemes. QoL was negatively affected by a general lack of knowledge and understanding regarding VI in children and its implications for children and caregivers, whereas social support, gaining knowledge, or cognitive reappraisal had a positive effect. CONCLUSIONS: Caregiving for children with VI affects all QoL domains, resulting in persistent psychological distress. Both administrations and health care providers are encouraged to develop strategies to assist caregivers in their demanding roles.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Marta Lupón; Manuel Armayones; Genı́s Cardona",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.ridd.2023.104538",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_ridd_2023_104538",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Research in Developmental Disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.346Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.632Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:35.165Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:46.767Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:13.346Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Quality of life of caregivers of children with visual impairment: A qualitative approach",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Research in Developmental Disabilities",
+      "year": "2023",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335623862_ts7dx",
+    "recordId": "doi_10_1016_j_ridd_2023_104538",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:43.862Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of caregivers in Catalonia (Spain). METHODS: An observational study was designed in which nine parents of children with VI (6 mothers) were recruited following an intentional sampling scheme. In-depth interviews were conducted, and a thematic analysis was performed to identify main themes and subthemes. The QoL domains defined in the questionnaire WHOQoL-BREF guided data interpretation. RESULTS: An overarching theme was defined (the weight on one's shoulders), as well as two main themes (obstacles race and emotional impact) and seven subthemes. QoL was negatively affected by a general lack of knowledge and understanding regarding VI in children and its implications for children and caregivers, whereas social support, gaining knowledge, or cognitive reappraisal had a positive effect. CONCLUSIONS: Caregiving for children with VI affects all QoL domains, resulting in persistent psychological distress. Both administrations and health care providers are encouraged to develop strategies to assist caregivers in their demanding roles.",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Marta Lupón; Manuel Armayones; Genı́s Cardona",
+      "collectionMethod": "api",
+      "conceptLabels": [],
+      "discoverySource": "OpenAlex",
+      "doi": "10.1016/j.ridd.2023.104538",
+      "finalDecision": "",
+      "id": "doi_10_1016_j_ridd_2023_104538",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-COMM"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Research in Developmental Disabilities\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "M"
+      ],
+      "pdfUrl": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:13.346Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:36.632Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:57.377Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:35.165Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:46.767Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W4376865275",
+          "url": "https://doi.org/10.1016/j.ridd.2023.104538"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:13.346Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "BACKGROUND: Receiving a diagnosis of a child with untreatable visual impairment (VI) may have a negative impact on parents and caregivers, and affect their quality of life (QoL). AIMS: To use a qualitative research approach to determine the impact that caregiving a child with a VI has on the QoL of ",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Quality of life of caregivers of children with visual impairment: A qualitative approach",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.1016/j.ridd.2023.104538",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Research in Developmental Disabilities",
+      "year": "2023"
+    }
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "evt_1791335617965_sb16g",
+    "recordId": "6ac51934c83b3f830ae1732f_20_6",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:37.965Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "authors": "M Mushtaq; N Ahmad; Z Fatima",
+      "collectionMethod": "SerpApi",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "Google Scholar",
+      "doi": "",
+      "duplicateOfId": "6ac5191bfbe53b4496a535a5_10_1",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS\"",
+      "finalDecision": "",
+      "id": "6ac51934c83b3f830ae1732f_20_6",
+      "literatureGroup": "foundational",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": true,
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "pipelineStage": "V2",
+      "potentialDuplicate": true,
+      "profileVersion": 2,
+      "provenanceList": [],
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS\").",
+      "screeningStage": "V2",
+      "search_id": "6ac51934c83b3f830ae1732f",
+      "sessionId": "",
+      "snippet": "… Relationship of psychological well-being with social support and self-efficacy in adolescents of 54 religious and non-religious schools in Lahore. University of the Punjab, Lahore. …",
+      "source": "Google Scholar",
+      "suggestedDecision": "Exclude",
+      "title": "PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS",
+      "uncertain_authors": false,
+      "uncertain_doi": true,
+      "uncertain_venue": true,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "url": "https://contemporaryjournal.com.pk/index.php/cont/article/view/2784",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "… Journal of Social …",
+      "year": "2026"
+    }
+  },
+  {
+    "id": "evt_1791335622296_4bouw",
+    "recordId": "6ac51934c83b3f830ae1732f_20_6",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "Google Scholar",
+    "retrievedAt": "2026-10-07T01:13:42.296Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "id": "6ac51934c83b3f830ae1732f_20_6",
+      "source": "Google Scholar",
+      "discoverySource": "Google Scholar",
+      "collectionMethod": "SerpApi",
+      "title": "PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS",
+      "authors": "M Mushtaq; N Ahmad; Z Fatima",
+      "year": "2026",
+      "venue": "… Journal of Social …",
+      "doi": "",
+      "snippet": "… Relationship of psychological well-being with social support and self-efficacy in adolescents of 54 religious and non-religious schools in Lahore. University of the Punjab, Lahore. …",
+      "abstract": "",
+      "url": "https://contemporaryjournal.com.pk/index.php/cont/article/view/2784",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "retrieval_date": "2026-10-06",
+      "search_id": "6ac51934c83b3f830ae1732f",
+      "uncertain_authors": false,
+      "uncertain_year": false,
+      "uncertain_venue": true,
+      "uncertain_doi": true,
+      "missing_abstract": true,
+      "potentialDuplicate": true,
+      "screeningStage": "V2",
+      "matchedCriteria": [
+        "VI-IC-COMM",
+        "VI-IC-POP",
+        "VI-IC-CONF",
+        "VI-IC-PUB",
+        "VI-EC-DUP"
+      ],
+      "unknownCriteria": [
+        "VI-IC-AAC-SUP",
+        "VI-IC-FULLTEXT",
+        "VI-EC-RETRACTED",
+        "VI-EC-ACC"
+      ],
+      "missingEvidence": [
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-RETRACTED (Bài báo bị rút lại (Retracted Article)): Chưa có abstract hoặc toàn văn để quét từ khóa (retracted, retraction...). Cần thẩm định toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "suggestedDecision": "Exclude",
+      "screeningReason": "Bị loại theo tiêu chí loại trừ [VI-EC-DUP: Trùng lặp bài viết (Duplicate)]: Bài báo trùng lặp với bản ghi đã có (EC-D: Nghi vấn trùng tiêu đề (>88%) với \"PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS\").",
+      "finalDecision": "",
+      "userNotes": "",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2,
+      "sessionId": "",
+      "duplicateOfId": "6ac5191bfbe53b4496a535a5_10_1",
+      "duplicateReason": "Nghi vấn trùng tiêu đề (>88%) với \"PERCEIVED SOCIAL SUPPORT, DEFENSE STYLES, AND PSYCHOLOGICAL WELL-BEING IN VISUALLY IMPAIRED STUDENTS\"",
+      "pipelineStage": "V2",
+      "allSources": [
+        "Google Scholar"
+      ],
+      "provenanceList": [],
+      "mergedRecordIds": [],
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "modelContribution": [
+        "M",
+        "Y",
+        "H2"
+      ],
+      "literatureGroup": "foundational",
+      "v2Decision": "Exclude"
+    }
+  }
+]

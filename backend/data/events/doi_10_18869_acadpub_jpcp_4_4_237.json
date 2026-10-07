@@ -1,0 +1,380 @@
+[
+  {
+    "id": "evt_1791335615128_nsk8j",
+    "recordId": "doi_10_18869_acadpub_jpcp_4_4_237",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:35.128Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schools, in the academic year 2014.The study design was causal-comparative, conducted on 120 subjects consisting of 60 blind girls selected through convenient sampling method and 60 non-blind girls selected through randomized clustering sampling method.Data were collected through two questionnaires of attachment styles of Collins and Read (1990) (RAAS) and self-efficacy scale (SEQ-C) of Muris.To analyze the data, descriptive (mean and standard deviation) and inferential statistics (multivariate analysis of variance) were used. Results:The study results indicated a significant difference between blind and non-blind students' efficacy and attachment styles.Avoidance attachment style as well as emotional, social, and public efficacy of these two groups revealed no significant difference.Moreover, the results indicated a significant difference between anxiety attachment style and emotional, social, and public efficacy of these two groups (P>0.05).Finally, a significant difference was observed between secure attachment style and emotional, social, and general efficacy of blind and non-blind students. Conclusion:The blind and non-blind students are significantly different with regard to anxiety and secure attachment styles.However, their emotional, social, and academic self-efficacy seems to be the same.Although there was a significant difference between blind and non-blind students with regard to attachment styles, a significant association was seen between different dimensions of selfefficacy of blind and non-blind students (P<0.05).",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Raziyeh Alsadat Makkiyan; Mahmoud Malekitabar; Kumars Farahbakhsh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.18869/acadpub.jpcp.4.4.237",
+      "finalDecision": "",
+      "id": "doi_10_18869_acadpub_jpcp_4_4_237",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Practice in Clinical Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://jpcp.uswr.ac.ir/files/site1/user_files_261192/bahrami-A-10-427-7-6fe380c.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schoo",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Attachment Styles and Self-Efficacy in Blind and Non-blind Female High School Students",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Practice in Clinical Psychology",
+      "year": "2016"
+    }
+  },
+  {
+    "id": "evt_1791335618912_kkh59",
+    "recordId": "doi_10_18869_acadpub_jpcp_4_4_237",
+    "collectionId": "preset_visually_impaired_aac",
+    "searchRunId": "migrated_run_preset_visually_impaired_aac",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:38.912Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schools, in the academic year 2014.The study design was causal-comparative, conducted on 120 subjects consisting of 60 blind girls selected through convenient sampling method and 60 non-blind girls selected through randomized clustering sampling method.Data were collected through two questionnaires of attachment styles of Collins and Read (1990) (RAAS) and self-efficacy scale (SEQ-C) of Muris.To analyze the data, descriptive (mean and standard deviation) and inferential statistics (multivariate analysis of variance) were used. Results:The study results indicated a significant difference between blind and non-blind students' efficacy and attachment styles.Avoidance attachment style as well as emotional, social, and public efficacy of these two groups revealed no significant difference.Moreover, the results indicated a significant difference between anxiety attachment style and emotional, social, and public efficacy of these two groups (P>0.05).Finally, a significant difference was observed between secure attachment style and emotional, social, and general efficacy of blind and non-blind students. Conclusion:The blind and non-blind students are significantly different with regard to anxiety and secure attachment styles.However, their emotional, social, and academic self-efficacy seems to be the same.Although there was a significant difference between blind and non-blind students with regard to attachment styles, a significant association was seen between different dimensions of selfefficacy of blind and non-blind students (P<0.05).",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Raziyeh Alsadat Makkiyan; Mahmoud Malekitabar; Kumars Farahbakhsh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.18869/acadpub.jpcp.4.4.237",
+      "finalDecision": "",
+      "id": "doi_10_18869_acadpub_jpcp_4_4_237",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Practice in Clinical Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://jpcp.uswr.ac.ir/files/site1/user_files_261192/bahrami-A-10-427-7-6fe380c.pdf",
+      "pipelineStage": "V2",
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "method": "api",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schoo",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Attachment Styles and Self-Efficacy in Blind and Non-blind Female High School Students",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Practice in Clinical Psychology",
+      "year": "2016",
+      "researchId": "preset_visually_impaired_aac",
+      "profileVersion": 2
+    }
+  },
+  {
+    "id": "evt_1791335624219_677z1",
+    "recordId": "doi_10_18869_acadpub_jpcp_4_4_237",
+    "collectionId": "profile_1791307598173",
+    "searchRunId": "migrated_run_profile_1791307598173",
+    "source": "OpenAlex",
+    "retrievedAt": "2026-10-07T01:13:44.219Z",
+    "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "actualQuery": "",
+    "rawData": {
+      "abstract": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schools, in the academic year 2014.The study design was causal-comparative, conducted on 120 subjects consisting of 60 blind girls selected through convenient sampling method and 60 non-blind girls selected through randomized clustering sampling method.Data were collected through two questionnaires of attachment styles of Collins and Read (1990) (RAAS) and self-efficacy scale (SEQ-C) of Muris.To analyze the data, descriptive (mean and standard deviation) and inferential statistics (multivariate analysis of variance) were used. Results:The study results indicated a significant difference between blind and non-blind students' efficacy and attachment styles.Avoidance attachment style as well as emotional, social, and public efficacy of these two groups revealed no significant difference.Moreover, the results indicated a significant difference between anxiety attachment style and emotional, social, and public efficacy of these two groups (P>0.05).Finally, a significant difference was observed between secure attachment style and emotional, social, and general efficacy of blind and non-blind students. Conclusion:The blind and non-blind students are significantly different with regard to anxiety and secure attachment styles.However, their emotional, social, and academic self-efficacy seems to be the same.Although there was a significant difference between blind and non-blind students with regard to attachment styles, a significant association was seen between different dimensions of selfefficacy of blind and non-blind students (P<0.05).",
+      "allSources": [
+        "OpenAlex"
+      ],
+      "authors": "Raziyeh Alsadat Makkiyan; Mahmoud Malekitabar; Kumars Farahbakhsh",
+      "collectionMethod": "api",
+      "conceptLabels": [
+        "self-efficacy (Secondary)"
+      ],
+      "discoverySource": "OpenAlex",
+      "doi": "10.18869/acadpub.jpcp.4.4.237",
+      "finalDecision": "",
+      "id": "doi_10_18869_acadpub_jpcp_4_4_237",
+      "literatureGroup": "supporting",
+      "matchedCriteria": [
+        "VI-IC-POP",
+        "VI-IC-CONF"
+      ],
+      "mergedRecordIds": [],
+      "missingEvidence": [
+        "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Practice in Clinical Psychology\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+        "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+        "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+      ],
+      "missing_abstract": false,
+      "modelContribution": [
+        "Y"
+      ],
+      "pdfUrl": "http://jpcp.uswr.ac.ir/files/site1/user_files_261192/bahrami-A-10-427-7-6fe380c.pdf",
+      "pipelineStage": "V2",
+      "profileVersion": 2,
+      "provenanceList": [
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "sess_1791295876431_294pe",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:12:16.642Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:28:39.690Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791296908105",
+          "queryVersion": "Q2",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T14:29:01.300Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299727097",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:37.795Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        },
+        {
+          "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "method": "api",
+          "queryId": "session_1791299744175",
+          "queryVersion": "Q1",
+          "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+          "retrievedAt": "2026-10-06T15:15:50.313Z",
+          "source": "OpenAlex",
+          "sourceRecordId": "https://openalex.org/W2596080747",
+          "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237"
+        }
+      ],
+      "publicationType": "article",
+      "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+      "queryVersion": "Q1",
+      "researchId": "preset_visually_impaired_aac",
+      "retrieval_date": "2026-10-06T14:12:16.642Z",
+      "screeningReason": "Không thỏa mãn tiêu chí bắt buộc [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)]: Không tìm thấy từ khóa yêu cầu trong các trường [title, abstract, snippet, keywords].",
+      "screeningStage": "V2",
+      "search_id": "sess_1791295876431_294pe",
+      "snippet": "Objective: The present study aimed at investigating the relationship between attachment styles and self-efficacy in blind and non-blind female high school students in Tehran. Methods:The statistical population consisted of all female students studying in grades one or two in Tehran girl's high schoo",
+      "source": "OpenAlex",
+      "suggestedDecision": "Exclude",
+      "title": "Attachment Styles and Self-Efficacy in Blind and Non-blind Female High School Students",
+      "uncertain_authors": false,
+      "uncertain_doi": false,
+      "uncertain_venue": false,
+      "uncertain_year": false,
+      "unknownCriteria": [
+        "VI-IC-PUB",
+        "VI-IC-FULLTEXT",
+        "VI-EC-ACC"
+      ],
+      "url": "https://doi.org/10.18869/acadpub.jpcp.4.4.237",
+      "userNotes": "",
+      "v2Decision": "Exclude",
+      "venue": "Practice in Clinical Psychology",
+      "year": "2016"
+    }
+  }
+]

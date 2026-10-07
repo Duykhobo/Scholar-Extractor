@@ -1,0 +1,691 @@
+{
+  "id": "doi_10_21203_rs_3_rs_3372825_v1",
+  "collectionId": "profile_1791307598173",
+  "searchRunId": "migrated_run_profile_1791307598173",
+  "title": "Self Efficacy, Parental Attitude, and Social Support as Determinant of Vocational Choice Among Adolescents With Hearing Impairment in Oyo State",
+  "authors": "Okwara Salvagain; Diran Oyewole; Isaac Oluwafemi Dipeolu",
+  "year": "2023",
+  "publicationDate": "2026-10-06T14:12:13.348Z",
+  "abstract": "Abstract The study was set out to investigate the influence of self efficacy, parental attitude and social support on the vocational choice of adolescent with hearing impairment in Oyo State. It was discovered that adolescent with hearing impairment are having difficulties in the choice of chosen career that could best fit into their strengths. Consequently, it was discovered that both personal and environmental factors could serves as supports for an appropriate choice of career among the adolescent with hearing impairment in Ibadan north local government area of Oyo state, Nigeria. The study adopted a descriptive survey design with a sample of forty-four respondents (44) participants which was randomly selected to examine the studied relationship among the variables; however, the variables in the study were validated instrument. Three research hypotheses and two research questions were answered. Data were analysed using descriptive statistics, Pearson Product Moment Correlation (PPMC), and Multiple Regression Analytical methods. The independent variables were self-efficacy, parental attitude and social support) to the prediction of vocational choice of adolescents with hearing impairment in Oyo state; F (3, 44) = (3, 44) = 395.256, P<0.001.The independent variables jointly account accounted for 84% (Adj.R2= .840) variance in the prediction of vocational choice of adolescents with hearing impairment in the studied area and the most potent predictor factor was parental attitude (Beta = .975, t=16.960, p<0.05) respectively was ranked first in its contribution to vocational choice of adolescents with hearing impairment in the study. Based on the findings, it was concluded that the variables utilized for the study were efficiently predicted the sources and choices of career information made available to hearing impaired students also from their fellow colleagues and the mass media. It was recommendations were made based on the findings. Firstly, counsellors and special educators are advised to attend workshops, seminars that will help to broaden their skills and knowledge, especially in the area of handling clients with special needs. The government should provide the needed accessibility to school facilities for visually impaired students in senior secondary schools such as library, laboratories and so on. This is to enable them develop interest in the area of Sciences. Also, the curriculum planners should as a matter of urgency and necessity address the general science curriculum. With a view to making special adaptations that will soothe the educational needs of students with special needs at all levels of the Nigerian educational system. Areas such as teaching methodology, teaching aids and so on must be reviewed for special adaptations. This may go a long way in making visually impaired students to develop interest in vocational choice of careers development in their endeavours.",
+  "doi": "10.21203/rs.3.rs-3372825/v1",
+  "venue": "Research Square Platform LLC",
+  "source": "OpenAlex",
+  "sourceRecordId": "doi_10_21203_rs_3_rs_3372825_v1",
+  "landingPageUrl": "https://doi.org/10.21203/rs.3.rs-3372825/v1",
+  "openAccessPdfUrl": "https://www.researchsquare.com/article/rs-3372825/latest.pdf",
+  "retrievedAt": "2026-10-06T14:12:13.348Z",
+  "rawPayload": {
+    "abstract": "Abstract The study was set out to investigate the influence of self efficacy, parental attitude and social support on the vocational choice of adolescent with hearing impairment in Oyo State. It was discovered that adolescent with hearing impairment are having difficulties in the choice of chosen career that could best fit into their strengths. Consequently, it was discovered that both personal and environmental factors could serves as supports for an appropriate choice of career among the adolescent with hearing impairment in Ibadan north local government area of Oyo state, Nigeria. The study adopted a descriptive survey design with a sample of forty-four respondents (44) participants which was randomly selected to examine the studied relationship among the variables; however, the variables in the study were validated instrument. Three research hypotheses and two research questions were answered. Data were analysed using descriptive statistics, Pearson Product Moment Correlation (PPMC), and Multiple Regression Analytical methods. The independent variables were self-efficacy, parental attitude and social support) to the prediction of vocational choice of adolescents with hearing impairment in Oyo state; F (3, 44) = (3, 44) = 395.256, P<0.001.The independent variables jointly account accounted for 84% (Adj.R2= .840) variance in the prediction of vocational choice of adolescents with hearing impairment in the studied area and the most potent predictor factor was parental attitude (Beta = .975, t=16.960, p<0.05) respectively was ranked first in its contribution to vocational choice of adolescents with hearing impairment in the study. Based on the findings, it was concluded that the variables utilized for the study were efficiently predicted the sources and choices of career information made available to hearing impaired students also from their fellow colleagues and the mass media. It was recommendations were made based on the findings. Firstly, counsellors and special educators are advised to attend workshops, seminars that will help to broaden their skills and knowledge, especially in the area of handling clients with special needs. The government should provide the needed accessibility to school facilities for visually impaired students in senior secondary schools such as library, laboratories and so on. This is to enable them develop interest in the area of Sciences. Also, the curriculum planners should as a matter of urgency and necessity address the general science curriculum. With a view to making special adaptations that will soothe the educational needs of students with special needs at all levels of the Nigerian educational system. Areas such as teaching methodology, teaching aids and so on must be reviewed for special adaptations. This may go a long way in making visually impaired students to develop interest in vocational choice of careers development in their endeavours.",
+    "allSources": [
+      "OpenAlex"
+    ],
+    "authors": "Okwara Salvagain; Diran Oyewole; Isaac Oluwafemi Dipeolu",
+    "collectionMethod": "api",
+    "conceptLabels": [
+      "self-efficacy (Secondary)"
+    ],
+    "discoverySource": "OpenAlex",
+    "doi": "10.21203/rs.3.rs-3372825/v1",
+    "evidence_snippets": [
+      {
+        "context": "[Trang 1 - Unknown] \"...Page 1/39 Self E \u0000 cacy, Parental Attitude, and Social Support as Determinant of Vocational Choice Among Adolescents With Hearing Impairment i...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 1 - Unknown] \"...esearch Article Keywords: Self-E \u0000 cacy, Parental Attitude, Social Support, Vocational Choice of Adolescents, Hearing Impairment, Oyo State Posted Date: O...\"",
+        "isValidEvidence": true,
+        "page": 1,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \"...gate the in \u0000 uence of self e \u0000 cacy, parental attitude and social support on the vocational choice of adolescent with hearing impairment in Oyo State. It...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 2 - Unknown] \".... The government should provide the needed accessibility to school facilities for visually impaired students in senior secondary schools such as l...\"",
+        "isValidEvidence": true,
+        "page": 2,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...d for survival in our present society cannot be overlooked. School children with hearing impairment may possess the same intelligence score distri...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 3 - Unknown] \"...tional interests (Nauta, Kahn, Angell, & Cantarelli, 2002), self-esteem (Brown, Reedy, Fountain, Johnson, & Dichiser, 2000), career indecision and voca...\"",
+        "isValidEvidence": true,
+        "page": 3,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 5 - Unknown] \"...the wrong doings of the parents. The functional content of social support varies greatly from situation to situation (Tardy1995). House (1999) distinguis...\"",
+        "isValidEvidence": true,
+        "page": 5,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...h needed. Some of these factors include Parental Attitudes, Social support, and self e \u0000 cacy. Hearing provides a basis for learning. From the time a chil...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...hearing impairment. It will also inform special educators, school administrators, parents and guardians of the need for vocational training of st...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 7 - Unknown] \"...pmental tasks of adolescence include, among others, gaining autonomy from parents, building peer relations, and starting to prepare for a future pro...\"",
+        "isValidEvidence": true,
+        "page": 7,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "autonomy",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 8 - Unknown] \"...n Oyo State; To investigate the extent of the in \u0000 uence of social support on vocational choice of adolescents with hearing impairment in Oyo State; and T...\"",
+        "isValidEvidence": true,
+        "page": 8,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 9 - Unknown] \"...7 Parents Level of Education 2.3.8 Parents Occupation 2.3.9 Social Support for Adolescents with Hearing Impairment 2.3.10 Social Support and Health 2.3.11...\"",
+        "isValidEvidence": true,
+        "page": 9,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...lf-e \u0000 cacy for learning science.Self-e \u0000 cacy differs from self-esteem (Pastorelli et al., 2001). Self-esteem is based on how one judges his self-wort...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 10 - Unknown] \"...\u0000 cacy differs from self-esteem (Pastorelli et al., 2001). Self-esteem is based on how one judges his self-worth while self-e \u0000 cacy beliefs are based...\"",
+        "isValidEvidence": true,
+        "page": 10,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "Self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 11 - Unknown] \"...using the library to obtain information or concentrating on school subjects. Perceived academic self-e \u0000 cacy is a person's judgments about his ab...\"",
+        "isValidEvidence": true,
+        "page": 11,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 12 - Unknown] \"...erience this isolation, particularly if he or she attends a school for the deaf, but may conversely experience isolation from his parents if they...\"",
+        "isValidEvidence": true,
+        "page": 12,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...hem. The negative effects of such stress can be buffered by social support including informational, instructional, psychological, material and physical re...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...titudes towards children who are hearing impaired in Kambui School for the Deaf in Githunguri District, Kiambu County.All families experience stre...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 14 - Unknown] \"...) suggested that social support is associated with maternal self-esteem, sensitivity and patience. This in turn promotes family cohesion and allows opt...\"",
+        "isValidEvidence": true,
+        "page": 14,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "self-esteem",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 15 - Unknown] \"...inders the ability to cope (Sylvia, 2002). 2.1.4 CONCEPT OF SOCIAL SUPPORT Social support is a multi-dimensional concept and it has been conceptualized in...\"",
+        "isValidEvidence": true,
+        "page": 15,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "SOCIAL SUPPORT",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 16 - Unknown] \"...relationships (Houseand Kahn 2003). Functional measures of social support assess the functions that a relationship or network serve. The functional conte...\"",
+        "isValidEvidence": true,
+        "page": 16,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 17 - Unknown] \"...de basic skill aqcuisition programs that can be done in the school which would help these adolescents with hearing impairment develop basic surviv...\"",
+        "isValidEvidence": true,
+        "page": 17,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 18 - Methodology] \"...mmes to students. A research on poor attitudes of secondary school students towards making career choice was carried out by Bello (2000) in Yola M...\"",
+        "isValidEvidence": true,
+        "page": 18,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 19 - Unknown] \"...ted learning in adolescent years from junior to senior high school. Those who exhibited less decline in these self-e \u0000 cacy beliefs had higher gra...\"",
+        "isValidEvidence": true,
+        "page": 19,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 20 - Unknown] \"...(1991), who investigated career indecision among deaf high school seniors, reported that school staff rated them as either not prepared to make a...\"",
+        "isValidEvidence": true,
+        "page": 20,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 21 - Unknown] \"...disabilities was higher among parents with less than a high school education. In addition, black children had a higher incidence of disabilities t...\"",
+        "isValidEvidence": true,
+        "page": 21,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 21 - Unknown] \"...1985). Economic hardships adversely impact the physical and psychological well-being of both children and parents (Barling, 1990). Moreover the social economic stat...\"",
+        "isValidEvidence": true,
+        "page": 21,
+        "reason": "Khớp tiêu chí [VI-IC-CONF: Sự tự tin và năng lực tâm lý (Self-Confidence - Biến kết quả Y)].",
+        "section": "Unknown",
+        "term": "psychological well-being",
+        "type": "VI-IC-CONF"
+      },
+      {
+        "context": "[Trang 23 - Unknown] \"...e hearing impaired and the parent \u0000 s marital status. 2.3.7 SOCIAL SUPPORT FOR ADOLESCENTS WITH HEARING IMPAIRMENT For many people with hearing impairment...\"",
+        "isValidEvidence": true,
+        "page": 23,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "SOCIAL SUPPORT",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 24 - Unknown] \"...to participate in paid or income-generating activity 2.3.8 SOCIAL SUPPORT AND HEALTH Since the 1970s, after seminal works by Caplan (2001), Cassel (2009)...\"",
+        "isValidEvidence": true,
+        "page": 24,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "SOCIAL SUPPORT",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 24 - Unknown] \"...ect of social support that is related to health outcomes is perceived social support, or the belief that help would be available if needed (Sarason et al. 1990). He...\"",
+        "isValidEvidence": true,
+        "page": 24,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 24 - Unknown] \"...the other hand, it has been questioned whether measures of perceived social support truly re \u0000 ect the actual availability of support. However, there is evidence t...\"",
+        "isValidEvidence": true,
+        "page": 24,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 24 - Unknown] \"...there is evidence that self-reports of the validity of the perceived social support measures are rather accurate (Schwarzer and Leppin 1991). 2.3.9 SOCIAL SUPPORT...\"",
+        "isValidEvidence": true,
+        "page": 24,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "perceived social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 25 - Unknown] \"...relationships with parents are close and that they receive social support in questions related to impairment mainly from their family members and profess...\"",
+        "isValidEvidence": true,
+        "page": 25,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "social support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 25 - Methodology] \"...al choice of adolescent with hearing impairment in selected school for the hearing impaired in Oyo State. 3.2 POPULATION The population of study c...\"",
+        "isValidEvidence": true,
+        "page": 25,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 26 - Unknown] \"...with hearing impairment, Section D contains twelve items on Social Support of the hearing impaired students, while Section E contains Seventeen vocational...\"",
+        "isValidEvidence": true,
+        "page": 26,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 26 - Unknown] \"...nnaires were distributed with the help of teachers from the school, who helped the researcher in distribution and collection of the questionnaire...\"",
+        "isValidEvidence": true,
+        "page": 26,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 27 - References] \"...ocial networks. In S Cohen, L Underwood, B Gottlieb (eds.), Social Support Measurement and Intervention: A Guide for Health and Social Scientists, (pp. 53...\"",
+        "isValidEvidence": false,
+        "page": 27,
+        "reason": "Xuất hiện trong References/Trích dẫn.",
+        "section": "References",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 28 - Unknown] \"...Page 28/39 Cohen S, Syme S L. (1985). Social Support and Health.Orlando, Florida: Academic Press. Colletta N D. (1981). Social suppo...\"",
+        "isValidEvidence": true,
+        "page": 28,
+        "reason": "Khớp tiêu chí [VI-IC-COMM: Giao tiếp tử tế và hỗ trợ (Supportive & Kind Communication - Biến X)].",
+        "section": "Unknown",
+        "term": "Social Support",
+        "type": "VI-IC-COMM"
+      },
+      {
+        "context": "[Trang 28 - Unknown] \"...ward A. Frongillo Jr. 2001.“Food Insu \u0000 ciency and American School-Aged Children’s Cognitive, Academic, and Psychosocial Development.”Pediatrics 1...\"",
+        "isValidEvidence": true,
+        "page": 28,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 29 - Unknown] \"...le Weinstein. 2011. “Does Losing Your Home Mean Losing Your School? Effects of Foreclosures on the School Mobility of Children.” Regional Science...\"",
+        "isValidEvidence": true,
+        "page": 29,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 32 - Unknown] \"...Mares-Perlman JA, Nondahl DM Prevalence Of Hearing Loss In Older Adults In Beaver Dam, Wisconsin: The Epidemiology Of Hearing Loss Study 1998 American...\"",
+        "isValidEvidence": true,
+        "page": 32,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "Older Adults",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 32 - Unknown] \"...rensen M, Bech B, Christensen B, Sorensen MS Hearing In The Elderly Greater Than 80 Years Of Age: Prevalence Of Problems And Sensitivity 1997 Scand...\"",
+        "isValidEvidence": true,
+        "page": 32,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "Elderly",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 32 - Unknown] \"...cki EK, Elkins EF, Baum HM, Mcnamara PM Hearing Loss In The Elderly: An Epidemiologic Study Of The Framingham Heart Study Cohort 1985 Ear & Hearing...\"",
+        "isValidEvidence": true,
+        "page": 32,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "Elderly",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 33 - Unknown] \"...the society. The Journal of Advocacy and Rehabilitation in Special Education (JARSE). 1(1), 155-159. Abdul-Salaam, A.O. (2009): Accessibility of the interne...\"",
+        "isValidEvidence": true,
+        "page": 33,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 33 - Unknown] \"...l impairment: The journal of Advocacy and rehabilitation in special education (JARSE). 7(1). Adebiyi, B.A. (2003). Education of the Visually Impaired: Segreg...\"",
+        "isValidEvidence": true,
+        "page": 33,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "special education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 33 - Unknown] \"...or Inclusion. The Journal of Advocacy and Rehabilitation in Special Education (JARSE), 1(1), 39-41. Adenuga, C.O. (2001). Job Aspiration of Youth and the Edu...\"",
+        "isValidEvidence": true,
+        "page": 33,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 33 - Unknown] \"...je, (2007). In \u0000 uence on the Choice of Career of Secondary School Students. River State Press.Beilin, H. (1955). The application of general devel...\"",
+        "isValidEvidence": true,
+        "page": 33,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 33 - Unknown] \"...T, Klein B, Klein R Low Prevalence Of Hearing Aid Use Among Older Adults With Hearing Loss: The Epidemiology Of Hearing Loss Study 1998 Journal Of The A...\"",
+        "isValidEvidence": true,
+        "page": 33,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "Older Adults",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 34 - Unknown] \"...tionship between Personality and Career Choice of Secondary School Students in Enugu state.Unpublished M.Ed Thesis University of Nigeria, Nsukka....\"",
+        "isValidEvidence": true,
+        "page": 34,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 35 - Unknown] \"...337-342. Hoover, C.J. (1990). Think Purple at Marshall High School: Gender Equity Week - March 5 - 9, 1990. Daily Bulletin: Marshall High School,...\"",
+        "isValidEvidence": true,
+        "page": 35,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 36 - Methodology] \"...ired persons. The Journal of Advocacy and Rehabilitation in Special Education (JARSE), 6(1), 14-19. Nweze, I.N. (1998). Factors that Affects the Career Choic...\"",
+        "isValidEvidence": true,
+        "page": 36,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Methodology",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 36 - Evaluation] \"...mily background and occupational choice of Senior Secondary School students. Borno state: University of Maiduguri Press. McDaniels, C., &Gysbers,...\"",
+        "isValidEvidence": true,
+        "page": 36,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 36 - Unknown] \"...multidimensional analysis of the vocational aspirations of College students. Measurement and Evaluation in Counselling Psychology. 28(1), 25-44. Juncarto,...\"",
+        "isValidEvidence": true,
+        "page": 36,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Unknown",
+        "term": "College students",
+        "type": "VI-EC-ADULT"
+      },
+      {
+        "context": "[Trang 37 - Unknown] \"...in the standard english braille on the spelling ability of students with visual impairments. The Journal of Advocacy and Rehabilitation in Special Education (JARSE), 6(1),...\"",
+        "isValidEvidence": true,
+        "page": 37,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "students with visual impairments",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 37 - Unknown] \"...r employment. The Journal of Advocacy and Rehabilitation in Special Education (JARSE), 1(1), 99 -102. Okeke, B.A. (2001). Essentials of special education.Afr...\"",
+        "isValidEvidence": true,
+        "page": 37,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Special Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 37 - Unknown] \"...ooks. Onyekwere, J. (2008), Career Maturity among Secondary School Students in Umunze, Olumba south Local Government of Anambra state. Unpublished...\"",
+        "isValidEvidence": true,
+        "page": 37,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 37 - Unknown] \"...F.N. (2008). Effect of contractions in the standard english braille on the spelling ability of students with visual impairments. The Journal of Adv...\"",
+        "isValidEvidence": true,
+        "page": 37,
+        "reason": "Khớp tiêu chí [VI-IC-AAC-SUP: Công nghệ trợ giúp & AAC (Nhóm bổ trợ, KHÔNG bắt buộc)].",
+        "section": "Unknown",
+        "term": "braille",
+        "type": "VI-IC-AAC-SUP"
+      },
+      {
+        "context": "[Trang 38 - Unknown] \"...Sylvia, M. (2002). Attitudes of Pre-school Teachers Towards Inclusive Education for Children with Hearing Impairment. Unpublished master’s thesis: Kenyatta Uni...\"",
+        "isValidEvidence": true,
+        "page": 38,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "Inclusive Education",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 38 - Unknown] \"...en. Journal of community guidance and research, 9, 117-122. School Administration Records, (2010).Kambui School for the Deaf. Shakespeare, T. (199...\"",
+        "isValidEvidence": true,
+        "page": 38,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Unknown",
+        "term": "School",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 39 - Evaluation] \"...D. (2008). Factors affecting career aspiration of secondary school leavers in Bhutan.Unpublished Med Thesis. University press: Mahido. Johnson, L....\"",
+        "isValidEvidence": true,
+        "page": 39,
+        "reason": "Khớp tiêu chí [VI-IC-POP: Đối tượng trẻ em / học sinh khiếm thị (Children with Visual Impairment)].",
+        "section": "Evaluation",
+        "term": "school",
+        "type": "VI-IC-POP"
+      },
+      {
+        "context": "[Trang 39 - Evaluation] \"...multidimensional analysis of the vocational aspirations of College students. Measurement and Evaluation in Counselling Psychology. 28(1), 25-44. Juncarto,...\"",
+        "isValidEvidence": true,
+        "page": 39,
+        "reason": "Khớp tiêu chí [VI-EC-ADULT: Nghiên cứu thuần về sinh viên đại học / người cao tuổi (Không có trẻ em)].",
+        "section": "Evaluation",
+        "term": "College students",
+        "type": "VI-EC-ADULT"
+      }
+    ],
+    "finalDecision": "",
+    "fullTextStatus": "downloaded",
+    "id": "doi_10_21203_rs_3_rs_3372825_v1",
+    "isPdfVerified": true,
+    "literatureGroup": "foundational",
+    "matchedCriteria": [
+      "VI-IC-COMM",
+      "VI-IC-POP",
+      "VI-IC-CONF"
+    ],
+    "mergedRecordIds": [],
+    "missingEvidence": [
+      "VI-IC-PUB (Thông tin xuất bản đủ chuẩn trích dẫn APA 7): Venue \"Research Square Platform LLC\" chưa đủ thông tin để xác minh peer-reviewed conference/journal. Cần kiểm tra thủ công.",
+      "VI-IC-FULLTEXT (Truy cập được toàn văn bài báo): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn.",
+      "VI-EC-ACC (Không thể truy cập toàn văn sau các lần thử): Chưa kiểm tra hoặc chưa tải được toàn văn bài báo (PDF). Không suy diễn việc thiếu abstract thành không có toàn văn (EC-A). Tuyệt đối không suy diễn abstract thành toàn văn."
+    ],
+    "missing_abstract": false,
+    "modelContribution": [
+      "M",
+      "Y",
+      "H2"
+    ],
+    "page_count": 39,
+    "pdfUrl": "https://www.researchsquare.com/article/rs-3372825/latest.pdf",
+    "pipelineStage": "V2",
+    "profileVersion": 2,
+    "provenanceList": [
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "sess_1791295876431_294pe",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:12:13.348Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4387364687",
+        "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:36.634Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4387364687",
+        "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791296908105",
+        "queryVersion": "Q2",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T14:28:57.378Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4387364687",
+        "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299727097",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:35.169Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4387364687",
+        "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1"
+      },
+      {
+        "actualQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "method": "api",
+        "queryId": "session_1791299744175",
+        "queryVersion": "Q1",
+        "rawQuery": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+        "retrievedAt": "2026-10-06T15:15:46.769Z",
+        "source": "OpenAlex",
+        "sourceRecordId": "https://openalex.org/W4387364687",
+        "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1"
+      }
+    ],
+    "publicationType": "preprint",
+    "query": "(\"children with visual impairments\" OR \"visually impaired children\" OR \"blind children\") AND (\"supportive communication\" OR \"teacher support\" OR \"peer support\" OR \"social support\") AND (\"self-confidence\" OR \"self-esteem\" OR \"self-efficacy\")",
+    "queryVersion": "Q1",
+    "researchId": "preset_visually_impaired_aac",
+    "retrieval_date": "2026-10-06T14:12:13.348Z",
+    "screeningReason": "Còn 3 tiêu chí bắt buộc chưa được xác minh đầy đủ (VI-IC-PUB, VI-IC-FULLTEXT, VI-EC-ACC). Chờ thẩm định toàn văn (Pending Full-Text).",
+    "screeningStage": "V2",
+    "search_id": "sess_1791295876431_294pe",
+    "snippet": "Abstract The study was set out to investigate the influence of self efficacy, parental attitude and social support on the vocational choice of adolescent with hearing impairment in Oyo State. It was discovered that adolescent with hearing impairment are having difficulties in the choice of chosen ca",
+    "source": "OpenAlex",
+    "suggestedDecision": "Unsure",
+    "title": "Self Efficacy, Parental Attitude, and Social Support as Determinant of Vocational Choice Among Adolescents With Hearing Impairment in Oyo State",
+    "uncertain_authors": false,
+    "uncertain_doi": false,
+    "uncertain_venue": false,
+    "uncertain_year": false,
+    "unknownCriteria": [
+      "VI-IC-PUB",
+      "VI-IC-FULLTEXT",
+      "VI-EC-ACC"
+    ],
+    "url": "https://doi.org/10.21203/rs.3.rs-3372825/v1",
+    "userNotes": "",
+    "v2Decision": "Unsure",
+    "v3Decision": "Unsure",
+    "venue": "Research Square Platform LLC",
+    "year": "2023"
+  }
+}
