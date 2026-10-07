@@ -1,12 +1,9 @@
-import { BUILTIN_PRESETS, PRESET_GENERIC, PRESET_SWT302, PRESET_VISUALLY_IMPAIRED_AAC } from "./presets";
+import { PRESET_GENERIC, PRESET_SWT302, PRESET_VISUALLY_IMPAIRED_AAC } from "./presets";
 import {
-  Criterion,
   DedupStats,
   FrameworkType,
   PaperRecord,
-  ProtocolDiff,
   ResearchProfile,
-  ScreeningDecision,
   SearchExecutionSummary,
   SourceAdapterCapability,
   SuspectedDuplicatePair,
@@ -109,7 +106,8 @@ interface StepGuideContent {
 const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
   SETUP: {
     whenToUse: "Bắt đầu một đề tài tổng quan tài liệu (SLR) mới hoặc điều chỉnh khung nghiên cứu.",
-    preparation: "Xác định câu hỏi nghiên cứu (RQ), khung PICO/SPIDER, từ khóa tiếng Anh/tiếng Việt và khung năm xuất bản.",
+    preparation:
+      "Xác định câu hỏi nghiên cứu (RQ), khung PICO/SPIDER, từ khóa tiếng Anh/tiếng Việt và khung năm xuất bản.",
     orderOfButtons: [
       "1. Chọn chế độ: Tạo nghiên cứu mới (hoặc bấm Mẫu có sẵn như SWT302 REST API)",
       "2. Nhập Tên đề tài, Mô tả và các câu hỏi RQ",
@@ -132,7 +130,8 @@ const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
       "5. Xem bảng kết quả thu thập theo từng nguồn và bấm '➡️ Sang kiểm tra trùng lặp (V1)'",
     ],
     expectedOutput: "Danh sách bài báo thô (B1) được tải về với đầy đủ metadata ban đầu.",
-    troubleshooting: "Nếu API báo lỗi hoặc timeout: bấm '🔄 Chạy lại phần lỗi' hoặc chuyển sang '📂 Nhập tệp mẫu' (CSV/BibTeX/RIS). Tiến trình chạy ngầm an toàn trên backend.",
+    troubleshooting:
+      "Nếu API báo lỗi hoặc timeout: bấm '🔄 Chạy lại phần lỗi' hoặc chuyển sang '📂 Nhập tệp mẫu' (CSV/BibTeX/RIS). Tiến trình chạy ngầm an toàn trên backend.",
     proceedCondition: "Có ít nhất 1 bài báo hợp lệ trong tập dữ liệu.",
   },
   V1: {
@@ -158,8 +157,10 @@ const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
       "4. Nếu còn bài Unsure: bấm 'Đưa bài Unsure sang V3 để kiểm tra toàn văn'",
       "5. Bấm nút: '✓ Xác nhận danh sách sang V3'",
     ],
-    expectedOutput: "Tất cả các bài được phân loại minh bạch: PassToFullText, Exclude hoặc Unsure. TUYỆT ĐỐI không dán nhãn Final Include ở vòng này.",
-    troubleshooting: "Nếu bài thiếu Abstract: bấm nút '⚡ Quét link' hoặc '📑 Tab' để trích xuất trực tiếp từ trang bài báo.",
+    expectedOutput:
+      "Tất cả các bài được phân loại minh bạch: PassToFullText, Exclude hoặc Unsure. TUYỆT ĐỐI không dán nhãn Final Include ở vòng này.",
+    troubleshooting:
+      "Nếu bài thiếu Abstract: bấm nút '⚡ Quét link' hoặc '📑 Tab' để trích xuất trực tiếp từ trang bài báo.",
     proceedCondition: "Không còn bài ở trạng thái Chưa xem.",
   },
   V3: {
@@ -173,8 +174,10 @@ const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
       "5. Nhập ghi chú thẩm định (lưu tự động, không xóa quyết định)",
       "6. Bấm nút: '✓ Xác nhận danh sách sang Chốt & Xuất'",
     ],
-    expectedOutput: "Danh sách bài nghiên cứu được thẩm định toàn văn với đầy đủ bằng chứng, số trang và lý do khoa học.",
-    troubleshooting: "Nếu không tìm thấy PDF: trạng thái là 'Chưa lấy được toàn văn', KHÔNG tự động loại bài trừ khi xác nhận unretrievable.",
+    expectedOutput:
+      "Danh sách bài nghiên cứu được thẩm định toàn văn với đầy đủ bằng chứng, số trang và lý do khoa học.",
+    troubleshooting:
+      "Nếu không tìm thấy PDF: trạng thái là 'Chưa lấy được toàn văn', KHÔNG tự động loại bài trừ khi xác nhận unretrievable.",
     proceedCondition: "Các bài muốn chọn vào nghiên cứu phải có toàn văn và bằng chứng phương pháp.",
   },
   FINAL: {
@@ -195,7 +198,8 @@ const STEP_GUIDE_DATA: Record<WizardStep, StepGuideContent> = {
       "   - session_backup.json",
     ],
     expectedOutput: "Bộ hồ sơ nghiên cứu SLR hoàn chỉnh, cân bằng số học tuyệt đối, minh bạch và có thể tái lập.",
-    troubleshooting: "Nếu có cảnh báo 'Lệch số học' hoặc 'Quyết định thuộc protocol cũ': bấm nút cảnh báo để nhảy về V2/V3 thẩm định lại.",
+    troubleshooting:
+      "Nếu có cảnh báo 'Lệch số học' hoặc 'Quyết định thuộc protocol cũ': bấm nút cảnh báo để nhảy về V2/V3 thẩm định lại.",
     proceedCondition: "Sơ đồ PRISMA cân bằng số học.",
   },
 };
@@ -978,10 +982,8 @@ class ScholarExtensionApp {
       this.saveProtocolChangesBtn.addEventListener("click", () => this.handleSaveProtocolChanges());
 
     if (this.closeModalBtn) this.closeModalBtn.addEventListener("click", () => this.closeTabExtractModal());
-    if (this.cancelTabExtractBtn)
-      this.cancelTabExtractBtn.addEventListener("click", () => this.closeTabExtractModal());
-    if (this.confirmTabExtractBtn)
-      this.confirmTabExtractBtn.addEventListener("click", () => this.confirmTabAnalysis());
+    if (this.cancelTabExtractBtn) this.cancelTabExtractBtn.addEventListener("click", () => this.closeTabExtractModal());
+    if (this.confirmTabExtractBtn) this.confirmTabExtractBtn.addEventListener("click", () => this.confirmTabAnalysis());
 
     if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
     if (this.closePrismaModalBottomBtn)
@@ -1135,18 +1137,21 @@ class ScholarExtensionApp {
       case "V2":
         pending = this.uniqueRecords.filter((r) => !r.v2Decision && !r.finalDecision).length;
         review = this.uniqueRecords.filter((r) => r.v2Decision === "Unsure" || r.suggestedDecision === "Unsure").length;
-        completed = this.uniqueRecords.filter((r) => r.v2Decision === "PassToFullText" || r.v2Decision === "Exclude")
-          .length;
+        completed = this.uniqueRecords.filter(
+          (r) => r.v2Decision === "PassToFullText" || r.v2Decision === "Exclude",
+        ).length;
         break;
       case "V3":
         pending = this.uniqueRecords.filter(
           (r) => r.v2Decision === "PassToFullText" && !r.finalDecision && !r.pdfUrl,
         ).length;
         review = this.uniqueRecords.filter(
-          (r) => (r.finalDecision === "Unsure" || !r.finalDecision) && (!!r.pdfUrl || r.fullTextStatus === "downloaded"),
+          (r) =>
+            (r.finalDecision === "Unsure" || !r.finalDecision) && (!!r.pdfUrl || r.fullTextStatus === "downloaded"),
         ).length;
-        completed = this.uniqueRecords.filter((r) => r.finalDecision === "Include" || r.finalDecision === "Exclude")
-          .length;
+        completed = this.uniqueRecords.filter(
+          (r) => r.finalDecision === "Include" || r.finalDecision === "Exclude",
+        ).length;
         break;
       case "FINAL":
         pending = this.uniqueRecords.filter((r) => !r.finalDecision).length;
@@ -1186,22 +1191,38 @@ class ScholarExtensionApp {
     }
 
     if (mode === "new") {
-      this.setupResearchName.value = "";
-      this.setupResearchDesc.value = "";
-      this.setupResearchRq.value = "";
-      this.setupInclusionKeywords.value = "";
-      this.setupExclusionKeywords.value = "";
+      const newStudyId = `research_${Date.now()}`;
+      this.activeProfile = {
+        ...PRESET_GENERIC,
+        id: newStudyId,
+        name: "",
+        description: "",
+        profileVersion: 1,
+        researchQuestions: [],
+        criteria: [...PRESET_GENERIC.criteria],
+        searchStrings: [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+      this.currentSessionId = `session_${Date.now()}`;
       this.allRecords = [];
       this.uniqueRecords = [];
       this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
       this.suspectedDuplicatePairs = [];
       this.mergeHistoryList = [];
-      this.currentSessionId = `session_${Date.now()}`;
+
+      this.setupResearchName.value = "";
+      this.setupResearchDesc.value = "";
+      this.setupResearchRq.value = "";
+      this.setupInclusionKeywords.value = "";
+      this.setupExclusionKeywords.value = "";
+
       this.saveSessionToStorage();
+      this.updateActiveResearchDisplay();
       this.updateStepCounters();
       this.updateStep0SummaryPreview();
       this.renderRecordsList();
-      this.setStatus("Chế độ tạo mới: Đã làm sạch danh sách bài báo cho đề tài mới.", "info");
+      this.setStatus("Chế độ tạo mới: Đã khởi tạo đề tài nghiên cứu độc lập mới.", "info");
     }
   }
 
@@ -1252,7 +1273,11 @@ class ScholarExtensionApp {
           label: "C — Comparison (Đối chứng)",
           placeholder: "Ví dụ: Kiểm thử thủ công, random testing... (hoặc tích N/A)",
         },
-        { key: "O", label: "O — Outcomes (Kết quả đo lường)", placeholder: "Ví dụ: Độ bao phủ coverage, tỉ lệ phát hiện lỗi..." },
+        {
+          key: "O",
+          label: "O — Outcomes (Kết quả đo lường)",
+          placeholder: "Ví dụ: Độ bao phủ coverage, tỉ lệ phát hiện lỗi...",
+        },
       ];
     } else if (fw === "PICOS") {
       fieldDefs = [
@@ -1462,6 +1487,74 @@ class ScholarExtensionApp {
       .map((k) => k.trim())
       .filter((k) => k.length > 0);
 
+    // 1. Giữ nguyên các tiêu chí chuyên biệt của đề tài từ preset
+    const existingCriteria = Array.isArray(this.activeProfile.criteria) ? [...this.activeProfile.criteria] : [];
+
+    // 2. Cập nhật hoặc bổ sung tiêu chí Khung năm (year_range)
+    let yearCriterion = existingCriteria.find((c) => c.evaluator === "year_range" || c.id === "IC-Y");
+    if (yearCriterion) {
+      yearCriterion.parameters = { ...yearCriterion.parameters, startYear: yStart, endYear: yEnd };
+      yearCriterion.description = `Xuất bản từ năm ${yStart} đến ${yEnd}`;
+    } else {
+      existingCriteria.push({
+        id: "IC-Y",
+        label: "Khung thời gian xuất bản",
+        description: `Xuất bản từ năm ${yStart} đến ${yEnd}`,
+        kind: "inclusion",
+        required: true,
+        stage: "metadata",
+        evaluator: "year_range",
+        parameters: { startYear: yStart, endYear: yEnd },
+      });
+    }
+
+    // 3. Cập nhật hoặc bổ sung tiêu chí Dung lượng tối thiểu (page_count)
+    let pageCriterion = existingCriteria.find((c) => c.evaluator === "page_count" || c.id === "EC-S");
+    if (pageCriterion) {
+      pageCriterion.parameters = { ...pageCriterion.parameters, minPages, rejectShortPapers: true };
+      pageCriterion.description = `Dung lượng bài báo tối thiểu >= ${minPages} trang (loại trừ bài ngắn/tóm tắt)`;
+    } else {
+      existingCriteria.push({
+        id: "EC-S",
+        label: "Dung lượng bài báo tối thiểu",
+        description: `Dung lượng bài báo tối thiểu >= ${minPages} trang (loại trừ bài ngắn/tóm tắt)`,
+        kind: "exclusion",
+        required: true,
+        stage: "full_text",
+        evaluator: "page_count",
+        parameters: { minPages, rejectShortPapers: true },
+      });
+    }
+
+    // 4. Cập nhật tiêu chí từ khóa người dùng bổ sung theo đúng schema engine
+    const finalCriteria = existingCriteria.filter((c) => !c.id.startsWith("IC-KW") && !c.id.startsWith("EC-KW"));
+
+    if (incKeywords.length > 0) {
+      finalCriteria.push({
+        id: "IC-KW",
+        label: "Từ khóa bao hàm bắt buộc",
+        description: `Chứa ít nhất một trong các từ khóa: ${incKeywords.join(", ")}`,
+        kind: "inclusion",
+        required: false,
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: { keywords: incKeywords, logic: "OR" },
+      });
+    }
+
+    if (excKeywords.length > 0) {
+      finalCriteria.push({
+        id: "EC-KW",
+        label: "Từ khóa loại trừ bắt buộc",
+        description: `Loại trừ nếu chứa bất kỳ từ khóa nào: ${excKeywords.join(", ")}`,
+        kind: "exclusion",
+        required: true,
+        stage: "title_abstract",
+        evaluator: "keyword_group",
+        parameters: { keywords: excKeywords, logic: "OR" },
+      });
+    }
+
     const updatedProfile: ResearchProfile = {
       ...this.activeProfile,
       name,
@@ -1470,50 +1563,10 @@ class ScholarExtensionApp {
       framework: this.currentFramework,
       frameworkFields: fwFields,
       targetIncludedCount: targetCount,
+      minPageCount: minPages,
       yearRange: { start: yStart, end: yEnd, enabled: true },
       minPages: { count: minPages, enabled: true },
-      criteria: [
-        {
-          id: "IC1",
-          type: "inclusion",
-          name: "Khung thời gian xuất bản",
-          description: `Xuất bản từ năm ${yStart} đến ${yEnd}`,
-          field: "year",
-          operator: "range",
-          value: [yStart, yEnd],
-          isMandatory: true,
-        },
-        {
-          id: "IC2",
-          type: "inclusion",
-          name: "Dung lượng bài báo tối thiểu",
-          description: `Số trang tối thiểu >= ${minPages} trang (loại trừ tóm tắt ngắn)`,
-          field: "pageCount",
-          operator: "gte",
-          value: minPages,
-          isMandatory: true,
-        },
-        ...incKeywords.map((kw, idx) => ({
-          id: `IC-KW${idx + 1}`,
-          type: "inclusion" as const,
-          name: `Từ khóa: ${kw}`,
-          description: `Chứa từ khóa bắt buộc "${kw}"`,
-          field: "content" as const,
-          operator: "contains" as const,
-          value: kw,
-          isMandatory: false,
-        })),
-        ...excKeywords.map((kw, idx) => ({
-          id: `EC-KW${idx + 1}`,
-          type: "exclusion" as const,
-          name: `Loại trừ: ${kw}`,
-          description: `Chứa từ khóa loại trừ "${kw}"`,
-          field: "content" as const,
-          operator: "contains" as const,
-          value: kw,
-          isMandatory: true,
-        })),
-      ],
+      criteria: finalCriteria,
       updatedAt: new Date().toISOString(),
     };
 
@@ -1551,34 +1604,60 @@ class ScholarExtensionApp {
 
   private renderSearchStringSuggestions() {
     if (!this.searchStringsContainer) return;
-    const searchStrings = this.activeProfile.searchStrings || [];
+    const rawSearchStrings: any[] = this.activeProfile.searchStrings || [];
 
-    if (searchStrings.length === 0) {
-      // Auto generate from PICO / Keywords if none
-      const incKeywords = (this.activeProfile.criteria || [])
-        .filter((c) => c.type === "inclusion" && c.field === "content")
-        .map((c) => c.value);
-      if (incKeywords.length > 0) {
-        searchStrings.push(`(${incKeywords.slice(0, 3).join(" OR ")})`);
+    const normalizedStrings: Array<{ name: string; query: string; isDefault: boolean }> = [];
+    for (const item of rawSearchStrings) {
+      if (typeof item === "string") {
+        normalizedStrings.push({ name: item, query: item, isDefault: false });
+      } else if (item && typeof item === "object") {
+        normalizedStrings.push({
+          name: item.name || item.query || "Query",
+          query: item.query || item.name || "",
+          isDefault: !!item.isDefault,
+        });
       }
     }
 
-    if (searchStrings.length === 0) {
+    if (normalizedStrings.length === 0) {
+      const incKeywords = (this.activeProfile.criteria || [])
+        .filter((c: any) => c.kind === "inclusion" || c.type === "inclusion")
+        .map((c: any) => c.parameters?.keywords?.[0] || c.value || c.label)
+        .filter(Boolean);
+      if (incKeywords.length > 0) {
+        normalizedStrings.push({
+          name: "Gợi ý từ từ khóa",
+          query: `(${incKeywords.slice(0, 3).join(" OR ")})`,
+          isDefault: true,
+        });
+      }
+    }
+
+    if (normalizedStrings.length === 0) {
       this.searchStringsContainer.innerHTML = '<span class="text-muted">Chưa có chuỗi gợi ý</span>';
       return;
     }
 
-    this.searchStringsContainer.innerHTML = searchStrings
+    // Auto-select default query if query input is empty
+    if (this.queryInput && (!this.queryInput.value || !this.queryInput.value.trim())) {
+      const defaultItem = normalizedStrings.find((s) => s.isDefault) || normalizedStrings[0];
+      if (defaultItem) {
+        this.queryInput.value = defaultItem.query;
+      }
+    }
+
+    this.searchStringsContainer.innerHTML = normalizedStrings
       .map(
-        (str) =>
-          `<button class="btn-xs btn-subtle search-string-pill" style="cursor: pointer; padding: 2px 6px; font-size: 10px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff;" title="Bấm để đưa chuỗi này vào ô tìm kiếm">${this.escapeHtml(str)}</button>`,
+        (item) =>
+          `<button class="btn-xs btn-subtle search-string-pill" data-query="${this.escapeHtml(item.query)}" style="cursor: pointer; padding: 2px 6px; font-size: 10px; border-radius: 4px; border: 1px solid #cbd5e1; background: ${item.isDefault ? "#eff6ff" : "#fff"};" title="${this.escapeHtml(item.query)}">${this.escapeHtml(item.name)}${item.isDefault ? " (Mặc định)" : ""}</button>`,
       )
       .join(" ");
 
     this.searchStringsContainer.querySelectorAll(".search-string-pill").forEach((pill) => {
       pill.addEventListener("click", () => {
-        this.queryInput.value = pill.textContent || "";
-        this.setStatus(`Đã chọn chuỗi tìm kiếm từ gợi ý.`, "info");
+        const query = (pill as HTMLElement).getAttribute("data-query") || pill.textContent || "";
+        this.queryInput.value = query;
+        this.setStatus(`Đã chọn chuỗi tìm kiếm: "${query}".`, "info");
       });
     });
   }
@@ -1753,13 +1832,17 @@ class ScholarExtensionApp {
       const res = await fetch(`${this.backendUrl}/api/scholar/dedup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ records: this.allRecords }),
+        body: JSON.stringify({
+          records: this.allRecords,
+          researchId: this.activeProfile.id,
+          sessionId: this.currentSessionId,
+        }),
       });
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
-      this.uniqueRecords = data.uniqueRecords || this.allRecords;
+      this.uniqueRecords = data.canonicalRecords || data.uniqueRecords || this.allRecords;
       this.dedupStats = data.dedupStats || this.dedupStats;
 
       // Extract suspect pairs
@@ -2078,7 +2161,7 @@ class ScholarExtensionApp {
             const data = await res.json();
             if (data.pdfUrl) {
               rec.pdfUrl = data.pdfUrl;
-              rec.fullTextStatus = "downloaded";
+              rec.fullTextStatus = "finding";
               rec.page_count = data.pageCount || rec.page_count;
             } else {
               rec.fullTextStatus = "not_found";
@@ -2206,7 +2289,9 @@ class ScholarExtensionApp {
     const eligibleCount = finalIncludes.filter(
       (r) => (r.page_count || 0) >= 4 && (r.pdfUrl || r.fullTextStatus === "downloaded"),
     ).length;
-    const pendingCount = this.uniqueRecords.filter((r) => !r.finalDecision).length;
+    const pendingCount = this.uniqueRecords.filter(
+      (r) => !r.isContainer && (!r.finalDecision || (r.finalDecision as string) === "" || r.finalDecision === "Unsure"),
+    ).length;
     const missingFullText = finalIncludes.filter((r) => !r.pdfUrl && r.fullTextStatus !== "downloaded").length;
     const missingEvidence = finalIncludes.filter(
       (r) => !r.evidence_snippets || r.evidence_snippets.length === 0,
@@ -2220,19 +2305,24 @@ class ScholarExtensionApp {
     if (this.auditOutdatedCount) this.auditOutdatedCount.innerText = String(outdatedCount);
 
     if (this.prismaIntegrityStatusBox) {
-      if (missingFullText > 0 || missingEvidence > 0 || outdatedCount > 0) {
+      if (pendingCount > 0 || missingFullText > 0 || missingEvidence > 0 || outdatedCount > 0) {
         this.prismaIntegrityStatusBox.style.background = "#fffbeb";
         this.prismaIntegrityStatusBox.style.border = "1px solid #fef3c7";
         this.prismaIntegrityStatusBox.style.color = "#92400e";
+        const issues: string[] = [];
+        if (pendingCount > 0) issues.push(`Còn ${pendingCount} bài chưa có quyết định cuối (Pending/Unsure)`);
+        if (missingFullText > 0) issues.push(`${missingFullText} bài thiếu toàn văn`);
+        if (missingEvidence > 0) issues.push(`${missingEvidence} bài thiếu trích dẫn bằng chứng`);
+        if (outdatedCount > 0) issues.push(`${outdatedCount} bài thuộc phiên bản protocol cũ`);
         this.prismaIntegrityStatusBox.innerHTML = `
-          ⚠️ <b>CẢNH BÁO KIỂM TOÁN:</b> Có ${missingFullText} bài thiếu toàn văn, ${missingEvidence} bài thiếu trích dẫn bằng chứng, hoặc ${outdatedCount} bài thuộc phiên bản cũ. Báo cáo PRISMA tạm thời được xuất với nhãn [INTERIM].
+          ⚠️ <b>CẢNH BÁO KIỂM TOÁN [INTERIM]:</b> ${issues.join("; ")}. Sơ đồ PRISMA và Evidence Table tạm thời mang nhãn [INTERIM].
         `;
       } else {
         this.prismaIntegrityStatusBox.style.background = "#f0fdf4";
         this.prismaIntegrityStatusBox.style.border = "1px solid #bbf7d0";
         this.prismaIntegrityStatusBox.style.color = "#166534";
         this.prismaIntegrityStatusBox.innerHTML = `
-          ✓ <b>HOÀN HẢO:</b> Tất cả các bài Final Included đều có đủ toàn văn, trích dẫn bằng chứng và thuộc phiên bản protocol hiện hành v${this.activeProfile.profileVersion}. Báo cáo đạt chuẩn [COMPLETE].
+          ✓ <b>HOÀN HẢO [COMPLETE]:</b> Không còn bài chưa quyết định (${pendingCount}), toàn bộ các bài Final Included (${finalIncludes.length}) đều có đủ toàn văn, trích dẫn bằng chứng và thuộc phiên bản protocol hiện hành v${this.activeProfile.profileVersion}. Báo cáo đạt chuẩn [COMPLETE].
         `;
       }
     }
@@ -2635,26 +2725,34 @@ class ScholarExtensionApp {
 
   private async saveNoteToBackend(paperId: string, notes: string) {
     try {
-      await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+      const res = await fetch(`${this.backendUrl}/api/records/${paperId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userNotes: notes }),
+        body: JSON.stringify({ researchId: this.activeProfile.id, userNotes: notes }),
       });
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
       await this.saveSessionToStorage();
-    } catch {
-      // ignore
+    } catch (err: any) {
+      console.warn(`[Notes] Lưu ghi chú thất bại:`, err.message);
+      this.setStatus(`⚠️ Không thể lưu ghi chú lên máy chủ: ${err.message}`, "warning");
     }
   }
 
   private async updateRecordDecisionOnBackend(paperId: string, updates: Partial<PaperRecord>) {
     try {
-      await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+      const res = await fetch(`${this.backendUrl}/api/records/${paperId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updates),
+        body: JSON.stringify({ researchId: this.activeProfile.id, ...updates }),
       });
-    } catch {
-      // ignore
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+    } catch (err: any) {
+      console.warn(`[Decision] Cập nhật quyết định lên backend thất bại:`, err.message);
+      this.setStatus(`⚠️ Không thể lưu quyết định lên máy chủ: ${err.message}`, "warning");
     }
   }
 
@@ -2771,12 +2869,18 @@ class ScholarExtensionApp {
       );
       if (res.ok) {
         const data = await res.json();
-        const stageRecords = data.canonicalRecords || data.records || [];
-        if (stageRecords && Array.isArray(stageRecords) && stageRecords.length > 0) {
-          this.uniqueRecords = stageRecords;
-          this.allRecords = data.rawRecords || stageRecords;
+        const raw = Array.isArray(data.rawRecords) ? data.rawRecords : [];
+        const canonical = Array.isArray(data.canonicalRecords)
+          ? data.canonicalRecords
+          : Array.isArray(data.records)
+            ? data.records
+            : [];
+        if (raw.length > 0 || canonical.length > 0) {
+          this.allRecords = raw.length > 0 ? raw : canonical;
+          this.uniqueRecords = canonical.length > 0 ? canonical : raw;
           if (data.dedupStats) this.dedupStats = data.dedupStats;
           this.updateStepCounters();
+          this.renderStepB1();
           this.renderRecordsList();
           await this.saveSessionToStorage();
         }
@@ -2837,8 +2941,7 @@ class ScholarExtensionApp {
 
   private updateActiveResearchDisplay() {
     if (this.activeResearchBadge) this.activeResearchBadge.innerText = this.activeProfile.name;
-    if (this.protocolVersionBadge)
-      this.protocolVersionBadge.innerText = `v${this.activeProfile.profileVersion || 1.0}`;
+    if (this.protocolVersionBadge) this.protocolVersionBadge.innerText = `v${this.activeProfile.profileVersion || 1.0}`;
   }
 
   private populateSetupForm(p: ResearchProfile) {
@@ -2871,15 +2974,21 @@ class ScholarExtensionApp {
     this.setStatus(`Đã áp dụng mẫu: "${preset.name}". Hãy kiểm tra và bấm "Lưu thiết lập".`, "info");
   }
 
-  private async saveProfileToBackend(profile: ResearchProfile) {
+  private async saveProfileToBackend(profile: ResearchProfile): Promise<boolean> {
     try {
-      await fetch(`${this.backendUrl}/api/profiles`, {
+      const res = await fetch(`${this.backendUrl}/api/profiles`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(profile),
       });
-    } catch {
-      // ignore
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return true;
+    } catch (err: any) {
+      console.warn(`[Profile] Lưu profile lên backend thất bại:`, err.message);
+      this.setStatus(`⚠️ Không thể lưu profile lên máy chủ: ${err.message}`, "warning");
+      return false;
     }
   }
 
@@ -3360,14 +3469,23 @@ class ScholarExtensionApp {
       }
 
       const data = await res.json();
-      if (data.records && Array.isArray(data.records)) {
-        this.allRecords = [...this.allRecords, ...data.records];
-        this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+      const importedRecords =
+        data.records && Array.isArray(data.records)
+          ? data.records
+          : data.preview?.validRecords && Array.isArray(data.preview.validRecords)
+            ? data.preview.validRecords
+            : [];
+
+      if (importedRecords.length > 0) {
+        this.allRecords = [...this.allRecords, ...importedRecords];
+        this.uniqueRecords = [...this.uniqueRecords, ...importedRecords];
         await this.saveSessionToStorage();
         this.updateStepCounters();
         this.renderStepB1();
         this.renderRecordsList();
-        this.setStatus(`✓ Đã nhập thành công ${data.records.length} bài từ "${file.name}"!`, "success");
+        this.setStatus(`✓ Đã nhập thành công ${importedRecords.length} bài từ "${file.name}"!`, "success");
+      } else {
+        this.setStatus(`Không tìm thấy bản ghi hợp lệ nào trong tệp "${file.name}".`, "warning");
       }
     } catch (e: any) {
       this.setStatus(`Lỗi khi nhập tệp: ${e.message}`, "error");
@@ -3428,9 +3546,10 @@ class ScholarExtensionApp {
     return `"${s.replace(/"/g, '""')}"`;
   }
 
-  private escapeHtml(text?: string): string {
-    if (!text) return "";
-    return text
+  private escapeHtml(text?: unknown): string {
+    if (text === null || text === undefined) return "";
+    const str = typeof text === "string" ? text : String(text);
+    return str
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")

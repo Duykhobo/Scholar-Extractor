@@ -135,6 +135,59 @@ export class DbRepository {
   }
 
   /**
+   * Lấy toàn bộ danh sách Hồ sơ Nghiên cứu từ database
+   */
+  static async getAllProfiles(): Promise<ResearchProfile[]> {
+    const pool = await getDbPool();
+    if (!pool) return [];
+
+    try {
+      const res = await pool.request().query("SELECT id, name, configJson FROM ResearchProfiles;");
+      const profiles: ResearchProfile[] = [];
+      for (const row of res.recordset) {
+        if (row.configJson) {
+          try {
+            profiles.push(JSON.parse(row.configJson));
+          } catch {
+            profiles.push({
+              id: row.id,
+              name: row.name,
+              profileVersion: 1,
+              criteria: [],
+              searchStrings: [],
+            } as any);
+          }
+        }
+      }
+      return profiles;
+    } catch (err: any) {
+      console.warn("[DB] Loi getAllProfiles:", err.message);
+      return [];
+    }
+  }
+
+  /**
+   * Lấy chi tiết một Hồ sơ Nghiên cứu theo ID
+   */
+  static async getProfile(id: string): Promise<ResearchProfile | null> {
+    const pool = await getDbPool();
+    if (!pool) return null;
+
+    try {
+      const req = pool.request();
+      req.input("id", sql.VarChar(100), id);
+      const res = await req.query("SELECT configJson FROM ResearchProfiles WHERE id = @id;");
+      if (res.recordset && res.recordset.length > 0 && res.recordset[0].configJson) {
+        return JSON.parse(res.recordset[0].configJson);
+      }
+      return null;
+    } catch (err: any) {
+      console.warn("[DB] Loi getProfile:", err.message);
+      return null;
+    }
+  }
+
+  /**
    * Lưu thông tin Phiên tìm kiếm (ResearchSession)
    */
   static async saveSession(session: {

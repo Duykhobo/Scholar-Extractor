@@ -22,9 +22,9 @@ import { extractAbstractFromPdfPages, extractVenueFromPdfPages, parsePdfBuffer, 
 import { PrismaService } from "./prisma/prismaService";
 import {
   BUILTIN_PRESETS,
+  evaluateProfileScreening,
   PRESET_GENERIC,
   ResearchProfile,
-  evaluateProfileScreening,
   validateResearchProfile,
 } from "./profiles";
 import { sanitizeObject, sanitizeString } from "./sanitizer";
@@ -32,6 +32,7 @@ import { fetchScholarFromSerpApi, getApiRequestsCount } from "./scholarService";
 import { appendSearchLog, SearchLoggerService } from "./searchLogger";
 import { SnowballService } from "./snowballing/snowballService";
 import { CanonicalPaper, PaperRecord, TabExtractedData } from "./types";
+import { UnpaywallService } from "./unpaywallService";
 
 const app = express();
 
@@ -87,6 +88,50 @@ app.post("/api/db/sync", async (req: Request, res: Response) => {
       success: true,
       savedRecords: savedCount,
       dbConnected: isDbOnline(),
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Profile Management Endpoints
+app.get("/api/profiles", async (req: Request, res: Response) => {
+  try {
+    const dbProfiles = await DbRepository.getAllProfiles().catch(() => []);
+    const all = [...BUILTIN_PRESETS];
+    for (const dp of dbProfiles) {
+      if (!all.some((p) => p.id === dp.id)) {
+        all.push(dp);
+      }
+    }
+    res.json({ success: true, profiles: all });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post("/api/profiles", async (req: Request, res: Response) => {
+  try {
+    const profile = req.body as ResearchProfile;
+    if (!profile || !profile.id || !profile.name) {
+      return res.status(400).json({ error: "Profile phải có `id` và `name`." });
+    }
+
+    const validation = validateResearchProfile(profile);
+    const effectiveProfile: ResearchProfile =
+      validation.valid && validation.sanitizedProfile ? validation.sanitizedProfile : profile;
+
+    await DbRepository.upsertProfile(effectiveProfile).catch((err) => {
+      console.warn("[Server] upsertProfile warning:", err.message);
+    });
+
+    BackgroundJobManager.getResearchStore(effectiveProfile.id);
+    BackgroundJobManager.saveStoreSnapshot(effectiveProfile.id);
+
+    res.json({
+      success: true,
+      profile: effectiveProfile,
+      validation,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -168,11 +213,11 @@ app.post("/api/scholar/search", async (req: Request, res: Response, next: NextFu
         actualApiQuery: q,
         filters: { as_ylo, as_yhi, hl },
         pagesProcessed: 1,
-        reportedResults: result.summary?.totalResults || 0,
+        reportedResults: result.summary?.totalReportedResults || 0,
         actualReceivedRecords: result.records?.length || 0,
         newDiscoveryRecords: result.records?.length || 0,
         newCanonicalRecords: result.records?.length || 0,
-        status: "success",
+        status: "completed",
         timestamp: new Date().toISOString(),
       });
     } catch {}
@@ -197,15 +242,24 @@ app.post("/api/scholar/search", async (req: Request, res: Response, next: NextFu
  */
 app.post("/api/scholar/dedup", (req: Request, res: Response) => {
   try {
-    const { records } = req.body;
+    const { records, researchId } = req.body;
     if (!Array.isArray(records)) {
       return res.status(400).json({ error: "Tham số `records` phải là mảng bản ghi." });
     }
 
     const { uniqueRecords, dedupStats } = deduplicateRecords(records);
+
+    if (researchId) {
+      const store = BackgroundJobManager.getResearchStore(researchId);
+      store.rawRecords = records;
+      store.canonicalRecords = uniqueRecords as CanonicalPaper[];
+      BackgroundJobManager.saveStoreSnapshot(researchId);
+    }
+
     res.json({
       success: true,
       uniqueRecords,
+      canonicalRecords: uniqueRecords,
       dedupStats,
     });
   } catch (err: any) {
@@ -490,6 +544,159 @@ app.post("/api/scholar/rescreen", (req: Request, res: Response) => {
 });
 
 /**
+ * POST /api/scholar/screen-batch
+ * Quét tự động V2 hàng loạt theo ResearchProfile
+ */
+app.post("/api/scholar/screen-batch", (req: Request, res: Response) => {
+  try {
+    const { records, profile, researchId } = req.body;
+    if (!Array.isArray(records)) {
+      return res.status(400).json({ error: "Tham số `records` phải là mảng." });
+    }
+
+    const effectiveProfile: ResearchProfile =
+      profile || BUILTIN_PRESETS.find((p) => p.id === researchId) || BUILTIN_PRESETS[0];
+
+    const scoredRecords = records.map((record: PaperRecord) => {
+      const recAny = record as any;
+      const isV2 = Boolean(
+        (recAny.full_text && recAny.full_text.length > 100) ||
+        (record.page_count && record.page_count > 0) ||
+        record.screeningStage === "V2",
+      );
+
+      const profileEval = evaluateProfileScreening(effectiveProfile, record, {
+        stage: isV2 ? "full_text" : "title_abstract",
+        fullText: recAny.full_text || "",
+        pageCount: record.page_count,
+      });
+
+      return {
+        ...record,
+        profileVersion: effectiveProfile.profileVersion,
+        isDecisionOutdated: false,
+        suggestedDecision: profileEval.suggestedDecision,
+        matchedCriteria: profileEval.matchedCriteria,
+        unknownCriteria: profileEval.unknownCriteria,
+        missingEvidence: profileEval.missingEvidence,
+        screeningReason: profileEval.screeningReason,
+        conceptLabels: profileEval.conceptLabels,
+        modelContribution: profileEval.modelContributions,
+        literatureGroup: profileEval.literatureGroup,
+        criterionResults: profileEval.criterionResults,
+      };
+    });
+
+    const activeResearchId = researchId || effectiveProfile.id;
+    if (activeResearchId) {
+      const store = BackgroundJobManager.getResearchStore(activeResearchId);
+      if (store.canonicalRecords.length > 0) {
+        for (const sr of scoredRecords) {
+          const match = store.canonicalRecords.find((r) => r.id === sr.id);
+          if (match) {
+            match.suggestedDecision = sr.suggestedDecision;
+            match.screeningReason = sr.screeningReason;
+            match.matchedCriteria = sr.matchedCriteria;
+            match.unknownCriteria = sr.unknownCriteria;
+            match.missingEvidence = sr.missingEvidence;
+          }
+        }
+        BackgroundJobManager.saveStoreSnapshot(activeResearchId);
+      }
+    }
+
+    res.json({
+      success: true,
+      records: scoredRecords,
+      totalScored: scoredRecords.length,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/fulltext/unpaywall
+ * Tìm toàn văn Open Access qua Unpaywall
+ */
+app.get("/api/fulltext/unpaywall", async (req: Request, res: Response) => {
+  try {
+    const doi = req.query.doi as string;
+    if (!doi) {
+      return res.status(400).json({ error: "Thiếu query param `doi`." });
+    }
+    const result = await UnpaywallService.resolveOpenAccess(doi);
+    if (!result) {
+      return res.json({ success: true, pdfUrl: null, isOpenAccess: false });
+    }
+    res.json({
+      success: true,
+      pdfUrl: result.pdfUrl || null,
+      isOpenAccess: result.isOa,
+      landingPageUrl: result.landingPageUrl,
+      version: result.version,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/scholar/add-seed
+ * Thêm bài báo hạt giống thủ công vào pipeline store
+ */
+app.post("/api/scholar/add-seed", async (req: Request, res: Response) => {
+  try {
+    const { doi, title, researchId } = req.body;
+    let crossrefMeta: any = null;
+    if (doi) {
+      crossrefMeta = await fetchCrossrefMetadata(doi).catch(() => null);
+    }
+    const seedRecord: PaperRecord = {
+      id: `seed_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+      title: crossrefMeta?.title || title || `Bài seed (DOI: ${doi})`,
+      doi: doi || "",
+      authors: Array.isArray(crossrefMeta?.authors) ? crossrefMeta.authors.join("; ") : crossrefMeta?.authors || "",
+      year: String(crossrefMeta?.year || new Date().getFullYear()),
+      venue: crossrefMeta?.venue || "Seed Reference",
+      source: "Seed DOI",
+      discoverySource: "Seed Paper",
+      collectionMethod: "Manual Seed",
+      snippet: "",
+      abstract: "",
+      url: doi ? `https://doi.org/${doi}` : "",
+      query: "manual_seed",
+      search_id: `seed_${Date.now()}`,
+      retrieval_date: new Date().toISOString(),
+      uncertain_authors: false,
+      uncertain_year: false,
+      uncertain_venue: false,
+      uncertain_doi: false,
+      missing_abstract: false,
+      screeningStage: "B1",
+      matchedCriteria: [],
+      suggestedDecision: "Include",
+      finalDecision: "" as any,
+      userNotes: "",
+      screeningReason: "Bài tham chiếu hạt giống (Seed paper) được chỉ định thủ công.",
+    } as unknown as PaperRecord;
+
+    if (researchId) {
+      const store = BackgroundJobManager.getResearchStore(researchId);
+      store.rawRecords = [...store.rawRecords, seedRecord];
+      BackgroundJobManager.saveStoreSnapshot(researchId);
+    }
+
+    res.json({
+      success: true,
+      record: seedRecord,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
  * POST /api/scholar/analyze-tab
  * Phân tích đối chiếu metadata và full-text từ trang web/PDF với record đang chọn
  */
@@ -679,7 +886,7 @@ app.post("/api/sources/search", async (req: Request, res: Response) => {
         actualReceivedRecords: result.records?.length || 0,
         newDiscoveryRecords: result.records?.length || 0,
         newCanonicalRecords: result.records?.length || 0,
-        status: "success",
+        status: "completed",
         timestamp: new Date().toISOString(),
       });
     } catch {}
@@ -726,6 +933,7 @@ app.post("/api/pipeline/import-file", async (req: Request, res: Response) => {
     res.json({
       success: true,
       preview,
+      records: preview.validRecords,
     });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -841,13 +1049,13 @@ app.post("/api/pipeline/decision", (req: Request, res: Response) => {
     }
 
     // 1. Cập nhật V2 Decision (chuẩn hóa "Include" thành "PassToFullText" cho V2)
-    const rawV2 = v2Decision !== undefined ? v2Decision : (stage === "V2" ? decision : undefined);
+    const rawV2 = v2Decision !== undefined ? v2Decision : stage === "V2" ? decision : undefined;
     if (rawV2 !== undefined) {
       paper.v2Decision = (rawV2 === "Include" ? "PassToFullText" : rawV2) as any;
     }
 
     // 2. Cập nhật V3 Decision
-    const rawV3 = v3Decision !== undefined ? v3Decision : (stage === "V3" ? decision : undefined);
+    const rawV3 = v3Decision !== undefined ? v3Decision : stage === "V3" ? decision : undefined;
     if (rawV3 !== undefined) {
       paper.v3Decision = rawV3 as any;
     }
@@ -873,6 +1081,99 @@ app.post("/api/pipeline/decision", (req: Request, res: Response) => {
 
     BackgroundJobManager.saveStoreSnapshot(researchId);
     res.json({ success: true, paper });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * PATCH /api/records/:id
+ * Cập nhật quyết định, ghi chú, trạng thái của từng bài báo
+ */
+app.patch("/api/records/:id", (req: Request, res: Response) => {
+  try {
+    const paperId = req.params.id;
+    const {
+      researchId,
+      userNotes,
+      finalDecision,
+      v2Decision,
+      v3Decision,
+      stage,
+      decision,
+      screeningReason,
+      isDecisionOutdated,
+      protocolVersion,
+    } = req.body;
+
+    let store = researchId ? BackgroundJobManager.getResearchStore(researchId) : null;
+    let paper: any = null;
+    let activeResearchId = researchId;
+
+    if (store) {
+      paper = store.canonicalRecords.find((r) => r.id === paperId) || store.rawRecords.find((r) => r.id === paperId);
+    }
+
+    if (!paper) {
+      for (const [rId, s] of (BackgroundJobManager as any).researchData.entries()) {
+        const found =
+          s.canonicalRecords.find((r: any) => r.id === paperId) || s.rawRecords.find((r: any) => r.id === paperId);
+        if (found) {
+          paper = found;
+          store = s;
+          activeResearchId = rId;
+          break;
+        }
+      }
+    }
+
+    if (!paper) {
+      return res.status(404).json({ error: `Không tìm thấy bài báo ${paperId} trong pipeline store.` });
+    }
+
+    if (userNotes !== undefined) paper.userNotes = userNotes;
+    if (finalDecision !== undefined) {
+      paper.finalDecision = finalDecision;
+      paper.isDecisionOutdated = false;
+    }
+    if (v2Decision !== undefined) {
+      paper.v2Decision = v2Decision === "Include" ? "PassToFullText" : v2Decision;
+    }
+    if (v3Decision !== undefined) paper.v3Decision = v3Decision;
+    if (decision !== undefined) {
+      if (stage === "V2") paper.v2Decision = decision === "Include" ? "PassToFullText" : decision;
+      else if (stage === "V3") paper.v3Decision = decision;
+      else {
+        paper.finalDecision = decision;
+        paper.isDecisionOutdated = false;
+      }
+    }
+    if (screeningReason !== undefined) paper.screeningReason = screeningReason;
+    if (isDecisionOutdated !== undefined) paper.isDecisionOutdated = isDecisionOutdated;
+    if (protocolVersion !== undefined) paper.protocolVersion = protocolVersion;
+
+    if (activeResearchId) {
+      BackgroundJobManager.saveStoreSnapshot(activeResearchId);
+    }
+
+    res.json({ success: true, paper });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/protocol/change
+ * Ghi nhật ký thay đổi protocol vào audit log
+ */
+app.post("/api/protocol/change", (req: Request, res: Response) => {
+  try {
+    const { researchId, record } = req.body;
+    if (!researchId || !record) {
+      return res.status(400).json({ error: "Cần `researchId` và `record`." });
+    }
+    SearchLoggerService.recordProtocolChange(researchId, record);
+    res.json({ success: true });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }
@@ -906,12 +1207,14 @@ app.post("/api/pipeline/snowball", async (req: Request, res: Response) => {
     // Ghi nhật ký Snowballing thực tế vào SearchLogger
     for (const seed of seeds) {
       SearchLoggerService.recordSnowballExecution({
+        runId: `snowball-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
         researchId,
         seedDoiOrId: seed.doi || seed.title || "seed",
+        seedTitle: seed.title || seed.doi || "seed",
         iteration: maxIterations || 1,
         direction: (directions && directions.length === 1 ? directions[0] : "both") as any,
         source: "OpenAlex",
-        relationsReceived: result.totalFound || 0,
+        relationsReceived: result.totalDiscovered || 0,
         newPapersFound: result.newPapers.length || 0,
         stopCondition: `Hoàn tất sau ${maxIterations || 1} vòng (${result.newPapers.length} bài mới)`,
         timestamp: new Date().toISOString(),
@@ -920,6 +1223,59 @@ app.post("/api/pipeline/snowball", async (req: Request, res: Response) => {
 
     res.json({
       success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * POST /api/snowball/:direction
+ * Snowballing backward (references) hoặc forward (citations)
+ */
+app.post("/api/snowball/:direction", async (req: Request, res: Response) => {
+  try {
+    const directionParam = req.params.direction;
+    const direction: "backward" | "forward" = directionParam === "forward" ? "forward" : "backward";
+    const { seedDoi, seedTitle, researchId, maxRecords } = req.body;
+
+    if (!seedDoi) {
+      return res.status(400).json({ error: "Thiếu `seedDoi`." });
+    }
+
+    const activeResearchId = researchId || "preset_swt302";
+    const result = await SnowballService.runSnowballing({
+      researchId: activeResearchId,
+      seeds: [{ id: `seed_${Date.now()}`, doi: seedDoi, title: seedTitle || "Seed Paper" }],
+      directions: [direction],
+      maxIterations: 1,
+      maxPapersPerSeed: maxRecords || 25,
+    });
+
+    if (result.newPapers.length > 0) {
+      const store = BackgroundJobManager.getResearchStore(activeResearchId);
+      store.rawRecords = [...store.rawRecords, ...result.newPapers];
+      BackgroundJobManager.saveStoreSnapshot(activeResearchId);
+    }
+
+    SearchLoggerService.recordSnowballExecution({
+      runId: `snowball-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+      researchId: activeResearchId,
+      seedDoiOrId: seedDoi,
+      seedTitle: seedTitle || seedDoi,
+      iteration: 1,
+      direction,
+      source: "OpenAlex",
+      relationsReceived: result.totalDiscovered || 0,
+      newPapersFound: result.newPapers.length || 0,
+      stopCondition: `Hoàn tất Snowballing ${direction} (${result.newPapers.length} bài mới)`,
+      timestamp: new Date().toISOString(),
+    });
+
+    res.json({
+      success: true,
+      records: result.newPapers,
       data: result,
     });
   } catch (err: any) {
@@ -1160,6 +1516,28 @@ app.post("/api/prisma/export", async (req: Request, res: Response) => {
 });
 
 /**
+ * GET /api/prisma/export-md
+ * Trả về nội dung Markdown của sơ đồ PRISMA 2020
+ */
+app.get("/api/prisma/export-md", (req: Request, res: Response) => {
+  try {
+    const researchId = (req.query.researchId as string) || "preset_swt302";
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    const dupCount = Math.max(0, store.rawRecords.length - store.canonicalRecords.length);
+    const prismaData = PrismaService.calculatePrismaFlow({
+      rawRecords: store.rawRecords,
+      canonicalRecords: store.canonicalRecords,
+      duplicatesRemovedCount: dupCount,
+    });
+    const markdown = PrismaService.generatePrismaMarkdown(prismaData, researchId);
+    res.setHeader("Content-Disposition", `attachment; filename="prisma-flow.md"`);
+    res.type("text/markdown; charset=utf-8").send(markdown);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
  * GET /api/evidence-table
  */
 app.get("/api/evidence-table", (req: Request, res: Response) => {
@@ -1213,6 +1591,26 @@ app.post("/api/evidence-table/export", (req: Request, res: Response) => {
 });
 
 /**
+ * GET /api/evidence-table/export-md
+ * Trả về nội dung Markdown của Evidence Table
+ */
+app.get("/api/evidence-table/export-md", (req: Request, res: Response) => {
+  try {
+    const researchId = (req.query.researchId as string) || "preset_swt302";
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    const included = store.canonicalRecords.filter(
+      (r) => r.finalDecision === "Include" || (r.finalDecision === "" && r.suggestedDecision === "Include"),
+    );
+    const rows = EvidenceTableService.buildEvidenceRows(included);
+    const markdown = EvidenceTableService.generateMarkdown(rows, researchId);
+    res.setHeader("Content-Disposition", `attachment; filename="evidence-table.md"`);
+    res.type("text/markdown; charset=utf-8").send(markdown);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
  * POST /api/scholar/export-duplicate-log
  */
 app.post("/api/scholar/export-duplicate-log", (req: Request, res: Response) => {
@@ -1227,6 +1625,42 @@ app.post("/api/scholar/export-duplicate-log", (req: Request, res: Response) => {
       filePath: result.filePath,
       csvContent: result.csvContent,
     });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/**
+ * GET /api/export/duplicates
+ * Tải tệp CSV danh sách các bản ghi trùng lặp đã loại bỏ
+ */
+app.get("/api/export/duplicates", (req: Request, res: Response) => {
+  try {
+    const researchId = (req.query.researchId as string) || "preset_swt302";
+    const store = BackgroundJobManager.getResearchStore(researchId);
+    const groups: any[] = [];
+    const dupMap = new Map<string, string[]>();
+    for (const r of store.rawRecords) {
+      if (r.potentialDuplicate && r.duplicateOfId) {
+        if (!dupMap.has(r.duplicateOfId)) dupMap.set(r.duplicateOfId, []);
+        dupMap.get(r.duplicateOfId)!.push(r.id);
+      }
+    }
+    let gIdx = 1;
+    for (const [canonId, dupIds] of dupMap.entries()) {
+      groups.push({
+        id: `dup_group_${gIdx++}`,
+        canonicalId: canonId,
+        duplicateIds: dupIds,
+        reason: "Trùng tiêu đề hoặc DOI",
+        rule: "exact_doi_or_title",
+        userConfirmed: false,
+        createdAt: new Date().toISOString(),
+      });
+    }
+    const result = exportDuplicateLogCsv(groups);
+    res.setHeader("Content-Disposition", `attachment; filename="01_duplicates_removed.csv"`);
+    res.type("text/csv; charset=utf-8").send(result.csvContent);
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

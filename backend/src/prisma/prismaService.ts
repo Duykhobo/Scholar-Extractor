@@ -173,7 +173,7 @@ export class PrismaService {
     const unconfirmedInPipeline = canonicalRecords.filter(
       (r) =>
         !r.isContainer &&
-        (!r.finalDecision || r.finalDecision === "" || r.finalDecision === "Unsure") &&
+        (!r.finalDecision || (r.finalDecision as string) === "" || r.finalDecision === "Unsure") &&
         (r.pipelineStage === "V3" ||
           r.pipelineStage === "FINAL" ||
           assessedEligibility.includes(r) ||

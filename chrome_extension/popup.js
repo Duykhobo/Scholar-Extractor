@@ -1452,10 +1452,8 @@
       if (this.saveProtocolChangesBtn)
         this.saveProtocolChangesBtn.addEventListener("click", () => this.handleSaveProtocolChanges());
       if (this.closeModalBtn) this.closeModalBtn.addEventListener("click", () => this.closeTabExtractModal());
-      if (this.cancelTabExtractBtn)
-        this.cancelTabExtractBtn.addEventListener("click", () => this.closeTabExtractModal());
-      if (this.confirmTabExtractBtn)
-        this.confirmTabExtractBtn.addEventListener("click", () => this.confirmTabAnalysis());
+      if (this.cancelTabExtractBtn) this.cancelTabExtractBtn.addEventListener("click", () => this.closeTabExtractModal());
+      if (this.confirmTabExtractBtn) this.confirmTabExtractBtn.addEventListener("click", () => this.confirmTabAnalysis());
       if (this.closePrismaModalBtn) this.closePrismaModalBtn.addEventListener("click", () => this.closePrismaModal());
       if (this.closePrismaModalBottomBtn)
         this.closePrismaModalBottomBtn.addEventListener("click", () => this.closePrismaModal());
@@ -1584,7 +1582,9 @@
         case "V2":
           pending = this.uniqueRecords.filter((r) => !r.v2Decision && !r.finalDecision).length;
           review = this.uniqueRecords.filter((r) => r.v2Decision === "Unsure" || r.suggestedDecision === "Unsure").length;
-          completed = this.uniqueRecords.filter((r) => r.v2Decision === "PassToFullText" || r.v2Decision === "Exclude").length;
+          completed = this.uniqueRecords.filter(
+            (r) => r.v2Decision === "PassToFullText" || r.v2Decision === "Exclude"
+          ).length;
           break;
         case "V3":
           pending = this.uniqueRecords.filter(
@@ -1593,7 +1593,9 @@
           review = this.uniqueRecords.filter(
             (r) => (r.finalDecision === "Unsure" || !r.finalDecision) && (!!r.pdfUrl || r.fullTextStatus === "downloaded")
           ).length;
-          completed = this.uniqueRecords.filter((r) => r.finalDecision === "Include" || r.finalDecision === "Exclude").length;
+          completed = this.uniqueRecords.filter(
+            (r) => r.finalDecision === "Include" || r.finalDecision === "Exclude"
+          ).length;
           break;
         case "FINAL":
           pending = this.uniqueRecords.filter((r) => !r.finalDecision).length;
@@ -1626,22 +1628,36 @@
         this.continueResearchBox.style.display = mode === "continue" ? "block" : "none";
       }
       if (mode === "new") {
-        this.setupResearchName.value = "";
-        this.setupResearchDesc.value = "";
-        this.setupResearchRq.value = "";
-        this.setupInclusionKeywords.value = "";
-        this.setupExclusionKeywords.value = "";
+        const newStudyId = `research_${Date.now()}`;
+        this.activeProfile = {
+          ...PRESET_GENERIC,
+          id: newStudyId,
+          name: "",
+          description: "",
+          profileVersion: 1,
+          researchQuestions: [],
+          criteria: [...PRESET_GENERIC.criteria],
+          searchStrings: [],
+          createdAt: (/* @__PURE__ */ new Date()).toISOString(),
+          updatedAt: (/* @__PURE__ */ new Date()).toISOString()
+        };
+        this.currentSessionId = `session_${Date.now()}`;
         this.allRecords = [];
         this.uniqueRecords = [];
         this.dedupStats = { initialCount: 0, exactDupByDoi: 0, potentialDupByTitle: 0, totalRetained: 0 };
         this.suspectedDuplicatePairs = [];
         this.mergeHistoryList = [];
-        this.currentSessionId = `session_${Date.now()}`;
+        this.setupResearchName.value = "";
+        this.setupResearchDesc.value = "";
+        this.setupResearchRq.value = "";
+        this.setupInclusionKeywords.value = "";
+        this.setupExclusionKeywords.value = "";
         this.saveSessionToStorage();
+        this.updateActiveResearchDisplay();
         this.updateStepCounters();
         this.updateStep0SummaryPreview();
         this.renderRecordsList();
-        this.setStatus("Ch\u1EBF \u0111\u1ED9 t\u1EA1o m\u1EDBi: \u0110\xE3 l\xE0m s\u1EA1ch danh s\xE1ch b\xE0i b\xE1o cho \u0111\u1EC1 t\xE0i m\u1EDBi.", "info");
+        this.setStatus("Ch\u1EBF \u0111\u1ED9 t\u1EA1o m\u1EDBi: \u0110\xE3 kh\u1EDFi t\u1EA1o \u0111\u1EC1 t\xE0i nghi\xEAn c\u1EE9u \u0111\u1ED9c l\u1EADp m\u1EDBi.", "info");
       }
     }
     async handleQuickResetSession() {
@@ -1687,7 +1703,11 @@
             label: "C \u2014 Comparison (\u0110\u1ED1i ch\u1EE9ng)",
             placeholder: "V\xED d\u1EE5: Ki\u1EC3m th\u1EED th\u1EE7 c\xF4ng, random testing... (ho\u1EB7c t\xEDch N/A)"
           },
-          { key: "O", label: "O \u2014 Outcomes (K\u1EBFt qu\u1EA3 \u0111o l\u01B0\u1EDDng)", placeholder: "V\xED d\u1EE5: \u0110\u1ED9 bao ph\u1EE7 coverage, t\u1EC9 l\u1EC7 ph\xE1t hi\u1EC7n l\u1ED7i..." }
+          {
+            key: "O",
+            label: "O \u2014 Outcomes (K\u1EBFt qu\u1EA3 \u0111o l\u01B0\u1EDDng)",
+            placeholder: "V\xED d\u1EE5: \u0110\u1ED9 bao ph\u1EE7 coverage, t\u1EC9 l\u1EC7 ph\xE1t hi\u1EC7n l\u1ED7i..."
+          }
         ];
       } else if (fw === "PICOS") {
         fieldDefs = [
@@ -1865,6 +1885,64 @@
       const targetCount = parseInt(this.setupTargetCount.value, 10) || 15;
       const incKeywords = this.setupInclusionKeywords.value.split(",").map((k) => k.trim()).filter((k) => k.length > 0);
       const excKeywords = this.setupExclusionKeywords.value.split(",").map((k) => k.trim()).filter((k) => k.length > 0);
+      const existingCriteria = Array.isArray(this.activeProfile.criteria) ? [...this.activeProfile.criteria] : [];
+      let yearCriterion = existingCriteria.find((c) => c.evaluator === "year_range" || c.id === "IC-Y");
+      if (yearCriterion) {
+        yearCriterion.parameters = { ...yearCriterion.parameters, startYear: yStart, endYear: yEnd };
+        yearCriterion.description = `Xu\u1EA5t b\u1EA3n t\u1EEB n\u0103m ${yStart} \u0111\u1EBFn ${yEnd}`;
+      } else {
+        existingCriteria.push({
+          id: "IC-Y",
+          label: "Khung th\u1EDDi gian xu\u1EA5t b\u1EA3n",
+          description: `Xu\u1EA5t b\u1EA3n t\u1EEB n\u0103m ${yStart} \u0111\u1EBFn ${yEnd}`,
+          kind: "inclusion",
+          required: true,
+          stage: "metadata",
+          evaluator: "year_range",
+          parameters: { startYear: yStart, endYear: yEnd }
+        });
+      }
+      let pageCriterion = existingCriteria.find((c) => c.evaluator === "page_count" || c.id === "EC-S");
+      if (pageCriterion) {
+        pageCriterion.parameters = { ...pageCriterion.parameters, minPages, rejectShortPapers: true };
+        pageCriterion.description = `Dung l\u01B0\u1EE3ng b\xE0i b\xE1o t\u1ED1i thi\u1EC3u >= ${minPages} trang (lo\u1EA1i tr\u1EEB b\xE0i ng\u1EAFn/t\xF3m t\u1EAFt)`;
+      } else {
+        existingCriteria.push({
+          id: "EC-S",
+          label: "Dung l\u01B0\u1EE3ng b\xE0i b\xE1o t\u1ED1i thi\u1EC3u",
+          description: `Dung l\u01B0\u1EE3ng b\xE0i b\xE1o t\u1ED1i thi\u1EC3u >= ${minPages} trang (lo\u1EA1i tr\u1EEB b\xE0i ng\u1EAFn/t\xF3m t\u1EAFt)`,
+          kind: "exclusion",
+          required: true,
+          stage: "full_text",
+          evaluator: "page_count",
+          parameters: { minPages, rejectShortPapers: true }
+        });
+      }
+      const finalCriteria = existingCriteria.filter((c) => !c.id.startsWith("IC-KW") && !c.id.startsWith("EC-KW"));
+      if (incKeywords.length > 0) {
+        finalCriteria.push({
+          id: "IC-KW",
+          label: "T\u1EEB kh\xF3a bao h\xE0m b\u1EAFt bu\u1ED9c",
+          description: `Ch\u1EE9a \xEDt nh\u1EA5t m\u1ED9t trong c\xE1c t\u1EEB kh\xF3a: ${incKeywords.join(", ")}`,
+          kind: "inclusion",
+          required: false,
+          stage: "title_abstract",
+          evaluator: "keyword_group",
+          parameters: { keywords: incKeywords, logic: "OR" }
+        });
+      }
+      if (excKeywords.length > 0) {
+        finalCriteria.push({
+          id: "EC-KW",
+          label: "T\u1EEB kh\xF3a lo\u1EA1i tr\u1EEB b\u1EAFt bu\u1ED9c",
+          description: `Lo\u1EA1i tr\u1EEB n\u1EBFu ch\u1EE9a b\u1EA5t k\u1EF3 t\u1EEB kh\xF3a n\xE0o: ${excKeywords.join(", ")}`,
+          kind: "exclusion",
+          required: true,
+          stage: "title_abstract",
+          evaluator: "keyword_group",
+          parameters: { keywords: excKeywords, logic: "OR" }
+        });
+      }
       const updatedProfile = {
         ...this.activeProfile,
         name,
@@ -1873,50 +1951,10 @@
         framework: this.currentFramework,
         frameworkFields: fwFields,
         targetIncludedCount: targetCount,
+        minPageCount: minPages,
         yearRange: { start: yStart, end: yEnd, enabled: true },
         minPages: { count: minPages, enabled: true },
-        criteria: [
-          {
-            id: "IC1",
-            type: "inclusion",
-            name: "Khung th\u1EDDi gian xu\u1EA5t b\u1EA3n",
-            description: `Xu\u1EA5t b\u1EA3n t\u1EEB n\u0103m ${yStart} \u0111\u1EBFn ${yEnd}`,
-            field: "year",
-            operator: "range",
-            value: [yStart, yEnd],
-            isMandatory: true
-          },
-          {
-            id: "IC2",
-            type: "inclusion",
-            name: "Dung l\u01B0\u1EE3ng b\xE0i b\xE1o t\u1ED1i thi\u1EC3u",
-            description: `S\u1ED1 trang t\u1ED1i thi\u1EC3u >= ${minPages} trang (lo\u1EA1i tr\u1EEB t\xF3m t\u1EAFt ng\u1EAFn)`,
-            field: "pageCount",
-            operator: "gte",
-            value: minPages,
-            isMandatory: true
-          },
-          ...incKeywords.map((kw, idx) => ({
-            id: `IC-KW${idx + 1}`,
-            type: "inclusion",
-            name: `T\u1EEB kh\xF3a: ${kw}`,
-            description: `Ch\u1EE9a t\u1EEB kh\xF3a b\u1EAFt bu\u1ED9c "${kw}"`,
-            field: "content",
-            operator: "contains",
-            value: kw,
-            isMandatory: false
-          })),
-          ...excKeywords.map((kw, idx) => ({
-            id: `EC-KW${idx + 1}`,
-            type: "exclusion",
-            name: `Lo\u1EA1i tr\u1EEB: ${kw}`,
-            description: `Ch\u1EE9a t\u1EEB kh\xF3a lo\u1EA1i tr\u1EEB "${kw}"`,
-            field: "content",
-            operator: "contains",
-            value: kw,
-            isMandatory: true
-          }))
-        ],
+        criteria: finalCriteria,
         updatedAt: (/* @__PURE__ */ new Date()).toISOString()
       };
       this.activeProfile = updatedProfile;
@@ -1944,24 +1982,47 @@
     }
     renderSearchStringSuggestions() {
       if (!this.searchStringsContainer) return;
-      const searchStrings = this.activeProfile.searchStrings || [];
-      if (searchStrings.length === 0) {
-        const incKeywords = (this.activeProfile.criteria || []).filter((c) => c.type === "inclusion" && c.field === "content").map((c) => c.value);
-        if (incKeywords.length > 0) {
-          searchStrings.push(`(${incKeywords.slice(0, 3).join(" OR ")})`);
+      const rawSearchStrings = this.activeProfile.searchStrings || [];
+      const normalizedStrings = [];
+      for (const item of rawSearchStrings) {
+        if (typeof item === "string") {
+          normalizedStrings.push({ name: item, query: item, isDefault: false });
+        } else if (item && typeof item === "object") {
+          normalizedStrings.push({
+            name: item.name || item.query || "Query",
+            query: item.query || item.name || "",
+            isDefault: !!item.isDefault
+          });
         }
       }
-      if (searchStrings.length === 0) {
+      if (normalizedStrings.length === 0) {
+        const incKeywords = (this.activeProfile.criteria || []).filter((c) => c.kind === "inclusion" || c.type === "inclusion").map((c) => c.parameters?.keywords?.[0] || c.value || c.label).filter(Boolean);
+        if (incKeywords.length > 0) {
+          normalizedStrings.push({
+            name: "G\u1EE3i \xFD t\u1EEB t\u1EEB kh\xF3a",
+            query: `(${incKeywords.slice(0, 3).join(" OR ")})`,
+            isDefault: true
+          });
+        }
+      }
+      if (normalizedStrings.length === 0) {
         this.searchStringsContainer.innerHTML = '<span class="text-muted">Ch\u01B0a c\xF3 chu\u1ED7i g\u1EE3i \xFD</span>';
         return;
       }
-      this.searchStringsContainer.innerHTML = searchStrings.map(
-        (str) => `<button class="btn-xs btn-subtle search-string-pill" style="cursor: pointer; padding: 2px 6px; font-size: 10px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff;" title="B\u1EA5m \u0111\u1EC3 \u0111\u01B0a chu\u1ED7i n\xE0y v\xE0o \xF4 t\xECm ki\u1EBFm">${this.escapeHtml(str)}</button>`
+      if (this.queryInput && (!this.queryInput.value || !this.queryInput.value.trim())) {
+        const defaultItem = normalizedStrings.find((s) => s.isDefault) || normalizedStrings[0];
+        if (defaultItem) {
+          this.queryInput.value = defaultItem.query;
+        }
+      }
+      this.searchStringsContainer.innerHTML = normalizedStrings.map(
+        (item) => `<button class="btn-xs btn-subtle search-string-pill" data-query="${this.escapeHtml(item.query)}" style="cursor: pointer; padding: 2px 6px; font-size: 10px; border-radius: 4px; border: 1px solid #cbd5e1; background: ${item.isDefault ? "#eff6ff" : "#fff"};" title="${this.escapeHtml(item.query)}">${this.escapeHtml(item.name)}${item.isDefault ? " (M\u1EB7c \u0111\u1ECBnh)" : ""}</button>`
       ).join(" ");
       this.searchStringsContainer.querySelectorAll(".search-string-pill").forEach((pill) => {
         pill.addEventListener("click", () => {
-          this.queryInput.value = pill.textContent || "";
-          this.setStatus(`\u0110\xE3 ch\u1ECDn chu\u1ED7i t\xECm ki\u1EBFm t\u1EEB g\u1EE3i \xFD.`, "info");
+          const query = pill.getAttribute("data-query") || pill.textContent || "";
+          this.queryInput.value = query;
+          this.setStatus(`\u0110\xE3 ch\u1ECDn chu\u1ED7i t\xECm ki\u1EBFm: "${query}".`, "info");
         });
       });
     }
@@ -2110,11 +2171,15 @@
         const res = await fetch(`${this.backendUrl}/api/scholar/dedup`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ records: this.allRecords })
+          body: JSON.stringify({
+            records: this.allRecords,
+            researchId: this.activeProfile.id,
+            sessionId: this.currentSessionId
+          })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        this.uniqueRecords = data.uniqueRecords || this.allRecords;
+        this.uniqueRecords = data.canonicalRecords || data.uniqueRecords || this.allRecords;
         this.dedupStats = data.dedupStats || this.dedupStats;
         this.identifySuspectDuplicatePairs();
         this.renderStepV1();
@@ -2378,7 +2443,7 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
               const data = await res.json();
               if (data.pdfUrl) {
                 rec.pdfUrl = data.pdfUrl;
-                rec.fullTextStatus = "downloaded";
+                rec.fullTextStatus = "finding";
                 rec.page_count = data.pageCount || rec.page_count;
               } else {
                 rec.fullTextStatus = "not_found";
@@ -2486,7 +2551,9 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
       const eligibleCount = finalIncludes.filter(
         (r) => (r.page_count || 0) >= 4 && (r.pdfUrl || r.fullTextStatus === "downloaded")
       ).length;
-      const pendingCount = this.uniqueRecords.filter((r) => !r.finalDecision).length;
+      const pendingCount = this.uniqueRecords.filter(
+        (r) => !r.isContainer && (!r.finalDecision || r.finalDecision === "" || r.finalDecision === "Unsure")
+      ).length;
       const missingFullText = finalIncludes.filter((r) => !r.pdfUrl && r.fullTextStatus !== "downloaded").length;
       const missingEvidence = finalIncludes.filter(
         (r) => !r.evidence_snippets || r.evidence_snippets.length === 0
@@ -2498,19 +2565,24 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
       if (this.auditMissingEvidenceCount) this.auditMissingEvidenceCount.innerText = String(missingEvidence);
       if (this.auditOutdatedCount) this.auditOutdatedCount.innerText = String(outdatedCount);
       if (this.prismaIntegrityStatusBox) {
-        if (missingFullText > 0 || missingEvidence > 0 || outdatedCount > 0) {
+        if (pendingCount > 0 || missingFullText > 0 || missingEvidence > 0 || outdatedCount > 0) {
           this.prismaIntegrityStatusBox.style.background = "#fffbeb";
           this.prismaIntegrityStatusBox.style.border = "1px solid #fef3c7";
           this.prismaIntegrityStatusBox.style.color = "#92400e";
+          const issues = [];
+          if (pendingCount > 0) issues.push(`C\xF2n ${pendingCount} b\xE0i ch\u01B0a c\xF3 quy\u1EBFt \u0111\u1ECBnh cu\u1ED1i (Pending/Unsure)`);
+          if (missingFullText > 0) issues.push(`${missingFullText} b\xE0i thi\u1EBFu to\xE0n v\u0103n`);
+          if (missingEvidence > 0) issues.push(`${missingEvidence} b\xE0i thi\u1EBFu tr\xEDch d\u1EABn b\u1EB1ng ch\u1EE9ng`);
+          if (outdatedCount > 0) issues.push(`${outdatedCount} b\xE0i thu\u1ED9c phi\xEAn b\u1EA3n protocol c\u0169`);
           this.prismaIntegrityStatusBox.innerHTML = `
-          \u26A0\uFE0F <b>C\u1EA2NH B\xC1O KI\u1EC2M TO\xC1N:</b> C\xF3 ${missingFullText} b\xE0i thi\u1EBFu to\xE0n v\u0103n, ${missingEvidence} b\xE0i thi\u1EBFu tr\xEDch d\u1EABn b\u1EB1ng ch\u1EE9ng, ho\u1EB7c ${outdatedCount} b\xE0i thu\u1ED9c phi\xEAn b\u1EA3n c\u0169. B\xE1o c\xE1o PRISMA t\u1EA1m th\u1EDDi \u0111\u01B0\u1EE3c xu\u1EA5t v\u1EDBi nh\xE3n [INTERIM].
+          \u26A0\uFE0F <b>C\u1EA2NH B\xC1O KI\u1EC2M TO\xC1N [INTERIM]:</b> ${issues.join("; ")}. S\u01A1 \u0111\u1ED3 PRISMA v\xE0 Evidence Table t\u1EA1m th\u1EDDi mang nh\xE3n [INTERIM].
         `;
         } else {
           this.prismaIntegrityStatusBox.style.background = "#f0fdf4";
           this.prismaIntegrityStatusBox.style.border = "1px solid #bbf7d0";
           this.prismaIntegrityStatusBox.style.color = "#166534";
           this.prismaIntegrityStatusBox.innerHTML = `
-          \u2713 <b>HO\xC0N H\u1EA2O:</b> T\u1EA5t c\u1EA3 c\xE1c b\xE0i Final Included \u0111\u1EC1u c\xF3 \u0111\u1EE7 to\xE0n v\u0103n, tr\xEDch d\u1EABn b\u1EB1ng ch\u1EE9ng v\xE0 thu\u1ED9c phi\xEAn b\u1EA3n protocol hi\u1EC7n h\xE0nh v${this.activeProfile.profileVersion}. B\xE1o c\xE1o \u0111\u1EA1t chu\u1EA9n [COMPLETE].
+          \u2713 <b>HO\xC0N H\u1EA2O [COMPLETE]:</b> Kh\xF4ng c\xF2n b\xE0i ch\u01B0a quy\u1EBFt \u0111\u1ECBnh (${pendingCount}), to\xE0n b\u1ED9 c\xE1c b\xE0i Final Included (${finalIncludes.length}) \u0111\u1EC1u c\xF3 \u0111\u1EE7 to\xE0n v\u0103n, tr\xEDch d\u1EABn b\u1EB1ng ch\u1EE9ng v\xE0 thu\u1ED9c phi\xEAn b\u1EA3n protocol hi\u1EC7n h\xE0nh v${this.activeProfile.profileVersion}. B\xE1o c\xE1o \u0111\u1EA1t chu\u1EA9n [COMPLETE].
         `;
         }
       }
@@ -2843,23 +2915,33 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
     }
     async saveNoteToBackend(paperId, notes) {
       try {
-        await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+        const res = await fetch(`${this.backendUrl}/api/records/${paperId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ userNotes: notes })
+          body: JSON.stringify({ researchId: this.activeProfile.id, userNotes: notes })
         });
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
         await this.saveSessionToStorage();
-      } catch {
+      } catch (err) {
+        console.warn(`[Notes] L\u01B0u ghi ch\xFA th\u1EA5t b\u1EA1i:`, err.message);
+        this.setStatus(`\u26A0\uFE0F Kh\xF4ng th\u1EC3 l\u01B0u ghi ch\xFA l\xEAn m\xE1y ch\u1EE7: ${err.message}`, "warning");
       }
     }
     async updateRecordDecisionOnBackend(paperId, updates) {
       try {
-        await fetch(`${this.backendUrl}/api/records/${paperId}`, {
+        const res = await fetch(`${this.backendUrl}/api/records/${paperId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updates)
+          body: JSON.stringify({ researchId: this.activeProfile.id, ...updates })
         });
-      } catch {
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+      } catch (err) {
+        console.warn(`[Decision] C\u1EADp nh\u1EADt quy\u1EBFt \u0111\u1ECBnh l\xEAn backend th\u1EA5t b\u1EA1i:`, err.message);
+        this.setStatus(`\u26A0\uFE0F Kh\xF4ng th\u1EC3 l\u01B0u quy\u1EBFt \u0111\u1ECBnh l\xEAn m\xE1y ch\u1EE7: ${err.message}`, "warning");
       }
     }
     // ==========================================
@@ -2966,12 +3048,14 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
         );
         if (res.ok) {
           const data = await res.json();
-          const stageRecords = data.canonicalRecords || data.records || [];
-          if (stageRecords && Array.isArray(stageRecords) && stageRecords.length > 0) {
-            this.uniqueRecords = stageRecords;
-            this.allRecords = data.rawRecords || stageRecords;
+          const raw = Array.isArray(data.rawRecords) ? data.rawRecords : [];
+          const canonical = Array.isArray(data.canonicalRecords) ? data.canonicalRecords : Array.isArray(data.records) ? data.records : [];
+          if (raw.length > 0 || canonical.length > 0) {
+            this.allRecords = raw.length > 0 ? raw : canonical;
+            this.uniqueRecords = canonical.length > 0 ? canonical : raw;
             if (data.dedupStats) this.dedupStats = data.dedupStats;
             this.updateStepCounters();
+            this.renderStepB1();
             this.renderRecordsList();
             await this.saveSessionToStorage();
           }
@@ -3020,8 +3104,7 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
     }
     updateActiveResearchDisplay() {
       if (this.activeResearchBadge) this.activeResearchBadge.innerText = this.activeProfile.name;
-      if (this.protocolVersionBadge)
-        this.protocolVersionBadge.innerText = `v${this.activeProfile.profileVersion || 1}`;
+      if (this.protocolVersionBadge) this.protocolVersionBadge.innerText = `v${this.activeProfile.profileVersion || 1}`;
     }
     populateSetupForm(p) {
       if (this.setupResearchName) this.setupResearchName.value = p.name || "";
@@ -3045,12 +3128,19 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
     }
     async saveProfileToBackend(profile) {
       try {
-        await fetch(`${this.backendUrl}/api/profiles`, {
+        const res = await fetch(`${this.backendUrl}/api/profiles`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(profile)
         });
-      } catch {
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        return true;
+      } catch (err) {
+        console.warn(`[Profile] L\u01B0u profile l\xEAn backend th\u1EA5t b\u1EA1i:`, err.message);
+        this.setStatus(`\u26A0\uFE0F Kh\xF4ng th\u1EC3 l\u01B0u profile l\xEAn m\xE1y ch\u1EE7: ${err.message}`, "warning");
+        return false;
       }
     }
     async saveProfilesToStorage() {
@@ -3486,14 +3576,17 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
           throw new Error(err.error || `HTTP ${res.status}`);
         }
         const data = await res.json();
-        if (data.records && Array.isArray(data.records)) {
-          this.allRecords = [...this.allRecords, ...data.records];
-          this.uniqueRecords = [...this.uniqueRecords, ...data.records];
+        const importedRecords = data.records && Array.isArray(data.records) ? data.records : data.preview?.validRecords && Array.isArray(data.preview.validRecords) ? data.preview.validRecords : [];
+        if (importedRecords.length > 0) {
+          this.allRecords = [...this.allRecords, ...importedRecords];
+          this.uniqueRecords = [...this.uniqueRecords, ...importedRecords];
           await this.saveSessionToStorage();
           this.updateStepCounters();
           this.renderStepB1();
           this.renderRecordsList();
-          this.setStatus(`\u2713 \u0110\xE3 nh\u1EADp th\xE0nh c\xF4ng ${data.records.length} b\xE0i t\u1EEB "${file.name}"!`, "success");
+          this.setStatus(`\u2713 \u0110\xE3 nh\u1EADp th\xE0nh c\xF4ng ${importedRecords.length} b\xE0i t\u1EEB "${file.name}"!`, "success");
+        } else {
+          this.setStatus(`Kh\xF4ng t\xECm th\u1EA5y b\u1EA3n ghi h\u1EE3p l\u1EC7 n\xE0o trong t\u1EC7p "${file.name}".`, "warning");
         }
       } catch (e) {
         this.setStatus(`L\u1ED7i khi nh\u1EADp t\u1EC7p: ${e.message}`, "error");
@@ -3548,8 +3641,9 @@ L\u01B0u \xFD: Thao t\xE1c G\u1ED9p s\u1EBD l\u01B0u tr\u1EEF b\u1EA3n ghi B v\x
       return `"${s.replace(/"/g, '""')}"`;
     }
     escapeHtml(text) {
-      if (!text) return "";
-      return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+      if (text === null || text === void 0) return "";
+      const str = typeof text === "string" ? text : String(text);
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
     downloadFile(content, filename, type) {
       const blob = new Blob([content], { type });

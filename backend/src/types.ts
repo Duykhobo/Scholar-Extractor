@@ -459,25 +459,25 @@ export interface ProtocolChangeRecord {
 }
 
 export interface SearchExecutionRecord {
-  searchRunId: string;
+  searchRunId?: string;
   researchId: string;
   sessionId?: string;
   jobId?: string;
   protocolVersion?: string;
-  queryVersion: string; // Q1, Q2, Q3
+  queryVersion?: string; // Q1, Q2, Q3
   requestedSource: string;
   actualSource: string;
   fallbackReason?: string;
-  literalQuery: string;
+  literalQuery?: string;
   actualApiQuery: string;
-  searchFields: string;
+  searchFields?: string;
   filters: Record<string, any>;
   syntaxNotes?: string;
-  startTime: string;
+  startTime?: string;
   endTime?: string;
-  timezone: string;
+  timezone?: string;
   pagesProcessed: number;
-  stopCondition: string;
+  stopCondition?: string;
   reportedResults: number;
   actualReceivedRecords: number;
   newDiscoveryRecords: number;
@@ -486,6 +486,7 @@ export interface SearchExecutionRecord {
   errors?: string[];
   retryCount?: number;
   dataSnapshotId?: string;
+  timestamp?: string;
 }
 
 export interface SnowballExecutionRecord {
@@ -493,7 +494,7 @@ export interface SnowballExecutionRecord {
   researchId: string;
   seedDoiOrId: string;
   seedTitle: string;
-  direction: "backward" | "forward";
+  direction: "backward" | "forward" | "both";
   iteration: number;
   source: string;
   relationsReceived: number;
